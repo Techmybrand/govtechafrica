@@ -1,0 +1,73 @@
+@import "@/styles/imports";
+
+.section {
+	.section_container {
+		padding: 15rem 3.6rem;
+		max-width: $max-width;
+		margin-inline: auto;
+		.grad {
+			width: 15.2rem;
+			height: 100%;
+			position: absolute;
+			left: calc(50% - 7.6rem);
+			background-color: rgba(190, 242, 190, 0.8);
+			box-shadow: 1px 4px 100px rgba(190, 242, 190, 0.8);
+			filter: blur(250px);
+		}
+		.title {
+			font-weight: 700;
+			@extend %title-50;
+			font-family: $font-gothic-bold;
+			color: #fff;
+			margin-bottom: 2.3rem;
+			letter-spacing: 0.001rem;
+		}
+		h2 {
+			font-weight: 700;
+			font-size: 4rem;
+			margin-bottom: 3rem;
+		}
+		h3 {
+			margin-top: 3.2rem;
+			margin-bottom: 1.6rem;
+			strong {
+				font-size: 3rem;
+				line-height: 3.3rem;
+				font-family: $font-gothic-bold;
+				color: #fff !important;
+			}
+		}
+		p,
+		span {
+			color: rgba(255, 255, 255, 0.7) !important;
+		}
+		img {
+			margin-block: 2rem;
+		}
+	}
+	.divider,
+	.divider1 {
+		width: 100%;
+		height: 2rem;
+		background-color: #bef2be;
+	}
+	.divider1 {
+		background-color: rgba(255, 255, 255, 0.05);
+		margin-block: 3.6rem;
+	}
+	@include screenMax("mobile") {
+		.section_container {
+			padding-inline: 1.6rem;
+		}
+		.grid {
+			grid-template-columns: 100%;
+		}
+		.title {
+			font-size: 2.4rem;
+			margin-bottom: 1.2rem;
+		}
+		img {
+			min-height: 10rem;
+		}
+	}
+}

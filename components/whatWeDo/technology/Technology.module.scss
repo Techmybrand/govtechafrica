@@ -1,0 +1,154 @@
+@import "@/styles/imports";
+
+.section {
+	.section_container {
+		padding: 3.6rem;
+		max-width: $max-width;
+		margin-inline: auto;
+		position: relative;
+		@include grid(repeat(2, 1fr), 3.6rem);
+		// gap: 3.6rem;
+		.text {
+			h2 {
+				font-size: 8rem;
+				line-height: 11rem;
+				font-weight: 700;
+				font-family: $font-gothic-bold;
+				color: #fff;
+				margin-bottom: 3.6rem;
+			}
+			h3,
+			span {
+				font-size: 3rem;
+				line-height: 3.3rem;
+				font-weight: 700;
+				font-family: $font-gothic-bold;
+			}
+			span {
+				color: #fff;
+			}
+			p {
+				margin-top: 1.2rem;
+			}
+		}
+		.card {
+			width: 100%;
+			background-color: rgba($col-white, 0.05);
+			border-radius: 1.5rem;
+			overflow: hidden;
+			padding: 3.2rem;
+			position: relative;
+			margin-top: 3.6rem;
+			height: 36.4rem;
+			@include flex();
+			flex-direction: column;
+			border: 0.1rem solid rgba($col-white, 0.1);
+			.details {
+				h3 {
+					font-size: 3rem;
+					line-height: 3.3rem;
+					font-weight: 700;
+					font-family: $font-gothic-bold;
+					color: #fff;
+					margin-bottom: 2rem;
+				}
+			}
+			.button {
+				margin-top: auto;
+				justify-self: flex-end;
+			}
+			.grad {
+				background-color: #13361b;
+				width: 36.6rem;
+				height: 36.6rem;
+				filter: blur(120px);
+				position: absolute;
+				left: 0;
+				z-index: -1;
+			}
+		}
+		.large_row {
+			.card {
+				height: 47.6rem;
+				&:first-child {
+					.grad {
+						display: none;
+					}
+				}
+				&:nth-child(2) {
+					.grad {
+						top: -1rem;
+						left: -2rem;
+					}
+				}
+				&:nth-child(3) {
+					.grad {
+						top: 8rem;
+						left: -2rem;
+					}
+				}
+			}
+		}
+		.small_row {
+			.card {
+				&:first-child {
+					height: 30.2rem;
+					.grad {
+						display: none;
+					}
+				}
+				&:nth-child(2) {
+					.grad {
+						left: unset;
+						top: 11rem;
+						right: -1rem;
+						filter: blur(150px);
+					}
+				}
+				&:nth-child(3) {
+					.grad {
+						left: unset;
+						top: -2rem;
+						right: -1rem;
+						filter: blur(150px);
+					}
+				}
+				&:nth-child(4) {
+					.grad {
+						left: unset;
+						top: 3rem;
+						right: -1rem;
+						filter: blur(150px);
+					}
+				}
+			}
+		}
+	}
+	.divider {
+		width: 100%;
+		height: 2rem;
+		background-color: rgba(255, 255, 255, 0.05);
+	}
+	@include screenMax("tablet") {
+		.section_container {
+			grid-template-columns: 100%;
+			padding-inline: 1.6rem;
+			.card {
+				padding: 2rem;
+				height: auto !important;
+				.details {
+					h3 {
+						font-size: 2.2rem;
+						line-height: 2.8rem;
+					}
+				}
+				.button {
+					margin-top: 1.8rem;
+				}
+				.grad {
+					display: none !important;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,84 @@
+@import "@/styles/imports";
+
+.section {
+	.section_container {
+		padding: 3.6rem;
+		max-width: $max-width;
+		margin-inline: auto;
+		position: relative;
+		.text {
+			h2 {
+				font-size: 8rem;
+				line-height: 11rem;
+				font-weight: 700;
+				font-family: $font-gothic-bold;
+				color: #fff;
+				margin-bottom: 3.6rem;
+			}
+			h3,
+			span {
+				font-size: 3rem;
+				line-height: 3.3rem;
+				font-weight: 700;
+				font-family: $font-gothic-bold;
+			}
+			span {
+				color: #fff;
+			}
+			p {
+				margin-top: 1.2rem;
+			}
+		}
+		.card {
+			width: 100%;
+			background-color: rgba($col-white, 0.05);
+			border-radius: 1.5rem;
+			overflow: hidden;
+			padding: 3.2rem;
+			position: relative;
+			margin-top: 3.6rem;
+			height: 38rem;
+			@include flex();
+			flex-direction: column;
+			border: 0.1rem solid rgba($col-white, 0.1);
+		}
+		.button {
+			margin-top: auto;
+			justify-self: flex-end;
+		}
+		.grad_1,
+		.grad_2 {
+			background-color: #13361b;
+			width: 36.6rem;
+			height: 36.6rem;
+			filter: blur(200px);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+		}
+		.grad_2 {
+			left: unset;
+			right: 0;
+		}
+	}
+	.divider {
+		width: 100%;
+		height: 2rem;
+		background-color: rgba(255, 255, 255, 0.05);
+	}
+	@include screenMax("tablet") {
+		.section_container {
+			padding: 2rem;
+			.text {
+				h2 {
+					font-size: 5.6rem;
+					line-height: 6.3rem;
+				}
+			}
+			.card {
+				padding: 2rem;
+			}
+		}
+	}
+}

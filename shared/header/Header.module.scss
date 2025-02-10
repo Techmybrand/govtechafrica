@@ -1,0 +1,487 @@
+@import "@/styles/imports";
+
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: $all-transition;
+	z-index: 10;
+	background-color: $col-grey-700;
+	background-color: transparent;
+	.container {
+		padding: 3.6rem;
+		@include flex(space-between, center, nowrap);
+		max-width: $max-width;
+		margin-inline: auto;
+		@include screenMin("desktop") {
+			padding-inline: 1.6rem;
+		}
+	}
+	a {
+		.header_logoContainer {
+			// width: 21.6rem;
+			transition: $all-transition;
+		}
+	}
+	.header_nav {
+		// min-width: 35%;
+		margin-left: auto;
+		.header_navList {
+			@include flex(space-between, center, nowrap);
+			gap: 0.5rem;
+			padding: 0.5rem;
+			border-radius: 5.8rem;
+			margin: 0;
+			background-color: rgba($col-white, 0.05);
+			.header_navLink {
+				// margin: 0 2.5rem;
+				position: relative;
+				background-color: rgba($col-white, 0.1);
+				@include flex(flex-start, center);
+				gap: 0.5rem;
+				padding: 1rem;
+				border-radius: 5rem;
+				.link_icon,
+				.mob_chevron {
+					position: relative;
+					width: 1.6rem;
+					height: 1.6rem;
+				}
+				.link_row {
+					@include flex(flex-start, center, nowrap);
+					gap: 0.5rem;
+				}
+				p {
+					font-family: $font;
+					font-size: 1.4rem;
+					font-weight: 500;
+					transition: $all-transition;
+					text-transform: uppercase;
+					color: $col-white;
+					cursor: pointer;
+				}
+				.subMenu_container {
+					// position: fixed;
+					// top: 9.7rem;
+					// right: 10rem;
+					// z-index: -1;
+					// opacity: 0;
+					// pointer-events: none;
+					// transform: translateY(-10%);
+					// visibility: hidden;
+
+					top: 100%;
+					left: 0;
+					position: absolute;
+
+					display: none;
+
+					transition: opacity 0.3s ease, transform 0.3s ease,
+						visibility 0.3s ease;
+					max-height: 50rem;
+					min-width: 40.4rem;
+					background-color: #13361b;
+					border: 0.2rem solid rgba($col-white, 0.2);
+					border-radius: 2rem;
+					overflow-y: scroll;
+					@include noScrollBar;
+					.subMenu {
+						width: 100%;
+						padding: 0.5rem;
+						z-index: 1;
+						position: relative;
+						transition: $all-transition;
+						.container {
+							padding: 0;
+						}
+						.subMenu_title {
+							margin-bottom: 4rem;
+							h1 {
+								@extend %title-28;
+								color: #1b1e21;
+								margin-bottom: 0.6rem;
+							}
+							p {
+								@extend %text-14;
+								color: #4b525a;
+							}
+						}
+						.subMenu_navlist {
+							@include flex();
+							flex-direction: column;
+							gap: 0.5rem;
+							h2 {
+								font-weight: 500;
+								color: #fff;
+								font-size: 1.4rem;
+								text-transform: uppercase;
+							}
+							.subMenu_link {
+								@include flex(space-between, center, nowrap);
+								gap: 0.5rem;
+								padding: 1rem;
+								background-color: rgba($col-white, 0.1);
+								border-radius: 5rem;
+								width: 100%;
+								cursor: pointer;
+								position: relative;
+								.subMenu_icon {
+									position: relative;
+									width: 1.6rem;
+									height: 1.6rem;
+									flex-shrink: 0;
+								}
+								p {
+									color: #fff;
+								}
+							}
+							.sub_list {
+								@include flex();
+								flex-direction: column;
+								gap: 0.5rem;
+								padding-left: 4rem;
+								width: 100%;
+								.subMenu_link {
+									p {
+										text-transform: capitalize;
+									}
+									&::before {
+										position: absolute;
+										content: "";
+										width: 1rem;
+										height: 1rem;
+										border-radius: 50%;
+										top: calc(50% - 0.5rem);
+										left: -3rem;
+										background-color: rgba($col-white, 0.1);
+									}
+								}
+							}
+							&:not(:first-child) {
+								margin-top: 0.5rem;
+							}
+						}
+						.youtube_banner {
+							position: relative;
+							width: 53.2rem;
+							height: 46rem;
+						}
+					}
+					&[data-active="true"] {
+						.subMenu_navlist,
+						.container {
+							width: 58rem;
+							.subMenu_navlist {
+								background-color: #fafafa;
+								padding: 2.4rem;
+							}
+						}
+						.container {
+							display: block;
+						}
+					}
+				}
+				&:hover {
+					.subMenu_container {
+						display: block;
+						// opacity: 1;
+						// transform: translateY(0);
+						// visibility: visible;
+						// pointer-events: all;
+						// backdrop-filter: blur(8px);
+						.subMenu {
+							// transform: translateY(0);
+							transition: $all-transition;
+						}
+					}
+				}
+				&:nth-child(3) {
+					.subMenu_container {
+						left: unset;
+						right: 0;
+					}
+				}
+
+				@include screenMax("tablet") {
+					@include flex(flex-start, center, nowrap);
+				}
+			}
+			.button_link {
+				p {
+					font-size: 1.4rem;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+
+	.header_wrapper,
+	.header_wrapper__collapsed {
+		margin-left: 4rem;
+		flex-grow: 1;
+		transition: transform 0.3s ease-out;
+		@include flex(space-between, center);
+
+		@include screenMax("tablet") {
+			order: 3;
+			width: 100%;
+			height: 100%;
+			min-height: 100vh;
+			position: fixed;
+			top: 6.5rem;
+			left: 0;
+			background-color: #12351a;
+			z-index: 10;
+			padding: 4rem 1.2rem;
+			padding-bottom: 20rem;
+			margin-left: 0;
+			overflow-y: scroll;
+			transform: translateX(0);
+			@include flex(flex-start, flex-start, column);
+		}
+	}
+
+	.header_wrapper__collapsed {
+		@include screenMax("tablet") {
+			transform: translateX(101vw);
+		}
+	}
+
+	.header_hamburger,
+	.header_hamburger__open {
+		display: none;
+		position: relative;
+		cursor: pointer;
+		height: fit-content;
+		background: transparent;
+		border: none;
+		width: 45px;
+
+		@include screenMax("tablet") {
+			order: 2;
+			@include flex(center, flex-end, column nowrap);
+		}
+
+		&Bar {
+			width: 35px;
+			height: 2px;
+			background-color: $col-white;
+			margin: 0.4rem 0;
+			width: 35px;
+			opacity: 0.8;
+			transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+			&:nth-child(2) {
+				width: 30px;
+			}
+		}
+	}
+
+	.header_hamburger__open {
+		min-height: 10px;
+		position: relative;
+
+		.header_hamburgerBar {
+			width: 20px;
+		}
+
+		.header_hamburgerBar:first-child {
+			margin-bottom: -6px;
+			transform: rotate(45deg);
+		}
+
+		.header_hamburgerBar:nth-child(2) {
+			opacity: 0;
+		}
+
+		.header_hamburgerBar:last-child {
+			margin-top: -6px;
+			transform: rotate(-45deg);
+		}
+	}
+	.background {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		background-color: rgba(2, 1, 6, 0.58);
+		backdrop-filter: blur(6px);
+		opacity: 0;
+		pointer-events: none;
+		// transform: translateY(-10%);
+		visibility: hidden;
+		transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+		z-index: -1;
+	}
+	&[data-background="true"] {
+		.background {
+			opacity: 1;
+			// transform: translateY(0);
+			visibility: visible;
+		}
+	}
+	&[data-collapsed="true"] {
+		background-color: #12351a;
+	}
+	&[data-scroll="initial"] {
+		background-color: #12351a;
+	}
+	@include screenMax("tablet") {
+		.header_nav {
+			.header_navList {
+				gap: 1.2rem;
+				background-color: transparent;
+				.header_navLink {
+					// margin: 0 1rem;
+					padding: 1rem;
+				}
+			}
+		}
+		.background {
+			display: none;
+		}
+		&[data-background="true"] {
+			.background {
+				display: none;
+			}
+		}
+	}
+	@include screenMax("tablet") {
+		.container {
+			overflow: hidden;
+			padding: 2rem 1.6rem;
+		}
+		.header_nav {
+			width: 100%;
+			.header_navList {
+				display: block;
+				padding: 0;
+				margin: 0;
+				border-radius: unset;
+				overflow: unset;
+				.header_navLink {
+					// padding: 1.6rem;
+					margin: 0;
+					margin-bottom: 1.6rem;
+					@include flex(space-between, center);
+					max-height: 5rem;
+					overflow: hidden;
+					transition: all 0.5s ease-in-out;
+					border-radius: 1.5rem;
+					width: 100%;
+					.link_row {
+						@include flex(space-between, center);
+						gap: 0.8rem;
+						z-index: 1;
+						position: relative;
+						width: 100%;
+						margin-bottom: 2rem;
+					}
+					.link_icon {
+						position: relative;
+						width: 2.4rem;
+						height: 2.4rem;
+						display: block;
+					}
+					.mob_chevron {
+						position: relative;
+						width: 1.6rem;
+						height: 1.6rem;
+						display: block;
+						margin-right: 1.6rem;
+						transition: rotate 0.5s ease-in-out;
+					}
+					a,
+					p {
+						font-family: $font;
+						font-size: 1.6rem;
+						transition: $all-transition;
+						// color: rgba(93, 94, 103, 1);
+					}
+					.subMenu_container {
+						display: block;
+						position: static;
+						width: 100%;
+						height: auto;
+						padding: 0.5rem;
+						background-color: transparent;
+						backdrop-filter: unset;
+						pointer-events: auto;
+						z-index: 2;
+						overflow-y: unset;
+						left: unset;
+						top: unset;
+						right: unset;
+						max-height: unset;
+						min-width: unset;
+						.subMenu {
+							padding: 0;
+							flex-wrap: wrap;
+							width: 100%;
+							.container {
+								flex-wrap: wrap;
+								width: 100%;
+							}
+							.subMenu_title {
+								margin-top: 4rem;
+								h1 {
+									font-size: 2.4rem;
+									color: #1b1e21;
+									margin-bottom: 0.6rem;
+								}
+							}
+							.subMenu_navlist {
+								width: 100%;
+								h2 {
+									margin-bottom: 0;
+								}
+								.subMenu_link {
+									padding: 1rem;
+									flex-wrap: nowrap;
+									p {
+										font-size: 1.4rem;
+										line-height: 1.6rem;
+									}
+									.subMenu_icon {
+										flex-shrink: 0;
+									}
+								}
+							}
+							.youtube_banner {
+								width: 100%;
+								height: 28rem;
+								margin-top: 2.4rem;
+							}
+						}
+					}
+					&::after {
+						display: none;
+					}
+					&:hover {
+						&::after {
+							width: 0;
+							transition: $all-transition;
+						}
+						a {
+							background: unset;
+							color: $col-white;
+						}
+					}
+					&[data-active="true"] {
+						max-height: 1000rem;
+						transition: all 0.5s ease-in-out;
+						overflow-y: auto;
+						.mob_chevron {
+							rotate: 180deg;
+							transition: rotate 0.5s ease-in-out;
+						}
+					}
+				}
+				.button_link {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
