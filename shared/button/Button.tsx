@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import styles from "./Button.module.scss";
-
-import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import styles from "./Button.module.scss";
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	buttonType?: "primary" | "secondary" | "transparent";
@@ -45,7 +44,7 @@ const Button = ({
 			)}
 			<p>{children}</p>
 			<figure className={styles.button_icon}>
-				<Image src="/svgs/button-icon.svg" layout="fill" alt="" />
+				<Image src="/svgs/button-icon.svg" fill alt="" />
 			</figure>
 		</button>
 	);

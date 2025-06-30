@@ -1,24 +1,23 @@
 import React from "react";
+import { GrowthCardProps } from "@/interfaces";
 import styles from "./Growth.module.scss";
 
-const growthList = [
+const growthList: GrowthCardProps[] = [
 	{
 		title: "65%",
 		description: "African governments Offering e-Government services to citizens."
 	},
 	{
 		title: "76%",
-		description:
-			"Already adopting cloud-based platforms for public service delivery as of 2024."
+		description: "Already adopting cloud-based platforms for public service delivery as of 2024."
 	},
 	{
 		title: "70%",
-		description: "Providing mobile-based public services ."
+		description: "African governments providing mobile-based public services."
 	},
 	{
 		title: "$4.6bn",
-		description:
-			"The size of the African public sector IT market in 2023, projected to reach USD 7.8 billion by 2026."
+		description: "The size of the African public sector IT market in 2023, projected to reach USD 7.8 billion by 2026."
 	},
 	{
 		title: "$6bn",
@@ -36,13 +35,14 @@ const Growth = () => {
 			<div className={styles.section_container}>
 				<div className={styles.text}>
 					<h3>
-						With growing demand for technology in Africa’s public sector,{" "}
+						There is growing demand for technology in Africa’s public sector - {" "}
 					</h3>
 				</div>
 				<div className={styles.grid}>
-					{growthList.map(growth => (
+					{growthList.map((growth: GrowthCardProps) => (
 						<div className={styles.card} key={growth.title}>
 							<h4>{growth.title}</h4>
+							<span></span>
 							<p>{growth.description}</p>
 						</div>
 					))}

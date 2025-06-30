@@ -40,9 +40,10 @@
 				}
 				.card_details {
 					padding: 7.8rem 2rem 3.2rem;
+					background: #000;
 					p {
 						font-size: 1.6rem;
-						line-height: 1.7rem;
+						line-height: 1.8rem;
 						color: rgba(255, 255, 255, 0.6);
 					}
 					h4 {
@@ -80,8 +81,10 @@
 	@include screenMax("tablet") {
 		.section_container {
 			overflow: hidden;
+			padding: 3.6rem 2.4rem;
 			.grid {
 				overflow-x: scroll;
+				grid-template-columns: repeat(2, 1fr);
 			}
 			.grad_1,
 			.grad_2 {
@@ -91,6 +94,36 @@
 				h2 {
 					font-size: 6rem;
 					line-height: 7.3rem;
+				}
+			}
+		}
+	}
+	@include screenMax('mobile') {
+		.section_container {
+			padding: 2.4rem 2rem;
+			.text {
+				h2 {
+					font-size: 3.6rem;
+					line-height: 4.4rem;
+					margin-bottom: 1.6rem;
+				}
+				h3, span {
+					font-size: 2.2rem;
+					line-height: 2.8rem;
+				}
+			}
+			.grid {
+				grid-template-columns: repeat(1, 1fr);
+				.card {
+					.card_details {
+						p {
+							font-size: 1.4rem;
+						}
+						h4 {
+							font-size: 2.2rem;
+							line-height: 2.8rem;
+						}
+					}
 				}
 			}
 		}

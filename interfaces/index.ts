@@ -26,3 +26,21 @@ export interface NavLink {
 	button?: string;
 	icon?: string;
 }
+
+export interface GrowthCardProps {
+	title: string
+	description: string
+}
+
+export interface TechnologyProps {
+	id: string
+	href: string
+	title: string
+	image: string
+	description: string
+}
+
+export interface TechnologyCardProps {
+	index?: number
+	technology: TechnologyProps
+}

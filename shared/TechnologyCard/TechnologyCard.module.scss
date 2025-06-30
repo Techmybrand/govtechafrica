@@ -1,0 +1,143 @@
+@import "@/styles/imports";
+
+.card {
+    width: 100%;
+    background-color: rgba($col-white, 0.05);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    padding: 3.2rem;
+    position: relative;
+    margin-top: 3.6rem;
+    height: 36.4rem;
+    // @include flex();
+    display: flex;
+    flex-direction: column;
+    border: 0.1rem solid rgba($col-white, 0.1);
+    transition: all 400ms ease-in-out;
+    cursor: pointer;
+    &[data-card = "customised"], &[data-card = "cloud"], &[data-card = "web3"] {
+        height: 47.7rem!important;
+    }
+    &[data-card = "cybersecurity"] {
+        height: 30.6rem;
+    }
+    .details {
+        position: relative;
+        transition: all 400ms ease-in-out;
+        h3 {
+            font-size: 3rem;
+            line-height: 3.3rem;
+            font-weight: 700;
+            font-family: $font-gothic-bold;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+        
+    }
+    .card_image {
+        position: relative;
+        align-self: flex-end;
+        & > img {
+            object-fit: cover;
+        }
+        &[data-image = "customised"] {
+           width: 53rem;
+            height: 38rem;
+        }
+        &[data-image = "cloud"] {
+            width: 35.2rem;
+            height: 33.7rem;
+        }
+        &[data-image = "web3"] {
+            width: 42.8rem;
+            height: 34.4rem;
+        }
+        &[data-image = "cybersecurity"] {
+            width: 22rem;
+            height: 23rem;
+        }
+        &[data-image = "data"] {
+            width: 27rem;
+            height: 27rem;
+        }
+        &[data-image = "network"] {
+            width: 20rem;
+            height: 20rem;
+        }
+        &[data-image = "it"] {
+            width: 23.4rem;
+            height: 21.6rem;
+        }
+    }
+    .button {
+        margin-top: auto;
+        justify-self: flex-end;
+        width: 15rem;
+        height: 5rem;
+    }
+    .grad {
+        background-color: #13361b;
+        width: 36.6rem;
+        height: 36.6rem;
+        filter: blur(120px);
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
+    .details_mob {
+        display: none;
+    }
+
+    @include screenMax('tablet') {
+        padding: 2.4rem;
+        .details {
+            h3 {
+                font-size: 2.2rem;
+                line-height: 2.8rem;
+            }
+        }
+        .button {
+            margin-top: 1.8rem;
+        }
+        .grad {
+            display: none !important;
+        }
+    }
+
+    @include screenMax('mobile') {
+        padding: 1.6rem;
+        height: auto!important;
+        .details, .card_image, .button {
+            display: none;
+        }
+        .details_mob {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            h3 {
+                font-size: 2.2rem;
+                line-height: 2.8rem;
+                font-family: $font-gothic-bold;
+                color: #FFF;
+            }
+            p {
+                font-size: 1.4rem;
+                line-height: 2rem;
+                font-family: $font-gothic;
+                color: #FFF;
+            }
+            .button_mob {
+                width: 16rem;
+                height: 5rem;
+            }
+            .card_image_mob {
+                align-self: flex-end;
+                width: 20rem;
+                height: 20rem;
+                & > img {
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
