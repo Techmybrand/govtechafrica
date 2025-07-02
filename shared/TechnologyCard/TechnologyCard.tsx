@@ -1,13 +1,12 @@
 'use client';
 import React, { useState } from 'react';
-import styles from './TechnologyCard.module.scss';
-import Image from 'next/image';
-import Button from '../button/Button';
+import { Button } from '..';
 import { TechnologyCardProps } from '@/interfaces';
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from './TechnologyCard.module.scss';
 
-
-
-const TechnologyCard = ({technology, index}: TechnologyCardProps) => {
+const TechnologyCard = ({technology, index, cardType}: TechnologyCardProps) => {
     const [isHover, setIsHover] = useState<boolean>(false);
     const onHover = () => {
         setIsHover(true);
@@ -38,17 +37,37 @@ const TechnologyCard = ({technology, index}: TechnologyCardProps) => {
                 <Image alt="image" fill src={technology?.image} />
             </div>
         )}
-        {isHover && (
-            <Button className={styles.button}>
-                {index === 0 ? "Explore" : "Read more"}
-            </Button>
+        {(isHover && cardType === 'technology') && (
+            <Link href={technology.href}>
+                <Button className={styles.button}>
+                    {index === 0 ? "Explore" : "Read more"}
+                </Button>
+            </Link>
+        )}
+        {(isHover && cardType === 'consulting') && (
+            <Link href={technology.href}>
+                <Button className={styles.button}>
+                    Explore
+                </Button>
+            </Link>
         )}
         <div className={styles.details_mob}>
             <h3>{technology.title}</h3>
             <p>{technology.description}</p>
-            <Button className={styles.button_mob}>
-                {index === 0 ? "Explore" : "Read more"}
-            </Button>
+            {cardType === 'technology' && (
+                <Link href={technology.href}>
+                    <Button className={styles.button_mob}>
+                        {index === 0 ? "Explore" : "Read more"}
+                    </Button>
+                </Link>
+            )}
+            {cardType === 'consulting' && (
+                <Link href={technology.href}>
+                    <Button className={styles.button_mob}>
+                        Explore
+                    </Button>
+                </Link>
+            )}
             <div data-image={technology.id} className={`${styles.card_image_mob}`}>
                 <Image alt="image" fill src={technology?.image} />
             </div>

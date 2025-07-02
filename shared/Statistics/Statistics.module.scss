@@ -1,0 +1,63 @@
+@import "@/styles/imports";
+
+.statistics_section {
+    max-width: 1440px;
+    position: relative;
+    @include grid(repeat(4, 1fr), 4.3rem);
+    margin: 0 auto 6rem;
+    .statistics_card {
+        h1 {
+            font-family: $font-gothic-bold;
+            font-size: 5.6rem;
+            line-height: 7.2rem;
+            color: #FFF;
+            margin-bottom: 1rem;
+        }
+        span {
+            display: block;
+            width: 5rem;
+            height: 0.5rem;
+            background: #00FF8C;
+            margin: -0.5rem 0 1.6rem;
+        }
+        p {
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 2.8rem;
+            color: #FFF;
+        }
+    }
+
+    @include screenMax("tablet") {
+        margin-bottom: 4rem;
+        .statistics_card {
+            h1 {
+                font-size: 4rem;
+                line-height: 5.6rem;
+            }
+            p {
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+            }
+        }
+    }
+    @include screenMax("mobile") {
+        @include grid(repeat(2, 1fr), 2.4rem, 3.2rem);
+        margin-bottom: 3.2rem;
+        .statistics_card {
+            h1 {
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+                margin-bottom: 0.8rem;
+            }
+            span {
+                height: 0.3rem;
+                width: 4rem;
+                margin: -0.5rem 0 0.8rem;
+            }
+            p {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

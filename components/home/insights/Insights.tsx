@@ -1,13 +1,8 @@
 "use client";
 import { Button } from "@/shared";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import styles from "./Insights.module.scss";
-import "swiper/css";
-import "swiper/css/pagination";
 import { shortenTitle } from "@/utils/stringShortner";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import styles from "./Insights.module.scss";
 
 const insightList = [
 	{
@@ -32,21 +27,12 @@ const insightList = [
 		image: '/images/insight_image_1.jpg'
 	}
 ];
+interface Props {
+	isDivider?: boolean
+}
 
-const Insights = () => {
-	const [slides, setSlides] = useState<number>(2);
-	const [largeSlides, setLargeSlides] = useState<number>(2);
+const Insights = ({isDivider}: Props) => {
 	const router = useRouter();
-
-	useEffect(() => {
-		if (window.innerWidth <= 600) {
-			setSlides(1);
-			setLargeSlides(1);
-		} else {
-			setSlides(2);
-			setLargeSlides(2.5);
-		}
-	}, []);
 	return (
 		<div className={styles.section}>
 			<div className={styles.section_container}>
@@ -118,7 +104,9 @@ const Insights = () => {
 					))}
 				</div>
 			</div>
-			<div className={styles.divider}></div>
+			{isDivider && (
+				<div className={styles.divider}></div>
+			)}
 		</div>
 	);
 };

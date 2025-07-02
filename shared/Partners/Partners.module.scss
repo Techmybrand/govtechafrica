@@ -1,0 +1,95 @@
+@import "@/styles/imports";
+
+.partners_section {
+    max-width: 1440px;
+    margin: 0 auto 6rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6.1rem 0;
+    border-bottom: 0.1rem solid #FFF;
+    border-top: 0.1rem solid #FFF;
+    .partners_content {
+        display: flex;
+        flex-direction: column;
+        gap: 5.6rem;
+        h3 {
+            color: #00BE4D;
+            font-family: $font-gothic-bold;
+            font-size: 5rem;
+            line-height: 6.4rem;
+            text-align: center;
+        }
+        .partner_logos {
+            display: flex;
+            align-items: center;
+            gap: 7rem;
+            .logo_1 {
+                position: relative;
+                width: 32rem;
+                height: 5.7rem;
+            }
+            .logo_2 {
+                position: relative;
+                width: 10rem;
+                height: 10rem;
+            }
+            .logo_3 {
+                position: relative;
+                width: 17.5rem;
+                height: 8.8rem;
+            }
+        }
+    }
+
+    @include screenMax('tablet') {
+        margin-bottom: 4rem;
+        .partners_content {
+            gap: 4rem;
+            h3 {
+                font-size: 3.6rem;
+                line-height: 4.4rem;
+            }
+            .partner_logos {
+                gap: 4.8rem;
+                .logo_1 {
+                    width: 20rem;
+                }
+                .logo_2 {
+                    width: 8rem;
+                    height: 8rem;
+                }
+                .logo_3 {
+                    width: 14rem;
+                    height: 6rem;
+                }
+            }
+        }
+    }
+    @include screenMax('mobile') {
+        margin-bottom: 3.2rem;
+        .partners_content {
+            gap: 3.2rem;
+            h3 {
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+            }
+            .partner_logos {
+                gap: 1.6rem;
+                .logo_1 {
+                    width: 11.5rem;
+                    height: 3rem;
+                }
+                .logo_2 {
+                    width: 6rem;
+                    height: 6rem;
+                }
+                .logo_3 {
+                    width: 12rem;
+                    height: 5.8rem;
+                }
+            }
+        }
+    }
+}

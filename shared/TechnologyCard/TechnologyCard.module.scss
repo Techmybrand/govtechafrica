@@ -9,16 +9,18 @@
     position: relative;
     margin-top: 3.6rem;
     height: 36.4rem;
-    // @include flex();
     display: flex;
     flex-direction: column;
     border: 0.1rem solid rgba($col-white, 0.1);
     transition: all 400ms ease-in-out;
     cursor: pointer;
     &[data-card = "customised"], &[data-card = "cloud"], &[data-card = "web3"] {
-        height: 47.7rem!important;
+        height: 47.7rem;
     }
-    &[data-card = "cybersecurity"] {
+    &[data-card = "infrastructure"], &[data-card = "capacity"] {
+        height: 53.3rem;
+    }
+    &[data-card = "cybersecurity"], &[data-card = "tech"] {
         height: 30.6rem;
     }
     .details {
@@ -68,6 +70,26 @@
             width: 23.4rem;
             height: 21.6rem;
         }
+        &[data-image = "infrastructure"] {
+            width: 54.1rem;
+            height: 39.3rem;
+        }
+        &[data-image = "capacity"] {
+            width: 38.7rem;
+            height: 36.6rem;
+        }
+        &[data-image = "tech"] {
+            width: 39.4rem;
+            height: 24rem;
+        }
+        &[data-image = "strategy"] {
+            width: 36rem;
+            height: 26rem;
+        }
+        &[data-image = "compliance"] {
+            width: 41rem;
+            height: 22.6rem;
+        }
     }
     .button {
         margin-top: auto;
@@ -90,6 +112,7 @@
 
     @include screenMax('tablet') {
         padding: 2.4rem;
+        margin-top: 2.4rem;
         .details {
             h3 {
                 font-size: 2.2rem;
@@ -107,6 +130,7 @@
     @include screenMax('mobile') {
         padding: 1.6rem;
         height: auto!important;
+        margin-top: 1.6rem;
         .details, .card_image, .button {
             display: none;
         }
@@ -115,8 +139,8 @@
             flex-direction: column;
             gap: 1.6rem;
             h3 {
-                font-size: 2.2rem;
-                line-height: 2.8rem;
+                font-size: 1.8rem;
+                line-height: 2.4rem;
                 font-family: $font-gothic-bold;
                 color: #FFF;
             }
@@ -132,8 +156,9 @@
             }
             .card_image_mob {
                 align-self: flex-end;
-                width: 20rem;
+                width: 24rem;
                 height: 20rem;
+                position: relative;
                 & > img {
                     object-fit: cover;
                 }

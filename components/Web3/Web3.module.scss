@@ -1,0 +1,42 @@
+@import "@/styles/imports";
+
+.capacity_building_section {
+    width: 100%;
+    .divider, .divider_green {
+        width: 100%;
+        height: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 15rem 0 6rem;
+    }
+    .divider_green {
+	    background: #BEF2BE;
+        margin: 0;
+    }
+    .capacity_building_content {
+        padding: 0 3.6rem 3.6rem;
+        width: 100%;
+        .description_class {
+            width: 66rem;
+        }
+    }
+
+    @include screenMax("tablet") {
+        .divider {
+            margin: 10rem 0 4rem;
+        }
+        .capacity_building_content {
+            padding: 0 2.4rem 2.4rem;
+        }
+    }
+    @include screenMax("mobile") {
+        .capacity_building_content {
+            padding: 0 1.6rem 1.6rem;
+            .description_class {
+                width: 100%!important;
+            }
+        }
+        .divider {
+            margin: 8rem 0 3.2rem;
+        }
+    }
+}

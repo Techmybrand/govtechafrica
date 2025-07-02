@@ -32,98 +32,98 @@
 		.row {
 			@include grid(repeat(2, 1fr), 3.6rem);
 		}
-		.card {
-			width: 100%;
-			background-color: rgba($col-white, 0.05);
-			border-radius: 1.5rem;
-			overflow: hidden;
-			padding: 3.2rem;
-			position: relative;
-			margin-top: 3.6rem;
-			height: 36.4rem;
-			@include flex();
-			flex-direction: column;
-			border: 0.1rem solid rgba($col-white, 0.1);
-			.details {
-				h3 {
-					font-size: 3rem;
-					line-height: 3.3rem;
-					font-weight: 700;
-					font-family: $font-gothic-bold;
-					color: #fff;
-					margin-bottom: 2rem;
-				}
-			}
-			.button {
-				margin-top: auto;
-				justify-self: flex-end;
-			}
-			.grad {
-				background-color: #13361b;
-				width: 36.6rem;
-				height: 36.6rem;
-				filter: blur(120px);
-				position: absolute;
-				left: 0;
-				z-index: -1;
-			}
-		}
-		.large_row {
-			.card {
-				height: 53.3rem;
-				&:last-child {
-					.grad {
-						display: none;
-					}
-				}
-				&:nth-child(2) {
-					.grad {
-						top: -1rem;
-						left: -2rem;
-					}
-				}
-				&:nth-child(3) {
-					.grad {
-						top: 8rem;
-						left: -2rem;
-					}
-				}
-			}
-		}
-		.small_row {
-			.card {
-				&:last-child {
-					height: 30.2rem;
-					.grad {
-						display: none;
-					}
-				}
-				&:nth-child(1) {
-					.grad {
-						left: unset;
-						top: 11rem;
-						right: -1rem;
-						filter: blur(150px);
-					}
-				}
-				&:nth-child(2) {
-					.grad {
-						left: unset;
-						top: -2rem;
-						right: -1rem;
-						filter: blur(150px);
-					}
-				}
-				&:nth-child(3) {
-					.grad {
-						left: unset;
-						top: 3rem;
-						right: -1rem;
-						filter: blur(150px);
-					}
-				}
-			}
-		}
+		// .card {
+		// 	width: 100%;
+		// 	background-color: rgba($col-white, 0.05);
+		// 	border-radius: 1.5rem;
+		// 	overflow: hidden;
+		// 	padding: 3.2rem;
+		// 	position: relative;
+		// 	margin-top: 3.6rem;
+		// 	height: 36.4rem;
+		// 	@include flex();
+		// 	flex-direction: column;
+		// 	border: 0.1rem solid rgba($col-white, 0.1);
+		// 	.details {
+		// 		h3 {
+		// 			font-size: 3rem;
+		// 			line-height: 3.3rem;
+		// 			font-weight: 700;
+		// 			font-family: $font-gothic-bold;
+		// 			color: #fff;
+		// 			margin-bottom: 2rem;
+		// 		}
+		// 	}
+		// 	.button {
+		// 		margin-top: auto;
+		// 		justify-self: flex-end;
+		// 	}
+		// 	.grad {
+		// 		background-color: #13361b;
+		// 		width: 36.6rem;
+		// 		height: 36.6rem;
+		// 		filter: blur(120px);
+		// 		position: absolute;
+		// 		left: 0;
+		// 		z-index: -1;
+		// 	}
+		// }
+		// .large_row {
+		// 	.card {
+		// 		height: 53.3rem;
+		// 		&:last-child {
+		// 			.grad {
+		// 				display: none;
+		// 			}
+		// 		}
+		// 		&:nth-child(2) {
+		// 			.grad {
+		// 				top: -1rem;
+		// 				left: -2rem;
+		// 			}
+		// 		}
+		// 		&:nth-child(3) {
+		// 			.grad {
+		// 				top: 8rem;
+		// 				left: -2rem;
+		// 			}
+		// 		}
+		// 	}
+		// }
+		// .small_row {
+		// 	.card {
+		// 		&:last-child {
+		// 			height: 30.2rem;
+		// 			.grad {
+		// 				display: none;
+		// 			}
+		// 		}
+		// 		&:nth-child(1) {
+		// 			.grad {
+		// 				left: unset;
+		// 				top: 11rem;
+		// 				right: -1rem;
+		// 				filter: blur(150px);
+		// 			}
+		// 		}
+		// 		&:nth-child(2) {
+		// 			.grad {
+		// 				left: unset;
+		// 				top: -2rem;
+		// 				right: -1rem;
+		// 				filter: blur(150px);
+		// 			}
+		// 		}
+		// 		&:nth-child(3) {
+		// 			.grad {
+		// 				left: unset;
+		// 				top: 3rem;
+		// 				right: -1rem;
+		// 				filter: blur(150px);
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 	.divider,
 	.divider1 {
@@ -134,12 +134,25 @@
 	.divider1 {
 		margin-block: 3.6rem;
 	}
+
 	@include screenMax("tablet") {
 		.section_container {
+			padding-inline: 1.6rem;
+			padding-block: 2.4rem;
 			.row {
 				grid-template-columns: 100%;
 			}
-			padding-inline: 1.6rem;
+			.text {
+				h2 {
+					font-size: 3.6rem;
+					line-height: 4.4rem;
+					margin-bottom: 2.4rem;
+				}
+				h3, span {
+					font-size: 2.4rem;
+					line-height: 3.2rem;
+				}
+			}
 			.card {
 				padding: 2rem;
 				height: auto !important;
@@ -155,6 +168,29 @@
 				.grad {
 					display: none !important;
 				}
+			}
+			.divider1 {
+				margin-block: 2.4rem;
+			}
+		}
+	}
+
+	@include screenMax("mobile") {
+		.section_container {
+			padding: 1.6rem;
+			.text {
+				h2 {
+					font-size: 2.2rem;
+					line-height: 2.8rem;
+					margin-bottom: 1.6rem;
+				}
+				h3, span {
+					font-size: 1.8rem;
+					line-height: 2.4rem;
+				}
+			}
+			.divider1 {
+				margin-block: 0.8rem;
 			}
 		}
 	}
