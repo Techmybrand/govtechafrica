@@ -1,5 +1,5 @@
+import { CloudServices } from "@/components";
 
-
-export default function CloudServices() {
-    return <h1>CloudServices</h1>
+export default function CloudServicesPage() {
+    return <CloudServices />
 }

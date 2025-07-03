@@ -1,5 +1,5 @@
-
+import { Cybersecurity } from "@/components";
 
 export default function CybersecurityPage() {
-    return <h1>Cybersecurity</h1>
+    return <Cybersecurity />
 }

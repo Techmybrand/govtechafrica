@@ -1,8 +1,10 @@
 import NotFound from "./404/NotFound";
 import CapacityBuilding from "./CapacityBuilding/CapacityBuilding";
 import Careers from "./Careers/Careers";
+import CloudServices from "./CloudServices/CloudServices";
 import Compliance from "./Compliance/Compliance";
 import CustomisedSoftware from "./CustomisedSoftware/CustomisedSoftware";
+import Cybersecurity from "./Cybersecurity/Cybersecurity";
 import DataAndAI from "./DataAndAI/DataAndAI";
 import InfrastructureProcurement from "./InfrastructureProcurement/InfrastructureProcurement";
 import NetworkInfrastructure from "./NetworkInfrastructure/NetworkInfrastructure";
@@ -25,5 +27,7 @@ export {
     DataAndAI,
     CustomisedSoftware,
     StrategyConsulting,
-
+    CloudServices,
+    Cybersecurity,
+    
 }

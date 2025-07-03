@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './Centerpiece.module.scss';
 import { CenterpieceProps } from '@/interfaces';
+import styles from './Centerpiece.module.scss';
 
 const Centerpiece = ({ text }: CenterpieceProps) => {
   return (
