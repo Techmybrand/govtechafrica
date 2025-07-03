@@ -15,13 +15,8 @@ const TechnologyCard = ({technology, index, cardType}: TechnologyCardProps) => {
         setIsHover(false);
     };
   return (
-    <div
-        id={technology.id}
-        className={styles.card}
-        data-active={isHover}
-        onMouseEnter={onHover}
-        onMouseLeave={offHover}
-        data-card={technology.id}
+    <div id={technology.id} className={styles.card} data-active={isHover} data-card={technology?.id}
+        onMouseEnter={onHover} onMouseLeave={offHover}
     >
         <div className={styles.card_content}>
             <div className={styles.details}>
@@ -31,14 +26,13 @@ const TechnologyCard = ({technology, index, cardType}: TechnologyCardProps) => {
                 <div className={styles.details}>
                     <p>{technology.description}</p>
                 </div>
-
             ) : (
                 <div data-image={technology.id} className={`${styles.card_image}`}>
                     <Image alt="image" fill src={technology?.image} />
                 </div>
             )}
         </div>
-        {/* <div className={styles.grad}></div> */}
+
         {(isHover && cardType === 'technology') && (
             <Link href={technology.href}>
                 <Button className={styles.button}>
