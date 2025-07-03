@@ -5,17 +5,26 @@
 		padding: 3.6rem;
 		max-width: $max-width;
 		margin-inline: auto;
-		.image,
-		.image_mob {
-			position: relative;
-			width: 100%;
-			height: 35.4rem;
-			margin-block: 3.6rem;
+		.image_and_text {
+			display: flex;
+			align-items: center;
+			gap: 3.2rem;
+			.image,
+			.image_mob {
+				position: relative;
+				width: 60%;
+				height: 35.4rem;
+				margin-block: 3.6rem;
+				flex-shrink: 0;
+				& > img {
+					object-fit: cover;
+				}
+			}
+			.image_mob {
+				display: none;
+			}
 		}
-		.image_mob {
-			display: none;
-		}
-		.text {
+		.text, .text_ {
 			h3,
 			span {
 				font-size: 3rem;
@@ -26,6 +35,9 @@
 			span {
 				color: #fff;
 			}
+		}
+		.text_ {
+			display: none;
 		}
 	}
 	.divider {
@@ -39,17 +51,48 @@
 			.grid {
 				overflow-x: scroll;
 			}
-			.image_mob {
-				height: 30rem;
-				display: block;
-			}
-			.image {
-				display: none;
+			.image_and_text {
+				gap: 2.4rem;
+				.image_mob {
+					width: 100%;
+					height: 30rem;
+					display: block;
+					margin-block: 2.4rem;
+				}
+				.image {
+					display: none;
+				}
 			}
 			.text {
-				h2 {
+				h3 {
 					font-size: 6rem;
 					line-height: 7.3rem;
+				}
+			}
+		}
+	}
+
+	@include screenMax('mobile') {
+		.section_container {
+			.image_and_text {
+				gap: 1.6rem;
+				flex-direction: column;
+				.image_mob {
+					margin-block: 1.6rem;
+				}
+			}
+			.text, .text_ {
+				h3, span {
+					font-size: 1.8rem;
+					line-height: 2.4rem;
+				}
+			}
+			.text_ {
+				display: block;
+			}
+			.text {
+				.h3, br {
+					display: none;
 				}
 			}
 		}

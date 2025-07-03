@@ -130,6 +130,7 @@ const LinkItem = ({
 		if (!collapsed) {
 			handleActiveLink("");
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [collapsed]);
 	return (
 		<li className={styles.header_navLink} data-active={isActive}>

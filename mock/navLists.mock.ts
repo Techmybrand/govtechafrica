@@ -15,49 +15,49 @@ export const navLinks: NavLink[] = [
 				menu: [
 					{
 						label: "Customised Software Solutions",
-						href: "/what-we-do",
+						href: "/customised-software-solutions",
 						id: "customised",
 						icon: "/svgs/link-user.svg",
 						external: false
 					},
 					{
 						label: "Cybersecurity",
-						href: "/what-we-do",
+						href: "/cybersecurity",
 						id: "cybersecurity",
 						icon: "/svgs/link-user.svg",
 						external: false
 					},
 					{
 						label: "Cloud Services",
-						href: "/what-we-do",
+						href: "/cloud-services",
 						id: "cloud",
 						icon: "/svgs/link-user.svg",
 						external: false
 					},
 					{
 						label: "Data and AI",
-						href: "/what-we-do",
+						href: "/data-and-ai",
 						id: "data",
 						icon: "/svgs/link-ai.svg",
 						external: false
 					},
 					{
 						label: "Network Infrastructure Design & Implementation",
-						href: "/what-we-do",
+						href: "/network-infrastructure",
 						id: "network",
 						icon: "/svgs/link-user.svg",
 						external: false
 					},
 					{
 						label: "Web3 & Blockchain Technology",
-						href: "/what-we-do",
+						href: "/web3-and-blockchain",
 						id: "web3",
 						icon: "/svgs/link-user.svg",
 						external: false
 					},
 					{
 						label: "IT Support Services (Remote support & Maintenance)",
-						href: "/what-we-do",
+						href: "/support-services",
 						id: "it",
 						icon: "/svgs/link-user.svg",
 						external: false
@@ -72,35 +72,35 @@ export const navLinks: NavLink[] = [
 				menu: [
 					{
 						label: "IT strategy consulting & advisory",
-						href: "/what-we-do",
+						href: "/strategy-consulting-and-advisory",
 						id: "strategy",
 						icon: "/svgs/link-user.svg",
 						external: false
 					},
 					{
 						label: "IT infrastructure procument & supply",
-						href: "/what-we-do",
+						href: "/infrastructure-procurement-and-supply",
 						id: "infrastructure",
 						icon: "/svgs/link-user.svg",
 						external: false
 					},
 					{
 						label: "IT compliance & regulatory consulting",
-						href: "/what-we-do",
+						href: "/compliance-and-regulatory-consulting",
 						id: "compliance",
 						icon: "/svgs/link-user.svg",
 						external: false
 					},
 					{
 						label: "capacity building & Trainings",
-						href: "/what-we-do",
+						href: "/capacity-building-and-trainings",
 						id: "capacity",
 						icon: "/svgs/link-ai.svg",
 						external: false
 					},
 					{
 						label: "tech events design & delivery",
-						href: "/what-we-do",
+						href: "/tech-events",
 						id: "tech",
 						icon: "/svgs/link-user.svg",
 						external: false

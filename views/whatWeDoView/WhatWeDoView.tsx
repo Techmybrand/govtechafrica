@@ -1,4 +1,5 @@
-import { Consulting, Technology, Insights } from "@/components/whatWeDo";
+import { Insights } from "@/components/home";
+import { Consulting, Technology } from "@/components/whatWeDo";
 import { Hero } from "@/shared";
 import React from "react";
 

@@ -67,9 +67,10 @@
 		height: 2rem;
 		background-color: rgba(255, 255, 255, 0.05);
 	}
+
 	@include screenMax("tablet") {
 		.section_container {
-			padding: 2rem;
+			padding: 3.6rem 2.4rem;
 			.text {
 				h2 {
 					font-size: 5.6rem;
@@ -77,7 +78,22 @@
 				}
 			}
 			.card {
-				padding: 2rem;
+				padding: 2.4rem;
+			}
+		}
+	}
+
+	@include screenMax('mobile') {
+		.section_container {
+			padding: 2rem;
+			.text {
+				h2 {
+					font-size: 3.6rem;
+					line-height: 4.4rem;
+				}
+			}
+			.card {
+				padding: 1.6rem;
 			}
 		}
 	}

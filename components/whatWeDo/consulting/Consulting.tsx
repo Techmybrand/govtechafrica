@@ -1,39 +1,45 @@
 import React from "react";
-import { Button } from "@/shared";
+import { TechnologyCard } from "@/shared";
+import { TechnologyProps } from "@/interfaces";
 import styles from "./Consulting.module.scss";
 
 const consulting = [
 	{
 		title: "IT Infrastructure Procurement & Supply",
+		image: '/svgs/infrastructure.svg',
 		description: "We empower African governments with the right infrastructure",
-		href: "#",
-		id: "infrastructure"
+		href: "/infrastructure-procurement-and-supply",
+		id: "infrastructure",
 	},
 	{
 		title: "Capacity Building & Trainings",
+		image: '/svgs/capacity.svg',
 		description:
 			"We equip government stakeholders with the skills and tools they need to drive meaningful change and innovation.",
-		href: "#",
-		id: "capacity"
+		href: "/capacity-building-and-trainings",
+		id: "capacity",
 	},
 	{
 		title: "Tech Events Design and Delivery",
+		image: '/svgs/tech.svg',
 		description:
 			"We connect Industry stakeholders for brainstorming & knowledge sharing",
-		href: "#",
-		id: "tech"
+		href: "/tech-events",
+		id: "tech",
 	},
 	{
 		title: "IT Strategy Consulting & Advisory",
+		image: '/svgs/strategy.svg',
 		description: "We guide governments toward smarter, more effective tech solutions",
-		href: "#",
-		id: "strategy"
+		href: "/strategy-consulting-and-advisory",
+		id: "strategy",
 	},
 	{
 		title: "IT Compliance & Regulatory Consulting",
+		image: '/svgs/compliance.svg',
 		description:
 			"Compliance is key. We ensure government IT systems stay secure, compliant, and future-ready",
-		href: "#",
+		href: "/compliance-and-regulatory-consulting",
 		id: "compliance"
 	}
 ];
@@ -55,27 +61,19 @@ const Consulting = () => {
 				<div className={styles.divider1}></div>
 				<div className={styles.row}>
 					<div className={styles.large_row}>
-						{consulting.slice(0, 2).map(consult => (
-							<div key={consult.id} id={consult.id} className={styles.card}>
-								<div className={styles.grad}></div>
-								<div className={styles.details}>
-									<h3>{consult.title}</h3>
-									<p>{consult.description}</p>
-								</div>
-								<Button className={styles.button}>Explore</Button>
-							</div>
+						{consulting.slice(0, 2).map((consult: TechnologyProps) => (
+							<TechnologyCard key={consult.id}
+								cardType="consulting"
+								technology={consult}
+							/>
 						))}
 					</div>
 					<div className={styles.small_row}>
-						{consulting.slice(2).map(consult => (
-							<div key={consult.id} id={consult.id} className={styles.card}>
-								<div className={styles.grad}></div>
-								<div className={styles.details}>
-									<h3>{consult.title}</h3>
-									<p>{consult.description}</p>
-								</div>
-								<Button className={styles.button}>Explore</Button>
-							</div>
+						{consulting.slice(2).map((consult: TechnologyProps) => (
+							<TechnologyCard key={consult.id}
+								cardType="consulting"
+								technology={consult}
+							/>
 						))}
 					</div>
 				</div>

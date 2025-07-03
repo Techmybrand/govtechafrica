@@ -38,4 +38,15 @@
 		opacity: 0.5;
 		cursor: not-allowed;
 	}
+
+	@include screenMax("mobile") {
+		p {
+			font-size: 1.6rem;
+			line-height: 2.4rem;
+		}
+		.button_icon {
+			width: 3.2rem;
+			height: 3.2rem;
+		}
+	}
 }

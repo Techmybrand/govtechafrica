@@ -4,28 +4,23 @@ import styles from "./Mission.module.scss";
 const values = [
 	{
 		title: "Innovation",
-		description:
-			"We embrace innovation and creativity as catalysts for positive change and  continuous improvement."
+		description: "We embrace innovation and creativity as catalysts for positive change and  continuous improvement."
 	},
 	{
 		title: "Integrity",
-		description:
-			"We uphold the highest standards of integrity, transparency, and ethical  conduct in all our interactions."
+		description: "We uphold the highest standards of integrity, transparency, and ethical  conduct in all our interactions."
 	},
 	{
 		title: "Collaboration",
-		description:
-			"We believe in the power of collaboration and partnerships to achieve shared  goals and drive collective impact."
+		description: "We believe in the power of collaboration and partnerships to achieve shared  goals and drive collective impact."
 	},
 	{
 		title: "Empowerment",
-		description:
-			"We are committed to empowering governments and citizens with the tools  and knowledge they need to thrive in today’s digital age."
+		description: "We are committed to empowering governments and citizens with the tools  and knowledge they need to thrive in today’s digital age."
 	},
 	{
 		title: "Impact",
-		description:
-			"We measure our success by the impact we create, both in terms of tangible  outcomes and positive societal change."
+		description: "We measure our success by the impact we create, both in terms of tangible  outcomes and positive societal change."
 	}
 ];
 

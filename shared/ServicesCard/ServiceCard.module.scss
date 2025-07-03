@@ -1,0 +1,84 @@
+@import "@/styles/imports";
+
+.services_card {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 6rem;
+    gap: 3.6rem;
+    &[data-web = "reverse"] {
+        flex-direction: row-reverse;
+    }
+    .image {
+        position: relative;
+        width: 50%;
+        height: 43.6rem;
+        & > img {
+            object-fit: cover;
+            border-radius: 1.6rem;
+        }
+    }
+    .text {
+        width: 50%;
+        h3 {
+            font-size: 4rem;
+            line-height: 5.2rem;
+            font-family: $font-gothic-bold;
+            color: #FFF;
+            margin-bottom: 2.2rem;
+        }
+        span {
+            display: block;
+            width: 5rem;
+            height: 0.5rem;
+            background: #00FF8C;
+            margin: -0.5rem 0 2.4rem;
+        }
+        p {
+            font-size: 2.2rem;
+            line-height: 2.8rem;
+            color: #FFF;
+            font-weight: 400;
+        }
+    }
+
+    @include screenMax('tablet') {
+        gap: 2.4rem;
+        margin-bottom: 3.6rem;
+        .image {
+            height: 38rem;
+        }
+        .text {
+            h3 {
+                font-size: 3.6rem;
+                line-height: 4.4rem;
+            }
+            p {
+                font-size: 2rem;
+            }
+        }
+    }
+    @include screenMax('mobile') {
+        gap: 1.6rem;
+        margin-bottom: 2.4rem;
+        flex-direction: column;
+        &[data-mob = "reverse"] {
+            flex-direction: column-reverse;
+        }
+        .image {
+            width: 100%;
+            height: 35rem;
+        }
+        .text {
+            width: 100%;
+            h3 {
+                font-size: 2.4rem;
+                line-height: 3.6rem;
+            }
+            p {
+                font-size: 1.4rem;
+                line-height: 2.4rem;
+            }
+        }
+    }
+}

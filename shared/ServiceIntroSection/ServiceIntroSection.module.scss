@@ -1,0 +1,125 @@
+@import "@/styles/imports";
+
+.intro_section {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    .top_section, .bottom_section {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        .text {
+            h1 {
+                color: #FFF;
+                font-size: 7.2rem;
+                line-height: 8rem;
+                font-family: $font-gothic-bold;
+                margin-bottom: 1.6rem;
+                text-transform: capitalize;
+            }
+            h3 {
+                font-weight: 400;
+                color: #FFF;
+                font-size: 2.2rem;
+                line-height: 2.8rem;
+            }
+            .subtext {
+                width: 53rem;
+            }
+            .sec {
+                margin-top: 2.4rem;
+            }
+        }
+        .top_image {
+            position: relative;
+            width: 65rem;
+            height: 47rem;
+            & > img {
+                object-fit: cover;
+            }
+        }
+        .bottom_image {
+            position: relative;
+            width: 62rem;
+            height: 43rem;
+            & > img {
+                object-fit: cover;
+            }
+        }
+    }
+    .top_section {
+        .text {
+            width: 80%;
+        }
+    }
+    .bottom_section {
+        margin-block: 6rem;
+    }
+
+    @include screenMax("tablet") {
+        .top_section, .bottom_section {
+            .text {
+                h1 {
+                    font-size: 4.4rem;
+                    line-height: 5.6rem;
+                }
+                h3 {
+                    font-size: 2rem;
+                }
+                .subtext {
+                    width: 45rem;
+                }
+            }
+            .top_image, .bottom_image {
+                height: 38rem;
+                width: 50rem;
+            }
+        }
+        .bottom_section {
+            margin-block: 4.8rem;
+            .text {
+                h3 {
+                    width: 45rem;
+                }
+            }
+        }
+    }
+
+    @include screenMax("mobile") {
+        .top_section, .bottom_section {
+            flex-direction: column;
+            justify-content: unset;
+            gap: 1.6rem;
+            .text {
+                width: 100%;
+                h1 {
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                }
+                h3 {
+                    font-size: 1.4rem;
+                    line-height: 2.4rem;
+                    width: 100%;
+                }
+                .subtext {
+                    width: 99%;
+                }
+                .sec {
+                    margin-top: 1.6rem;
+                }
+            }
+            .top_image, .bottom_image {
+                height: 30rem;
+                width: 100%;
+                // & > img {
+                //     object-fit: contain;
+                // }
+            }
+        }
+        .bottom_section {
+            flex-direction: column-reverse;
+            margin: 1.6rem 0 2.4rem;
+        }
+    }
+}

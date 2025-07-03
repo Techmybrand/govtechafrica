@@ -1,0 +1,53 @@
+@import "@/styles/imports";
+
+.centerpiece_section {
+    width: 100vw;
+    margin: 0 -3.6rem 6rem;
+    background: #00BE4D;
+    .centerpiece_container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10rem 0 14rem;
+        .text_wrapper {
+            margin: 0 auto;
+            width: 72rem;
+            h3 {
+                font-family: $font-gothic-bold;
+                font-size: 2.4rem;
+                line-height: 3.6rem;
+                color: #000;
+                text-align: center;
+            }
+        }
+    }
+
+    @include screenMax("tablet") {
+        margin: 0 -2.4rem 4rem;
+        .centerpiece_container {
+            .text_wrapper {
+                width: 65rem;
+                h3 {
+                    font-size: 2rem;
+                    line-height: 2.8rem;
+                }
+            }
+        }
+    }
+    
+    @include screenMax("mobile") {
+        margin: 0 -1.6rem 3.2rem;
+        .centerpiece_container {
+            padding: 6.4rem 3.2rem;
+            .text_wrapper {
+                width: 100%;
+                h3 {
+                    font-size: 1.8rem;
+                    line-height: 2.4rem;
+                }
+            }
+        }
+    }
+}
