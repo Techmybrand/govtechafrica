@@ -19,12 +19,10 @@
 	}
 	a {
 		.header_logoContainer {
-			// width: 21.6rem;
 			transition: $all-transition;
 		}
 	}
 	.header_nav {
-		// min-width: 35%;
 		margin-left: auto;
 		.header_navList {
 			@include flex(space-between, center, nowrap);
@@ -34,7 +32,6 @@
 			margin: 0;
 			background-color: rgba($col-white, 0.05);
 			.header_navLink {
-				// margin: 0 2.5rem;
 				position: relative;
 				background-color: rgba($col-white, 0.1);
 				@include flex(flex-start, center);
@@ -61,33 +58,23 @@
 					cursor: pointer;
 				}
 				.subMenu_container {
-					// position: fixed;
-					// top: 9.7rem;
-					// right: 10rem;
-					// z-index: -1;
-					// opacity: 0;
-					// pointer-events: none;
-					// transform: translateY(-10%);
-					// visibility: hidden;
-
 					top: 100%;
 					left: 0;
 					position: absolute;
-
 					display: none;
-
 					transition: opacity 0.3s ease, transform 0.3s ease,
-						visibility 0.3s ease;
+					visibility 0.3s ease;
 					max-height: 50rem;
 					min-width: 40.4rem;
-					background-color: #13361b;
+					// background-color: #13361b;
+					background-color: #12351A;
 					border: 0.2rem solid rgba($col-white, 0.2);
-					border-radius: 2rem;
+					// border-radius: 2rem;
 					overflow-y: scroll;
 					@include noScrollBar;
 					.subMenu {
 						width: 100%;
-						padding: 0.5rem;
+						padding: 1.6rem;
 						z-index: 1;
 						position: relative;
 						transition: $all-transition;
@@ -98,12 +85,12 @@
 							margin-bottom: 4rem;
 							h1 {
 								@extend %title-28;
-								color: #1b1e21;
+								color: #1B1E21;
 								margin-bottom: 0.6rem;
 							}
 							p {
 								@extend %text-14;
-								color: #4b525a;
+								color: #4B525A;
 							}
 						}
 						.subMenu_navlist {
@@ -112,15 +99,15 @@
 							gap: 0.5rem;
 							h2 {
 								font-weight: 500;
-								color: #fff;
-								font-size: 1.4rem;
+								color: #FFF;
+								font-size: 1.8rem;
 								text-transform: uppercase;
 							}
 							.subMenu_link {
 								@include flex(space-between, center, nowrap);
 								gap: 0.5rem;
 								padding: 1rem;
-								background-color: rgba($col-white, 0.1);
+								// background-color: rgba($col-white, 0.1);
 								border-radius: 5rem;
 								width: 100%;
 								cursor: pointer;
@@ -132,14 +119,15 @@
 									flex-shrink: 0;
 								}
 								p {
-									color: #fff;
+									color: #FFF;
 								}
 							}
 							.sub_list {
 								@include flex();
 								flex-direction: column;
 								gap: 0.5rem;
-								padding-left: 4rem;
+								// padding-left: 4rem;
+								padding-left: 0;
 								width: 100%;
 								.subMenu_link {
 									p {
@@ -154,6 +142,7 @@
 										top: calc(50% - 0.5rem);
 										left: -3rem;
 										background-color: rgba($col-white, 0.1);
+										display: none;
 									}
 								}
 							}
@@ -184,13 +173,7 @@
 				&:hover {
 					.subMenu_container {
 						display: block;
-						// opacity: 1;
-						// transform: translateY(0);
-						// visibility: visible;
-						// pointer-events: all;
-						// backdrop-filter: blur(8px);
 						.subMenu {
-							// transform: translateY(0);
 							transition: $all-transition;
 						}
 					}

@@ -1,11 +1,10 @@
 "use client";
-
-import Link from "next/link";
-import styles from "./Footer.module.scss";
-import Image from "next/image";
 import { footerNavLink, socialMediaLinks } from "@/mock/navLists.mock";
 import Logo from "../logo/Logo";
 import { NavLink } from "@/interfaces";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./Footer.module.scss";
 
 const date = new Date();
 const year = date.getFullYear();

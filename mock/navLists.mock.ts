@@ -203,12 +203,12 @@ export const footerNavLink: NavLink[] = [
 			{
 				label: "Contact Us",
 				icon: "/svgs/link-main.svg",
-				href: "#"
+				href: "/contact"
 			},
 			{
 				label: "Careers",
 				icon: "/svgs/link-user.svg",
-				href: "#"
+				href: "/careers"
 			},
 			{
 				label: "About us",

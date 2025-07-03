@@ -23,6 +23,14 @@
     &[data-card = "cybersecurity"], &[data-card = "tech"] {
         height: 30.6rem;
     }
+    // &[data-active = "true"] {
+    //     .card_content {
+    //         .details {
+    //             position: relative;
+    //         }
+            
+    //     }
+    // }
     .card_content {
         .details {
             position: relative;
@@ -35,7 +43,6 @@
                 color: #fff;
                 margin-bottom: 2rem;
             }
-            
         }
         .card_image {
             position: relative;
@@ -132,7 +139,7 @@
             }
         }
         .grad {
-            display: none !important;
+            display: none!important;
         }
     }
 
