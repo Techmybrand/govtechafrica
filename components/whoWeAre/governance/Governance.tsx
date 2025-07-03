@@ -1,7 +1,10 @@
+'use client';
 import { Button } from "@/shared";
+import { useRouter } from "next/navigation";
 import styles from "./Governance.module.scss";
 
 const Governance = () => {
+	const router = useRouter();
 	return (
 		<div className={styles.section} id="team">
 			<div className={styles.section_container}>
@@ -26,7 +29,9 @@ const Governance = () => {
 							technology
 						</p>
 					</div>
-					<Button className={styles.button}>Visit</Button>
+					<Button onClick={() => router.push('/teams')} className={styles.button}>
+						Visit
+					</Button>
 				</div>
 				<div className={styles.grad_1}></div>
 				<div className={styles.grad_2}></div>

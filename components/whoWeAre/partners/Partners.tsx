@@ -1,5 +1,6 @@
-// import Image from "next/image";
+'use client';
 import { Button, Carousel } from "@/shared";
+import { useRouter } from "next/navigation";
 import styles from "./Partners.module.scss";
 
 const Partners = () => {
@@ -13,6 +14,7 @@ const Partners = () => {
 		'/images/logo-3.png',
 		'/images/logo-4.png',
   	]
+	const router = useRouter();
 	return (
 		<div className={styles.section} id="partners">
 			<div className={styles.section_container}>
@@ -23,7 +25,9 @@ const Partners = () => {
 								Our <span>Partners</span>
 							</h3>
 						</div>
-						<Button className={styles.button}>Explore Partners</Button>
+						<Button onClick={() => router.push('/partners')} className={styles.button}>
+							Explore Partners
+						</Button>
 					</div>
 					<Carousel items={items} direction='left' speed='slow' />
 				</div>
