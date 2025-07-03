@@ -4,11 +4,22 @@ import { shortenTitle } from "@/utils/stringShortner";
 import { useRouter } from "next/navigation";
 import styles from "./Insights.module.scss";
 
-const insightList = [
+interface insightProps {
+	title: string
+	description: string
+	href?: string
+	image: string
+}
+
+const insightList: insightProps[] = [
 	{
 		title: "Converged Cyber AI: A Paradigm Shift in Cybersecurity",
 		description:
-			"The advancement of generative AI capabilities presents enormous potential for modernizing government operations but it also introduces new security gaps. While automation allows developers to move from concept to minimum viable product faster than ever, adversaries are developing similar AI-enabled techniques to discover and exploit security vulnerabilities.",
+			`The advancement of generative AI capabilities presents enormous potential for 
+			modernizing government operations but it also introduces new security gaps. While 
+			automation allows developers to move from concept to minimum viable product faster 
+			than ever, adversaries are developing similar AI-enabled techniques to discover and 
+			exploit security vulnerabilities`,
 		href: "",
 		image: '/images/insight_image_1.jpg'
 	},
@@ -43,57 +54,8 @@ const Insights = ({isDivider}: Props) => {
 					<Button onClick={() => router.push('/insights')}>Explore</Button>
 				</div>
 				<div className={styles.slider_container}>
-					{/* <div className={styles.slider}>
-						<Swiper
-							slidesPerView={slides}
-							spaceBetween={32}
-							modules={[Autoplay]}
-							loop
-							autoplay={{
-								delay: 2500,
-								disableOnInteraction: false
-							}}
-						>
-							{insightList.map(insight => (
-								<SwiperSlide key={insight.title} className={styles.slide}>
-									<div className={styles.details}>
-										<h4>{shortenTitle(insight.title, 42)}</h4>
-										<p>
-											{shortenTitle(
-												insight.description,
-												slides === 2 ? 1000 : 100
-											)}
-										</p>
-									</div>
-									<Button>Explore</Button>
-								</SwiperSlide>
-							))}
-						</Swiper>
-					</div>
-					<div className={styles.slider}>
-						<Swiper
-							slidesPerView={largeSlides}
-							spaceBetween={32}
-							modules={[Autoplay]}
-							loop
-							autoplay={{
-								delay: 3000,
-								disableOnInteraction: false
-							}}
-						>
-							{insightList.map(insight => (
-								<SwiperSlide key={insight.title} className={styles.slide}>
-									<div className={styles.details}>
-										<h4>{shortenTitle(insight.title, 42)}</h4>
-										<p>{insight.description}</p>
-									</div>
-									<Button>Explore</Button>
-								</SwiperSlide>
-							))}
-						</Swiper>
-					</div> */}
-					{insightList.slice(0, 2).map(insight => (
-						<div key={insight.title} style={{backgroundImage: `url(${insight.image})`}}
+					{insightList.slice(0, 2).map((insight: insightProps, index: number) => (
+						<div data-index={index} key={insight.title} style={{backgroundImage: `url(${insight.image})`}}
 							className={styles.slide}>
 							<div className={styles.details}>
 								<h4>{shortenTitle(insight.title, 42)}</h4>

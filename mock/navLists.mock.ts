@@ -124,13 +124,13 @@ export const navLinks: NavLink[] = [
 			{
 				label: "team",
 				icon: "/svgs/link-user.svg",
-				href: "/who-we-are",
+				href: "/teams",
 				id: "team"
 			},
 			{
 				label: "partners",
 				icon: "/svgs/link-user.svg",
-				href: "/who-we-are",
+				href: "/partners",
 				id: "partners"
 			},
 			{

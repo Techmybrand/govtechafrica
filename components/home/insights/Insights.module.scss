@@ -45,6 +45,17 @@
 					background-size: cover;
 					background-repeat: no-repeat;
 					background-position: 0 0;
+					&[data-index = "0"] {
+						.details {
+							transition: all 500ms ease-in-out;
+							p {
+								translate: -75% 0;
+							}
+						}
+						.card_btn {
+							translate: -75% 0;
+						}
+					}
 					.details {
 						transition: all 500ms ease-in-out;
 						h4 {
@@ -66,12 +77,6 @@
 						opacity: 0;
 						translate: 75% 0;
 					}
-					// &:nth-child(1) {
-					// 	background-color: rgba(255, 255, 255, 0.05);
-					// }
-					// &:nth-child(2) {
-					// 	background-color: #13361B;
-					// }
 					&:hover {
 						transition: all 0.5s ease-in-out;
 						.details {
@@ -87,12 +92,6 @@
 							translate: 0% 0;
 						}
 					}
-					// &:nth-child(odd) {
-					// 	background-color: rgba(255, 255, 255, 0.05);
-					// }
-					// &:nth-child(even) {
-					// 	background-color: #13361b;
-					// }
 				}
 			// }
 		}
