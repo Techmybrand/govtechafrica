@@ -11,9 +11,9 @@
     height: 36.4rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: 0.1rem solid rgba($col-white, 0.1);
     transition: all 400ms ease-in-out;
-    cursor: pointer;
     &[data-card = "customised"], &[data-card = "cloud"], &[data-card = "web3"] {
         height: 47.7rem;
     }
@@ -23,79 +23,84 @@
     &[data-card = "cybersecurity"], &[data-card = "tech"] {
         height: 30.6rem;
     }
-    .details {
-        position: relative;
-        transition: all 400ms ease-in-out;
-        h3 {
-            font-size: 3rem;
-            line-height: 3.3rem;
-            font-weight: 700;
-            font-family: $font-gothic-bold;
-            color: #fff;
-            margin-bottom: 2rem;
+    .card_content {
+        .details {
+            position: relative;
+            transition: all 400ms ease-in-out;
+            h3 {
+                font-size: 3rem;
+                line-height: 3.3rem;
+                font-weight: 700;
+                font-family: $font-gothic-bold;
+                color: #fff;
+                margin-bottom: 2rem;
+            }
+            
         }
-        
+        .card_image {
+            position: relative;
+            align-self: flex-end;
+            & > img {
+                object-fit: cover;
+            }
+            &[data-image = "customised"] {
+               width: 53rem;
+                height: 38rem;
+            }
+            &[data-image = "cloud"] {
+                width: 35.2rem;
+                height: 33.7rem;
+            }
+            &[data-image = "web3"] {
+                width: 42.8rem;
+                height: 34.4rem;
+            }
+            &[data-image = "cybersecurity"] {
+                width: 22rem;
+                height: 23rem;
+            }
+            &[data-image = "data"] {
+                width: 27rem;
+                height: 27rem;
+            }
+            &[data-image = "network"] {
+                width: 20rem;
+                height: 20rem;
+            }
+            &[data-image = "it"] {
+                width: 23.4rem;
+                height: 21.6rem;
+            }
+            &[data-image = "infrastructure"] {
+                width: 54.1rem;
+                height: 39.3rem;
+            }
+            &[data-image = "capacity"] {
+                width: 38.7rem;
+                height: 36.6rem;
+            }
+            &[data-image = "tech"] {
+                width: 39.4rem;
+                height: 24rem;
+            }
+            &[data-image = "strategy"] {
+                width: 36rem;
+                height: 26rem;
+            }
+            &[data-image = "compliance"] {
+                width: 41rem;
+                height: 22.6rem;
+            }
+        }
     }
-    .card_image {
-        position: relative;
-        align-self: flex-end;
-        & > img {
-            object-fit: cover;
+    a {
+        .button {
+            margin-top: auto;
+            justify-self: flex-start;
+            align-self: flex-end;
+            min-width: 15rem;
+            height: 5rem;
         }
-        &[data-image = "customised"] {
-           width: 53rem;
-            height: 38rem;
-        }
-        &[data-image = "cloud"] {
-            width: 35.2rem;
-            height: 33.7rem;
-        }
-        &[data-image = "web3"] {
-            width: 42.8rem;
-            height: 34.4rem;
-        }
-        &[data-image = "cybersecurity"] {
-            width: 22rem;
-            height: 23rem;
-        }
-        &[data-image = "data"] {
-            width: 27rem;
-            height: 27rem;
-        }
-        &[data-image = "network"] {
-            width: 20rem;
-            height: 20rem;
-        }
-        &[data-image = "it"] {
-            width: 23.4rem;
-            height: 21.6rem;
-        }
-        &[data-image = "infrastructure"] {
-            width: 54.1rem;
-            height: 39.3rem;
-        }
-        &[data-image = "capacity"] {
-            width: 38.7rem;
-            height: 36.6rem;
-        }
-        &[data-image = "tech"] {
-            width: 39.4rem;
-            height: 24rem;
-        }
-        &[data-image = "strategy"] {
-            width: 36rem;
-            height: 26rem;
-        }
-        &[data-image = "compliance"] {
-            width: 41rem;
-            height: 22.6rem;
-        }
-    }
-    .button {
-        margin-top: auto;
-        justify-self: flex-end;
-        width: 15rem;
-        height: 5rem;
     }
     .grad {
         background-color: #13361b;
@@ -113,14 +118,18 @@
     @include screenMax('tablet') {
         padding: 2.4rem;
         margin-top: 2.4rem;
-        .details {
-            h3 {
-                font-size: 2.2rem;
-                line-height: 2.8rem;
+        .card_content {
+            .details {
+                h3 {
+                    font-size: 2.2rem;
+                    line-height: 2.8rem;
+                }
             }
         }
-        .button {
-            margin-top: 1.8rem;
+        a {
+            .button {
+                margin-top: 1.8rem;
+            }
         }
         .grad {
             display: none !important;
@@ -138,17 +147,19 @@
             display: flex;
             flex-direction: column;
             gap: 1.6rem;
-            h3 {
-                font-size: 1.8rem;
-                line-height: 2.4rem;
-                font-family: $font-gothic-bold;
-                color: #FFF;
-            }
-            p {
-                font-size: 1.4rem;
-                line-height: 2rem;
-                font-family: $font-gothic;
-                color: #FFF;
+            .card_content {
+                h3 {
+                    font-size: 1.8rem;
+                    line-height: 2.4rem;
+                    font-family: $font-gothic-bold;
+                    color: #FFF;
+                }
+                p {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    font-family: $font-gothic;
+                    color: #FFF;
+                }
             }
             .button_mob {
                 width: 16rem;

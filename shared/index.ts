@@ -1,4 +1,5 @@
 import Button from "./button/Button";
+import Carousel from "./Carousel/Carousel";
 import Catalogue from "./Catalogue/Catalogue";
 import Centerpiece from "./Centerpiece/Centerpiece";
 import Footer from "./footer/Footer";
@@ -32,4 +33,5 @@ export {
     Catalogue,
     Partners,
     ServicesCard,
+    Carousel,
 };

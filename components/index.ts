@@ -8,8 +8,10 @@ import Cybersecurity from "./Cybersecurity/Cybersecurity";
 import DataAndAI from "./DataAndAI/DataAndAI";
 import InfrastructureProcurement from "./InfrastructureProcurement/InfrastructureProcurement";
 import NetworkInfrastructure from "./NetworkInfrastructure/NetworkInfrastructure";
+import PartnersComponent from "./PartnersPage/PartnersComponent";
 import StrategyConsulting from "./StrategyConsulting/StrategyConsulting";
 import SupportServices from "./SupportServices/SupportServices";
+import Teams from "./Teams/Teams";
 import TechEvents from "./TechEvents/TechEvents";
 import Web3 from "./Web3/Web3";
 
@@ -29,5 +31,7 @@ export {
     StrategyConsulting,
     CloudServices,
     Cybersecurity,
+    Teams,
+    PartnersComponent,
     
 }

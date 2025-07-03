@@ -15,12 +15,11 @@ const HomeView = () => {
 				button="Explore our solutions"
 				href="/"
 			/>
+			<Insights />
 			<Growth />
 			<Mission />
 			<Drivers />
 			<CenterPiece />
-			<Insights />
-			{/* <Choose /> */}
 			<Partners />
 			<div className={styles.divider}></div>
 		</>

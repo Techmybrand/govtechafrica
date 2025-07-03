@@ -1,5 +1,5 @@
-
+import { PartnersComponent } from "@/components";
 
 export default function PartnersPage() {
-    return <h1>Partners</h1>
+    return <PartnersComponent />
 }
