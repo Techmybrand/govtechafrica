@@ -161,13 +161,13 @@
 						}
 						p {
 							font-size: 1.4rem;
-							translate: 0% 0;
-							opacity: 1;
+							translate: unset!important;
+							opacity: unset;
 						}
 					}
 					.card_btn {
-						translate: 0% 0;
-						opacity: 1;
+						translate: unset!important;
+						opacity: unset;
 					}
 				}
 			}

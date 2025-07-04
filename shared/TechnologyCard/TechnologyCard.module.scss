@@ -8,29 +8,46 @@
     padding: 3.2rem;
     position: relative;
     margin-top: 3.6rem;
-    height: 36.4rem;
+    height: 38.4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 0.1rem solid rgba($col-white, 0.1);
     transition: all 400ms ease-in-out;
     &[data-card = "customised"], &[data-card = "cloud"], &[data-card = "web3"] {
-        height: 47.7rem;
+        height: 50.7rem;
     }
     &[data-card = "infrastructure"], &[data-card = "capacity"] {
-        height: 53.3rem;
+        height: 56.8rem;
     }
     &[data-card = "cybersecurity"], &[data-card = "tech"] {
-        height: 30.6rem;
+        height: 36.6rem;
     }
-    // &[data-active = "true"] {
-    //     .card_content {
-    //         .details {
-    //             position: relative;
-    //         }
+    &[data-active = "true"] {
+        .card_content {
+            .details {
+                position: relative;
+                p {
+                    transition: all 400ms ease-in-out;
+                    opacity: 1;
+                    translate: 0 0;
+                }
+            }
+            .card_image {
+                opacity: 0;
+                translate: -50% 0;
+                transition: all 400ms ease-in-out;
+            }
             
-    //     }
-    // }
+        }
+        a {
+            .button {
+                opacity: 1;
+                translate: 0% 0%;
+                transition: all 400ms ease-in-out;
+            }
+        }
+    }
     .card_content {
         .details {
             position: relative;
@@ -43,60 +60,70 @@
                 color: #fff;
                 margin-bottom: 2rem;
             }
+            p {
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+                color: #FFF;
+                font-weight: 500;
+                opacity: 0;
+                translate: 50% 0;
+            }
         }
         .card_image {
             position: relative;
             align-self: flex-end;
+            translate: 0 0;
+            opacity: 1;
             & > img {
                 object-fit: cover;
             }
             &[data-image = "customised"] {
                width: 53rem;
-                height: 38rem;
+                height: 28rem;
             }
             &[data-image = "cloud"] {
                 width: 35.2rem;
-                height: 33.7rem;
+                height: 23.7rem;
             }
             &[data-image = "web3"] {
                 width: 42.8rem;
-                height: 34.4rem;
+                height: 30.4rem;
             }
             &[data-image = "cybersecurity"] {
                 width: 22rem;
-                height: 23rem;
+                height: 16rem;
             }
             &[data-image = "data"] {
                 width: 27rem;
-                height: 27rem;
+                height: 16rem;
             }
             &[data-image = "network"] {
                 width: 20rem;
-                height: 20rem;
+                height: 13rem;
             }
             &[data-image = "it"] {
                 width: 23.4rem;
-                height: 21.6rem;
+                height: 14.6rem;
             }
             &[data-image = "infrastructure"] {
                 width: 54.1rem;
-                height: 39.3rem;
+                height: 29.3rem;
             }
             &[data-image = "capacity"] {
                 width: 38.7rem;
-                height: 36.6rem;
+                height: 24.6rem;
             }
             &[data-image = "tech"] {
                 width: 39.4rem;
-                height: 24rem;
+                height: 16rem;
             }
             &[data-image = "strategy"] {
-                width: 36rem;
-                height: 26rem;
+                width: 30rem;
+                height: 18rem;
             }
             &[data-image = "compliance"] {
                 width: 41rem;
-                height: 22.6rem;
+                height: 16.6rem;
             }
         }
     }
@@ -107,16 +134,9 @@
             align-self: flex-end;
             min-width: 15rem;
             height: 5rem;
+            opacity: 0;
+            translate: 50% 0;
         }
-    }
-    .grad {
-        background-color: #13361b;
-        width: 36.6rem;
-        height: 36.6rem;
-        filter: blur(120px);
-        position: absolute;
-        left: 0;
-        z-index: -1;
     }
     .details_mob {
         display: none;
@@ -153,24 +173,36 @@
         .details_mob {
             display: flex;
             flex-direction: column;
-            gap: 1.6rem;
-            .card_content {
-                h3 {
-                    font-size: 1.8rem;
-                    line-height: 2.4rem;
-                    font-family: $font-gothic-bold;
-                    color: #FFF;
+            gap: 7.5rem;
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+                .card_content {
+                    h3 {
+                        font-size: 1.8rem;
+                        line-height: 2.4rem;
+                        font-family: $font-gothic-bold;
+                        color: #FFF;
+                        margin-bottom: 1rem;
+                    }
+                    p {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                        font-weight: 400;
+                        color: #FFF;
+                    }
                 }
-                p {
-                    font-size: 1.4rem;
-                    line-height: 2rem;
-                    font-family: $font-gothic;
-                    color: #FFF;
+                a {
+                    width: fit-content;
+                    .button_mob {
+                        min-width: 10rem;
+                        height: 3.5rem;
+                        & > p {
+                            font-size: 1.4rem;
+                        }
+                    }
                 }
-            }
-            .button_mob {
-                width: 16rem;
-                height: 5rem;
             }
             .card_image_mob {
                 align-self: flex-end;
