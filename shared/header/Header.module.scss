@@ -38,11 +38,14 @@
 				gap: 0.5rem;
 				padding: 1rem;
 				border-radius: 5rem;
-				.link_icon,
+				.link_icon, .link_icon_sm,
 				.mob_chevron {
 					position: relative;
 					width: 1.6rem;
 					height: 1.6rem;
+				}
+				.link_icon_sm {
+					display: none;
 				}
 				.link_row {
 					@include flex(flex-start, center, nowrap);
@@ -65,11 +68,11 @@
 					transition: opacity 0.3s ease, transform 0.3s ease,
 					visibility 0.3s ease;
 					max-height: 50rem;
-					min-width: 40.4rem;
-					// background-color: #13361b;
-					background-color: #12351A;
+					min-width: 47rem;
+					background-color: #262626;
+					// background-color: #12351A;
 					border: 0.2rem solid rgba($col-white, 0.2);
-					// border-radius: 2rem;
+					border-radius: 1.6rem;
 					overflow-y: scroll;
 					@include noScrollBar;
 					.subMenu {
@@ -102,6 +105,16 @@
 								color: #FFF;
 								font-size: 1.8rem;
 								text-transform: uppercase;
+								&[data-label = "technology"], &[data-label = "consulting"] {
+									color: #00FF8C;
+								}
+
+								@include screenMax('mobile') {
+									font-size: 1.6rem;
+									&[data-label = "technology"], &[data-label = "consulting"] {
+										color: #FFF;
+									}
+								}
 							}
 							.subMenu_link {
 								@include flex(space-between, center, nowrap);
@@ -344,14 +357,14 @@
 				border-radius: unset;
 				overflow: unset;
 				.header_navLink {
-					// padding: 1.6rem;
 					margin: 0;
 					margin-bottom: 1.6rem;
 					@include flex(space-between, center);
-					max-height: 5rem;
+					max-height: 3.5rem;
 					overflow: hidden;
 					transition: all 0.5s ease-in-out;
-					border-radius: 1.5rem;
+					border-radius: 1.6rem;
+					background-color: #12351A;
 					width: 100%;
 					.link_row {
 						@include flex(space-between, center);
@@ -359,9 +372,15 @@
 						z-index: 1;
 						position: relative;
 						width: 100%;
-						margin-bottom: 2rem;
+						margin-bottom: 1rem;
+						p {
+							color: #00FF8C;
+						}
 					}
 					.link_icon {
+						display: none;
+					}
+					.link_icon_sm {
 						position: relative;
 						width: 2.4rem;
 						height: 2.4rem;
@@ -375,12 +394,10 @@
 						margin-right: 1.6rem;
 						transition: rotate 0.5s ease-in-out;
 					}
-					a,
-					p {
+					a, p {
 						font-family: $font;
 						font-size: 1.6rem;
 						transition: $all-transition;
-						// color: rgba(93, 94, 103, 1);
 					}
 					.subMenu_container {
 						display: block;
@@ -388,6 +405,7 @@
 						width: 100%;
 						height: auto;
 						padding: 0.5rem;
+						border: 0;
 						background-color: transparent;
 						backdrop-filter: unset;
 						pointer-events: auto;
@@ -463,6 +481,7 @@
 				}
 				.button_link {
 					width: 100%;
+					background: transparent;
 				}
 			}
 		}
