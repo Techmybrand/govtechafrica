@@ -21,7 +21,7 @@ const Teams = () => {
                   <h2>Toma Fortune</h2>
                   <p>Chairman</p>
                   <div className={styles.social}>
-                    <Image alt='' fill src='/svgs/linkedIn.svg' />
+                    <Image alt='' fill src='/svgs/linkedin.svg' />
                   </div>
                 </div>
                 <div className={styles.see_more}>
