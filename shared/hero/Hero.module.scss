@@ -134,6 +134,19 @@
 	}
 
 	@include screenMax('mobile') {
+		.hero_container {
+			.hero_background {
+				.hero_content {
+					.text {
+						p {
+							font-size: 1.6rem;
+							line-height: 2.4rem;
+							margin-top: 1rem;
+						}
+					}
+				}
+			}
+		}
 		.title {
 			h2 {
 				font-size: 2.4rem;
