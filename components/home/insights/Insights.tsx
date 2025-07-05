@@ -53,7 +53,9 @@ const Insights = ({isDivider}: Props) => {
 				</div>
 				<div className={styles.slider_container}>
 					{insightList.slice(0, 2).map((insight: insightProps, index: number) => (
-						<InsightsCard key={index} insight={insight} index={index} />
+						<InsightsCard key={index} index={index}
+							insight={insight}
+						/>
 					))}
 				</div>
 			</div>
