@@ -1,8 +1,6 @@
-import styles from "./Logo.module.scss";
 import React from "react";
-
 import Image from "next/image";
-
+import styles from "./Logo.module.scss";
 interface Props {
 	className?: string;
 }
@@ -16,7 +14,7 @@ const Logo = ({ className }: Props) => {
 				priority={true}
 				alt="Gear Up"
 				fill
-				sizes="100vw"
+				sizes="100%"
 				quality={100}
 			/>
 		</div>
