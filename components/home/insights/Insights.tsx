@@ -3,7 +3,6 @@ import { Button } from "@/shared";
 import { shortenTitle } from "@/utils/stringShortner";
 import { useRouter } from "next/navigation";
 import styles from "./Insights.module.scss";
-
 interface insightProps {
 	title: string;
 	description: string;

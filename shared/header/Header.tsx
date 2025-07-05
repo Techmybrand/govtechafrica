@@ -1,14 +1,12 @@
 "use client";
-
-import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
-import styles from "./Header.module.scss";
-import Image from "next/image";
 import { NavLink, NavLinkMenu, NavLinkSub } from "@/interfaces";
 import { navLinks } from "@/mock/navLists.mock";
-import Logo from "../logo/Logo";
-import Button from "../button/Button";
+import { Logo, Button } from "..";
 import { scrollTo } from "@/utils/scrollTo";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./Header.module.scss";
 
 enum Scroll {
 	Idle = "idle",
@@ -47,11 +45,8 @@ const Header = () => {
 	};
 
 	return (
-		<header
-			className={styles.header}
+		<header ref={headerRef} className={styles.header} data-scroll={scroll}
 			data-collapsed={!collapsed || scroll === Scroll.InitialScroll}
-			ref={headerRef}
-			data-scroll={scroll}
 		>
 			<div className={styles.container}>
 				<div className={styles.background}></div>
@@ -135,14 +130,16 @@ const LinkItem = ({
 	return (
 		<li className={styles.header_navLink} data-active={isActive}>
 			<div className={styles.link_row} onClick={() => handleActiveLink(link.label)}>
-				<p>{link.label}</p>
+				<p>{link?.label}</p>
 				<div className={styles.link_icon}>
 					<Image src="/svgs/arrow.svg" fill alt="" sizes="100vw" />
 				</div>
+				<div className={styles.link_icon_sm}>
+					<Image src="/svgs/green_arrow.svg" fill alt="" sizes="100vw" />
+				</div>
 			</div>
 			{link.subMenu && (
-				<div
-					className={styles.subMenu_container}
+				<div className={styles.subMenu_container}
 					data-active={link.label === "sell gears" || link.label === "rent out"}
 				>
 					<div className={styles.subMenu}>
@@ -153,7 +150,7 @@ const LinkItem = ({
 									className={styles.subMenu_link}
 									onClick={() => handleScroll(subMenu.id)}
 								>
-									<h2>{subMenu.label}</h2>
+									<h2 data-label={subMenu.label}>{subMenu.label}</h2>
 									<div className={styles.subMenu_icon}>
 										<Image
 											src={subMenu.icon}

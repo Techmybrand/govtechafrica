@@ -11,7 +11,7 @@ const Teams = () => {
         <h3>Our Executives</h3>
         <p>The minds and brains behind Govtech Africa</p>
         <div className={styles.teams_container}>
-          {[1, 2, 3, 4, 5, 6].map((item: number) =>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item: number) =>
             <div key={item} className={styles.team_card}>
               <div className={styles.image}>
                 <Image alt='image' fill src='/images/team.png' />
@@ -21,7 +21,7 @@ const Teams = () => {
                   <h2>Toma Fortune</h2>
                   <p>Chairman</p>
                   <div className={styles.social}>
-                    <Image alt='' fill src='/svgs/linkedIn.svg' />
+                    <Image alt='' fill src='/svgs/linkedin.svg' />
                   </div>
                 </div>
                 <div className={styles.see_more}>
