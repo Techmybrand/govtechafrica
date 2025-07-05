@@ -28,67 +28,6 @@
 			gap: 3.2rem;
 			padding-block: 3.2rem;
 			background-color: rgba(#BEF2bE, 0.05);
-			.slide {
-				border: 0.1rem solid rgba(255, 255, 255, 0.1);
-				border-radius: 1.5rem;
-				height: 38rem;
-				padding: 3.2rem 2rem;
-				display: flex;
-				align-items: flex-start;
-				flex-direction: column;
-				justify-content: space-between;
-				transition: all 500ms ease-in-out;
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-position: 0 0;
-				&[data-index = "0"] {
-					.details {
-						transition: all 500ms ease-in-out;
-						p {
-							translate: -75% 0;
-						}
-					}
-					.card_btn {
-						translate: -75% 0;
-					}
-				}
-				.details {
-					transition: all 500ms ease-in-out;
-					h4 {
-						font-size: 2.6rem;
-						line-height: 3.3rem;
-						font-weight: 700;
-						font-family: $font-gothic-bold;
-						color: #fff;
-						margin-bottom: 2.4rem;
-					}
-					p {
-						opacity: 0;
-						translate: 75% 0;
-						transition: all 0.5s ease-in-out;
-					}
-				}
-				.card_btn {
-					transition: all 500ms ease-in-out;
-					opacity: 0;
-					translate: 75% 0;
-				}
-				&:hover {
-					transition: all 0.5s ease-in-out;
-					.details {
-						p {
-							opacity: 1;
-							transition: all 0.5s ease-in-out;
-							translate: 0% 0;
-						}
-					}
-					.card_btn {
-						opacity: 1;
-						transition: all 0.5s ease-in-out;
-						translate: 0% 0;
-					}
-				}
-			}
 		}
 	}
 	.divider {
@@ -110,17 +49,6 @@
 				margin-top: 2.4rem;
 				overflow-x: hidden;
 				@include noScrollBar();
-				.slide {
-					width: 100%;
-					height: auto;
-					.details {
-						margin-bottom: 1.8rem;
-						p {
-							font-size: 1.8rem;
-							line-height: 2.3rem;
-						}
-					}
-				}
 			}
 		}
 	}
@@ -141,28 +69,6 @@
 				padding-block: 1.6rem;
 				margin-top: 1.6rem;
 				overflow-x: scroll;
-				.slide {
-					padding: 1.6rem;
-					flex-shrink: 0;
-					width: 85%;
-					height: auto;
-					.details {
-						h4 {
-							font-size: 1.8rem;
-							line-height: 2.4rem;
-							margin-bottom: 1.2rem;
-						}
-						p {
-							font-size: 1.4rem;
-							translate: unset!important;
-							opacity: unset;
-						}
-					}
-					.card_btn {
-						translate: unset!important;
-						opacity: unset;
-					}
-				}
 			}
 		}
 	}
