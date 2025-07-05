@@ -16,7 +16,7 @@ const Teams = () => {
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item: number) =>
             <div key={item} className={styles.team_card}>
               <div className={styles.image}>
-                <Image alt='image' fill src='/images/team.png' />
+                <Image alt='image' sizes='100%' fill src='/images/team.png' />
               </div>
               <div className={styles.info}>
                 <div className={styles.info_header}>
