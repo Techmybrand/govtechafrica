@@ -47,7 +47,9 @@ const Insights = ({isDivider}: Props) => {
 					<div className={styles.text}>
 						<h3>Insights</h3>
 					</div>
-					<Button onClick={() => router.push('/insights')}>Explore</Button>
+					<Button onClick={() => router.push('/insights')}>
+						Explore
+					</Button>
 				</div>
 				<div className={styles.slider_container}>
 					{insightList.slice(0, 2).map((insight: insightProps, index: number) => (
