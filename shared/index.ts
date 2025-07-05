@@ -6,6 +6,7 @@ import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import Hero from "./hero/Hero";
 import InputField from "./inputField/InputField";
+import InsightsCard from "./InsightsCard/InsightsCard";
 import Logo from "./logo/Logo";
 import Partners from "./Partners/Partners";
 import Searchbar from "./Searchbar/Searchbar";
@@ -34,4 +35,5 @@ export {
     Partners,
     ServicesCard,
     Carousel,
+    InsightsCard,
 };

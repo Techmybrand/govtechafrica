@@ -102,3 +102,15 @@ export interface ServiceCardProps {
   web_direction: 'normal' | 'reverse'
   mob_direction: 'normal' | 'reverse'
 }
+
+export interface insightProps {
+	title: string
+	description: string
+	href?: string
+	image: string
+	bgColor?: string
+}
+export interface insightCardProps {
+	insight: insightProps
+	index?: number
+}
