@@ -1,15 +1,17 @@
 import React from 'react';
 import { Insights } from '../home';
-import styles from './Teams.module.scss';
 import Image from 'next/image';
+import styles from './Teams.module.scss';
 
 const Teams = () => {
   return (
     <div className={styles.capacity_building_section}>
       <div className={styles.divider}></div>
       <div className={styles.capacity_building_content}>
-        <h3>Our Executives</h3>
-        <p>The minds and brains behind Govtech Africa</p>
+        <h3 className={styles.title}>Our Executives</h3>
+        <p className={styles.subtext}>
+          The minds and brains behind Govtech Africa
+        </p>
         <div className={styles.teams_container}>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item: number) =>
             <div key={item} className={styles.team_card}>
@@ -31,7 +33,7 @@ const Teams = () => {
             </div>
           )}
         </div>
-        <Insights isDivider={false}  />
+        <Insights isDivider={false} />
       </div>
       <div className={styles.divider_green}></div>
     </div>
