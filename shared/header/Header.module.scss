@@ -6,8 +6,9 @@
 	width: 100%;
 	transition: $all-transition;
 	z-index: 10;
-	background-color: $col-grey-700;
-	background-color: transparent;
+	// background-color: $col-grey-700;
+	// background-color: transparent;
+	background-color: rgba($col-white, 0.0);
 	.container {
 		padding: 3.6rem;
 		@include flex(space-between, center, nowrap);
@@ -30,7 +31,7 @@
 			padding: 0.5rem;
 			border-radius: 5.8rem;
 			margin: 0;
-			background-color: rgba($col-white, 0.05);
+			background-color: rgba($col-white, 0);
 			.header_navLink {
 				position: relative;
 				background-color: rgba($col-white, 0.1);
@@ -318,10 +319,12 @@
 		}
 	}
 	&[data-collapsed="true"] {
-		background-color: #12351a;
+		background-color: #12351A;
+		// background-color: rgba($col-white, 0.05);
 	}
 	&[data-scroll="initial"] {
-		background-color: #12351a;
+		background-color: #12351A;
+		// background-color: rgba($col-white, 0.05);
 	}
 	@include screenMax("tablet") {
 		.header_nav {

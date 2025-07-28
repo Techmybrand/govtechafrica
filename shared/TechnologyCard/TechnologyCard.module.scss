@@ -9,6 +9,7 @@
     position: relative;
     margin-top: 3.6rem;
     height: 38.4rem;
+    // min-height: 36.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -83,11 +84,11 @@
             }
             &[data-image = "cloud"] {
                 width: 35.2rem;
-                height: 23.7rem;
+                height: 34.5rem;
             }
             &[data-image = "web3"] {
                 width: 42.8rem;
-                height: 30.4rem;
+                height: 35rem;
             }
             &[data-image = "cybersecurity"] {
                 width: 22rem;
@@ -103,33 +104,33 @@
             }
             &[data-image = "it"] {
                 width: 23.4rem;
-                height: 14.6rem;
+                height: 21rem;
             }
             &[data-image = "infrastructure"] {
                 width: 54.1rem;
-                height: 29.3rem;
+                height: 37rem;
             }
             &[data-image = "capacity"] {
                 width: 38.7rem;
-                height: 24.6rem;
+                height: 35.5rem;
             }
             &[data-image = "tech"] {
                 width: 39.4rem;
-                height: 16rem;
+                height: 22rem;
             }
             &[data-image = "strategy"] {
                 width: 30rem;
-                height: 18rem;
+                height: 25rem;
             }
             &[data-image = "compliance"] {
                 width: 41rem;
-                height: 16.6rem;
+                height: 22rem;
             }
         }
     }
     a {
         .button {
-            margin-top: auto;
+            margin-top: -8rem;
             justify-self: flex-start;
             align-self: flex-end;
             min-width: 15rem;
@@ -155,7 +156,7 @@
         }
         a {
             .button {
-                margin-top: 1.8rem;
+                margin-top: -6.4rem;
             }
         }
         .grad {
