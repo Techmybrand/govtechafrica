@@ -60,6 +60,7 @@
     @include screenMax("tablet") {
         .top_section, .bottom_section {
             .text {
+                width: 65%;
                 h1 {
                     font-size: 4.4rem;
                     line-height: 5.6rem;
