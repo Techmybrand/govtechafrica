@@ -37,7 +37,7 @@
                     line-height: 2.4rem;
                 }
                 .subtext {
-                    width: 53rem;
+                    width: 65rem;
                 }
             }
             .top_image {
@@ -46,6 +46,7 @@
                 height: 47rem;
                 & > img {
                     object-fit: cover;
+                    object-position: 0 0;
                 }
             }
         }
@@ -155,6 +156,9 @@
                 .top_image {
                     height: 38rem;
                     width: 50rem;
+                    & > img {
+                        object-position: -8rem 0;
+                    }
                 }
             }
             .partners_logo {
@@ -218,6 +222,9 @@
                 .top_image {
                     height: 30rem;
                     width: 100%;
+                    & > img {
+                        object-position: unset;
+                    }
                 }
             }
             .partners_logo {
