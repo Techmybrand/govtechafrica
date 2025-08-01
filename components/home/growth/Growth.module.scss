@@ -1,6 +1,7 @@
 @import "@/styles/imports";
 
 .section {
+	width: 100%;
 	.section_container {
 		padding: 3.6rem;
 		max-width: $max-width;
@@ -19,6 +20,7 @@
 		}
 		.grid {
 			margin-block: 3.6rem;
+			margin-inline: -2rem;
 			@include grid(repeat(3, 1fr), 3.6rem, 3.6rem);
 			.card {
 				border-radius: 1.5rem;
@@ -55,6 +57,9 @@
 			.grid {
 				grid-template-columns: repeat(6, 1fr);
 				overflow-x: scroll;
+				margin-inline: 0;
+				margin-left: -1.6rem;
+				margin-block: 2.4rem;
 				@include noScrollBar();
 				gap: 1rem;
 				.card {
@@ -78,6 +83,10 @@
 
 	@include screenMax('mobile') {
 		.section_container {
+			.grid {
+				margin-block: 1.6rem;
+				margin-left: 0;
+			}
 			.text {
 				h3, span {
 					font-size: 2.2rem;
