@@ -21,7 +21,7 @@ const CenterPiece = () => {
 					</div>
 					<div className={styles.text}>
 						<h3 className={styles.h3}>
-							<span>All over the world, </span> technology 
+							<span>All over the world, </span> technology{" "}
 							<span>remains at the centrepiece of rapidly </span> paced development. 
 						</h3>
 						<h3>

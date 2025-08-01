@@ -6,8 +6,6 @@
 	width: 100%;
 	transition: $all-transition;
 	z-index: 10;
-	// background-color: $col-grey-700;
-	// background-color: transparent;
 	background-color: rgba($col-white, 0.0);
 	.container {
 		padding: 3.6rem;
@@ -15,7 +13,7 @@
 		max-width: $max-width;
 		margin-inline: auto;
 		@include screenMin("desktop") {
-			padding-inline: 1.6rem;
+			padding-inline: 3.6rem;
 		}
 	}
 	a {
@@ -252,7 +250,7 @@
 		height: fit-content;
 		background: transparent;
 		border: none;
-		width: 45px;
+		width: 4.5rem;
 
 		@include screenMax("tablet") {
 			order: 2;
@@ -260,26 +258,25 @@
 		}
 
 		&Bar {
-			width: 35px;
-			height: 2px;
+			height: 0.2rem;
 			background-color: $col-white;
 			margin: 0.4rem 0;
-			width: 35px;
+			width: 3.5rem;
 			opacity: 0.8;
 			transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
 			&:nth-child(2) {
-				width: 30px;
+				width: 3rem;
 			}
 		}
 	}
 
 	.header_hamburger__open {
-		min-height: 10px;
+		min-height: 1rem;
 		position: relative;
 
 		.header_hamburgerBar {
-			width: 20px;
+			width: 2rem;
 		}
 
 		.header_hamburgerBar:first-child {
