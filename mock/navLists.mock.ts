@@ -121,12 +121,12 @@ export const navLinks: NavLink[] = [
 				href: "/who-we-are",
 				id: "mision"
 			},
-			{
-				label: "team",
-				icon: "/svgs/link-user.svg",
-				href: "/teams",
-				id: "team"
-			},
+			// {
+			// 	label: "team",
+			// 	icon: "/svgs/link-user.svg",
+			// 	href: "/teams",
+			// 	id: "team"
+			// },
 			{
 				label: "partners",
 				icon: "/svgs/link-user.svg",
