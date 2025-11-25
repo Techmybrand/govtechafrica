@@ -1,7 +1,8 @@
 @import "@/styles/imports";
 
 .footer {
-	background-color: #1b1e21;
+	// background-color: #1B1E21;
+	background-color: #000;
 	color: $col-grey-200;
 	position: relative;
 	.grad {
@@ -10,7 +11,8 @@
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		background-color: rgba(190, 242, 190, 0.5);
+		// background-color: rgba(190, 242, 190, 0.5);
+		background-color: #000;
 		box-shadow: 1px 4px 100px rgba(190, 242, 190, 0.8);
 		filter: blur(150px);
 	}
@@ -100,7 +102,7 @@
 					font-family: $font;
 					font-size: 1.6rem;
 					font-weight: 500;
-					color: #eaecf0;
+					color: #EAECF0;
 					text-transform: capitalize;
 					&:hover {
 						color: $col-white;

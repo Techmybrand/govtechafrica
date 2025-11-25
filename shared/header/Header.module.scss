@@ -6,7 +6,9 @@
 	width: 100%;
 	transition: $all-transition;
 	z-index: 10;
-	background-color: rgba($col-white, 0.0);
+	background-color: #000;
+	// background-color: rgba($col-white, 0.0);
+	// #6C706C
 	.container {
 		padding: 3.6rem;
 		@include flex(space-between, center, nowrap);
@@ -29,7 +31,8 @@
 			padding: 0.5rem;
 			border-radius: 5.8rem;
 			margin: 0;
-			background-color: rgba($col-white, 0);
+			// background-color: rgba($col-white, 0);
+			background-color: #000;
 			.header_navLink {
 				position: relative;
 				background-color: rgba($col-white, 0.1);
@@ -103,11 +106,10 @@
 								font-weight: 500;
 								color: #FFF;
 								font-size: 1.8rem;
-								text-transform: uppercase;
-								&[data-label = "technology"], &[data-label = "consulting"] {
-									color: #00FF8C;
-								}
-
+								text-transform: capitalize;
+								// &[data-label = "technology"], &[data-label = "consulting"] {
+								// 	color: #00FF8C;
+								// }
 								@include screenMax('mobile') {
 									font-size: 1.6rem;
 									&[data-label = "technology"], &[data-label = "consulting"] {
@@ -316,12 +318,11 @@
 		}
 	}
 	&[data-collapsed="true"] {
-		background-color: #12351A;
-		// background-color: rgba($col-white, 0.05);
+		background-color: #000;
 	}
 	&[data-scroll="initial"] {
-		background-color: #12351A;
-		// background-color: rgba($col-white, 0.05);
+		// background-color: #12351A;
+		background-color: #000;
 	}
 	@include screenMax("tablet") {
 		.header_nav {
@@ -364,7 +365,8 @@
 					overflow: hidden;
 					transition: all 0.5s ease-in-out;
 					border-radius: 1.6rem;
-					background-color: #12351A;
+					// background-color: #12351A;
+					background-color: rgba($col-white, 0.0);
 					width: 100%;
 					.link_row {
 						@include flex(space-between, center);

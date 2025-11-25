@@ -1,6 +1,6 @@
 "use client";
 import { footerNavLink, socialMediaLinks } from "@/mock/navLists.mock";
-import Logo from "../logo/Logo";
+import { Logo } from "@/shared";
 import { NavLink } from "@/interfaces";
 import Link from "next/link";
 import Image from "next/image";

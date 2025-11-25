@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/index.scss";
 import { Footer, Header } from "@/shared";
+import { AppProvider } from "@/context/AppContext";
 
 export const metadata: Metadata = {
 	title: "Govtech Africa",
@@ -18,9 +19,11 @@ export default function RootLayout({
 				<link rel="icon" href="/favicon.png" sizes="any" />
 			</head>
 			<body>
-				<Header />
-				{children}
-				<Footer />
+				<AppProvider>
+					<Header />
+					{children}
+					<Footer />
+				</AppProvider>
 			</body>
 		</html>
 	);
