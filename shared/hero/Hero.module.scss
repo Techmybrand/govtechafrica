@@ -12,12 +12,14 @@
 		position: absolute;
 		left: calc(50% - 7.6rem);
 		// background-color: rgba(190, 242, 190, 0.8);
-		background-color: rgba($col-white, 0.05);
+		// background-color: rgba($col-white, 0.05);
+		background-color: #000;
 		box-shadow: 1px 4px 100px rgba(190, 242, 190, 0.8);
 		filter: blur(150px);
 	}
 	.hero_container {
-		padding: 11.5rem 3.6rem 0rem;
+		// padding: 11.5rem 0 0rem;
+		padding: 10rem 0 0;
 		position: relative;
 		z-index: 1;
 		max-width: $max-width;
@@ -32,7 +34,7 @@
 			}
 		}
 		.hero_background {
-			height: 71rem;
+			height: 85vh;
 			border-radius: 1.5rem;
 			@include flex();
 			position: relative;
@@ -46,6 +48,9 @@
 					position: relative;
 					width: 100%;
 					height: 100%;
+					& > video {
+						object-fit: cover;
+					}
 				}
 			}
 			.hero_content {
@@ -112,10 +117,9 @@
 
 	@include screenMax("tablet") {
 		.hero_container {
-			padding-inline: 0;
-			padding-top: 7.2rem;
+			padding: 0;
 			.hero_background {
-				height: 48rem;
+				height: 98vh;
 				.hero_content {
 					flex-wrap: wrap;
 					gap: 3.2rem;
@@ -137,6 +141,7 @@
 
 	@include screenMax('mobile') {
 		.hero_container {
+			padding: 1.6rem 0 0;
 			.hero_background {
 				.hero_content {
 					.text {

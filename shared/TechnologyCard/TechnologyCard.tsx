@@ -18,20 +18,6 @@ const TechnologyCard = ({technology, index, cardType}: TechnologyCardProps) => {
     <div id={technology.id} className={styles.card} data-active={isHover} data-card={technology?.id}
         onMouseEnter={onHover} onMouseLeave={offHover}
     >
-        {/* <div className={styles.card_content}>
-            <div className={styles.details}>
-                <h3>{technology.title}</h3>
-            </div>
-            {isHover ? (
-                <div className={styles.details}>
-                    <p>{technology.description}</p>
-                </div>
-            ) : (
-                <div data-image={technology.id} className={`${styles.card_image}`}>
-                    <Image alt="image" fill src={technology?.image} />
-                </div>
-            )}
-        </div> */}
         <div className={styles.card_content}>
             <div className={styles.details}>
                 <h3>{technology.title}</h3>

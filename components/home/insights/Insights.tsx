@@ -45,7 +45,7 @@ const Insights = ({isDivider}: Props) => {
 			<div className={styles.section_container}>
 				<div className={styles.row}>
 					<div className={styles.text}>
-						<h3>Insights</h3>
+						<h3>Govtech Africa News</h3>
 					</div>
 					<Button onClick={() => router.push('/insights')}>
 						Explore

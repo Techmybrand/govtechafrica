@@ -62,7 +62,6 @@ const technologies: TechnologyProps[] = [
 ];
 
 const Technology = () => {
-	
 	return (
 		<div className={styles.section} id="technology">
 			<div className={styles.section_container}>

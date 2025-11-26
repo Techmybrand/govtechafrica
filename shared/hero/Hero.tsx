@@ -1,31 +1,48 @@
-import React from "react";
-import styles from "./Hero.module.scss";
-import Button from "../button/Button";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import { Button } from "@/shared";
 import Image from "next/image";
-
+import styles from "./Hero.module.scss";
 interface Props {
 	title: string;
 	description: string;
 	button?: string;
 	href?: string;
 	backgroundImage: string;
+	backgroundVideo?: string;
 	className?: string;
 	subTitle?: string;
 	subDescription?: string;
 	subLargeTitle?: string;
 	dataType?: "home" | "do" | "are";
+	backgroundType?: 'video' | 'image';
 }
 
 const Hero = (props: Props) => {
+	const [speed] = useState<number>(0.4);
+	const videoRef = useRef<HTMLVideoElement | null>(null)
+	useEffect(() => {
+		if (videoRef.current) {
+			videoRef.current.playbackRate = speed
+		}
+	}, [speed]);
 	return (
 		<div className={styles.hero} data-type={props.dataType}>
 			<div className={styles.grad}></div>
 			<div className={styles.hero_container}>
 				<div className={`${styles.hero_background} ${props.className}`}>
 					<div className={styles.hero_image__container}>
-						<div className={styles.hero_image}>
-							<Image src={props.backgroundImage} fill alt={props.title} />
-						</div>
+						{props.backgroundType === 'image' ? (
+							<div className={styles.hero_image}>
+								<Image src={props.backgroundImage} fill alt={props.title} />
+							</div>
+						) : (
+							<div className={styles.hero_image}>
+								<video ref={videoRef} src={props.backgroundVideo} loop
+									autoPlay 
+								/>
+							</div>
+						)}
 					</div>
 					<div className={styles.hero_content}>
 						<div className={styles.text}>

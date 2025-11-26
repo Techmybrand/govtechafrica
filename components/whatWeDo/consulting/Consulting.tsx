@@ -3,7 +3,7 @@ import { TechnologyCard } from "@/shared";
 import { TechnologyProps } from "@/interfaces";
 import styles from "./Consulting.module.scss";
 
-const consulting = [
+const consulting: TechnologyProps[] = [
 	{
 		title: "IT Infrastructure Procurement & Supply",
 		image: '/svgs/infrastructure.svg',
