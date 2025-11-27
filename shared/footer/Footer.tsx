@@ -55,7 +55,7 @@ const Footer = () => {
 					))}
 				</div>
 				<div className={styles.image}>
-					<Image src="/images/govtechafri.png" alt="govtech" fill />
+					<Image src="/images/govtechafri.png" sizes="100%" priority alt="govtech" fill />
 				</div>
 			</div>
 			<div className={styles.grad}></div>

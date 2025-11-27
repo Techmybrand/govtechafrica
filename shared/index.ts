@@ -9,6 +9,7 @@ import InputField from "./inputField/InputField";
 import InsightsCard from "./InsightsCard/InsightsCard";
 import Logo from "./logo/Logo";
 import Partners from "./Partners/Partners";
+import ResearchCard from "./ResearchCard/ResearchCard";
 import Searchbar from "./Searchbar/Searchbar";
 import ServiceIntroSection from "./ServiceIntroSection/ServiceIntroSection";
 import ServicesCard from "./ServicesCard/ServicesCard";
@@ -36,4 +37,5 @@ export {
     ServicesCard,
     Carousel,
     InsightsCard,
+    ResearchCard,
 };

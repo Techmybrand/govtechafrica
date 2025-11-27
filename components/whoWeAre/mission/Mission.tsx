@@ -49,7 +49,7 @@ const Mission = () => {
 						</div>
 					</div>
 					<div className={styles.image}>
-						<Image src="/images/mission.png" fill alt="mission" />
+						<Image src="/images/mission.png" fill alt="mission" sizes="100%" />
 					</div>
 				</div>
 				<div className={styles.card}>

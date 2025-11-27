@@ -7,8 +7,10 @@ import CustomisedSoftware from "./CustomisedSoftware/CustomisedSoftware";
 import Cybersecurity from "./Cybersecurity/Cybersecurity";
 import DataAndAI from "./DataAndAI/DataAndAI";
 import InfrastructureProcurement from "./InfrastructureProcurement/InfrastructureProcurement";
+import InsightDetails from "./InsightDetails/InsightDetails";
 import NetworkInfrastructure from "./NetworkInfrastructure/NetworkInfrastructure";
 import PartnersComponent from "./PartnersPage/PartnersComponent";
+import ResearchDetails from "./ResearchDetails/ResearchDetails";
 import StrategyConsulting from "./StrategyConsulting/StrategyConsulting";
 import SupportServices from "./SupportServices/SupportServices";
 import Teams from "./Teams/Teams";
@@ -20,6 +22,8 @@ export {
     NotFound,
     Careers,
     CapacityBuilding,
+    ResearchDetails,
+    InsightDetails,
     TechEvents,
     InfrastructureProcurement,
     Compliance,
