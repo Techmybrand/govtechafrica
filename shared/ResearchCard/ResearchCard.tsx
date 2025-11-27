@@ -44,7 +44,7 @@ const ResearchCard = ({ image, alt, btnText, header, description }: ResearchCard
                 }
             </h4>
         </div>
-        <Link href={`/insights/${formatURL(header)}`}>
+        <Link href={`/insights/research/${formatURL(header)}`}>
             <Button className={styles.button}>
                 Learn More
             </Button>

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 // import styles from "./styles.module.scss";
-import { ResearchDetails } from "@/components";
+import { InsightDetails } from "@/components";
 interface Post {
 	id: string;
 	title: string;
@@ -49,6 +49,6 @@ export default async function PostPage({ params }: PostPageProps) {
 		// 	</div>
 		// 	<div className={styles.divider}></div>
 		// </div>
-		<ResearchDetails />
+		<InsightDetails />
 	);
 }

@@ -10,7 +10,7 @@ const InsightDetails = () => {
         <div className={styles.details_header}>
           <h1>The intersection of AI governance and cybersecurity</h1>
           <div className={styles.time_and_date}>
-            <h4>5mins read</h4>
+            <h4>5 mins read</h4>
             <h4>March 11, 2025</h4>
           </div>
         </div>
