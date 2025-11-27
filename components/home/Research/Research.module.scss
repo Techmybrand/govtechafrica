@@ -1,0 +1,31 @@
+@import "@/styles/imports";
+
+.research_container {
+    width: 100%;
+    .research_wrapper {
+        padding: 3.6rem;
+		max-width: 1440px;
+		margin-inline: auto;
+		overflow-x: hidden;
+        @include grid(repeat(4, 1fr), 3.6rem);
+    }
+    .divider {
+		width: 100%;
+		height: 2rem;
+		background-color: rgba(255, 255, 255, 0.05);
+	}
+
+    @include screenMax("tablet") {
+        .research_wrapper {
+            @include grid(repeat(3, 1fr), 2.4rem);
+        }
+    }
+    @include screenMax("mobile") {
+        .research_wrapper {
+            @include grid(repeat(8, 1fr), 1.6rem);
+            @include noScrollBar();
+            overflow-x: auto;
+            padding: 1.6rem;
+        }
+    }
+}

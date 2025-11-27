@@ -38,8 +38,8 @@ const Hero = (props: Props) => {
 							</div>
 						) : (
 							<div className={styles.hero_image}>
-								<video ref={videoRef} src={props.backgroundVideo} loop
-									autoPlay 
+								<video ref={videoRef} src={props.backgroundVideo} loop autoPlay 
+									muted playsInline preload="auto"
 								/>
 							</div>
 						)}
