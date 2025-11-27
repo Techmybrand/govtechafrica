@@ -17,8 +17,7 @@ type Post = {
 export default function BlogView() {
 	const filePath = path.join(process.cwd(), "data", "posts.json");
 	const posts: Post[] = fs.existsSync(filePath)
-		? (JSON.parse(fs.readFileSync(filePath, "utf8")) as Post[])
-		: [];
+		? (JSON.parse(fs.readFileSync(filePath, "utf8")) as Post[]) : [];
 
 	return (
 		<div className={styles.section}>

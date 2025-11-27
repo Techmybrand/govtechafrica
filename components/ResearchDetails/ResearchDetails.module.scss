@@ -14,10 +14,18 @@
             padding: 3.2rem;
             border: 0.1rem solid #FFFFFF1F;
             border-radius: 1.6rem;
+            h3 {
+                text-transform: uppercase;
+                font-family: $font;
+                font-size: 2rem;
+                font-weight: 500;
+                color: $col-white;
+            }
             h1 {
                 font-family: $font-gothic-bold;
                 font-size: 4.8rem;
                 color: $col-white;
+                margin-top: 3.2rem;
             }
             .time_and_date {
                 width: 50%;
@@ -33,31 +41,182 @@
                 }
             }
         }
-        .details_image, .details_image_2 {
-            position: relative;
-            width: 100%;
-            height: 47.5rem;
-            margin-bottom: 6.4rem;
-        }
-        .details_image_2 {
-            margin-top: 6.4rem;
-            & > img {
-                border-radius: 1.6rem;
-            }
-        }
         .details_body {
-            width: 85%;
-            margin-inline: auto;
-            h2 {
-                font-size: 3.2rem;
-                font-family: $font-gothic-bold;
-                color: $col-white;
-                margin-bottom: 2.4rem;
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            .research_details {
+                width: 80%;
+                h2 {
+                    font-size: 3.2rem;
+                    font-family: $font;
+                    font-weight: 700;
+                    color: $col-white;
+                    margin-bottom: 2.4rem;
+                }
+                ul {
+                    width: 75%;
+                    position: relative;
+                    li {
+                        list-style-type: disc;
+                        font-size: 1.4rem;
+                        color: $col-white;
+                        font-family: $font;
+                        margin-bottom: 1.6rem;
+                    }
+                }
+                a {
+                    .download_btn {
+                        margin-block: 6rem;
+                        & > p {
+                            font-size: 1.4rem!important;
+                        }
+                    }
+                }
+                h3 {
+                    font-family: $font;
+                    color: $col-white;
+                    font-size: 2rem;
+                }
             }
+            .written_by {
+                width: 20%;
+                h2 {
+                    font-size: 1.4rem;
+                    font-family: $font;
+                    font-weight: 500;
+                    color: #A2A2A0;
+                }
+                .writer_details_container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    width: 100%;
+                    margin-top: 2.4rem;
+                    .writer_details {
+                        h4 {
+                            font-size: 1.4rem;
+                            color: $col-white;
+                            font-family: $font-gothic;
+                        }
+                        h6 {
+                            font-size: 1.2rem;
+                            font-family: $font;
+                            color: #A2A2A0;
+                        }
+                        .details_linkedin {
+                            position: relative;
+                            width: 1.4rem;
+                            height: 1.4rem;
+                            margin-top: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        .details_body_ {
+            width: 70%;
+            margin-bottom: 3.2rem;
             h3 {
-                font-family: $font-gothic;
+                margin-block: 2.4rem;
+            }
+            a {
+                .download_btn {
+                    & > p {
+                        font-size: 1.4rem!important;
+                    }
+                }
+            }
+        }
+        .key_findings_container {
+            width: 100%;
+            margin-block: 5rem;
+            h2 {
+                font-size: 2.4rem;
                 color: $col-white;
-                font-size: 2rem;
+                font-family: $font-gothic-bold;
+            }
+            .findings_container {
+                overflow-x: auto;
+                width: 100%;
+                display: flex;
+                scroll-snap-type: x mandatory;
+                gap: 3.6rem;
+                @include noScrollBar();
+                margin-top: 4rem;
+                .findings {
+                    width: 95%;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    flex-shrink: 0;
+                    .findings_image {
+                        width: 50%;
+                        height: 40rem;
+                        position: relative;
+                        flex-shrink: 0;
+                    }
+                    .findings_texts {
+                        width: 48%;
+                        flex-shrink: 0;
+                        h3 {
+                            font-size: 1.6rem;
+                            color: $col-white;
+                            font-family: $font-gothic-bold;
+                        }
+                        p {
+                            font-size: 1.2rem;
+                            margin-top: 1.6rem;
+                            font-family: $font;
+                        }
+                    }
+                }
+            }
+        }
+        .written_by_sm {
+            width: 100%;
+            display: none;
+            h2 {
+                font-size: 1.4rem;
+                font-family: $font;
+                font-weight: 500;
+                color: #A2A2A0;
+            }
+            .line {
+                margin-top: 2rem;
+                width: 100%;
+                height: 0.1rem;
+                background: #202020;
+            }
+            .writer_details_container {
+                width: 100%;
+                .writer_details {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    padding-block: 1.6rem;
+                    border-bottom: 0.1rem solid #202020;
+                    width: 100%;
+                    .name_and_role {
+                        h4 {
+                            font-size: 1.4rem;
+                            color: $col-white;
+                            font-family: $font-gothic;
+                        }
+                        h6 {
+                            font-size: 1.2rem;
+                            font-family: $font;
+                            color: #A2A2A0;
+                        }
+                    }
+                    .details_linkedin {
+                        position: relative;
+                        width: 1.4rem;
+                        height: 1.4rem;
+                        margin-top: 1rem;
+                    }
+                }
             }
         }
     }
@@ -65,7 +224,7 @@
 		width: 100%;
 		height: 2rem;
 		background-color: rgba(255, 255, 255, 0.05);
-        margin-block: 3.6rem;
+        margin-block: 1.6rem;
 	}
     .divider_green {
         width: 100%;
@@ -74,13 +233,22 @@
     }
 
     @include screenMax('tablet') {
+        margin: 10rem 0 6rem;
         .details_content {
             padding: 2.4rem;
             .details_header {
                 padding: 2.4rem;
-            }
-            .details_image {
-                height: 40rem;
+                h3 {
+                    font-size: 1.8rem;
+                }
+                h1 {
+                    font-size: 3.6rem;
+                }
+                .time_and_date {
+                    h4 {
+                        font-size: 1.8rem;
+                    }
+                }
             }
             .details_body {
                 h2 {
@@ -89,21 +257,63 @@
                 h3 {
                     font-size: 1.6rem;
                 }
+                .research_details {
+                    width: 100%;
+                    h2 {
+                        font-size: 2.4rem;
+                    }
+                    h3 {
+                        font-size: 1.8rem;
+                    }
+                    ul {
+                        width: 100%;
+                    }
+                    .download_btn {
+                        margin-block: 4rem;
+                    }
+                }
+                .written_by {
+                    display: none;
+                }
+            }
+            .key_findings_container {
+                .findings_container {
+                    .findings {
+                        .findings_image {
+                            height: 36rem;
+                        }
+                    }
+                }
+            }
+            .details_body_ {
+                width: 85%;
+            }
+            .written_by_sm {
+                display: block;
             }
         }
     }
 
     @include screenMax('mobile') {
+        margin: 8rem 0 4rem;
         .details_content {
             padding: 1.6rem;
             .details_header {
                 padding: 1.6rem;
+                h3 {
+                    font-size: 1.4rem;
+                }
+                h1 {
+                    margin-top: 1.2rem;
+                    font-size: 2rem;
+                }
                 .time_and_date {
                     width: 100%;
+                    margin-top: 2.4rem;
+                    h4 {
+                        font-size: 1.2rem;
+                    }
                 }
-            }
-            .details_image {
-                height: 32rem;
             }
             .details_body {
                 width: 100%;
@@ -114,6 +324,44 @@
                 h3 {
                     font-size: 1.4rem;
                 }
+                .research_details {
+                    h2 {
+                        margin-bottom: 1.6rem;
+                    }
+                    h3 {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+            .key_findings_container {
+                margin-block: 3.6rem;
+                .findings_container {
+                    gap: 2.4rem;
+                    .findings {
+                        flex-direction: column;
+                        width: 90%;
+                        .findings_image {
+                            width: 100%;
+                            height: 32rem;
+                            margin-bottom: 2.4rem;
+                        }
+                        .findings_texts {
+                            width: 100%;
+                            p {
+                                margin-top: 0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .details_body_ {
+                width: 100%;
+                h3 {
+                    font-size: 1.4rem;
+                }
+            }
+            .written_by_sm {
+                display: block;
             }
         }
     }

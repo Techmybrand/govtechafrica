@@ -20,7 +20,7 @@
                 color: $col-white;
             }
             .time_and_date {
-                width: 50%;
+                width: 45%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -74,6 +74,7 @@
     }
 
     @include screenMax('tablet') {
+        margin: 10rem 0 6rem;
         .details_content {
             padding: 2.4rem;
             .details_header {
@@ -94,6 +95,7 @@
     }
 
     @include screenMax('mobile') {
+        margin: 8rem 0 4rem;
         .details_content {
             padding: 1.6rem;
             .details_header {
