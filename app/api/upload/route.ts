@@ -107,7 +107,7 @@ export async function POST(req: Request): Promise<Response> {
 }
 
 // Utility function to generate a slug from a title
-export const slugify = (title: string): string => {
+const slugify = (title: string): string => {
 	return title
 		.toLowerCase()
 		.trim()
