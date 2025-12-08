@@ -1,26 +1,26 @@
-// import fs from "fs";
-// import path from "path";
+import fs from "fs";
+import path from "path";
 import styles from "./BlogView.module.scss";
 import Image from "next/image";
 import { Button } from "@/shared";
 import { shortenTitle } from "@/utils/stringShortner";
-// import { Insights, Research } from "@/components/home";
 import { posts as insightsList } from "@/mock/navLists.mock";
 import { formatURL } from "@/utils/formatUrl";
-// type Post = {
-// 	id: number;
-// 	title: string;
-// 	content: string;
-// 	category: string;
-// 	description: string;
-// 	banner: string;
-// };
+
+type Post = {
+	id: number;
+	title: string;
+	content: string;
+	category: string;
+	description: string;
+	banner: string;
+};
 
 export default function BlogView() {
-	// const filePath = path.join(process.cwd(), "data", "posts.json");
-	// const posts: Post[] = fs.existsSync(filePath)
-	// 	? (JSON.parse(fs.readFileSync(filePath, "utf8")) as Post[]) : [];
-	// console.log(posts);
+	const filePath = path.join(process.cwd(), "data", "posts.json");
+	const posts: Post[] = fs.existsSync(filePath)
+		? (JSON.parse(fs.readFileSync(filePath, "utf8")) as Post[]) : [];
+	console.log(posts);
 
 	return (
 		<div className={styles.section}>
