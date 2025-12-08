@@ -22,7 +22,7 @@
     }
     @include screenMax("mobile") {
         .research_wrapper {
-            @include grid(repeat(8, 1fr), 1.6rem);
+            @include grid(repeat(1, 1fr), 1.6rem);
             @include noScrollBar();
             overflow-x: auto;
             padding: 1.6rem;

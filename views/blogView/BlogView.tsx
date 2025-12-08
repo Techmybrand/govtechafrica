@@ -4,6 +4,8 @@ import styles from "./BlogView.module.scss";
 import Image from "next/image";
 import { Button } from "@/shared";
 import { shortenTitle } from "@/utils/stringShortner";
+import { posts as insightsList } from "@/mock/navLists.mock";
+import { formatURL } from "@/utils/formatUrl";
 
 type Post = {
 	id: number;
@@ -18,6 +20,7 @@ export default function BlogView() {
 	const filePath = path.join(process.cwd(), "data", "posts.json");
 	const posts: Post[] = fs.existsSync(filePath)
 		? (JSON.parse(fs.readFileSync(filePath, "utf8")) as Post[]) : [];
+	console.log(posts);
 
 	return (
 		<div className={styles.section}>
@@ -33,23 +36,26 @@ export default function BlogView() {
 					<div className={styles.grad}></div>
 				</div>
 				<div className={styles.divider1}></div>
-				{posts.length === 0 ? (
+				{!insightsList.length ? (
 					<p>No posts available.</p>
 				) : (
 					<div className={styles.row}>
-						{posts.map(post => (
-							<div key={post.id} className={styles.card}>
+						{insightsList.map((post, index: number) => (
+							<div key={index} className={styles.card}>
 								<div className={styles.grad}></div>
 								<div className={styles.image}>
-									<Image src={post.banner} fill alt={post.title} />
+									<Image src={post.image} fill alt={post.title} />
 								</div>
 								<div className={styles.details}>
-									<h5>{post.category}</h5>
+									<h5>{post.tag}</h5>
 									<h3>{shortenTitle(post.title, 30)}</h3>
 									<p>{shortenTitle(post.description, 100)}</p>
 									<Button
 										className={styles.button}
-										href={`/insights/${post.id}`}
+										href={post.tag === 'insight' ? 
+											`/insights/${formatURL(post.title)}` 
+											: 
+											`/insights/research/${formatURL(post.title)}`}
 									>
 										Explore
 									</Button>

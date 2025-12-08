@@ -135,7 +135,8 @@ const LinkItem = ({
 					<Image src="/svgs/arrow.svg" fill alt="" sizes="100vw" />
 				</div>
 				<div className={styles.link_icon_sm}>
-					<Image src="/svgs/green_arrow.svg" fill alt="" sizes="100vw" />
+					<Image src="/svgs/arrow.svg" fill alt="" sizes="100vw" />
+					{/* <Image src="/svgs/green_arrow.svg" fill alt="" sizes="100vw" /> */}
 				</div>
 			</div>
 			{link.subMenu && (

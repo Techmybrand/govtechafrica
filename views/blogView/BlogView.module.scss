@@ -22,8 +22,11 @@
 			.image {
 				position: relative;
 				width: 100%;
-				height: 30.4rem;
+				height: 40rem;
 				margin-bottom: 3.2rem;
+				& > img {
+					object-fit: cover;
+				}
 			}
 			.details {
 				max-width: 68rem;
@@ -41,6 +44,7 @@
 				}
 				h5 {
 					font-weight: 700;
+					text-transform: uppercase;
 				}
 				.button {
 					margin-top: 3.2rem;
@@ -78,11 +82,25 @@
 		background-color: rgba(255, 255, 255, 0.05);
 		margin-block: 3.6rem;
 	}
+
 	@include screenMax("tablet") {
 		.section_container {
 			padding: 2rem;
 			.large_card {
 				padding: 2rem;
+			}
+			.card, .large_card {
+				margin-top: 2.4rem;
+				.image {
+					height: 35rem;
+					margin-bottom: 2.4rem;
+				}
+				.details {
+					h3 {
+						font-size: 2.8rem;
+						line-height: 3.2rem;
+					}
+				}
 			}
 			.row {
 				grid-template-columns: 100%;
@@ -96,6 +114,37 @@
 					}
 				}
 			}
+		}
+		.divider1 {
+			margin-block: 1.6rem;
+		}
+	}
+
+	@include screenMax("mobile") {
+		.section_container {
+			.large_card {
+				margin-bottom: 1.6rem;
+			}
+			.card, .large_card {
+				margin-top: 1.6rem;
+				.image {
+					height: 28rem;
+					margin-bottom: 1.6rem;
+				}
+				.details {
+					h3 {
+						font-size: 1.8rem;
+						line-height: 2.4rem;
+					}
+					p {
+						font-size: 1.4rem;
+						line-height: 2rem;
+					}
+				}
+			}
+		}
+		.divider1 {
+			margin-block: 0.8rem;
 		}
 	}
 }

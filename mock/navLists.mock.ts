@@ -127,12 +127,12 @@ export const navLinks: NavLink[] = [
 			// 	href: "/teams",
 			// 	id: "team"
 			// },
-			{
-				label: "partners",
-				icon: "/svgs/link-user.svg",
-				href: "/partners",
-				id: "partners"
-			},
+			// {
+			// 	label: "partners",
+			// 	icon: "/svgs/link-user.svg",
+			// 	href: "/partners",
+			// 	id: "partners"
+			// },
 			// {
 			// 	label: "projects",
 			// 	icon: "/svgs/link-user.svg",
@@ -241,3 +241,109 @@ export const socialMediaLinks = [
 		icon: "/svgs/linkedin.svg"
 	}
 ];
+
+export const posts = [
+	{
+		title: "Converged Cyber AI: A Paradigm Shift in Cybersecurity",
+		description:
+			`The advancement of generative AI capabilities presents enormous potential for 
+			modernizing government operations but it also introduces new security gaps. While 
+			automation allows developers to move from concept to minimum viable product faster 
+			than ever, adversaries are developing similar AI-enabled techniques to discover and 
+			exploit security vulnerabilities`,
+		href: "",
+		image: '/images/insight_image_1.jpg',
+		bgColor: '#FFFFFF1A',
+		tag: 'featured',
+	},
+	{
+		title: "The intersection of AI governance and cybersecurity",
+		description:
+			"Learn about the impact of generative AI on cybersecurity planning and our proactive approach to AI implementation that focuses on governance and ethical use. You'll also hear about the dual nature of cloud computing, acknowledging its power for data accessibility and defensive capabilities and addressing the challenges of multi-cloud environments.",
+		href: "",
+		image: '/images/insight_image_2.jpg',
+		bgColor: '#13361B',
+		tag: 'featured',
+	},
+	{
+		title: `Reforming the Public Sector in Africa Through Digital Transformation - Lessons from India's Digital Stack`,
+		description: `This case study analyzes how India's Digital Public 
+        	Infrastructure (DPI) successfully created a unified digital identity and 
+        	financial system that serves one of the world's largest populations — 
+            offering valuable insights for African governments.`,
+		image: '/images/research_1.png',
+		tag: 'insight',
+	},
+	{
+		title: `Reforming the Public Sector in Africa Through Digital Transformation - Lessons from India's Digital Stack`,
+		description: `This case study analyzes how India's Digital Public 
+        	Infrastructure (DPI) successfully created a unified digital identity and 
+        	financial system that serves one of the world's largest populations — 
+            offering valuable insights for African governments.`,
+		image: '/images/research_2.png',
+		tag: 'insight',
+	},
+	{
+		title: `Reforming the Public Sector in Africa Through Digital Transformation - Lessons from India's Digital Stack`,
+		description: `This case study analyzes how India's Digital Public 
+        	Infrastructure (DPI) successfully created a unified digital identity and 
+        	financial system that serves one of the world's largest populations — 
+            offering valuable insights for African governments.`,
+		image: '/images/research_1.png',
+		tag: 'insight',
+	},
+	{
+		title: `Reforming the Public Sector in Africa Through Digital Transformation - Lessons from India's Digital Stack`,
+		description: `This case study analyzes how India's Digital Public 
+        	Infrastructure (DPI) successfully created a unified digital identity and 
+        	financial system that serves one of the world's largest populations — 
+            offering valuable insights for African governments.`,
+		image: '/images/research_2.png',
+		tag: 'insight',
+	},
+	{
+		title: `Reforming the Public Sector in Africa Through Digital Transformation - Lessons from India's Digital Stack`,
+		description: `This case study analyzes how India's Digital Public 
+        	Infrastructure (DPI) successfully created a unified digital identity and 
+        	financial system that serves one of the world's largest populations — 
+            offering valuable insights for African governments.`,
+		image: '/images/research_1.png',
+		tag: 'insight',
+	},
+	{
+		title: `Reforming the Public Sector in Africa Through Digital Transformation - Lessons from India's Digital Stack`,
+		description: `This case study analyzes how India's Digital Public 
+        	Infrastructure (DPI) successfully created a unified digital identity and 
+        	financial system that serves one of the world's largest populations — 
+            offering valuable insights for African governments.`,
+		image: '/images/research_2.png',
+		tag: 'insight',
+	},
+	{
+		title: `Reforming the Public Sector in Africa Through Digital Transformation - Lessons from India's Digital Stack`,
+		description: `This case study analyzes how India's Digital Public 
+        	Infrastructure (DPI) successfully created a unified digital identity and 
+        	financial system that serves one of the world's largest populations — 
+            offering valuable insights for African governments.`,
+		image: '/images/research_1.png',
+		tag: 'insight',
+	},
+	{
+		title: `Reforming the Public Sector in Africa Through Digital Transformation - Lessons from India's Digital Stack`,
+		description: `This case study analyzes how India's Digital Public 
+        	Infrastructure (DPI) successfully created a unified digital identity and 
+        	financial system that serves one of the world's largest populations — 
+            offering valuable insights for African governments.`,
+		image: '/images/research_2.png',
+		tag: 'insight',
+	},
+	{
+		title: `Reforming the Public Sector in Africa Through Digital Transformation - Lessons from India's Digital Stack`,
+		description: `This case study analyzes how India's Digital Public 
+        	Infrastructure (DPI) successfully created a unified digital identity and 
+        	financial system that serves one of the world's largest populations — 
+            offering valuable insights for African governments.`,
+		image: '/images/research_1.png',
+		tag: 'insight',
+	},
+]

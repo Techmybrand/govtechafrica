@@ -12,7 +12,7 @@ const Research = () => {
                 '/images/research_1.png', '/images/research_2.png',
             ].map((src: string, index: number) =>
                     <ResearchCard key={index} image={src} alt="image"
-                        header={`Reforming the Public Sector in Africa Through Digital 
+                        title={`Reforming the Public Sector in Africa Through Digital 
                             Transformation - Lessons from India's Digital Stack`
                         }
                         description={`This case study analyzes how India's Digital Public 

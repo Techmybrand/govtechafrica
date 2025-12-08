@@ -1,0 +1,9 @@
+[build]
+  command = "yarn build"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["public/**"]
+
+[build.environment]
+  NODE_VERSION = "23"
