@@ -88,8 +88,10 @@
     @include screenMax('mobile') {
         padding: 1.6rem;
         flex-shrink: 0;
-        width: 85%;
+        width: 95%;
+        margin-inline: auto;
         height: auto;
+        min-height: 40rem;
         .details {
             h4 {
                 font-size: 1.8rem;

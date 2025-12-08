@@ -55,20 +55,25 @@
 	}
 	@include screenMax("mobile") {
 		.section_container {
+			padding: 1.6rem;
+			.row {
+				flex-wrap: nowrap;
+			}
 			.text {
 				h2 {
 					font-size: 4.8rem;
 					line-height: 5.6rem;
 				}
 				h3 {
-					font-size: 2.4rem;
-					line-height: 3.2rem;
+					font-size: 2rem;
+					line-height: 2.8rem;
 				}
 			}
 			.slider_container {
 				gap: 2.4rem;
 				padding-block: 1.6rem;
 				margin-top: 1.6rem;
+				flex-direction: column;
 				overflow-x: scroll;
 			}
 		}

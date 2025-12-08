@@ -9,12 +9,12 @@ import Image from "next/image";
 interface ResearchCardProps {
     btnText?: string;
     image: string;
-    header: string;
+    title: string;
     description?: string;
     alt?: string;
 }
 
-const ResearchCard = ({ image, alt, btnText, header, description }: ResearchCardProps) => {
+const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardProps) => {
     const [hover, setHover] = useState<boolean>(false);
     const onHover = () => {
         setHover(true);
@@ -27,15 +27,29 @@ const ResearchCard = ({ image, alt, btnText, header, description }: ResearchCard
         onMouseLeave={offHover}
     >
         <div className={styles.card_content}>
-            <div className={styles.image_wrapper}>
-                <div className={styles.image}>
-                    <Image alt={alt ? alt : 'image'} fill src={image} sizes="100%" />
+            {hover ? (
+                <div className={styles.background_wrapper}></div>
+            ) : (
+                <div className={styles.image_wrapper}>
+                    <div className={styles.image}>
+                        <Image alt={alt ? alt : 'image'} fill src={image} sizes="100%" />
+                    </div>
                 </div>
-            </div>
+            )}
             <div className={styles.btn_text_container}>
                 <p>{btnText}</p>
             </div>
-            <h2>{header}</h2>
+            <div className={styles.card_header}>
+                <div className={styles.btn_text_container_sm}>
+                    <p>{btnText}</p>
+                </div>
+                {hover && (
+                    <div onClick={() => setHover(false)} className={styles.close_icon}>
+                        <Image alt="" fill src="/svgs/close.svg" />
+                    </div>
+                )}
+            </div>
+            <h2>{title}</h2>
             <h4>
                 {description && description?.length > 170 ? 
                     `${description?.slice(0, 170)}...`
@@ -44,7 +58,7 @@ const ResearchCard = ({ image, alt, btnText, header, description }: ResearchCard
                 }
             </h4>
         </div>
-        <Link href={`/insights/research/${formatURL(header)}`}>
+        <Link href={`/insights/research/${formatURL(title)}`}>
             <Button className={styles.button}>
                 Learn More
             </Button>
