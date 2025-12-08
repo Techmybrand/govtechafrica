@@ -62,8 +62,6 @@ export default function BlogView() {
 								</div>
 							</div>
 						))}
-						{/* <Research />
-						<Insights /> */}
 					</div>
 				)}
 			</div>
