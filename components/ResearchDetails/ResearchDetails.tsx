@@ -15,10 +15,12 @@ const ResearchDetails = () => {
     const { id } = params as { id: string };
     const { blogs, fetchBlogs } =  useGetContentful();
     const [blog, setBlog] = useState<BlogDetailsProps>();
+
     useEffect(() => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, []);
+    
     useEffect(() => {
         const fetchBlogDetails = () => {
             if (id && ( blogs && blogs?.length)) {
@@ -28,7 +30,6 @@ const ResearchDetails = () => {
                     id.slice(0, 20)
                 );
                 setBlog(foundBlog);
-                // setLoading(true);
             }
         };
         fetchBlogDetails();
