@@ -11,7 +11,6 @@ const Research = () => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    console.log('blogs: ', blogs);
     
   return (
     <div className={styles.research_container}>
