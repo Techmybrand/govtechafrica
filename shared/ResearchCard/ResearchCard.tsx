@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { formatURL } from "@/utils/formatUrl";
 import { Button } from "@/shared";
 import Link from "next/link";
-import styles from './ResearchCard.module.scss';
 import Image from "next/image";
+import styles from './ResearchCard.module.scss';
 
 interface ResearchCardProps {
     btnText?: string;
@@ -23,7 +23,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
         setHover(false);
     }
   return (
-    <div data-active={hover} className={styles.card_container} onMouseEnter={onHover} 
+    <article data-active={hover} className={styles.card_container} onMouseEnter={onHover} 
         onMouseLeave={offHover}
     >
         <div className={styles.card_content}>
@@ -49,9 +49,9 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
                     </div>
                 )}
             </div>
-            <h2>{title}</h2>
+            <h2>{title.toLowerCase()}</h2>
             <h4>
-                {description && description?.length > 170 ? 
+                {description && description?.length > 170 ?
                     `${description?.slice(0, 170)}...`
                 : 
                     description
@@ -63,7 +63,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
                 Learn More
             </Button>
         </Link>
-    </div>
+    </article>
   )
 }
 

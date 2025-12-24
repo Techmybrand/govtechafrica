@@ -55,12 +55,11 @@
         }
         .background_wrapper {
             background: #FFFFFF1A;
-            // background: linear-gradient(#000, #FFF);
         }
         .btn_text_container {
             padding: 1rem;
             background: #FFF;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
             width: fit-content;
             position: relative;
             p {
@@ -104,6 +103,7 @@
             margin-bottom: 1.6rem;
             width: 95%;
             position: relative;
+            text-transform: capitalize;
         }
         h4 {
             color: $col-white;

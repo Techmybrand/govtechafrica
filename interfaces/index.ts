@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Document } from '@contentful/rich-text-types';
 export interface NavLinkMenu {
 	label: string;
 	id?: string;
@@ -113,4 +115,105 @@ export interface insightProps {
 export interface insightCardProps {
 	insight: insightProps
 	index?: number
+}
+
+export interface ImageProps {
+	fields: {
+		description: string;
+		title: string;
+		file: {
+			contentType: string;
+			fileName: string;
+			url: string;
+			details: {
+				size: number;
+				image: {
+					width: number;
+					height: number;
+				}
+			}
+		};
+	},
+	metadata: {
+		concepts: [],
+		tags: []
+	},
+	sys: {
+		createdAt: string;
+		id: string;
+		locale: string;
+		publishedVersion: number;
+		revision: number;
+		type: string;
+		updatedAt: string;
+		space: {
+			sys: {
+				id: string;
+				linkType: string;
+				type: string;
+			}
+		}
+		environment: {
+			sys: {
+				id: string;
+				linkType: string;
+				type: string;
+			}
+		}
+	},
+	title: string;
+}
+
+export interface BlogDetailsProps {
+	title: string;
+	type: string;
+	readTime?: string;
+	thumbnail: ImageProps;
+	authors?: string[];
+	bannerImage: ImageProps;
+	date?: string
+	addedImages?: ImageProps[];
+	pdf: {
+		fields: {
+			description: string;
+			title: string;
+			file: {
+				contentType: string;
+				fileName: string;
+				url: string;
+				details: {
+					size: number;
+				}
+			};
+		},
+		metadata: {
+			concepts: [],
+			tags: []
+		},
+		sys: {
+			createdAt: string;
+			id: string;
+			locale: string;
+			publishedVersion: number;
+			revision: number;
+			type: string;
+			updatedAt: string;
+			space: {
+				sys: {
+					id: string;
+					linkType: string;
+					type: string;
+				}
+			}
+			environment: {
+				sys: {
+					id: string;
+					linkType: string;
+					type: string;
+				}
+			}
+		},
+	};
+	publishedAt?: string;
+	researchContent: Document;
 }

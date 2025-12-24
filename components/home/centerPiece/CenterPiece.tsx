@@ -17,7 +17,7 @@ const CenterPiece = () => {
 						<Image src="/images/centerpiece.png" fill alt="" />
 					</div>
 					<div className={styles.image_mob}>
-						<Image src="/images/centerpiece-mob.png" fill alt="" />
+						<Image src="/images/centerpiece-mob.png" sizes="100%" fill alt="" />
 					</div>
 					<div className={styles.text}>
 						<h3 className={styles.h3}>
