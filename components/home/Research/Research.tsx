@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { ResearchCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
-import styles from './Research.module.scss';
+import styles from "./Research.module.scss";
 
 const Research = () => {
     const { fetchBlogs, blogs } = useGetContentful();
