@@ -4,8 +4,8 @@ import { Button, RichText } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
-import { useParams } from "next/navigation";
 import { ChartLoader } from "@/shared/loaders";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./ResearchDetails.module.scss";
@@ -20,7 +20,7 @@ const ResearchDetails = () => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    
+
     useEffect(() => {
         const fetchBlogDetails = () => {
             if (id && ( blogs && blogs?.length)) {
@@ -34,7 +34,6 @@ const ResearchDetails = () => {
         };
         fetchBlogDetails();
     }, [id, blogs]);
-    // console.log('blog: ', blog);
     
   return (
     <main className={styles.details_container}>

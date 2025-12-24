@@ -1,5 +1,4 @@
 import { ResearchDetails } from "@/components";
-
 interface ResearchPageProps {
 	params: {
 		id: string;
