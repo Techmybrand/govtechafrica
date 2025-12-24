@@ -10,6 +10,7 @@ import InsightsCard from "./InsightsCard/InsightsCard";
 import Logo from "./logo/Logo";
 import Partners from "./Partners/Partners";
 import ResearchCard from "./ResearchCard/ResearchCard";
+import RichText from "./RichText/RichText";
 import Searchbar from "./Searchbar/Searchbar";
 import ServiceIntroSection from "./ServiceIntroSection/ServiceIntroSection";
 import ServicesCard from "./ServicesCard/ServicesCard";
@@ -18,10 +19,10 @@ import TechnologyCard from "./TechnologyCard/TechnologyCard";
 import TextArea from "./textArea/TextArea";
 
 
-
 export {
     Logo,
     Header,
+    RichText,
     Footer,
     Button,
     Hero,

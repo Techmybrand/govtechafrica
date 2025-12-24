@@ -7,13 +7,13 @@
 
 export function formatURL(url: string) {
   if (!url) return "";
-  return url.toLowerCase().trim().replace(/\s+/g, "-").replace(/-+/g, "-");
+  return url.toLowerCase().trim().replace(':', "").replace('-', "").replace(/\s+/g, "-").replace(/-+/g, "-");
 }
 
 export const formatDate = (isoDate: string): string => {
-    return new Date(isoDate).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    });
+  return new Date(isoDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 };
