@@ -12,7 +12,8 @@
 	.container {
 		padding: 3.6rem;
 		@include flex(space-between, center, nowrap);
-		max-width: $max-width;
+		// max-width: $max-width;
+		width: 100%;
 		margin-inline: auto;
 		@include screenMin("desktop") {
 			padding-inline: 3.6rem;

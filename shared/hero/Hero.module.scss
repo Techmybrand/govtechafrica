@@ -16,13 +16,14 @@
 		background-color: #000;
 		box-shadow: 1px 4px 100px rgba(190, 242, 190, 0.8);
 		filter: blur(150px);
+		display: none;
 	}
 	.hero_container {
 		// padding: 11.5rem 0 0rem;
 		padding: 10rem 0 0;
 		position: relative;
 		z-index: 1;
-		max-width: $max-width;
+		// max-width: $max-width;
 		width: 100%;
 		margin-inline: auto;
 		.text {
@@ -50,13 +51,14 @@
 					height: 100%;
 					& > video {
 						object-fit: cover;
+						width: 100vw;
 					}
 				}
 			}
 			.hero_content {
 				width: 100%;
 				align-self: flex-end;
-				padding: 2rem;
+				padding: 2rem 3.6rem;
 				@include flex(space-between, flex-end, nowrap);
 				z-index: 2;
 				.text {
@@ -117,12 +119,13 @@
 
 	@include screenMax("tablet") {
 		.hero_container {
-			padding: 0;
+			padding: 5rem 0;
 			.hero_background {
 				height: 98vh;
 				.hero_content {
 					flex-wrap: wrap;
 					gap: 3.2rem;
+					padding: 1.6rem 2.4rem;
 				}
 			}
 		}
@@ -141,10 +144,19 @@
 
 	@include screenMax('mobile') {
 		.hero_container {
-			padding: 1.6rem 0 0;
+			padding: 7.5rem 0 0;
 			.hero_background {
+				.hero_image__container {
+					.hero_image {
+						& > video {
+							height: 60vh;
+						}
+					}
+				}
 				.hero_content {
+					padding: 1.6rem;
 					.text {
+						margin-top: 37.5rem;
 						p {
 							font-size: 1.6rem;
 							line-height: 2.4rem;
