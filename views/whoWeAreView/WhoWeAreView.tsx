@@ -1,12 +1,13 @@
+import React from "react";
 import { Insights } from "@/components/home";
 import { Governance, Mission, Partners } from "@/components/whoWeAre";
 import { Hero } from "@/shared";
-import React from "react";
 
 const WhoWeAreView = () => {
 	return (
-		<>
+		<React.Fragment>
 			<Hero
+				backgroundType="image"
 				backgroundImage="/images/who-we-are.png"
 				title="We are Drivers of Change"
 				button="Explore our solutions"
@@ -20,7 +21,7 @@ const WhoWeAreView = () => {
 			<Governance />
 			<Partners />
 			<Insights />
-		</>
+		</React.Fragment>
 	);
 };
 

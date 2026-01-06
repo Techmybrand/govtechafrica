@@ -115,12 +115,12 @@ export const navLinks: NavLink[] = [
 		external: false,
 		icon: "/svgs/link-main.svg",
 		subMenu: [
-			{
-				label: "mission, Vision, values",
-				icon: "/svgs/link-main.svg",
-				href: "/who-we-are",
-				id: "mision"
-			},
+			// {
+			// 	label: "mission, Vision, values",
+			// 	icon: "/svgs/link-main.svg",
+			// 	href: "/who-we-are",
+			// 	id: "mision"
+			// },
 			// {
 			// 	label: "team",
 			// 	icon: "/svgs/link-user.svg",

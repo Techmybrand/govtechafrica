@@ -1,11 +1,10 @@
 "use client";
-
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import "react-quill-new/dist/quill.snow.css";
-import styles from "./UploadView.module.scss";
 import { InputField } from "@/shared";
 import Image from "next/image";
+import styles from "./UploadView.module.scss";
 
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 

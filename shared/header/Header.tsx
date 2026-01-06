@@ -4,6 +4,7 @@ import { NavLink, NavLinkMenu, NavLinkSub } from "@/interfaces";
 import { navLinks } from "@/mock/navLists.mock";
 import { Logo, Button } from "..";
 import { scrollTo } from "@/utils/scrollTo";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.scss";
@@ -71,6 +72,7 @@ const Header = () => {
 										collapsed={collapsed}
 										link={link}
 										key={index}
+										index={index}
 										isActive={activeLink === link.label}
 										handleActiveLink={handleActiveLink}
 										handleScroll={handleScroll}
@@ -105,7 +107,6 @@ const Header = () => {
 };
 
 export default Header;
-
 interface LinkProps {
 	link: NavLink;
 	setCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
@@ -113,14 +114,17 @@ interface LinkProps {
 	isActive: boolean;
 	handleActiveLink: (label: string) => void;
 	handleScroll: (id?: string) => void;
+	index: number;
 }
 const LinkItem = ({
 	link,
 	collapsed,
 	handleActiveLink,
 	isActive,
-	handleScroll
+	handleScroll,
+	index
 }: LinkProps) => {
+	const router = useRouter();
 	useEffect(() => {
 		if (!collapsed) {
 			handleActiveLink("");
@@ -128,7 +132,7 @@ const LinkItem = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [collapsed]);
 	return (
-		<li className={styles.header_navLink} data-active={isActive}>
+		<li onClick={() => index === 1 && router.push(`/who-we-are`)} className={styles.header_navLink} data-active={isActive}>
 			<div className={styles.link_row} onClick={() => handleActiveLink(link.label)}>
 				<p>{link?.label}</p>
 				<div className={styles.link_icon}>
@@ -139,16 +143,14 @@ const LinkItem = ({
 					{/* <Image src="/svgs/green_arrow.svg" fill alt="" sizes="100vw" /> */}
 				</div>
 			</div>
-			{link.subMenu && (
+			{link.subMenu?.length ? (
 				<div className={styles.subMenu_container}
 					data-active={link.label === "sell gears" || link.label === "rent out"}
 				>
 					<div className={styles.subMenu}>
 						{link.subMenu.map((subMenu: NavLinkSub, index: number) => (
 							<div className={styles.subMenu_navlist} key={index}>
-								<Link
-									href={subMenu.href}
-									className={styles.subMenu_link}
+								<Link href={subMenu.href} className={styles.subMenu_link}
 									onClick={() => handleScroll(subMenu.id)}
 								>
 									<h2 data-label={subMenu.label}>{subMenu.label}</h2>
@@ -192,7 +194,7 @@ const LinkItem = ({
 						))}
 					</div>
 				</div>
-			)}
+			) : null}
 		</li>
 	);
 };
