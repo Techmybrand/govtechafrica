@@ -15,7 +15,7 @@ interface Props {
 	subDescription?: string;
 	subLargeTitle?: string;
 	dataType?: "home" | "do" | "are";
-	backgroundType?: 'video' | 'image';
+	backgroundType: 'video' | 'image';
 }
 
 const Hero = (props: Props) => {
