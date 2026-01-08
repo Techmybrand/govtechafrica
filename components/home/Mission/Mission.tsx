@@ -27,7 +27,7 @@ const Mission = () => {
                     </div>
                 </div>
                 <div className={styles.image}>
-                    <Image src="/images/mission.png" fill alt="mission" sizes="100%" />
+                    <Image src="/images/mission.png" priority fill alt="mission" sizes="100%" />
                 </div>
 			</div>
         </div>
