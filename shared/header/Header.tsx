@@ -122,7 +122,8 @@ const LinkItem = ({
 	handleActiveLink,
 	isActive,
 	handleScroll,
-	index
+	index,
+	setCollapsed
 }: LinkProps) => {
 	const router = useRouter();
 	useEffect(() => {
@@ -132,7 +133,12 @@ const LinkItem = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [collapsed]);
 	return (
-		<li onClick={() => index === 1 && router.push(`/who-we-are`)} className={styles.header_navLink} data-active={isActive}>
+		<li onClick={() => {
+			if (index === 1) {
+				setCollapsed(true);
+				router.push(`/who-we-are`);
+			}
+		}} className={styles.header_navLink} data-active={isActive}>
 			<div className={styles.link_row} onClick={() => handleActiveLink(link.label)}>
 				<p>{link?.label}</p>
 				<div className={styles.link_icon}>
@@ -155,12 +161,7 @@ const LinkItem = ({
 								>
 									<h2 data-label={subMenu.label}>{subMenu.label}</h2>
 									<div className={styles.subMenu_icon}>
-										<Image
-											src={subMenu.icon}
-											fill
-											alt=""
-											sizes="100vw"
-										/>
+										<Image fill alt="" sizes="100vw" src={subMenu.icon} />
 									</div>
 								</Link>
 								<ul className={styles.sub_list}>

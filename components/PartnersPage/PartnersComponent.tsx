@@ -41,7 +41,7 @@ const PartnersComponent = () => {
                 {items.map((item: string, index: number) =>
                     <div key={index} className={styles.logo_card}>
                         <div data-index={index} className={styles.logo}>
-                            <Image alt='logo' fill src={item} />
+                            <Image alt='logo' fill src={item} sizes='100%' />
                         </div>
                     </div>
                 )}
