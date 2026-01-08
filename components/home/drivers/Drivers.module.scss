@@ -28,8 +28,9 @@
 			}
 		}
 		.grid {
-			@include grid(25rem 29rem 32.6rem 45.7rem, 1.5rem);
-			margin-block: 3.6rem;
+			// @include grid(25rem 29rem 32.6rem 45.7rem, 1.5rem);
+			@include grid(repeat(4, 1fr), 3.6rem);
+			// margin-block: 3.6rem;
 			.card {
 				border: 0.1rem solid rgba(255, 255, 255, 0.12);
 				border-radius: 1.5rem;

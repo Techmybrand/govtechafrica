@@ -17,7 +17,8 @@
 
     @include screenMax("tablet") {
         .research_wrapper {
-            @include grid(repeat(3, 1fr), 2.4rem);
+            @include grid(repeat(2, 1fr), 9.6rem);
+            padding: 2.4rem 6.4rem;
         }
     }
     @include screenMax("mobile") {
