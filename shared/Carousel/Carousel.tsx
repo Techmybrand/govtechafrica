@@ -41,7 +41,7 @@ const Carousel = ({ items, direction = 'left', speed = 'normal' }: ScrollerProps
       <ul className={styles.scroller__inner} ref={scrollerInnerRef}>
         {items?.map((item: string, index: number) => (
           <li key={index} data-index={index} className={styles.tag}>
-            <Image alt='' fill src={item} />
+            <Image alt='' fill src={item} sizes='100vw' />
           </li>
         ))}
       </ul>

@@ -54,7 +54,7 @@ const Mission = () => {
 				</div>
 				<div className={styles.card}>
 					<div className={styles.image}>
-						<Image src="/images/vision.png" fill alt="vision" />
+						<Image src="/images/vision.png" fill alt="vision" sizes="100vw" />
 					</div>
 					<div className={styles.details}>
 						<div className={styles.text}>

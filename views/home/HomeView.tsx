@@ -1,6 +1,7 @@
 import React from "react";
 import { Hero } from "@/shared";
-import { Growth, Drivers, CenterPiece, Insights, Mission, Research } from "@/components/home";
+import { Growth, Drivers, CenterPiece, Mission, Research } from "@/components/home";
+// import { Growth, Drivers, CenterPiece, Insights, Mission, Research } from "@/components/home";
 // import { Partners } from "@/components/whoWeAre";
 import styles from "./HomeView.module.scss";
 
@@ -23,7 +24,7 @@ const HomeView = () => {
 			<Drivers />
 			<CenterPiece />
 			{/* <Partners /> */}
-			<Insights />
+			{/* <Insights /> */}
 			<div className={styles.divider}></div>
 		</React.Fragment>
 	);
