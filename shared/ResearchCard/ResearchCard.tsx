@@ -37,7 +37,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
                 </div>
             )}
             <div className={styles.btn_text_container}>
-                <p>{btnText?.toLowerCase() === 'research report' ? 'policy briefs' : btnText}</p>
+                <p>{btnText?.toLowerCase() === 'research report' ? 'policy brief' : btnText}</p>
             </div>
             <div className={styles.card_header}>
                 <div className={styles.btn_text_container_sm}>
