@@ -139,15 +139,19 @@ const LinkItem = ({
 				router.push(`/who-we-are`);
 			}
 		}} className={styles.header_navLink} data-active={isActive}>
-			<div className={styles.link_row} onClick={() => handleActiveLink(link.label)}>
+			<div className={styles.link_row} onClick={() => handleActiveLink(link?.label)}>
 				<p>{link?.label}</p>
-				<div className={styles.link_icon}>
-					<Image src="/svgs/arrow.svg" fill alt="" sizes="100vw" />
-				</div>
-				<div className={styles.link_icon_sm}>
-					<Image src="/svgs/arrow.svg" fill alt="" sizes="100vw" />
-					{/* <Image src="/svgs/green_arrow.svg" fill alt="" sizes="100vw" /> */}
-				</div>
+				{link.subMenu?.length ? (
+					<div className={styles.link_icon}>
+						<Image src="/svgs/arrow.svg" fill alt="" sizes="100%" />
+					</div>
+				) : null}
+				{link.subMenu?.length ? (
+					<div className={styles.link_icon_sm}>
+						<Image src="/svgs/arrow.svg" fill alt="" sizes="100%" />
+						{/* <Image src="/svgs/green_arrow.svg" fill alt="" sizes="100vw" /> */}
+					</div>
+				) : null}
 			</div>
 			{link.subMenu?.length ? (
 				<div className={styles.subMenu_container}

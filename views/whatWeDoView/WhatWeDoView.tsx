@@ -1,4 +1,4 @@
-import { Insights } from "@/components/home";
+// import { Insights } from "@/components/home";
 import { Consulting, Technology } from "@/components/whatWeDo";
 import { Hero } from "@/shared";
 import React from "react";
@@ -18,7 +18,7 @@ const WhatWeDoView = () => {
 			/>
 			<Technology />
 			<Consulting />
-			<Insights />
+			{/* <Insights /> */}
 		</React.Fragment>
 	);
 };

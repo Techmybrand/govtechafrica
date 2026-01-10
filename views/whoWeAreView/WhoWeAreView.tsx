@@ -1,5 +1,5 @@
 import React from "react";
-import { Insights } from "@/components/home";
+// import { Insights } from "@/components/home";
 import { Governance, Mission, Partners } from "@/components/whoWeAre";
 import { Hero } from "@/shared";
 
@@ -20,7 +20,7 @@ const WhoWeAreView = () => {
 			<Mission />
 			<Governance />
 			<Partners />
-			<Insights />
+			{/* <Insights /> */}
 		</React.Fragment>
 	);
 };

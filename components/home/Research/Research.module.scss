@@ -7,7 +7,7 @@
 		max-width: $max-width;
 		margin-inline: auto;
 		overflow-x: hidden;
-        @include grid(repeat(4, 1fr), 3.6rem);
+        @include grid(repeat(4, 1fr), 6.4rem);
     }
     .divider {
 		width: 100%;

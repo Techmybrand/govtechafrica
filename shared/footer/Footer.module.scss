@@ -32,13 +32,15 @@
 			.social {
 				position: relative;
 				width: 100%;
-				height: 2rem;
+				height: 2.4rem;
+				width: 2.4rem;
 			}
 		}
 		.copyWrite {
 			p {
 				color: #fff;
 				font-weight: 500;
+				font-size: 1.6rem;
 			}
 		}
 	}
@@ -47,6 +49,7 @@
 		height: 12rem;
 		width: 136.8rem;
 		margin-top: 6rem;
+		margin-inline: auto;
 	}
 	@include screenMax("tablet") {
 		flex-wrap: wrap;
@@ -84,6 +87,7 @@
 }
 .footer_logo {
 	margin-bottom: 2rem;
+	cursor: pointer;
 }
 .footer_nav {
 	.footer_navTitle {

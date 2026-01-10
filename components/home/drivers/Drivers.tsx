@@ -1,7 +1,7 @@
 import React from "react";
+import { Button } from "@/shared";
 import styles from "./Drivers.module.scss";
 import Image from "next/image";
-import { Button } from "@/shared";
 
 const Drivers = () => {
 	return (
@@ -15,7 +15,7 @@ const Drivers = () => {
 						At Govtech Africa,{" "}
 						<span>
 							we are driven by the need to close the technology gap for
-							governments across the African continent. 
+							governments across the African continent.
 						</span>
 					</h3>
 				</div>
@@ -45,7 +45,7 @@ const Drivers = () => {
 							<Image src="/svgs/drivers-3.svg" fill alt="" />
 						</div>
 						<div className={styles.card_details}>
-							<p>We leverage</p>
+							<p>We profer</p>
 							<h4>Local Solutions</h4>
 							<p>for local problems</p>
 						</div>
