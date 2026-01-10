@@ -15,7 +15,9 @@ const Footer = () => {
 			<div className={styles.footer_body}>
 				<div className={styles.details}>
 					<div className={styles.logo_and_socials}>
-						<Logo className={styles.footer_logo} />
+						<Link href='/'>
+							<Logo className={styles.footer_logo} />
+						</Link>
 						<div className={styles.socials}>
 							{socialMediaLinks.map((social, index: number) => (
 								<Link
@@ -29,7 +31,7 @@ const Footer = () => {
 										src={social.icon}
 										alt={social.label}
 										fill
-										sizes="100vw"
+										sizes="100%"
 									/>
 								</Link>
 							))}

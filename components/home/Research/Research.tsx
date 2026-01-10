@@ -7,7 +7,6 @@ import styles from "./Research.module.scss";
 
 const Research = () => {
     const { fetchBlogs, blogs } = useGetContentful();
-
 	useEffect(() => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps

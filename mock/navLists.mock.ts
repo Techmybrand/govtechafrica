@@ -175,22 +175,25 @@ export const footerNavLink: NavLink[] = [
 			{
 				label: "Manage Cookie Preferences",
 				icon: "/svgs/link-main.svg",
-				href: "#"
+				href: "",
 			},
 			{
 				label: "Privacy Policy",
 				icon: "/svgs/link-user.svg",
-				href: "#"
+				// href: "/privacy-policy",
+				href: "",
 			},
 			{
 				label: "Terms of Use",
 				icon: "/svgs/link-ai.svg",
-				href: "#"
+				// href: "/terms-of-use",
+				href: ""
 			},
 			{
 				label: "Site Map",
 				icon: "/svgs/link-ai.svg",
-				href: "#"
+				// href: "/site-map",
+				href: "",
 			}
 		]
 	},
@@ -213,12 +216,14 @@ export const footerNavLink: NavLink[] = [
 			{
 				label: "About us",
 				icon: "/svgs/link-ai.svg",
-				href: "#"
+				// href: "/about-us",
+				href: ""
 			},
 			{
 				label: "Capabilities",
 				icon: "/svgs/link-ai.svg",
-				href: "#"
+				// href: "/capabilities"
+				href: ""
 			}
 		]
 	}
@@ -227,17 +232,17 @@ export const footerNavLink: NavLink[] = [
 export const socialMediaLinks = [
 	{
 		label: "twitter",
-		href: "#",
+		href: "https://x.com/govtech_africa",
 		icon: "/svgs/twitter.svg"
 	},
 	{
 		label: "instagram",
-		href: "#",
+		href: "#https://www.instagram.com/govtech_africa",
 		icon: "/svgs/instagram.svg"
 	},
 	{
 		label: "linkedIn",
-		href: "#",
+		href: "https://www.linkedin.com/company/govtech-africa-inc/",
 		icon: "/svgs/linkedin.svg"
 	}
 ];

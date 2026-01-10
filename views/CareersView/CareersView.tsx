@@ -4,10 +4,10 @@ import { Careers } from '@/components';
 
 const CareersView = () => {
   return (
-    <>
+    <React.Fragment>
       <Careers />
 		  <div className={styles.divider}></div>
-    </>
+    </React.Fragment>
   )
 }
 

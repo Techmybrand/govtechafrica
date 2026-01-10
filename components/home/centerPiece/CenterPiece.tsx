@@ -14,10 +14,10 @@ const CenterPiece = () => {
 				</div>
 				<div className={styles.image_and_text}>
 					<div className={styles.image}>
-						<Image src="/images/centerpiece.png" sizes="100%" priority fill alt="" />
+						<Image src="/svgs/centerpiece.svg" sizes="100%" priority fill alt="" />
 					</div>
 					<div className={styles.image_mob}>
-						<Image src="/images/centerpiece-mob.png" sizes="100%" fill alt="" />
+						<Image src="/svgs/centerpiece_mob.svg" sizes="100%" fill alt="" />
 					</div>
 					<div className={styles.text}>
 						<h3 className={styles.h3}>
