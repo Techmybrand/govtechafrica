@@ -23,7 +23,12 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
         >
             <div className={styles.card_content}>
                 {hover ? (
-                    <div className={styles.background_wrapper}></div>
+                    <div className={styles.background_wrapper}>
+                        <div className={styles.blur_bg}></div>
+                        <div className={styles.image}>
+                            <Image alt={alt ? alt : 'image'} fill src={image} sizes="100%" />
+                        </div>
+                    </div>
                 ) : (
                     <div className={styles.image_wrapper}>
                         <div className={styles.image}>

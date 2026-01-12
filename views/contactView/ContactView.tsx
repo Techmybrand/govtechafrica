@@ -10,8 +10,8 @@ const ContactView = () => {
 					<div className={styles.details}>
 						<h2>Contact Us</h2>
 						<p>
-							Elevating decision-making with secure and intelligent data
-							processing, analytics and operational AI
+							Transforming governance through technology requires a collective effort. Reach out to
+							discuss how we can co-create a more efficient, transparent and digitally empowered Africa.
 						</p>
 					</div>
 					<div className={styles.grad}></div>
@@ -19,9 +19,9 @@ const ContactView = () => {
 				<div className={styles.large_card}>
 					<div className={styles.details}>
 						<h3>Drop us a line</h3>
-						<p>
+						{/* <p>
 							We value your feedback and look forward to hearing from you.
-						</p>
+						</p> */}
 					</div>
 					<form action="">
 						<InputField placeholder="INQUIRY TYPE" />

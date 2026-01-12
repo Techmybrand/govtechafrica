@@ -19,7 +19,7 @@ interface Props {
 }
 
 const Hero = (props: Props) => {
-	const [speed] = useState<number>(0.2);
+	const [speed] = useState<number>(0.5);
 	const videoRef = useRef<HTMLVideoElement | null>(null)
 	useEffect(() => {
 		if (videoRef.current) {
@@ -49,16 +49,16 @@ const Hero = (props: Props) => {
 							<h3>{props.title}</h3>
 							<p>{props.description}</p>
 						</div>
-						{props.button && props.href && <Button>{props.button}</Button>}
+						{(props.button && props.href) && (
+							<Button className={styles.button_text}>{props.button}</Button>
+						)}
 					</div>
 				</div>
 			</div>
 			{props.subDescription && props.subTitle && (
 				<div className={styles.title}>
 					{props.subLargeTitle && <h2>{props.subLargeTitle}</h2>}
-					<h3>
-						{props.subTitle} <span>{props.subDescription}</span>
-					</h3>
+					<h3>{props.subTitle} <span>{props.subDescription}</span></h3>
 				</div>
 			)}
 			<div className={styles.divider}></div>
