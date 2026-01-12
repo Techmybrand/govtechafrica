@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Document } from '@contentful/rich-text-types';
 export interface NavLinkMenu {
 	label: string;
@@ -7,7 +6,6 @@ export interface NavLinkMenu {
 	external: boolean;
 	icon?: string;
 }
-
 export interface NavLinkSub {
 	label: string;
 	icon: string;
@@ -15,7 +13,6 @@ export interface NavLinkSub {
 	id?: string;
 	menu?: NavLinkMenu[];
 }
-
 export interface NavLink {
 	label: string;
 	id?: string;
@@ -47,7 +44,6 @@ export interface TechnologyCardProps {
 	technology: TechnologyProps
 	cardType: 'technology' | 'consulting'
 }
-
 export interface CareersProps {
 	title: string
 	description: string
@@ -55,7 +51,6 @@ export interface CareersProps {
 	location: string
 	time: string
 }
-
 export interface SectionProps {
     title: string
     subtext: string
@@ -73,20 +68,16 @@ export interface StatisticsProps {
 	title: string
 	description: string
 }
-
 export interface StatisticsArrayProps {
     list: StatisticsProps[]
 }
-
 export interface CenterpieceProps {
 	text: string
 }
-
 export interface CatalogueCardProps {
   image: string
   text: string
 }
-
 export interface CatalogueProps {
   btnText?: string
   header?: string
@@ -96,7 +87,6 @@ export interface CatalogueProps {
   type: 'full' | 'sm'
   catalogues: CatalogueCardProps[]
 }
-
 export interface ServiceCardProps {
   image: string
   title: string
@@ -104,7 +94,6 @@ export interface ServiceCardProps {
   web_direction: 'normal' | 'reverse'
   mob_direction: 'normal' | 'reverse'
 }
-
 export interface insightProps {
 	title: string
 	description: string
@@ -116,7 +105,6 @@ export interface insightCardProps {
 	insight: insightProps
 	index?: number
 }
-
 export interface ImageProps {
 	fields: {
 		description: string;
@@ -163,7 +151,6 @@ export interface ImageProps {
 	},
 	title: string;
 }
-
 export interface BlogDetailsProps {
 	title: string;
 	type: string;
@@ -171,7 +158,8 @@ export interface BlogDetailsProps {
 	thumbnail: ImageProps;
 	authors?: string[];
 	bannerImage: ImageProps;
-	date?: string
+	date?: string;
+	description?: string;
 	addedImages?: ImageProps[];
 	pdf: {
 		fields: {

@@ -9,6 +9,7 @@
 		.row {
 			width: 100%;
 			@include grid(repeat(2, 1fr), 3.2rem, 3.2rem);
+			margin-bottom: 3.6rem;
 		}
 		.card,
 		.large_card {
@@ -31,8 +32,7 @@
 			}
 			.details {
 				max-width: 68rem;
-				h3,
-				h2 {
+				h3, h2 {
 					@extend %title-50;
 					font-weight: 700;
 					font-family: $font-gothic-bold;
@@ -40,16 +40,21 @@
 					margin-bottom: 2rem;
 				}
 				h3 {
-					font-size: 3rem;
-					line-height: 3.3rem;
+					font-size: 2.8rem;
+					line-height: 3.2rem;
+					text-transform: capitalize;
 				}
 				h5 {
 					font-weight: 700;
 					text-transform: uppercase;
+					margin-bottom: 0.8rem;
 				}
 				.button {
 					margin-top: 3.2rem;
 					justify-self: flex-start;
+					& > p {
+						font-weight: 600!important;
+					}
 				}
 			}
 			.grad {
@@ -106,12 +111,14 @@
 			}
 			.row {
 				grid-template-columns: 100%;
+				margin-bottom: 2.4rem;
 				.card {
 					.image {
-						height: 15.5rem;
+						height: 30rem;
 						margin-bottom: 2rem;
 					}
 					.details {
+						max-width: 99%;
 						padding-inline: 2rem;
 					}
 				}
@@ -141,6 +148,21 @@
 					p {
 						font-size: 1.4rem;
 						line-height: 2rem;
+					}
+				}
+			}
+			.row {
+				.card {
+					.image {
+						height: 20rem;
+						margin-bottom: 1.2rem;
+					}
+					.details {
+						padding: 1.6rem 2.4rem;
+						max-width: 100%;
+						.button {
+							min-width: 13rem;
+						}
 					}
 				}
 			}

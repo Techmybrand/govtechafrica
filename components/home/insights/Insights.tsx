@@ -20,7 +20,10 @@ const insightList: insightProps[] = [
 	{
 		title: "The intersection of AI governance and cybersecurity",
 		description:
-			"Learn about the impact of generative AI on cybersecurity planning and our proactive approach to AI implementation that focuses on governance and ethical use. You'll also hear about the dual nature of cloud computing, acknowledging its power for data accessibility and defensive capabilities and addressing the challenges of multi-cloud environments.",
+			`Learn about the impact of generative AI on cybersecurity planning and our proactive approach 
+			to AI implementation that focuses on governance and ethical use. You'll also hear about the 
+			dual nature of cloud computing, acknowledging its power for data accessibility and defensive 
+			capabilities and addressing the challenges of multi-cloud environments.`,
 		href: "",
 		image: '/images/insight_image_2.jpg',
 		bgColor: '#13361B',
@@ -38,7 +41,7 @@ interface Props {
 	isDivider?: boolean
 }
 
-const Insights = ({isDivider}: Props) => {
+const Insights = ({ isDivider }: Props) => {
 	const router = useRouter();
 	return (
 		<div className={styles.section}>
