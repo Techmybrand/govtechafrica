@@ -58,6 +58,10 @@
 			.button {
 				margin-top: 3.2rem;
 				justify-self: flex-start;
+				& > p {
+					font-size: 1.6rem!important;
+					font-weight: 600!important;
+				}
 			}
 			.grad {
 				background-color: #13361b;

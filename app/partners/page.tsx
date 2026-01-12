@@ -1,5 +1,6 @@
-import { PartnersComponent } from "@/components";
+// import { PartnersComponent } from "@/components";
 
 export default function PartnersPage() {
-    return <PartnersComponent />
+    return null;
+    // return <PartnersComponent />
 }

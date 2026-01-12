@@ -47,7 +47,7 @@ const Drivers = () => {
 						<div className={styles.card_details}>
 							<p>We profer</p>
 							<h4>Local Solutions</h4>
-							<p>for local problems</p>
+							<p>to local problems</p>
 						</div>
 					</div>
 					<div className={styles.card}>
@@ -61,7 +61,7 @@ const Drivers = () => {
 						</div>
 					</div>
 				</div>
-				<Button>Learn more</Button>
+				<Button className={styles.learn_more}>Learn more</Button>
 			</div>
 			<div className={styles.divider}></div>
 		</div>

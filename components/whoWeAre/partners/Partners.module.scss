@@ -34,6 +34,10 @@
 				.button {
 					min-width: 15rem;
 					height: 5rem;
+					& > p {
+						font-size: 1.6rem!important;
+						font-weight: 600!important;
+					}
 				}
 			}
 		}

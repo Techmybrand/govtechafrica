@@ -1,6 +1,6 @@
 'use client';
 import { Button, Carousel } from "@/shared";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import styles from "./Partners.module.scss";
 
 const Partners = () => {
@@ -14,7 +14,7 @@ const Partners = () => {
 		'/images/logo-3.png',
 		'/images/logo-4.png',
   	]
-	const router = useRouter();
+	// const router = useRouter();
 	return (
 		<div className={styles.section} id="partners">
 			<div className={styles.section_container}>
@@ -25,7 +25,8 @@ const Partners = () => {
 								Our <span>Partners</span>
 							</h3>
 						</div>
-						<Button onClick={() => router.push('/partners')} className={styles.button}>
+						<Button className={styles.button}>
+						{/* <Button onClick={() => router.push('/partners')} className={styles.button}> */}
 							Explore Partners
 						</Button>
 					</div>

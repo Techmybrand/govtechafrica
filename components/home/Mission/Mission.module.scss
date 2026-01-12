@@ -108,6 +108,17 @@
                 @include grid(repeat(1, 100%), 0);
                 row-gap: 0;
                 .details {
+                    .text {
+                        h3, span {
+                            font-size: 2.4rem;
+                            line-height: 3.2rem;
+                        }
+                        p {
+                            margin-top: 1.6rem;
+                            font-size: 1.6rem;
+                            line-height: 2.4rem;
+                        }
+                    }
                     .row {
                         display: none;
                     }

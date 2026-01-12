@@ -40,7 +40,7 @@
 			p {
 				color: #fff;
 				font-weight: 500;
-				font-size: 1.6rem;
+				font-size: 1.2rem;
 			}
 		}
 	}
@@ -50,6 +50,12 @@
 		width: 136.8rem;
 		margin-top: 6rem;
 		margin-inline: auto;
+		@include screenMax("mobile") {
+			width: 100%;
+			& > img {
+				object-fit: contain;
+			}
+		}
 	}
 	@include screenMax("tablet") {
 		flex-wrap: wrap;
@@ -72,6 +78,18 @@
 				align-items: center;
 				justify-content: space-between;
 				width: 100%;
+			}
+			.socials {
+				column-gap: 1.6rem!important;
+				.social {
+					width: 1.6rem;
+					height: 1.6rem;
+				}
+			}
+			.copyWrite {
+				p {
+					font-size: 1rem;
+				}
 			}
 		}
 	}
