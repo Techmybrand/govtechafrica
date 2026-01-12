@@ -2,7 +2,7 @@
 
 .intro_section {
     position: relative;
-    max-width: 1440px;
+    max-width: $max-width;
     margin: 0 auto;
     .top_section, .bottom_section {
         display: flex;

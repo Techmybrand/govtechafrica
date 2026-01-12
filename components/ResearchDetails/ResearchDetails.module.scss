@@ -13,7 +13,7 @@
         left: 40vw;
     }
     .details_content {
-        max-width: 1440px;
+        max-width: $max-width;
         margin-inline: auto;
         padding: 0 3.6rem!important;
         .details_header {
