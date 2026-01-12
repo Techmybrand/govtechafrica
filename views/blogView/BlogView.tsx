@@ -1,26 +1,33 @@
-import fs from "fs";
-import path from "path";
-import styles from "./BlogView.module.scss";
-import Image from "next/image";
+"use client";
+// import fs from "fs";
+// import path from "path";
+import { useEffect } from "react";
 import { Button } from "@/shared";
 import { shortenTitle } from "@/utils/stringShortner";
-import { posts as insightsList } from "@/mock/navLists.mock";
 import { formatURL } from "@/utils/formatUrl";
+import { useGetContentful } from "@/hooks";
+import Image from "next/image";
+import styles from "./BlogView.module.scss";
 
-type Post = {
-	id: number;
-	title: string;
-	content: string;
-	category: string;
-	description: string;
-	banner: string;
-};
+// type Post = {
+// 	id: number;
+// 	title: string;
+// 	content: string;
+// 	category: string;
+// 	description: string;
+// 	banner: string;
+// };
 
 export default function BlogView() {
-	const filePath = path.join(process.cwd(), "data", "posts.json");
-	const posts: Post[] = fs.existsSync(filePath)
-		? (JSON.parse(fs.readFileSync(filePath, "utf8")) as Post[]) : [];
-	console.log(posts);
+	// const filePath = path.join(process.cwd(), "data", "posts.json");
+	// const posts: Post[] = fs.existsSync(filePath)
+	// 	? (JSON.parse(fs.readFileSync(filePath, "utf8")) as Post[]) : [];
+	// console.log(posts);
+	const { fetchBlogs, blogs: insightsList } = useGetContentful();
+	useEffect(() => {
+        fetchBlogs();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
 	return (
 		<div className={styles.section}>
@@ -36,7 +43,7 @@ export default function BlogView() {
 					<div className={styles.grad}></div>
 				</div>
 				<div className={styles.divider1}></div>
-				{!insightsList.length ? (
+				{!insightsList?.length ? (
 					<p>No posts available.</p>
 				) : (
 					<div className={styles.row}>
@@ -44,17 +51,21 @@ export default function BlogView() {
 							<div key={index} className={styles.card}>
 								<div className={styles.grad}></div>
 								<div className={styles.image}>
-									<Image src={post.image} fill alt={post.title} />
+									<Image src={`https:${post?.thumbnail?.fields?.file?.url}`} fill 
+										alt={`https:${post?.thumbnail?.fields?.description}`}
+										sizes="100%"
+									/>
 								</div>
 								<div className={styles.details}>
-									<h5>{post.tag}</h5>
+									<h5>{post.type}</h5>
 									<h3>{shortenTitle(post.title, 30)}</h3>
-									<p>{shortenTitle(post.description, 100)}</p>
+									<p>{post?.description}</p>
 									<Button
 										className={styles.button}
-										href={post.tag === 'insight' ? 
-											`/insights/${formatURL(post.title)}` 
-											: 
+										href={
+											// post.tag === 'insight' ? 
+											// `/insights/${formatURL(post.title)}` 
+											// :
 											`/insights/research/${formatURL(post.title)}`}
 									>
 										Explore

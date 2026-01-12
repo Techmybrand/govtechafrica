@@ -50,13 +50,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
                     )}
                 </div>
                 <h2>{title.toLowerCase()}</h2>
-                <h4>
-                    {description && description?.length > 170 ?
-                        `${description?.slice(0, 170)}...`
-                    : 
-                        description
-                    }
-                </h4>
+                <h4>{description}</h4>
             </div>
             <Link href={`/insights/research/${formatURL(title)}`}>
                 <Button className={styles.button}>

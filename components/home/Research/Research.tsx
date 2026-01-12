@@ -39,10 +39,9 @@ const Research = () => {
                     }
                     return (
                         <ResearchCard key={index} title={blog?.title}
-                            // image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                            image={index === 0 ? "/images/research_1.png" : "/images/research_2.png"}
+                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
                             alt={`https:${blog?.thumbnail?.fields?.description}`}
-                            description={paragraph}
+                            description={blog?.description || paragraph}
                             btnText={blog?.type}
                         />
                     )

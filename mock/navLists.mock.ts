@@ -237,7 +237,7 @@ export const socialMediaLinks = [
 	},
 	{
 		label: "instagram",
-		href: "#https://www.instagram.com/govtech_africa",
+		href: "https://www.instagram.com/govtech_africa",
 		icon: "/svgs/instagram.svg"
 	},
 	{
