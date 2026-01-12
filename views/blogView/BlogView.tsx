@@ -3,7 +3,7 @@
 // import path from "path";
 import { useEffect } from "react";
 import { Button } from "@/shared";
-import { shortenTitle } from "@/utils/stringShortner";
+// import { shortenTitle } from "@/utils/stringShortner";
 import { formatURL } from "@/utils/formatUrl";
 import { useGetContentful } from "@/hooks";
 import Image from "next/image";
@@ -58,7 +58,8 @@ export default function BlogView() {
 								</div>
 								<div className={styles.details}>
 									<h5>{post.type}</h5>
-									<h3>{shortenTitle(post.title, 30)}</h3>
+									{/* <h3>{shortenTitle(post.title, 30)}</h3> */}
+									<h3>{post.title}</h3>
 									<p>{post?.description}</p>
 									<Button
 										className={styles.button}
