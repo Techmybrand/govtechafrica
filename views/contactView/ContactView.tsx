@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./ContactView.module.scss";
 import { Button, InputField, TextArea } from "@/shared";
+import styles from "./ContactView.module.scss";
 
 const ContactView = () => {
 	return (
