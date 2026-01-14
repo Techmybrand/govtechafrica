@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
-import styles from './Careers.module.scss'
 import { Button, Searchbar } from '@/shared';
-import Image from 'next/image';
 import { CareersProps } from '@/interfaces';
+import Image from 'next/image';
+import styles from './Careers.module.scss';
 
 const Careers = () => {
     const [searchQuery, setSearchQuery] = useState<string>('');

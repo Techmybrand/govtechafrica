@@ -1,0 +1,186 @@
+@import "@/styles/imports";
+
+.privacy_policy_section {
+    width: 100%;
+    position: relative;
+    display: block;
+    padding: 8rem 10rem!important;
+    margin-top: 8rem!important;
+    .privacy_policy_content {
+        max-width: $max-width;
+        margin: 0 auto;
+        h1 {
+            color: $col-white;
+            font-family: $font;
+            font-weight: 900;
+            font-size: 6.4rem;
+            line-height: 8rem;
+            margin: 0 0 4.8rem;
+            width: 85%;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-size: 2.4rem;
+            line-height: 3.2rem;
+            font-family: $font;
+            color: $col-white;
+            width: 85%;
+            font-weight: 500;
+        }
+        .policies_container {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+            margin-block: 3.2rem;
+            width: 90%;
+            .policies {
+                h2 {
+                    text-transform: capitalize;
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                    font-family: $font;
+                    font-weight: 700;
+                    margin-bottom: 1.6rem;
+                    color: $col-white;
+                }
+                h4 {
+                    font-size: 2.2rem;
+                    line-height: 2.8rem;
+                    font-family: $font;
+                    font-weight: 500;
+                    color: $col-white;
+                }
+                .policies_content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.4rem;
+                    margin-top: 1.2rem;
+                    margin-left: 1.6rem;
+                    h3 {
+                        font-size: 2.2rem;
+                        line-height: 2.8rem;
+                        font-family: $font;
+                        font-weight: 400;
+                    }
+                    .policies_body {
+                        p {
+                            font-size: 1.6rem;
+                            line-height: 2.4rem;
+                            font-family: $font;
+                            color: $col-white;
+                            margin-bottom: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+        p {
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+            font-family: $font;
+            color: $col-white;
+        }
+    }
+
+    @include screenMax('tablet') {
+        padding: 6rem 3.6rem 8rem!important;
+        margin-top: 4rem;
+        .privacy_policy_content {
+            h1 {
+                font-size: 4.4rem;
+                line-height: 5.2rem;
+                margin-bottom: 3.6rem;
+            }
+            h3 {
+                font-size: 2rem;
+                line-height: 2.8rem;
+            }
+            .policies_container {
+                width: 90%;
+                gap: 2.4rem;
+                margin-block: 2.4rem;
+                .policies {
+                    h2 {
+                        font-size: 2rem;
+                        line-height: 2.4rem;
+                    }
+                    h4 {
+                        font-size: 1.8rem;
+                        line-height: 2.4rem;
+                    }
+                    .policies_content {
+                        gap: 1.6rem;
+                        margin-top: 1.6rem;
+                        h3 {
+                            font-size: 2rem;
+                            line-height: 2.4rem;
+                        }
+                        .policies_body {
+                            p {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                                font-family: $font;
+                                color: $col-white;
+                                margin-bottom: 0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+            p {
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+            }
+        }
+    }
+
+    @include screenMax('mobile') {
+        padding: 4rem 1.6rem 2.4rem!important;
+        margin-top: 1.6rem;
+        .privacy_policy_content {
+            h1 {
+                font-size: 3.2rem;
+                line-height: 4.8rem;
+                margin-bottom: 1.6rem;
+                width: 100%;
+            }
+            h3 {
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                width: 100%;
+            }
+            .policies_container {
+                gap: 1.6rem;
+                margin-block: 2rem;
+                .policies {
+                    h2 {
+                        font-size: 1.8rem;
+                        line-height: 2.4rem;
+                    }
+                    h4 {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                    }
+                    .policies_content {
+                        gap: 0.8rem;
+                        margin-top: 1.2rem;
+                        margin-left: 0.8rem;
+                        h3 {
+                            font-size: 1.6rem;
+                            line-height: 2.4rem;
+                        }
+                        .policies_body {
+                            p {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                                font-family: $font;
+                                color: $col-white;
+                                margin-bottom: 0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
