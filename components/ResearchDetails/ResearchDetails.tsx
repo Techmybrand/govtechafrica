@@ -6,7 +6,7 @@ import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
 import { ChartLoader } from "@/shared/loaders";
 import { useParams } from "next/navigation";
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import styles from "./ResearchDetails.module.scss";
 
@@ -75,11 +75,11 @@ const ResearchDetails = () => {
                         </div>
                     </div>
                     <div className={styles.details_body_}>
-                        <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" rel="noopener noreferrer">
+                        {/* <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" rel="noopener noreferrer"> */}
                             <Button className={styles.download_btn}>
                                 Read the report
                             </Button>
-                        </Link>
+                        {/* </Link> */}
                     </div>
                     <div className={styles.written_by_sm}>
                         <h2>WRITTEN BY</h2>
