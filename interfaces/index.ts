@@ -205,3 +205,19 @@ export interface BlogDetailsProps {
 	publishedAt?: string;
 	researchContent: Document;
 }
+
+export interface PrivacyPolicyProps {
+	title: string;
+	headerText: string;
+	subText?: string;
+	content: string[];
+}
+export interface ContentProps {
+	title?: string;
+	body?: string[];
+}
+export interface cookiesPolicyDataProps {
+	title: string;
+	headerText: string;
+	content: ContentProps[];
+}
