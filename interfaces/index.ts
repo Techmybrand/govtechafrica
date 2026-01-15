@@ -11,6 +11,7 @@ export interface NavLinkSub {
 	icon: string;
 	href: string;
 	id?: string;
+	isHref?: boolean;
 	menu?: NavLinkMenu[];
 }
 export interface NavLink {

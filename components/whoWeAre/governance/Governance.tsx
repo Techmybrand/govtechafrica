@@ -18,7 +18,7 @@ const Governance = () => {
 					</h3>
 				</div>
 				<div className={styles.card}>
-					<div className={styles.text}>
+					<div className={styles.card_text}>
 						<h3>
 							Meet The <span>Team</span>
 						</h3>

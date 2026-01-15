@@ -1,6 +1,7 @@
 @import "@/styles/imports";
 
 .section {
+	width: 100%;
 	.section_container {
 		padding: 3.6rem;
 		max-width: $max-width;
@@ -17,8 +18,8 @@
 			}
 			h3,
 			span {
-				font-size: 3rem;
-				line-height: 3.3rem;
+				font-size: 2.8rem;
+				line-height: 3.6rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
 			}
@@ -41,10 +42,30 @@
 			@include flex();
 			flex-direction: column;
 			border: 0.1rem solid rgba($col-white, 0.1);
+			.card_text {
+				h3, span {
+					font-size: 2.8rem;
+					line-height: 3.6rem;
+					font-weight: 700;
+					font-family: $font-gothic-bold;
+				}
+				span {
+					color: $col-white;
+				}
+				p {
+					margin-top: 1.2rem;
+					font-size: 1.8rem;
+					line-height: 2.4rem;
+				}
+			}
 		}
 		.button {
 			margin-top: auto;
 			justify-self: flex-end;
+			min-width: 13rem;
+			& > p {
+				font-weight: 600!important;
+			}
 		}
 		.grad_1,
 		.grad_2 {
@@ -73,12 +94,26 @@
 			padding: 3.6rem 2.4rem;
 			.text {
 				h2 {
-					font-size: 5.6rem;
-					line-height: 6.3rem;
+					font-size: 4rem;
+					line-height: 5.6rem;
+					margin-bottom: 2.4rem;
+				}
+				h3 {
+					font-size: 2.2rem;
+					line-height: 3rem;
 				}
 			}
 			.card {
 				padding: 2.4rem;
+				.card_text {
+					h3, span {
+						font-size: 2.4rem;
+						line-height: 3.2rem;
+					}
+					p {
+						font-size: 1.6rem;
+					}
+				}
 			}
 		}
 	}
@@ -88,12 +123,24 @@
 			padding: 2rem;
 			.text {
 				h2 {
-					font-size: 3.6rem;
-					line-height: 4.4rem;
+					font-size: 2.4rem;
+					line-height: 3.2rem;
+					margin-bottom: 1.6rem;
+				}
+				h3, span {
+					font-size: 1.6rem;
+					line-height: 2.4rem;
 				}
 			}
 			.card {
 				padding: 1.6rem;
+				.card_text {
+					p {
+						font-size: 1.4rem;
+						line-height: 2rem;
+						margin-top: 0.8rem;
+					}
+				}
 			}
 		}
 	}

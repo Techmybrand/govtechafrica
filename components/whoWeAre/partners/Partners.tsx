@@ -1,6 +1,5 @@
 'use client';
 import { Button, Carousel } from "@/shared";
-// import { useRouter } from "next/navigation";
 import styles from "./Partners.module.scss";
 
 const Partners = () => {
@@ -14,7 +13,6 @@ const Partners = () => {
 		'/images/logo-3.png',
 		'/images/logo-4.png',
   	]
-	// const router = useRouter();
 	return (
 		<div className={styles.section} id="partners">
 			<div className={styles.section_container}>

@@ -47,7 +47,7 @@ const Footer = () => {
 							<nav className={styles.footer_navBody}>
 								<ul>
 									{link.subMenu?.map((menu, index: number) => (
-										<li key={index}>
+										<li data-href={menu.isHref} key={index}>
 											<Link href={menu.href}>{menu.label}</Link>
 										</li>
 									))}

@@ -15,7 +15,7 @@ const HomeView = () => {
 				title="African technology for Government Excellence"
 				description="We enable African governments to better serve citizens by leveraging the enormous potential of technology and the digital economy. "
 				button="Explore our solutions"
-				href="/"
+				href="/what-we-do"
 				backgroundImage=""
 			/>
 			<Research />

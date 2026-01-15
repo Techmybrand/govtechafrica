@@ -1,6 +1,7 @@
 @import "@/styles/imports";
 
 .section {
+	width: 100%;
 	.section_container {
 		padding: 3.6rem;
 		max-width: $max-width;
@@ -18,8 +19,8 @@
 				.text {
 					h3,
 					span {
-						font-size: 3rem;
-						line-height: 3.3rem;
+						font-size: 2.8rem;
+						line-height: 3.6rem;
 						font-weight: 700;
 						font-family: $font-gothic-bold;
 					}
@@ -79,6 +80,40 @@
 								width: 7.5rem;
 								height: 7.5rem;
 							}
+						}
+					}
+				}
+			}
+			.body {
+				padding: 1.6rem;
+				.details {
+					margin-bottom: 4rem;
+					.text {
+						h3, span {
+							font-size: 2.4rem;
+							line-height: 3.2rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	@include screenMax('mobile') {
+		.section_container {
+			padding: 1.6rem;
+			.body {
+				padding: 1.6rem 0.8rem;
+				.details {
+					.text {
+						h3, span {
+							font-size: 2.2rem;
+							line-height: 2.8rem;
+						}
+					}
+					.button {
+						height: 4rem;
+						& > p {
+							font-size: 1.4rem!important;
 						}
 					}
 				}

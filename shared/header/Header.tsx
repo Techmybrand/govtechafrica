@@ -134,6 +134,10 @@ const LinkItem = ({
 	}, [collapsed]);
 	return (
 		<li onClick={() => {
+			if (index === 0) {
+				setCollapsed(true);
+				router.push(`/what-we-do`);
+			}
 			if (index === 1) {
 				setCollapsed(true);
 				router.push(`/who-we-are`);
