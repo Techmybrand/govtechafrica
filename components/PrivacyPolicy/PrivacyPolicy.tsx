@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
         <div className={styles.privacy_policy_content}>
           <h1>Privacy Policy</h1>
           <h3>
-            At GovTech INC, we are committed to safeguarding your personal information and respecting
+            At Govtech Africa, we are committed to safeguarding your personal information and respecting
             your privacy. This Privacy Policy explains the types of information we collect, how we use it,
             who we share it with, and the rights you have over your data. 
           </h3>
@@ -29,7 +29,7 @@ const PrivacyPolicy = () => {
               </div>
             )}
           </div>
-          <p>Thank you for trusting GovTech INC. We are committed to ensuring your privacy and security.</p>
+          <p>Thank you for trusting Govtech Africa. We are committed to ensuring your privacy and security.</p>
         </div>
       </section>
       <Divider />

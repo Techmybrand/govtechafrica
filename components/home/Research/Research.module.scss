@@ -8,6 +8,7 @@
 		margin-inline: auto;
 		overflow-x: hidden;
         @include grid(repeat(4, 1fr), 6.4rem);
+        @include noScrollBar();
     }
     .divider {
 		width: 100%;
@@ -19,13 +20,18 @@
         .research_wrapper {
             @include grid(repeat(2, 1fr), 9.6rem);
             padding: 2.4rem 6.4rem;
+            // padding: 2.4rem;
         }
     }
     @include screenMax("mobile") {
         .research_wrapper {
-            @include grid(repeat(1, 1fr), 1.6rem);
-            @include noScrollBar();
-            overflow-x: auto;
+            // @include grid(repeat(4, 1fr), 1.6rem);
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+            overflow-x: scroll;
+            // @include noScrollBar();
+            // overflow-x: auto;
             padding: 1.6rem;
         }
     }

@@ -11,7 +11,7 @@ const TermsOfUse = () => {
         <div className={styles.privacy_policy_content}>
           <h1>TERMS OF USE</h1>
           <h3>
-            {`Welcome to GovTech INC's website (the “Site”). By accessing or using this Site, you agree to
+            {`Welcome to Govtech Africa's website (the “site”). By accessing or using this site, you agree to
             comply with and be bound by these Terms of Use. If you do not agree with these terms, please
             refrain from using our site.`}
           </h3>
