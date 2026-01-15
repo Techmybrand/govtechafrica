@@ -85,7 +85,7 @@ const Mission = () => {
 					<div className={styles.grid_row}>
 						{values.map(value => (
 							<div key={value.title} className={styles.small_card}>
-								<div className={styles.text}>
+								<div className={styles.small_card_text}>
 									<h3>{value.title}</h3>
 									<p>{value.description}</p>
 								</div>

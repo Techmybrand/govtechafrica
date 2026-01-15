@@ -2,6 +2,7 @@ import Button from "./button/Button";
 import Carousel from "./Carousel/Carousel";
 import Catalogue from "./Catalogue/Catalogue";
 import Centerpiece from "./Centerpiece/Centerpiece";
+import Divider from "./Divider/Divider";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import Hero from "./hero/Hero";
@@ -29,6 +30,7 @@ export {
     InputField,
     TextArea,
     TechnologyCard,
+    Divider,
     Searchbar,
     ServiceIntroSection,
     Statistics,

@@ -176,22 +176,26 @@ export const footerNavLink: NavLink[] = [
 				label: "Manage Cookie Preferences",
 				icon: "/svgs/link-main.svg",
 				href: "/cookies-policy",
+				isHref: true,
 			},
 			{
 				label: "Privacy Policy",
 				icon: "/svgs/link-user.svg",
 				href: "/privacy-policy",
+				isHref: true,
 			},
 			{
 				label: "Terms of Use",
 				icon: "/svgs/link-ai.svg",
 				href: "/terms-of-use",
+				isHref: true,
 			},
 			{
 				label: "Site Map",
 				icon: "/svgs/link-ai.svg",
 				// href: "/site-map",
 				href: "",
+				isHref: false,
 			}
 		]
 	},
@@ -204,24 +208,28 @@ export const footerNavLink: NavLink[] = [
 			{
 				label: "Contact Us",
 				icon: "/svgs/link-main.svg",
-				href: "/contact"
+				href: "/contact",
+				isHref: true,
 			},
 			{
 				label: "Careers",
 				icon: "/svgs/link-user.svg",
-				href: "/careers"
+				href: "/careers",
+				isHref: true,
 			},
 			{
 				label: "About us",
 				icon: "/svgs/link-ai.svg",
 				// href: "/about-us",
-				href: ""
+				href: "",
+				isHref: false,
 			},
 			{
 				label: "Capabilities",
 				icon: "/svgs/link-ai.svg",
 				// href: "/capabilities"
-				href: ""
+				href: "",
+				isHref: false,
 			}
 		]
 	}
