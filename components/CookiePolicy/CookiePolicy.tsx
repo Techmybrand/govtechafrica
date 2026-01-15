@@ -11,8 +11,8 @@ const CookiePolicy = () => {
         <div className={styles.privacy_policy_content}>
           <h1>Cookies Policy</h1>
           <h3>
-            GovTech INC (“we,” “us,” “our”) uses cookies and similar technologies on our website (the
-            “Site”) to improve functionality, enhance user experiences, and deliver personalized content.
+            Govtech Africa (“we,” “us,” “our”) uses cookies and similar technologies on our website (the
+            “site”) to improve functionality, enhance user experiences, and deliver personalized content.
             This Cookies Policy explains what cookies are, how we use them, and your choices regarding
             their use.
           </h3>

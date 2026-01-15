@@ -469,13 +469,13 @@ export const termsOfUseData: PrivacyPolicyProps[] = [
             'Use the Site in a manner that could harm, disable, overburden, or impair its functionality.',
             'Upload, transmit, or distribute any malicious or harmful content.',
             'Attempt to gain unauthorized access to the Site, its servers, or related systems',
-            'Violate any intellectual property rights or proprietary rights of GovTech INC or third parties.',
+            'Violate any intellectual property rights or proprietary rights of Govtech Africa or third parties.',
         ]
     },
     {
         title: 'Intellectual Property',
         headerText: `All content on the Site, including text, graphics, logos, images, and software, is 
-			the property of GovTech INC or its licensors and is protected by copyright, trademark, and 
+			the property of Govtech Africa or its licensors and is protected by copyright, trademark, and 
 			other intellectual property laws.`,
         content: [
 			`You may not reproduce, distribute, modify, or create derivative works of any content without prior written permission.`,
@@ -484,8 +484,8 @@ export const termsOfUseData: PrivacyPolicyProps[] = [
     },
     {
         title: 'User Content',
-        headerText: `If you submit content (e.g., comments, feedback, or suggestions) to the Site, you 
-			grant GovTech INC a non-exclusive, royalty-free, perpetual, and irrevocable license to use, 
+        headerText: `If you submit content (e.g., comments, feedback, or suggestions) to the site, you 
+			grant Govtech Africa a non-exclusive, royalty-free, perpetual, and irrevocable license to use, 
 			modify, reproduce, and distribute such content in connection with its operations.`,
         content: [
 			`You are solely responsible for the content you submit and must ensure it does not infringe on
@@ -495,14 +495,14 @@ export const termsOfUseData: PrivacyPolicyProps[] = [
     {
         title: 'Third-Party Links',
         headerText: `The site may contain links to third-party websites or resources. These links are 
-			provided for convenience and do not signify endorsement by GovTech INC. We are not responsible 
+			provided for convenience and do not signify endorsement by Govtech Africa. We are not responsible 
 			for the content, policies, or practices of any third-party websites.`,
         content: []
     },
     {
         title: 'Disclaimer of Warranties',
         headerText: `The site and its content are provided "as is" and "as available" without any 
-			warranties, express or implied. GovTech INC disclaims all warranties, including but not 
+			warranties, express or implied. Govtech Africa disclaims all warranties, including but not 
 			limited to: `,
         content: [
             `The accuracy, completeness, or reliability of the Site's content.`,
@@ -511,7 +511,7 @@ export const termsOfUseData: PrivacyPolicyProps[] = [
     },
     {
         title: ' Limitation of Liability ',
-        headerText: 'To the fullest extent permitted by law, GovTech INC shall not be liable for any: ',
+        headerText: 'To the fullest extent permitted by law, Govtech Africa shall not be liable for any: ',
         content: [
 			` Direct, indirect, incidental, or consequential damages arising from your use or inability 
 				to use the site`,
@@ -520,7 +520,7 @@ export const termsOfUseData: PrivacyPolicyProps[] = [
     },
     {
         title: ' Indemnification',
-        headerText: `You agree to indemnify and hold harmless GovTech INC, its affiliates, employees, and 
+        headerText: `You agree to indemnify and hold harmless Govtech Africa, its affiliates, employees, and 
 			agents from any claims, damages, losses, or expenses (including attorney fees) arising out of 
 			your use of the site, your violation of these Terms of Use, or your infringement of any rights 
 			of a third party.`,
@@ -528,7 +528,7 @@ export const termsOfUseData: PrivacyPolicyProps[] = [
     },
     {
         title: 'Termination',
-        headerText: `GovTech INC reserves the right to suspend or terminate your access to the Site at 
+        headerText: `Govtech Africa reserves the right to suspend or terminate your access to the Site at 
 			its sole discretion, without prior notice, for any reason, including a breach of these Terms 
 			of Use.`,
         content: []
@@ -542,7 +542,7 @@ export const termsOfUseData: PrivacyPolicyProps[] = [
     },
 	{
 		title: 'Changes to Terms of Use',
-		headerText: `GovTech INC reserves the right to update or modify these Terms of Use at any time 
+		headerText: `Govtech Africa reserves the right to update or modify these Terms of Use at any time 
 			without prior notice. The updated version will be posted on this page with the effective date. 
 			Your continued use of the Site constitutes acceptance of any changes.`,
 		content: []
@@ -572,13 +572,13 @@ export const cookiesPolicyData: cookiesPolicyDataProps[] = [
                 body: [
                     'These are necessary for the website to function correctly.',
                     'They enable core functionalities, such as page navigation and access to secure areas.',
-                    'Disabling these cookies may impact your ability to use certain parts of the Site.',
+                    'Disabling these cookies may impact your ability to use certain parts of the site.',
                 ]
             },
             {
                 title: 'Performance Cookies',
                 body: [
-                    `These cookies collect information about how visitors use the Site, such as which pages are
+                    `These cookies collect information about how visitors use the site, such as which pages are
 						visited most often.`,
                     'They help us improve the website’s performance and user experience.',
                     'All data collected by these cookies is aggregated and anonymous.',
@@ -587,7 +587,7 @@ export const cookiesPolicyData: cookiesPolicyDataProps[] = [
             {
                 title: 'Functional Cookies',
                 body: [
-                    ' Functional cookies enable the Site to remember your preferences, such as language or region. ',
+                    ' Functional cookies enable the Site to remember your preferences, such as language or region.',
                     'They enhance personalization and make the Site more user-friendly.'
                 ]
             },
@@ -603,7 +603,7 @@ export const cookiesPolicyData: cookiesPolicyDataProps[] = [
             {
                 title: 'Social Media Cookies',
                 body: [
-                    'These cookies enable you to share content from our Site on social media platforms.',
+                    'These cookies enable you to share content from our site on social media platforms.',
                     'Social media platforms may use this information, as outlined in their privacy policies.'
                 ]
             },
