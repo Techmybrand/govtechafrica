@@ -13,8 +13,8 @@ const WhoWeAreView = () => {
 				button="Explore our solutions"
 				description="At Govtech Africa, we are driven by the need to close the technology gap for governments across the African continent. "
 				href="/what-we-do"
-				subDescription="leading homegrown technology firms, delivering tier  one technology systems development and deployment to governments across the African continent and enabling modern, efficient, and citizen-focused public services."
-				subTitle="We bring together"
+				subDescription="homegrown leading technology giants delivering tier one technology systems development and deployment to governments across the African continent"
+				subTitle="We are a coalition of"
 				dataType="are"
 			/>
 			{/* We are a coalition of homegrown leading technology giants delivering tier one technology systems development and deployment to governments across the African continent */}
