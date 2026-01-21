@@ -9,7 +9,9 @@ import Hero from "./hero/Hero";
 import InputField from "./inputField/InputField";
 import InsightsCard from "./InsightsCard/InsightsCard";
 import Logo from "./logo/Logo";
+import Modal from "./ModalElement/Modal";
 import Partners from "./Partners/Partners";
+import PreLoader from "./PreLoader/PreLoader";
 import ResearchCard from "./ResearchCard/ResearchCard";
 import RichText from "./RichText/RichText";
 import Searchbar from "./Searchbar/Searchbar";
@@ -25,9 +27,11 @@ export {
     Header,
     RichText,
     Footer,
+    PreLoader,
     Button,
     Hero,
     InputField,
+    Modal,
     TextArea,
     TechnologyCard,
     Divider,

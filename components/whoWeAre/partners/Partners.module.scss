@@ -2,13 +2,18 @@
 
 .section {
 	width: 100%;
+	margin-bottom: 8rem;
 	.section_container {
 		padding: 3.6rem;
 		max-width: $max-width;
 		margin-inline: auto;
+		position: relative;
 		.body {
+			border: 0.2rem solid #FFFFFF1A;
 			border-radius: 1.6rem;
-			background: rgba(255, 255, 255, 0.1);
+			border-radius: 1.6rem;
+			// background: rgba(255, 255, 255, 0.1);
+			background: #000;
 			padding: 2.4rem;
 			.details {
 				margin-bottom: 6rem;
@@ -49,6 +54,7 @@
 		background-color: rgba(255, 255, 255, 0.05);
 	}
 	@include screenMax("tablet") {
+		margin-bottom: 6rem;
 		.section_container {
 			padding: 2rem;
 			.card {
@@ -99,6 +105,7 @@
 		}
 	}
 	@include screenMax('mobile') {
+		margin-bottom: 4rem;
 		.section_container {
 			padding: 1.6rem;
 			.body {

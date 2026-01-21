@@ -26,12 +26,12 @@ export interface NavLink {
 	button?: string;
 	icon?: string;
 }
-
 export interface GrowthCardProps {
-	title: string
-	description: string
+	value: number;
+	label: string;
+	currency?: string;
+	description: string;
 }
-
 export interface TechnologyProps {
 	id: string
 	href: string

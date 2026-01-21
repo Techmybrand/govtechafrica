@@ -54,7 +54,7 @@ const Compliance = () => {
         <div className={styles.divider}></div>
         <div className={styles.capacity_building_content}>
             <ServiceIntroSection
-                title='IT Compliance & Regulatory Consultingy'
+                title='IT Compliance & Regulatory Consulting'
                 subtext='Compliance is key. We ensure government IT systems stay secure, 
                 compliant, and future-ready'
                 description='Govtech Africa provides specialized IT compliance and regulatory 

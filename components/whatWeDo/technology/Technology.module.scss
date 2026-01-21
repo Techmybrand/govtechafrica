@@ -2,6 +2,7 @@
 
 .section {
 	background-color: rgba($col-white, 0.01);
+	margin-block: 8rem;
 	.section_container {
 		padding: 3.6rem;
 		max-width: $max-width;
@@ -10,17 +11,17 @@
 		@include grid(repeat(2, 1fr), 3.6rem);
 		.text {
 			h2 {
-				font-size: 8rem;
-				line-height: 11rem;
+				font-size: 7.2rem;
+				line-height: 8.8rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
 				color: #FFF;
-				margin-bottom: 3.6rem;
+				margin-bottom: 2.4rem;
 			}
 			h3,
 			span {
-				font-size: 3rem;
-				line-height: 3.3rem;
+				font-size: 2.8rem;
+				line-height: 3.6rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
 			}
@@ -29,6 +30,7 @@
 			}
 			p {
 				margin-top: 1.2rem;
+				font-size: 1.6rem;
 			}
 		}
 		.large_row {
@@ -44,26 +46,10 @@
 		background-color: rgba(255, 255, 255, 0.05);
 	}
 	@include screenMax("tablet") {
+		margin-block: 6rem;
 		.section_container {
 			grid-template-columns: 100%;
 			padding-inline: 1.6rem;
-			.text {
-				h2 {
-					font-size: 5.6rem;
-					line-height: 6.4rem;
-					margin-bottom: 2.4rem;
-				}
-				h3, span {
-					font-size: 2.4rem;
-					line-height: 3.6rem;
-				}
-			}
-		}
-	}
-
-	@include screenMax('mobile') {
-		.section_container {
-			padding: 2rem;
 			.text {
 				h2 {
 					font-size: 3.6rem;
@@ -71,8 +57,29 @@
 					margin-bottom: 1.6rem;
 				}
 				h3, span {
-					font-size: 2.2rem;
+					font-size: 2rem;
 					line-height: 2.8rem;
+				}
+			}
+		}
+	}
+
+	@include screenMax('mobile') {
+		margin-block: 4rem;
+		.section_container {
+			padding: 1.6rem;
+			.text {
+				h2 {
+					font-size: 2.4rem;
+					line-height: 3.2rem;
+					margin-bottom: 1rem;
+				}
+				h3, span {
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+				}
+				p {
+					font-size: 1.4rem;
 				}
 			}
 		}
