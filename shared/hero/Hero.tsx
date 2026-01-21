@@ -50,7 +50,7 @@ const Hero = (props: Props) => {
 							<p>{props.description}</p>
 						</div>
 						{(props.button && props.href) && (
-							<Button className={styles.button_text}>{props.button}</Button>
+							<Button href={props.href} className={styles.button_text}>{props.button}</Button>
 						)}
 					</div>
 				</div>
