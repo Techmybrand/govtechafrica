@@ -1,0 +1,43 @@
+@import "@/styles/imports";
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    background: #000000B3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur('8px');
+    .modal_container {
+        position: relative;
+        max-height: 90vh;
+        max-width: 80rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FFF;
+        min-width: 32rem;
+        border-radius: 1.6rem;
+        z-index: 10;
+        overflow-y: scroll;
+    }
+
+    @include screenMax("tablet") {
+        .modal_container {
+            max-width: 100%;
+        }
+    }
+    
+    @include screenMax("mobile") {
+        justify-content: flex-start;
+        flex-direction: column;
+        .modal_container {
+            margin-top: 4.8rem;
+            max-width: 100%;
+        }
+    }
+}

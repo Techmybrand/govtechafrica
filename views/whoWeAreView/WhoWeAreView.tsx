@@ -11,13 +11,14 @@ const WhoWeAreView = () => {
 				backgroundImage="/images/who-we-are.png"
 				title="We are Drivers of Change"
 				button="Explore our solutions"
-				description="At Govtech Africa, we are driven by the need to close the technology gap for governments across the African continent. "
+				description={`At Govtech Africa, we are driven by the need to close the technology gap 
+					for governments across the African continent.`}
 				href="/what-we-do"
-				subDescription="homegrown leading technology giants delivering tier one technology systems development and deployment to governments across the African continent"
+				subDescription={`homegrown leading technology giants delivering tier one technology 
+					systems development and deployment to governments across the African continent`}
 				subTitle="We are a coalition of"
 				dataType="are"
 			/>
-			{/* We are a coalition of homegrown leading technology giants delivering tier one technology systems development and deployment to governments across the African continent */}
 			<Mission />
 			<Governance />
 			<Partners />

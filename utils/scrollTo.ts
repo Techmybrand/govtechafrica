@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // scrollTo.js
 // animateScroll.js
 
@@ -75,6 +76,7 @@ const getElementPosition = (element: any) => element.offsetTop;
 export const scrollTo = ({ id, ref = null, duration = 500 }: any) => {
   // the position of the scroll bar before the user clicks the button
   const initialPosition = window.scrollY;
+  console.log(ref);
 
   // if the reference is id
   if (id) {

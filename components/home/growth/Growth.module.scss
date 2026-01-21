@@ -2,6 +2,7 @@
 
 .section {
 	width: 100%;
+	margin-bottom: 8rem;
 	.section_container {
 		padding: 3.6rem;
 		max-width: $max-width;
@@ -9,8 +10,8 @@
 		.text {
 			h3,
 			span {
-				font-size: 3rem;
-				line-height: 3.3rem;
+				font-size: 2.8rem;
+				line-height: 3.6rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
 			}
@@ -27,17 +28,21 @@
 				border: 0.1rem solid rgba(255, 255, 255, 0.1);
 				padding: 2rem;
 				position: relative;
-				h4 {
-					font-size: 2.6rem;
-					line-height: 3.3rem;
-					font-weight: 700;
-					font-family: $font-gothic-bold;
-					color: #FFF;
-					margin-bottom: 1rem;
+				.card_header {
+					display: flex;
+					align-items: center;
+					h4, h6 {
+						font-size: 2.4rem;
+						line-height: 3.2rem;
+						font-weight: 700;
+						font-family: $font-gothic-bold;
+						color: #FFF;
+						margin-bottom: 1rem;
+					}
 				}
 				span {
 					display: block;
-					width: 5rem;
+					width: 5.5rem;
 					height: 0.4rem;
 					background: #00FF8C;
 					margin: -0.5rem 0 1rem;
@@ -52,11 +57,12 @@
 	}
 
 	@include screenMax("tablet") {
+		margin-bottom: 6rem;
 		.section_container {
 			padding: 2rem;
 			.grid {
-				grid-template-columns: repeat(6, 1fr);
-				overflow-x: scroll;
+				grid-template-columns: repeat(3, 1fr);
+				// overflow-x: scroll;
 				margin-inline: 0;
 				margin-left: -1.6rem;
 				margin-block: 2.4rem;
@@ -64,10 +70,11 @@
 				gap: 1rem;
 				.card {
 					padding: 1.6rem;
-					width: 20rem;
-					h4 {
-						font-size: 2rem;
-						line-height: 2.6rem;
+					.card_header {
+						h4, h6 {
+							font-size: 2rem;
+							line-height: 2.4rem;
+						}
 					}
 					span {
 						height: 0.2rem;
@@ -82,14 +89,23 @@
 	}
 
 	@include screenMax('mobile') {
+		margin-bottom: 4rem;
 		.section_container {
 			.grid {
 				margin-block: 1.6rem;
+				grid-template-columns: repeat(2, 1fr);
 				margin-left: 0;
+				.card {
+					.card_header {
+						h4, h6 {
+							font-size: 1.6rem;
+						}
+					}
+				}
 			}
 			.text {
 				h3, span {
-					font-size: 1.8rem;
+					font-size: 1.6rem;
 					line-height: 2.4rem;
 				}
 			}

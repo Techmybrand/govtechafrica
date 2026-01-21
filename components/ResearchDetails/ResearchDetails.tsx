@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Button, RichText } from "@/shared";
+import { RichText } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
@@ -61,42 +61,46 @@ const ResearchDetails = () => {
                         </div>
                         <div className={styles.written_by}>
                             <h2>WRITTEN BY</h2>
+                            {blog?.authors?.length ? (
+                                <div className={styles.writer_details_container}>
+                                    {blog?.authors?.map((author: string) =>
+                                        <div key={author} className={styles.writer_details}>
+                                            <h4>{author}</h4>
+                                            <h6>Govtech research</h6>
+                                            <div className={styles.details_linkedin}>
+                                                <Image alt='' fill src='/svgs/linkedin.svg' />
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            ): null}
+                        </div>
+                    </div>
+                    <div className={styles.details_body_}>
+                        {/* <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" rel="noopener noreferrer"> */}
+                            {/* <Button className={styles.download_btn}>
+                                Read the report
+                            </Button> */}
+                        {/* </Link> */}
+                    </div>
+                    <div className={styles.written_by_sm}>
+                        <h2>WRITTEN BY</h2>
+                        <div className={styles.line}></div>
+                        {blog?.authors?.length ? (
                             <div className={styles.writer_details_container}>
-                                {blog?.authors?.map((author: string) =>
+                                {blog?.authors?.map((author: string) => 
                                     <div key={author} className={styles.writer_details}>
-                                        <h4>{author}</h4>
-                                        <h6>Govtech research</h6>
+                                        <div className={styles.name_and_role}>
+                                            <h4>{author}</h4>
+                                            <h6>Govtech research</h6>
+                                        </div>
                                         <div className={styles.details_linkedin}>
                                             <Image alt='' fill src='/svgs/linkedin.svg' />
                                         </div>
                                     </div>
                                 )}
                             </div>
-                        </div>
-                    </div>
-                    <div className={styles.details_body_}>
-                        {/* <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" rel="noopener noreferrer"> */}
-                            <Button className={styles.download_btn}>
-                                Read the report
-                            </Button>
-                        {/* </Link> */}
-                    </div>
-                    <div className={styles.written_by_sm}>
-                        <h2>WRITTEN BY</h2>
-                        <div className={styles.line}></div>
-                        <div className={styles.writer_details_container}>
-                            {blog?.authors?.map((author: string) => 
-                                <div key={author} className={styles.writer_details}>
-                                    <div className={styles.name_and_role}>
-                                        <h4>{author}</h4>
-                                        <h6>Govtech research</h6>
-                                    </div>
-                                    <div className={styles.details_linkedin}>
-                                        <Image alt='' fill src='/svgs/linkedin.svg' />
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+                        ): null}
                     </div>
                 </section>
                 <div className={styles.divider_green}></div>

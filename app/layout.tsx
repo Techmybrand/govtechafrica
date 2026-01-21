@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/index.scss";
-import { Footer, Header } from "@/shared";
+import { Footer, Header, PreLoader } from "@/shared";
 import { AppProvider } from "@/context/AppContext";
 
 export const metadata: Metadata = {
@@ -19,6 +19,7 @@ export default function RootLayout({
 				<link rel="icon" href="/favicon.png" sizes="any" />
 			</head>
 			<body>
+				<PreLoader />
 				<AppProvider>
 					<Header />
 					{children}

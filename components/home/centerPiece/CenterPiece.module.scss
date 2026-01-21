@@ -1,6 +1,7 @@
 @import "@/styles/imports";
 
 .section {
+	margin-bottom: 6rem;
 	width: 100%;
 	.section_container {
 		padding: 3.6rem;
@@ -69,6 +70,7 @@
 		background-color: rgba(255, 255, 255, 0.05);
 	}
 	@include screenMax("tablet") {
+		margin-bottom: 6rem;
 		.section_container {
 			padding: 2rem;
 			.grid {
@@ -100,6 +102,7 @@
 	}
 
 	@include screenMax('mobile') {
+		margin-bottom: 4rem;
 		.section_container {
 			.image_and_text {
 				gap: 1.6rem;
@@ -110,7 +113,7 @@
 			}
 			.text, .text_ {
 				h3, span {
-					font-size: 1.8rem;
+					font-size: 1.6rem;
 					line-height: 2.4rem;
 				}
 			}

@@ -171,7 +171,6 @@
     @include screenMax('mobile') {
         padding: 1.6rem;
         height: auto!important;
-        margin-top: 1.6rem;
         .details, .card_image, .button {
             display: none;
         }

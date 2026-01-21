@@ -2,6 +2,7 @@
 
 .section {
 	width: 100%;
+	margin-bottom: 6rem;
 	.section_container {
 		padding: 3.6rem;
 		max-width: $max-width;
@@ -9,8 +10,8 @@
 		position: relative;
 		.text {
 			h2 {
-				font-size: 9rem;
-				line-height: 11rem;
+				font-size: 6.4rem;
+				line-height: 7.2rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
 				color: #fff;
@@ -18,8 +19,8 @@
 			}
 			h3,
 			span {
-				font-size: 3rem;
-				line-height: 3.3rem;
+				font-size: 2.8rem;
+				line-height: 3.6rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
 			}
@@ -47,12 +48,12 @@
 					background: #000;
 					p {
 						font-size: 1.6rem;
-						line-height: 1.8rem;
+						line-height: 2rem;
 						color: rgba(255, 255, 255, 0.6);
 					}
 					h4 {
-						font-size: 3rem;
-						line-height: 3.3rem;
+						font-size: 2.4rem;
+						line-height: 3.2rem;
 						font-weight: 700;
 						font-family: $font-gothic-bold;
 						margin-block: 0.5rem;
@@ -86,7 +87,9 @@
 		height: 2rem;
 		background-color: rgba(255, 255, 255, 0.05);
 	}
+
 	@include screenMax("tablet") {
+		margin-bottom: 6rem;
 		.section_container {
 			overflow: hidden;
 			padding: 3.6rem 2.4rem;
@@ -94,6 +97,15 @@
 				overflow-x: scroll;
 				margin-block: 3rem;
 				grid-template-columns: repeat(2, 1fr);
+				.card {
+					.card_details {
+						padding: 3.6rem 2rem 2.4rem;
+						h4 {
+							font-size: 2.2rem;
+							line-height: 2.8rem;
+						}
+					}
+				}
 			}
 			.grad_1,
 			.grad_2 {
@@ -101,36 +113,47 @@
 			}
 			.text {
 				h2 {
-					font-size: 6rem;
-					line-height: 7.3rem;
+					font-size: 4.4rem;
+					line-height: 5.6rem;
+					margin-bottom: 2rem;
+				}
+				h3, span {
+					font-size: 2rem;
+					line-height: 2.8rem;
 				}
 			}
 		}
 	}
+
 	@include screenMax('mobile') {
+		margin-bottom: 4rem;
 		.section_container {
-			padding: 2.4rem 2rem;
+			padding: 2.4rem 1.6rem;
 			.text {
 				h2 {
 					font-size: 2.4rem;
 					line-height: 3.2rem;
-					margin-bottom: 1.6rem;
+					margin-bottom: 1rem;
 				}
 				h3, span {
-					font-size: 1.6rem;
-					line-height: 2.4rem;
+					font-size: 1.4rem;
+					line-height: 2rem;
 				}
 			}
 			.grid {
 				grid-template-columns: repeat(1, 1fr);
 				margin-block: 2.4rem;
 				.card {
+					.image {
+						height: 10rem;
+					}
 					.card_details {
+						padding: 2rem 1.6re;
 						p {
 							font-size: 1.4rem;
 						}
 						h4 {
-							font-size: 2.2rem;
+							font-size: 2rem;
 							line-height: 2.8rem;
 						}
 					}

@@ -52,6 +52,7 @@
 					& > video {
 						object-fit: cover;
 						width: 100vw;
+						height: 100vh;
 					}
 				}
 			}
@@ -188,8 +189,8 @@
 					.text {
 						margin-top: 10rem;
 						p {
-							font-size: 1.6rem;
-							line-height: 2.4rem;
+							font-size: 1.4rem;
+							line-height: 2rem;
 							margin-top: 1rem;
 						}
 					}

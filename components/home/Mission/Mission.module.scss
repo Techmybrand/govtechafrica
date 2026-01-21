@@ -2,6 +2,7 @@
 
 .mission_section {
     width: 100%;
+	margin-bottom: 8rem;
     .container {
         max-width: $max-width;
         margin: 0 auto;
@@ -64,10 +65,9 @@
                     }
 		        }
                 .text {
-                    h3,
-                    span {
-                        font-size: 3rem;
-                        line-height: 3.3rem;
+                    h3, span {
+                        font-size: 2.8rem;
+                        line-height: 3.6rem;
                         font-weight: 700;
                         font-family: $font-gothic-bold;
                     }
@@ -77,6 +77,8 @@
                     p {
                         margin-top: 2rem;
                         color: #fff;
+                        font-size: 2rem;
+                        line-height: 2.4rem;
                     }
                 }
 			}
@@ -84,16 +86,30 @@
 				position: relative;
 				width: 100%;
 				height: 57.5rem;
+                & > img {
+                    object-fit: cover;
+                }
 			}
 		}
     }
 
     @include screenMax("tablet") {
+		margin-bottom: 6rem;
         .container {
             padding: 2rem;
             .card {
                 .details {
                     padding: 2rem;
+                    .text {
+                        h3, span {
+                            font-size: 2.2rem;
+                            line-height: 2.8rem;
+                        }
+                        p {
+                            font-size: 1.8rem;
+                            line-height: 2.4rem;
+                        }
+                    }
                 }
                 .image {
                     height: 43rem;
@@ -103,6 +119,7 @@
     }
 
     @include screenMax('mobile') {
+		margin-bottom: 4rem;
         .container {
             .card {
                 @include grid(repeat(1, 100%), 0);
@@ -115,8 +132,8 @@
                         }
                         p {
                             margin-top: 1.6rem;
-                            font-size: 1.6rem;
-                            line-height: 2.4rem;
+                            font-size: 1.4rem;
+                            line-height: 2rem;
                         }
                     }
                     .row {

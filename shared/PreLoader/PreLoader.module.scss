@@ -1,0 +1,65 @@
+@import "@/styles/imports";
+
+.preloader {
+	position: fixed;
+	// inset: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	z-index: 6;
+	@include flex(center, center);
+}
+.icon_container {
+	position: absolute;
+	.icon {
+		position: relative;
+		width: 6.5rem;
+		height: 6.5rem;
+	}
+}
+.loader {
+	display: block;
+	position: relative;
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	border: 0.4rem solid transparent;
+	border-top-color: #06703A;
+	// border-top-color: #0F3D25;
+	-webkit-animation: spin 3s linear infinite;
+	animation: spin 3s linear infinite;
+
+	// @include screenMax('tablet') {
+	// 	border: 0.5rem solid transparent;
+	// }
+	// @include screenMax('mobile') {
+	// 	border: 0.3rem solid transparent;
+	// }
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
