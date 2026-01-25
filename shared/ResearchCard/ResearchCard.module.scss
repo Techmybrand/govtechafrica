@@ -30,6 +30,7 @@
                 opacity: 1;
                 translate: 0 0;
                 transition: opacity 550ms ease-in-out, translate 550ms ease-in-out;
+                z-index: 3;
                 // transition-timing-function: cubic-bezier(0.85, 0, 0, 1);
                 // transition-duration: 550ms;
                 // transition-property: opacity, translate;
@@ -124,14 +125,14 @@
             text-transform: capitalize;
         }
         h4 {
-            z-index: 3;
             color: $col-white;
             font-family: $font;
             line-height: 1.5;
             opacity: 0;
             font-size: 1.2rem;
-            translate: 60% 0;
+            translate: 30% 0;
             position: relative;
+            z-index: -1;
             transition: opacity 550ms ease-in-out, translate 550ms ease-in-out;
         }
     }

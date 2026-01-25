@@ -2,7 +2,7 @@
 
 .section {
 	width: 100%;
-	margin-bottom: 6rem;
+	margin-bottom: 8rem;
 	.section_container {
 		padding: 3.6rem;
 		max-width: $max-width;
@@ -10,17 +10,17 @@
 		position: relative;
 		.text {
 			h2 {
-				font-size: 6.4rem;
-				line-height: 7.2rem;
+				font-size: 5.6rem;
+				line-height: 6.4rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
 				color: #fff;
-				margin-bottom: 3.6rem;
+				margin-bottom: 2.4rem;
 			}
 			h3,
 			span {
-				font-size: 2.8rem;
-				line-height: 3.6rem;
+				font-size: 2.2rem;
+				line-height: 3rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
 			}
@@ -32,12 +32,13 @@
 			@include grid(repeat(4, 1fr), 2.4rem);
 			margin-block: 3.6rem;
 			.card {
-				border: 0.2rem solid rgba(255, 255, 255, 0.12);
+				border: 0.2rem solid rgba(255, 255, 255, 0.1);
 				border-radius: 1.5rem;
 				overflow: hidden;
 				.image {
 					width: 100%;
 					height: 15.4rem;
+					background: rgba(255, 255, 255, 0.1);
 					position: relative;
 					display: flex;
 					align-items: center;
@@ -75,7 +76,7 @@
 				}
 			}
 			.card_1 {
-				width: 27rem;
+				// width: 27rem;
 				.image {
 					.container_1 {
 						margin-inline: auto;
@@ -87,7 +88,7 @@
 				}
 			}
 			.card_2 {
-				width: 29rem;
+				// width: 29rem;
 				.image {
 					.container_1, .container_2 {
 						width: 5.5rem;
@@ -104,7 +105,7 @@
 				}
 			}
 			.card_3 {
-				width: 33rem;
+				// width: 33rem;
 				.image {
 					.container_1, .container_2 {
 						width: 5.5rem;
@@ -122,7 +123,7 @@
 				}
 			}
 			.card_4 {
-				width: 40rem;
+				// width: 40rem;
 				.image {
 					.container_1 {
 						position: relative;
@@ -175,8 +176,9 @@
 	}
 	.divider {
 		width: 100%;
-		height: 2rem;
-		background-color: rgba(255, 255, 255, 0.05);
+		height: 0.2rem;
+		background-color: rgba(255, 255, 255, 0.1);
+		margin-top: 8rem;
 	}
 
 	@include screenMax("tablet") {
@@ -184,6 +186,17 @@
 		.section_container {
 			overflow: hidden;
 			padding: 3.6rem 2.4rem;
+			.text {
+				h2 {
+					margin-bottom: 1.6rem;
+					font-size: 4.4rem;
+					line-height: 5.2rem;
+				}
+				h3, span {
+					font-size: 1.8rem;
+					line-height: 2.7rem;
+				}
+			}
 			.grid {
 				overflow-x: scroll;
 				margin-block: 3rem;
@@ -215,6 +228,9 @@
 					line-height: 2.8rem;
 				}
 			}
+		}
+		.divider {
+			margin-top: 6rem;
 		}
 	}
 
@@ -252,6 +268,9 @@
 					}
 				}
 			}
+		}
+		.divider {
+			margin-top: 4rem;
 		}
 	}
 }

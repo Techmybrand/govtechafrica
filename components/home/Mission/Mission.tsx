@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { Button } from '@/shared';
 import Image from 'next/image';
 import styles from './Mission.module.scss';
 
@@ -12,25 +14,29 @@ const Mission = () => {
                         <h3>
                             Our <span>Mission</span>
                         </h3>
-                        <p>
-                            We are on a mission to build thriving and resilient
-                            societies by providing state-of-the-art technology for
-                            African governments and public institutions. Our goal is
-                            simple: to improve transparency, drive efficiency, and
-                            enable government excellence.
-                        </p>
                     </div>
-                    <div className={styles.row}>
+                    <div className={styles.cta_and_subtext}>
+                        <h6>
+                            {`Our goal is to improve transparency, drive efficiency, and enable 
+                                excellence for Africa's public sector.`
+                            }
+                        </h6>
+                        <Button className={styles.button} href="/who-we-are">
+                            Learn more
+                        </Button>
+                    </div>
+                    {/* <div className={styles.row}>
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(item => (
                             <div key={item} className={styles.line}></div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
                 <div className={styles.image}>
                     <Image src="/images/mission.png" priority fill alt="mission" sizes="100%" />
                 </div>
 			</div>
         </div>
+        <div className={styles.divider}></div>
     </div>
   )
 }

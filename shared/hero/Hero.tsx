@@ -61,7 +61,7 @@ const Hero = (props: Props) => {
 					<h3>{props.subTitle} <span>{props.subDescription}</span></h3>
 				</div>
 			)}
-			<div className={styles.divider}></div>
+			{/* <div className={styles.divider}></div> */}
 		</div>
 	);
 };
