@@ -46,19 +46,9 @@ export default function BlogView() {
 				) : (
 					<div className={styles.research_wrapper}>
 						{insightsList?.map((blog: BlogDetailsProps, index: number) => {
-							const getImage = () => {
-								if (index === 0) {
-									return '/images/article_1.jpeg'
-								} else if (index === 1) {
-									return '/images/article_2.jpeg'
-								} else {
-									return `https:${blog?.thumbnail?.fields?.file?.url}`
-								}
-							}
-							const articleImage = getImage();
 							return (
 								<ResearchCard key={index} title={blog?.title}
-									image={articleImage}
+									image={`https:${blog?.thumbnail?.fields?.file?.url}`}
 									alt={`https:${blog?.thumbnail?.fields?.description}`}
 									description={blog?.description}
 									btnText={blog?.type}

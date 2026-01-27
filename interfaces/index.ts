@@ -31,6 +31,7 @@ export interface GrowthCardProps {
 	label: string;
 	currency?: string;
 	description: string;
+	inView?: boolean;
 }
 export interface TechnologyProps {
 	id: string
