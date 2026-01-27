@@ -1,15 +1,12 @@
 'use client';
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/shared";
-import styles from "./Drivers.module.scss";
+import { motion, useInView, useAnimationControls } from "framer-motion";
 import Image from "next/image";
+import styles from "./Drivers.module.scss";
 
 const Drivers = () => {
 	const sectionRef = useRef<HTMLDivElement | null>(null);
-	const cardRef1 = useRef<HTMLDivElement | null>(null);
-	const cardRef2 = useRef<HTMLDivElement | null>(null);
-	const cardRef3 = useRef<HTMLDivElement | null>(null);
-	const cardRef4 = useRef<HTMLDivElement | null>(null);
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const mobile = isMobile;
 
@@ -23,76 +20,8 @@ const Drivers = () => {
 
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
-	
-
-	useEffect(() => {
-		const currentSection = sectionRef.current
-		const firstcardRef = cardRef1.current
-		const secondcardRef = cardRef2.current
-		const thirdcardRef = cardRef3.current
-		const fourthcardRef = cardRef4.current
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add(styles.visible);
-					observer.unobserve(entry.target);
-				}
-				});
-			},
-			{
-				threshold: 0.3,
-				root: null,
-				rootMargin: '0px',
-			}
-		);
-		const cardObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add(styles.visible);
-                        cardObserver.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                root: null,
-                threshold: 0.04,
-                rootMargin: '0px'
-            }
-        );
-		const setupObservers = () => {
-			if (mobile) {
-				if (currentSection) observer.unobserve(currentSection);
-				if (firstcardRef) cardObserver.observe(firstcardRef);
-				if (secondcardRef) cardObserver.observe(secondcardRef);
-				if (thirdcardRef) cardObserver.observe(thirdcardRef);
-				if (fourthcardRef) cardObserver.observe(fourthcardRef);
-			} else {
-				if (currentSection) observer.observe(currentSection);
-				if (firstcardRef) cardObserver.unobserve(firstcardRef);
-				if (secondcardRef) cardObserver.unobserve(secondcardRef);
-				if (thirdcardRef) cardObserver.unobserve(thirdcardRef);
-				if (fourthcardRef) cardObserver.unobserve(fourthcardRef);
-			}
-		}
-		setupObservers();
-		window.addEventListener('resize', setupObservers);
-
-		return () => {
-			window.removeEventListener('resize', setupObservers);
-			if (mobile) {
-				if (firstcardRef) cardObserver.unobserve(firstcardRef);
-				if (secondcardRef) cardObserver.unobserve(secondcardRef);
-				if (thirdcardRef) cardObserver.unobserve(thirdcardRef);
-				if (fourthcardRef) cardObserver.unobserve(fourthcardRef);
-				cardObserver.disconnect();
-			} else {
-				if (currentSection) observer.unobserve(currentSection);
-				observer.disconnect();
-			}
-		};
-	}, [mobile]);
+	const amount = mobile ? 0.1 : 0.3;
+	const sectionInView = useInView(sectionRef, { amount: amount, once: false });
 
 	return (
 		<div className={styles.section}>
@@ -110,10 +39,13 @@ const Drivers = () => {
 					</h3>
 				</div>
 				<div ref={sectionRef} className={styles.grid}>
-					<div ref={cardRef1} className={`${styles.card} ${styles.card_1}`}>
+					<div className={`${styles.card} ${styles.card_1}`}>
 						<div className={styles.image}>
-							{/* <Image src="/svgs/drivers-1.svg" fill alt="" /> */}
-							<div className={styles.container_1}></div>
+							<AnimatedContainer mobile={mobile} index={0}
+								className={styles.container_1}
+								inView={sectionInView}
+								fromLeft={true}
+							/>
 						</div>
 						<div className={styles.card_details}>
 							<p>We champion</p>
@@ -121,11 +53,18 @@ const Drivers = () => {
 							<p>for impact</p>
 						</div>
 					</div>
-					<div ref={cardRef2} className={`${styles.card} ${styles.card_2}`}>
+					<div className={`${styles.card} ${styles.card_2}`}>
 						<div className={styles.image}>
-							{/* <Image src="/svgs/drivers-2.svg" fill alt="" /> */}
-							<div className={styles.container_1}></div>
-							<div className={styles.container_2}></div>
+							<AnimatedContainer mobile={mobile} index={1}
+								className={styles.container_1}
+								inView={sectionInView}
+								fromLeft={true}
+							/>
+							<AnimatedContainer mobile={mobile} index={1}
+								className={styles.container_2}
+								inView={sectionInView}
+								fromLeft={false}
+							/>
 						</div>
 						<div className={styles.card_details}>
 							<p>We leverage</p>
@@ -133,11 +72,18 @@ const Drivers = () => {
 							<p>for progress</p>
 						</div>
 					</div>
-					<div ref={cardRef3} className={`${styles.card} ${styles.card_3}`}>
+					<div className={`${styles.card} ${styles.card_3}`}>
 						<div className={styles.image}>
-							{/* <Image src="/svgs/drivers-3.svg" fill alt="" /> */}
-							<div className={styles.container_1}></div>
-							<div className={styles.container_2}></div>
+							<AnimatedContainer mobile={mobile} index={2}
+								className={styles.container_1}
+								inView={sectionInView}
+								fromLeft={true}
+							/>
+							<AnimatedContainer mobile={mobile} index={2}
+								className={styles.container_2}
+								inView={sectionInView}
+								fromLeft={false}
+							/>
 						</div>
 						<div className={styles.card_details}>
 							<p>We profer</p>
@@ -145,15 +91,22 @@ const Drivers = () => {
 							<p>to local problems</p>
 						</div>
 					</div>
-					<div ref={cardRef4} className={`${styles.card} ${styles.card_4}`}>
+					<div className={`${styles.card} ${styles.card_4}`}>
 						<div className={styles.image}>
-							{/* <Image src="/svgs/drivers-4.svg" fill alt="" /> */}
-							<div className={styles.container_1}>
+							<AnimatedContainer mobile={mobile} index={3}
+								className={styles.container_1}
+								inView={sectionInView}
+								fromLeft={true}
+							>
 								<Image alt="" fill src='/svgs/polygon_1.svg' />
-							</div>
-							<div className={styles.container_2}>
+							</AnimatedContainer>
+							<AnimatedContainer mobile={mobile} index={3}
+								className={styles.container_2}
+								inView={sectionInView}
+								fromLeft={false}
+							>
 								<Image alt="" fill src='/svgs/polygon_2.svg' />
-							</div>
+							</AnimatedContainer>
 						</div>
 						<div className={styles.card_details}>
 							<p>We build</p>
@@ -170,3 +123,41 @@ const Drivers = () => {
 };
 
 export default Drivers;
+export interface AnimatedContainerProps {
+  inView: boolean;
+  mobile?: boolean;
+  fromLeft: boolean;
+  className: string;
+  children?: React.ReactNode;
+  index?: number
+}
+
+export const AnimatedContainer = ({ className, children, fromLeft, inView }: AnimatedContainerProps) => {
+	const controls = useAnimationControls();
+	// const delay = mobile ? (index ?? 0 * 0.3) : 0;
+	useEffect(() => {
+		if (inView) {
+			controls.start({
+				x: 0,
+				opacity: 1,
+				transition: { duration: 0.5, ease: "easeOut" },
+			});
+		} else {
+			controls.start({
+				x: fromLeft ? "-400%" : "400%",
+				opacity: 0,
+				transition: { duration: 0 },
+			});
+		}
+	}, [inView, controls, fromLeft]);
+
+	return (
+		<motion.div className={className}
+			initial={{ x: fromLeft ? "-400%" : "400%", opacity: 0 }}
+      		animate={controls}
+			// transition={{ duration: 0.5, ease: [0.3, 0.6, 0.9, 1.2], delay }}
+		>
+			{children}
+		</motion.div>
+	)
+}

@@ -44,7 +44,7 @@ const growthList: GrowthCardProps[] = [
 const Growth = () => {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	// const inView = useInView(sectionRef, { threshold: 0.3, once: false });
-	const inView = useInView(sectionRef, { amount: 0.3, once: false });
+	const inView = useInView(sectionRef, { amount: 0.2, once: false });
     // const hasAnimated = useRef<boolean>(false);
 	// const { scrollYProgress } = useScroll({
 	// 	target: sectionRef,
@@ -91,15 +91,6 @@ const Growth = () => {
 				</div>
 				<div className={styles.grid}>
 					{growthList.map((growth: GrowthCardProps, index: number) => (
-						// <div className={styles.card} key={index}>
-						// 	<div className={styles.card_header}>
-						// 		<h6>{growth.currency}</h6>
-						// 		<h4 data-count={growth.value}>0</h4>
-						// 		<h6>{growth.label}</h6>
-						// 	</div>
-						// 	<span></span>
-						// 	<p>{growth.description}</p>
-						// </div>
 						<GrowthCard key={index}
 							{...growth}
 							inView={inView}
