@@ -11,6 +11,7 @@ interface ResearchCardProps {
     title: string;
     description?: string;
     alt?: string;
+    index?: number;
 }
 
 const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardProps) => {
@@ -47,6 +48,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
 
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+    
     return (
         <React.Fragment>
             {mobile ? (
