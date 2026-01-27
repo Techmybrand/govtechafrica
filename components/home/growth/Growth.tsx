@@ -1,7 +1,8 @@
 'use client';
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { GrowthCardProps } from "@/interfaces";
-import { animateCounter } from "@/utils";
+// import { animateCounter } from "@/utils";
+import { motion, useInView, useMotionValue, useTransform, useMotionValueEvent, animate } from "framer-motion";
 import styles from "./Growth.module.scss";
 
 const growthList: GrowthCardProps[] = [
@@ -42,39 +43,46 @@ const growthList: GrowthCardProps[] = [
 
 const Growth = () => {
 	const sectionRef = useRef<HTMLDivElement>(null);
-    const hasAnimated = useRef<boolean>(false);
-    useEffect(() => {
-        const currentSection = sectionRef.current
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasAnimated.current) {
-                    const counters = sectionRef.current?.querySelectorAll('[data-count]');
-                    counters?.forEach((counter) => {
-                        const target = parseInt(counter.getAttribute('data-count') || '0');
-                            animateCounter(counter as HTMLElement, 0, target, 2000);
-                        }
-                    );
-                    hasAnimated.current = true;
-                }
-                });
-            },
-            { threshold: 0.3 }
-        );
+	// const inView = useInView(sectionRef, { threshold: 0.3, once: false });
+	const inView = useInView(sectionRef, { amount: 0.3, once: false });
+    // const hasAnimated = useRef<boolean>(false);
+	// const { scrollYProgress } = useScroll({
+	// 	target: sectionRef,
+	// 	offset: ["start end", "end end"],
+	// });
 
-        if (currentSection) {
-            observer.observe(currentSection);
-        }
+    // useEffect(() => {
+    //     const currentSection = sectionRef.current
+    //     const observer = new IntersectionObserver(
+    //         (entries) => {
+    //             entries.forEach((entry) => {
+    //             if (entry.isIntersecting && !hasAnimated.current) {
+    //                 const counters = sectionRef.current?.querySelectorAll('[data-count]');
+    //                 counters?.forEach((counter) => {
+    //                     const target = parseInt(counter.getAttribute('data-count') || '0');
+    //                         animateCounter(counter as HTMLElement, 0, target, 2500);
+    //                     }
+    //                 );
+    //                 hasAnimated.current = true;
+    //             }
+    //             });
+    //         },
+    //         { threshold: 0.3 }
+    //     );
 
-        return () => {
-            if (currentSection) {
-                observer.unobserve(currentSection);
-            }
-        };
-    }, []);
+    //     if (currentSection) {
+    //         observer.observe(currentSection);
+    //     }
+
+    //     return () => {
+    //         if (currentSection) {
+    //             observer.unobserve(currentSection);
+    //         }
+    //     };
+    // }, []);
 
 	return (
-		<div ref={sectionRef} className={styles.section}>
+		<motion.div ref={sectionRef} className={styles.section}>
 			<div className={styles.section_container}>
 				<div className={styles.text}>
 					<h3>
@@ -83,15 +91,19 @@ const Growth = () => {
 				</div>
 				<div className={styles.grid}>
 					{growthList.map((growth: GrowthCardProps, index: number) => (
-						<div className={styles.card} key={index}>
-							<div className={styles.card_header}>
-								<h6>{growth.currency}</h6>
-								<h4 data-count={growth.value}>0</h4>
-								<h6>{growth.label}</h6>
-							</div>
-							<span></span>
-							<p>{growth.description}</p>
-						</div>
+						// <div className={styles.card} key={index}>
+						// 	<div className={styles.card_header}>
+						// 		<h6>{growth.currency}</h6>
+						// 		<h4 data-count={growth.value}>0</h4>
+						// 		<h6>{growth.label}</h6>
+						// 	</div>
+						// 	<span></span>
+						// 	<p>{growth.description}</p>
+						// </div>
+						<GrowthCard key={index}
+							{...growth}
+							inView={inView}
+						/>
 					))}
 				</div>
 				<div className={styles.text}>
@@ -101,8 +113,41 @@ const Growth = () => {
 				</div>
 			</div>
 			<div className={styles.divider}></div>
-		</div>
+		</motion.div>
 	);
 };
 
 export default Growth;
+
+
+export const GrowthCard = ({ currency, value, description, label, inView }: GrowthCardProps) => {
+	const count = useMotionValue(0);
+	const decimals = value.toString().includes(".") ? value.toString().split(".")[1].length : 0;
+	const displayValue = useTransform(count, (latest) => latest.toFixed(decimals));
+	const [display, setDisplay] = useState("0");
+
+	useMotionValueEvent(displayValue, "change", (latest) => {
+		setDisplay(latest);
+	});
+
+	useEffect(() => {
+		if (inView) {
+			// animate(count, 0, value, { duration: 2.5, ease: "easeOut" });
+			animate(count, value, { duration: 2.5, ease: "easeOut" });
+		} else {
+			count.set(0);
+		}
+	}, [inView, count, value]);
+	return (
+		<div className={styles.card}>
+			<div className={styles.card_header}>
+				<h6>{currency}</h6>
+				{/* <h4 data-count={growth.value}>0</h4> */}
+				<h4>{display}</h4>
+				<h6>{label}</h6>
+			</div>
+			<span></span>
+			<p>{description}</p>
+		</div>
+	)
+}
