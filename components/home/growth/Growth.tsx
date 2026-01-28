@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from "react";
 import { GrowthCardProps } from "@/interfaces";
-// import { animateCounter } from "@/utils";
 import { motion, useInView, useMotionValue, useTransform, useMotionValueEvent, animate } from "framer-motion";
 import styles from "./Growth.module.scss";
 
@@ -43,43 +42,7 @@ const growthList: GrowthCardProps[] = [
 
 const Growth = () => {
 	const sectionRef = useRef<HTMLDivElement>(null);
-	// const inView = useInView(sectionRef, { threshold: 0.3, once: false });
 	const inView = useInView(sectionRef, { amount: 0.2, once: false });
-    // const hasAnimated = useRef<boolean>(false);
-	// const { scrollYProgress } = useScroll({
-	// 	target: sectionRef,
-	// 	offset: ["start end", "end end"],
-	// });
-
-    // useEffect(() => {
-    //     const currentSection = sectionRef.current
-    //     const observer = new IntersectionObserver(
-    //         (entries) => {
-    //             entries.forEach((entry) => {
-    //             if (entry.isIntersecting && !hasAnimated.current) {
-    //                 const counters = sectionRef.current?.querySelectorAll('[data-count]');
-    //                 counters?.forEach((counter) => {
-    //                     const target = parseInt(counter.getAttribute('data-count') || '0');
-    //                         animateCounter(counter as HTMLElement, 0, target, 2500);
-    //                     }
-    //                 );
-    //                 hasAnimated.current = true;
-    //             }
-    //             });
-    //         },
-    //         { threshold: 0.3 }
-    //     );
-
-    //     if (currentSection) {
-    //         observer.observe(currentSection);
-    //     }
-
-    //     return () => {
-    //         if (currentSection) {
-    //             observer.unobserve(currentSection);
-    //         }
-    //     };
-    // }, []);
 
 	return (
 		<motion.div ref={sectionRef} className={styles.section}>

@@ -28,6 +28,9 @@ export interface NavLink {
 }
 export interface GrowthCardProps {
 	value: number;
+	index?: number;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	progress?: any;
 	label: string;
 	currency?: string;
 	description: string;
