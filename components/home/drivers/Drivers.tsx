@@ -139,7 +139,7 @@ const Drivers = () => {
 				</motion.div>
 				<div className={styles.grid}>
 					{cardData.map((card, index) =>
-						<DriversCard key={index} index={index}
+						<DriversCard key={index} index={index} mobile={mobile}
 							card={card} scrollYProgress={scrollYProgress}
 						/>
 					)}
@@ -193,13 +193,18 @@ export const AnimatedContainer = ({ className, children, fromLeft, inView }: Ani
 interface CardProps {
 	card: cardDataProps;
 	index: number;
+	mobile: boolean;
 	scrollYProgress: MotionValue<number>;
 }
 
-export const DriversCard = ({ card, index, scrollYProgress }: CardProps) => {
+export const DriversCard = ({ card, index, scrollYProgress, mobile }: CardProps) => {
 	const start = 0 + index * 0.2;
 	const end = start + 0.3;
-	const rawY = useTransform(scrollYProgress, [start, end], [300, 0]);
+	const mobileStart = 0 + index * 0.1;
+	const mobileEnd = start + 0.2;
+	const getStart = mobile ? mobileStart : start;
+	const getEnd = mobile ? mobileEnd : end;
+	const rawY = useTransform(scrollYProgress, [getStart, getEnd], [300, 0]);
 	const y = useSpring(rawY, {
 		stiffness: 100,
 		damping: 20,
