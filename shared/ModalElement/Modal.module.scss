@@ -33,7 +33,7 @@
     }
     
     @include screenMax("mobile") {
-        justify-content: flex-start;
+        justify-content: flex-end;
         flex-direction: column;
         .modal_container {
             margin-top: 4.8rem;

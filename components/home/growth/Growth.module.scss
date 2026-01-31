@@ -69,13 +69,13 @@
 		margin-bottom: 6rem;
 		.section_container {
 			padding: 2rem;
+			overflow: hidden;
 			.grid, .grid_mob {
 				grid-template-columns: repeat(3, 1fr);
 				// overflow-x: scroll;
 				margin-inline: 0;
 				margin-left: -1.6rem;
 				margin-block: 2.4rem;
-				overflow-x: hidden;
 				@include noScrollBar();
 				gap: 1rem;
 				.card {
