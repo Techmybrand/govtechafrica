@@ -17,6 +17,10 @@
 		position: relative;
 		width: 5rem;
 		height: 5rem;
+		@include screenMax("mobile") {
+			width: 3.5rem;
+			height: 3.5rem;
+		}
 	}
 }
 .loader {
@@ -26,7 +30,7 @@
 	height: 10rem;
 	border-radius: 50%;
 	border: 0.4rem solid transparent;
-	border-top-color: #06703A;
+	border-top-color: #0BB55D;
 	// border-top-color: #0F3D25;
 	-webkit-animation: spin 3s linear infinite;
 	animation: spin 3s linear infinite;

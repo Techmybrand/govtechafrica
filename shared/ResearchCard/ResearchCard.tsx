@@ -52,7 +52,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
     return (
         <React.Fragment>
             {mobile ? (
-                <article data-active={hover} className={styles.card_container} onClick={onHover} 
+                <article data-active={hover} className={styles.card_container} onClick={onHover}
                     ref={cardRef}
                 >
                     <div className={styles.card_content}>

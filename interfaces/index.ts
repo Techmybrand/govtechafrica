@@ -1,4 +1,5 @@
 import { Document } from '@contentful/rich-text-types';
+import { MotionValue } from 'framer-motion';
 export interface NavLinkMenu {
 	label: string;
 	id?: string;
@@ -28,13 +29,24 @@ export interface NavLink {
 }
 export interface GrowthCardProps {
 	value: number;
-	index?: number;
+	index: number;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	progress?: any;
 	label: string;
 	currency?: string;
 	description: string;
 	inView?: boolean;
+}
+export interface GrowthCardMobileProps {
+	value: number;
+	index: number;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	progress?: any;
+	label: string;
+	currency?: string;
+	description: string;
+	inView?: boolean;
+	scrollYProgress: MotionValue<number>;
 }
 export interface TechnologyProps {
 	id: string

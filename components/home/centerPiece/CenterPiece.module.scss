@@ -8,6 +8,7 @@
 		max-width: $max-width;
 		margin-inline: auto;
 		transition: all 400ms ease-in-out;
+		overflow-x: hidden;
 		.image_and_text {
 			display: flex;
 			align-items: flex-start;

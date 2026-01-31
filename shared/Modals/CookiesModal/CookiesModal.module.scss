@@ -1,1 +1,147 @@
 @import "@/styles/imports";
+
+.modal_body {
+    width: 100rem!important;
+    .modal_content_body {
+        width: 100%;
+        padding: 2.4rem 3.2rem;
+        .modal_header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2.4rem;
+            justify-content: space-between;
+            h1 {
+                font-size: 2rem;
+                line-height: 2.8rem;
+                font-weight: 700;
+                color: #FFF;
+            }
+            .close_icon {
+                cursor: pointer;
+                width: 3.6rem;
+                height: 3.6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                background: rgba(255, 255, 255, 0.75);
+                border-radius: 50%;
+                border: 0.1rem solid rgba(255, 255, 255, 0.1);
+                h3 {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    color: #000;
+                    font-weight: 700;
+                }
+            }
+        }
+        .modal_content {
+            width: 85%;
+            margin-bottom: 5rem;
+            h3 {
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                font-weight: 400;
+                color: #FFF;
+                margin-bottom: 1.6rem;
+                a {
+                    cursor: pointer;
+                    text-decoration: underline;
+                    color: rgb(88, 109, 244);
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                }
+            }
+            .ctas {
+                display: flex;
+                align-items: center;
+                gap: 1.6rem;
+                margin-top: 4rem;
+                .accept_btn {
+                    width: 22rem;
+                    height: 5.6rem;
+                    background: #0BB55D;
+                    border-radius: 10rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    border: 0!important;
+                    h3 {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                        color: #FFF;
+                        margin: 0!important;
+                    }
+                }
+                .decline_btn {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border-radius: 10rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 24rem;
+                    height: 5.6rem;
+                    border: 0.2rem solid rgba(255, 255, 255, 0.2);
+                    cursor: pointer;
+                    h3 {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                        color: #FFF;
+                        margin: 0!important;
+                    }
+                }
+            }
+        }
+    
+    }
+    @include screenMax("tablet") {
+        width: 65rem!important;
+        .modal_content_body {
+            padding: 2.4rem;
+            .modal_header {
+                h1 {
+                    font-size: 1.8rem;
+                    line-height: 2.7rem;
+                }
+            }
+            .modal_content {
+                margin-bottom: 4rem;
+                .ctas {
+                    margin-top: 3.2rem;
+                }
+            }
+        }
+    }
+
+    @include screenMax("mobile") {
+        width: 98%!important;
+        .modal_content_body {
+            padding: 2rem;
+            .modal_header {
+                h1 {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                }
+            }
+            .modal_content {
+                width: 100%;
+                margin-bottom: 3.6rem;
+                h3 {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    a {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                    }
+                }
+                .ctas {
+                    margin-top: 2.4rem;
+                    .accept_btn, .decline_btn {
+                        height: 4.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
