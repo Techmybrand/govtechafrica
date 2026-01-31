@@ -184,10 +184,10 @@
 				}
 			}
 			.grid {
-				overflow-x: scroll;
+				overflow: hidden;
 				margin-block: 3rem;
 				// grid-template-columns: repeat(2, 1fr);
-				@include grid(repeat(2, 1fr), 8.6rem);
+				@include grid(repeat(4, 1fr), 0.8rem);
 				.card, .card_1, .card_2, .card_3, .card_4 {
 					width: 100%;
 					.card_details {

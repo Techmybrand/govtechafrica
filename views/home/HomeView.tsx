@@ -1,11 +1,24 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Hero } from "@/shared";
 import { Growth, Drivers, CenterPiece, Mission, Research } from "@/components/home";
 // import { Growth, Drivers, CenterPiece, Insights, Mission, Research } from "@/components/home";
 // import { Partners } from "@/components/whoWeAre";
+import { CookiesModal } from "@/shared/Modals";
 import styles from "./HomeView.module.scss";
 
 const HomeView = () => {
+	const [showModal, setShowModal] = useState<boolean>(false);
+	const [consent, setConsent] = useState<string | null>(null);
+	console.log('consent: ', consent);
+
+	useEffect(() => {
+		const storedConsent = localStorage.getItem('cookieConsent');
+		setConsent(storedConsent);
+		if (!storedConsent) {
+			setShowModal(true);
+		}
+	}, []);
 	return (
 		<React.Fragment>
 			<Hero
@@ -25,6 +38,7 @@ const HomeView = () => {
 			<CenterPiece />
 			{/* <Insights /> */}
 			<div className={styles.divider}></div>
+			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>
 	);
 };

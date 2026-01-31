@@ -9,17 +9,17 @@
     z-index: 30;
     background: #000000B3;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    // justify-content: flex-end;
     backdrop-filter: blur('8px');
     .modal_container {
         position: relative;
         max-height: 90vh;
-        max-width: 80rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #FFF;
+        background: rgba(0, 0, 0);
         min-width: 32rem;
         border-radius: 1.6rem;
         z-index: 10;

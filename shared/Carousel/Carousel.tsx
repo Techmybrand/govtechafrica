@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './Carousel.module.scss';
 import Image from 'next/image';
-
 interface ScrollerProps {
   items: string[];
   direction?: 'left' | 'right';

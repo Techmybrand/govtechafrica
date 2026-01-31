@@ -20,6 +20,9 @@ export default function RootLayout({
 			</head>
 			<body>
 				<PreLoader />
+				{/* <Providers>
+					{children}
+				</Providers> */}
 				<AppProvider>
 					<Header />
 					{children}

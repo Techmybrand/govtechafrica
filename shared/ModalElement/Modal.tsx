@@ -12,10 +12,10 @@ export interface ModalProps {
 const Modal = ({ isOpen, onClose, children, className }: ModalProps) => {
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    // document.body.style.overflow = isOpen ? "hidden" : "auto";
+    // return () => {
+    //   document.body.style.overflow = "auto";
+    // };
   }, [isOpen]);
   
   return (
