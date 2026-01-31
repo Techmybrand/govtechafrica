@@ -124,19 +124,19 @@
 					}
 				}
 			}
-			&.visible {
-				transition: all 500ms ease-in-out;
-				.card {
-					.image {
-						.container_1, .container_2 {
-							transition: translate 0.5s ease-out, opacity 0.5s ease-out;
-							opacity: 1;
-							translate: 0% 0;
-                			@include noScrollBar();
-						}
-					}
-				}
-			}
+			// &.visible {
+			// 	transition: all 500ms ease-in-out;
+			// 	.card {
+			// 		.image {
+			// 			.container_1, .container_2 {
+			// 				transition: translate 0.5s ease-out, opacity 0.5s ease-out;
+			// 				opacity: 1;
+			// 				translate: 0% 0;
+            //     			@include noScrollBar();
+			// 			}
+			// 		}
+			// 	}
+			// }
 		}
 		.learn_more {
 			p {
@@ -236,20 +236,22 @@
 				}
 			}
 			.grid {
-				grid-template-columns: repeat(1, 1fr);
+				// grid-template-columns: repeat(1, 1fr);
+				@include grid(repeat(1, 1fr), 2.4rem);
+				row-gap: 1.6rem;
+				overflow-y: hidden;
 				margin-block: 2.4rem;
 				.card {
 					.image {
 						height: 10rem;
 					}
 					.card_details {
-						padding: 2rem 1.6re;
 						p {
 							font-size: 1.4rem;
 						}
 						h4 {
-							font-size: 2rem;
-							line-height: 2.8rem;
+							font-size: 1.8rem;
+							line-height: 2.7rem;
 						}
 					}
 				}

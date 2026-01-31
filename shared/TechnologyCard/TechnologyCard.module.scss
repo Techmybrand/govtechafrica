@@ -2,7 +2,7 @@
 
 .card {
     width: 100%;
-    background-color: rgba($col-white, 0.05);
+    background-color: rgba($col-white, 0.1);
     border-radius: 1.5rem;
     overflow: hidden;
     padding: 3.2rem;
@@ -16,10 +16,10 @@
     border: 0.1rem solid rgba($col-white, 0.1);
     transition: all 400ms ease-in-out;
     &[data-card = "customised"], &[data-card = "cloud"], &[data-card = "web3"] {
-        height: 50.7rem;
+        height: 51.7rem;
     }
     &[data-card = "infrastructure"], &[data-card = "capacity"] {
-        height: 56.8rem;
+        height: 58.4rem;
     }
     &[data-card = "cybersecurity"], &[data-card = "tech"] {
         height: 36.6rem;
