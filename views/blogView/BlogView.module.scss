@@ -40,13 +40,13 @@
 					margin-bottom: 2rem;
 				}
 				h3 {
-					font-size: 2.8rem;
+					font-size: 2.4rem;
 					line-height: 3.2rem;
 					text-transform: capitalize;
 				}
 				p {
-					font-size: 1.8rem;
-					line-height: 2.7rem;
+					font-size: 1.6rem;
+					line-height: 2.4rem;
 				}
 				h5 {
 					font-weight: 700;
@@ -87,18 +87,18 @@
 			max-width: $max-width;
 			margin-inline: auto;
 			overflow-x: hidden;
-			@include grid(repeat(4, 1fr), 6.4rem);
+			@include grid(repeat(4, 1fr), 2.4rem);
 			@include noScrollBar();
 		}
 	}
 	.divider,
 	.divider1 {
 		width: 100%;
-		height: 2rem;
+		height: 0.2rem;
 		background-color: #bef2be;
 	}
 	.divider1 {
-		background-color: rgba(255, 255, 255, 0.05);
+		background-color: rgba(255, 255, 255, 0.1);
 		margin-block: 3.6rem;
 	}
 

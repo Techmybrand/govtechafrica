@@ -88,7 +88,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
                                 </div>
                             )}
                         </div>
-                        <h2>{title.toLowerCase()}</h2>
+                        <h2>{title}</h2>
                         <h4>{description}</h4>
                     </div>
                     <Link href={`/insights/research/${formatURL(title)}`}
@@ -132,7 +132,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
                                 </div>
                             )}
                         </div>
-                        <h2>{title.toLowerCase()}</h2>
+                        <h2>{title}</h2>
                         <h4>{description}</h4>
                     </div>
                     <Link href={`/insights/research/${formatURL(title)}`}>
