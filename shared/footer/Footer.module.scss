@@ -134,6 +134,31 @@
 						pointer-events: none;
 					}
 				}
+				.list_p {
+					cursor: pointer;
+					width: fit-content;
+					p {
+						font-family: $font;
+						font-size: 1.6rem;
+						color: #EAECF0;
+						text-transform: capitalize;
+					}
+					@include screenMax("tablet") {
+						p {
+							font-size: 1.4rem;
+						}
+					}
+					@include screenMax("mobile") {
+						p {
+							font-size: 1.2rem;
+						}
+					}
+					&:hover {
+						p {
+							color: $col-white;
+						}
+					}
+				}
 				@include screenMax("tablet") {
 					padding: 0.4rem 0;
 				}

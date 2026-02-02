@@ -175,7 +175,7 @@ export const footerNavLink: NavLink[] = [
 			{
 				label: "Manage Cookie Preferences",
 				icon: "/svgs/link-main.svg",
-				href: "/cookies-policy",
+				href: "",
 				isHref: true,
 			},
 			{
@@ -220,16 +220,14 @@ export const footerNavLink: NavLink[] = [
 			{
 				label: "About us",
 				icon: "/svgs/link-ai.svg",
-				// href: "/about-us",
-				href: "",
-				isHref: false,
+				href: "/who-we-are",
+				isHref: true,
 			},
 			{
 				label: "Capabilities",
 				icon: "/svgs/link-ai.svg",
-				// href: "/capabilities"
-				href: "",
-				isHref: false,
+				href: "/what-we-do",
+				isHref: true,
 			}
 		]
 	}
