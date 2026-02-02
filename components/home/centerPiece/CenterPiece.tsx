@@ -1,14 +1,21 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
-import { useInView, motion, useTransform, useScroll, useSpring } from "framer-motion";
-import Image from "next/image";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
+// import Image from "next/image";
 import styles from "./CenterPiece.module.scss";
 
 const CenterPiece = () => {
 	const ref = useRef<HTMLDivElement>(null);
-	const isInView = useInView(ref, { amount: 0.3, once: false });
+	// const isInView = useInView(ref, { amount: 0.3, once: false });
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const mobile = isMobile;
+	const [speed] = useState<number>(0.5);
+	const videoRef = useRef<HTMLVideoElement | null>(null)
+	useEffect(() => {
+		if (videoRef.current) {
+			videoRef.current.playbackRate = speed
+		}
+	}, [speed]);
 	
 	useEffect(() => {
 		const handleResize = () => {
@@ -28,15 +35,15 @@ const CenterPiece = () => {
 
 	const rangeStart = 0.05;
 	const rangeEnd   = 0.3;
-	const rawImageWidth = useTransform(scrollYProgress,
-		[rangeStart, rangeEnd],
-		["100%", mobile ? "100%" : "55%"]
-	);
-	const imageWidth = useSpring(rawImageWidth, {
-		stiffness: 80,
-		damping: 18,
-		mass: 0.4,
-	});
+	// const rawImageWidth = useTransform(scrollYProgress,
+	// 	[rangeStart, rangeEnd],
+	// 	["100%", mobile ? "100%" : "55%"]
+	// );
+	// const imageWidth = useSpring(rawImageWidth, {
+	// 	stiffness: 80,
+	// 	damping: 18,
+	// 	mass: 0.4,
+	// });
 	const rawTextX = useTransform(scrollYProgress, [rangeStart, rangeEnd], [160, 0]);
   	const rawTextOpacity = useTransform(scrollYProgress, [rangeStart, rangeEnd], [0, 1]);
 
@@ -56,28 +63,36 @@ const CenterPiece = () => {
 		stiffness: 90,
 		damping: 22,
 	});
+	// console.log(isInView);
 
 	return (
 		<div className={styles.section}>
 			<div ref={ref} className={styles.section_container}>
-				<div data-image={isInView} className={styles.image_and_text}>
+				<div className={styles.image_and_text}>
 					<motion.div
 						// variants={imageVariants} initial="initial"
 						// animate={isInView ? "animate" : "initial"}
 						// transition={{ duration: 0.6, ease: "easeOut" }}
-						style={{ width: imageWidth }}
+						// style={{ width: imageWidth }}
 						className={styles.image}
 					>
-						<Image src="/svgs/centerpiece.svg" sizes="100%" priority fill alt="" />
+						{/* <Image src="/svgs/centerpiece.svg" sizes="100%" priority fill alt="" /> */}
+						<video ref={videoRef} src='/videos/centerpiece.mp4' loop autoPlay 
+							muted playsInline preload="auto"
+						/>
 					</motion.div>
 					<div className={styles.image_mob}>
-						<Image src="/svgs/centerpiece_mob.svg" sizes="100%" fill alt="" />
+						{/* <Image src="/svgs/centerpiece_mob.svg" sizes="100%" fill alt="" /> */}
+						<video ref={videoRef} src='/videos/centerpiece.mp4' loop autoPlay 
+							muted playsInline preload="auto"
+						/>
 					</div>
 					<motion.div className={styles.text}
 						style={{
 							x: mobile ? 0 : textX,
 							y: mobile ? textYMobile : 0,
 							opacity: textOpacity,
+							display: 'none'
 						}}
 						// initial="initial" 
 						// animate={isInView ? "animate" : "initial"}
