@@ -8,7 +8,7 @@
 	height: 100%;
 	// background-color: #FFF;
 	background-color: rgba(0, 0, 0, 0.95);
-	z-index: 6;
+	z-index: 10;
 	@include flex(center, center);
 }
 .icon_container {
@@ -26,8 +26,8 @@
 .loader {
 	display: block;
 	position: relative;
-	width: 10rem;
-	height: 10rem;
+	width: 12.5rem;
+	height: 12.5rem;
 	border-radius: 50%;
 	border: 0.4rem solid transparent;
 	border-top-color: #0BB55D;
@@ -38,9 +38,10 @@
 	// @include screenMax('tablet') {
 	// 	border: 0.5rem solid transparent;
 	// }
-	// @include screenMax('mobile') {
-	// 	border: 0.3rem solid transparent;
-	// }
+	@include screenMax('mobile') {
+		width: 10rem;
+		height: 10rem;
+	}
 }
 
 @-webkit-keyframes spin {

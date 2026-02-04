@@ -32,25 +32,28 @@ const CookiesModal = ({ isOpen, onClose }: CookiesModalProps) => {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} className={styles.modal_body}>
+    <Modal isOpen={isOpen} onClose={() => {}} className={styles.modal_body}>
       <div className={styles.modal_content_body}>
         <div className={styles.modal_header}>
-          <h1>Accept the use of cookies</h1>
+          <h1>Accept the use of Cookies</h1>
           <div onClick={onClose} className={styles.close_icon}>
             <h3>x</h3>
           </div>
         </div>
         <div className={styles.modal_content}>
-          <h3>
-            {`We use cookies to improve your browsing experience, serve personlised content and analyse 
-              our traffic. By clicking 'Accept all cookies', you agree to the storing of cookies on your 
-              device.`
-            }
-          </h3>
-          <h3>
-            {/* You can customise your settings by clicking Manage preferences. */}
-            For more details, see our <Link href='/cookies-policy'>Cookie Policy</Link>
-          </h3>
+          <div className={styles.text}>
+            <h3>
+              {`We use cookies to improve your browsing experience, serve personlised content and analyse 
+                our traffic. By clicking 'Accept all cookies', you agree to the storing of cookies on your 
+                device.`
+              }
+            </h3>
+            <h3>
+              {/* You can customise your settings by clicking Manage preferences. */}
+              For more details, see our <Link href='/cookies-policy'>Cookie Policy</Link> and 
+              <Link href='/privacy-policy'> Privacy Statement</Link>
+            </h3>
+          </div>
           <div className={styles.ctas}>
             <button className={styles.accept_btn} onClick={handleAccept}>
               <h3>Accept Cookies</h3>

@@ -20,37 +20,59 @@
 }
 
 .footer_body {
-	@include flex(space-between);
+	// @include flex(space-between);
 	gap: 4rem;
 	padding: 6.5rem 3.6rem 0;
 	max-width: $max-width;
 	margin-inline: auto;
-	.details {
-		.logo_and_socials {
-			position: relative;
-		}
-		.socials {
-			@include grid(repeat(3, 2rem), 2rem);
-			margin-bottom: 2rem;
-			.social {
+	.footer_content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		.details {
+			.logo_and_socials {
 				position: relative;
-				width: 100%;
-				height: 2.4rem;
-				width: 2.4rem;
+			}
+			.socials {
+				@include grid(repeat(5, 2rem), 2rem);
+				margin-bottom: 2rem;
+				.social {
+					position: relative;
+					height: 2.4rem;
+					width: 2.4rem;
+					&[data-index = "3"] {
+						& > img {
+							object-fit: cover;
+						}
+						width: 3.2rem;
+					}
+				}
+			}
+			.copyWrite {
+				p {
+					color: #fff;
+					font-weight: 500;
+					font-size: 1.2rem;
+				}
 			}
 		}
-		.copyWrite {
-			p {
-				color: #fff;
-				font-weight: 500;
-				font-size: 1.2rem;
+		.footer_navSection {
+			// @include grid(repeat(2, 1fr), 2rem);
+			display: flex;
+			gap: 3.2rem;
+			@include screenMax("tablet") {
+				// grid-template-columns: 1fr;
+				// gap: 0;
+				gap: 2.4rem;
+				margin-bottom: 3.2rem;
 			}
 		}
 	}
 	.image {
 		position: relative;
 		height: 12rem;
-		width: 136.8rem;
+		width: 100%;
 		margin-top: 6rem;
 		margin-inline: auto;
 		@include screenMax("mobile") {
@@ -65,48 +87,50 @@
 		gap: 0;
 		align-items: flex-start;
 		padding: 3rem 1.6rem 0;
+		.footer_content {
+			.details {
+				order: 2;
+			}
+			.footer_navSection  {
+				order: 1;
+			}
+		}
 		.image {
 			height: 4rem;
 			order: 3;
 		}
-		.details {
-			order: 2;
-		}
 	}
 	@include screenMax("mobile") {
-		.details {
-			width: 100%;
-			.logo_and_socials {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
+		.footer_content {
+			flex-direction: column;
+			.details {
 				width: 100%;
-			}
-			.socials {
-				column-gap: 1.6rem!important;
-				.social {
-					width: 1.6rem;
-					height: 1.6rem;
+				.logo_and_socials {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					width: 100%;
 				}
-			}
-			.copyWrite {
-				p {
-					font-size: 1rem;
+				.socials {
+					column-gap: 1.6rem!important;
+					.social {
+						width: 1.6rem;
+						height: 1.6rem;
+						&[data-index = "3"] {
+							width: 2.4rem;
+						}
+					}
+				}
+				.copyWrite {
+					p {
+						font-size: 1rem;
+					}
 				}
 			}
 		}
 	}
 }
 
-.footer_navSection {
-	@include grid(repeat(2, 1fr), 2rem);
-	@include screenMax("tablet") {
-		// grid-template-columns: 1fr;
-		// gap: 0;
-		column-gap: 6rem;
-		margin-bottom: 3.2rem;
-	}
-}
 .footer_logo {
 	margin-bottom: 2rem;
 	cursor: pointer;
