@@ -10,10 +10,7 @@ const WhatWeDoView = () => {
 				backgroundType="image"
 				backgroundImage="/images/what-we-do-background.png"
 				title="Revolutionizing Governance Through Technology"
-				description="For some, the word impossible ends discussions. For us, it starts the conversation.  "
-				subDescription="to thrive through innovative IT solutions tailored for societal advancement."
-				subTitle="We empower African governments "
-				subLargeTitle="Technology"
+				description="For some, the word impossible ends discussions. For us, it starts the conversation."
 				dataType="do"
 			/>
 			<Technology />

@@ -8,6 +8,7 @@
 		max-width: $max-width;
 		margin-inline: auto;
 		position: relative;
+		overflow: hidden;
 		.text {
 			h2 {
 				font-size: 5.6rem;

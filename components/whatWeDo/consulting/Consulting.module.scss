@@ -19,8 +19,8 @@
 			}
 			h3,
 			span {
-				font-size: 2.4rem;
-				line-height: 3.2rem;
+				font-size: 2rem;
+				line-height: 2.8rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
 				width: 75%;
@@ -45,6 +45,7 @@
 	}
 	.divider1 {
 		margin-block: 3.6rem;
+		display: none;
 	}
 
 	@include screenMax("tablet") {
@@ -100,8 +101,8 @@
 					margin-bottom: 1rem;
 				}
 				h3, span {
-					font-size: 1.6rem;
-					line-height: 2.4rem;
+					font-size: 1.4rem;
+					line-height: 2rem;
 					width: 100%;
 				}
 				p {

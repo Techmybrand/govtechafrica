@@ -1,48 +1,8 @@
 import React from "react";
 import { TechnologyCard } from "@/shared";
+import { consulting } from "@/mock/navLists.mock";
 import { TechnologyProps } from "@/interfaces";
 import styles from "./Consulting.module.scss";
-
-const consulting: TechnologyProps[] = [
-	{
-		title: "IT Infrastructure Procurement & Supply",
-		image: '/svgs/infrastructure.svg',
-		description: "We empower African governments with the right infrastructure",
-		href: "/infrastructure-procurement-and-supply",
-		id: "infrastructure",
-	},
-	{
-		title: "Capacity Building & Trainings",
-		image: '/svgs/capacity.svg',
-		description:
-			"We equip government stakeholders with the skills and tools they need to drive meaningful change and innovation.",
-		href: "/capacity-building-and-trainings",
-		id: "capacity",
-	},
-	{
-		title: "Tech Events Design and Delivery",
-		image: '/svgs/tech.svg',
-		description:
-			"We connect Industry stakeholders for brainstorming & knowledge sharing",
-		href: "/tech-events",
-		id: "tech",
-	},
-	{
-		title: "IT Strategy Consulting & Advisory",
-		image: '/svgs/strategy.svg',
-		description: "We guide governments toward smarter, more effective tech solutions",
-		href: "/strategy-consulting-and-advisory",
-		id: "strategy",
-	},
-	{
-		title: "IT Compliance & Regulatory Consulting",
-		image: '/svgs/compliance.svg',
-		description:
-			"Compliance is key. We ensure government IT systems stay secure, compliant, and future-ready",
-		href: "/compliance-and-regulatory-consulting",
-		id: "compliance"
-	}
-];
 
 const Consulting = () => {
 	return (

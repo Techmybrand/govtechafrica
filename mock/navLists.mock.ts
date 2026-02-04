@@ -1,4 +1,4 @@
-import { cookiesPolicyDataProps, NavLink, PrivacyPolicyProps } from "@/interfaces";
+import { cookiesPolicyDataProps, NavLink, PrivacyPolicyProps, TechnologyProps } from "@/interfaces";
 
 export const navLinks: NavLink[] = [
 	{
@@ -237,7 +237,7 @@ export const socialMediaLinks = [
 	{
 		label: "twitter",
 		href: "https://x.com/govtech_africa",
-		icon: "/svgs/twitter.svg"
+		icon: "/svgs/twitter_dark.svg"
 	},
 	{
 		label: "instagram",
@@ -248,6 +248,16 @@ export const socialMediaLinks = [
 		label: "linkedIn",
 		href: "https://www.linkedin.com/company/govtech-africa-inc/",
 		icon: "/svgs/linkedin.svg"
+	},
+	// {
+	// 	label: "youtube",
+	// 	href: "https://www.instagram.com/govtech_africa",
+	// 	icon: "/svgs/youtube.svg"
+	// },
+	{
+		label: "facebook",
+		href: "https://www.facebook.com/share/1ZietUxCgj/?mibextid=wwXIfr",
+		icon: "/svgs/facebook.svg"
 	}
 ];
 
@@ -671,4 +681,102 @@ export const cookiesPolicyData: cookiesPolicyDataProps[] = [
 			provide to respond to your inquiries.`,
         content: []
     }
+];
+
+export const consulting: TechnologyProps[] = [
+	{
+		title: "IT Infrastructure Procurement & Supply",
+		image: '/svgs/infrastructure.svg',
+		description: "We empower African governments with the right infrastructure",
+		href: "/infrastructure-procurement-and-supply",
+		id: "infrastructure",
+	},
+	{
+		title: "Capacity Building & Trainings",
+		image: '/svgs/capacity.svg',
+		description:
+			"We equip government stakeholders with the skills and tools they need to drive meaningful change and innovation.",
+		href: "/capacity-building-and-trainings",
+		id: "capacity",
+	},
+	{
+		title: "Tech Events Design and Delivery",
+		image: '/svgs/tech.svg',
+		description:
+			"We connect Industry stakeholders for brainstorming & knowledge sharing",
+		href: "/tech-events",
+		id: "tech",
+	},
+	{
+		title: "IT Strategy Consulting & Advisory",
+		image: '/svgs/strategy.svg',
+		description: "We guide governments toward smarter, more effective tech solutions",
+		href: "/strategy-consulting-and-advisory",
+		id: "strategy",
+	},
+	{
+		title: "IT Compliance & Regulatory Consulting",
+		image: '/svgs/compliance.svg',
+		description:
+			"Compliance is key. We ensure government IT systems stay secure, compliant, and future-ready",
+		href: "/compliance-and-regulatory-consulting",
+		id: "compliance"
+	}
+];
+
+export const technologies: TechnologyProps[] = [
+	{
+		title: "Customised Software Solutions",
+		description: "We co-create the best solutions tailored to each agency’s need",
+		href: "customised-software-solutions",
+		image: '/svgs/customized.svg',
+		id: "customised",
+	},
+	{
+		title: "Cloud Services",
+		description:
+			"We equip government stakeholders with the skills and tools they need to drive meaningful change and innovation.",
+		href: "/cloud-services",
+		image: '/svgs/cloud_services.svg',
+		id: "cloud",
+	},
+	{
+		title: "Web3 & Blockchain Technology",
+		description: "Decentralized solutions for the public sector",
+		href: "/web3-and-blockchain",
+		image: '/svgs/web3.svg',
+		id: "web3",
+	},
+	{
+		title: "Cybersecurity",
+		description:
+			"Emerging threats demand revolutionary cyber protection. De-risk tomorrow by boosting cybersecurity today",
+		href: "/cybersecurity",
+		image: '/svgs/cybersecurity.svg',
+		id: "cybersecurity",
+	},
+	{
+		title: "Data and AI",
+		description:
+			"Elevating decision-making with secure and intelligent data processing, analytics and operational AI",
+		href: "/data-and-ai",
+		image: '/svgs/ai.svg',
+		id: "data",
+	},
+	{
+		title: "Network Infrastructure Design & Implementation",
+		description:
+			"Compliance is key. We ensure government IT systems stay secure, compliant, and future-ready",
+		href: "/network-infrastructure",
+		image: '/svgs/network.svg',
+		id: "network",
+	},
+	{
+		title: "IT Support Services (Remote support & Maintenance)",
+		description:
+			"Seamless IT operations with proactive remote support and maintenance",
+		href: "/support-services",
+		image: '/svgs/it.svg',
+		id: "it",
+	}
 ];

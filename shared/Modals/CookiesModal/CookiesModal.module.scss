@@ -1,7 +1,9 @@
 @import "@/styles/imports";
 
 .modal_body {
-    width: 100rem!important;
+    width: 100%!important;
+    max-width: $max-width!important;
+    margin-inline: auto!important;
     .modal_content_body {
         width: 100%;
         padding: 2.4rem 3.2rem;
@@ -11,8 +13,8 @@
             margin-bottom: 2.4rem;
             justify-content: space-between;
             h1 {
-                font-size: 2rem;
-                line-height: 2.8rem;
+                font-size: 2.4rem;
+                line-height: 3.2rem;
                 font-weight: 700;
                 color: #FFF;
             }
@@ -20,7 +22,8 @@
                 cursor: pointer;
                 width: 3.6rem;
                 height: 3.6rem;
-                display: flex;
+                // display: flex;
+                display: none;
                 align-items: center;
                 justify-content: center;
                 flex-shrink: 0;
@@ -36,20 +39,25 @@
             }
         }
         .modal_content {
-            width: 85%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 5rem;
-            h3 {
-                font-size: 1.6rem;
-                line-height: 2.4rem;
-                font-weight: 400;
-                color: #FFF;
-                margin-bottom: 1.6rem;
-                a {
-                    cursor: pointer;
-                    text-decoration: underline;
-                    color: rgb(88, 109, 244);
+            .text {
+                width: 100%;
+                h3 {
                     font-size: 1.6rem;
                     line-height: 2.4rem;
+                    font-weight: 400;
+                    color: #FFF;
+                    margin-bottom: 1.6rem;
+                    a {
+                        cursor: pointer;
+                        text-decoration: underline;
+                        color: rgb(88, 109, 244);
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                    }
                 }
             }
             .ctas {
@@ -101,8 +109,8 @@
             padding: 2.4rem;
             .modal_header {
                 h1 {
-                    font-size: 1.8rem;
-                    line-height: 2.7rem;
+                    font-size: 2.2rem;
+                    line-height: 3rem;
                 }
             }
             .modal_content {
@@ -120,19 +128,21 @@
             padding: 2rem;
             .modal_header {
                 h1 {
-                    font-size: 1.6rem;
-                    line-height: 2.4rem;
+                    font-size: 2rem;
+                    line-height: 2.8rem;
                 }
             }
             .modal_content {
                 width: 100%;
                 margin-bottom: 3.6rem;
-                h3 {
-                    font-size: 1.4rem;
-                    line-height: 2rem;
-                    a {
+                .text {
+                    h3 {
                         font-size: 1.4rem;
                         line-height: 2rem;
+                        a {
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                        }
                     }
                 }
                 .ctas {

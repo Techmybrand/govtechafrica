@@ -8,6 +8,7 @@
 		max-width: $max-width;
 		margin-inline: auto;
 		position: relative;
+		overflow: hidden;
 		.body {
 			border: 0.2rem solid rgba(255, 255, 255, 0.1);
 			border-radius: 1.6rem;
@@ -237,7 +238,7 @@
 									height: 4.4rem;
 								}
 								&[data-index = "1"] {
-									width: .6rem;
+									width: 9.6rem;
 									height: 5.3rem;
 								}
 								&[data-index = "2"] {
