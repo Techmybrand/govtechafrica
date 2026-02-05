@@ -13,7 +13,7 @@ const year = date.getFullYear();
 
 const Footer = () => {
 	const [openModal, setOpenModal] = useState<boolean>(false);
-	const [modal, setModal] = useState<boolean>(false);
+	const [open, setOpen] = useState<boolean>(false);
 	return (
 		<React.Fragment>
 			<footer className={styles.footer}>
@@ -45,6 +45,7 @@ const Footer = () => {
 								</div>
 							</div>
 							<div className={styles.copyWrite}>
+							{/* <div onClick={() => setOpen(true)} className={styles.copyWrite}> */}
 								<p>&copy; {year} Govtech Africa Inc.</p>
 							</div>
 						</div>
@@ -77,7 +78,7 @@ const Footer = () => {
 				<div className={styles.grad}></div>
 			</footer>
 			<CookieSettingsModal isOpen={openModal} onClose={() => setOpenModal(false)} />
-			<CookiesModal isOpen={modal} onClose={() => setModal(false)} />
+			<CookiesModal isOpen={open} onClose={() => setOpen(false)} />
 		</React.Fragment>
 	);
 };
