@@ -33,10 +33,10 @@ export default function BlogView() {
 				<div className={styles.large_card}>
 					<div className={styles.details}>
 						<h2>Insights</h2>
-						<p>
+						{/* <p>
 							Elevating decision-making with secure and intelligent data
 							processing, analytics and operational AI
-						</p>
+						</p> */}
 					</div>
 					<div className={styles.grad}></div>
 				</div>

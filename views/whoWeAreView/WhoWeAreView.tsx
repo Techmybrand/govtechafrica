@@ -1,9 +1,26 @@
-import React from "react";
-// import { Insights } from "@/components/home";
+"use client";
+import React, { useEffect } from "react";
 import { Governance, Mission, Partners } from "@/components/whoWeAre";
 import { Hero } from "@/shared";
+import Lenis from "lenis";
 
 const WhoWeAreView = () => {
+	useEffect(() => {
+		const lenis = new Lenis({
+			duration: 1.2,
+			smoothWheel: true,
+		});
+
+		function raf(time: number) {
+			lenis.raf(time);
+			requestAnimationFrame(raf);
+		}
+		requestAnimationFrame(raf);
+
+		return () => {
+			lenis.destroy();
+		};
+	}, []);
 	return (
 		<React.Fragment>
 			<Hero
@@ -14,15 +31,11 @@ const WhoWeAreView = () => {
 				description={`At Govtech Africa, we are driven by the need to close the technology gap 
 					for governments across the African continent.`}
 				href="/what-we-do"
-				subDescription={`homegrown leading technology giants delivering tier one technology 
-					systems development and deployment to governments across the African continent`}
-				subTitle="We are a coalition of"
 				dataType="are"
 			/>
 			<Mission />
 			<Governance />
 			<Partners />
-			{/* <Insights /> */}
 		</React.Fragment>
 	);
 };

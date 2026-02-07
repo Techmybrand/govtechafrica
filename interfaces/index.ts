@@ -49,17 +49,17 @@ export interface GrowthCardMobileProps {
 	scrollYProgress: MotionValue<number>;
 }
 export interface TechnologyProps {
-	id: string
-	href: string
-	title: string
-	image: string
-	description: string
+	id: string;
+	href: string;
+	title: string;
+	image: string;
+	description: string;
 }
-
 export interface TechnologyCardProps {
-	index?: number
 	technology: TechnologyProps
-	cardType: 'technology' | 'consulting'
+	cardType: 'technology' | 'consulting';
+	index: number;
+	scrollYProgress: MotionValue<number>;
 }
 export interface CareersProps {
 	title: string
@@ -80,7 +80,6 @@ export interface SectionProps {
     sec_description?: string
     subtext_class?: string
 }
-
 export interface StatisticsProps {
 	title: string
 	description: string
@@ -237,4 +236,11 @@ export interface cookiesPolicyDataProps {
 	title: string;
 	headerText: string;
 	content: ContentProps[];
+}
+
+export interface valueCardProps {
+	title?: string;
+	description: string;
+	index: number;
+	scrollYProgress: MotionValue<number>;
 }

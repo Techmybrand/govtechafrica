@@ -42,7 +42,7 @@ const Governance = () => {
 
 	return (
 		<div className={styles.section} id="team">
-			<div className={styles.section_container}>
+			<div className={styles.text_container}>
 				<div className={styles.text}>
 					<h2>{`It's all about inclusive governance`}</h2>
 					<h3>
@@ -52,10 +52,11 @@ const Governance = () => {
 						<span>African ingenuity and innovation.</span>
 					</h3>
 				</div>
+			</div>
+			<div className={styles.divider}></div>
+			<div className={styles.section_container}>
 				{mobile ? (
-					<div className={styles.card}
-						// onClick={onHover} ref={cardRef}
-					>
+					<div className={styles.card}>
 						<div className={styles.card_content}>
 							<div className={styles.card_text}>
 								<h3>
@@ -101,8 +102,6 @@ const Governance = () => {
 						</Button>
 					</div>
 				)}
-				<div className={styles.grad_1}></div>
-				<div className={styles.grad_2}></div>
 			</div>
 			<div className={styles.divider}></div>
 		</div>

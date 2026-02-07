@@ -1,121 +1,120 @@
+"use client";
+import React, { useRef } from "react";
+import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
+import { Values } from "..";
 import Image from "next/image";
 import styles from "./Mission.module.scss";
 
-const values = [
+const stackedCards: Card[] = [
 	{
-		title: "Innovation",
-		description: "We embrace innovation and creativity as catalysts for positive change and  continuous improvement."
+		title: 'Our',
+		sec_title: 'Mission',
+		text: `We are on a mission to build thriving and resilient societies by providing state-of-the-art 
+			technology for African governments and public institutions. Our goal is simple: to improve 
+			transparency, drive efficiency, and enable government excellence.`,
+		image: '/images/mission.png',
+		list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 	},
 	{
-		title: "Integrity",
-		description: "We uphold the highest standards of integrity, transparency, and ethical  conduct in all our interactions."
+		title: 'Our',
+		sec_title: 'Vision',
+		text: `Our vision is to be the leading IT solutions provider and technology systems integrator 
+			helping African governments and public institutions scale up efficiency and governance
+			through tailored automation.`,
+		image: '/images/vision.png',
+		list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 	},
-	{
-		title: "Collaboration",
-		description: "We believe in the power of collaboration and partnerships to achieve shared  goals and drive collective impact."
-	},
-	{
-		title: "Empowerment",
-		description: "We are committed to empowering governments and citizens with the tools  and knowledge they need to thrive in today’s digital age."
-	},
-	{
-		title: "Impact",
-		description: "We measure our success by the impact we create, both in terms of tangible  outcomes and positive societal change."
-	}
-];
+]
+interface Card {
+	title: string;
+	sec_title: string;
+	text: string;
+	image: string;
+	list: number[];
+}
 
 const Mission = () => {
+	const container = useRef<HTMLDivElement>(null);
+	const { scrollYProgress } = useScroll({
+		target: container,
+		offset: ["start start", "end end"],
+	});
 	return (
-		<div className={styles.section} id="mision">
-			<div className={styles.section_container}>
-				<div className={styles.card}>
-					<div className={styles.details}>
-						<div className={styles.text}>
-							<h3>
-								Our <span>Mission</span>
-							</h3>
-							<p>
-								We are on a mission to build thriving and resilient
-								societies by providing state-of-the-art technology for
-								African governments and public institutions. Our goal is
-								simple: to improve transparency, drive efficiency, and
-								enable government excellence.
-							</p>
-						</div>
-						<div className={styles.row}>
-							{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(item => (
-								<div key={item} className={styles.line}></div>
-							))}
-						</div>
-					</div>
-					<div className={styles.image}>
-						<Image src="/images/mission.png" priority fill alt="mission" sizes="100%" />
-					</div>
-				</div>
-				<div className={styles.card}>
-					<div className={styles.image}>
-						<Image src="/images/vision.png" fill alt="vision" sizes="100vw" />
-					</div>
-					<div className={styles.details}>
-						<div className={styles.text}>
-							<h3>
-								Our <span>Vision</span>
-							</h3>
-							<p>
-								Our vision is to be the leading IT solutions provider and
-								technology systems integrator helping African governments
-								and public institutions scale up efficiency and governance
-								through tailored automation.
-							</p>
-						</div>
-						<div className={styles.row}>
-							{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(item => (
-								<div key={item} className={styles.line}></div>
-							))}
-						</div>
-					</div>
-					<div className={styles.grad}></div>
-				</div>
-				<div className={styles.long_card}>
-					<div className={styles.text}>
+		<React.Fragment>
+			<div className={styles.text_section}>
+				<div className={styles.divider}></div>
+				<div className={styles.text_container}>
+					<div className={styles.text_}>
 						<h3>
-							Our <span>Values</span>
+							We are a coalition of{" "}
+							<span>homegrown leading technology giants delivering tier  one technology 
+								systems development and deployment to governments across the African 
+								continent.
+							</span>{" "}
 						</h3>
 					</div>
-					<div className={styles.grid_row}>
-						{values.map(value => (
-							<div key={value.title} className={styles.small_card}>
-								<div className={styles.small_card_text}>
-									<h3>{value.title}</h3>
-									<p>{value.description}</p>
-								</div>
-							</div>
-						))}
-					</div>
-					<div className={styles.row}>
-						<div className={styles.row}>
-							{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(item => (
-								<div key={item} className={styles.line}></div>
-							))}
-						</div>
-						<div className={styles.row}>
-							{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(item => (
-								<div key={item} className={styles.line}></div>
-							))}
-						</div>
-						<div className={styles.row}>
-							{[0].map(item => (
-								<div key={item} className={styles.line}></div>
-							))}
-						</div>
-					</div>
-					<div className={styles.grad}></div>
-					<div className={styles.grad2}></div>
 				</div>
 			</div>
-			<div className={styles.divider}></div>
-		</div>
+			<div className={styles.section} ref={container} id="mision">
+				<div className={styles.divider_}></div>
+				<div className={styles.section_container}>
+					{stackedCards.map((card, index) => {
+						const targetScale = 1 - (stackedCards.length - index) * 0.02;
+						return (
+							<Card
+								key={index}
+								card={card}
+								progress={scrollYProgress}
+								range={[0, 0.5]}
+								targetScale={targetScale}
+								index={index}
+							/>
+						);
+					})}
+				</div>
+				<div className={styles.divider}></div>
+			</div>
+			<Values />
+		</React.Fragment>
 	);
 };
 
 export default Mission;
+interface CardProps {
+	card: Card;
+	progress: MotionValue<number>;
+	range: [number, number];
+	targetScale: number;
+	index: number;
+}
+
+const Card = ({ card, progress, range, targetScale, index }: CardProps) => {
+	const cardRef = useRef<HTMLDivElement>(null);
+	const scale = useTransform(progress, range, [1, targetScale]);
+	
+	return (
+		<motion.div
+			className={styles.card_container} ref={cardRef}
+			style={{ top: `calc(54% - 30rem + ${index * 0.2}rem)`, scale: scale }}
+		>
+			<motion.div className={styles.card}>
+				<div className={styles.details}>
+					<div className={styles.text}>
+						<h3>
+							{card.title} <span>{card.sec_title}</span>
+						</h3>
+						<p>{card.text}</p>
+					</div>
+					<div className={styles.row}>
+						{card.list.map(item => (
+							<div key={item} className={styles.line}></div>
+						))}
+					</div>
+				</div>
+				<div className={styles.image}>
+					<Image src={card.image} priority fill alt="mission" sizes="100%" />
+				</div>
+			</motion.div>
+		</motion.div>
+	);
+};
