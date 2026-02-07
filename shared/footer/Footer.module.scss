@@ -41,12 +41,6 @@
 					position: relative;
 					height: 2.4rem;
 					width: 2.4rem;
-					&[data-index = "3"] {
-						& > img {
-							object-fit: cover;
-						}
-						width: 3.2rem;
-					}
 				}
 			}
 			.copyWrite {

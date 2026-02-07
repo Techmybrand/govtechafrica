@@ -31,13 +31,14 @@
                 p {
                     transition: all 400ms ease-in-out;
                     opacity: 1;
-                    translate: 0 0;
+                    translate: 0 0%;
                 }
             }
             .card_image {
                 opacity: 0;
-                translate: -50% 0;
+                translate: 0% 100%;
                 transition: all 400ms ease-in-out;
+                animation: drone-go-down 1s ease-in 0s forwards;
             }
             
         }
@@ -50,6 +51,7 @@
         }
     }
     .card_content {
+        transition: all 400ms ease-in-out;
         .details {
             position: relative;
             transition: all 400ms ease-in-out;
@@ -67,14 +69,16 @@
                 color: #FFF;
                 font-weight: 500;
                 opacity: 0;
-                translate: 50% 0;
+                translate: -100% 0;
             }
         }
         .card_image {
             position: relative;
-            align-self: flex-end;
-            translate: 0 0;
-            opacity: 1;
+            // animation: drone-come-up 1.6s ease-out 2.3s forwards, float-drone 8s ease-in-out 3.9s infinite;
+            animation: float-drone 8s ease-in-out 3.9s infinite;
+            // translate: 0 0%;
+            // opacity: 1;
+            // transition: all 400ms ease-in-out;
             & > img {
                 object-fit: cover;
             }
@@ -136,7 +140,7 @@
             min-width: 15rem;
             height: 5rem;
             opacity: 0;
-            translate: 50% 0;
+            translate: -100% 0;
             & > p {
                 font-size: 1.4rem!important;
                 font-weight: 600!important;
@@ -205,6 +209,7 @@
                         height: 3.5rem;
                         & > p {
                             font-size: 1.4rem!important;
+                            font-weight: 600!important;
                         }
                     }
                 }
@@ -214,10 +219,53 @@
                 width: 24rem;
                 height: 20rem;
                 position: relative;
+                animation: float-drone 8s ease-in-out 3.9s infinite;
                 & > img {
                     object-fit: cover;
                 }
             }
         }
     }
+}
+
+@keyframes drone-come-up {
+	0% {
+		bottom: -40rem;
+		opacity: 0;
+	}
+	100% {
+		bottom: 3.4rem;
+		opacity: 1;
+	}
+}
+
+@keyframes float-drone {
+	0% {
+		transform: translateY(0) rotate(0deg) scale(1);
+	}
+	25% {
+		transform: translateY(-1.2rem) rotate(-2deg) scale(1.02);
+	}
+	50% {
+		transform: translateY(0.6rem) rotate(1deg) scale(0.99);
+	}
+	75% {
+		transform: translateY(-0.8rem) rotate(-1deg) scale(1.01);
+	}
+	100% {
+		transform: translateY(0) rotate(0deg) scale(1);
+	}
+}
+
+@keyframes drone-go-down {
+	0% {
+		bottom: 3.4rem;
+		opacity: 1;
+		transform: translateY(0) rotate(0deg) scale(1);
+	}
+	100% {
+		bottom: -40rem;
+		opacity: 0;
+		transform: translateY(0) rotate(0deg) scale(1);
+	}
 }

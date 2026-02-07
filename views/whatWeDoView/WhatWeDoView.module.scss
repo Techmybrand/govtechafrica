@@ -1,0 +1,13 @@
+@import "@/styles/imports";
+
+.top_margin {
+    margin: 12rem 0 4rem;
+
+    @include screenMax("tablet") {
+        margin: 8rem 0 3.2rem;
+    }
+
+    @include screenMax("mobile") {
+        margin: 6.5rem 0 2.4rem;
+    }
+}

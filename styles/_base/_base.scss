@@ -44,6 +44,7 @@ body {
 	font-family: $font;
 	color: rgba(255, 255, 255, 0.7);
 	background-color: black;
+	flex-flow: column;
 	// @include flex(stretch, stretch, column);
 }
 

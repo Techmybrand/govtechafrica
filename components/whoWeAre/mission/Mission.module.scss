@@ -1,9 +1,9 @@
 @import "@/styles/imports";
 
-.section {
+.section, .text_section {
 	width: 100%;
 	margin-bottom: 8rem;
-	.section_container {
+	.section_container, .text_container {
 		padding: 3.6rem;
 		max-width: $max-width;
 		margin-inline: auto;
@@ -11,40 +11,50 @@
 		@include flex();
 		flex-direction: column;
 		gap: 3.6rem;
-		.card {
-			background-color: rgba($col-white, 0.1);
-			border-radius: 1.5rem;
-			overflow: hidden;
-			@include grid(repeat(2, 50%), 0);
+		.card_container {
+			position: sticky;
 			width: 100%;
-			position: relative;
-			.details {
-				padding: 4.8rem;
-				@include flex();
-				flex-direction: column;
-				justify-content: space-between;
-			}
-			.image {
-				position: relative;
+			height: 60rem;
+			max-width: $max-width;
+			margin-inline: auto;
+			background: #000;
+			.card {
+				background-color: rgba($col-white, 0.1);
+				border-radius: 1.5rem;
+				overflow: hidden;
+				@include grid(repeat(2, 50%), 0);
 				width: 100%;
-				height: 57.5rem;
+				position: relative;
+				.details {
+					padding: 4.8rem;
+					@include flex();
+					flex-direction: column;
+					justify-content: space-between;
+				}
+				.image {
+					position: relative;
+					width: 100%;
+					height: 57.5rem;
+				}
 			}
 		}
-		.grad,
-		.grad2 {
-			// background-color: #13361b;
-			background-color: rgba(255, 255, 255, 0.1);
-			width: 36.6rem;
-			height: 36.6rem;
-			filter: blur(150px);
-			position: absolute;
-			top: 0.3rem;
-			right: 0;
-			z-index: -1;
-		}
-		.grad2 {
-			left: 0;
-			right: unset;
+		.text_ {
+			max-width: 80rem;
+			margin-inline: auto;
+			h3,
+			span {
+				font-size: 2.4rem;
+				line-height: 3.2rem;
+				font-weight: 700;
+				font-family: $font-gothic-bold;
+				text-align: center;
+			}
+			span {
+				color: #FFF;
+			}
+			p {
+				margin-top: 1.2rem;
+			}
 		}
 		.row {
 			@include flex(flex-start);
@@ -137,31 +147,47 @@
 			}
 		}
 	}
-	.divider {
+	.text_container {
+		padding: 7rem 3.6rem 3.6rem;
+	}
+	.divider, .divider_ {
 		width: 100%;
 		height: 0.2rem;
 		background-color: rgba(255, 255, 255, 0.1);
 		margin-top: 8rem;
 	}
+	.divider_ {
+		margin-bottom: 8rem;
+	}
 
 	@include screenMax("tablet") {
 		margin-bottom: 6rem;
-		.section_container {
+		.section_container, .text_container {
 			padding: 2.4rem;
 			gap: 1.8rem;
-			.card {
-				grid-template-columns: 100%;
-				.details {
-					padding: 3.2rem;
+			.text_ {
+				max-width: 85%;
+				h3, span {
+					font-size: 1.8rem;
+					line-height: 2.7rem;
 				}
-				.image {
-					height: 30rem;
-					& > img {
-						object-fit: cover;
+			}
+			.card_container {
+				height: auto;
+				.card {
+					grid-template-columns: 100%;
+					.details {
+						padding: 3.2rem;
 					}
-				}
-				.row {
-					display: none;
+					.image {
+						height: 30rem;
+						& > img {
+							object-fit: cover;
+						}
+					}
+					.row {
+						display: none;
+					}
 				}
 			}
 			.text {
@@ -200,24 +226,40 @@
 				}
 			}
 		}
-		.divider {
+		.text_container {
+			padding: 5rem 2.4rem 2.4rem;
+		}
+		.divider, .divider_ {
 			margin-top: 6rem;
+		}
+		.divider_ {
+			margin-bottom: 6rem;
 		}
 	}
 
 	@include screenMax('mobile') {
 		margin-bottom: 4rem;
-		.section_container {
+		.section_container, .text_container {
 			padding: 1.6rem;
 			gap: 0.8rem;
-			.card {
-				margin-bottom: 3.2rem;
-				row-gap: 0!important;
-				.details {
-					padding: 2.4rem;
+			.text_ {
+				max-width: 95%;
+				h3, span {
+					font-size: 1.4rem;
+					line-height: 2rem;
+					width: 100%;
 				}
-				.image {
-					height: 25rem;
+			}
+			.card_container {
+				.card {
+					margin-bottom: 3.2rem;
+					row-gap: 0!important;
+					.details {
+						padding: 2.4rem;
+					}
+					.image {
+						height: 25rem;
+					}
 				}
 			}
 			.text {
@@ -253,8 +295,14 @@
 				}
 			}
 		}
-		.divider {
+		.text_container {
+			padding: 4rem 1.6rem 1.6rem;
+		}
+		.divider, .divider_ {
 			margin-top: 4rem;
+		}
+		.divider_ {
+			margin-bottom: 4rem;
 		}
 	}
 }

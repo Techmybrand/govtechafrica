@@ -8,32 +8,62 @@
 		max-width: $max-width;
 		margin-inline: auto;
 		position: relative;
-		.text {
-			h2 {
-				font-size: 4rem;
-				line-height: 5.6rem;
-				font-weight: 700;
-				font-family: $font-gothic-bold;
+		.intro_text {
+			width: 100%;
+			margin-bottom: 6.4rem;
+			h1 {
+				font-size: 4.4rem;
+				line-height: 5.2rem;
 				color: #FFF;
-				margin-bottom: 2.4rem;
-			}
-			h3,
-			span {
-				font-size: 2rem;
-				line-height: 2.8rem;
-				font-weight: 700;
 				font-family: $font-gothic-bold;
-				width: 75%;
-			}
-			span {
-				color: #FFF;
+				margin-bottom: 3.2rem;
 			}
 			p {
-				margin-top: 1.2rem;
-				font-size: 1.6rem;
+				font-size: 1.8rem;
+				line-height: 2.4rem;
+				color: #FFF;
+				font-weight: 400;
 			}
 		}
-		.rows {
+		.text_container {
+			width: 100%;
+			height: 58rem;
+			margin-bottom: 8rem;
+			position: relative;
+			& > img {
+				object-fit: cover;
+			}
+			.text {
+				position: relative;
+				width: 100%;
+				padding: 0 0 0 3.6rem;
+				top: 70%;
+				h2 {
+					font-size: 4rem;
+					line-height: 5.6rem;
+					font-weight: 700;
+					font-family: $font-gothic-bold;
+					color: #FFF;
+					margin-bottom: 2.4rem;
+				}
+				h3,
+				span {
+					font-size: 2rem;
+					line-height: 2.8rem;
+					font-weight: 700;
+					font-family: $font-gothic-bold;
+					width: 60%;
+				}
+				span {
+					color: #FFF;
+				}
+				p {
+					margin-top: 1.2rem;
+					font-size: 1.6rem;
+				}
+			}
+		}
+		.rows, .rows_mob {
 			@include grid(repeat(2, 1fr), 3.6rem);
 			width: 100%;
 			.large_row {
@@ -45,17 +75,50 @@
 				width: 100%;
 			}
 		}
+		.rows_mob {
+			display: none;
+		}
 	}
 	.divider {
 		width: 100%;
 		height: 0.2rem;
 		background-color: rgba(255, 255, 255, 0.1);
+		margin-top: 8rem;
 	}
 
 	@include screenMax("tablet") {
 		margin-block: 0 6rem;
 		.section_container {
-			padding-inline: 1.6rem;
+			padding-inline: 2.4rem;
+			.intro_text {
+				margin-bottom: 4.8rem;
+				h1 {
+					margin-bottom: 2rem;
+					font-size: 3.6rem;
+					line-height: 4.4rem;
+				}
+				p {
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+				}
+			}
+			.text_container {
+				height: 40rem;
+				margin-bottom: 6rem;
+				.text {
+					top: 50%;
+					padding: 0 0 0 2.4rem;
+					h2 {
+						font-size: 3.2rem;
+						line-height: 4rem;
+					}
+					h3, span {
+						font-size: 1.8rem;
+						line-height: 2.7rem;
+						width: 80%;
+					}
+				}
+			}
 			.text {
 				h2 {
 					font-size: 3.2rem;
@@ -69,8 +132,14 @@
 				}
 			}
 			.rows {
-				@include grid(repeat(1, 1fr), 2.4rem);
+				display: none!important;
 			}
+			.rows_mob {
+				@include grid(repeat(1, 1fr), 2.4rem, 0!important);
+			}
+		}
+		.divider {
+			margin-top: 6rem;
 		}
 	}
 
@@ -78,6 +147,34 @@
 		margin-block: 0 4rem;
 		.section_container {
 			padding: 1.6rem;
+			.intro_text {
+				margin-bottom: 3.2rem;
+				h1 {
+					font-size: 2.4rem;
+					line-height: 3.2rem;
+					margin-bottom: 1rem;
+				}
+				p {
+					font-size: 1.4rem;
+					line-height: 2rem;
+				}
+			}
+			.text_container {
+				height: 38rem;
+				.text {
+					padding: 0 0 0 1.6rem;
+					top: 30%;
+					h2 {
+						font-size: 2.4rem;
+						line-height: 3.2rem;
+						margin-bottom: 1rem;
+					}
+					h3, span {
+						font-size: 1.4rem;
+						line-height: 2rem;
+					}
+				}
+			}
 			.text {
 				h2 {
 					font-size: 2.4rem;
@@ -93,9 +190,9 @@
 					font-size: 1.4rem;
 				}
 			}
-			.rows {
-				@include grid(repeat(1, 1fr), 2rem);
-			}
+		}
+		.divider {
+			margin-top: 4rem;
 		}
 	}
 }

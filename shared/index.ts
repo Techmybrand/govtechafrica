@@ -1,3 +1,4 @@
+import AnimatedSection from "./AnimatedSection/AnimatedSection";
 import Button from "./button/Button";
 import Carousel from "./Carousel/Carousel";
 import Catalogue from "./Catalogue/Catalogue";
@@ -23,6 +24,7 @@ import TextArea from "./textArea/TextArea";
 
 
 export {
+    AnimatedSection,
     Logo,
     Header,
     RichText,

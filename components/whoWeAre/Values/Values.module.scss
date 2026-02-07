@@ -1,0 +1,604 @@
+@import "@/styles/imports";
+
+.values_section {
+	width: 100%;
+	margin-bottom: 8rem;
+	.values_section_container {
+		padding: 3.6rem;
+		max-width: $max-width;
+		margin-inline: auto;
+        overflow: hidden;
+		width: 100%;
+		@include flex();
+		flex-direction: column;
+		gap: 3.6rem;
+		.row {
+			@include flex(flex-start);
+            margin-top: 3.2rem;
+			gap: 1.2rem;
+			.line {
+				width: 4rem;
+				height: 0.3rem;
+				&:nth-child(1) {
+					background-color: #bef2be;
+				}
+				&:nth-child(2) {
+					background-color: #76df93;
+				}
+				&:nth-child(3) {
+					background-color: #00be4d;
+				}
+				&:nth-child(4) {
+					background-color: #76df93;
+				}
+				&:nth-child(5) {
+					background-color: #ffffff;
+				}
+				&:nth-child(6) {
+					background-color: #00be4d;
+				}
+				&:nth-child(7) {
+					background-color: #bef2be;
+				}
+				&:nth-child(8) {
+					background-color: #76df93;
+				}
+				&:nth-child(9) {
+					background-color: #00be4d;
+				}
+				&:nth-child(10) {
+					background-color: #76df93;
+				}
+				&:nth-child(11) {
+					background-color: #ffffff;
+				}
+				&:nth-child(12) {
+					background-color: #00be4d;
+				}
+			}
+		}
+		.long_card {
+			width: 100%;
+			background-color: rgba($col-white, 0.1);
+			border-radius: 1.6rem;
+			overflow: hidden;
+			padding: 3.2rem;
+			position: relative;
+			.grid_row, .grid_row_mob {
+				@include grid(repeat(5, 1fr), 3.6rem);
+				@include noScrollBar();
+				margin-block: 3.2rem;
+				.small_card {
+                    width: 17.6rem;
+                    padding: 3.6rem;
+                    border-radius: 2.4rem;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    height: 56rem;
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+                    .number {
+                        width: 4rem;
+                        height: 4rem;
+                        border-radius: 50%;
+                        background-color: rgba(255, 255, 255, 0.1);
+                        border: 0.1rem solid rgba(255, 255, 255, 0.3);
+                        color: #FFF;
+                        @include flex(center, center);
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        position: absolute;
+                        top: 4rem;
+                        left: calc(50% - 2rem);
+                    }
+                    .title {
+                        position: absolute;
+                        top: 40rem;
+                        left: 3rem;
+                        rotate: -90deg;
+                        height: 4rem;
+                        margin-bottom: 1.6rem;
+                        h3 {
+							font-size: 2.4rem;
+							line-height: 3.2rem;
+							font-family: $font-gothic-bold;
+							color: #FFF;
+                        }
+                    }
+                    .description {
+                        height: 0rem;
+                        overflow: hidden;
+                        padding-top: 2.4rem;
+                        width: 36.8rem;
+                        margin-top: 3.4rem;
+                        p {
+                            font-size: 1.6rem;
+							line-height: 2.4rem;
+                        }
+                    }
+                    .image_container {
+                        position: absolute;
+                        width: 42.5rem;
+                        height: 26.1rem;
+                        left: 2.7rem;
+                        bottom: -40rem;
+                        display: none;
+                        .image {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    &[data-active="true"][data-can-animate="true"] {
+                        animation: card-expand 1s ease-out 0.3s forwards;
+                        .number {
+                            animation: number-float-out 0.3s ease-out forwards;
+                        }
+                        .title {
+                            animation: title-float-up 1s ease-out 0.3s forwards;
+                        }
+                        .description {
+                            animation: description-show 1s ease-out 1.3s forwards;
+                        }
+                        .image_container {
+                            animation: drone-come-up 1.6s ease-out 2.3s forwards,
+                                float-drone 8s ease-in-out 3.9s infinite;
+                        }
+                    }
+                    &[data-closing="true"] {
+                        width: 48rem;
+                        animation: card-contract 0.625s ease-in 1.625s forwards;
+                        .image_container {
+                            animation: drone-go-down 1s ease-in 0s forwards;
+                        }
+                        .description {
+                            height: 12.4rem;
+                            opacity: 1;
+                            animation: description-hide 0.625s ease-in 1s forwards;
+                        }
+                        .title {
+                            top: 5.6rem;
+                            left: 5.6rem;
+                            rotate: 0deg;
+                            animation: title-float-down 0.625s ease-in 1.625s forwards;
+                        }
+                        .number {
+                            top: -5rem;
+                            opacity: 0;
+                            animation: number-float-in 0.25s ease-in 2.25s forwards;
+                        }
+                    }
+				}
+			}
+            .grid_row_mob {
+                display: none;
+            }
+		}
+		.text {
+			h3, span {
+				font-size: 2.4rem;
+				line-height: 3.2rem;
+				font-weight: 700;
+				font-family: $font-gothic-bold;
+			}
+			span {
+				color: #fff;
+			}
+			p {
+				margin-top: 1.6rem;
+				font-size: 1.6rem;
+				line-height: 2.4rem;
+				color: #fff;
+			}
+		}
+	}
+	.divider {
+		width: 100%;
+		height: 0.2rem;
+		background-color: rgba(255, 255, 255, 0.1);
+		margin-top: 8rem;
+	}
+
+	@include screenMax("tablet") {
+		margin-bottom: 6rem;
+		.values_section_container {
+			padding: 2.4rem;
+			gap: 1.8rem;
+			.text {
+				h3, span {
+					font-size: 2rem;
+					line-height: 2.8rem;
+				}
+				p {
+					margin-top: 1.4rem;
+				}
+			}
+			.long_card {
+				padding: 2.4rem;
+				margin-top: 1.6rem;
+				.grid_row {
+					@include grid(repeat(5, 1fr), 1.6rem);
+					.small_card {
+                        width: 12rem;
+                        height: 40rem;
+                        padding: 2.4rem;
+                        border-radius: 1.6rem;
+                        .number {
+                            width: 3.2rem;
+                            height: 3.2rem;
+                            font-size: 1.4rem;
+                            top: 2.4rem;
+                            left: calc(50% - 1.6rem);
+                        }
+                        .title {
+                            top: 28rem;
+                            left: 0rem;
+                            h3 {
+                                font-size: 2rem;
+                                line-height: 2.8rem;
+                            }
+                        }
+                        .description {
+                            width: 100%;
+                            margin-top: 2rem;
+                            padding-top: 1.6rem;
+                            p {
+                                font-size: 1.4rem;
+                                line-height: 2.4rem;
+                            }
+                        }
+                        .image_container {
+                            width: 30rem;
+                            height: 18rem;
+                            left: 2.4rem;
+                            bottom: -30rem;
+                        }
+                        &[data-active="true"][data-can-animate="true"] {
+                            animation: card-expand-mobile 1s ease-out 0.3s forwards;
+                            .number {
+                                animation: number-float-out 0.3s ease-out forwards;
+                            }
+                            .title {
+                                animation: title-float-up-mob 1s ease-out 0.3s forwards;
+                            }
+                            .description {
+                                animation: description-show 1s ease-out 1.3s forwards;
+                            }
+                            .image_container {
+                                animation: drone-come-up 1.6s ease-out 2.3s forwards,
+                                    float-drone 8s ease-in-out 3.9s infinite;
+                            }
+                        }
+                        &[data-closing="true"] {
+                            width: 100%;
+                            animation: card-contract-mobile 0.625s ease-in 2.625s forwards;
+                            .image_container {
+                                animation: drone-go-down 1s ease-in 0s forwards;
+                            }
+                            .description {
+                                height: auto;
+                                opacity: 1;
+                                animation: description-hide 0.625s ease-in 1s forwards;
+                            }
+                            .title {
+                                top: 2.4rem;
+                                left: 2.4rem;
+                                rotate: 0deg;
+                                animation: title-float-down-mob 0.625s ease-in 1.625s forwards;
+                            }
+                            .number {
+                                top: -4rem;
+                                opacity: 0;
+                                animation: number-float-in 0.25s ease-in 2.25s forwards;
+                            }
+                        }
+					}
+				}
+				.row {
+					flex-wrap: nowrap;
+                    margin-top: 2.4rem;
+				}
+			}
+		}
+		.divider {
+			margin-top: 6rem;
+		}
+        @keyframes number-float-out {
+			0% {
+				top: 2.4rem;
+				opacity: 1;
+			}
+			100% {
+				top: -4rem;
+				opacity: 0;
+			}
+		}
+		@keyframes title-float-up-mob {
+			0% {
+				top: 28rem;
+				left: 0rem;
+				rotate: -90deg;
+			}
+			100% {
+				top: 2.4rem;
+				left: 2.4rem;
+				rotate: 0deg;
+			}
+		}
+		@keyframes description-show {
+			0% {
+				height: 0rem;
+				opacity: 0;
+			}
+			100% {
+				height: auto;
+				opacity: 1;
+			}
+		}
+		@keyframes drone-come-up {
+			0% {
+				bottom: -30rem;
+				opacity: 0;
+			}
+			100% {
+				bottom: 2.4rem;
+				opacity: 1;
+			}
+		}
+		@keyframes drone-go-down {
+			0% {
+				bottom: 2.4rem;
+				opacity: 1;
+				transform: translateY(0) rotate(0deg) scale(1);
+			}
+			100% {
+				bottom: -30rem;
+				opacity: 0;
+				transform: translateY(0) rotate(0deg) scale(1);
+			}
+		}
+		@keyframes description-hide {
+			0% {
+				height: auto;
+				opacity: 1;
+			}
+			100% {
+				height: 0rem;
+				opacity: 0;
+			}
+		}
+		@keyframes card-contract-mobile {
+			0% {
+				width: 100%;
+			}
+			100% {
+				width: 12rem;
+			}
+		}
+		@keyframes title-float-down-mob {
+			0% {
+				top: 2.4rem;
+				left: 2.4rem;
+				rotate: 0deg;
+			}
+			100% {
+				top: 28rem;
+				left: 0rem;
+				rotate: -90deg;
+			}
+		}
+		@keyframes number-float-in {
+			0% {
+				top: -4rem;
+				opacity: 0;
+			}
+			100% {
+				top: 2.4rem;
+				opacity: 1;
+			}
+		}
+	}
+
+	@include screenMax('mobile') {
+		margin-bottom: 4rem;
+		.values_section_container {
+			padding: 2.4rem 1.6rem;
+			gap: 0.8rem;
+			.text {
+				h3, span {
+					font-size: 1.8rem;
+					line-height: 2.4rem;
+				}
+				p {
+					margin-top: 0.8rem;
+					font-size: 1.2rem;
+					line-height: 1.6rem;
+				}
+			}
+			.long_card {
+				padding: 1.6rem;
+				.grid_row, .grid_row_mob {
+					@include grid(repeat(1, 1fr), 1.6rem, 1.6rem);
+                    overflow: hidden;
+                    margin-block: 1.6rem;
+					.small_card_mob {
+						width: 100%;
+                        height: auto;
+                        background-color: rgba(255, 255, 255, 0.1);
+                        border: 0.1rem solid rgba(255, 255, 255, 0.2);
+                        border-radius: 1.6rem;
+                        padding: 2.4rem 1.6rem;
+                        .title_mob {
+                            margin-bottom: 1.6rem;
+                            h3 {
+                                font-size: 1.8rem;
+                                line-height: 2.7rem;
+                                font-family: $font-gothic-bold;
+							    color: #FFF;
+                            }
+                        }
+                        .description_mob {
+                            width: 100%;
+                            p {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                                font-family: $font;
+                            }
+                        }
+                        .image_container_mob {
+                            width: 20rem;
+                            height: 12rem;
+                            left: 2.4rem;
+                            bottom: -30rem;
+                            display: none;
+                        }
+					}
+				}
+                .grid_row {
+                    display: none;
+                }
+                .row {
+                    margin-top: 2rem;
+                }
+			}
+		}
+		.divider {
+			margin-top: 4rem;
+		}
+	}
+}
+
+// Opening animations
+@keyframes number-float-out {
+	0% {
+		top: 4rem;
+		opacity: 1;
+	}
+	100% {
+		top: -5rem;
+		opacity: 0;
+	}
+}
+@keyframes card-expand {
+	0% {
+		width: 17.6rem;
+	}
+	100% {
+		width: 48rem;
+	}
+}
+@keyframes card-expand-mobile {
+	0% {
+		width: 15rem;
+	}
+	100% {
+		width: 32rem;
+	}
+}
+@keyframes title-float-up {
+	0% {
+		top: 40rem;
+		left: 0rem;
+		rotate: -90deg;
+	}
+	100% {
+		top: 5.6rem;
+		left: 5.6rem;
+		rotate: 0deg;
+	}
+}
+@keyframes description-show {
+	0% {
+		height: 0rem;
+		opacity: 0;
+	}
+	100% {
+		height: 12.4rem;
+		opacity: 1;
+	}
+}
+@keyframes drone-come-up {
+	0% {
+		bottom: -40rem;
+		opacity: 0;
+	}
+	100% {
+		bottom: 3.4rem;
+		opacity: 1;
+	}
+}
+@keyframes float-drone {
+	0% {
+		transform: translateY(0) rotate(0deg) scale(1);
+	}
+	25% {
+		transform: translateY(-1.2rem) rotate(-2deg) scale(1.02);
+	}
+	50% {
+		transform: translateY(0.6rem) rotate(1deg) scale(0.99);
+	}
+	75% {
+		transform: translateY(-0.8rem) rotate(-1deg) scale(1.01);
+	}
+	100% {
+		transform: translateY(0) rotate(0deg) scale(1);
+	}
+}
+
+// Closing animations (reverse)
+@keyframes drone-go-down {
+	0% {
+		bottom: 3.4rem;
+		opacity: 1;
+		transform: translateY(0) rotate(0deg) scale(1);
+	}
+	100% {
+		bottom: -40rem;
+		opacity: 0;
+		transform: translateY(0) rotate(0deg) scale(1);
+	}
+}
+
+@keyframes description-hide {
+	0% {
+		height: 12.4rem;
+		opacity: 1;
+	}
+	100% {
+		height: 0rem;
+		opacity: 0;
+	}
+}
+
+@keyframes card-contract {
+	0% {
+		width: 48rem;
+	}
+	100% {
+		width: 17.6rem;
+	}
+}
+
+@keyframes title-float-down {
+	0% {
+		top: 5.6rem;
+		left: 5.6rem;
+		rotate: 0deg;
+	}
+	100% {
+		top: 40rem;
+		left: 0rem;
+		rotate: -90deg;
+	}
+}
+
+@keyframes number-float-in {
+	0% {
+		top: -5rem;
+		opacity: 0;
+	}
+	100% {
+		top: 4rem;
+		opacity: 1;
+	}
+}
