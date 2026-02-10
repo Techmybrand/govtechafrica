@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { AnimatedSection } from "@/shared";
 import { useScroll, useSpring, useTransform, motion } from "framer-motion";
 import { valueCardProps } from "@/interfaces";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./Values.module.scss";
 
 const values = [
@@ -177,12 +177,12 @@ const Values = () => {
                                 </div>
                                 <div className={styles.image_container}>
 								<div className={styles.image}>
-									<Image
+									{/* <Image
 										src="/images/drone.png"
 										alt=""
 										fill
-										sizes="100vw"
-									/>
+										sizes="100%"
+									/> */}
 								</div>
 							</div>
                             </div>
@@ -248,9 +248,9 @@ export const ValueCardMobile = ({ index, scrollYProgress, title, description }: 
             </div>
             <div className={styles.image_container_mob}>
                 <div className={styles.image}>
-                    <Image src="/images/drone.png" alt="" fill
-                        sizes="100vw"
-                    />
+                    {/* <Image src="" alt="" fill
+                        sizes="100%"
+                    /> */}
                 </div>
             </div>
         </motion.div>

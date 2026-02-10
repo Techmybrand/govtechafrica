@@ -1,26 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
-import { Governance, Mission, Partners } from "@/components/whoWeAre";
+import React from "react";
 import { Hero } from "@/shared";
-import Lenis from "lenis";
+import { Research } from "@/components/home";
+import { Governance, Mission, Partners } from "@/components/whoWeAre";
 
 const WhoWeAreView = () => {
-	useEffect(() => {
-		const lenis = new Lenis({
-			duration: 1.2,
-			smoothWheel: true,
-		});
-
-		function raf(time: number) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-		requestAnimationFrame(raf);
-
-		return () => {
-			lenis.destroy();
-		};
-	}, []);
 	return (
 		<React.Fragment>
 			<Hero
@@ -36,6 +20,7 @@ const WhoWeAreView = () => {
 			<Mission />
 			<Governance />
 			<Partners />
+			<Research />
 		</React.Fragment>
 	);
 };

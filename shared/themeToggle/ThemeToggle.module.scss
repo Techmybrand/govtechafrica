@@ -1,0 +1,27 @@
+@import "@/styles/imports";
+
+.container {
+	@include grid(repeat(2, 1fr), 0.8rem);
+	// border: 0.2rem solid $light-border-divider;
+	border-radius: 10rem;
+	width: 7.2rem;
+	// background-color: $col-yellow-500;
+	padding: 0.4rem;
+	transition: all 300ms ease-in-out;
+	cursor: pointer;
+	.image {
+		position: relative;
+		width: 3.2rem;
+		height: 3.2rem;
+		transition: all 300ms ease-in-out;
+	}
+	&[data-theme="dark"] {
+		// border-color: $dark-border-divider;
+		// background-color: $col-primary-default;
+		transition: all 300ms ease-in-out;
+		.image {
+			transition: all 300ms ease-in-out;
+			transform: translate(2.8rem);
+		}
+	}
+}
