@@ -1,4 +1,3 @@
-// lib/cookieConsent.ts
 export type ConsentCategories = {
   analytics: boolean;
   performance: boolean;
