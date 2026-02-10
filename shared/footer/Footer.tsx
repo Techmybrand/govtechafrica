@@ -44,8 +44,8 @@ const Footer = () => {
 									))}
 								</div>
 							</div>
-							<div className={styles.copyWrite}>
-							{/* <div onClick={() => setOpen(true)} className={styles.copyWrite}> */}
+							{/* <div className={styles.copyWrite}> */}
+							<div onClick={() => setOpen(true)} className={styles.copyWrite}>
 								<p>&copy; {year} Govtech Africa Inc.</p>
 							</div>
 						</div>
@@ -57,7 +57,7 @@ const Footer = () => {
 											{link.subMenu?.map((menu, index: number) => (
 												<li data-href={menu.isHref} key={index}>
 													{index === 0 ? (
-														<div className={styles.list_p}>
+														<div onClick={() => setOpenModal(true)} className={styles.list_p}>
 															<p>{menu.label}</p>
 														</div>
 													) : (

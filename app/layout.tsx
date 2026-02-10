@@ -1,10 +1,25 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@/styles/index.scss";
 import { Footer, Header, PreLoader } from "@/shared";
-import { AppProvider } from "@/context/AppContext";
+import React from "react";
+import Providers from "@/Providers";
+import Script from "next/script";
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://govtechafrica.com";
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	maximumScale: 5,
+	// themeColor: [
+	// 	{ media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
+	// 	{ media: "(prefers-color-scheme: dark)", color: "#000000" },
+	// ],
+};
 
 export const metadata: Metadata = {
-	title: `Govtech Africa | Automating government processes`,
+	metadataBase: new URL(baseUrl),
+	title: `Govtech Africa | Automating Government Processes`,
 	description: `African technology for Government Excellence`,
 	keywords: [
 		'Govtech Africa',
@@ -24,10 +39,13 @@ export const metadata: Metadata = {
 		'AI in public sector Africa',
 		'Digital ID and infrastructure in African governance',
 	],
+	authors: [{ name: "Govtech Africa" }],
+	creator: "Govtech Africa",
+	publisher: "Govtech Africa",
 	openGraph: {
-		title: `Govtech Africa | Automating government processes`,
+		title: `Govtech Africa | Automating Government Processes`,
 		description: `African technology for Government Excellence`,
-		url: 'https://govtechafrica.com',
+		url: baseUrl,
 		type: 'website',
 		siteName: 'Govtech Africa',
 		images: [
@@ -39,10 +57,9 @@ export const metadata: Metadata = {
 			},
 		],
 	},
-  	metadataBase: new URL('https://govtechafrica.com'),
 	twitter: {
 		card: 'summary_large_image',
-		title: `Govtech Africa | Automating government processes`,
+		title: `Govtech Africa | Automating Government Processes`,
 		description: `African technology for Government Excellence`,
 		images: [
 			{
@@ -55,6 +72,9 @@ export const metadata: Metadata = {
 			}
 		]
 	},
+	alternates: {
+		canonical: baseUrl,
+	},
 };
 
 export default function RootLayout({
@@ -66,14 +86,38 @@ export default function RootLayout({
 		<html lang="en">
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
+				{/* <Script id="gtag-consent" strategy="afterInteractive">
+					{`
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('consent', 'default', {
+							'analytics_storage': 'denied',
+							'functionality_storage': 'denied',
+							'ad_storage': 'denied',
+							'ad_user_data': 'denied',
+							'ad_personalization': 'denied'
+						});
+					`}
+				</Script> */}
+				<Script async src="https://www.googletagmanager.com/gtag/js?id=G-2CVY7FBLX3"></Script>
+				<Script id="gtag-init" strategy="afterInteractive">
+					{`
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						gtag('config', 'G-2CVY7FBLX3');
+					`}
+				</Script>
 			</head>
 			<body>
 				<PreLoader />
-				<AppProvider>
-					<Header />
-					{children}
-					<Footer />
-				</AppProvider>
+				<Providers>
+					<React.Fragment>
+						<Header />
+						{children}
+						<Footer />
+					</React.Fragment>
+				</Providers>
 			</body>
 		</html>
 	);

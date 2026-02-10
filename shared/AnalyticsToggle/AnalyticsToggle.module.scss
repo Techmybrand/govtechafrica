@@ -1,0 +1,42 @@
+@import "@/styles/imports";
+
+.container {
+	@include grid(repeat(2, 1fr), 0.8rem);
+	border: 0.1rem solid #DDD;
+	border-radius: 10rem;
+	width: 6.4rem;
+	background-color: #767676;
+	padding: 0.4rem;
+	transition: all 300ms ease-in-out;
+	cursor: pointer;
+	.image {
+		position: relative;
+		width: 2.4rem;
+		height: 2.4rem;
+		transition: all 300ms ease-in-out;
+        background: #FFF;
+        border-radius: 50%;
+	}
+	&[data-active="true"] {
+		border-color: #0BB55D;
+		background-color: #CDDCF2;
+		transition: all 300ms ease-in-out;
+		.image {
+            background: #09E272;
+			transform: translate(2.8rem);
+		}
+	}
+
+	@include screenMax("mobile") {
+		width: 5rem;
+		.image {
+			width: 1.6rem;
+			height: 1.6rem;
+		}
+		&[data-active="true"] {
+			.image {
+				transform: translate(2.4rem);
+			}
+		}
+	}
+}

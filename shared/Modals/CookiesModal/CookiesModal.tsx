@@ -1,70 +1,70 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Modal } from "@/shared";
+import { CookieSettingsModal } from "..";
 import Link from "next/link";
 // import { setCookie, getCookie } from 'cookies-next';
 import styles from './CookiesModal.module.scss';
+import { saveConsent } from "@/lib/cookieConsent";
 interface CookiesModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
 const CookiesModal = ({ isOpen, onClose }: CookiesModalProps) => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const handleAccept = () => {
+    const fullConsent = { analytics: true, performance: true, advertising: true };
+    saveConsent(fullConsent);
     localStorage.setItem('cookieConsent', 'granted');
     onClose();
-    // window.gtag?.('consent', 'update', { analytics_storage: 'granted' });
-    // window.gtag?.('event', 'consent_granted', { event_category: 'engagement' });
-    // try {
-    //   await fetch('/api/log-consent', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ consent: 'granted', timestamp: new Date().toISOString() }),
-    //   });
-    // } catch (error) {
-    //   console.error('Failed to log consent:', error);
-    // }
   };
 
   const handleDecline = () => {
+    const minimalConsent = { analytics: false, performance: false, advertising: false };
+    saveConsent(minimalConsent);
     localStorage.setItem('cookieConsent', 'denied');
-    // window.gtag?.('consent', 'update', { analytics_storage: 'denied' });
     onClose();
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={() => {}} className={styles.modal_body}>
-      <div className={styles.modal_content_body}>
-        <div className={styles.modal_header}>
-          <h1>Accept the use of Cookies</h1>
-          <div onClick={onClose} className={styles.close_icon}>
-            <h3>x</h3>
+    <React.Fragment>
+      <Modal isOpen={isOpen} onClose={() => {}} className={styles.modal_body}>
+        <div className={styles.modal_content_body}>
+          {/* <div className={styles.modal_header}>
+            <h1>Accept the use of Cookies</h1>
+            <div onClick={onClose} className={styles.close_icon}>
+              <h3>x</h3>
+            </div>
+          </div> */}
+          <div className={styles.modal_content}>
+            <div className={styles.text}>
+              <h3>
+                Welcome to govetchafrica.com! In order to provide a more relevant experience for you, we 
+                use cookies to enable some website functionality. Cookies help us see which articles most 
+                interest you; allow you to easily share articles on social media; permit us to deliver 
+                content, jobs and ads tailored to your interests and locations; and provide many other site 
+                benefits. For more information, please review our
+                <span><Link href='/cookies-policy'> Cookies Policy</Link></span> and
+                <span><Link href='/privacy-policy'> Privacy Statement</Link></span>
+              </h3>
+            </div>
+            <div className={styles.ctas}>
+              <h4 onClick={() => setOpenModal(true)}>Cookies Settings</h4>
+              <div className={styles.buttons}>
+                <button className={styles.accept_btn} onClick={handleAccept}>
+                  <h3>Accept Cookies</h3>
+                </button>
+                <button className={styles.decline_btn} onClick={handleDecline}>
+                  <h3>Decline Cookies</h3>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div className={styles.modal_content}>
-          <div className={styles.text}>
-            <h3>
-              {`We use cookies to improve your browsing experience, serve personlised content and analyse 
-                our traffic. By clicking 'Accept all cookies', you agree to the storing of cookies on your 
-                device.`
-              }
-            </h3>
-            <h3>
-              {/* You can customise your settings by clicking Manage preferences. */}
-              For more details, see our <Link href='/cookies-policy'>Cookie Policy</Link> and 
-              <Link href='/privacy-policy'> Privacy Statement</Link>
-            </h3>
-          </div>
-          <div className={styles.ctas}>
-            <button className={styles.accept_btn} onClick={handleAccept}>
-              <h3>Accept Cookies</h3>
-            </button>
-            <button className={styles.decline_btn} onClick={handleDecline}>
-              <h3>Decline Cookies</h3>
-            </button>
-          </div>
-        </div>
-      </div>
-    </Modal>
+      </Modal>
+      <CookieSettingsModal isOpen={openModal} onClose={() => setOpenModal(false)} />
+    </React.Fragment>
   )
 }
 

@@ -1,3 +1,5 @@
+import Accordion from "./Accordion/Accordion";
+import AnalyticsToggle from "./AnalyticsToggle/AnalyticsToggle";
 import AnimatedSection from "./AnimatedSection/AnimatedSection";
 import Button from "./button/Button";
 import Carousel from "./Carousel/Carousel";
@@ -21,14 +23,18 @@ import ServicesCard from "./ServicesCard/ServicesCard";
 import Statistics from "./Statistics/Statistics";
 import TechnologyCard from "./TechnologyCard/TechnologyCard";
 import TextArea from "./textArea/TextArea";
+import ThemeToggle from "./themeToggle/ThemeToggle";
 
 
 export {
+    Accordion,
     AnimatedSection,
     Logo,
+    AnalyticsToggle,
     Header,
     RichText,
     Footer,
+    ThemeToggle,
     PreLoader,
     Button,
     Hero,
