@@ -28,7 +28,6 @@ const CookieSettingsModal = ({ isOpen, onClose }: CookiesModalProps) => {
   const updateConsent = (key: keyof ConsentCategories, value: boolean) => {
     setConsents(prev => ({ ...prev, [key]: value }));
   };
-  console.log('consents: ', consents);
 
   const handleAcceptAll = () => {
     const allGranted = { analytics: true, performance: true, advertising: true };

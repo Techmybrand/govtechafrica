@@ -1,12 +1,10 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
-import { motion, useTransform, useScroll, useSpring } from "framer-motion";
-// import Image from "next/image";
+import { motion, useTransform, useScroll } from "framer-motion";
 import styles from "./CenterPiece.module.scss";
 
 const CenterPiece = () => {
 	const ref = useRef<HTMLDivElement>(null);
-	// const isInView = useInView(ref, { amount: 0.3, once: false });
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const mobile = isMobile;
 	const [speed] = useState<number>(0.5);
@@ -30,59 +28,34 @@ const CenterPiece = () => {
 
 	const { scrollYProgress } = useScroll({
 		target: ref,
-		offset: ["start end", "end start"]
+		offset: ["start 90%", "end center"]
 	});
+  	const videoWidth = useTransform(scrollYProgress, [0, 0.3], ["100%", "70%"]);
+  	const videoHeight = useTransform(scrollYProgress, [0, 0.3], ["35rem", "25rem"]);
 
-	const rangeStart = 0.05;
-	const rangeEnd   = 0.3;
-	// const rawImageWidth = useTransform(scrollYProgress,
-	// 	[rangeStart, rangeEnd],
-	// 	["100%", mobile ? "100%" : "55%"]
-	// );
-	// const imageWidth = useSpring(rawImageWidth, {
-	// 	stiffness: 80,
-	// 	damping: 18,
-	// 	mass: 0.4,
-	// });
-	const rawTextX = useTransform(scrollYProgress, [rangeStart, rangeEnd], [160, 0]);
-  	const rawTextOpacity = useTransform(scrollYProgress, [rangeStart, rangeEnd], [0, 1]);
-
-	const textX = useSpring(rawTextX, {
-		stiffness: 90,
-		damping: 22,
-		mass: 0.5,
-	});
-	const textOpacity = useSpring(rawTextOpacity, {
-		stiffness: 100,
-		damping: 20,
-		mass: 0.4,
-	});
-
-	const rawTextYMobile = useTransform(scrollYProgress, [rangeStart, rangeEnd], [60, 0]);
-	const textYMobile = useSpring(rawTextYMobile, {
-		stiffness: 90,
-		damping: 22,
-	});
-	// console.log(isInView);
+  	// const textX = useTransform(scrollYProgress, [0, 0.5, 1], [mobile ? 0 : "100%", mobile ? 0 : "30%", 0]);
+  	// const textY = useTransform(scrollYProgress, [0, 0.5, 1], [mobile ? "100%" : 0, mobile ? "40%" : 0, 0]);
+  	// const textOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7], [0, 0.2, 1]);
+  	const textX = useTransform(scrollYProgress, [0, 0.3], [mobile ? 0 : "100%", 0]);
+  	const textY = useTransform(scrollYProgress, [0, 0.3], [mobile ? "100%" : 0, 0]);
+  	const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+	
 
 	return (
-		<div className={styles.section}>
-			<div ref={ref} className={styles.section_container}>
+		<div ref={ref} className={styles.section}>
+			<div className={styles.section_container}>
 				<div className={styles.image_and_text}>
-					<motion.div
-						// variants={imageVariants} initial="initial"
-						// animate={isInView ? "animate" : "initial"}
-						// transition={{ duration: 0.6, ease: "easeOut" }}
-						// style={{ width: imageWidth }}
-						className={styles.image}
+					<motion.div className={styles.image}
+						style={{
+							width: isMobile ? "100%" : videoWidth,
+							height: videoHeight,
+						}}
 					>
-						{/* <Image src="/svgs/centerpiece.svg" sizes="100%" priority fill alt="" /> */}
 						<video ref={videoRef} src='/videos/centerpiece.mp4' loop autoPlay 
 							muted playsInline preload="auto"
 						/>
 					</motion.div>
 					<div className={styles.image_mob}>
-						{/* <Image src="/svgs/centerpiece_mob.svg" sizes="100%" fill alt="" /> */}
 						<video ref={videoRef} src='/videos/centerpiece.mp4' loop autoPlay 
 							muted playsInline preload="auto"
 						/>
@@ -90,18 +63,9 @@ const CenterPiece = () => {
 					<motion.div className={styles.text}
 						style={{
 							x: mobile ? 0 : textX,
-							y: mobile ? textYMobile : 0,
+							y: textY,
 							opacity: textOpacity,
-							display: 'none'
 						}}
-						// initial="initial" 
-						// animate={isInView ? "animate" : "initial"}
-						// variants={mobile ? mobileTextVariants : textVariants}
-						// transition={{
-						// 	duration: 0.8,
-						// 	ease: "easeOut",
-						// 	delay: amount
-            			// }}
 					>
 						<h3 className={styles.h3}>
 							<span>All over the world, </span> technology{" "}

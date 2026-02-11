@@ -14,7 +14,6 @@ const ContactView = () => {
 							discuss how we can co-create a more efficient, transparent and digitally empowered Africa.
 						</p>
 					</div>
-					<div className={styles.grad}></div>
 				</div>
 				<div className={styles.large_card}>
 					<div className={styles.details}>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { footerNavLink, socialMediaLinks } from "@/mock/navLists.mock";
-import { CookieSettingsModal, CookiesModal } from "@/shared/Modals";
+import { CookieSettingsModal } from "@/shared/Modals";
 import { Logo } from "@/shared";
 import { NavLink } from "@/interfaces";
 import Link from "next/link";
@@ -13,7 +13,6 @@ const year = date.getFullYear();
 
 const Footer = () => {
 	const [openModal, setOpenModal] = useState<boolean>(false);
-	const [open, setOpen] = useState<boolean>(false);
 	return (
 		<React.Fragment>
 			<footer className={styles.footer}>
@@ -44,8 +43,8 @@ const Footer = () => {
 									))}
 								</div>
 							</div>
-							{/* <div className={styles.copyWrite}> */}
-							<div onClick={() => setOpen(true)} className={styles.copyWrite}>
+							<div className={styles.copyWrite}>
+							{/* <div onClick={() => setOpen(true)} className={styles.copyWrite}> */}
 								<p>&copy; {year} Govtech Africa Inc.</p>
 							</div>
 						</div>
@@ -56,7 +55,7 @@ const Footer = () => {
 										<ul>
 											{link.subMenu?.map((menu, index: number) => (
 												<li data-href={menu.isHref} key={index}>
-													{index === 0 ? (
+													{menu.isCookie ? (
 														<div onClick={() => setOpenModal(true)} className={styles.list_p}>
 															<p>{menu.label}</p>
 														</div>
@@ -78,7 +77,6 @@ const Footer = () => {
 				<div className={styles.grad}></div>
 			</footer>
 			<CookieSettingsModal isOpen={openModal} onClose={() => setOpenModal(false)} />
-			<CookiesModal isOpen={open} onClose={() => setOpen(false)} />
 		</React.Fragment>
 	);
 };
