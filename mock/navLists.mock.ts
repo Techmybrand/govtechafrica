@@ -177,6 +177,7 @@ export const footerNavLink: NavLink[] = [
 				icon: "/svgs/link-main.svg",
 				href: "",
 				isHref: true,
+				isCookie: true,
 			},
 			{
 				label: "Privacy Policy",

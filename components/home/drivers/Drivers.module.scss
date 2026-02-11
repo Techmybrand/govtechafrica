@@ -144,22 +144,6 @@
 				font-weight: 600!important;
 			}
 		}
-		.grad_1, .grad_2 {
-			// background-color: #13361b;
-			background-color: #FFFFFF0D;
-			// #FFFFFF0D
-			width: 36.6rem;
-			height: 36.6rem;
-			filter: blur(200px);
-			position: absolute;
-			top: 10.3rem;
-			left: 0;
-			z-index: -1;
-		}
-		.grad_2 {
-			left: unset;
-			right: 0;
-		}
 	}
 	.divider {
 		width: 100%;

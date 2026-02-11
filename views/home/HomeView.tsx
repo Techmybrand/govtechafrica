@@ -7,9 +7,7 @@ import styles from "./HomeView.module.scss";
 
 const HomeView = () => {
 	const [showModal, setShowModal] = useState<boolean>(false);
-	const [consent, setConsent] = useState<string | null>(null);
-	console.log('consent: ', consent);
-
+	const [, setConsent] = useState<string | null>(null);
 	useEffect(() => {
 		const storedConsent = localStorage.getItem('cookieConsent');
 		setConsent(storedConsent);
@@ -34,7 +32,6 @@ const HomeView = () => {
 			<Mission />
 			<Drivers />
 			<CenterPiece />
-			{/* <Insights /> */}
 			<div className={styles.divider}></div>
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>

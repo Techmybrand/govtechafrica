@@ -13,6 +13,7 @@ export interface NavLinkSub {
 	href: string;
 	id?: string;
 	isHref?: boolean;
+	isCookie?: boolean;
 	menu?: NavLinkMenu[];
 }
 export interface NavLink {
@@ -36,12 +37,11 @@ export interface GrowthCardProps {
 	currency?: string;
 	description: string;
 	inView?: boolean;
+	scrollYProgress: MotionValue<number>;
 }
 export interface GrowthCardMobileProps {
 	value: number;
 	index: number;
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	progress?: any;
 	label: string;
 	currency?: string;
 	description: string;

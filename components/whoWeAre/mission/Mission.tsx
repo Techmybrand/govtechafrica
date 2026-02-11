@@ -35,23 +35,41 @@ interface Card {
 
 const Mission = () => {
 	const container = useRef<HTMLDivElement>(null);
+	const textRef = useRef<HTMLDivElement>(null);
 	const { scrollYProgress } = useScroll({
 		target: container,
 		offset: ["start start", "end end"],
 	});
+	
+	const { scrollYProgress: textYProgress } = useScroll({
+		target: textRef,
+		offset: ["start 90%", "end center"],
+	});
+	const fullText = `We are a coalition of homegrown leading technology giants delivering tier one 
+		technology systems development and deployment to governments across the African continent.`;
+	const textLength = useTransform(textYProgress, [0, 1], [0, fullText.length]);
+	const displayedText = useTransform(textLength, (latest) => fullText.slice(0, Math.floor(latest)));
+	// const firstPart = "We are a coalition of";
+  	// const secondPart = fullText.slice(firstPart.length);
+	// const firstPartLength = useTransform(textLength, (v) => Math.min(v, firstPart.length));
+	// const secondPartLength = useTransform(textLength, (v) => Math.max(0, v - firstPart.length));
 	return (
 		<React.Fragment>
-			<div className={styles.text_section}>
+			<div className={styles.text_section} ref={textRef}>
 				<div className={styles.divider}></div>
 				<div className={styles.text_container}>
 					<div className={styles.text_}>
-						<h3>
-							We are a coalition of{" "}
-							<span>homegrown leading technology giants delivering tier  one technology 
-								systems development and deployment to governments across the African 
-								continent.
-							</span>{" "}
-						</h3>
+						{/* We are a coalition of{" "} */}
+						<motion.h3>
+							<motion.span style={{color: "#FFFFFF"}}>{displayedText}</motion.span>
+							<motion.span
+								animate={{ opacity: [0, 1, 0] }}
+								transition={{ duration: 0.8, repeat: Infinity }}
+								style={{ marginLeft: "1px" }}
+							>
+								|
+							</motion.span>
+						</motion.h3>
 					</div>
 				</div>
 			</div>

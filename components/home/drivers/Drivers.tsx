@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/shared";
-import { motion, useInView, useAnimationControls, MotionValue, useTransform, useSpring, useScroll } from "framer-motion";
+import { motion, useInView, MotionValue, useTransform, useSpring, useScroll } from "framer-motion";
 import Image from "next/image";
 import styles from "./Drivers.module.scss";
 interface cardDataProps {
@@ -55,7 +55,7 @@ const Drivers = () => {
 			bigText: 'Innovation',
 			subtext: 'for impact',
 			children: <React.Fragment>
-					<AnimatedContainer mobile={mobile} index={0}
+					<AnimatedContainer scrollYProgress={scrollYProgress} mobile={mobile} index={0}
 						className={styles.container_1}
 						inView={sectionInView}
 						fromLeft={true}
@@ -68,12 +68,12 @@ const Drivers = () => {
 			bigText: 'Partnerships',
 			subtext: 'for progress',
 			children: <React.Fragment>
-				<AnimatedContainer mobile={mobile} index={1}
+				<AnimatedContainer scrollYProgress={scrollYProgress} mobile={mobile} index={1}
 					className={styles.container_1}
 					inView={sectionInView}
 					fromLeft={true}
 				/>
-				<AnimatedContainer mobile={mobile} index={1}
+				<AnimatedContainer scrollYProgress={scrollYProgress} mobile={mobile} index={1}
 					className={styles.container_2}
 					inView={sectionInView}
 					fromLeft={false}
@@ -86,12 +86,12 @@ const Drivers = () => {
 			bigText: 'Local Solutions',
 			subtext: 'to local problems',
 			children: <React.Fragment>
-				<AnimatedContainer mobile={mobile} index={2}
+				<AnimatedContainer scrollYProgress={scrollYProgress} mobile={mobile} index={2}
 					className={styles.container_1}
 					inView={sectionInView}
 					fromLeft={true}
 				/>
-				<AnimatedContainer mobile={mobile} index={2}
+				<AnimatedContainer scrollYProgress={scrollYProgress} mobile={mobile} index={2}
 					className={styles.container_2}
 					inView={sectionInView}
 					fromLeft={false}
@@ -104,14 +104,14 @@ const Drivers = () => {
 			bigText: 'Resilient and Secure Systems',
 			subtext: 'that enable government excellence',
 			children: <React.Fragment>
-				<AnimatedContainer mobile={mobile} index={3}
+				<AnimatedContainer scrollYProgress={scrollYProgress} mobile={mobile} index={3}
 					className={styles.container_1}
 					inView={sectionInView}
 					fromLeft={true}
 				>
 					<Image alt="" fill src='/svgs/polygon_1.svg' />
 				</AnimatedContainer>
-				<AnimatedContainer mobile={mobile} index={3}
+				<AnimatedContainer scrollYProgress={scrollYProgress} mobile={mobile} index={3}
 					className={styles.container_2}
 					inView={sectionInView}
 					fromLeft={false}
@@ -125,8 +125,6 @@ const Drivers = () => {
 	return (
 		<div ref={sectionRef} className={styles.section}>
 			<div className={styles.section_container}>
-				<div className={styles.grad_1}></div>
-				<div className={styles.grad_2}></div>
 				<motion.div className={styles.text} style={{ y, opacity }}>
 					<h2>We are Drivers of Change</h2>
 					<h3>
@@ -158,34 +156,20 @@ export interface AnimatedContainerProps {
   fromLeft: boolean;
   className: string;
   children?: React.ReactNode;
-  index?: number
+  index: number;
+  scrollYProgress: MotionValue<number>;
 }
 
-export const AnimatedContainer = ({ className, children, fromLeft, inView }: AnimatedContainerProps) => {
-	const controls = useAnimationControls();
-	// const delay = mobile ? (index ?? 0 * 0.3) : 0;
-	useEffect(() => {
-		if (inView) {
-			controls.start({
-				x: 0,
-				opacity: 1,
-				transition: { duration: 0.5, ease: "easeOut" },
-			});
-		} else {
-			controls.start({
-				x: fromLeft ? "-400%" : "400%",
-				opacity: 0,
-				transition: { duration: 0 },
-			});
-		}
-	}, [inView, controls, fromLeft]);
-
+export const AnimatedContainer = ({ className, children, fromLeft, index, mobile, scrollYProgress }: AnimatedContainerProps) => {
+	const start = mobile ? index * 0.1 : index * 0.2;
+  	const end = start + (mobile ? 0.2 : 0.3);
+	// const xRange = fromLeft ? [-400, -60, 0] : [400, 60, 0];
+	const xRange = fromLeft ? [-400, -60, 0] : [400, 60, 0];
+  	const progressRange = [start - 0.1, start + 0.1, end];
+	const x = useTransform(scrollYProgress, progressRange, xRange);
+  	const opacity = useTransform(scrollYProgress, [start, start + 0.15, end], [0, 0.4, 1]);
 	return (
-		<motion.div className={className}
-			initial={{ x: fromLeft ? "-400%" : "400%", opacity: 0 }}
-      		animate={controls}
-			// transition={{ duration: 0.5, ease: [0.3, 0.6, 0.9, 1.2], delay }}
-		>
+		<motion.div className={className} style={{x, opacity}}>
 			{children}
 		</motion.div>
 	)
