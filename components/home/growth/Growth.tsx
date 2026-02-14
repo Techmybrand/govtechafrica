@@ -6,9 +6,9 @@ import styles from "./Growth.module.scss";
 
 const growthList = [
 	{
-		value: 65,
+		value: 35,
 		label: '%',
-		description: "African governments Offering e-Government services to citizens."
+		description: "Of government institutions adopting cloud transformation for public service delivery"
 	},
 	{
 		value: 76,
@@ -27,16 +27,16 @@ const growthList = [
 		description: "The size of the African public sector IT market in 2023, projected to reach USD 7.8 billion by 2026."
 	},
 	{
-		value: 6,
+		value: 1.1,
 		label: 'bn',
 		currency: '$',
-		description: "Cybersecurity investments by African governments from 2023 to 2026."
+		description: "Cybersecurity investments projection by African governments in 2026."
 	},
 	{
-		value: 400,
-		label: 'm',
+		value: 16.5,
+		label: 'bn',
 		currency: '$',
-		description: "In AI investments for African public services in 2024."
+		description: " in AI investments for public services in Africa  by 2030"
 	}
 ];
 
