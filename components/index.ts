@@ -13,6 +13,7 @@ import InsightDetails from "./InsightDetails/InsightDetails";
 import NetworkInfrastructure from "./NetworkInfrastructure/NetworkInfrastructure";
 import PartnersComponent from "./PartnersPage/PartnersComponent";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
+import RelatedInsights from "./RelatedInsights/RelatedInsights";
 import ResearchDetails from "./ResearchDetails/ResearchDetails";
 import SiteMap from "./SiteMap/SiteMap";
 import StrategyConsulting from "./StrategyConsulting/StrategyConsulting";
@@ -28,6 +29,7 @@ export {
     Careers,
     CapacityBuilding,
     ResearchDetails,
+    RelatedInsights,
     InsightDetails,
     TechEvents,
     InfrastructureProcurement,

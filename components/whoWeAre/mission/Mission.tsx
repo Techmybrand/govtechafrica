@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { useTransform, motion, useScroll, MotionValue } from "framer-motion";
 import { Values } from "..";
+import { AnimatedSection } from "@/shared";
 import Image from "next/image";
 import styles from "./Mission.module.scss";
 
@@ -41,14 +42,18 @@ const Mission = () => {
 		offset: ["start start", "end end"],
 	});
 	
+	// const { scrollYProgress: textYProgress } = useScroll({
+	// 	target: textRef,
+	// 	offset: ["start 90%", "end center"],
+	// });
 	const { scrollYProgress: textYProgress } = useScroll({
 		target: textRef,
-		offset: ["start 90%", "end center"],
+		offset: ["start 80%", "end end"],
 	});
-	const fullText = `We are a coalition of homegrown leading technology giants delivering tier one 
-		technology systems development and deployment to governments across the African continent.`;
-	const textLength = useTransform(textYProgress, [0, 1], [0, fullText.length]);
-	const displayedText = useTransform(textLength, (latest) => fullText.slice(0, Math.floor(latest)));
+	// const fullText = `We are a coalition of homegrown leading technology giants delivering tier one 
+	// 	technology systems development and deployment to governments across the African continent.`;
+	// const textLength = useTransform(textYProgress, [0, 1], [0, fullText.length]);
+	// const displayedText = useTransform(textLength, (latest) => fullText.slice(0, Math.floor(latest)));
 	// const firstPart = "We are a coalition of";
   	// const secondPart = fullText.slice(firstPart.length);
 	// const firstPartLength = useTransform(textLength, (v) => Math.min(v, firstPart.length));
@@ -59,8 +64,7 @@ const Mission = () => {
 				<div className={styles.divider}></div>
 				<div className={styles.text_container}>
 					<div className={styles.text_}>
-						{/* We are a coalition of{" "} */}
-						<motion.h3>
+						{/* <motion.h3>
 							<motion.span style={{color: "#FFFFFF"}}>{displayedText}</motion.span>
 							<motion.span
 								animate={{ opacity: [0, 1, 0] }}
@@ -69,7 +73,16 @@ const Mission = () => {
 							>
 								|
 							</motion.span>
-						</motion.h3>
+						</motion.h3> */}
+						<AnimatedSection index={3} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+							<h3>We are a coalition of <span> homegrown leading technology giants</span></h3>
+						</AnimatedSection>
+						<AnimatedSection index={5} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+							<span>delivering tier one technology systems development and</span>{" "}
+						</AnimatedSection>
+						<AnimatedSection index={7} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+							<span>deployment to governments across the African continent.</span>
+						</AnimatedSection>
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,74 @@
+@import "@/styles/imports";
+
+.research_container {
+    width: 100%;
+    margin-block: 8rem;
+    .research_wrapper {
+        padding: 3.6rem;
+		max-width: $max-width;
+		margin-inline: auto;
+		overflow-x: hidden;
+        @include grid(repeat(4, 1fr), 3.2rem);
+        @include noScrollBar();
+    }
+    .text {
+        padding: 0 3.6rem;
+		max-width: $max-width;
+		margin-inline: auto;
+		overflow-x: hidden;
+        margin-bottom: 4rem;
+        h1 {
+            font-family: $font-gothic-bold;
+            font-size: 3.6rem;
+            line-height: 4.4rem;
+            color: #FFF;
+        }
+    }
+    .divider {
+		width: 100%;
+		height: 0.2rem;
+		background-color: rgba(255, 255, 255, 0.1);
+        margin-top: 8rem;
+	}
+
+    @include screenMax("tablet") {
+        margin-block: 6rem;
+        .text {
+            padding: 0 2.4rem;
+            margin-bottom: 3.2rem;
+            h1 {
+                font-size: 2.8rem;
+                line-height: 3.6rem;
+            }
+        }
+        .research_wrapper {
+            @include grid(repeat(2, 1fr), 9.6rem);
+            padding: 2.4rem 6.4rem;
+        }
+        .divider {
+            margin-top: 6rem;
+        }
+    }
+
+    @include screenMax("mobile") {
+        margin-block: 4rem;
+        .text {
+            padding: 0 1.6rem;
+            margin-bottom: 2.4rem;
+            h1 {
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+            }
+        }
+        .research_wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+            overflow-x: scroll;
+            padding: 1.6rem;
+        }
+        .divider {
+            margin-top: 4rem;
+        }
+    }
+}

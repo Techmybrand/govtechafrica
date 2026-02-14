@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@/shared";
-import { useTransform, motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { AnimatedSection, Button } from "@/shared";
+import { useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import styles from "./Governance.module.scss";
 
@@ -39,18 +39,18 @@ const Governance = () => {
 	}, []);
 	const { scrollYProgress: textYProgress } = useScroll({
 		target: textRef,
-		offset: ["start 90%", "end end"],
+		offset: ["start 95%", "end end"],
 	});
 	const fullText = `It's all about Inclusive Governance`;
 	const smText = `We believe we can build a future where governance is inclusive, accountable, and 
 	responsive. We also believe in the transformative power of African ingenuity and innovation.`;
-	const textLength = useTransform(textYProgress, [0, 1], [0, fullText.length]);
-	const smTextLength = useTransform(textYProgress, [0, 1], [0, smText.length]);
-	const displayedText = useTransform(textLength, (latest) => fullText.slice(0, Math.floor(latest)));
-	const displayedSmText = useTransform(smTextLength, (latest) => smText.slice(0, Math.floor(latest)));
+	// const textLength = useTransform(textYProgress, [0, 1], [0, fullText.length]);
+	// const smTextLength = useTransform(textYProgress, [0, 1], [0, smText.length]);
+	// const displayedText = useTransform(textLength, (latest) => fullText.slice(0, Math.floor(latest)));
+	// const displayedSmText = useTransform(smTextLength, (latest) => smText.slice(0, Math.floor(latest)));
 
-	const [displayedMain, setDisplayedMain] = useState<string>("");
-	const [displayedSmall, setDisplayedSmall] = useState<string>("");
+	const [, setDisplayedMain] = useState<string>("");
+	const [, setDisplayedSmall] = useState<string>("");
 
 	useMotionValueEvent(textYProgress, "change", (progress) => {
 		const p = Math.max(0, Math.min(1, progress));
@@ -65,15 +65,15 @@ const Governance = () => {
 			setDisplayedSmall("");
 		}
 	});
-	console.log(displayedText, displayedSmText);
+	// console.log(displayedText, displayedSmText, displayedMain, displayedSmall);
 	
 	return (
 		<div ref={textRef} className={styles.section} id="team">
 			<div className={styles.text_container}>
 				<div className={styles.text}>
-					<motion.h2>{displayedMain}</motion.h2>
+					{/* <motion.span>{displayedSmText}</motion.span> */}
+					{/* <motion.h2>{displayedMain}</motion.h2>
 					<motion.h3>
-						{/* <motion.span>{displayedSmText}</motion.span> */}
 						<motion.span>{displayedSmall}</motion.span>
 						{(displayedSmall.length < smText.length) && (
 							<motion.span
@@ -83,7 +83,19 @@ const Governance = () => {
 								|
 							</motion.span>
 						)}
-					</motion.h3>
+					</motion.h3> */}
+					<AnimatedSection className={styles.text_wrapper} index={0} scrollYProgress={textYProgress}>
+						<h2>{fullText}</h2>
+					</AnimatedSection>
+					<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
+						<span>{`We believe we can build a future where governance is inclusive, accountable`}</span>
+					</AnimatedSection>
+					<AnimatedSection className={styles.text_wrapper} index={2} scrollYProgress={textYProgress}>
+						<span>{`and responsive. We also believe in the transformative power of `}</span>
+					</AnimatedSection>
+					<AnimatedSection className={styles.text_wrapper} index={3} scrollYProgress={textYProgress}>
+						<span>{`African ingenuity and innovation.`}</span>
+					</AnimatedSection>
 				</div>
 			</div>
 			<div className={styles.divider}></div>

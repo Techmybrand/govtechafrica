@@ -1,7 +1,7 @@
-'use client';
-import React, { useEffect, useRef, useState } from "react";
+"use client";
+import React, { useRef } from "react";
 import { GrowthCardProps, GrowthCardMobileProps } from "@/interfaces";
-import { motion, useInView, useMotionValue, useTransform, useMotionValueEvent, animate, useScroll, useSpring } from "framer-motion";
+import { motion, useInView, useTransform, useScroll, useSpring } from "framer-motion";
 import styles from "./Growth.module.scss";
 
 const growthList = [
@@ -130,24 +130,9 @@ const Growth = () => {
 export default Growth;
 
 
-export const GrowthCard = ({ currency, value, description, label, inView, scrollYProgress, index }: GrowthCardProps) => {
-	const count = useMotionValue(0);
-	const decimals = value.toString().includes(".") ? value.toString().split(".")[1].length : 0;
-	const displayValue = useTransform(count, (latest) => latest.toFixed(decimals));
-	const [display, setDisplay] = useState("0");
-	useMotionValueEvent(displayValue, "change", (latest) => {
-		setDisplay(latest);
-	});
-	useEffect(() => {
-		if (inView) {
-			// animate(count, 0, value, { duration: 2.5, ease: "easeOut" });
-			animate(count, value, { duration: 2.5, ease: "easeOut" });
-		} else {
-			count.set(0);
-		}
-	}, [inView, count, value]);
-	const start = 0 + index * 0.1;
-	const end = start + 0.2;
+export const GrowthCard = ({ currency, value, description, label, scrollYProgress, index }: GrowthCardProps) => {
+	const start = 0 + index * 0.12;
+	const end = start + 0.25;
 	const rawY = useTransform(scrollYProgress, [start, end], [250, 0]);
 	const y = useSpring(rawY, {
 		stiffness: 100,
@@ -160,12 +145,19 @@ export const GrowthCard = ({ currency, value, description, label, inView, scroll
 		damping: 20,
 		mass: 0.5
 	});
+	const countProgress = useTransform(scrollYProgress, [start, end], [0, 1]);
+	const easedCount = useTransform(countProgress, (p) => {
+		return 1 - (1 - p) ** 2;
+	});
+  	const animatedCount = useTransform(easedCount, [0, 1], [0, value]);
+  	const decimals = value.toString().includes('.') ? value.toString().split('.')[1].length : 0;
+	const display = useTransform(animatedCount, (v) => v.toFixed(decimals));
+
 	return (
 		<motion.div className={styles.card} style={{ y, opacity }}>
 			<div className={styles.card_header}>
 				<h6>{currency}</h6>
-				{/* <h4 data-count={growth.value}>0</h4> */}
-				<h4>{display}</h4>
+				<motion.h4>{display}</motion.h4>
 				<h6>{label}</h6>
 			</div>
 			<span></span>
@@ -174,24 +166,7 @@ export const GrowthCard = ({ currency, value, description, label, inView, scroll
 	)
 }
 
-export const GrowthCardMobile = ({ currency, value, description, label, inView, index, scrollYProgress }: GrowthCardMobileProps) => {
-	const count = useMotionValue(0);
-	const decimals = value.toString().includes(".") ? value.toString().split(".")[1].length : 0;
-	const displayValue = useTransform(count, (latest) => latest.toFixed(decimals));
-	const [, setDisplay] = useState("0");
-
-	useMotionValueEvent(displayValue, "change", (latest) => {
-		setDisplay(latest);
-	});
-
-	useEffect(() => {
-		if (inView) {
-			// animate(count, 0, value, { duration: 2.5, ease: "easeOut" });
-			animate(count, value, { duration: 2.5, ease: "easeOut" });
-		} else {
-			count.set(0);
-		}
-	}, [inView, count, value]);
+export const GrowthCardMobile = ({ currency, value, description, label, index, scrollYProgress }: GrowthCardMobileProps) => {
 	const start = 0 + index * 0.1;
 	const end = start + 0.2;
 	const rawY = useTransform(scrollYProgress, [start, end], [300, 0]);
@@ -206,13 +181,20 @@ export const GrowthCardMobile = ({ currency, value, description, label, inView, 
 		damping: 20,
 		mass: 0.5
 	});
+	const countProgress = useTransform(scrollYProgress, [start, end], [0, 1]);
+	const easedCount = useTransform(countProgress, (p) => {
+		return 1 - (1 - p) ** 2;
+	});
+  	const animatedCount = useTransform(easedCount, [0, 1], [0, value]);
+  	const decimals = value.toString().includes('.') ? value.toString().split('.')[1].length : 0;
+	const display = useTransform(animatedCount, (v) => v.toFixed(decimals));
+
 	return (
 		<motion.div className={styles.card} style={{ y, opacity }}>
 			<div className={styles.card_header}>
 				<h6>{currency}</h6>
-				{/* <h4 data-count={growth.value}>0</h4> */}
-				{/* <h4>{display}</h4> */}
-				<h4>{value}</h4>
+				<motion.h4>{display}</motion.h4>
+				{/* <h4>{value}</h4> */}
 				<h6>{label}</h6>
 			</div>
 			<span></span>
