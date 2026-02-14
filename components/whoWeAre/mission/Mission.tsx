@@ -20,7 +20,7 @@ const stackedCards: Card[] = [
 		title: 'Our',
 		sec_title: 'Vision',
 		text: `Our vision is to be the leading IT solutions provider and technology systems integrator 
-			helping African governments and public institutions scale up efficiency and governance
+			helping African governments and public institutions scale up efficiency and governance 
 			through tailored automation.`,
 		image: '/images/vision.png',
 		list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -74,14 +74,21 @@ const Mission = () => {
 								|
 							</motion.span>
 						</motion.h3> */}
-						<AnimatedSection index={3} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+						
+						<AnimatedSection index={2} scrollYProgress={textYProgress} className={styles.text_wrapper}>
 							<h3>We are a coalition of <span> homegrown leading technology giants</span></h3>
 						</AnimatedSection>
-						<AnimatedSection index={5} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+						<AnimatedSection index={4} scrollYProgress={textYProgress} className={styles.text_wrapper}>
 							<span>delivering tier one technology systems development and</span>{" "}
 						</AnimatedSection>
-						<AnimatedSection index={7} scrollYProgress={textYProgress} className={styles.text_wrapper}>
-							<span>deployment to governments across the African continent.</span>
+						<AnimatedSection index={6} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+							<span>deployment - among other associated services — to public institutions as well</span>
+						</AnimatedSection>
+						<AnimatedSection index={8} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+							<span>as ministries/agencies/parastatals of both sub-national, </span>
+						</AnimatedSection>
+						<AnimatedSection index={10} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+							<span>regional and national governments across the African continent</span>
 						</AnimatedSection>
 					</div>
 				</div>

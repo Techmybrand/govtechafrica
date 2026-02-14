@@ -22,7 +22,11 @@ const HomeView = () => {
 				backgroundType="video"
 				className={styles.hero}
 				title="African technology for Government Excellence"
-				description="We enable African governments to better serve citizens by leveraging the enormous potential of technology and the digital economy. "
+				description={`At Govtech Africa, we empower African governments to better serve their 
+					constituents by harnessing the power of technology for societal advancement, and 
+					driving positive change through transparent, efficient, and inclusive governance 
+					practices.
+				`}
 				button="Explore our solutions"
 				href="/what-we-do"
 				backgroundImage=""
