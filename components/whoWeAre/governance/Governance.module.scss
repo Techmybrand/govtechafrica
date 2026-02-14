@@ -25,6 +25,11 @@
 				margin-bottom: 2.4rem;
 				text-align: center;
 			}
+			.text_wrapper {
+				max-width: 99rem;
+				margin: 0 auto;
+				text-align: center;
+			}
 			h3,
 			span {
 				font-size: 2.4rem;
@@ -35,6 +40,8 @@
 			}
 			span {
 				color: #fff;
+				text-align: center;
+				margin: 0 auto;
 			}
 			p {
 				margin-top: 1.2rem;
@@ -63,9 +70,9 @@
 			padding: 3.2rem;
 			position: relative;
 			margin-top: 3.6rem;
-			height: 38rem;
+			height: 46rem;
 			border: 0.2rem solid rgba($col-white, 0.1);
-			transition: all 600ms ease-in-out;
+			transition: all 800ms ease-in-out;
 			display: flex;
 			flex-direction: column;
 			.card_content {
@@ -85,7 +92,7 @@
 						max-width: 80%;
 						font-size: 1.6rem;
 						line-height: 2.4rem;
-						transition: all 600ms ease-in-out;
+						transition: all 800ms ease-in-out;
 						translate: -200% 0;
 					}
 				}
@@ -94,9 +101,9 @@
 					align-items: flex-end;
 					height: 38rem;
 					width: 100%;
-					top: -4.5rem;
+					top: 0;
 					translate: 0% 0%;
-					transition: all 600ms ease-in-out;
+					transition: all 800ms ease-in-out;
 					opacity: 1;
 					& > img {
 						object-fit: cover;
@@ -110,8 +117,8 @@
 				opacity: 0;
 				translate: -200% 0%;
 				position: relative;
-				top: -12rem;
-				transition: all 600ms ease-in-out;
+				top: -6rem;
+				transition: all 800ms ease-in-out;
 				& > p {
 					font-weight: 600!important;
 					font-size: 1.4rem!important;
@@ -121,12 +128,12 @@
 				.card_content {
 					.card_image {
 						translate: 0% 100%;
-						transition: all 600ms ease-in-out;
+						transition: all 800ms ease-in-out;
 						opacity: 0;
 					}
 					.card_text {
 						p {
-							transition: all 600ms ease-in-out;
+							transition: all 800ms ease-in-out;
 							translate: 0% 0;
 						}
 					}
@@ -134,7 +141,7 @@
 				.button {
 					opacity: 1;
 					translate: 0% 0;
-					transition: all 600ms ease-in-out;
+					transition: all 800ms ease-in-out;
 				}
 			}
 		}
@@ -152,6 +159,9 @@
 			padding: 2.4rem;
 			.text {
 				max-width: 85%;
+				.text_wrapper {
+					max-width: 85%;
+				}
 				h2 {
 					font-size: 4rem;
 					line-height: 5.6rem;
@@ -201,6 +211,9 @@
 			padding: 2.4rem 0;
 			.text {
 				max-width: 95%;
+				.text_wrapper {
+					max-width: 95%;
+				}
 				h2 {
 					font-size: 2.4rem;
 					line-height: 3.2rem;

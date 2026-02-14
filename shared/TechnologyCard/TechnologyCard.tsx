@@ -9,9 +9,10 @@ import styles from "./TechnologyCard.module.scss";
 
 const TechnologyCard = ({ technology, index, cardType, scrollYProgress }: TechnologyCardProps) => {
     const [isHover, setIsHover] = useState<boolean>(false);
+    const getIndex = index + 1
     const onHover = () => setIsHover(true);
     const offHover = () => setIsHover(false);
-    const start = 0 + index * 0.1;
+    const start = 0 + getIndex * 0.1;
     const end = start + 0.2;
     const rawY = useTransform(scrollYProgress, [start, end], [300, 0]);
     const y = useSpring(rawY, {

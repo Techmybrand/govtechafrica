@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { Hero } from "@/shared";
-import { Research } from "@/components/home";
 import { Governance, Mission, Partners } from "@/components/whoWeAre";
+import { RelatedInsights } from "@/components";
 
 const WhoWeAreView = () => {
 	return (
@@ -20,7 +20,7 @@ const WhoWeAreView = () => {
 			<Mission />
 			<Governance />
 			<Partners />
-			<Research />
+			<RelatedInsights />
 		</React.Fragment>
 	);
 };

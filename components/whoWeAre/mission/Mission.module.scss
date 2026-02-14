@@ -41,6 +41,11 @@
 		.text_ {
 			max-width: 80rem;
 			margin-inline: auto;
+			.text_wrapper {
+				max-width: 80rem;
+				text-align: center;
+				margin: 0 auto;
+			}
 			h3,
 			span {
 				font-size: 2.4rem;
@@ -168,6 +173,9 @@
 			gap: 1.8rem;
 			.text_ {
 				max-width: 85%;
+				.text_wrapper {
+					max-width: 85%;
+				}
 				h3, span {
 					font-size: 1.8rem;
 					line-height: 2.7rem;
@@ -245,6 +253,9 @@
 			gap: 0.8rem;
 			.text_ {
 				max-width: 95%;
+				.text_wrapper {
+					max-width: 95%;
+				}
 				h3, span {
 					font-size: 1.4rem;
 					line-height: 2rem;
