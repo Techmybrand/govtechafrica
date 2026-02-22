@@ -21,8 +21,9 @@
 			}
 		}
 		.grid, .grid_mob {
-			margin-block: 3.6rem;
+			margin-top: 3.6rem;
 			margin-inline: -2rem;
+			margin-bottom: 5.6rem;
 			@include grid(repeat(3, 1fr), 3.6rem, 2.4rem);
 			.card {
 				border-radius: 1.6rem;
@@ -76,7 +77,8 @@
 				// overflow-x: scroll;
 				margin-inline: 0;
 				margin-left: -1.6rem;
-				margin-block: 2.4rem;
+				margin-top: 2.4rem;
+				margin-bottom: 4rem;
 				@include noScrollBar();
 				gap: 1rem;
 				.card {
@@ -118,7 +120,8 @@
 				}
 			}
 			.grid_mob {
-				margin-block: 3.2rem;
+				margin-top: 2.8rem;
+				margin-bottom: 3.2rem;
 				@include grid(repeat(2, 1fr), 0.8rem, 1.6rem);
 				overflow: hidden;
 				.card {

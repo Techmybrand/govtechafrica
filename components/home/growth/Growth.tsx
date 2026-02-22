@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { GrowthCardProps, GrowthCardMobileProps } from "@/interfaces";
-import { motion, useInView, useTransform, useScroll, useSpring } from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import styles from "./Growth.module.scss";
 
 const growthList = [
@@ -42,10 +42,9 @@ const growthList = [
 
 const Growth = () => {
 	const sectionRef = useRef<HTMLDivElement>(null);
-	const inView = useInView(sectionRef, { amount: 0.2, once: false });
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
-		offset: ["start end", "end center"]
+		offset: ["start end", "end 90%"]
 	});
 
 	const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
@@ -105,7 +104,7 @@ const Growth = () => {
 				<motion.div className={styles.grid}>
 					{growthList.map((growth, index: number) => (
 						<GrowthCard key={index} scrollYProgress={scrollYProgress}
-							{...growth} index={index} inView={inView}
+							{...growth} index={index}
 						/>
 					))}
 				</motion.div>
@@ -116,11 +115,11 @@ const Growth = () => {
 						/>
 					))}
 				</motion.div>
-				<motion.div className={styles.text} style={{ y, opacity }}>
+				<div className={styles.text}>
 					<h3>
 						Govtech Africa <span>exists to lend a helping hand</span>
 					</h3>
-				</motion.div>
+				</div>
 			</div>
 			<div className={styles.divider}></div>
 		</motion.div>

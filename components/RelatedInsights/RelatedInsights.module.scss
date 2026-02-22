@@ -8,7 +8,7 @@
 		max-width: $max-width;
 		margin-inline: auto;
 		overflow-x: hidden;
-        @include grid(repeat(4, 1fr), 3.2rem);
+        @include grid(repeat(4, 1fr), 4.8rem);
         @include noScrollBar();
     }
     .text {
