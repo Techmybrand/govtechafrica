@@ -60,7 +60,7 @@ const Footer = () => {
 															<p>{menu.label}</p>
 														</div>
 													) : (
-														<Link href={menu.href}>{menu.label}</Link>
+														<Link href={menu.href ?? ''}>{menu.label}</Link>
 													)}
 												</li>
 											))}
