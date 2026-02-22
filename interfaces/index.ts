@@ -3,14 +3,14 @@ import { MotionValue } from 'framer-motion';
 export interface NavLinkMenu {
 	label: string;
 	id?: string;
-	href: string;
+	href?: string;
 	external: boolean;
 	icon?: string;
 }
 export interface NavLinkSub {
 	label: string;
 	icon: string;
-	href: string;
+	href?: string;
 	id?: string;
 	isHref?: boolean;
 	isCookie?: boolean;

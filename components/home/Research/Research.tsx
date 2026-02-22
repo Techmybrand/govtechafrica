@@ -15,7 +15,7 @@ const Research = () => {
     return (
         <div className={styles.research_container}>
             <div className={styles.research_wrapper}>
-                {blogs?.map((blog: BlogDetailsProps, index: number) => {
+                {blogs?.slice(0, 8)?.map((blog: BlogDetailsProps, index: number) => {
                     let paragraph = '';
                     let wordCount = 0;
                     if (blog?.researchContent?.content) {
@@ -37,16 +37,6 @@ const Research = () => {
                             }
                         }
                     }
-                    // const getImage = () => {
-                    //     if (index === 0) {
-                    //         return '/images/article_1.jpeg'
-                    //     } else if (index === 1) {
-                    //         return '/images/article_2.jpeg'
-                    //     } else {
-                    //         return `https:${blog?.thumbnail?.fields?.file?.url}`
-                    //     }
-                    // }
-                    // const articleImage = getImage();
                     return (
                         <ResearchCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}

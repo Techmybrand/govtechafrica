@@ -9,16 +9,26 @@
 		margin-inline: auto;
 		position: relative;
 		.text_container {
-			width: 100%;
+			width: 100vw;
+			margin-inline: -3.6rem;
 			height: 58rem;
 			margin-bottom: 8rem;
 			position: relative;
+			.image_container {
+				position: absolute;
+				inset: 0;
+				background-image: url("/images/consulting.png");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				z-index: 0;
+			}
 			& > img {
 				object-fit: cover;
 			}
 			.text {
 				position: relative;
-				width: 100%;
+				width: 70%;
 				padding: 0 0 0 3.6rem;
 				top: 70%;
 				h2 {
@@ -71,8 +81,10 @@
 			.text_container {
 				height: 40rem;
 				margin-bottom: 6rem;
+				margin-inline: -2.4rem;
 				.text {
 					top: 50%;
+					width: 75%;
 					padding: 0 0 0 2.4rem;
 					h2 {
 						font-size: 3.2rem;
@@ -121,9 +133,11 @@
 			padding: 1.6rem;
 			.text_container {
 				height: 38rem;
+				margin-inline: -1.6rem;
 				.text {
 					padding: 0 0 0 1.6rem;
 					top: 30%;
+					width: 100%;
 					h2 {
 						font-size: 2.4rem;
 						line-height: 3.2rem;

@@ -10,9 +10,9 @@ const stackedCards: Card[] = [
 	{
 		title: 'Our',
 		sec_title: 'Mission',
-		text: `We are on a mission to build thriving and resilient societies by providing state-of-the-art 
-			technology for African governments and public institutions. Our goal is simple: to improve 
-			transparency, drive efficiency, and enable government excellence.`,
+		text: `We are on a mission to build thriving and resilient societies by providing 
+			state-of-the-art technology for African governments and public institutions. Our goal is 
+			simple: to improve transparency, drive efficiency, and enable government excellence.`,
 		image: '/images/mission.png',
 		list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 	},
@@ -81,13 +81,13 @@ const Mission = () => {
 						<AnimatedSection index={4} scrollYProgress={textYProgress} className={styles.text_wrapper}>
 							<span>delivering tier one technology systems development and</span>{" "}
 						</AnimatedSection>
-						<AnimatedSection index={6} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+						<AnimatedSection index={5} scrollYProgress={textYProgress} className={styles.text_wrapper}>
 							<span>deployment - among other associated services — to public institutions as well</span>
 						</AnimatedSection>
-						<AnimatedSection index={8} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+						<AnimatedSection index={6} scrollYProgress={textYProgress} className={styles.text_wrapper}>
 							<span>as ministries/agencies/parastatals of both sub-national, </span>
 						</AnimatedSection>
-						<AnimatedSection index={10} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+						<AnimatedSection index={7} scrollYProgress={textYProgress} className={styles.text_wrapper}>
 							<span>regional and national governments across the African continent</span>
 						</AnimatedSection>
 					</div>

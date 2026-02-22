@@ -164,7 +164,7 @@ const LinkItem = ({
 					<div className={styles.subMenu}>
 						{link.subMenu.map((subMenu: NavLinkSub, index: number) => (
 							<div className={styles.subMenu_navlist} key={index}>
-								<Link href={subMenu.href} className={styles.subMenu_link}
+								<Link href={subMenu.href ?? ''} className={styles.subMenu_link}
 									onClick={() => handleScroll(subMenu.id)}
 								>
 									<h2 data-label={subMenu.label}>{subMenu.label}</h2>
@@ -176,7 +176,7 @@ const LinkItem = ({
 									{subMenu.menu?.map(
 										(menu: NavLinkMenu, index: number) => (
 											<Link
-												href={menu.href}
+												href={menu.href ?? ''}
 												key={index}
 												className={styles.subMenu_link}
 												onClick={() => {
