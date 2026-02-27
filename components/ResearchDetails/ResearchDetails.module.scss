@@ -18,7 +18,7 @@
         padding: 0 3.6rem!important;
         .details_header {
             width: 100%;
-            padding: 3.2rem;
+            padding: 3.2rem 3.2rem 3.2rem 0;
             border: 0.1rem solid #FFFFFF1F;
             border-radius: 1.6rem;
             h3 {
@@ -48,6 +48,14 @@
                     font-weight: 500;
                     color: $col-white;
                 }
+            }
+        }
+        .banner_image {
+            position: relative;
+            width: 75%;
+            height: 54rem;
+            & > img {
+                object-fit: cover;
             }
         }
         .details_body {
@@ -96,7 +104,7 @@
                     font-size: 2rem;
                     font-family: $font;
                     font-weight: 700;
-                    color: #A2A2A0;
+                    color: #00BF4D;
                 }
                 .writer_details_container {
                     display: flex;
@@ -190,8 +198,8 @@
             h2 {
                 font-size: 2rem;
                 font-family: $font;
-                font-weight: 500;
-                color: #A2A2A0;
+                font-weight: 700;
+                color: #00BF4D;
             }
             .line {
                 margin-top: 2rem;
@@ -247,7 +255,7 @@
         .details_content {
             padding: 0 2.4rem!important;
             .details_header {
-                padding: 2.4rem;
+                padding: 2.4rem 2.4rem 2.4rem 0;
                 h3 {
                     font-size: 1.8rem;
                 }
@@ -259,6 +267,10 @@
                         font-size: 1.8rem;
                     }
                 }
+            }
+            .banner_image {
+                height: 43rem;
+                width: 100%;
             }
             .details_body {
                 h2 {
@@ -309,7 +321,7 @@
         .details_content {
             padding: 0 1.6rem!important;
             .details_header {
-                padding: 1.6rem;
+                padding: 1.6rem 1.6rem 1.6rem 0;
                 h3 {
                     font-size: 1.4rem;
                 }
@@ -324,6 +336,10 @@
                         font-size: 1.2rem;
                     }
                 }
+            }
+            .banner_image {
+                height: 32rem;
+                width: 100%;
             }
             .details_body {
                 width: 100%;

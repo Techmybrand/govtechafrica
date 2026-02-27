@@ -43,6 +43,7 @@ const Research = () => {
                             alt={`https:${blog?.thumbnail?.fields?.description}`}
                             description={blog?.description || paragraph}
                             btnText={blog?.type}
+                            slug={blog?.slug}
                         />
                     )
                 }

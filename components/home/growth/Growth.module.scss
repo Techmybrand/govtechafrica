@@ -3,7 +3,7 @@
 .section {
 	width: 100%;
 	margin-bottom: 8rem;
-	.section_container {
+	.section_container, .text_container {
 		padding: 3.6rem;
 		max-width: $max-width;
 		margin-inline: auto;
@@ -23,7 +23,7 @@
 		.grid, .grid_mob {
 			margin-top: 3.6rem;
 			margin-inline: -2rem;
-			margin-bottom: 5.6rem;
+			margin-bottom: 6.4rem;
 			@include grid(repeat(3, 1fr), 3.6rem, 2.4rem);
 			.card {
 				border-radius: 1.6rem;
@@ -58,6 +58,20 @@
 		}
 		.grid_mob {
 			display: none;
+		}
+	}
+	.text_container {
+		.text {
+			h3,
+			span {
+				font-size: 2.4rem;
+				line-height: 3.2rem;
+				font-weight: 700;
+				font-family: $font-gothic-bold;
+			}
+			span {
+				color: #fff;
+			}
 		}
 	}
 	.divider {
@@ -133,6 +147,14 @@
 					}
 				}
 			}
+			.text {
+				h3, span {
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+				}
+			}
+		}
+		.text_container {
 			.text {
 				h3, span {
 					font-size: 1.6rem;
