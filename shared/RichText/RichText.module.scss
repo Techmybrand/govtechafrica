@@ -19,10 +19,10 @@
 
 .paragraph, .italic, .underline {
   color: #FFFFFF;
-  font-size: 2.2rem;
-  line-height: 2.8rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   font-family: $font;
-  margin-bottom: 2.4rem;
+  margin-bottom: 2rem;
   & > b {
     font-family: $font;
     font-weight: 700;
@@ -61,8 +61,8 @@
   margin-bottom: 2.4rem;
   p {
     color: #FFFFFF;
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     font-family: $font;
     margin-bottom: 0!important;
     padding-left: 1.6rem!important;
@@ -108,7 +108,7 @@
 }
 
 .heading1 {
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   line-height: 4.8rem;
   font-family: $font-gothic-bold;
   color: #FFFFFF;
@@ -125,7 +125,7 @@
 }
 
 .heading2 {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   line-height: 4.4rem;
   font-family: $font-gothic-bold;
   color: #FFFFFF;
@@ -142,7 +142,7 @@
 }
 
 .heading3 {
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   line-height: 4rem;
   font-family: $font-gothic-bold;
   color: #FFFFFF;
@@ -151,7 +151,7 @@
 }
 
 .heading4 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   line-height: 2.8rem;
   font-family: $font-gothic-bold;
   color: #FFFFFF;
@@ -239,8 +239,8 @@
   
 .entry_link {
   color: #3DB54A;
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   font-family: $font-gothic-bold;
   text-decoration: underline;
   &:hover {
@@ -251,8 +251,8 @@
 .hyperlink {
   color: #3DB54A;
   text-decoration: none;
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   font-family: $font-gothic-bold;
   &:hover {
     text-decoration: underline;
@@ -263,22 +263,38 @@
   .unordered_list, .ordered_list {
     padding-left: 2.4rem;
   }
+  .heading1 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+  .heading2 {
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+  }
+  .heading3 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+  .heading4 {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
   .list_item {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
   }
   .image_container, .video_embed {
     height: 40rem;
-    margin: 4rem 0;
+    margin: 4.4rem 0;
   }
   .paragraph, .italic, .underline, .entry_link, .hyperlink {
-    font-size: 1.8rem;
-    line-height: 2.7rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
   }
   .blockquote {
     p {
-      font-size: 1.8rem;
-      line-height: 2.7rem;
+      font-size: 1.4rem;
+      line-height: 2rem;
     }
   }
 }
@@ -288,8 +304,8 @@
     padding-left: 1.6rem;
   }
   .list_item {
-    font-size: 1.4rem;
-    line-height: 2.4rem;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
   }
   .image_container, .video_embed {
     height: 24rem;
@@ -310,8 +326,8 @@
     line-height: 2.8rem;
   }
   .paragraph, .italic, .underline {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
     margin-bottom: 1.6rem;
     & > sup {
     vertical-align: super;
@@ -325,8 +341,8 @@
   }
   }
   .entry_link, .hyperlink {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
   }
   .italic {
     margin-bottom: 1.6rem;
@@ -334,8 +350,8 @@
   .blockquote {
     margin-bottom: 1.6rem;
     p {
-      font-size: 1.6rem;
-      line-height: 2.4rem;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
     }
   }
   .blockquote {
@@ -349,5 +365,9 @@
     .quote_icon_right {
       margin-top: 0.8rem;
     }
+  }
+  .image_container, .video_embed {
+    height: 32rem;
+    margin: 3.6rem 0;
   }
 }

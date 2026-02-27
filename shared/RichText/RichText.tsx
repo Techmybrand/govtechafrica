@@ -96,7 +96,7 @@ const options: any = {
       const imageUrl = url.startsWith('//') ? `https:${url}` : url;
       return (
         <div className={styles.image_container}>
-          <Image fill
+          <Image fill sizes='100%' loading='lazy'
             src={imageUrl}
             alt={title || description || 'Blog image'}
           />
