@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { formatURL } from "@/utils/formatUrl";
+// import { formatURL } from "@/utils/formatUrl";
 import { Button } from "@/shared";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,12 +9,13 @@ interface ResearchCardProps {
     btnText?: string;
     image: string;
     title: string;
+    slug: string;
     description?: string;
     alt?: string;
     index?: number;
 }
 
-const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardProps) => {
+const ResearchCard = ({ image, slug, alt, btnText, title, description }: ResearchCardProps) => {
     const [hover, setHover] = useState<boolean>(false);
     const onHover = () => setHover(true);
     const offHover = () => setHover(false);
@@ -52,8 +53,8 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
     return (
         <React.Fragment>
             {mobile ? (
-                <article data-active={hover} className={styles.card_container} onClick={onHover}
-                    ref={cardRef}
+                <article data-active={hover} className={styles.card_container}
+                    onClick={onHover} ref={cardRef}
                 >
                     <div className={styles.card_content}>
                         {hover ? (
@@ -91,7 +92,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
                         <h2>{title}</h2>
                         <h4>{description}</h4>
                     </div>
-                    <Link href={`/insights/research/${formatURL(title)}`}
+                    <Link href={`/insights/research/${slug}`}
                         onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => 
                             e.stopPropagation()}
                     >
@@ -101,8 +102,9 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
                     </Link>
                 </article>
             ) : (
-                <article data-active={hover} className={styles.card_container} onMouseEnter={onHover} 
-                    onMouseLeave={offHover}
+                <article data-active={hover} className={styles.card_container} 
+                    onMouseOver={onHover} 
+                    onMouseOut={offHover}
                 >
                     <div className={styles.card_content}>
                         {hover ? (
@@ -135,7 +137,7 @@ const ResearchCard = ({ image, alt, btnText, title, description }: ResearchCardP
                         <h2>{title}</h2>
                         <h4>{description}</h4>
                     </div>
-                    <Link href={`/insights/research/${formatURL(title)}`}>
+                    <Link href={`/insights/research/${slug}`}>
                         <Button className={styles.button}>
                             Learn More
                         </Button>

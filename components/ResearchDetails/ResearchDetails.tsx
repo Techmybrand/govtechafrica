@@ -25,15 +25,18 @@ const ResearchDetails = () => {
         const fetchBlogDetails = () => {
             if (id && ( blogs && blogs?.length)) {
                 const foundBlog = blogs?.find((blog: BlogDetailsProps) =>
-                    blog?.title?.toLowerCase().replace(":", '').replace(/\s+/g, '-')?.slice(0, 20)
+                    // blog?.title?.toLowerCase().replace(":", '').replace(/\s+/g, '-')?.slice(0, 20)
+                    blog?.slug?.toLowerCase()
                     ===
-                    id.slice(0, 20)
+                    id.toLowerCase()
+                    // id.slice(0, 20)
                 );
                 setBlog(foundBlog);
             }
         };
         fetchBlogDetails();
     }, [id, blogs]);
+    // console.log('blog: ', blog);
     
   return (
     <main className={styles.details_container}>
@@ -52,6 +55,13 @@ const ResearchDetails = () => {
                             <h4>{blog?.date ? formatDate(blog?.date) : blog?.publishedAt}</h4>
                         </div>
                     </div>
+                    {blog?.bannerImage?.fields?.file?.url && (
+                        <div className={styles.banner_image}>
+                            <Image alt="" fill src={`https:${blog?.bannerImage?.fields?.file?.url}`}
+                                sizes="100%" loading="lazy"
+                            />
+                        </div>
+                    )}
                 </header>
                 <div className={styles.divider}></div>
                 <section className={styles.details_content}>

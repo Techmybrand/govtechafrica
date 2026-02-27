@@ -169,6 +169,7 @@ export interface ImageProps {
 }
 export interface BlogDetailsProps {
 	title: string;
+	slug: string;
 	type: string;
 	readTime?: string;
 	thumbnail: ImageProps;

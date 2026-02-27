@@ -24,6 +24,7 @@ const RelatedInsights = () => {
                             alt={`https:${blog?.thumbnail?.fields?.description}`}
                             description={blog?.description}
                             btnText={blog?.type}
+                            slug={blog?.slug}
                         />
                     )
                 }

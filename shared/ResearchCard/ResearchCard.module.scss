@@ -132,6 +132,7 @@
             opacity: 0;
             font-size: 1.2rem;
             translate: 30% 0;
+            // transform: translateZ(30%);
             position: relative;
             z-index: -1;
             transition: opacity 550ms ease-in-out, translate 550ms ease-in-out;

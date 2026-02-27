@@ -44,7 +44,7 @@ const Growth = () => {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
-		offset: ["start end", "end 90%"]
+		offset: ["start end", "end 100%"]
 	});
 
 	const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
@@ -115,6 +115,8 @@ const Growth = () => {
 						/>
 					))}
 				</motion.div>
+			</div>
+			<div className={styles.text_container}>
 				<div className={styles.text}>
 					<h3>
 						Govtech Africa <span>exists to lend a helping hand</span>
