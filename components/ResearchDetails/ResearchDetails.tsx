@@ -9,6 +9,7 @@ import { useParams } from "next/navigation";
 // import Link from "next/link";
 import Image from "next/image";
 import styles from "./ResearchDetails.module.scss";
+import Link from "next/link";
 
 const ResearchDetails = () => {
     const params = useParams();
@@ -69,22 +70,28 @@ const ResearchDetails = () => {
                         <div className={styles.research_details}>
                             {blog?.researchContent && <RichText content={blog?.researchContent} />}
                         </div>
-                        <div className={styles.written_by}>
-                            <h2>WRITTEN BY</h2>
-                            {blog?.authors?.length ? (
-                                <div className={styles.writer_details_container}>
-                                    {blog?.authors?.map((author: string) =>
-                                        <div key={author} className={styles.writer_details}>
-                                            <h4>{author}</h4>
-                                            <h6>Govtech research</h6>
-                                            <div className={styles.details_linkedin}>
-                                                <Image alt='' fill src='/svgs/linkedin.svg' />
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            ): null}
-                        </div>
+                        {blog?.authors?.length ? (
+                            <div className={styles.written_by}>
+                                <h2>WRITTEN BY</h2>
+                                    <div className={styles.writer_details_container}>
+                                        {blog?.authors?.map((author: string, index: number) => {
+                                            const getRole = blog?.role[index];
+                                            const getUrl = blog?.links[index];
+                                            return (
+                                                <div key={author} className={styles.writer_details}>
+                                                    <h4>{author}</h4>
+                                                    <h6>{getRole || 'Govtech research'}</h6>
+                                                    <Link href={getUrl}>
+                                                        <div className={styles.details_linkedin}>
+                                                            <Image alt='' fill src='/svgs/linkedin.svg' />
+                                                        </div>
+                                                    </Link>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                            </div>
+                        ): null}
                     </div>
                     <div className={styles.details_body_}>
                         {/* <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" rel="noopener noreferrer"> */}
@@ -93,25 +100,32 @@ const ResearchDetails = () => {
                             </Button> */}
                         {/* </Link> */}
                     </div>
-                    <div className={styles.written_by_sm}>
-                        <h2>WRITTEN BY</h2>
-                        <div className={styles.line}></div>
-                        {blog?.authors?.length ? (
-                            <div className={styles.writer_details_container}>
-                                {blog?.authors?.map((author: string) => 
-                                    <div key={author} className={styles.writer_details}>
-                                        <div className={styles.name_and_role}>
-                                            <h4>{author}</h4>
-                                            <h6>Govtech research</h6>
-                                        </div>
-                                        <div className={styles.details_linkedin}>
-                                            <Image alt='' fill src='/svgs/linkedin.svg' />
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        ): null}
-                    </div>
+                    {blog?.authors?.length ? (
+                        <div className={styles.written_by_sm}>
+                            <h2>WRITTEN BY</h2>
+                            <div className={styles.line}></div>
+                                <div className={styles.writer_details_container}>
+                                    {blog?.authors?.map((author: string, index: number) => {
+                                        const getRole = blog?.role[index];
+                                        const getUrl = blog?.links[index];
+                                        return (
+                                            <div key={author} className={styles.writer_details}>
+                                                <div className={styles.name_and_role}>
+                                                    <h4>{author}</h4>
+                                                    <h6>{getRole || 'Govtech research'}</h6>
+                                                </div>
+                                                <Link href={getUrl}>
+                                                    <div className={styles.details_linkedin}>
+                                                        <Image alt='' fill src='/svgs/linkedin.svg' />
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        )
+                                    }
+                                    )}
+                                </div>
+                        </div>
+                    ): null}
                 </section>
                 <div className={styles.divider_green}></div>
             </article>
