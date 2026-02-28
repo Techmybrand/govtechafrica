@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { RichText } from "@/shared";
+import { Button, ResearchCard, RichText } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
@@ -37,7 +37,10 @@ const ResearchDetails = () => {
         };
         fetchBlogDetails();
     }, [id, blogs]);
-    // console.log('blog: ', blog);
+    console.log('blog: ', blog);
+    const relatedContent = blogs?.filter((relatedBlog) => relatedBlog?.type === blog?.type);
+    console.log('related: ', relatedContent);
+    const contentToShow = relatedContent?.length ? relatedContent?.slice(0, 4) : blogs?.reverse()?.slice(0, 4)
     
   return (
     <main className={styles.details_container}>
@@ -56,20 +59,14 @@ const ResearchDetails = () => {
                             <h4>{blog?.date ? formatDate(blog?.date) : blog?.publishedAt}</h4>
                         </div>
                     </div>
-                    {blog?.bannerImage?.fields?.file?.url && (
-                        <div className={styles.banner_image}>
-                            <Image alt="" fill src={`https:${blog?.bannerImage?.fields?.file?.url}`}
-                                sizes="100%" loading="lazy"
-                            />
-                        </div>
-                    )}
-                </header>
-                <div className={styles.divider}></div>
-                <section className={styles.details_content}>
-                    <div className={styles.details_body}>
-                        <div className={styles.research_details}>
-                            {blog?.researchContent && <RichText content={blog?.researchContent} />}
-                        </div>
+                    <div className={styles.image_and_authors}>
+                        {blog?.bannerImage?.fields?.file?.url && (
+                            <div className={styles.banner_image}>
+                                <Image alt="" fill src={`https:${blog?.bannerImage?.fields?.file?.url}`}
+                                    sizes="100%" loading="lazy"
+                                />
+                            </div>
+                        )}
                         {blog?.authors?.length ? (
                             <div className={styles.written_by}>
                                 <h2>WRITTEN BY</h2>
@@ -92,6 +89,14 @@ const ResearchDetails = () => {
                                     </div>
                             </div>
                         ): null}
+                    </div>
+                </header>
+                <div className={styles.divider}></div>
+                <section className={styles.details_content}>
+                    <div className={styles.details_body}>
+                        <div className={styles.research_details}>
+                            {blog?.researchContent && <RichText content={blog?.researchContent} />}
+                        </div>
                     </div>
                     <div className={styles.details_body_}>
                         {/* <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" rel="noopener noreferrer"> */}
@@ -126,6 +131,25 @@ const ResearchDetails = () => {
                                 </div>
                         </div>
                     ): null}
+                    <div className={styles.related_insights}>
+                        <div className={styles.insights_header}>
+                            <h2>Related Insights</h2>
+                            <Button className={styles.explore_btn} href="/insights">
+                                Explore Insights
+                            </Button>
+                        </div>
+                        <div className={styles.research_wrapper}>
+                            {contentToShow?.map((blog: BlogDetailsProps, index: number) =>
+                                <ResearchCard key={index} title={blog?.title}
+                                    image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                                    alt={`https:${blog?.thumbnail?.fields?.description}`}
+                                    description={blog?.description}
+                                    btnText={blog?.type}
+                                    slug={blog?.slug}
+                                />
+                            )}
+                        </div>
+                    </div>
                 </section>
                 <div className={styles.divider_green}></div>
             </article>
