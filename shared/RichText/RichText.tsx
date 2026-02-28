@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
-import { BLOCKS, INLINES, MARKS, Document, Block, Inline } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from './RichText.module.scss';
+import React from "react";
+import { BLOCKS, INLINES, MARKS, Document, Block, Inline } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+// import Accordion from "../Accordion/Accordion";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./RichText.module.scss";
 
 interface RichTextProps {
   content: Document;

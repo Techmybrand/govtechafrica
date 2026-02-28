@@ -51,12 +51,56 @@
                 }
             }
         }
-        .banner_image {
-            position: relative;
-            width: 75%;
-            height: 54rem;
-            & > img {
-                object-fit: cover;
+        .image_and_authors {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            .banner_image {
+                position: relative;
+                width: 75%;
+                height: 54rem;
+                & > img {
+                    object-fit: cover;
+                }
+            }
+            .written_by {
+                width: 23%;
+                h2 {
+                    font-size: 2rem;
+                    font-family: $font;
+                    font-weight: 700;
+                    color: #00BF4D;
+                }
+                .writer_details_container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    width: 100%;
+                    margin-top: 0.8rem;
+                    .writer_details {
+                        h4 {
+                            font-size: 1.6rem;
+                            color: $col-white;
+                            font-family: $font-gothic;
+                        }
+                        h6 {
+                            font-size: 1.4rem;
+                            font-family: $font;
+                            color: #A2A2A0;
+                        }
+                        a {
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            margin-top: 1rem;
+                            .details_linkedin {
+                                position: relative;
+                                width: 2.4rem;
+                                height: 2.4rem;
+                            }
+                        }
+                    }
+                }
             }
         }
         .details_body {
@@ -98,44 +142,6 @@
                 //     color: $col-white;
                 //     font-size: 2rem;
                 // }
-            }
-            .written_by {
-                width: 20%;
-                h2 {
-                    font-size: 2rem;
-                    font-family: $font;
-                    font-weight: 700;
-                    color: #00BF4D;
-                }
-                .writer_details_container {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                    width: 100%;
-                    margin-top: 0.8rem;
-                    .writer_details {
-                        h4 {
-                            font-size: 1.6rem;
-                            color: $col-white;
-                            font-family: $font-gothic;
-                        }
-                        h6 {
-                            font-size: 1.4rem;
-                            font-family: $font;
-                            color: #A2A2A0;
-                        }
-                        a {
-                            width: 1.6rem;
-                            height: 1.6rem;
-                            margin-top: 1rem;
-                            .details_linkedin {
-                                position: relative;
-                                width: 1.6rem;
-                                height: 1.6rem;
-                            }
-                        }
-                    }
-                }
             }
         }
         .details_body_ {
@@ -234,16 +240,43 @@
                         }
                     }
                     a {
-                        width: 1.4rem;
-                        height: 1.4rem;
+                        width: 2.4rem;
+                        height: 2.4rem;
                         margin-top: 1rem;
                         .details_linkedin {
                             position: relative;
-                            width: 1.4rem;
-                            height: 1.4rem;
+                            width: 2.4rem;
+                            height: 2.4rem;
                         }
                     }
                 }
+            }
+        }
+        .related_insights {
+            width: 100%;
+            margin-top: 3.6rem;
+            margin-bottom: 7.2rem;
+            .insights_header {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 3.6rem;
+                h2 {
+                    font-size: 2.8rem;
+                    line-height: 3.6rem;
+                    font-family: $font-gothic-bold;
+                    color: #FFFFFF;
+                }
+                .explore_btn {
+                    width: 26rem;
+                    height: 4.5rem;
+                }
+            }
+            .research_wrapper {
+                width: 100%;
+                @include grid(repeat(4, 1fr), 5.6rem);
+                @include noScrollBar();
             }
         }
     }
@@ -277,9 +310,14 @@
                     }
                 }
             }
-            .banner_image {
-                height: 43rem;
-                width: 100%;
+            .image_and_authors {
+                .banner_image {
+                    height: 43rem;
+                    width: 100%;
+                }
+                .written_by {
+                    display: none;
+                }
             }
             .details_body {
                 h2 {
@@ -303,9 +341,6 @@
                         margin-block: 4rem;
                     }
                 }
-                .written_by {
-                    display: none;
-                }
             }
             .key_findings_container {
                 .findings_container {
@@ -321,6 +356,22 @@
             }
             .written_by_sm {
                 display: block;
+            }
+            .related_insights {
+                margin-bottom: 5.6rem;
+                margin-top: 3.2rem;
+                .insights_header {
+                    margin-bottom: 2.8rem;
+                    h2 {
+                        font-size: 2.4rem;
+                        line-height: 3.2rem;
+                    }
+                }
+                .research_wrapper {
+                    @include grid(repeat(2, 1fr), 9.6rem);
+                    width: 90%;
+                    margin-inline: auto;
+                }
             }
         }
     }
@@ -403,6 +454,33 @@
             }
             .written_by_sm {
                 display: block;
+            }
+            .related_insights {
+                margin-bottom: 4rem;
+                margin-top: 2.4rem;
+                .insights_header {
+                    margin-bottom: 2rem;
+                    h2 {
+                        font-size: 2rem;
+                        line-height: 2.8rem;
+                    }
+                    .explore_btn {
+                        width: 17rem;
+                        height: 4rem;
+                        gap: 0.5rem!important;
+                        & > p {
+                            font-size: 1.4rem!important;
+                        }
+                    }
+                }
+                .research_wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.6rem;
+                    overflow-x: scroll;
+                    width: 100%;
+                    margin-inline: 0;
+                }
             }
         }
     }
