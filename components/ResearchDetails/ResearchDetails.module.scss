@@ -124,11 +124,15 @@
                             font-family: $font;
                             color: #A2A2A0;
                         }
-                        .details_linkedin {
-                            position: relative;
+                        a {
                             width: 1.6rem;
                             height: 1.6rem;
                             margin-top: 1rem;
+                            .details_linkedin {
+                                position: relative;
+                                width: 1.6rem;
+                                height: 1.6rem;
+                            }
                         }
                     }
                 }
@@ -229,11 +233,15 @@
                             color: #A2A2A0;
                         }
                     }
-                    .details_linkedin {
-                        position: relative;
+                    a {
                         width: 1.4rem;
                         height: 1.4rem;
                         margin-top: 1rem;
+                        .details_linkedin {
+                            position: relative;
+                            width: 1.4rem;
+                            height: 1.4rem;
+                        }
                     }
                 }
             }

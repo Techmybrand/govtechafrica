@@ -174,6 +174,8 @@ export interface BlogDetailsProps {
 	readTime?: string;
 	thumbnail: ImageProps;
 	authors?: string[];
+	links: string[];
+	role: string[];
 	bannerImage: ImageProps;
 	date?: string;
 	description?: string;
