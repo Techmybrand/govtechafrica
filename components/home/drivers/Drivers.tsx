@@ -32,7 +32,7 @@ const Drivers = () => {
 
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
-		offset: ["start end", "end end"]
+		offset: ["start end", "end 100%"]
 	});
 
 	const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
