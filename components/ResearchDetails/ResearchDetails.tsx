@@ -38,9 +38,9 @@ const ResearchDetails = () => {
         fetchBlogDetails();
     }, [id, blogs]);
     console.log('blog: ', blog);
-    const relatedContent = blogs?.filter((relatedBlog) => relatedBlog?.type === blog?.type) ?? [];
+    const relatedContent = blogs?.filter((relatedBlog) => relatedBlog?.type === blog?.type) ?? blogs?.slice(0, 4) ?? [];
     // console.log('related: ', relatedContent);
-    const contentToShow = relatedContent.length ? relatedContent.slice(0, 4) : blogs?.reverse()?.slice(0, 4)
+    const contentToShow = relatedContent.length > 1 ? relatedContent.slice(0, 4) : blogs?.reverse()?.slice(0, 4) ?? []
     
   return (
     <main className={styles.details_container}>
