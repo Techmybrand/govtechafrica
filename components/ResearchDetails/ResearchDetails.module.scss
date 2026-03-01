@@ -67,7 +67,7 @@
             .written_by {
                 width: 23%;
                 margin-left: auto;
-                h2 {
+                .h2 {
                     font-size: 2rem;
                     font-family: $font;
                     font-weight: 700;
@@ -116,7 +116,7 @@
                     font-family: $font;
                     font-weight: 700;
                     color: $col-white;
-                    margin-bottom: 2.4rem;
+                    // margin-bottom: 2.4rem;
                 }
                 ul {
                     width: 75%;
@@ -412,15 +412,15 @@
                 width: 100%;
                 h2 {
                     font-size: 2.4rem;
-                    margin-bottom: 1.6rem;
+                    // margin-bottom: 1.6rem;
                 }
                 h3 {
                     font-size: 1.6rem;
                 }
                 .research_details {
-                    h2 {
-                        margin-bottom: 1.6rem;
-                    }
+                    // h2 {
+                    //     margin-bottom: 1.6rem;
+                    // }
                     h3 {
                         font-size: 1.6rem;
                     }
