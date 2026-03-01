@@ -39,7 +39,7 @@ const Governance = () => {
 	}, []);
 	const { scrollYProgress: textYProgress } = useScroll({
 		target: textRef,
-		offset: ["start 95%", "end end"],
+		offset: ["start 95%", "end 125%"],
 	});
 	const fullText = `It's all about Inclusive Governance`;
 	const smText = `We believe we can build a future where governance is inclusive, accountable, and 

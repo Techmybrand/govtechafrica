@@ -14,7 +14,7 @@ const stackedCards: Card[] = [
 			state-of-the-art technology for African governments and public institutions. Our goal is 
 			simple: to improve transparency, drive efficiency, and enable government excellence.`,
 		image: '/images/mission.png',
-		list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 	},
 	{
 		title: 'Our',
@@ -23,7 +23,7 @@ const stackedCards: Card[] = [
 			helping African governments and public institutions scale up efficiency and governance 
 			through tailored automation.`,
 		image: '/images/vision.png',
-		list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 	},
 ]
 interface Card {

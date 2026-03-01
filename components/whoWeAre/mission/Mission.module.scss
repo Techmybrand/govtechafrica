@@ -14,7 +14,7 @@
 		.card_container {
 			position: sticky;
 			width: 100%;
-			height: 60rem;
+			height: 65rem;
 			max-width: $max-width;
 			margin-inline: auto;
 			background: #000;
@@ -34,7 +34,7 @@
 				.image {
 					position: relative;
 					width: 100%;
-					height: 57.5rem;
+					height: 62.5rem;
 				}
 			}
 		}
@@ -64,7 +64,8 @@
 		}
 		.row {
 			@include flex(flex-start);
-			gap: 1.2rem;
+			gap: 0.8rem;
+			justify-content: space-evenly;
 			.line {
 				width: 4rem;
 				height: 0.3rem;
