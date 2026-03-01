@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { ResearchCard } from "@/shared";
+import { ResearchCard, Button } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./RelatedInsights.module.scss"
@@ -13,8 +13,13 @@ const RelatedInsights = () => {
     }, [])
     return (
         <div className={styles.research_container}>
-            <div className={styles.text}>
-                <h1>Related Insights</h1>
+            <div className={styles.text_wrapper}>
+                <div className={styles.text}>
+                    <h1>Explore Insights</h1>
+                    <Button className={styles.explore_btn} href="/insights">
+                        See more
+                    </Button>
+                </div>
             </div>
             <div className={styles.research_wrapper}>
                 {blogs?.slice(0, 4)?.map((blog: BlogDetailsProps, index: number) => {

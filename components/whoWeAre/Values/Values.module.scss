@@ -13,9 +13,13 @@
 		flex-direction: column;
 		gap: 3.6rem;
 		.row {
-			@include flex(flex-start);
+			// @include flex(flex-start);
+			display: flex;
+			align-items: center;
             margin-top: 3.2rem;
 			gap: 1.2rem;
+			justify-content: space-evenly;
+			width: 100%;
 			.line {
 				width: 4rem;
 				height: 0.3rem;
@@ -54,6 +58,21 @@
 				}
 				&:nth-child(12) {
 					background-color: #00be4d;
+				}
+				&:nth-child(13) {
+					background-color: #FFFFFF;
+				}
+				&:nth-child(14) {
+					background-color: #76df93;
+				}
+				&:nth-child(15) {
+					background-color: #FFFFFF;
+				}
+				&:nth-child(16) {
+					background-color: #00be4d;
+				}
+				&:nth-child(17) {
+					background-color: #FFFFFF;
 				}
 			}
 		}

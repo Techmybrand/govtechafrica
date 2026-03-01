@@ -6,7 +6,6 @@ import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
 import { ChartLoader } from "@/shared/loaders";
 import { useParams } from "next/navigation";
-// import Link from "next/link";
 import Image from "next/image";
 import styles from "./ResearchDetails.module.scss";
 import Link from "next/link";
@@ -37,10 +36,12 @@ const ResearchDetails = () => {
         };
         fetchBlogDetails();
     }, [id, blogs]);
-    console.log('blog: ', blog);
-    const relatedContent = blogs?.filter((relatedBlog) => relatedBlog?.type === blog?.type) ?? blogs?.slice(0, 4) ?? [];
+    // console.log('blog: ', blog);
+    const relatedContent = blogs?.filter((relatedBlog) => relatedBlog?.type === blog?.type && 
+        relatedBlog?.slug !== blog?.slug) ?? [];
     // console.log('related: ', relatedContent);
-    const contentToShow = relatedContent.length > 1 ? relatedContent.slice(0, 4) : blogs?.reverse()?.slice(0, 4) ?? []
+    const contentToShow = relatedContent.length ? relatedContent.slice(0, 4) :
+        blogs?.reverse().filter((relatedBlog) => relatedBlog?.slug !== blog?.slug).slice(0, 4);
     
   return (
     <main className={styles.details_container}>
@@ -72,17 +73,19 @@ const ResearchDetails = () => {
                                 <h2>WRITTEN BY</h2>
                                     <div className={styles.writer_details_container}>
                                         {blog?.authors?.map((author: string, index: number) => {
-                                            const getRole = blog?.role[index];
-                                            const getUrl = blog?.links[index];
+                                            const getRole = blog?.role?.length ? blog?.role[index] : 'Govtech Research';
+                                            const getUrl = blog?.links?.length ? blog?.links[index] : '/';
                                             return (
                                                 <div key={author} className={styles.writer_details}>
                                                     <h4>{author}</h4>
-                                                    <h6>{getRole || 'Govtech research'}</h6>
-                                                    <Link href={getUrl}>
-                                                        <div className={styles.details_linkedin}>
-                                                            <Image alt='' fill src='/svgs/linkedin.svg' />
-                                                        </div>
-                                                    </Link>
+                                                    <h6>{getRole}</h6>
+                                                    {blog?.links?.length && (
+                                                        <Link href={getUrl ?? '/'} target="_blank">
+                                                            <div className={styles.details_linkedin}>
+                                                                <Image alt='' fill src='/svgs/linkedin.svg' />
+                                                            </div>
+                                                        </Link>
+                                                    )}
                                                 </div>
                                             )
                                         })}
@@ -111,19 +114,21 @@ const ResearchDetails = () => {
                             <div className={styles.line}></div>
                                 <div className={styles.writer_details_container}>
                                     {blog?.authors?.map((author: string, index: number) => {
-                                        const getRole = blog?.role[index];
-                                        const getUrl = blog?.links[index];
+                                        const getRole = blog?.role?.length ? blog?.role[index] : 'Govtech Research';
+                                        const getUrl = blog?.links?.length ? blog?.links[index] : '/';
                                         return (
                                             <div key={author} className={styles.writer_details}>
                                                 <div className={styles.name_and_role}>
                                                     <h4>{author}</h4>
-                                                    <h6>{getRole || 'Govtech research'}</h6>
+                                                    <h6>{getRole}</h6>
                                                 </div>
-                                                <Link href={getUrl}>
-                                                    <div className={styles.details_linkedin}>
-                                                        <Image alt='' fill src='/svgs/linkedin.svg' />
-                                                    </div>
-                                                </Link>
+                                                {blog?.links?.length && (
+                                                    <Link href={getUrl ?? '/'} target="_blank">
+                                                        <div className={styles.details_linkedin}>
+                                                            <Image alt='' fill src='/svgs/linkedin.svg' />
+                                                        </div>
+                                                    </Link>
+                                                )}
                                             </div>
                                         )
                                     }
@@ -134,9 +139,6 @@ const ResearchDetails = () => {
                     <div className={styles.related_insights}>
                         <div className={styles.insights_header}>
                             <h2>Related Insights</h2>
-                            <Button className={styles.explore_btn} href="/insights">
-                                Explore Insights
-                            </Button>
                         </div>
                         <div className={styles.research_wrapper}>
                             {contentToShow?.map((blog: BlogDetailsProps, index: number) =>
@@ -149,6 +151,9 @@ const ResearchDetails = () => {
                                 />
                             )}
                         </div>
+                        <Button className={styles.explore_btn} href="/insights">
+                            See more
+                        </Button>
                     </div>
                 </section>
                 <div className={styles.divider_green}></div>

@@ -2,33 +2,34 @@
 import React, { useState } from "react";
 import { Button } from "..";
 import { TechnologyCardProps } from "@/interfaces";
-import { useSpring, useTransform, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./TechnologyCard.module.scss";
 
-const TechnologyCard = ({ technology, index, cardType, scrollYProgress }: TechnologyCardProps) => {
+const TechnologyCard = ({ technology, index, cardType }: TechnologyCardProps) => {
     const [isHover, setIsHover] = useState<boolean>(false);
-    const getIndex = index + 1
+    // const getIndex = index + 1
     const onHover = () => setIsHover(true);
     const offHover = () => setIsHover(false);
-    const start = 0 + getIndex * 0.1;
-    const end = start + 0.2;
-    const rawY = useTransform(scrollYProgress, [start, end], [300, 0]);
-    const y = useSpring(rawY, {
-        stiffness: 100,
-        damping: 20,
-        mass: 0.5
-    });
-    const rawOpacity = useTransform(scrollYProgress, [start, end], [0.3, 1]);
-    const opacity = useSpring(rawOpacity, {
-        stiffness: 100,
-        damping: 20,
-        mass: 0.5
-    });
+    // const start = 0 + getIndex * 0.1;
+    // const end = start + 0.2;
+    // const rawY = useTransform(scrollYProgress, [start, end], [300, 0]);
+    // const y = useSpring(rawY, {
+    //     stiffness: 100,
+    //     damping: 20,
+    //     mass: 0.5
+    // });
+    // const rawOpacity = useTransform(scrollYProgress, [start, end], [0.3, 1]);
+    // const opacity = useSpring(rawOpacity, {
+    //     stiffness: 100,
+    //     damping: 20,
+    //     mass: 0.5
+    // });
   return (
     <motion.div id={technology.id} className={styles.card} data-active={isHover} data-card={technology?.id}
-        onMouseEnter={onHover} onMouseLeave={offHover} style={{ y, opacity }}
+        onMouseEnter={onHover} onMouseLeave={offHover} 
+        // style={{ y, opacity }}
     >
         <div className={styles.card_content}>
             <div className={styles.details}>

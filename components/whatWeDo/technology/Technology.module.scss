@@ -8,6 +8,7 @@
 		max-width: $max-width;
 		margin-inline: auto;
 		position: relative;
+		overflow: hidden;
 		.intro_text {
 			width: 100%;
 			margin-bottom: 6.4rem;
@@ -114,7 +115,7 @@
 			}
 			.text_container {
 				height: 40rem;
-				margin-bottom: 6rem;
+				margin-bottom: 4rem;
 				margin-inline: -2.4rem;
 				.text {
 					top: 50%;
@@ -173,9 +174,10 @@
 			.text_container {
 				height: 38rem;
 				margin-inline: -1.6rem;
+				margin-bottom: 2rem;
 				.text {
 					padding: 0 0 0 1.6rem;
-					top: 30%;
+					top: 65%;
 					h2 {
 						font-size: 2.4rem;
 						line-height: 3.2rem;
