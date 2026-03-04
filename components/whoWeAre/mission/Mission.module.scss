@@ -14,7 +14,7 @@
 		.card_container {
 			position: sticky;
 			width: 100%;
-			height: 85rem;
+			height: 65rem;
 			max-width: $max-width;
 			margin-inline: auto;
 			background: #000;
@@ -34,7 +34,7 @@
 				.image {
 					position: relative;
 					width: 100%;
-					height: 80rem;
+					height: 65rem;
 				}
 			}
 			&[data-index = "0"] {
