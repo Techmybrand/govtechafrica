@@ -28,9 +28,9 @@ const values = [
         description: "We measure our success by the impact we create, both in terms of tangible  outcomes and positive societal change."
     }
 ];
-const CLOSING_ANIMATION_DURATION = 1900; // 2s in milliseconds
+const CLOSING_ANIMATION_DURATION = 3800; // 2s in milliseconds
 const OPENING_ANIMATION_DURATION = 3000; // 3s in milliseconds
-const CARD_DISPLAY_DURATION = 3800; // 3.9s in milliseconds
+const CARD_DISPLAY_DURATION = 3900; // 3.9s in milliseconds
 
 const Values = () => {
     const [activeCard, setActiveCard] = useState<string | number | null>(0);
@@ -170,7 +170,7 @@ const Values = () => {
                                     <p>{value.description}</p>
                                 </div> */}
                                 <div className={styles.number}>{index + 1}</div>
-                                <div className={styles.title}>
+                                <div data-index={index} className={styles.title}>
                                     <h3>{value.title}</h3>
                                 </div>
                                 <div className={styles.description}>

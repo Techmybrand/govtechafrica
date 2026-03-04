@@ -134,6 +134,7 @@ const Card = ({ card, progress, range, targetScale, index }: CardProps) => {
 		<motion.div
 			className={styles.card_container} ref={cardRef}
 			style={{ top: `calc(54% - 30rem + ${index * 0.2}rem)`, scale: scale }}
+			data-index={index}
 		>
 			<motion.div className={styles.card}>
 				<div className={styles.details}>
@@ -149,7 +150,7 @@ const Card = ({ card, progress, range, targetScale, index }: CardProps) => {
 						))}
 					</div>
 				</div>
-				<div className={styles.image}>
+				<div data-index={index} className={styles.image}>
 					<Image src={card.image} priority fill alt="mission" sizes="100%" />
 				</div>
 			</motion.div>

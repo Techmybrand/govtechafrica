@@ -68,6 +68,7 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
                             </div>
                         ) : (
                             <div className={styles.image_wrapper}>
+                                <div className={styles.blur_bg}></div>
                                 <div className={styles.image}>
                                     <Image alt={alt ? alt : 'image'} fill src={image}
                                         sizes="100%" loading="lazy"
@@ -122,6 +123,7 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
                             </div>
                         ) : (
                             <div className={styles.image_wrapper}>
+                                <div className={styles.blur_bg}></div>
                                 <div className={styles.image}>
                                     <Image alt={alt ? alt : 'image'} fill src={image}
                                         sizes="100%" loading="lazy"

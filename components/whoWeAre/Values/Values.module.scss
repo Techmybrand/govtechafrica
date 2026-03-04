@@ -123,6 +123,9 @@
 							font-family: $font-gothic-bold;
 							color: #FFF;
                         }
+						&[data-index = '2'], &[data-index = '3'] {
+							left: 0;
+						}
                     }
                     .description {
                         height: 0rem;
@@ -155,7 +158,7 @@
                         }
                         .title {
                             animation: title-float-up 1s ease-out 0.3s forwards;
-							left: 3rem;
+							// left: 3rem;
                         }
                         .description {
                             animation: description-show 1s ease-out 1.3s forwards;
@@ -178,7 +181,7 @@
                         }
                         .title {
                             top: 5.6rem;
-                            left: 4rem;
+                            left: 3.6rem;
                             rotate: 0deg;
                             animation: title-float-down 0.625s ease-in 1.625s forwards;
                         }
@@ -291,14 +294,14 @@
                         }
                         &[data-closing="true"] {
                             width: 100%;
-                            animation: card-contract-mobile 0.625s ease-in 2.625s forwards;
+                            animation: card-contract-mobile 3.625s ease-in 3.625s forwards;
                             .image_container {
                                 animation: drone-go-down 1s ease-in 0s forwards;
                             }
                             .description {
                                 height: auto;
                                 opacity: 1;
-                                animation: description-hide 0.625s ease-in 1s forwards;
+                                animation: description-hide 0.625s ease-in 0.5s forwards;
                             }
                             .title {
                                 top: 2.4rem;
@@ -607,7 +610,7 @@
 	}
 	100% {
 		top: 40rem;
-		left: 0rem;
+		left: 0;
 		rotate: -90deg;
 	}
 }

@@ -90,10 +90,10 @@ const Governance = () => {
 					<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
 						<span>{`We believe we can build a future where governance is inclusive, accountable`}</span>
 					</AnimatedSection>
-					<AnimatedSection className={styles.text_wrapper} index={2} scrollYProgress={textYProgress}>
+					<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
 						<span>{`and responsive. We also believe in the transformative power of `}</span>
 					</AnimatedSection>
-					<AnimatedSection className={styles.text_wrapper} index={3} scrollYProgress={textYProgress}>
+					<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
 						<span>{`African ingenuity and innovation.`}</span>
 					</AnimatedSection>
 				</div>

@@ -14,7 +14,7 @@
 		.card_container {
 			position: sticky;
 			width: 100%;
-			height: 65rem;
+			height: 85rem;
 			max-width: $max-width;
 			margin-inline: auto;
 			background: #000;
@@ -34,8 +34,11 @@
 				.image {
 					position: relative;
 					width: 100%;
-					height: 62.5rem;
+					height: 80rem;
 				}
+			}
+			&[data-index = "0"] {
+				width: 97.5%;
 			}
 		}
 		.text_ {
@@ -264,6 +267,7 @@
 				}
 			}
 			.card_container {
+				height: auto;
 				.card {
 					margin-bottom: 3.2rem;
 					row-gap: 0!important;
