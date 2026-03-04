@@ -70,7 +70,7 @@ const ResearchDetails = () => {
                         )}
                         {blog?.authors?.length ? (
                             <div className={styles.written_by}>
-                                <h2>WRITTEN BY</h2>
+                                <h2 className={styles.h2}>WRITTEN BY</h2>
                                     <div className={styles.writer_details_container}>
                                         {blog?.authors?.map((author: string, index: number) => {
                                             const getRole = blog?.role?.length ? blog?.role[index] : 'Govtech Research';

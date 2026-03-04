@@ -28,7 +28,7 @@ const Hero = (props: Props) => {
 	}, [speed]);
 	return (
 		<div className={styles.hero} data-type={props.dataType}>
-			<div className={styles.grad}></div>
+			{/* <div className={styles.grad}></div> */}
 			<div className={styles.hero_container}>
 				<div className={`${styles.hero_background} ${props.className}`}>
 					<div className={styles.hero_image__container}>

@@ -46,6 +46,7 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
+				background: rgba(0, 0 , 0, 0.4);
 				.hero_image {
 					position: relative;
 					width: 100%;
@@ -79,6 +80,7 @@
 						margin-top: 2rem;
 						font-size: 1.8rem;
 						line-height: 2.7rem;
+						color: rgba(255, 255, 255, 0.85);
 					}
 				}
 				.button_text > p {
