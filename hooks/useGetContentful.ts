@@ -23,12 +23,16 @@ const useGetContentful = () => {
 		const blogPost = await getResearchPostByTitle(params);
 		setBlog(blogPost);
 	};
+	const sortedBlogs = blogs ? [...blogs].sort((a, b) => {
+        return new Date(b?.publishedAt).getTime() - new Date(a?.publishedAt).getTime();
+    }) : [];
 
 	return {
 		blogs,
 		blog,
 		fetchBlogs,
 		fetchBlog,
+		sortedBlogs
 	};
 };
 

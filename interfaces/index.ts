@@ -221,7 +221,7 @@ export interface BlogDetailsProps {
 			}
 		},
 	};
-	publishedAt?: string;
+	publishedAt: string;
 	researchContent: Document;
 }
 

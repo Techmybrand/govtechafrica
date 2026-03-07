@@ -6,7 +6,7 @@ import { BlogDetailsProps } from "@/interfaces";
 import styles from "./Research.module.scss";
 
 const Research = () => {
-    const { fetchBlogs, blogs } = useGetContentful();
+    const { fetchBlogs, sortedBlogs } = useGetContentful();
 	useEffect(() => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -15,7 +15,7 @@ const Research = () => {
     return (
         <div className={styles.research_container}>
             <div className={styles.research_wrapper}>
-                {blogs?.slice(0, 8)?.map((blog: BlogDetailsProps, index: number) => {
+                {sortedBlogs?.slice(0, 8)?.map((blog: BlogDetailsProps, index: number) => {
                     let paragraph = '';
                     let wordCount = 0;
                     if (blog?.researchContent?.content) {

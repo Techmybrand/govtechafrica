@@ -21,7 +21,7 @@ export default function BlogView() {
 	// const posts: Post[] = fs.existsSync(filePath)
 	// 	? (JSON.parse(fs.readFileSync(filePath, "utf8")) as Post[]) : [];
 	// console.log(posts);
-	const { fetchBlogs, blogs: insightsList } = useGetContentful();
+	const { fetchBlogs, sortedBlogs: insightsList } = useGetContentful();
 	useEffect(() => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
