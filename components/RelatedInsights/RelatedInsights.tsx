@@ -6,7 +6,7 @@ import { BlogDetailsProps } from "@/interfaces";
 import styles from "./RelatedInsights.module.scss"
 
 const RelatedInsights = () => {
-    const { fetchBlogs, blogs } = useGetContentful();
+    const { fetchBlogs, sortedBlogs } = useGetContentful();
     useEffect(() => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -22,7 +22,7 @@ const RelatedInsights = () => {
                 </div>
             </div>
             <div className={styles.research_wrapper}>
-                {blogs?.slice(0, 4)?.map((blog: BlogDetailsProps, index: number) => {
+                {sortedBlogs?.slice(0, 4)?.map((blog: BlogDetailsProps, index: number) => {
                     return (
                         <ResearchCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
