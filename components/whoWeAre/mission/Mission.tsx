@@ -82,14 +82,14 @@ const Mission = () => {
 							<span>delivering tier one technology systems development and</span>{" "}
 						</AnimatedSection>
 						<AnimatedSection index={5} scrollYProgress={textYProgress} className={styles.text_wrapper}>
-							<span>deployment - among other associated services — to public institutions as well</span>
+							<span>deployment to governments across the African continent</span>
 						</AnimatedSection>
-						<AnimatedSection index={6} scrollYProgress={textYProgress} className={styles.text_wrapper}>
-							<span>as ministries/agencies/parastatals of both sub-national, </span>
+						{/* <AnimatedSection index={6} scrollYProgress={textYProgress} className={styles.text_wrapper}>
+							<span></span>
 						</AnimatedSection>
 						<AnimatedSection index={7} scrollYProgress={textYProgress} className={styles.text_wrapper}>
-							<span>regional and national governments across the African continent</span>
-						</AnimatedSection>
+							<span></span>
+						</AnimatedSection> */}
 					</div>
 				</div>
 			</div>

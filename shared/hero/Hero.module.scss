@@ -37,7 +37,7 @@
 		}
 		.hero_background {
 			height: 85vh;
-			border-radius: 1.5rem;
+			// border-radius: 1.5rem;
 			@include flex();
 			position: relative;
 			overflow: hidden;
@@ -80,7 +80,7 @@
 						margin-top: 2rem;
 						font-size: 1.8rem;
 						line-height: 2.7rem;
-						color: rgba(255, 255, 255, 0.85);
+						color: rgba(255, 255, 255, 1);
 					}
 				}
 				.button_text > p {

@@ -23,7 +23,10 @@ const Technology = () => {
 			<div className={styles.section_container}>
 				<div className={styles.intro_text}>
 					<h1>Revolutionizing Governance Through Technology</h1>
-					<p>For some, the word impossible ends discussions. For us, it starts the conversation.</p>
+					<p>
+						For some, the word impossible ends discussions. For us, it starts 
+						the conversation.
+					</p>
 				</div>
 				<div className={styles.text_container}>
 					<motion.div className={styles.image_container}
