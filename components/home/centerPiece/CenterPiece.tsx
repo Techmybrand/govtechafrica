@@ -92,6 +92,19 @@ const CenterPiece = () => {
 						<span>remains at the centrepiece of rapidly</span> paced
 						development.
 					</h3>
+					<h3>
+						<br />
+						Through
+						<span>
+							{" "}
+							collaboration, capacity building, and scalable solutions,
+						</span>{" "}
+						we are committed to{" "}
+						<span>
+							reimagining what governance can achieve in today&apos;s
+							digital era.
+						</span>
+					</h3>
 				</div>
 			</div>
 			<div className={styles.divider}></div>

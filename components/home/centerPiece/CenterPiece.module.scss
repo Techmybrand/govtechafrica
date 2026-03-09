@@ -49,13 +49,13 @@
 		}
 		.text, .text_ {
 			h3, span {
-				font-size: 1.8rem;
-				line-height: 2.7rem;
+				font-size: 1.6rem;
+				line-height: 2.4rem;
 				font-weight: 400;
 				font-family: $font-gothic;
 			}
 			span {
-				color: #fff;
+				color: #FFFFFF;
 			}
 		}
 		.text_ {
@@ -113,24 +113,26 @@
 		margin-bottom: 4rem;
 		.section_container {
 			overflow: hidden;
-			padding: 1.6rem;
+			padding: 0 1.6rem 1.6rem;
 			.image_and_text {
 				gap: 1.6rem;
 				flex-direction: column;
 				.image_mob {
-					margin-block: 1.6rem;
+					margin-bottom: 1.6rem;
+					height: 14rem;
 				}
 			}
 			.text, .text_ {
 				h3, span {
-					font-size: 1.6rem;
-					line-height: 2.4rem;
+					font-size: 1.2rem;
+					line-height: 1.6rem;
 				}
 			}
 			.text_ {
 				display: block;
 			}
 			.text {
+				display: none;
 				.h3, br {
 					display: none;
 				}
