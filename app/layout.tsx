@@ -5,7 +5,7 @@ import React from "react";
 import Providers from "@/Providers";
 import Script from "next/script";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://govtechafrica.com";
+const baseUrl = "https://govtechafrica.com";
 
 export const viewport: Viewport = {
 	width: "device-width",
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: 'https://govtechafrica.com/images/opengraph_image.png',
-				width: 800,
-				height: 418,
+				width: 1200,
+				height: 630,
 				alt: 'Govtech Africa',
 			},
 		],
@@ -64,10 +64,10 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: 'https://govtechafrica.com/images/opengraph_image.png',
-				// width: 1200,
-				// height: 630,
-				width: 800,
-				height: 418,
+				width: 1200,
+				height: 630,
+				// width: 800,
+				// height: 418,
 				alt: 'Govtech Africa',
 			}
 		]
