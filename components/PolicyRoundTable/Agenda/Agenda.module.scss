@@ -1,0 +1,212 @@
+@import "@/styles/imports";
+
+.agenda_section {
+    padding-bottom: 9.6rem!important;
+	width: 100%;
+    background: #111829;
+    .agenda_container {
+        padding: 3.6rem;
+		max-width: $max-width;
+		margin-inline: auto;
+		position: relative;
+		overflow: hidden;
+        .about_label {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 2.4rem;
+            .label_line {
+                width: 3rem;
+                height: 0.1rem;
+                background: #C9A84C;
+            }
+            p {
+                font-size: 1rem;
+                font-weight: 600;
+                font-family: $font;
+                text-transform: uppercase;
+                letter-spacing: 0.22rem;
+                color: #C9A84C;
+            }
+        }
+        .about_text {
+            h1 {
+                font-size: 3.2rem;
+                line-height: 4.8rem;
+                font-family: $font;
+                font-weight: 700;
+                max-width: 60rem;
+                color: #FFF;
+            }
+            h6 {
+                margin-top: 1.6rem;
+                font-size: 1.4rem;
+                font-family: $font;
+                color: rgba(232,230,224,0.5);
+                max-width: 60rem;
+            }
+        }
+        .plenary_container {
+            margin-top: 6.4rem;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .plenary {
+                width: 100%;
+                .title {
+                    margin: 4rem auto 2rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 1.6rem;
+                    h3 {
+                        text-transform: uppercase;
+                        font-size: 1rem;
+                        color: #C9A84C;
+                        font-family: $font;
+                        font-weight: 600;
+                        letter-spacing: 0.2rem;
+                        width: max-content;
+                        flex-shrink: 0;
+                        position: relative;
+                    }
+                    .line {
+                        background: #FFFFFF12;
+                        height: 0.1rem;
+                        width: 100%;
+                    }
+                }
+                .agenda {
+                    display: grid;
+                    grid-template-columns: 20rem 1fr;
+                    padding: 2.4rem 0;
+                    border-radius: 0.2rem;
+                    border-top: 0.1rem solid #FFFFFF12;
+                    .agenda_title {
+                        padding-right: 3.2rem;
+                        padding-top: 0.16rem;
+                        border-right: 0.1rem solid #FFFFFF12;
+                        h2 {
+                            color: #C9A84C;
+                            text-transform: uppercase;
+                            font-size: 1.2rem;
+                            letter-spacing: 0.1rem;
+                            font-family: $font;
+                            font-weight: 600;
+                        }
+                    }
+                    .agenda_body {
+                        padding-left: 3.2rem;
+                        h4 {
+                            font-size: 1.6rem;
+                            margin-bottom: 0.4rem;
+                            color: #FFF;
+                            font-family: $font;
+                            font-weight: 500;
+                        }
+                        p {
+                            color: #E8E6E080;
+                            font-size: 1.25rem;
+                            font-style: italic;
+                        }
+                        .agenda_role {
+                            background: #FFFFFF0A;
+                            border: 0.1rem solid #FFFFFF12;
+                            padding: 0.4rem 1.1rem;
+                            border-radius: 0.2rem;
+                            width: fit-content;
+                            margin-top: 0.8rem;
+                            h6 {
+                                letter-spacing: 0.15rem;
+                                text-transform: uppercase;
+                                font-family: $font;
+                                font-weight: 600;
+                                color: #E8E6E080;
+                                font-size: 1rem;
+                            }
+                            &[data-role = "live demo"] {
+                                border-color: #3B82F640;
+                                h6 {
+                                    color: #60A5fA;
+                                }
+                            }
+                            &[data-role = "keynote"] {
+                                border-color: #C9A84C4D;
+                                h6 {
+                                    color: #C9A84C;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .sessions {
+            width: 100%;
+            .title {
+                margin: 4rem auto 2rem;
+                display: flex;
+                align-items: center;
+                h3 {
+                    text-transform: uppercase;
+                    font-size: 1rem;
+                    color: #C9A84C;
+                    font-family: $font;
+                    font-weight: 600;
+                    letter-spacing: 0.2rem;
+                }
+                .line {
+                    background: #FFFFFF12;
+                    height: 0.1rem;
+                    width: 100%;
+                }
+            }
+            .cards {
+                @include grid(repeat(3, 1fr), 2.4rem);
+                margin-top: 3.2rem;
+                .card {
+                    padding: 3.2rem;
+                    border: 0.1rem solid #FFFFFF12;
+                    border-radius: 0.2rem;
+                    background: #1B2438;
+                    border-top: 0.3rem solid;
+                    &[data-index = "0"] {
+                        border-top-color: #C9A84C;
+                    }
+                    &[data-index = "1"] {
+                        border-top-color: #008751;
+                    }
+                    &[data-index = "2"] {
+                        border-top-color: #60A5FA;
+                    }
+                    h3 {
+                        color: #E8E6E026;
+                        font-size: 4.8rem;
+                        margin-bottom: 1.2rem;
+                    }
+                    h6 {
+                        text-transform: uppercase;
+                        margin-bottom: 1.2rem;
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        letter-spacing: 0.15rem;
+                        &[data-index = "0"] {
+                            color: #C9A84C;
+                        }
+                        &[data-index = "1"] {
+                            color: #008751;
+                        }
+                        &[data-index = "2"] {
+                            color: #60A5fA;
+                        }
+                    }
+                    p {
+                        line-height: 1.65;
+                        font-size: 1.4rem;
+                        color: #E8E6E0;
+                    }
+                }
+            }
+        }
+    }
+}
