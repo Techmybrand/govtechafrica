@@ -1,0 +1,129 @@
+@import "@/styles/imports";
+
+.about_section {
+    padding-bottom: 9.6rem;
+    width: 100%;
+    background: #0E1220;
+    .about_container {
+        padding: 3.6rem;
+		max-width: $max-width;
+		margin-inline: auto;
+		position: relative;
+		overflow: hidden;
+        .about_label {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 2.4rem;
+            .label_line {
+                width: 3rem;
+                height: 0.1rem;
+                background: #C9A84C;
+            }
+            p {
+                font-size: 1rem;
+                font-weight: 600;
+                font-family: $font;
+                text-transform: uppercase;
+                letter-spacing: 0.22rem;
+                color: #C9A84C;
+            }
+        }
+        .about_text {
+            h1 {
+                font-size: 3.2rem;
+                line-height: 4.8rem;
+                font-family: $font;
+                font-weight: 700;
+                max-width: 60rem;
+                color: #FFF;
+            }
+            h6 {
+                margin-top: 1.6rem;
+                font-size: 1.4rem;
+                font-family: $font;
+                color: rgba(232,230,224,0.5);
+                max-width: 60rem;
+            }
+        }
+        .about_theme {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6.4rem;
+            margin-top: 6.4rem;
+            align-items: start;
+            .pillars {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                p {
+                    color: #E8E6E080;
+                    font-size: 1.4rem;
+                    font-style: italic;
+                    font-family: $font;
+                    margin-bottom: 2rem;
+                }
+                .pillar {
+                    background: #1B2438;
+                    border: 0.1rem solid #FFFFFF12;
+                    border-left: 0.3rem solid #C9A84C;
+                    padding: 2.4rem 2.8rem;
+                    transition: all 300ms ease-in-out;
+                    h6 {
+                        color: #E8E6E0;
+                        font-size: 1.4rem;
+                        font-family: $font;
+                        line-height: 1.7;
+                        width: 70%;
+                    }
+                    &:hover {
+                        border-left-color: #008751;
+                    }
+                }
+            }
+            .stats {
+                padding: 4rem;
+                background: #161E30;
+                border: 0.1rem solid #FFFFFF12;
+                position: sticky;
+                top: 11.2rem;
+                border-radius: 0.2rem;
+                h2 {
+                    font-family: $font;
+                    font-weight: 600;
+                    margin-bottom: 2rem;
+                    padding-bottom: 2rem;
+                    color: #C9A84C;
+                    border-bottom: 0.1rem solid #FFFFFF12;
+                    font-size: 2.4rem;
+                    text-transform: capitalize;
+                }
+                .stat_row {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5rem;
+                    margin-top: 0.8rem;
+                    .stat {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.4rem;
+                        h3 {
+                            font-family: $font;
+                            font-weight: 700;
+                            color: #FFF;
+                            font-size: 4.4rem;
+                        }
+                        p {
+                            font-size: 1.2rem;
+                            font-family: $font;
+                            color: rgba(232,230,224,0.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

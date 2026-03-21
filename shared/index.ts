@@ -18,6 +18,7 @@ import PreLoader from "./PreLoader/PreLoader";
 import ResearchCard from "./ResearchCard/ResearchCard";
 import RichText from "./RichText/RichText";
 import Searchbar from "./Searchbar/Searchbar";
+import Select from "./select/Select";
 import ServiceIntroSection from "./ServiceIntroSection/ServiceIntroSection";
 import ServicesCard from "./ServicesCard/ServicesCard";
 import Statistics from "./Statistics/Statistics";
@@ -34,6 +35,7 @@ export {
     Header,
     RichText,
     Footer,
+    Select,
     ThemeToggle,
     PreLoader,
     Button,
