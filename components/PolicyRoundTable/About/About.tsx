@@ -39,7 +39,7 @@ const About = () => {
             A Policy Dialogue for the Digital Transformation of Nigerian Governance
           </h1>
           <h6>
-            The National GovTech Policy Roundtable 2026 convenes senior policymakers,
+            The NATIONAL GOVTECH POLICY ROUNDTABLE 2026 convenes senior policymakers,
             technology leaders, development partners, and civil society to advance a shared
             vision of government that is digital by design and citizen-centric by default.
           </h6>
