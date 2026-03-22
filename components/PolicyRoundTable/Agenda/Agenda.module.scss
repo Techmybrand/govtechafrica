@@ -19,7 +19,7 @@
             .label_line {
                 width: 3rem;
                 height: 0.1rem;
-                background: #C9A84C;
+                background: #3DB54A;
             }
             p {
                 font-size: 1rem;
@@ -27,13 +27,13 @@
                 font-family: $font;
                 text-transform: uppercase;
                 letter-spacing: 0.22rem;
-                color: #C9A84C;
+                color: #3DB54A;
             }
         }
         .about_text {
             h1 {
-                font-size: 3.2rem;
-                line-height: 4.8rem;
+                font-size: 4.4rem;
+                line-height: 6rem;
                 font-family: $font;
                 font-weight: 700;
                 max-width: 60rem;
@@ -62,7 +62,7 @@
                     h3 {
                         text-transform: uppercase;
                         font-size: 1rem;
-                        color: #C9A84C;
+                        color: #3DB54A;
                         font-family: $font;
                         font-weight: 600;
                         letter-spacing: 0.2rem;
@@ -87,7 +87,7 @@
                         padding-top: 0.16rem;
                         border-right: 0.1rem solid #FFFFFF12;
                         h2 {
-                            color: #C9A84C;
+                            color: #3DB54A;
                             text-transform: uppercase;
                             font-size: 1.2rem;
                             letter-spacing: 0.1rem;
@@ -131,9 +131,9 @@
                                 }
                             }
                             &[data-role = "keynote"] {
-                                border-color: #C9A84C4D;
+                                border-color: #008751;
                                 h6 {
-                                    color: #C9A84C;
+                                    color: #3DB54A;
                                 }
                             }
                         }
@@ -150,7 +150,7 @@
                 h3 {
                     text-transform: uppercase;
                     font-size: 1rem;
-                    color: #C9A84C;
+                    color: #3DB54A;
                     font-family: $font;
                     font-weight: 600;
                     letter-spacing: 0.2rem;
@@ -171,7 +171,7 @@
                     background: #1B2438;
                     border-top: 0.3rem solid;
                     &[data-index = "0"] {
-                        border-top-color: #C9A84C;
+                        border-top-color: #3DB54A;
                     }
                     &[data-index = "1"] {
                         border-top-color: #008751;
@@ -191,7 +191,7 @@
                         font-weight: 700;
                         letter-spacing: 0.15rem;
                         &[data-index = "0"] {
-                            color: #C9A84C;
+                            color: #3DB54A;
                         }
                         &[data-index = "1"] {
                             color: #008751;

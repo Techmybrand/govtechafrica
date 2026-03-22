@@ -19,7 +19,7 @@
             .label_line {
                 width: 3rem;
                 height: 0.1rem;
-                background: #C9A84C;
+                background: #3DB54A;
             }
             p {
                 font-size: 1rem;
@@ -27,7 +27,7 @@
                 font-family: $font;
                 text-transform: uppercase;
                 letter-spacing: 0.22rem;
-                color: #C9A84C;
+                color: #3DB54A;
             }
         }
         .about_text {
@@ -61,13 +61,13 @@
                     align-items: center;
                     justify-content: center;
                     margin: 0 auto 2rem;
-                    border: 0.2rem solid rgba(201,168,76,0.18);
+                    border: 0.2rem solid #008751;
                     background: #161E30;
                     h3 {
                         font-size: 2.4rem;
                         font-family: $font;
                         font-weight: 700;
-                        color: #C9A84C;
+                        color: #3DB54A;
                     }
                 }
                 h2 {
@@ -82,7 +82,7 @@
                 }
                 p {
                     text-transform: capitalize;
-                    color: #C9A84C;
+                    color: #3DB54A;
                     font-size: 1.2rem;
                     margin-bottom: 0.4rem;
                     text-align: center;
