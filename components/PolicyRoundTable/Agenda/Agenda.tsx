@@ -136,7 +136,9 @@ const Agenda = () => {
           <div className={styles.cards}>
             {cardsList.map((card, index) =>
               <div key={index} data-index={index} className={styles.card}>
-                <h3>0{index + 1}</h3>
+                <div className={styles.number}>
+                  <h3>0{index + 1}</h3>
+                </div>
                 <h6 data-index={index}>{card.title}</h6>
                 <p>{card.subtext}</p>
               </div>

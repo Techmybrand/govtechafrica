@@ -1,5 +1,5 @@
 import React from "react";
-import { Hero, About, Agenda, Speakers, Register, Footer } from "@/components/PolicyRoundTable";
+import { Hero, About, Speakers, Register, Footer } from "@/components/PolicyRoundTable";
 
 const PolicyRoundTableView = () => {
     return (
@@ -7,7 +7,7 @@ const PolicyRoundTableView = () => {
             <Hero />
             <Footer />
             <About />
-            <Agenda />
+            {/* <Agenda /> */}
             <Speakers />
             <Register />
         </React.Fragment>

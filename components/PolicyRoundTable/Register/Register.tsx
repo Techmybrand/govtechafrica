@@ -13,12 +13,12 @@ const Register = () => {
     {
       icon: '/svgs/location_white.svg',
       title: 'venue',
-      text: 'National Assembly Library Trust Fund, Abuja, FCT',
+      text: 'National Assembly Library and Resource Center, Three arm zone, Abuja, FCT',
     },
     {
       icon: '/svgs/in_person.svg',
       title: 'attendance',
-      text: 'By invitation and registration - no admission fee',
+      text: 'Physical attendance - Strictly by information',
     },
     {
       icon: '/svgs/registration.svg',
@@ -84,30 +84,30 @@ const Register = () => {
               </p> */}
               <form className={styles.form_wrapper}>
                 <div className={styles.single}>
-                  <div className={styles.name}>
-                    <label htmlFor="firstName">First Name </label>
-                    <InputField placeholder="Enter your first name" type="text"
-                      className={styles.input_field} name="firstName" id="firstName"
-                    />
-                  </div>
-                  <div className={styles.name}>
+                  <label htmlFor="firstName">Full Name </label>
+                  <InputField placeholder="Enter your full name" type="text"
+                    className={styles.input_field} name="fullName" id="fullname"
+                  />
+                  {/* <div className={styles.name}>
                     <label htmlFor="lastName">First Name </label>
                     <InputField placeholder="Enter your first name" id="lastName"
                       className={styles.input_field} name="lastName" type="text"
                     />
+                  </div> */}
+                </div>
+                <div className={styles.group}>
+                  <div className={styles.name}>
+                    <label htmlFor="email">Email Address</label>
+                    <InputField placeholder="Enter your email" type="email"
+                      className={styles.input_field} name="email" id="email"
+                    />
                   </div>
-                </div>
-                <div className={styles.single}>
-                  <label htmlFor="email">Email Address</label>
-                  <InputField placeholder="Enter your email" type="email"
-                    className={styles.input_field} name="email" id="email"
-                  />
-                </div>
-                <div className={styles.single}>
-                  <label htmlFor="phoneNumber">phone number</label>
-                  <InputField placeholder="Enter your phone number"
-                    className={styles.input_field} name="phoneNumber" id="phoneNumber"
-                  />
+                  <div className={styles.name}>
+                    <label htmlFor="phoneNumber">phone number</label>
+                    <InputField placeholder="Enter your phone number"
+                      className={styles.input_field} name="phoneNumber" id="phoneNumber"
+                    />
+                  </div>
                 </div>
                 <div className={styles.single}>
                   <label htmlFor="organisation">organisation / institution</label>
