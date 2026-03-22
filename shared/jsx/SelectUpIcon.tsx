@@ -7,7 +7,7 @@ const SelectUpIcon = () => {
 			version="1.1"
 			xmlns="http://www.w3.org/2000/svg"
 			xmlnsXlink="http://www.w3.org/1999/xlink"
-			fill="#000000"
+			fill="#FFFFFF"
 		>
 			<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 			<g
@@ -30,7 +30,7 @@ const SelectUpIcon = () => {
 					<g
 						id="Dribbble-Light-Preview"
 						transform="translate(-260.000000, -6684.000000)"
-						fill="#000000"
+						fill="#FFFFFF"
 					>
 						{" "}
 						<g id="icons" transform="translate(56.000000, 160.000000)">

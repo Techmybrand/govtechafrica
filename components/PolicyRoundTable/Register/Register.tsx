@@ -1,26 +1,27 @@
 import React from "react";
 import styles from "./Register.module.scss"
 import { InputField, Select, TextArea } from "@/shared";
+import Image from "next/image";
 
 const Register = () => {
   const details = [
     {
-      icon: '📅',
+      icon: '/svgs/calendar_white.svg',
       title: 'date',
       text: 'Sunday, 30th March 2026',
     },
     {
-      icon: '📍',
+      icon: '/svgs/location_white.svg',
       title: 'venue',
       text: 'National Assembly Library Trust Fund, Abuja, FCT',
     },
     {
-      icon: '🎟',
+      icon: '/svgs/in_person.svg',
       title: 'attendance',
       text: 'By invitation and registration - no admission fee',
     },
     {
-      icon: '🌐',
+      icon: '/svgs/registration.svg',
       title: 'format',
       text: 'In-person. Limited seats available',
     },
@@ -46,7 +47,7 @@ const Register = () => {
     <section id="register" className={styles.about_section}>
       <div className={styles.about_container}>
         <div className={styles.about_label}>
-          <div className={styles.label_line}></div>
+          {/* <div className={styles.label_line}></div> */}
           <p>Participation</p>
         </div>
         <div className={styles.about_text}>
@@ -61,8 +62,10 @@ const Register = () => {
             <div className={styles.details}>
               {details.map((detail, index) =>
                 <div key={index} className={styles.detail}>
-                  <div className={styles.icon}>
-                    {detail.icon}
+                  <div className={styles.icon_bg}>
+                    <div className={styles.icon}>
+                      <Image alt="" fill src={detail.icon} />
+                    </div>
                   </div>
                   <div className={styles.detail_text}>
                     <h3>{detail.title}</h3>
@@ -74,13 +77,13 @@ const Register = () => {
           </div>
           <div className={styles.form_container}>
             <div className={styles.form_content}>
-              <h3>Secure Your Place</h3>
+              {/* <h3>Secure Your Place</h3>
               <p className={styles.p}>
                 Complete the form below. A confirmation will be sent to your email upon 
                 successful registration.
-              </p>
+              </p> */}
               <form className={styles.form_wrapper}>
-                <div className={styles.group}>
+                <div className={styles.single}>
                   <div className={styles.name}>
                     <label htmlFor="firstName">First Name </label>
                     <InputField placeholder="Enter your first name" type="text"
@@ -141,10 +144,10 @@ const Register = () => {
                 <button className={styles.submit_btn}>
                   <h3>submit registration</h3>
                 </button>
-                <p className={styles.footer_p}>
+                {/* <p className={styles.footer_p}>
                   Your data will be handled in accordance with applicable data protection 
                   guidelines. Confirmations will be issued within 48 hours of submission.
-                </p>
+                </p> */}
               </form>
             </div>
           </div>

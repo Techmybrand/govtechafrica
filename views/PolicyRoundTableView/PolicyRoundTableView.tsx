@@ -1,10 +1,11 @@
 import React from "react";
-import { Hero, About, Agenda, Speakers, Register } from "@/components/PolicyRoundTable";
+import { Hero, About, Agenda, Speakers, Register, Footer } from "@/components/PolicyRoundTable";
 
 const PolicyRoundTableView = () => {
     return (
         <React.Fragment>
             <Hero />
+            <Footer />
             <About />
             <Agenda />
             <Speakers />
