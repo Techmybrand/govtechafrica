@@ -1,7 +1,7 @@
 @import "@/styles/imports";
 
 .about_section {
-    padding-bottom: 9.6rem;
+    padding-bottom: 9.6rem!important;
     width: 100%;
     background: #0E1220;
     .about_container {
@@ -121,6 +121,76 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    @include screenMax("tablet") {
+        padding-bottom: 8rem!important;
+        .about_container {
+            padding: 2.4rem;
+            .about_text {
+                h1 {
+                    font-size: 3.6rem;
+                    line-height: 5.2rem;
+                    max-width: 85%;
+                }
+                h6 {
+                    max-width: 80%;
+                }
+            }
+            .about_theme {
+                gap: 4rem;
+                margin-top: 4rem;
+                .stats {
+                    padding: 3.2rem;
+                    h2 {
+                        font-size: 1.8rem;
+                    }
+                    .stat_row {
+                        gap: 3.6rem;
+                        .stat {
+                            h3 {
+                                font-size: 3.2rem;
+                            }
+                        }
+                    }
+                }
+                .pillars {
+                    gap: 1.8rem;
+                    p {
+                        margin-bottom: 0;
+                    }
+                    .pillar {
+                        padding: 1.6rem 2rem;
+                        h6 {
+                            width: 85%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include screenMax("mobile") {
+        padding-bottom: 6rem!important;
+        .about_container {
+            padding: 1.6rem;
+            .about_text {
+                h1 {
+                    font-size: 3.2rem;
+                    line-height: 4rem;
+                    max-width: 95%;
+                }
+                h6 {
+                    max-width: 90%;
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+                }
+            }
+            .about_theme {
+                grid-template-columns: 1fr;
+                gap: 2.4rem;
+                margin-top: 3.2rem;
             }
         }
     }

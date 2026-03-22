@@ -39,7 +39,7 @@ const Speakers = () => {
       <div className={styles.about_container}>
         <div className={styles.about_label}>
           <div className={styles.label_line}></div>
-          <p>About the roundtable</p>
+          <p>distinguished speakers</p>
         </div>
         <div className={styles.about_text}>
           <h1>
