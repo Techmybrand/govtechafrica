@@ -1,9 +1,8 @@
 @import "@/styles/imports";
 
 .about_section {
-    padding-bottom: 9.6rem!important;
+    padding-inline: 4rem!important;
     width: 100%;
-    background: #0E1220;
     .about_container {
         padding: 3.6rem;
 		max-width: $max-width;
@@ -14,27 +13,27 @@
             width: fit-content;
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            gap: 0;
             margin-bottom: 2.4rem;
             .label_line {
                 width: 3rem;
                 height: 0.1rem;
-                background: #3DB54A;
+                background: #1BB24B;
             }
             p {
-                font-size: 1rem;
-                font-weight: 600;
-                font-family: $font;
+                font-size: 1.6rem;
+                font-weight: 700;
+                font-family: $font-gothic-bold;
                 text-transform: uppercase;
                 letter-spacing: 0.22rem;
-                color: #3DB54A;
+                color: #1BB24B;
             }
         }
         .about_text {
             h1 {
                 font-size: 4.4rem;
                 line-height: 6rem;
-                font-family: $font;
+                font-family: $font-gothic-bold;
                 font-weight: 700;
                 max-width: 70rem;
                 color: #FFF;
@@ -43,39 +42,39 @@
                 margin-top: 1.6rem;
                 font-size: 1.4rem;
                 font-family: $font;
-                color: rgba(232,230,224,0.5);
+                color: #FFF;
                 max-width: 60rem;
             }
         }
         .about_theme {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6.4rem;
+            grid-template-columns: 1fr;
+            gap: 4rem;
             margin-top: 6.4rem;
             align-items: start;
             .pillars {
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 gap: 2rem;
                 p {
-                    color: #E8E6E080;
-                    font-size: 1.4rem;
+                    color: #FFF;
+                    font-size: 1.6rem;
                     font-style: italic;
                     font-family: $font;
                     margin-bottom: 2rem;
                 }
                 .pillar {
-                    background: #1B2438;
                     border: 0.1rem solid #FFFFFF12;
-                    border-left: 0.3rem solid #3DB54A;
-                    padding: 2.4rem 2.8rem;
+                    border-left: 0.3rem solid #1BB24B;
+                    background: #1F1F1F;
+                    padding: 4rem 2.4rem;
                     transition: all 300ms ease-in-out;
                     h6 {
-                        color: #E8E6E0;
-                        font-size: 1.4rem;
+                        color: #FFF;
+                        font-size: 1.6rem;
                         font-family: $font;
                         line-height: 1.7;
-                        width: 70%;
+                        width: 60%;
                     }
                     &:hover {
                         border-left-color: #008751;
@@ -84,10 +83,7 @@
             }
             .stats {
                 padding: 4rem;
-                background: #161E30;
                 border: 0.1rem solid #FFFFFF12;
-                position: sticky;
-                top: 11.2rem;
                 border-radius: 0.2rem;
                 h2 {
                     font-family: $font;
@@ -100,24 +96,26 @@
                     text-transform: capitalize;
                 }
                 .stat_row {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5rem;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    gap: 3.2rem;
                     margin-top: 0.8rem;
                     .stat {
                         display: flex;
                         flex-direction: column;
-                        gap: 0.4rem;
+                        gap: 1.2rem;
                         h3 {
                             font-family: $font;
                             font-weight: 700;
-                            color: #FFF;
+                            color: #1BB24B;
                             font-size: 4.4rem;
+                            line-height: 5.6rem;
                         }
                         p {
-                            font-size: 1.2rem;
+                            font-size: 1.4rem;
+                            line-height: 2rem;
                             font-family: $font;
-                            color: rgba(232,230,224,0.5);
+                            color: #FFF;
                         }
                     }
                 }
@@ -126,9 +124,17 @@
     }
 
     @include screenMax("tablet") {
-        padding-bottom: 8rem!important;
+        padding-block: 7.2rem!important;
+        padding-inline: 2.4rem!important;
         .about_container {
             padding: 2.4rem;
+            .about_label {
+                margin-bottom: 2rem;
+                p {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+            }
             .about_text {
                 h1 {
                     font-size: 3.6rem;
@@ -172,25 +178,67 @@
         }
     }
     @include screenMax("mobile") {
-        padding-bottom: 6rem!important;
+        padding-inline: 0!important;
+        padding-block: 5.6rem!important;
         .about_container {
             padding: 1.6rem;
+            .about_label {
+                margin-bottom: 1.6rem;
+                p {
+                    font-size: 1.2rem;
+                    line-height: 1.6rem;
+                }
+            }
             .about_text {
                 h1 {
-                    font-size: 3.2rem;
-                    line-height: 4rem;
+                    font-size: 2.4rem;
+                    line-height: 3.6rem;
                     max-width: 95%;
                 }
                 h6 {
-                    max-width: 90%;
+                    max-width: 95%;
                     font-size: 1.2rem;
-                    line-height: 2rem;
+                    line-height: 1.6rem;
                 }
             }
             .about_theme {
                 grid-template-columns: 1fr;
                 gap: 2.4rem;
                 margin-top: 3.2rem;
+                .stats {
+                    padding: 0 0 2.4rem;
+                    h2 {
+                        font-size: 1.6rem;
+                    }
+                    .stat_row {
+                        gap: 0.8rem;
+                        grid-template-columns: 1fr 1fr;
+                        .stat {
+                            h3 {
+                                font-size: 3.2rem;
+                                line-height: 4.4rem;
+                            }
+                            p {
+                                font-size: 1.2rem;
+                                line-height: 1.6rem;
+                            }
+                        }
+                    }
+                }
+                .pillars {
+                    gap: 1.6rem;
+                    grid-template-columns: 1fr;
+                    p {
+                        margin-bottom: 0;
+                    }
+                    .pillar {
+                        padding: 1.6rem;
+                        h6 {
+                            width: 100%;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
             }
         }
     }

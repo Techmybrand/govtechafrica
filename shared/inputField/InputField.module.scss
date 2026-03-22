@@ -48,11 +48,14 @@
 	font-family: $font;
 	color: rgba($col-white, 1);
 	width: 100%;
-	min-height: 2rem;
+	min-height: 2.4rem;
 	&::placeholder {
 		font-size: 1.4rem;
 		line-height: 2.5rem;
 		color: rgba($col-white, 0.6);
+	}
+	@include screenMax("mobile") {
+		min-height: 2rem;
 	}
 }
 
@@ -63,4 +66,14 @@
 	cursor: pointer;
 	border: none !important;
 	padding: none !important;
+}
+
+
+@include screenMax("mobile") {
+	.input_field {
+		min-height: 2rem;
+	}
+	.input_wrapper {
+		padding: 1.4rem 1.6rem;
+	}
 }

@@ -93,10 +93,10 @@ const Agenda = () => {
     },
   ]
   return (
-    <section className={styles.agenda_section}>
+    <section id="agenda" className={styles.agenda_section}>
       <div className={styles.agenda_container}>
         <div className={styles.about_label}>
-          <div className={styles.label_line}></div>
+          {/* <div className={styles.label_line}></div> */}
           <p>programme</p>
         </div>
         <div className={styles.about_text}>
@@ -111,7 +111,6 @@ const Agenda = () => {
             <div key={index} className={styles.plenary}>
               <div className={styles.title}>
                 <h3>{agenda.header}</h3>
-                <div className={styles.line}></div>
               </div>
               {agenda.items.map((item, index) =>
                 <div key={index} className={styles.agenda}>
@@ -133,7 +132,6 @@ const Agenda = () => {
         <div className={styles.sessions}>
           <div className={styles.title}>
             <h3>thematic panel sessions</h3>
-            <div className={styles.line}></div>
           </div>
           <div className={styles.cards}>
             {cardsList.map((card, index) =>

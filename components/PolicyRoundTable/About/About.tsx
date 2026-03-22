@@ -4,8 +4,8 @@ import styles from "./About.module.scss";
 const About = () => {
   const pillars = [
     'Reframe digital transformation as a governance and policy priority, not merely a technical initiative.',
-    'Promote a whole-of-government approach to digital systems, interoperability, and service delivery.',
     'Strengthen alignment between legislative intent, institutional mandates, and implementation capacity.',
+    'Promote a whole-of-government approach to digital systems, interoperability, and service delivery.',
     'Encourage the design of citizen- and business-centric services that are accessible, inclusive, and trusted.',
   ]
   const stats = [
@@ -22,7 +22,8 @@ const About = () => {
       text: 'Africa GovTech Week — Fulcrum Platform launch preview',
     },
     {
-      icon: '🇳🇬',
+      // icon: '🇳🇬',
+      icon: 'NG',
       text: 'Co-hosted by the Deputy Speaker, House of Representatives',
     },
   ]
@@ -30,7 +31,7 @@ const About = () => {
     <section id="about" className={styles.about_section}>
       <div className={styles.about_container}>
         <div className={styles.about_label}>
-          <div className={styles.label_line}></div>
+          {/* <div className={styles.label_line}></div> */}
           <p>About the roundtable</p>
         </div>
         <div className={styles.about_text}>
@@ -45,8 +46,7 @@ const About = () => {
         </div>
         <div className={styles.about_theme}>
           <div className={styles.pillars}>
-            <p>Through this theme, the Roundtable seeks to:</p>
-            <div className={styles.pillar_list}></div>
+            {/* <p>Through this theme, the Roundtable seeks to:</p> */}
             {pillars.map((pillar, index) =>
               <div key={index} className={styles.pillar}>
                 <h6>{pillar}</h6>
@@ -54,7 +54,7 @@ const About = () => {
             )}
           </div>
           <div className={styles.stats}>
-            <h2>Why this roundtable matters</h2>
+            {/* <h2>Why this roundtable matters</h2> */}
             <div className={styles.stat_row}>
               {stats.map((stat, index) =>
                 <div key={index} className={styles.stat}>
