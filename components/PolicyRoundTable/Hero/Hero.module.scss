@@ -56,7 +56,7 @@
                     text-align: center;
                     color: #FFF;
                     span {
-                        color: #C9A84C;
+                        color: #3DB54A;
                         font-style: italic;
                         font-family: $font;
                         font-weight: 900;
@@ -91,7 +91,7 @@
                         letter-spacing: 0.18rem;
                         font-size: 1rem;
                         text-transform: uppercase;
-                        color: #C9A84C;
+                        color: #3DB54A;
                         font-family: $font;
                         font-weight: 600;
                         margin-bottom: 0.48rem;
@@ -120,21 +120,21 @@
                     .register_btn {
                         width: max-content;
                         padding: 1.6rem 4rem;
-                        background: #C9A84C;
+                        background: #3DB54A;
                         border-radius: 0.2rem;
                         transition: 0.3s all ease-in-out;
                         h3 {
                             font-size: 1.4rem;
                             text-transform: uppercase;
                             letter-spacing: 0.15rem;
-                            color: #0a0c14;
+                            color: #FFF;
                             font-family: $font;
                             font-weight: 700;
                             transition: 0.3s all ease-in-out;
                         }
                         &:hover {
                             transform: translateY(-5%);
-                            background: #E4C97A;
+                            background: #008751;
                         }
                     }
                 }
@@ -147,7 +147,7 @@
                         background: transparent;
                         border-radius: 0.2rem;
                         transition: 0.3s all ease-in-out;
-                        border: 0.1rem solid rgba(232, 230, 224, 0.45);
+                        border: 0.1rem solid #3DB54A;
                         h3 {
                             font-size: 1.4rem;
                             text-transform: uppercase;
@@ -158,10 +158,10 @@
                             transition: 0.3s all ease-in-out;
                         }
                         &:hover {
-                            border-color: #C9A84C;
+                            border-color: #008751;
                             transform: translateY(-5%);
                             h3 {
-                                color: #C9A84C;
+                                color: #008751;
                             }
                         }
                     }
@@ -247,6 +247,9 @@
             padding: 2.4rem;
             .hero_content {
                 max-width: 95%;
+                .hero_badge {
+                    margin-bottom: 3.2rem;
+                }
                 .hero_title {
                     margin: 0 auto 2.4rem;
                     width: 100%;
@@ -286,13 +289,16 @@
             padding: 1.6rem;
             .hero_content {
                 max-width: 100%;
+                .hero_badge {
+                    margin-bottom: 2.4rem;
+                }
                 .hero_subtext {
                     width: 95%;
                     margin-bottom: 2.4rem;
                 }
                 .hero_title {
                     margin: 0 auto 1.6rem;
-                    width: 100%;
+                    width: 90%;
                     h1 {
                         font-size: 4rem;
                         line-height: 5.2rem;

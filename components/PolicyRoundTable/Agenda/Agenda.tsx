@@ -100,7 +100,7 @@ const Agenda = () => {
           <p>programme</p>
         </div>
         <div className={styles.about_text}>
-          <h1>Register for the Roundtable</h1>
+          <h1>Full Event Agenda</h1>
           <h6>
             A structured programme of plenary addresses, keynote delivery, live demonstrations, 
             and three concurrent thematic sessions.
