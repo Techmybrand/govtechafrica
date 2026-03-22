@@ -26,7 +26,7 @@
                     height: 32rem;
                     margin-bottom: 4.8rem;
                     & > img {
-                        object-fit: cover;
+                        object-fit: contain;
                     }
                 }
                 h3 {
@@ -120,11 +120,13 @@
         .hero_container {
             padding: 2.4rem;
             .hero_content {
-                max-width: 95%;
-
+                max-width: 90%;
+                grid-template-columns: 1fr;
+                gap: 6.4rem;
             }
         }
     }
+
     @include screenMax("mobile") {
         padding-bottom: 6rem!important;
         padding-inline: 0!important;
@@ -132,62 +134,7 @@
             padding: 1.6rem;
             .hero_content {
                 max-width: 100%;
-                .hero_badge {
-                    margin-bottom: 2.4rem;
-                    h3 {
-                        font-size: 1rem;
-                    }
-                }
-                .hero_subtext {
-                    width: 98%;
-                    margin-bottom: 1.6rem;
-                    p {
-                        font-size: 1.2rem;
-                        line-height: 2rem;
-                    }
-                }
-                .hero_title {
-                    margin: 0 auto 1.6rem;
-                    width: 90%;
-                    h1 {
-                        font-size: 4rem;
-                        line-height: 5.2rem;
-                        span {
-                            font-size: 4rem;
-                            line-height: 5.2rem;
-                        }
-                    }
-                }
-                .details_and_location {
-                    flex-direction: column;
-                    .panels, .venue {
-                        border-top: 0.1rem solid rgba(255,255,255,0.7);
-                        border-left: 0;
-                    }
-                    .panels, .venue, .date {
-                        padding: 2.5rem 4rem;
-                    }
-                }
-                .buttons {
-                    max-width: 95%;
-                    flex-direction: column;
-                }
-                .collaborations {
-                    .collabs {
-                        flex-direction: column;
-                        gap: 1.6rem;
-                        .collab {
-                            margin-inline: auto;
-                        }
-                    }
-                }
-                .scroll {
-                    left: 37%;
-                    bottom: -10rem;
-                    .scroll_line {
-                        height: 4rem;
-                    }
-                }
+                
             }
         }
     }
