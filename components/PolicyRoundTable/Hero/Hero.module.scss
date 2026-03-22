@@ -6,8 +6,14 @@
     min-height: 99vh;
     padding-top: 16rem!important;
     padding-bottom: 8rem!important;
-    background-size: 6rem 6rem;
-    background-image: linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-repeat: repeat;
+        background-image: linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+    }
     .hero_container {
         padding: 3.6rem;
 		max-width: $max-width;
@@ -232,7 +238,7 @@
                 .scroll_line {
                     width: 0.1rem;
                     height: 6.4rem;
-                    background: linear-gradient(#C9A84C, transparent);
+                    background: linear-gradient(#3DB54A, transparent);
                     animation: scrollDrop 1.8s ease infinite;
                 }
             }
@@ -265,6 +271,10 @@
                 .hero_subtext {
                     width: 85%;
                     margin-bottom: 3.6rem;
+                    p {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                    }
                 }
                 .collaborations {
                     .collabs {
@@ -282,8 +292,8 @@
         }
     }
     @include screenMax("mobile") {
-        margin-bottom: 4rem!important;
-        padding-bottom: 2rem!important;
+        margin-bottom: 0!important;
+        padding-bottom: 6rem!important;
         padding-inline: 0!important;
         .hero_container {
             padding: 1.6rem;
@@ -291,10 +301,17 @@
                 max-width: 100%;
                 .hero_badge {
                     margin-bottom: 2.4rem;
+                    h3 {
+                        font-size: 1rem;
+                    }
                 }
                 .hero_subtext {
-                    width: 95%;
-                    margin-bottom: 2.4rem;
+                    width: 98%;
+                    margin-bottom: 1.6rem;
+                    p {
+                        font-size: 1.2rem;
+                        line-height: 2rem;
+                    }
                 }
                 .hero_title {
                     margin: 0 auto 1.6rem;
@@ -311,12 +328,32 @@
                 .details_and_location {
                     flex-direction: column;
                     .panels, .venue {
-                        border-bottom: 0.1rem solid rgba(255,255,255,0.7);
+                        border-top: 0.1rem solid rgba(255,255,255,0.7);
                         border-left: 0;
+                    }
+                    .panels, .venue, .date {
+                        padding: 2.5rem 4rem;
                     }
                 }
                 .buttons {
                     max-width: 95%;
+                    flex-direction: column;
+                }
+                .collaborations {
+                    .collabs {
+                        flex-direction: column;
+                        gap: 1.6rem;
+                        .collab {
+                            margin-inline: auto;
+                        }
+                    }
+                }
+                .scroll {
+                    left: 37%;
+                    bottom: -10rem;
+                    .scroll_line {
+                        height: 4rem;
+                    }
                 }
             }
         }
