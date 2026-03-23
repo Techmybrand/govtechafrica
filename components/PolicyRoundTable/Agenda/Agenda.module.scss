@@ -2,6 +2,7 @@
 
 .agenda_section {
     padding-inline: 4rem!important;
+    padding-bottom: 0!important;
 	width: 100%;
     .agenda_container {
         padding: 3.6rem;
@@ -33,7 +34,7 @@
             h1 {
                 font-size: 4.4rem;
                 line-height: 6rem;
-                font-family: $font;
+                font-family: $font-gothic-bold;
                 font-weight: 700;
                 max-width: 60rem;
                 color: #FFF;
@@ -46,102 +47,9 @@
                 max-width: 60rem;
             }
         }
-        .plenary_container {
-            margin-top: 6.4rem;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            .plenary {
-                width: 100%;
-                .title {
-                    margin: 4rem auto 2rem;
-                    display: flex;
-                    align-items: center;
-                    gap: 1.6rem;
-                    h3 {
-                        text-transform: uppercase;
-                        font-size: 1rem;
-                        color: #3DB54A;
-                        font-family: $font;
-                        font-weight: 600;
-                        letter-spacing: 0.2rem;
-                        width: max-content;
-                        flex-shrink: 0;
-                        position: relative;
-                    }
-                    .line {
-                        background: #FFFFFF12;
-                        height: 0.1rem;
-                        width: 100%;
-                    }
-                }
-                .agenda {
-                    display: grid;
-                    grid-template-columns: 20rem 1fr;
-                    padding: 2.4rem 0;
-                    border-radius: 0.2rem;
-                    border-top: 0.1rem solid #FFFFFF12;
-                    .agenda_title {
-                        padding-right: 3.2rem;
-                        padding-top: 0.16rem;
-                        border-right: 0.1rem solid #FFFFFF12;
-                        h2 {
-                            color: #3DB54A;
-                            text-transform: uppercase;
-                            font-size: 1.2rem;
-                            letter-spacing: 0.1rem;
-                            font-family: $font;
-                            font-weight: 600;
-                        }
-                    }
-                    .agenda_body {
-                        padding-left: 3.2rem;
-                        h4 {
-                            font-size: 1.6rem;
-                            margin-bottom: 0.4rem;
-                            color: #FFF;
-                            font-family: $font;
-                            font-weight: 500;
-                        }
-                        p {
-                            color: #E8E6E080;
-                            font-size: 1.25rem;
-                            font-style: italic;
-                        }
-                        .agenda_role {
-                            background: #FFFFFF0A;
-                            border: 0.1rem solid #FFFFFF12;
-                            padding: 0.4rem 1.1rem;
-                            border-radius: 0.2rem;
-                            width: fit-content;
-                            margin-top: 0.8rem;
-                            h6 {
-                                letter-spacing: 0.15rem;
-                                text-transform: uppercase;
-                                font-family: $font;
-                                font-weight: 600;
-                                color: #E8E6E080;
-                                font-size: 1rem;
-                            }
-                            &[data-role = "live demo"] {
-                                border-color: #3B82F640;
-                                h6 {
-                                    color: #60A5fA;
-                                }
-                            }
-                            &[data-role = "keynote"] {
-                                border-color: #008751;
-                                h6 {
-                                    color: #3DB54A;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
         .sessions {
             width: 100%;
+            margin-top: 6.4rem;
             .title {
                 margin: 4rem 0 2rem;
                 display: flex;
@@ -151,42 +59,53 @@
                 border-radius: 5.6rem;
                 width: fit-content;
                 padding: 1rem 4rem;
+                cursor: pointer;
                 h3 {
                     text-transform: uppercase;
-                    font-size: 1rem;
+                    font-size: 1.2rem;
                     color: #1BB24B;
                     font-family: $font;
-                    font-weight: 600;
+                    font-weight: 700;
                     letter-spacing: 0.2rem;
                     width: max-content;
                     text-align: center;
                 }
             }
             .cards {
-                @include grid(repeat(3, 1fr), 8rem);
+                @include grid(repeat(3, 1fr), 8rem, 3.6rem);
                 margin-top: 3.2rem;
                 .card {
-                    padding: 3.2rem;
-                    border: 0.1rem solid #FFFFFF12;
+                    width: 100%;
                     border-radius: 0.2rem;
-                    background: rgba($col-white, 0.2);
-                    border-top: 4.5rem solid #1BB24B;
-                    h3 {
-                        color: #E8E6E026;
-                        font-size: 4.8rem;
-                        margin-bottom: 1.2rem;
+                    .number {
+                        padding: 1rem 2.4rem;
+                        margin-bottom: 1.4rem;
+                        background: #1BB24B;
+                        h3 {
+                            color: #FFF;
+                            font-size: 2.4rem;
+                            line-height: 3.2rem;
+                            font-family: $font-gothic-bold;
+                        }
                     }
-                    h6 {
-                        text-transform: uppercase;
-                        margin-bottom: 1.2rem;
-                        font-size: 1.2rem;
-                        font-weight: 700;
-                        letter-spacing: 0.15rem;
-                    }
-                    p {
-                        line-height: 1.65;
-                        font-size: 1.4rem;
-                        color: #E8E6E0;
+                    .card_body {
+                        padding: 2.4rem;
+                        background: rgba($col-white, 0.2);
+                        min-height: 21rem;
+                        h6 {
+                            text-transform: uppercase;
+                            margin-bottom: 1.2rem;
+                            font-size: 1.6rem;
+                            font-weight: 700;
+                            letter-spacing: 0.15rem;
+                            color: #FFF;
+                        }
+                        p {
+                            line-height: 1.65;
+                            font-size: 1.4rem;
+                            color: #FFF;
+                            font-family: $font;
+                        }
                     }
                 }
             }
@@ -195,7 +114,7 @@
 
     @include screenMax("tablet") {
         padding-inline: 2.4rem!important;
-        padding-block: 7.2rem!important;
+        padding-top: 7.2rem!important;
         .agenda_container {
             padding: 2.4rem;
             .about_label {
@@ -217,12 +136,44 @@
                     margin-top: 1.2rem;
                 }
             }
+            .sessions {
+                margin-top: 4.8rem;
+                .title {
+                    margin: 3.2rem 0 1.6rem;
+                }
+                .cards {
+                    @include grid(repeat(3, 1fr), 4rem, 2.8rem);
+                    .card {
+                        .number {
+                            margin-bottom: 1rem;
+                            padding: 1rem 2rem;
+                            h3 {
+                                color: #FFF;
+                                font-size: 2rem;
+                                line-height: 2.8rem;
+                                font-family: $font-gothic-bold;
+                            }
+                        }
+                        .card_body {
+                            padding: 2rem;
+                            h6 {
+                                margin-bottom: 1rem;
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                            }
+                            p {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
     @include screenMax("mobile") {
         padding-inline: 0!important;
-        padding-block: 5.6rem!important;
+        padding-top: 5.6rem!important;
         .agenda_container {
             padding: 1.6rem;
             .about_label {
@@ -245,6 +196,39 @@
                     font-size: 1.2rem;
                     line-height: 1.6rem;
                     max-width: 90%;
+                }
+            }
+            .sessions {
+                margin-top: 3.2rem;
+                .title {
+                    margin: 2rem 0 1rem;
+                }
+                .cards {
+                    @include grid(repeat(1, 1fr), 1.6rem, 2.4rem);
+                    .card {
+                        .number {
+                            margin-bottom: 1rem;
+                            padding: 0.4rem 1.6rem;
+                            h3 {
+                                color: #FFF;
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                                font-family: $font-gothic-bold;
+                            }
+                        }
+                        .card_body {
+                            padding: 1.6rem;
+                            min-height: 15rem;
+                            h6 {
+                                margin-bottom: 0.8rem;
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                            }
+                            p {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
                 }
             }
         }

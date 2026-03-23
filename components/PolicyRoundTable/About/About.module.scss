@@ -44,6 +44,9 @@
                 font-family: $font;
                 color: #FFF;
                 max-width: 60rem;
+                strong {
+                    font-weight: 700;
+                }
             }
         }
         .about_theme {
@@ -52,6 +55,22 @@
             gap: 4rem;
             margin-top: 6.4rem;
             align-items: start;
+            .about_theme_text {
+                h4 {
+                    color: #1BB24B;
+                    font-family: $font-gothic-bold;
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                    text-transform: uppercase;
+                    margin-bottom: 1.6rem;
+                }
+                h5 {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    color: #FFF;
+                    font-family: $font;
+                }
+            }
             .pillars {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -148,6 +167,17 @@
             .about_theme {
                 gap: 4rem;
                 margin-top: 4rem;
+                .about_theme_text {
+                    h4 {
+                        font-size: 2rem;
+                        line-height: 2.8rem;
+                        margin-bottom: 1.2rem;
+                    }
+                    h5 {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                    }
+                }
                 .stats {
                     padding: 3.2rem;
                     h2 {
@@ -179,7 +209,8 @@
     }
     @include screenMax("mobile") {
         padding-inline: 0!important;
-        padding-block: 5.6rem!important;
+        padding-top: 5.6rem!important;
+        padding-bottom: 1.6rem!important;
         .about_container {
             padding: 1.6rem;
             .about_label {
@@ -202,6 +233,17 @@
                 }
             }
             .about_theme {
+                .about_theme_text {
+                    h4 {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                        margin-bottom: 0.8rem;
+                    }
+                    h5 {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                    }
+                }
                 grid-template-columns: 1fr;
                 gap: 2.4rem;
                 margin-top: 3.2rem;

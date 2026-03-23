@@ -13,7 +13,7 @@
 		overflow: hidden;
         .hero_content {
             position: relative;
-            max-width: 85%;
+            max-width: 90%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10rem;
@@ -26,7 +26,7 @@
                     height: 32rem;
                     margin-bottom: 4.8rem;
                     & > img {
-                        object-fit: cover;
+                        object-fit: contain;
                     }
                 }
                 h3 {
@@ -38,9 +38,10 @@
                     color: #FFF;
                 }
                 .btn {
-                    min-width: 30rem;
+                    min-width: fit-content;
+                    padding: 1.6rem;
                     margin-top: 2.4rem;
-                    height: 6.4rem;
+                    height: 5.6rem;
                     & > p {
                         font-size: 1.6rem;
                         font-weight: 600!important;
@@ -81,11 +82,13 @@
                     p {
                         color: #FFF;
                         text-transform: uppercase;
+                        font-size: 1.8rem;
+                        line-height: 2.7rem;
                     }
                     .logos {
                         display: flex;
                         align-items: center;
-                        gap: 2.4rem;
+                        gap: 1.4rem;
                         margin-top: 2.4rem;
                         .partner {
                             display: flex;
@@ -104,6 +107,7 @@
                             }
                             h5 {
                                 font-size: 1.2rem;
+                                line-height: 1.6rem;
                                 color: #D2D3D3;
                                 font-family: $font;
                             }
@@ -120,11 +124,57 @@
         .hero_container {
             padding: 2.4rem;
             .hero_content {
-                max-width: 95%;
-
+                max-width: 100%;
+                grid-template-columns: 1fr;
+                gap: 6.4rem;
+                .logo_and_btn {
+                    .logo_big {
+                        height: 43rem;
+                        margin-bottom: 3.2rem;
+                        & > img {
+                            object-fit: cover;
+                        }
+                    }
+                    h3 {
+                        font-size: 1.8rem;
+                        line-height: 2.7rem;
+                        width: 85%;
+                    }
+                    .btn {
+                        margin-top: 1.6rem;
+                        height: 5.2rem;
+                        & > p {
+                            font-size: 1.4rem!important;
+                        }
+                    }
+                }
+                .details_and_partners {
+                    .details {
+                        margin-bottom: 5.6rem;
+                        gap: 2.4rem;
+                        flex-direction: row;
+                    }
+                    .partners {
+                        p {
+                            font-size: 1.6rem;
+                            line-height: 2.4rem;
+                        }
+                        .logos {
+                            margin-top: 1.6rem;
+                            gap: 1.2rem;
+                            .partner {
+                                .logo {
+                                    width: 3.6rem;
+                                    height: 3.6rem;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
+
     @include screenMax("mobile") {
         padding-bottom: 6rem!important;
         padding-inline: 0!important;
@@ -132,60 +182,59 @@
             padding: 1.6rem;
             .hero_content {
                 max-width: 100%;
-                .hero_badge {
-                    margin-bottom: 2.4rem;
+                gap: 3.2rem;
+                .logo_and_btn {
+                    .logo_big {
+                        height: 20rem;
+                        margin-bottom: 2.4rem;
+                        & > img {
+                            object-fit: contain;
+                        }
+                    }
                     h3 {
-                        font-size: 1rem;
-                    }
-                }
-                .hero_subtext {
-                    width: 98%;
-                    margin-bottom: 1.6rem;
-                    p {
-                        font-size: 1.2rem;
+                        font-size: 1.4rem;
                         line-height: 2rem;
+                        width: 95%;
+                    }
+                    .btn {
+                        margin-top: 1.2rem;
+                        padding: 0.8rem 1.2rem;
+                        height: 4.4rem;
                     }
                 }
-                .hero_title {
-                    margin: 0 auto 1.6rem;
-                    width: 90%;
-                    h1 {
-                        font-size: 4rem;
-                        line-height: 5.2rem;
-                        span {
-                            font-size: 4rem;
-                            line-height: 5.2rem;
+                .details_and_partners {
+                    .details {
+                        margin-bottom: 3.2rem;
+                        .detail {
+                            h4 {
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                                margin-bottom: 0.8rem;
+                            }
                         }
                     }
-                }
-                .details_and_location {
-                    flex-direction: column;
-                    .panels, .venue {
-                        border-top: 0.1rem solid rgba(255,255,255,0.7);
-                        border-left: 0;
-                    }
-                    .panels, .venue, .date {
-                        padding: 2.5rem 4rem;
-                    }
-                }
-                .buttons {
-                    max-width: 95%;
-                    flex-direction: column;
-                }
-                .collaborations {
-                    .collabs {
-                        flex-direction: column;
-                        gap: 1.6rem;
-                        .collab {
-                            margin-inline: auto;
+                    .partners {
+                        p {
+                            font-size: 1.4rem;
+                            line-height: 2rem;
                         }
-                    }
-                }
-                .scroll {
-                    left: 37%;
-                    bottom: -10rem;
-                    .scroll_line {
-                        height: 4rem;
+                        .logos {
+                            margin-top: 1.2rem;
+                            .partner {
+                                flex-direction: column;
+                                align-items: flex-start;
+                                .logo {
+                                    width: 3.2rem;
+                                    height: 3.2rem;
+                                    margin-right: 0;
+                                    margin-bottom: 0.5rem;
+                                }
+                                h5 {
+                                    font-size: 1rem;
+                                    line-height: 1.2rem;
+                                }
+                            }
+                        }
                     }
                 }
             }

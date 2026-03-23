@@ -39,12 +39,22 @@ const About = () => {
             A Policy Dialogue for the Digital Transformation of Nigerian Governance
           </h1>
           <h6>
-            The NATIONAL GOVTECH POLICY ROUNDTABLE 2026 convenes senior policymakers,
-            technology leaders, development partners, and civil society to advance a shared
-            vision of government that is digital by design and citizen-centric by default.
+            The <strong>NATIONAL GOVTECH POLICY ROUNDTABLE 2026</strong> convenes senior 
+            policymakers, technology leaders, development partners, and civil society to 
+            advance a shared vision of government that is digital by design and 
+            citizen-centric by default. <br />
+            The event is convened by Govtech Africa in collaboration with the Office of the 
+            Deputy Speaker at Nigeria’s House of Representatives, and the National Assembly 
+            Library Trust Fund.
           </h6>
         </div>
         <div className={styles.about_theme}>
+          <div className={styles.about_theme_text}>
+            <h4>Theme</h4>
+            <h5>
+              Through this theme, the Roundtable will seek to:
+            </h5>
+          </div>
           <div className={styles.pillars}>
             {/* <p>Through this theme, the Roundtable seeks to:</p> */}
             {pillars.map((pillar, index) =>

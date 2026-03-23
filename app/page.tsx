@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { HomeView } from "@/views";
+import MainLayout from "./(main)/layout";
 
 export default function Home() {
 	// useEffect(() => {
@@ -22,7 +23,9 @@ export default function Home() {
 	
 	return (
 		<React.Fragment>
-			<HomeView />
+			<MainLayout>
+				<HomeView />
+			</MainLayout>
 		</React.Fragment>
 	);
 }
