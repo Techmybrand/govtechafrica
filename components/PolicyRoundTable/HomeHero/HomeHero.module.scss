@@ -1,0 +1,106 @@
+@import "@/styles/imports";
+
+.home_hero_body {
+    width: 100%;
+    height: 90vh;
+    padding-top: 10rem;
+    background-image: url("../../../public/images/green_section.png");
+    // background-image: url("../../../public/images/NGPRT.png");
+    // background-color: #0aa33a;
+    background-color: #1BB24B;
+    background-size: auto;
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    .home_hero_container {
+        padding: 3.6rem;
+        max-width: $max-width;
+        height: 90%;
+        .home_hero_content {
+            margin-left: auto;
+            width: 50%;
+            height: 100%;
+            background: #000;
+            padding: 12rem 11rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            .logo_big {
+                width: 100%;
+                position: relative;
+                height: 32rem;
+                margin-bottom: 4.8rem;
+                & > img {
+                    object-fit: contain;
+                }
+            }
+            h3 {
+                font-size: 2rem;
+                line-height: 2.8rem;
+                width: 95%;
+                font-weight: 500;
+                font-family: $font;
+                color: #FFF;
+            }
+            .btn {
+                min-width: fit-content;
+                padding: 1.6rem;
+                margin-top: 2.4rem;
+                height: 5.6rem;
+                & > p {
+                    font-size: 1.6rem;
+                    font-weight: 600!important;
+                }
+            }
+        }
+    }
+
+    @include screenMax("tablet") {
+        padding-top: 6.4rem;
+        .home_hero_container {
+            padding: 2.4rem;
+            height: 95%;
+            .home_hero_content {
+                padding: 0 4rem;
+                .logo_big {
+                    margin-bottom: 2.4rem;
+                    height: 20rem;
+                }
+                h3 {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                }
+                .btn {
+                    padding: 1.2rem 1.6rem;
+                    margin-top: 2rem;
+                    height: 4.8rem;
+                }
+            }
+        }
+    }
+
+    @include screenMax("mobile") {
+        .home_hero_container {
+            padding: 1.6rem;
+            height: 100%;
+            .home_hero_content {
+                margin-left: 0;
+                width: 99%;
+                margin-inline: auto;
+                padding: 0 2.4rem;
+                .logo_big {
+                    height: 16rem;
+                    margin-bottom: 1.6rem;
+                }
+                h3 {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+                .btn {
+                    margin-top: 1.6rem;
+                    height: 4.4rem;
+                }
+            }
+        }
+    }
+}
