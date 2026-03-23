@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "@/styles/index.scss";
-import { Footer, Header, PreLoader } from "@/shared";
+import { PreLoader } from "@/shared";
 import React from "react";
 import Providers from "@/Providers";
 import Script from "next/script";
@@ -113,9 +113,9 @@ export default function RootLayout({
 				<PreLoader />
 				<Providers>
 					<React.Fragment>
-						<Header />
+						{/* <Header /> */}
 						{children}
-						<Footer />
+						{/* <Footer /> */}
 					</React.Fragment>
 				</Providers>
 			</body>

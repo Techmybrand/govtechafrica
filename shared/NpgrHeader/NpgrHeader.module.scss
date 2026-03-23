@@ -1,0 +1,109 @@
+@import "@/styles/imports";
+
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: $all-transition;
+	z-index: 9;
+	background-color: #000;
+	.container {
+		padding: 3.6rem;
+		@include flex(space-between, center, nowrap);
+		// width: 100%;
+		max-width: $max-width;
+		margin-inline: auto;
+		@include screenMin("desktop") {
+			padding-inline: 3.6rem;
+		}
+        a {
+            .header_logoContainer {
+                transition: $all-transition;
+                position: relative;
+                width: 16rem;
+                height: 5.6rem;
+            }
+        }
+        .header_nav {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            .header_navList {
+                @include flex(space-between, center, nowrap);
+                gap: 6.4rem;
+                padding: 0.5rem;
+                a {
+                    h3 {
+                        font-size: 2.4rem;
+                        line-height: 3.2rem;
+                        color: #FFF;
+                        font-weight: 700;
+                        text-transform: capitalize;
+                    }
+                    &:hover {
+                        text-decoration: underline!important;
+                    }
+                }
+                .button_link {
+                    height: 5.6rem;
+                    p {
+                        font-size: 1.4rem!important;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+	}
+
+	@include screenMax("tablet") {
+        .container {
+            padding: 2.4rem;
+            a {
+                .header_logoContainer {
+                    height: 4.8rem;
+                }
+            }
+            .header_nav {
+                gap: 1.6rem;
+                .header_navList {
+                    gap: 3.2rem;
+                    a {
+                        h3 {
+                            font-size: 1.8rem;
+                            line-height: 2.7rem;
+                        }
+                    }
+                }
+            }
+        }
+	}
+
+	@include screenMax("mobile") {
+		.container {
+			overflow: hidden;
+			padding: 1.6rem;
+            a {
+                .header_logoContainer {
+                    width: 7rem;
+                    height: 3.6rem;
+                }
+            }
+            .header_nav {
+                display: none;
+                width: 100%;
+                .header_navList {
+                    display: block;
+                    padding: 0;
+                    margin: 0;
+                    border-radius: unset;
+                    overflow: unset;
+                    .button_link {
+                        width: 100%;
+                        background: transparent;
+                    }
+                }
+            }
+		}
+	}
+}

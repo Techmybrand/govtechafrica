@@ -1,15 +1,16 @@
 import React from "react";
-import { Hero, About, Speakers, Register, Footer } from "@/components/PolicyRoundTable";
+import { Hero, About, Speakers, Register, GreenSection, Footer,  Agenda } from "@/components/PolicyRoundTable";
 
 const PolicyRoundTableView = () => {
     return (
         <React.Fragment>
             <Hero />
-            <Footer />
+            <GreenSection />
             <About />
-            {/* <Agenda /> */}
+            <Agenda />
             <Speakers />
             <Register />
+            <Footer />
         </React.Fragment>
     )
 }

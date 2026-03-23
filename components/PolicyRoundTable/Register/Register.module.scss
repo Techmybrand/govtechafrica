@@ -170,7 +170,7 @@
                             justify-content: center;
                             width: 100%;
                             border: 0!important;
-                            height: 6.4rem;
+                            height: 5.6rem;
                             border-radius: 1.2rem;
                             margin-top: 2.4rem;
                             cursor: pointer;
@@ -215,11 +215,21 @@
                     max-width: 60rem;
                 }
             }
+            .about_label {
+                margin-bottom: 1.6rem;
+            }
             .register {
                 margin-top: 2.4rem;
                 gap: 4rem;
                 .form_container {
                     padding: 0 3.2rem 3.2rem;
+                    .form_content {
+                        form {
+                            .submit_btn {
+                                height: 5rem;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -243,9 +253,13 @@
                     line-height: 1.6rem;
                 }
             }
+            .about_label {
+                margin-bottom: 0.8rem;
+            }
             .register {
                 grid-template-columns: 1fr;
                 gap: 3.2rem;
+                margin-top: 0;
                 .form_container {
                     padding: 0 0 2.4rem;
                     .form_content {
@@ -261,7 +275,7 @@
                                 }
                             }
                             .submit_btn {
-                                height: 5.6rem;
+                                height: 4.4rem;
                                 h3 {
                                     font-size: 1.4rem;
                                     line-height: 2rem;

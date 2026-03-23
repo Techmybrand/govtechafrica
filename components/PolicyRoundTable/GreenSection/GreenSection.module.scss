@@ -1,0 +1,17 @@
+@import "@/styles/imports";
+
+.green_container {
+    width: 100%;
+    height: 40rem;
+    position: relative;
+    & > img {
+        object-fit: cover;
+    }
+
+    @include screenMax("tablet") {
+        height: 35rem;
+    }
+    @include screenMax("mobile") {
+        height: 30rem;
+    }
+}

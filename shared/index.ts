@@ -13,6 +13,7 @@ import InputField from "./inputField/InputField";
 import InsightsCard from "./InsightsCard/InsightsCard";
 import Logo from "./logo/Logo";
 import Modal from "./ModalElement/Modal";
+import NpgrHeader from "./NpgrHeader/NpgrHeader";
 import Partners from "./Partners/Partners";
 import PreLoader from "./PreLoader/PreLoader";
 import ResearchCard from "./ResearchCard/ResearchCard";
@@ -33,6 +34,7 @@ export {
     Logo,
     AnalyticsToggle,
     Header,
+    NpgrHeader,
     RichText,
     Footer,
     Select,

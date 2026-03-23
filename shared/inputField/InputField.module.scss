@@ -51,11 +51,15 @@
 	min-height: 2.4rem;
 	&::placeholder {
 		font-size: 1.4rem;
-		line-height: 2.5rem;
+		line-height: 2rem;
 		color: rgba($col-white, 0.6);
 	}
 	@include screenMax("mobile") {
 		min-height: 2rem;
+		&::placeholder {
+			font-size: 1.2rem;
+			line-height: 1.6rem;
+		}
 	}
 }
 
@@ -69,11 +73,17 @@
 }
 
 
-@include screenMax("mobile") {
+@include screenMax("tablet") {
 	.input_field {
 		min-height: 2rem;
 	}
 	.input_wrapper {
 		padding: 1.4rem 1.6rem;
+	}
+}
+
+@include screenMax("mobile") {
+	.input_wrapper {
+		padding: 0.8rem 1.6rem;
 	}
 }

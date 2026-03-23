@@ -8,7 +8,7 @@ const Register = () => {
     {
       icon: '/svgs/calendar_white.svg',
       title: 'date',
-      text: 'Sunday, 30th March 2026',
+      text: 'Monday, 30th March 2026',
     },
     {
       icon: '/svgs/location_white.svg',
@@ -18,7 +18,7 @@ const Register = () => {
     {
       icon: '/svgs/in_person.svg',
       title: 'attendance',
-      text: 'Physical attendance - Strictly by information',
+      text: 'Physical attendance - Strictly by invitation',
     },
     {
       icon: '/svgs/registration.svg',
