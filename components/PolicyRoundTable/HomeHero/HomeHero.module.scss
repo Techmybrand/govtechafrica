@@ -99,6 +99,9 @@
                 .btn {
                     margin-top: 1.6rem;
                     height: 4.4rem;
+                    & > p {
+                        font-size: 1.4rem!important;
+                    }
                 }
             }
         }
