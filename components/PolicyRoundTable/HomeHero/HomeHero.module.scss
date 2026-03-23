@@ -80,6 +80,7 @@
     }
 
     @include screenMax("mobile") {
+        height: 85vh;
         .home_hero_container {
             padding: 1.6rem;
             height: 100%;
