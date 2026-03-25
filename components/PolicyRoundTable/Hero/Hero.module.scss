@@ -11,7 +11,7 @@
 		margin-inline: auto;
 		position: relative;
 		overflow: hidden;
-        .hero_content {
+        .hero_content, .hero_content_bottom {
             position: relative;
             max-width: 90%;
             display: grid;
@@ -24,7 +24,6 @@
                     width: 100%;
                     position: relative;
                     height: 32rem;
-                    margin-bottom: 4.8rem;
                     & > img {
                         object-fit: contain;
                     }
@@ -49,78 +48,83 @@
                 }
             }
             .details_and_partners {
-                width: 100%;
-                .details {
-                    margin-bottom: 10rem;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2.4rem;
-                    .detail {
-                        p {
-                            color: #1BB24B;
-                            font-size: 1.2rem;
-                            line-height: 1.6rem;
-                            font-family: $font-gothic-bold;
-                            font-weight: 700;
+                width: 75%;
+                background: #1BB24B;
+                border-top-right-radius: 3.2rem;
+                border-bottom-left-radius: 3.2rem;
+                border-bottom-right-radius: 3.2rem;
+                padding: 3.2rem;
+                .content {
+                    width: 100%;
+                    .header {
+                        background: #276A35;
+                        padding: 0.4rem 1.6rem;
+                        width: fit-content;
+                        h3 {
+                            color: rgba($col-white, 0.7);
+                            font-weight: 500;
+                            font-size: 1.4rem;
+                            line-height: 1.3;
+                            font-family: $font;
                         }
-                        h4 {
-                            font-family: $font-gothic-bold;
-                            font-weight: 700;
+                    }
+                    .text {
+                        margin-top: 1rem;
+                        p {
                             font-size: 2rem;
                             line-height: 2.8rem;
-                            margin-bottom: 1.6rem;
+                            line-height: 1.3;
+                            font-weight: 500;
                             color: #FFF;
-                        }
-                        .line {
-                            height: 0.1rem;
-                            width: 6.6rem;
-                            background: #1BB24B;
-                        }
-                    }
-                }
-                .partners {
-                    p {
-                        color: #FFF;
-                        text-transform: uppercase;
-                        font-size: 1.8rem;
-                        line-height: 2.7rem;
-                    }
-                    .logos {
-                        display: flex;
-                        align-items: center;
-                        gap: 1.4rem;
-                        margin-top: 2.4rem;
-                        .partner {
-                            display: flex;
-                            align-items: center;
-                            .logo {
-                                position: relative;
-                                width: 4.8rem;
-                                height: 4.8rem;
-                                margin-right: 0.8rem;
-                                flex-shrink: 0;
-                                &[data-index = "2"] {
-                                    & > img {
-                                        border-radius: 50%;
-                                    }
-                                }
-                            }
-                            h5 {
-                                font-size: 1.2rem;
-                                line-height: 1.6rem;
-                                color: #D2D3D3;
-                                font-family: $font;
-                            }
+                            font-family: $font;
+                            width: 90%;
                         }
                     }
                 }
             }
         }
+        .hero_content_bottom {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 13.5rem;
+            .detail {
+                width: 100%;
+                p {
+                    color: #1BB24B;
+                    font-size: 1.2rem;
+                    line-height: 1.6rem;
+                    font-family: $font-gothic-bold;
+                    font-weight: 700;
+                }
+                h4 {
+                    font-family: $font-gothic-bold;
+                    font-weight: 700;
+                    font-size: 2rem;
+                    line-height: 2.8rem;
+                    line-height: 1.3;
+                    font-weight: 500;
+                    color: #FFF;
+                    width: max-content;
+                }
+            }
+            .btn {
+                height: 5.6rem;
+                & > p {
+                    font-size: 1.6rem!important;
+                    font-weight: 600!important;
+                }
+            }
+        }
+    }
+    .divider {
+        width: 100vw;
+        height: 0.1rem;
+        margin: 4.8rem -4rem;
+        background: rgba($col-white, 0.2);
     }
 
     @include screenMax("tablet") {
         padding-top: 8rem!important;
-        padding-inline: 4rem!important;
+        padding-inline: 2.4rem!important;
         .hero_container {
             padding: 2.4rem;
             .hero_content {
@@ -129,10 +133,11 @@
                 gap: 6.4rem;
                 .logo_and_btn {
                     .logo_big {
-                        height: 43rem;
-                        margin-bottom: 3.2rem;
+                        height: 35rem;
+                        width: 80%;
+                        margin-inline: auto;
                         & > img {
-                            object-fit: cover;
+                            object-fit: contain;
                         }
                     }
                     h3 {
@@ -149,29 +154,30 @@
                     }
                 }
                 .details_and_partners {
-                    .details {
-                        margin-bottom: 5.6rem;
-                        gap: 2.4rem;
-                        flex-direction: row;
-                    }
-                    .partners {
-                        p {
-                            font-size: 1.6rem;
-                            line-height: 2.4rem;
+                    width: 80%;
+                    margin-inline: auto;
+                    .content {
+                        .header {
+                            h3 {
+                                font-size: 1.2rem;
+                            }
                         }
-                        .logos {
-                            margin-top: 1.6rem;
-                            gap: 1.2rem;
-                            .partner {
-                                .logo {
-                                    width: 3.6rem;
-                                    height: 3.6rem;
-                                }
+                        .text {
+                            p {
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
                             }
                         }
                     }
                 }
             }
+            .hero_content_bottom {
+                gap: 4rem;
+                max-width: 100%;
+            }
+        }
+        .divider {
+            margin: 3.6rem -2.4rem;
         }
     }
 
@@ -183,10 +189,11 @@
             .hero_content {
                 max-width: 100%;
                 gap: 3.2rem;
+                grid-template-columns: 1fr;
                 .logo_and_btn {
                     .logo_big {
                         height: 20rem;
-                        margin-bottom: 2.4rem;
+                        width: 95%;
                         & > img {
                             object-fit: contain;
                         }
@@ -203,41 +210,50 @@
                     }
                 }
                 .details_and_partners {
-                    .details {
-                        margin-bottom: 3.2rem;
-                        .detail {
-                            h4 {
-                                font-size: 1.6rem;
-                                line-height: 2.4rem;
-                                margin-bottom: 0.8rem;
+                    width: 95%;
+                    padding: 2.4rem;
+                    .content {
+                        .header {
+                            h3 {
+                                font-size: 1rem;
                             }
                         }
-                    }
-                    .partners {
-                        p {
-                            font-size: 1.4rem;
-                            line-height: 2rem;
-                        }
-                        .logos {
-                            margin-top: 1.2rem;
-                            .partner {
-                                flex-direction: column;
-                                align-items: flex-start;
-                                .logo {
-                                    width: 3.2rem;
-                                    height: 3.2rem;
-                                    margin-right: 0;
-                                    margin-bottom: 0.5rem;
-                                }
-                                h5 {
-                                    font-size: 1rem;
-                                    line-height: 1.2rem;
-                                }
+                        .text {
+                            p {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
                             }
                         }
                     }
                 }
             }
+            .hero_content_bottom {
+                gap: 3.2rem;
+                column-gap: 2rem;
+                max-width: 100%;
+                grid-template-columns: 1fr 1fr;
+                .detail {
+                    width: auto;
+                    h4 {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                    }
+                }
+                .btn {
+                    height: 4.4rem;
+                    & > p {
+                        font-size: 1.2rem!important;
+                        font-weight: 600!important;
+                    }
+                    & > figure {
+                        width: 2.4rem!important;
+                        height: 2.4rem!important;
+                    }
+                }
+            }
+        }
+        .divider {
+            margin: 2.4rem 0;
         }
     }
 }

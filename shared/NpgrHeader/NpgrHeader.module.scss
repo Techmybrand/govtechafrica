@@ -17,11 +17,13 @@
 			padding-inline: 3.6rem;
 		}
         a {
+            flex-shrink: 0;
             .header_logoContainer {
                 transition: $all-transition;
                 position: relative;
-                width: 16rem;
-                height: 5.6rem;
+                width: 21rem;
+                height: 2.8rem;
+                flex-shrink: 0;
             }
         }
         .header_nav {
@@ -31,25 +33,41 @@
             gap: 2rem;
             .header_navList {
                 @include flex(space-between, center, nowrap);
-                gap: 6.4rem;
+                gap: 3.6rem;
                 padding: 0.5rem;
                 a {
+                    padding: 1rem;
                     h3 {
-                        font-size: 2.4rem;
-                        line-height: 3.2rem;
+                        font-size: 1.4rem;
+                        line-height: 2.4rem;
                         color: #FFF;
                         font-weight: 700;
-                        text-transform: capitalize;
+                        font-family: $font;
+                        text-transform: uppercase;
                     }
                     &:hover {
                         text-decoration: underline!important;
                     }
                 }
-                .button_link {
-                    height: 5.6rem;
-                    p {
-                        font-size: 1.4rem!important;
-                        font-weight: 600;
+            }
+        }
+        .ctas {
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+            margin-left: auto;
+            a {
+                .register_btn, .media_btn {
+                    background: #00BF4D;
+                    padding: 1.6rem 2.4rem;
+                    border-radius: 1rem;
+                    h3 {
+                        color: #FFF;
+                        text-transform: uppercase;
+                        font-family: $font;
+                        font-weight: 500;
+                        font-size: 1.4rem;
+                        line-height: 2rem;
                     }
                 }
             }
@@ -66,13 +84,21 @@
             }
             .header_nav {
                 gap: 1.6rem;
+                display: none;
                 .header_navList {
                     gap: 3.2rem;
                     a {
                         h3 {
-                            font-size: 1.8rem;
-                            line-height: 2.7rem;
+                            font-size: 1.6rem;
+                            line-height: 2.4rem;
                         }
+                    }
+                }
+            }
+            .ctas {
+                a {
+                    .register_btn, .media_btn {
+                        padding: 1.2rem 2rem;
                     }
                 }
             }
@@ -101,6 +127,19 @@
                     .button_link {
                         width: 100%;
                         background: transparent;
+                    }
+                }
+            }
+            .ctas {
+                display: none;
+                margin-left: 0;
+                a {
+                    .register_btn, .media_btn {
+                        padding: 1rem 1.6rem;
+                        h3 {
+                            font-size: 1.2rem;
+                            line-height: 1.6rem;
+                        }
                     }
                 }
             }

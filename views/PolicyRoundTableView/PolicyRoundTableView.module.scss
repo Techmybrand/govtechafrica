@@ -1,0 +1,28 @@
+@import "@/styles/imports";
+
+.slider_container {
+    width: 100%;
+    .carousel_image {
+        height: 10rem!important;
+        &[data-index = "6"] {
+            width: 22rem!important;
+            height: 10rem!important;
+        }
+        &[data-index = "2"] {
+            width: 30rem!important;
+            height: 10rem!important;
+        }
+        &[data-index = "5"] {
+            width: 20rem!important;
+            height: 10rem!important;
+        }
+    }
+    &:nth-child(6) {
+        width: 22rem!important;
+        height: 10rem!important;
+    }
+    &:nth-child(2) {
+        width: 30rem!important;
+        height: 10rem!important;
+    }
+}

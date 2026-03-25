@@ -4,6 +4,7 @@
     padding-inline: 4rem!important;
     padding-bottom: 0!important;
 	width: 100%;
+    background: rgba($col-white, 0.1);
     .agenda_container {
         padding: 3.6rem;
 		max-width: $max-width;
@@ -74,6 +75,7 @@
             .cards {
                 @include grid(repeat(3, 1fr), 8rem, 3.6rem);
                 margin-top: 3.2rem;
+                display: none;
                 .card {
                     width: 100%;
                     border-radius: 0.2rem;
@@ -106,6 +108,49 @@
                             color: #FFF;
                             font-family: $font;
                         }
+                    }
+                }
+            }
+            .session_details_container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+                .session_details {
+                    display: grid;
+                    grid-template-columns: 1fr 1.5fr;
+                    border-top: 0.1rem solid rgba($col-white, 0.2);
+                    padding: 1.6rem 0;
+                    min-height: 13rem;
+                    .session_title {
+                        border-right: 0.1rem solid rgba($col-white, 0.2);
+                        h3 {
+                            color: #1BB24B;
+                            font-size: 1.8rem;
+                            line-height: 2.7rem;
+                            font-family: $font-gothic-bold;
+                            width: 70%;
+                        }
+                    }
+                    .session_details_text {
+                        margin-left: 7.2rem;
+                        h2 {
+                            font-size: 1.8rem;
+                            line-height: 2.7rem;
+                            color: #FFF;
+                            font-family: $font-gothic-bold;
+                            margin-bottom: 1rem;
+                            width: 85%;
+                        }
+                        p {
+                            font-size: 1.6rem;
+                            font-family: $font;
+                            color: #FFF;
+                            width: 90%;
+                        }
+                    }
+                    &[data-index = "5"] {
+                        border-bottom: 0.1rem solid rgba($col-white, 0.2);
                     }
                 }
             }
@@ -143,6 +188,7 @@
                 }
                 .cards {
                     @include grid(repeat(3, 1fr), 4rem, 2.8rem);
+                    display: none;
                     .card {
                         .number {
                             margin-bottom: 1rem;
@@ -163,6 +209,30 @@
                             }
                             p {
                                 font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+                .session_details_container {
+                    gap: 1.4rem;
+                    .session_details {
+                        padding: 1.2rem 0;
+                        .session_title {
+                            h3 {
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                                width: 80%;
+                            }
+                        }
+                        .session_details_text {
+                            margin-left: 4.8rem;
+                            h2 {
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                            }
+                            p {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
                             }
                         }
                     }
@@ -202,9 +272,11 @@
                 margin-top: 3.2rem;
                 .title {
                     margin: 2rem 0 1rem;
+                    padding: 0.8rem 2.4rem;
                 }
                 .cards {
                     @include grid(repeat(1, 1fr), 1.6rem, 2.4rem);
+                    display: none;
                     .card {
                         .number {
                             margin-bottom: 1rem;
@@ -226,6 +298,37 @@
                             }
                             p {
                                 font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+                .session_details_container {
+                    gap: 1.4rem;
+                    .session_details {
+                        padding: 1rem 0;
+                        grid-template-columns: 1fr;
+                        .session_title {
+                            border-bottom: 0.1rem solid rgba($col-white, 0.2);
+                            border-right: 0;
+                            padding-bottom: 0.8rem;
+                            h3 {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                                width: 90%;
+                            }
+                        }
+                        .session_details_text {
+                            margin-left: 0;
+                            margin-top: 2rem;
+                            h2 {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                                width: 90%;
+                            }
+                            p {
+                                font-size: 1.2rem;
+                                line-height: 1.6rem;
+                                width: 95%;
                             }
                         }
                     }

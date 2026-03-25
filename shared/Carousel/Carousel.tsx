@@ -6,9 +6,10 @@ interface ScrollerProps {
   items: string[];
   direction?: 'left' | 'right';
   speed?: 'normal' | 'fast' | 'slow';
+  className?: string;
 }
 
-const Carousel = ({ items, direction = 'left', speed = 'normal' }: ScrollerProps) => {
+const Carousel = ({ items, direction = 'left', speed = 'normal', className }: ScrollerProps) => {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const scrollerInnerRef = useRef<HTMLUListElement>(null);
 
@@ -39,7 +40,7 @@ const Carousel = ({ items, direction = 'left', speed = 'normal' }: ScrollerProps
     >
       <ul className={styles.scroller__inner} ref={scrollerInnerRef}>
         {items?.map((item: string, index: number) => (
-          <li key={index} data-index={index} className={styles.tag}>
+          <li key={index} data-index={index} className={`${styles.tag} ${className}`}>
             <Image alt='' fill src={item} sizes='100%' />
           </li>
         ))}

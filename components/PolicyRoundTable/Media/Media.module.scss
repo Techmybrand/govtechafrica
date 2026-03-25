@@ -56,63 +56,36 @@
             position: relative;
             .info {
                 position: relative;
-                // top: 11.2rem;
+                h5 {
+                    color: #1BB24B;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    font-family: $font;
+                }
                 p {
                     color: #FFF;
                     font-size: 1.4rem;
                     line-height: 1.75;
-                    margin-top: 1.6rem;
+                    margin-top: 0.8rem;
                     max-width: 50rem;
                 }
                 .details {
                     display: flex;
                     flex-direction: column;
-                    gap: 2.4rem;
+                    gap: 1rem;
                     margin-block: 4rem;
-                    .detail {
-                        display: flex;
-                        align-items: flex-start;
-                        gap: 1.6rem;
-                        .icon_bg {
-                            background: #D9D9D917;
-                            width: 4rem;
-                            height: 4rem;
-                            border-radius: 0.4rem;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 0.2rem;
-                            border: 0.05rem solid #FFF;
-                            flex-shrink: 0;
-                            .icon {
-                                position: relative;
-                                width: 2rem;
-                                height: 2rem;
-                            }
-                        }
-                        .detail_text {
-                            h3 {
-                                font-size: 1.2rem;
-                                line-height: 1.6rem;
-                                text-transform: uppercase;
-                                font-family: $font-gothic-bold;
-                                font-weight: 700;
-                                letter-spacing: 0.13rem;
-                                margin-bottom: 0.24rem;
-                                color: #1BB24B;
-                            }
-                            p {
-                                color: #FFF;
-                                font-family: $font-gothic-bold;
-                                font-weight: 900;
-                                font-size: 1.2rem;
-                                line-height: 1.6rem;
-                                margin-top: 0;
-                                &[data-index = "2"], &[data-index = "3"] {
-                                    width: 50%;
-                                }
-                            }
-                        }
+                    list-style-type: disc;
+                    li {
+                        list-style-type: disc;
+                        background: rgba($col-white, 0.1);
+                        width: 45rem;
+                        border-radius: 5.6rem;
+                        padding: 1rem 1.6rem;
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                        color: #FFF;
+                        font-family: $font;
+                        font-weight: 500;
                     }
                 }
             }

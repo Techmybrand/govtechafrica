@@ -8,31 +8,31 @@ const Speakers = () => {
       title: 'Formal Opening',
       speakersList: [
         {
-          initials: '/images/TA.webp',
+          initials: '/images/TAA.jpeg',
           name: 'Rt. Hon. Tajudeen Abbas',
           role: 'Keynote / Formal Opening',
           position: 'Speaker, House of Representatives',
         },
         {
-          initials: '/images/BK.png',
+          initials: '/images/BK.jpeg',
           name: 'Rt. Hon. Benjamin Okezie Kalu',
           role: 'Keynote / Formal Opening',
           position: 'Deputy Speaker, House of Representatives',
         },
         {
-          initials: '/images/BT.jpeg',
+          initials: '/images/BT_black.jpeg',
           name: 'Dr. Bosun Tijani',
           role: 'Keynote / Formal Opening',
           position: 'Minister of Communications, Innovation & Digital Economy',
         },
         {
-          initials: '/images/HN.png',
+          initials: '/images/HN.jpeg',
           name: 'Hon. Henry Nwawuba',
           role: 'Keynote / Formal Opening',
           position: 'Executive Secretary, National Assembly Library Trust Fund',
         },
         {
-          initials: '/images/BK.png',
+          initials: '/images/BK.jpeg',
           name: 'Fortune Toma',
           role: 'Keynote / Formal Opening',
           position: 'Director for Africa, Govtech Africa Incr',
@@ -43,31 +43,31 @@ const Speakers = () => {
       title: 'Panel Discussants',
       speakersList: [
         {
-          initials: '/images/DE.png',
+          initials: '/images/DE.jpeg',
           name: 'Mrs. Didi Esther Walson-Jack, OON, mni',
           role: 'panelist',
           position: 'Office of the Head of the Civil Service of the Federation/The Head of the Civil Service of the Federation',
         },
         {
-          initials: '/images/KE.png',
+          initials: '/images/KE.jpeg',
           name: 'Kabir Eniola Akanbi, Esq.',
           role: `panelist`,
           position: 'The Supreme Court of Nigeria/The Chief Registrar',
         },
         {
-          initials: '/images/SO.jpeg',
+          initials: '/images/SO_black.jpeg',
           name: 'Hon. Adedeji Stanley Olajide',
           role: `panelist`,
           position: 'Chairman, Committee on Digital and Communications Technology, House of Representatives',
         },
         {
-          initials: '/images/AO.png',
+          initials: '/images/AO.jpeg',
           name: 'Dr. Abdulateef O. Shittu',
           role: 'panelist',
           position: 'Nigeria Governors Forum(NGF)/The Director General',
         },
         {
-          initials: '/images/ZM.png',
+          initials: '/images/ZM.jpeg',
           name: 'Princess Zahrah Mustapha Audu',
           role: 'panelist',
           position: 'Presidential Enabling Business Environment Council (PEBEC)/The Director General',
@@ -78,13 +78,13 @@ const Speakers = () => {
       title: 'Anchors / Moderators',
       speakersList: [
         {
-          initials: '/images/DA.png',
+          initials: '/images/DA.jpeg',
           name: 'Umoh Edet',
           role: 'moderator',
           position: 'Head of Policy and Research, Govtech Africa Inc.',
         },
         {
-          initials: '/images/BO.png',
+          initials: '/images/BO.jpeg',
           name: 'Blessing O. Ajimoti',
           role: 'moderator',
           position: 'Public Digital/Digital Transformation Consultant',
@@ -113,6 +113,7 @@ const Speakers = () => {
                   <div key={index} className={styles.speaker_card}>
                     <div className={styles.initials}>
                       <Image alt="" fill src={speaker.initials} />
+                      <div className={styles.overlay}></div>
                     </div>
                     <h2>{speaker.name}</h2>
                     <p>{speaker.role}</p>
