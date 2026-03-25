@@ -4,6 +4,7 @@ import { PreLoader } from "@/shared";
 import React from "react";
 import Providers from "@/Providers";
 import Script from "next/script";
+import { Toaster } from "react-hot-toast";
 
 const baseUrl = "https://govtechafrica.com";
 
@@ -112,6 +113,7 @@ export default function RootLayout({
 			<body>
 				<PreLoader />
 				<Providers>
+					<Toaster position="top-right" />
 					<React.Fragment>
 						{/* <Header /> */}
 						{children}

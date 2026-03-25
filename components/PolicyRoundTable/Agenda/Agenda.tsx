@@ -80,28 +80,41 @@ const Agenda = () => {
   // ]
   const cardsList = [
     {
-      title: 'Opening & Keynote',
-      subtext: 'Digital First Governance: Rethinking How Nigerian Governments Serve, Engage and Deliver.'
+      title: `Opening & Keynote`,
+      topic: ``,
+      subtext: `A high-level framing of Nigeria's Digital First Governance agenda, setting 
+        the tone for policy alignment and reform priorities.`
     },
     {
-      title: 'Session 1 — Public Sector Panel',
-      subtext: 'A strategic assessment of Nigeria’s government digitisation journey, with a focus on institutional reform, interoperability, legal frameworks, and accountability mechanisms.'
+      title: `Panel Session 1`,
+      topic: `Digital First Governance: Rethinking How Nigerian Governments Serve, Engage 
+        and Deliver`,
+      subtext: `A strategic assessment of Nigeria's government digitisation journey, with a 
+        focus on institutional reform, interoperability, legal frameworks, and accountability 
+        mechanisms.`
     },
     {
-      title: 'Session 2 — Private Sector Panel',
-      subtext: 'Discussions on building the digital backbone of government, including innovation, infrastructure development, and sustainable investment models.'
+      title: `Panel Session 2`,
+      topic: `Building the Digital Backbone of Government: Private Sector Innovation and 
+        Investment`,
+      subtext: `Discussions on building the digital backbone of government, including 
+        innovation, infrastructure development, and sustainable investment models.`
     },
     {
-      title: 'Session 3 — Development Partners & Civil Society',
-      subtext: 'Insights on mobilising global expertise, strengthening governance safeguards, and ensuring inclusive, transparent, and accountable digital transformation.'
+      title: `Panel Session 3`,
+      topic: `Aligning Global Expertise and Civic Oversight for Sustainable Digital Governance`,
+      subtext: `Insights on mobilising global expertise, strengthening governance safeguards,
+        and ensuring inclusive, transparent, and accountable digital transformation.`
     },
     {
-      title: 'Interactive Dialogue & Stakeholder Engagement',
-      subtext: 'Opportunities for participants to contribute perspectives, share experiences, and align on priority actions'
+      title: `Interactive Dialogue & Stakeholder Engagement`,
+      subtext: `Opportunities for participants to contribute perspectives, share experiences,
+        and align on priority actions.`
     },
     {
-      title: 'Outcome-Oriented Close',
-      subtext: 'Consolidation of key insights into a shared set of reform priorities, partnership pathways, and next steps to advance Digital First Governance in Nigeria.'
+      title: `Outcome-Oriented Close`,
+      subtext: `Consolidation of key insights into a shared set of reform priorities, 
+        partnership pathways, and next steps to advance Digital First Governance in Nigeria.`
     },
   ]
   return (
@@ -109,7 +122,7 @@ const Agenda = () => {
       <div className={styles.agenda_container}>
         <div className={styles.about_label}>
           {/* <div className={styles.label_line}></div> */}
-          <p>programme</p>
+          <p>WHAT TO EXPECT?</p>
         </div>
         <div className={styles.about_text}>
           <h1>Programme Snapshot</h1>
@@ -127,6 +140,21 @@ const Agenda = () => {
                 </div>
                 <div className={styles.card_body}>
                   <h6>{card.title}</h6>
+                  <p>{card.subtext}</p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className={styles.session_details_container}>
+            {cardsList.map((card, index) =>
+              <div data-index={index} className={styles.session_details} key={index}>
+                <div className={styles.session_title}>
+                  <h3>{card.title}</h3>
+                </div>
+                <div className={styles.session_details_text}>
+                  {card.topic && (
+                    <h2>{card.topic}</h2>
+                  )}
                   <p>{card.subtext}</p>
                 </div>
               </div>

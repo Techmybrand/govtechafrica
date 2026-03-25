@@ -36,13 +36,14 @@ const About = () => {
         </div>
         <div className={styles.about_text}>
           <h1>
-            A Policy Dialogue for the Digital Transformation of Nigerian Governance
+            Reimagining Governance in a Digital Era
           </h1>
           <h6>
             The <strong>NATIONAL GOVTECH POLICY ROUNDTABLE 2026</strong> convenes senior 
             policymakers, technology leaders, development partners, and civil society to 
             advance a shared vision of government that is digital by design and 
             citizen-centric by default. <br />
+            <br />
             The event is convened by Govtech Africa in collaboration with the Office of the 
             Deputy Speaker at Nigeria’s House of Representatives, and the National Assembly 
             Library Trust Fund.
@@ -64,7 +65,6 @@ const About = () => {
             )}
           </div>
           <div className={styles.stats}>
-            {/* <h2>Why this roundtable matters</h2> */}
             <div className={styles.stat_row}>
               {stats.map((stat, index) =>
                 <div key={index} className={styles.stat}>
