@@ -211,13 +211,6 @@
                 .info {
                     .details {
                         margin-block: 3.2rem;
-                        .detail {
-                            .detail_text {
-                                p {
-                                    width: 75%;
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -276,12 +269,10 @@
                 .info {
                     .details {
                         margin-block: 2.4rem;
-                        .detail {
-                            .detail_text {
-                                p {
-                                    width: 95%;
-                                }
-                            }
+                        li {
+                            width: 95%;
+                            font-size: 1.2rem;
+                            line-height: 1.6rem;
                         }
                     }
                 }
