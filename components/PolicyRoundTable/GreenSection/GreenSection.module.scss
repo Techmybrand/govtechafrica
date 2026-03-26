@@ -5,7 +5,7 @@
     position: relative;
     .green_container {
         width: 100%;
-        height: 40rem;
+        height: 35rem;
         position: relative;
         & > img {
             object-fit: cover;
@@ -40,11 +40,23 @@
                     gap: 1.6rem;
                     .icon {
                         position: relative;
-                        width: 7.2rem;
-                        height: 7.2rem;
+                        height: 7.3rem;
                         flex-shrink: 0;
+                        & > img {
+                            object-fit: cover;
+                        }
+                        &[data-index = "0"] {
+                            width: 25rem;
+                        }
+                        &[data-index = "1"] {
+                            width: 32rem;
+                        }
+                        &[data-index = "2"] {
+                            width: 23.1rem;
+                        }
                     }
                     .details {
+                        display: none;
                         h2 {
                             font-family: $font-gothic-bold;
                             font-size: 2rem;
@@ -78,7 +90,7 @@
     }
     @include screenMax("tablet") {
         .green_container {
-            height: 35rem;
+            height: 32rem;
         }
         .collaborators_container {
             margin: 5.6rem auto;
@@ -90,8 +102,16 @@
                     .collaborator {
                         gap: 1rem;
                         .icon {
-                            width: 5.6rem;
-                            height: 5.6rem;
+                            height: 6.4rem;
+                            &[data-index = "0"] {
+                                width: 23rem;
+                            }
+                            &[data-index = "1"] {
+                                width: 30rem;
+                            }
+                            &[data-index = "2"] {
+                                width: 21rem;
+                            }
                         }
                         .details {
                             h2 {
@@ -116,7 +136,7 @@
     }
     @include screenMax("mobile") {
         .green_container {
-            height: 25rem;
+            height: 20rem;
         }
         .collaborators_container {
             margin: 3.6rem auto;
@@ -125,12 +145,25 @@
                 max-width: 99%;
                 .collaborators {
                     margin-top: 2.4rem;
-                    grid-template-columns: 1fr;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 2.4rem;
                     .collaborator {
                         gap: 0.8rem;
+                        height: 5.6rem;
                         .icon {
-                            width: 4.4rem;
-                            height: 4.4rem;
+                            & > img {
+                                object-fit: contain!important;
+                            }
+                            &[data-index = "0"] {
+                                width: 14rem;
+                            }
+                            &[data-index = "1"] {
+                                width: 18rem;
+                            }
+                            &[data-index = "2"] {
+                                width: 14rem;
+                            }
                         }
                         .details {
                             h2 {

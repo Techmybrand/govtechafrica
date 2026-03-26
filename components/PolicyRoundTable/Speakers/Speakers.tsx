@@ -112,8 +112,7 @@ const Speakers = () => {
                 {section.speakersList.map((speaker, index) =>
                   <div key={index} className={styles.speaker_card}>
                     <div className={styles.initials}>
-                      <Image alt="" fill src={speaker.initials} />
-                      <div className={styles.overlay}></div>
+                      <Image alt="" fill src={speaker.initials} sizes="100%" />
                     </div>
                     <h2>{speaker.name}</h2>
                     <p>{speaker.role}</p>

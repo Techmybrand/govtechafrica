@@ -48,10 +48,14 @@ const Media = () => {
         <section id="media" className={styles.about_section}>
             <div className={styles.about_container}>
                 <div className={styles.about_label}>
-                    <p>Participation</p>
+                    <p>Media</p>
                 </div>
                 <div className={styles.about_text}>
-                    <h1>MEDIA (Media)</h1>
+                    <h1>MEDIA ACCESS & ACCREDITATION</h1>
+                    <p>
+                        Stay informed and be part of the conversations shaping the future of 
+                        digital governance in Nigeria.
+                    </p>
                 </div>
                 <div className={styles.register}>
                     <div className={styles.info}>
@@ -68,10 +72,14 @@ const Media = () => {
                         <ul className={styles.details}>
                             {details.map((detail, index) =>
                                 <li key={index} className={styles.detail}>
-                                    {detail}
+                                    <span></span> {detail}
                                 </li>
                             )}
                         </ul>
+                        <p>
+                            Kindly note that only accredited media professionals will be 
+                            allowed physical access into the event premises.
+                        </p>
                     </div>
                     <div className={styles.form_container}>
                         <div className={styles.form_content}>

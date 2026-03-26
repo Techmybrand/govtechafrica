@@ -250,16 +250,21 @@ export const socialMediaLinks = [
 		href: "https://www.linkedin.com/company/govtech-africa-inc/",
 		icon: "/svgs/linkedin.svg"
 	},
-	// {
-	// 	label: "youtube",
-	// 	href: "https://www.instagram.com/govtech_africa",
-	// 	icon: "/svgs/youtube.svg"
-	// },
+	{
+		label: "youtube",
+		href: "https://www.youtube.com/channel/UCI9pb5Zbgr-q4ozIELvwFFw",
+		icon: "/svgs/youtube.svg"
+	},
 	{
 		label: "facebook",
 		href: "https://www.facebook.com/share/1ZietUxCgj/?mibextid=wwXIfr",
 		icon: "/svgs/facebook.svg"
-	}
+	},
+	{
+		label: "tiktok",
+		href: "https://www.tiktok.com/@govtech_africa?_r=1&_t=ZS-9510mjLpLyW",
+		icon: "/svgs/tiktok.svg"
+	},
 ];
 
 export const posts = [
