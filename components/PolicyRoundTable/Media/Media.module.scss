@@ -87,6 +87,8 @@
                         color: #FFF;
                         font-family: $font;
                         font-weight: 500;
+                        display: flex;
+                        align-items: center;
                         span {
                             background: #FFF;
                             width: 0.3rem;
@@ -102,7 +104,7 @@
                 border: 0.1rem solid #FFFFFF12;
                 border-radius: 0.2rem;
                 padding: 0 4.8rem 4.8rem;
-                display: none;
+                // display: none;
                 .form_content {
                     h3 {
                         font-size: 2.4rem;
@@ -111,7 +113,7 @@
                         font-family: $font;
                     }
                     .p {
-                        color: rgba(232,230,224,0.5);
+                        color: rgba(232, 230, 224, 0.5);
                         font-size: 1.4rem;
                         padding-bottom: 3.2rem;
                         margin-bottom: 3.2rem;
@@ -122,33 +124,61 @@
                     form {
                         display: grid;
                         grid-template-columns: 1fr;
-                        gap: 2rem;
-                        .group, .single {
+                        gap: 1rem;
+                        .group, .group_three, .single {
                             width: 100%;
                             label {
                                 font-size: 1rem;
                                 letter-spacing: 0.15rem;
-                                color: rgba(232,230,224,0.5);
+                                color: rgba(232, 230, 224, 0.5);
                                 text-transform: uppercase;
                                 font-family: $font;
                                 font-weight: 600;
                                 width: max-content;
                             }
                             .input_field {
-                                padding-block: 0.8rem!important;
+                                padding-block: 0.4rem!important;
                             }
                             .text_area_field {
                                 padding: 1.6rem!important;
-                                height: 28.2rem!important;
+                                height: 22rem!important;
                             }
                         }
-                        .group {
+                        .group, .group_three {
                             @include grid(repeat(2, 1fr), 2.4rem);
-                            .name {
+                            .name, .name_upload {
                                 display: flex;
                                 flex-direction: column;
                                 gap: 0.8rem;
+                                .upload_container {
+                                    width: 100%;
+                                    padding: 1.4rem;
+                                    border: 0.1rem solid rgba($col-white, 0.2);
+                                    border-radius: 0.8rem;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    h3 {
+                                        font-size: 1.2rem;
+                                        line-height: 1.6rem;
+                                        color: rgba($col-white, 0.5);
+                                    }
+                                    .icon {
+                                        position: relative;
+                                        width: 2.4rem;
+                                        height: 2.4rem;
+                                    }
+                                }
                             }
+                            .name_upload {
+                                .input_field {
+                                    display: none!important;
+                                }
+                            }
+                        }
+                        .group_three {
+                            display: grid;
+                            grid-template-columns: 0.75fr 0.75fr 0.5fr;
                         }
                         .submit_btn {
                             background: #1BB24B;
@@ -171,7 +201,7 @@
                                 letter-spacing: 0.18rem;
                             }
                             &:hover {
-                                background: #008751;
+                                background: #0e5e27;
                             }
                         }
                         .footer_p {
@@ -214,6 +244,15 @@
                         form {
                             .submit_btn {
                                 height: 5rem;
+                            }
+                            .group_three {
+                                grid-template-columns: 1fr 1fr;
+                                row-gap: 2.2rem;
+                                .name_upload {
+                                    .upload_container {
+                                        padding: 1.2rem;
+                                    }
+                                }
                             }
                         }
                     }
@@ -263,7 +302,7 @@
                             .group, .single {
                                 @include grid(repeat(1, 1fr), 1.6rem, 1rem);
                                 .text_area_field {
-                                    height: 24rem!important;
+                                    height: 16rem!important;
                                 }
                                 .input_field {
                                     padding-block: 0!important;
@@ -274,6 +313,15 @@
                                 h3 {
                                     font-size: 1.4rem;
                                     line-height: 2rem;
+                                }
+                            }
+                            .group_three {
+                                grid-template-columns: 1fr;
+                                row-gap: 1.2rem;
+                                .name_upload {
+                                    .upload_container {
+                                        padding: 0.8rem;
+                                    }
                                 }
                             }
                         }

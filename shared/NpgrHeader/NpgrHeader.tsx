@@ -38,7 +38,7 @@ const NpgrHeader = () => {
                     </ul>
                 </nav>
                 <div className={styles.ctas}>
-                    {/* <Link href="#register"> */}
+                    <Link href="#register">
                             {/* <GruveEventWidgets */}
                                 {/* eventAddress='0bfc8ff1245021bb034669ff8002133a536db1b4'
                                 config={{
@@ -51,10 +51,10 @@ const NpgrHeader = () => {
                                 }}
                             > */}
                                 <div className={styles.register_btn}>
-                                    <h3>REGISTER</h3>
+                                    <h3>register</h3>
                                 </div>
                             {/* </GruveEventWidgets> */}
-                    {/* </Link> */}
+                    </Link>
                     <Link href="#media">
                         <div className={styles.media_btn}>
                             <h3>media accreditation</h3>

@@ -8,31 +8,31 @@ const Speakers = () => {
       title: 'Formal Opening',
       speakersList: [
         {
-          initials: '/images/TAA.jpeg',
+          initials: '/images/TAA.png',
           name: 'Rt. Hon. Tajudeen Abbas',
           role: 'Keynote / Formal Opening',
           position: 'Speaker, House of Representatives',
         },
         {
-          initials: '/images/BK.jpeg',
+          initials: '/images/BK.png',
           name: 'Rt. Hon. Benjamin Okezie Kalu',
           role: 'Keynote / Formal Opening',
           position: 'Deputy Speaker, House of Representatives',
         },
         {
-          initials: '/images/BT_black.jpeg',
+          initials: '/images/BT.png',
           name: 'Dr. Bosun Tijani',
           role: 'Keynote / Formal Opening',
           position: 'Minister of Communications, Innovation & Digital Economy',
         },
         {
-          initials: '/images/HN.jpeg',
+          initials: '/images/HN.png',
           name: 'Hon. Henry Nwawuba',
           role: 'Keynote / Formal Opening',
           position: 'Executive Secretary, National Assembly Library Trust Fund',
         },
         {
-          initials: '/images/BK.jpeg',
+          initials: '/images/BK.png',
           name: 'Fortune Toma',
           role: 'Keynote / Formal Opening',
           position: 'Director for Africa, Govtech Africa Incr',
@@ -43,31 +43,31 @@ const Speakers = () => {
       title: 'Panel Discussants',
       speakersList: [
         {
-          initials: '/images/DE.jpeg',
+          initials: '/images/DE.png',
           name: 'Mrs. Didi Esther Walson-Jack, OON, mni',
           role: 'panelist',
           position: 'Office of the Head of the Civil Service of the Federation/The Head of the Civil Service of the Federation',
         },
         {
-          initials: '/images/KE.jpeg',
+          initials: '/images/KE.png',
           name: 'Kabir Eniola Akanbi, Esq.',
           role: `panelist`,
           position: 'The Supreme Court of Nigeria/The Chief Registrar',
         },
         {
-          initials: '/images/SO_black.jpeg',
+          initials: '/images/AS.png',
           name: 'Hon. Adedeji Stanley Olajide',
           role: `panelist`,
           position: 'Chairman, Committee on Digital and Communications Technology, House of Representatives',
         },
         {
-          initials: '/images/AO.jpeg',
+          initials: '/images/AO.png',
           name: 'Dr. Abdulateef O. Shittu',
           role: 'panelist',
           position: 'Nigeria Governors Forum(NGF)/The Director General',
         },
         {
-          initials: '/images/ZM.jpeg',
+          initials: '/images/ZM.png',
           name: 'Princess Zahrah Mustapha Audu',
           role: 'panelist',
           position: 'Presidential Enabling Business Environment Council (PEBEC)/The Director General',
@@ -78,13 +78,13 @@ const Speakers = () => {
       title: 'Anchors / Moderators',
       speakersList: [
         {
-          initials: '/images/DA.jpeg',
+          initials: '/images/UE.png',
           name: 'Umoh Edet',
           role: 'moderator',
           position: 'Head of Policy and Research, Govtech Africa Inc.',
         },
         {
-          initials: '/images/BO.jpeg',
+          initials: '/images/BO.png',
           name: 'Blessing O. Ajimoti',
           role: 'moderator',
           position: 'Public Digital/Digital Transformation Consultant',
