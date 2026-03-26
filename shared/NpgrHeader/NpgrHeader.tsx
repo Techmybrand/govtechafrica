@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { GruveEventWidgets } from "@gruve/echo"
+// import { GruveEventWidgets } from "@gruve/echo";
 import styles from "./NpgrHeader.module.scss";
 
 const NpgrHeader = () => {
@@ -39,21 +39,21 @@ const NpgrHeader = () => {
                 </nav>
                 <div className={styles.ctas}>
                     {/* <Link href="#register"> */}
-                            <GruveEventWidgets
-                                eventAddress='0bfc8ff1245021bb034669ff8002133a536db1b4'
+                            {/* <GruveEventWidgets */}
+                                {/* eventAddress='0bfc8ff1245021bb034669ff8002133a536db1b4'
                                 config={{
-                                    backgroundColor: '#00BF4D',
-                                    color: 'white',
+                                    // backgroundColor: '#00BF4D',
+                                    // color: 'white',
                                     // padding: '12px 24px',
-                                    borderRadius: '8px',
-                                    themeColor: '#00BF4D',
+                                    // borderRadius: '8px',
+                                    // themeColor: '#00BF4D',
                                     // displayText: 'REGISTER',
                                 }}
-                            >
+                            > */}
                                 <div className={styles.register_btn}>
                                     <h3>REGISTER</h3>
                                 </div>
-                            </GruveEventWidgets>
+                            {/* </GruveEventWidgets> */}
                     {/* </Link> */}
                     <Link href="#media">
                         <div className={styles.media_btn}>
