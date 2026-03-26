@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { Hero } from "@/shared";
 import { Growth, Drivers, CenterPiece, Mission, Research } from "@/components/home";
+// import { HomeHero } from "@/components/PolicyRoundTable";
 import { CookiesModal } from "@/shared/Modals";
 import styles from "./HomeView.module.scss";
-// import { HomeHero } from "@/components/PolicyRoundTable";
 
 const HomeView = () => {
 	const [showModal, setShowModal] = useState<boolean>(false);

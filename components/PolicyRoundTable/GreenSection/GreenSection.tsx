@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./GreenSection.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 export const collaborators = [
     {
@@ -34,9 +35,11 @@ const GreenSection = () => {
                     <div className={styles.collaborators}>
                         {collaborators.map((collaborator, index) =>
                             <div className={styles.collaborator} key={index}>
-                                <div data-index={index} className={styles.icon}>
-                                    <Image alt="" fill src={collaborator.image} />
-                                </div>
+                                <Link href={collaborator.href}>
+                                    <div data-index={index} className={styles.icon}>
+                                        <Image alt="" fill src={collaborator.image} />
+                                    </div>
+                                </Link>
                                 {/* <div className={styles.details}>
                                     {collaborator.title && (
                                         <h2>{collaborator.title}</h2>

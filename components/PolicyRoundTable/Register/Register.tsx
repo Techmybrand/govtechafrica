@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { InputField, Select, TextArea } from "@/shared";
+import { InputField, TextArea } from "@/shared";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import styles from "./Register.module.scss";
@@ -40,16 +40,14 @@ const Register = () => {
   //   { label: 'Media', value: 'media' },
   //   { label: 'Other', value: 'other' },
   // ];
-  const sessionTypes = [
-    { label: 'Session 1 - The public sector panel', value: 'session 1 - the public sector panel' },
-    { label: 'Session 2 - The Private sector panel', value: 'session 2 - The private sector panel' },
-    { label: 'Development Partners & Civil Society', value: 'development partners & civil society' },
-    { label: 'All Sessions / No Preference', value: 'all sessions / no preference' },
-  ]
-  const [selectFieldValue, setSelectFieldValue] = useState<string>("");
-  const onOptionChange = (option: string) => {
-    setSelectFieldValue(option);
-  };
+  // const sessionTypes = [
+  //   { label: 'Session 1 - The public sector panel', value: 'session 1 - the public sector panel' },
+  //   { label: 'Session 2 - The Private sector panel', value: 'session 2 - The private sector panel' },
+  //   { label: 'Development Partners & Civil Society', value: 'development partners & civil society' },
+  //   { label: 'All Sessions / No Preference', value: 'all sessions / no preference' },
+  // ]
+  const [selectFieldValue,] = useState<string>("");
+  // const onOptionChange = (option: string) => setSelectFieldValue(option);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -137,18 +135,20 @@ const Register = () => {
                 successful registration.
               </p> */}
               <form onSubmit={handleSubmit} className={styles.form_wrapper}>
-                <div className={styles.single}>
-                  <label htmlFor="firstName">Full Name </label>
-                  <InputField placeholder="Enter your full name" type="text"
-                    className={styles.input_field} name="fullName" id="fullname"
-                    required
-                  />
-                  {/* <div className={styles.name}>
-                    <label htmlFor="lastName">First Name </label>
-                    <InputField placeholder="Enter your first name" id="lastName"
-                      className={styles.input_field} name="lastName" type="text"
+                <div className={styles.group}>
+                  <div className={styles.name}>
+                    <label htmlFor="firstName">First Name </label>
+                    <InputField placeholder="Enter name" type="text"
+                      className={styles.input_field} name="fullName" id="fullname"
+                      required
                     />
-                  </div> */}
+                  </div>
+                  <div className={styles.name}>
+                    <label htmlFor="otherNames">Other Names</label>
+                    <InputField placeholder="Enter other names" id="otherNames"
+                      className={styles.input_field} name="otherNames" type="text"
+                    />
+                  </div>
                 </div>
                 <div className={styles.group}>
                   <div className={styles.name}>
@@ -166,14 +166,14 @@ const Register = () => {
                     />
                   </div>
                 </div>
-                <div className={styles.single}>
-                  <label htmlFor="organisation">organisation / institution</label>
-                  <InputField placeholder="Ministry / Agency / Company"
-                    className={styles.input_field} name="organisation" id="organisation"
-                    required
-                  />
-                </div>
                 <div className={styles.group}>
+                  <div className={styles.name}>
+                    <label htmlFor="organisation">organisation / institution</label>
+                    <InputField placeholder="Ministry / Agency / Company"
+                      className={styles.input_field} name="organisation" id="organisation"
+                      required
+                    />
+                  </div>
                   <div className={styles.name}>
                     <label htmlFor="designation">Designation / title</label>
                     <InputField placeholder="Enter your designation"
@@ -181,17 +181,19 @@ const Register = () => {
                       required
                     />
                   </div>
-                  <div className={styles.name}>
+                </div>
+                {/* <div className={styles.group}> */}
+                  {/* <div className={styles.name}> */}
                     {/* <label htmlFor="lastName">sector</label>
                     <Select options={sectorTypes}
                       defaultOption='Select a sector'
                     /> */}
-                    <label htmlFor="session">which panel session interests you the most</label>
+                    {/* <label htmlFor="session">which panel session interests you the most</label>
                     <Select options={sessionTypes} defaultOption='Select a session'
                       onOptionChange={onOptionChange}
-                    />
-                  </div>
-                </div>
+                    /> */}
+                  {/* </div> */}
+                {/* </div> */}
                 <div className={styles.single}>
                   <label htmlFor="additionalNotes">Additional notes or requirements</label>
                     <TextArea placeholder="Accessibility needs, dietary restrictions or any additional information..."

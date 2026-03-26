@@ -3,6 +3,7 @@ import React from "react";
 import { InputField } from "@/shared";
 // import toast from "react-hot-toast";
 import styles from "./Media.module.scss";
+import Image from "next/image";
 
 const Media = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -84,12 +85,21 @@ const Media = () => {
                     <div className={styles.form_container}>
                         <div className={styles.form_content}>
                             <form onSubmit={handleSubmit} className={styles.form_wrapper}>
-                                <div className={styles.single}>
-                                    <label htmlFor="firstName">Full Name </label>
-                                    <InputField placeholder="Enter your full name" type="text"
-                                        className={styles.input_field} name="fullName" id="fullname"
-                                        required
-                                    />
+                                <div className={styles.group}>
+                                    <div className={styles.name}>
+                                        <label htmlFor="firstName">First Name</label>
+                                        <InputField placeholder="Enter your first names" type="text"
+                                            className={styles.input_field} name="fullName" id="fullname"
+                                            required
+                                        />
+                                    </div>
+                                    <div className={styles.name}>
+                                        <label htmlFor="firstName">Other Names</label>
+                                        <InputField placeholder="Enter other names" type="text"
+                                            className={styles.input_field} name="fullName" id="fullname"
+                                            required
+                                        />
+                                    </div>
                                 </div>
                                 <div className={styles.group}>
                                     <div className={styles.name}>
@@ -107,14 +117,14 @@ const Media = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className={styles.single}>
-                                    <label htmlFor="organisation">media organisation</label>
-                                    <InputField placeholder="Organization name"
-                                        className={styles.input_field} name="organisation" id="organisation"
-                                        required
-                                    />
-                                </div>
-                                <div className={styles.group}>
+                                <div className={styles.group_three}>
+                                    <div className={styles.name}>
+                                        <label htmlFor="organisation">media organisation</label>
+                                        <InputField placeholder="Organization name"
+                                            className={styles.input_field} name="organisation" id="organisation"
+                                            required
+                                        />
+                                    </div>
                                     <div className={styles.name}>
                                         <label htmlFor="designation">Designation</label>
                                         <InputField placeholder="Enter your designation"
@@ -122,8 +132,14 @@ const Media = () => {
                                             required
                                         />
                                     </div>
-                                    <div className={styles.name}>
+                                    <div className={styles.name_upload}>
                                         <label htmlFor="idcard">id card upload</label>
+                                        <div className={styles.upload_container}>
+                                            <h3>Upload ID</h3>
+                                            <div className={styles.icon}>
+                                                <Image alt="" fill src="/svgs/add_photo.svg" />
+                                            </div>
+                                        </div>
                                         <InputField placeholder="Upload ID" multiple={false}
                                             accept="image/*" type="file" id="idcard" required
                                             className={styles.input_field} name="idcard" 

@@ -5,13 +5,23 @@ import styles from "./PolicyRoundTableView.module.scss";
 
 const PolicyRoundTableView = () => {
     const images = [
-        '/images/BPSR.jpeg',
-        '/images/NCC.jpeg',
-        '/images/NDPC.jpeg',
-        '/images/NESG.jpeg',
-        '/images/NITDA.png',
-        '/images/OHCSF.jpeg',
-        '/images/PEBEC.jpeg',
+        // '/images/BPSR.jpeg',
+        // '/images/NCC.jpeg',
+        // '/images/NDPC.jpeg',
+        // '/images/NESG.jpeg',
+        // '/images/NITDA.png',
+        // '/images/OHCSF.jpeg',
+        // '/images/PEBEC.jpeg',
+        '/svgs/partner_1.svg',
+        '/svgs/partner_2.svg',
+        '/svgs/partner_3.svg',
+        '/svgs/partner_4.svg',
+        '/svgs/partner_5.svg',
+        '/svgs/partner_6.svg',
+        '/svgs/partner_7.svg',
+        '/svgs/partner_8.svg',
+        '/svgs/partner_9.svg',
+        '/svgs/partner_10.svg',
     ]
 
     return (
@@ -20,7 +30,7 @@ const PolicyRoundTableView = () => {
             <GreenSection />
             <About />
             <div className={styles.slider_container}>
-                <Carousel direction="right" speed="normal" items={images}
+                <Carousel direction="right" speed="slow" items={images}
                     className={styles.carousel_image}
                 />
             </div>

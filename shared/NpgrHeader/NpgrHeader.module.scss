@@ -152,22 +152,23 @@
                 }
             }
             .ctas {
-                display: none;
-                margin-left: 0;
+                margin-left: auto;
                 a {
                     .register_btn, .media_btn {
-                        padding: 1rem 1.6rem;
+                        padding: 1rem;
                         h3 {
-                            font-size: 1.2rem;
-                            line-height: 1.6rem;
+                            font-size: 1rem;
+                            line-height: 1.4rem;
+                            text-transform: capitalize;
                         }
                     }
                 }
                 .register_btn {
-                    padding: 1rem 1.6rem;
+                    padding: 1rem;
                     h3 {
-                        font-size: 1.2rem;
-                        line-height: 1.6rem;
+                        font-size: 1rem;
+                        line-height: 1.4rem;
+                        text-transform: capitalize;
                     }
                 }
             }
