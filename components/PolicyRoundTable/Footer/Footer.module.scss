@@ -2,8 +2,8 @@
 
 .footer_body {
     width: 100%;
-    padding: 6rem 8rem;
-    background: rgba($col-white, 0.1);
+    padding: 8rem 0 0;
+    background: #000;
     position: relative;
     .footer_container {
         padding: 3.6rem;
@@ -11,82 +11,233 @@
         margin-inline: auto;
         position: relative;
         overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         .footer_content {
-            h1 {
+            padding-block: 7.2rem;
+            border-top: 0.1rem solid rgba($col-white, 0.2);
+            border-bottom: 0.1rem solid rgba($col-white, 0.2);
+            h1, span {
                 text-align: center;
                 text-transform: uppercase;
-                color: #1BB24B;
-                font-family: $font;
-                font-weight: 900;
-                font-size: 3.6rem;
-                line-height: 4.4rem;
-                margin: 0 auto 3.2rem;
-            }
-            h3 {
                 color: #FFF;
-                font-size: 1.6rem;
-                line-height: 2.4rem;
-                font-weight: 500;
-                font-family: $font;
-                margin: 0 auto 5.6rem;
-                text-align: center;
-            }
-            p {
-                font-size: 2rem;
-                line-height: 2.8rem;
-                color: #FFF;
-                text-align: center;
                 font-family: $font-gothic-bold;
+                font-weight: 900;
+                font-size: 3.2rem;
+                line-height: 4.8rem;
+                margin: 0 auto;
             }
+            span {
+                color: #1BB24B;
+            }
+        }
+        .footer_details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-block: 6.4rem;
+            .collaborators_content {
+                width: 60%;
+                h3 {
+                    text-transform: uppercase;
+                    color: #FFF;
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    width: fit-content;
+                }
+                .collaborators {
+                    display: flex;
+                    align-items: center;
+                    gap: 3.2rem;
+                    margin-top: 1.6rem;
+                    a {
+                        .icon {
+                            position: relative;
+                            height: 7.3rem;
+                            flex-shrink: 0;
+                            & > img {
+                                object-fit: contain;
+                            }
+                            &[data-index = "0"] {
+                                width: 18rem;
+                            }
+                            &[data-index = "1"] {
+                                width: 24rem;
+                            }
+                            &[data-index = "2"] {
+                                width: 17rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .legal {
+                width: 15%;
+                a {
+                    h2, h3 {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                        color: #FFF;
+                        font-family: $font;
+                    }
+                    h2 {
+                        margin-bottom: 1.6rem;
+                    }
+                }
+            }
+            .socials_container {
+                width: 15%;
+                position: relative;
+                .socials {
+                    @include grid(repeat(6, 2rem), 2rem);
+                    margin-bottom: 2rem;
+                    .social {
+                        position: relative;
+                        height: 2.4rem;
+                        width: 2.4rem;
+                    }
+                }
+                p {
+                    font-size: 1.2rem;
+                    line-height: 1.6rem;
+                    color: #FFF;
+                    font-family: $font;
+                }
+            }
+        }
+    }
+    .footer_bg {
+        width: 100%;
+        position: relative;
+        height: 20rem;
+        & > img {
+            object-fit: cover;
         }
     }
 
     @include screenMax("tablet") {
-        padding: 4.8rem 6rem;
+        padding: 4.8rem 0 0;
         .footer_container {
             padding: 2.4rem;
             .footer_content {
-                h1 {
-                    font-size: 3.2rem;
-                    line-height: 4rem;
-                    margin-bottom: 2.4rem;
-                }
-                h3 {
-                    font-size: 1.4rem;
-                    line-height: 2rem;
-                    margin-bottom: 4rem;
-                }
-                p {
-                    font-size: 1.8rem;
-                    line-height: 2.7rem;
+                padding-block: 5.6rem;
+                h1, span {
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
                 }
             }
+            .footer_details {
+                margin-block: 4.8rem;
+                flex-wrap: wrap;
+                .collaborators_content {
+                    width: 100%;
+                    h3 {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                    }
+                    .collaborators {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 2.4rem;
+                        margin-block: 2.4rem;
+                        a {
+                            .icon {
+                                &[data-index = "0"] {
+                                    width: 20rem;
+                                }
+                                &[data-index = "1"] {
+                                    width: 24rem;
+                                }
+                                &[data-index = "2"] {
+                                    width: 20rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .legal {
+                    display: flex;
+                    align-items: center;
+                    gap: 3.2rem;
+                    width: 30%;
+                    a {
+                        h2, h3 {
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .socials_container {
+                    width: 20%;
+                }
+            }
+        }
+        .footer_bg {
+            height: 15rem;
         }
     }
 
     @include screenMax("mobile") {
-        padding: 3.6rem 2.4rem;
+        padding: 3.6rem 0 0;
         .footer_container {
             padding: 1.6rem;
             .footer_content {
-                h1 {
-                    font-size: 2.4rem;
-                    line-height: 3.2rem;
-                    margin-bottom: 1.6rem;
-                }
-                h3 {
-                    font-size: 1.2rem;
-                    line-height: 1.6rem;
-                    margin-bottom: 2.4rem;
-                }
-                p {
+                padding-block: 4.8rem;
+                h1, span {
                     font-size: 1.6rem;
                     line-height: 2.4rem;
                 }
             }
+            .footer_details {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                .collaborators_content {
+                    margin-bottom: 1.4rem;
+                    .collaborators {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 1.6rem;
+                        a {
+                            .icon {
+                                height: 4.8rem;
+                                &[data-index = "0"] {
+                                    width: 14rem;
+                                }
+                                &[data-index = "1"] {
+                                    width: 18rem;
+                                }
+                                &[data-index = "2"] {
+                                    width: 14rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .legal {
+                    gap: 1.6rem;
+                    width: 100%;
+                    a {
+                        h2, h3 {
+                            font-size: 1.2rem;
+                            line-height: 1.6rem;
+                        }
+                    }
+                }
+                .socials_container {
+                    width: 100%;
+                    margin-top: 2.4rem;
+                    .socials {
+                        margin-bottom: 1rem;
+                        p {
+                            font-size: 1rem;
+                            line-height: 1.4rem;
+                        }
+                    }
+                }
+            }
+        }
+        .footer_bg {
+            height: 10rem;
         }
     }
 }

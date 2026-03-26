@@ -120,6 +120,7 @@
                 border: 0.1rem solid #FFFFFF12;
                 border-radius: 0.2rem;
                 padding: 0 4.8rem 4.8rem;
+                display: none;
                 .form_content {
                     h3 {
                         font-size: 2.4rem;
@@ -301,12 +302,18 @@
                     }
                 }
                 .info {
+                    p {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                        max-width: 95%;
+                    }
                     .details {
                         margin-block: 2.4rem;
                         .detail {
                             .detail_text {
                                 p {
-                                    width: 95%;
+                                    width: 90%!important;
+                                    font-size: 1rem;
                                 }
                             }
                         }

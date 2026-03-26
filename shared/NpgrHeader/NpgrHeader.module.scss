@@ -71,6 +71,24 @@
                     }
                 }
             }
+            .register_btn {
+                background: #00BF4D;
+                padding: 1.6rem 2.4rem;
+                border-radius: 1rem;
+                cursor: pointer;
+                transition: all 300ms ease-in-out;
+                h3 {
+                    color: #FFF;
+                    text-transform: uppercase;
+                    font-family: $font;
+                    font-weight: 500;
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+                &:hover {
+                    background: #0e5e27;
+                }
+            }
         }
 	}
 
@@ -100,6 +118,9 @@
                     .register_btn, .media_btn {
                         padding: 1.2rem 2rem;
                     }
+                }
+                .register_btn {
+                    padding: 1.2rem 2rem;
                 }
             }
         }
@@ -140,6 +161,13 @@
                             font-size: 1.2rem;
                             line-height: 1.6rem;
                         }
+                    }
+                }
+                .register_btn {
+                    padding: 1rem 1.6rem;
+                    h3 {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
                     }
                 }
             }

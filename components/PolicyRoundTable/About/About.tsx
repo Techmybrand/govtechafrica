@@ -51,7 +51,11 @@ const About = () => {
         </div>
         <div className={styles.about_theme}>
           <div className={styles.about_theme_text}>
-            <h4>Theme</h4>
+            <h4>2026 Theme</h4>
+            <h1>
+              Digital First Governance:<br />
+              Rethinking how Nigerian Governments Serve, Engage and Deliver
+            </h1>
             <h5>
               Through this theme, the Roundtable will seek to:
             </h5>
