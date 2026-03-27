@@ -60,7 +60,7 @@ const Media = () => {
                 </div>
                 <div className={styles.register}>
                     <div className={styles.info}>
-                        <h5>Media Access & Accreditation</h5>
+                        {/* <h5>Media Access & Accreditation</h5> */}
                         <p>
                             We welcome specialised media professionals to cover this 
                             inaugural edition of the 

@@ -7,6 +7,7 @@ import Catalogue from "./Catalogue/Catalogue";
 import Centerpiece from "./Centerpiece/Centerpiece";
 import Divider from "./Divider/Divider";
 import Footer from "./footer/Footer";
+import GruveTicketButton from "./GruveTicketButton/GruveTicketButton";
 import Header from "./header/Header";
 import Hero from "./hero/Hero";
 import InputField from "./inputField/InputField";
@@ -30,6 +31,7 @@ import ThemeToggle from "./themeToggle/ThemeToggle";
 
 export {
     Accordion,
+    GruveTicketButton,
     AnimatedSection,
     Logo,
     AnalyticsToggle,
