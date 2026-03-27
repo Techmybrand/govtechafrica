@@ -5,13 +5,6 @@ import styles from "./PolicyRoundTableView.module.scss";
 
 const PolicyRoundTableView = () => {
     const images = [
-        // '/images/BPSR.jpeg',
-        // '/images/NCC.jpeg',
-        // '/images/NDPC.jpeg',
-        // '/images/NESG.jpeg',
-        // '/images/NITDA.png',
-        // '/images/OHCSF.jpeg',
-        // '/images/PEBEC.jpeg',
         '/svgs/partner_1.svg',
         '/svgs/partner_2.svg',
         '/svgs/partner_3.svg',
@@ -22,6 +15,10 @@ const PolicyRoundTableView = () => {
         '/svgs/partner_8.svg',
         '/svgs/partner_9.svg',
         '/svgs/partner_10.svg',
+        '/svgs/remita.svg',
+        '/images/nibbs_logo.png',
+        '/images/OHCSF.png',
+        '/images/supreme_court.png',
     ]
 
     return (

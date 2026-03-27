@@ -5,6 +5,7 @@ import Link from "next/link";
 // import { GruveEventWidgets } from "@gruve/echo";
 // import { GruveTicketButton } from "..";
 import styles from "./NpgrHeader.module.scss";
+// import { GruveTicketButton } from "..";
 // import dynamic from "next/dynamic";
 
 // const GruveEventWidgets = dynamic(() => import("@gruve/echo"), {
@@ -44,33 +45,34 @@ const NpgrHeader = () => {
                     </ul>
                 </nav>
                 <div className={styles.ctas}>
+                    {/* <GruveEventWidgets
+                        eventAddress='0bfc8ff1245021bb034669ff8002133a536db1b4'
+                        config={{
+                            backgroundColor: '#00BF4D',
+                            color: 'white',
+                            padding: '12px 24px',
+                            borderRadius: '8px',
+                            themeColor: '#00BF4D',
+                            displayText: 'REGISTER',
+                        }}
+                    >
+                        <div className={styles.register_btn}>
+                            <h3>register</h3>
+                        </div>
+                    </GruveEventWidgets> */}
+                    {/* <GruveTicketButton
+                        eventAddress="0bfc8ff1245021bb034669ff8002133a536db1b4"
+                    >
+                        <div className={styles.register_btn}>
+                            <h3>register</h3>
+                        </div>
+                    </GruveTicketButton> */}
                     <Link href="#register">
-                            {/* <GruveEventWidgets
-                                eventAddress='0bfc8ff1245021bb034669ff8002133a536db1b4'
-                                config={{
-                                    backgroundColor: '#00BF4D',
-                                    color: 'white',
-                                    padding: '12px 24px',
-                                    borderRadius: '8px',
-                                    themeColor: '#00BF4D',
-                                    displayText: 'REGISTER',
-                                }}
-                            >
-                                <div className={styles.register_btn}>
-                                    <h3>register</h3>
-                                </div>
-                            </GruveEventWidgets> */}
-                            {/* <GruveTicketButton
-                                eventAddress="0bfc8ff1245021bb034669ff8002133a536db1b4"
-                            >
-                                <div className={styles.register_btn}>
-                                    <h3>register</h3>
-                                </div>
-                            </GruveTicketButton> */}
-                            <div className={styles.register_btn}>
-                                <h3>register</h3>
-                            </div>
+                        <div className={styles.register_btn}>
+                            <h3>register</h3>
+                        </div>
                     </Link>
+                    {/* <GruveTicketButton /> */}
                     <Link href="#media">
                         <div className={styles.media_btn}>
                             <h3>media accreditation</h3>
