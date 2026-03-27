@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { InputField, TextArea } from "@/shared";
 import Image from "next/image";
 import toast from "react-hot-toast";
@@ -46,49 +46,93 @@ const Register = () => {
   //   { label: 'Development Partners & Civil Society', value: 'development partners & civil society' },
   //   { label: 'All Sessions / No Preference', value: 'all sessions / no preference' },
   // ]
-  const [selectFieldValue,] = useState<string>("");
+  // const [selectFieldValue,] = useState<string>("");
   // const onOptionChange = (option: string) => setSelectFieldValue(option);
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const endpoint = `https://script.google.com/macros/s/AKfycbzLgcVnUqT4lm5zhhEdbTpmcB_VOjDpeEkcl3Q3NBVVi4wkOYUyhzsPLEJW2j5o4tC_fA/exec`
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   const formData = new FormData(e.currentTarget);
+  //   const endpoint = `https://script.google.com/a/macros/govtechafrica.com/s/AKfycby8r8lauu4rjSwQgANTVhfMtCzGiz9U1JJtBtyfLzg-hqs_MsE33hgJ4LK49ZDEkJOsCA/exec`
     
-    const payload = {
-      fullName: formData.get("fullName"),
-      email: formData.get("email"),
-      phoneNumber: formData.get("phoneNumber"),
-      organisation: formData.get("organisation"),
-      designation: formData.get("designation"),
-      sector: '',
-      // sector: formData.get("sector"),
-      // panelSession: formData.get("panelSession"),
-      panelSession: selectFieldValue,
-      additionalNotes: formData.get("additionalNotes"),
-    };
+  //   const payload = {
+  //     firstName: formData.get("firstName"),
+  //     otherNames: formData.get("otherNames"),
+  //     email: formData.get("email"),
+  //     phoneNumber: formData.get("phoneNumber"),
+  //     organisation: formData.get("organisation"),
+  //     designation: formData.get("designation"),
+  //     sector: '',
+  //     // sector: formData.get("sector"),
+  //     // panelSession: formData.get("panelSession"),
+  //     // panelSession: selectFieldValue,
+  //     additionalNotes: formData.get("additionalNotes"),
+  //   };
 
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: { 
-          // "Content-Type": "application/json"
-          "Content-Type": "text/plain;charset=utf-8"
-        },
-      });
+  //   try {
+  //     const res = await fetch(endpoint, {
+  //       method: "POST",
+  //       body: JSON.stringify(payload),
+  //       headers: { 
+  //         // "Content-Type": "application/json"
+  //         "Content-Type": "text/plain;charset=utf-8"
+  //       },
+  //     });
 
-      if (res.ok) {
+  //     if (res.ok) {
+  //       toast.success("Registration successful! Check your email for confirmation.");
+  //       // e.currentTarget.reset();
+  //     }
+  //     console.log('payload: ', payload);
+  //     // console.log('endpoint: ', endpoint);
+  //     // console.log('res: ', res);
+  //     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  //   } catch (err: any) {
+  //     console.log('err: ', err)
+  //     toast.error("Something went wrong. Please try again.");
+  //   }
+  // };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  const formData = new FormData(e.currentTarget);
+
+  const payload = {
+    firstName: formData.get("firstName"),
+    otherNames: formData.get("otherNames"),
+    email: formData.get("email"),
+    phoneNumber: formData.get("phoneNumber"),
+    organisation: formData.get("organisation"),
+    designation: formData.get("designation"),
+    sector: "",
+    additionalNotes: formData.get("additionalNotes") ?? "",
+  };
+
+  const endpoint = `https://script.google.com/macros/s/AKfycby8r8lauu4rjSwQgANTVhfMtCzGiz9U1JJtBtyfLzg-hqs_MsE33hgJ4LK49ZDEkJOsCA/exec`;
+
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) {
+      const result = await res.json();
+      if (result.status === "success") {
         toast.success("Registration successful! Check your email for confirmation.");
         // e.currentTarget.reset();
+      } else {
+        toast.error("Submission failed. Please try again.");
       }
-      console.log('payload: ', payload);
-      // console.log('endpoint: ', endpoint);
-      // console.log('res: ', res);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (err: any) {
-      console.log('err: ', err)
+    } else {
       toast.error("Something went wrong. Please try again.");
     }
-  };
+  } catch (err) {
+    console.error("Submission error:", err);
+    toast.error("Network error. Please check your connection.");
+  }
+};
 
   return (
     <section id="register" className={styles.about_section}>
@@ -139,7 +183,7 @@ const Register = () => {
                   <div className={styles.name}>
                     <label htmlFor="firstName">First Name </label>
                     <InputField placeholder="Enter name" type="text"
-                      className={styles.input_field} name="fullName" id="fullname"
+                      className={styles.input_field} name="firstName" id="firstName"
                       required
                     />
                   </div>
