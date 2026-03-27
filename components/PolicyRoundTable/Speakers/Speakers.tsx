@@ -40,7 +40,7 @@ const Speakers = () => {
       ]
     },
     {
-      title: 'Panel Discussants',
+      title: 'Panel Discussants & Moderators',
       speakersList: [
         {
           initials: '/images/DE.png',
@@ -72,11 +72,6 @@ const Speakers = () => {
           role: 'panelist',
           position: 'Presidential Enabling Business Environment Council (PEBEC)/The Director General',
         },
-      ]
-    },
-    {
-      title: 'Anchors / Moderators',
-      speakersList: [
         {
           initials: '/images/UE.png',
           name: 'Umoh Edet',
@@ -91,6 +86,23 @@ const Speakers = () => {
         },
       ]
     },
+    // {
+    //   title: 'Anchors / Moderators',
+    //   speakersList: [
+    //     {
+    //       initials: '/images/UE.png',
+    //       name: 'Umoh Edet',
+    //       role: 'moderator',
+    //       position: 'Head of Policy and Research, Govtech Africa Inc.',
+    //     },
+    //     {
+    //       initials: '/images/BO.png',
+    //       name: 'Blessing O. Ajimoti',
+    //       role: 'moderator',
+    //       position: 'Public Digital/Digital Transformation Consultant',
+    //     },
+    //   ]
+    // },
   ]
   return (
     <section id="speakers" className={styles.about_section}>

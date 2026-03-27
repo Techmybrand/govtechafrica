@@ -95,17 +95,19 @@ const Agenda = () => {
     },
     {
       title: `Panel Session 2`,
-      topic: `Building the Digital Backbone of Government: Private Sector Innovation and 
-        Investment`,
+      topic: `Building the Digital Backbone of Government: Innovation, Investment and Global 
+        Expertise for Sustainable Governance`,
       subtext: `Discussions on building the digital backbone of government, including 
-        innovation, infrastructure development, and sustainable investment models.`
+        innovation, infrastructure development, and sustainable investment models. Insights 
+        on mobilising global expertise, strengthening governance safeguards, and ensuring 
+        inclusive, transparent, and accountable digital transformation.`
     },
-    {
-      title: `Panel Session 3`,
-      topic: `Aligning Global Expertise and Civic Oversight for Sustainable Digital Governance`,
-      subtext: `Insights on mobilising global expertise, strengthening governance safeguards,
-        and ensuring inclusive, transparent, and accountable digital transformation.`
-    },
+    // {
+    //   title: `Panel Session 3`,
+    //   topic: `Aligning Global Expertise and Civic Oversight for Sustainable Digital Governance`,
+    //   subtext: `Insights on mobilising global expertise, strengthening governance safeguards,
+    //     and ensuring inclusive, transparent, and accountable digital transformation.`
+    // },
     {
       title: `Interactive Dialogue & Stakeholder Engagement`,
       subtext: `Opportunities for participants to contribute perspectives, share experiences,
@@ -115,6 +117,10 @@ const Agenda = () => {
       title: `Outcome-Oriented Close`,
       subtext: `Consolidation of key insights into a shared set of reform priorities, 
         partnership pathways, and next steps to advance Digital First Governance in Nigeria.`
+    },
+    {
+      title: `Tour of the National Assembly Library and Resource Centre`,
+      subtext: ``
     },
   ]
   return (

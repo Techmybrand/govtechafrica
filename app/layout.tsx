@@ -21,9 +21,16 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
 	metadataBase: new URL(baseUrl),
 	title: `Govtech Africa | Automating Government Processes`,
-	description: `African technology for Government Excellence`,
+	// title: `Govtech Africa | Automating Government Processes`,
+	// description: `African technology for Government Excellence`,
+	description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
+    	Engage and Deliver.`,
 	keywords: [
 		'Govtech Africa',
+		'Policy Round-table',
+		'Policy Round table',
+		'National Govtech Policy Round-table',
+		'National Govtech',
 		'Government technology Africa',
 		'Digital transformation public sector Africa',
 		'African digital governance conference',
@@ -45,13 +52,15 @@ export const metadata: Metadata = {
 	publisher: "Govtech Africa",
 	openGraph: {
 		title: `Govtech Africa | Automating Government Processes`,
-		description: `African technology for Government Excellence`,
+		description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
+    		Engage and Deliver.`,
 		url: baseUrl,
 		type: 'website',
 		siteName: 'Govtech Africa',
 		images: [
 			{
-				url: 'https://govtechafrica.com/images/opengraph_image.png',
+				// url: 'https://govtechafrica.com/images/opengraph_image.png',
+				url: 'https://govtechafrica.com/images/NPGR.png',
 				width: 1200,
 				height: 630,
 				alt: 'Govtech Africa',
@@ -61,10 +70,11 @@ export const metadata: Metadata = {
 	twitter: {
 		card: 'summary_large_image',
 		title: `Govtech Africa | Automating Government Processes`,
-		description: `African technology for Government Excellence`,
+		description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
+    		Engage and Deliver.`,
 		images: [
 			{
-				url: 'https://govtechafrica.com/images/opengraph_image.png',
+				url: 'https://govtechafrica.com/images/NPGR.png',
 				width: 1200,
 				height: 630,
 				// width: 800,
