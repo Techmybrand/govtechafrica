@@ -222,6 +222,9 @@
             }
             .about_label {
                 margin-bottom: 1.6rem;
+                p {
+                    font-size: 1.4rem;
+                }
             }
             .register {
                 margin-top: 2.4rem;
@@ -272,6 +275,9 @@
             }
             .about_label {
                 margin-bottom: 0.8rem;
+                p {
+                    font-size: 1.2rem;
+                }
             }
             .register {
                 grid-template-columns: 1fr;
@@ -279,13 +285,16 @@
                 margin-top: 0;
                 .form_container {
                     padding: 0 0 2.4rem;
+                    border: 0;
                     .form_content {
                         form {
-                            gap: 1.6rem;
+                            width: 92.5%;
+                            margin: 0 auto;
+                            gap: 1rem;
                             .group, .single {
                                 @include grid(repeat(1, 1fr), 1.6rem, 1rem);
                                 .text_area_field {
-                                    height: 24rem!important;
+                                    height: 17rem!important;
                                 }
                                 .input_field {
                                     padding-block: 0!important;
@@ -310,10 +319,22 @@
                     .details {
                         margin-block: 2.4rem;
                         .detail {
+                            .icon_bg {
+                                width: 3rem;
+                                height: 3rem;
+                                .icon {
+                                    width: 1.5rem;
+                                    height: 1.5rem;
+                                }
+                            }
                             .detail_text {
+                                width: 100%;
                                 p {
-                                    width: 90%!important;
+                                    width: 95%!important;
                                     font-size: 1rem;
+                                    &[data-index = "0"], &[data-index = "1"] {
+                                        width: 100%!important;
+                                    }
                                 }
                             }
                         }

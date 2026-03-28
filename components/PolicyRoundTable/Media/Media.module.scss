@@ -298,7 +298,9 @@
                     padding: 0 0 2.4rem;
                     .form_content {
                         form {
-                            gap: 1.6rem;
+                            width: 92.5%;
+                            margin: 0 auto;
+                            gap: 1rem;
                             .group, .single {
                                 @include grid(repeat(1, 1fr), 1.6rem, 1rem);
                                 .text_area_field {

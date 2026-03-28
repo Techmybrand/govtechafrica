@@ -25,7 +25,7 @@
                 text-transform: uppercase;
                 color: #FFF;
                 font-size: 1.2rem;
-                line-height: 1.6rem;
+                line-height: 1.8rem;
                 width: fit-content;
                 margin: 0 auto;
             }
@@ -151,7 +151,7 @@
                     margin-top: 2.4rem;
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 2.4rem;
+                    gap: 1.4rem;
                     .collaborator {
                         gap: 0.8rem;
                         height: 5.6rem;
@@ -161,13 +161,16 @@
                                     object-fit: contain!important;
                                 }
                                 &[data-index = "0"] {
-                                    width: 14rem;
+                                    width: 9rem;
+                                    height: 4rem;
                                 }
                                 &[data-index = "1"] {
-                                    width: 18rem;
+                                    width: 12rem;
+                                    height: 4rem;
                                 }
                                 &[data-index = "2"] {
-                                    width: 14rem;
+                                    width: 9rem;
+                                    height: 4rem;
                                 }
                             }
                         }

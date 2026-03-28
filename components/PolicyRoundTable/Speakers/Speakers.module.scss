@@ -177,12 +177,17 @@
                         line-height: 1.6rem;
                     }
                     .speaker_card_container {
-                        @include grid(repeat(2, 1fr), 2rem, 3.6rem);
+                        // @include grid(repeat(2, 1fr), 2rem, 3.6rem);
+                        display: flex;
+                        overflow-x: scroll;
+                        gap: 1rem;
                         .speaker_card {
+                            flex-shrink: 0;
+                            width: 40%;
                             h2 {
                                 width: 100%;
-                                font-size: 1.4rem;
-                                line-height: 2rem;
+                                font-size: 1.2rem;
+                                line-height: 1.6rem;
                             }
                             .initials {
                                 height: 17rem;

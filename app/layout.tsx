@@ -21,10 +21,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
 	metadataBase: new URL(baseUrl),
 	title: `Govtech Africa | Automating Government Processes`,
-	// title: `Govtech Africa | Automating Government Processes`,
-	// description: `African technology for Government Excellence`,
-	description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
-    	Engage and Deliver.`,
+	description: `African technology for Government Excellence`,
 	keywords: [
 		'Govtech Africa',
 		'Policy Round-table',
@@ -59,8 +56,8 @@ export const metadata: Metadata = {
 		siteName: 'Govtech Africa',
 		images: [
 			{
-				// url: 'https://govtechafrica.com/images/opengraph_image.png',
-				url: 'https://govtechafrica.com/images/NPGR.png',
+				url: 'https://govtechafrica.com/images/opengraph_image.png',
+				// url: 'https://govtechafrica.com/images/NPGR.png',
 				width: 1200,
 				height: 630,
 				alt: 'Govtech Africa',
@@ -74,7 +71,7 @@ export const metadata: Metadata = {
     		Engage and Deliver.`,
 		images: [
 			{
-				url: 'https://govtechafrica.com/images/NPGR.png',
+				url: 'https://govtechafrica.com/images/opengraph_image.png',
 				width: 1200,
 				height: 630,
 				// width: 800,
