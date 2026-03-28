@@ -68,6 +68,7 @@ const Media = () => {
                             a curated, high-level convening, media access will be granted on 
                             an accreditation basis to ensure a controlled and productive 
                             environment.<br />
+                            <br />
                             Accredited media will have the opportunity to:
                         </p>
                         <ul className={styles.details}>

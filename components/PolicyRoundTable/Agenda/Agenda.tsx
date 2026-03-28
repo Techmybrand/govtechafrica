@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./Agenda.module.scss";
 
@@ -122,7 +123,17 @@ const Agenda = () => {
       title: `Tour of the National Assembly Library and Resource Centre`,
       subtext: ``
     },
-  ]
+  ];
+  const handleDownload = () => {
+    const link = document.createElement("a")
+    link.href = "/pdfs/NGPR-Progamme-of-Events.pdf"
+    link.download = "programme_of_events.pdf"
+    link.target = "_blank"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <section id="agenda" className={styles.agenda_section}>
       <div className={styles.agenda_container}>
@@ -166,7 +177,7 @@ const Agenda = () => {
               </div>
             )}
           </div>
-          <div className={styles.title}>
+          <div onClick={handleDownload} className={styles.title}>
             <h3>Download Detailed Agenda</h3>
           </div>
         </div>

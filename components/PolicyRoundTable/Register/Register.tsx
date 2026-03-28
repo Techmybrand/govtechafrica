@@ -77,7 +77,7 @@ const Register = () => {
         const result = await res.json();
         if (result.status === "success") {
           toast.success("Registration successful! Check your email for confirmation.");
-          e.currentTarget.reset();
+          // e.currentTarget.reset();
         } else {
           toast.error("Submission failed. Please try again.");
         }

@@ -28,9 +28,19 @@ const PolicyRoundTableView = () => {
             <About />
             <div className={styles.slider_container}>
                 <h3 className={styles.h3}>participating organisations</h3>
-                <Carousel direction="right" speed="slow" items={images}
-                    className={styles.carousel_image}
-                />
+                <div className={styles.slider_content}>
+                    <Carousel direction="right" speed="slow" items={images}
+                        className={styles.carousel_image}
+                    />
+                </div>
+                <div className={styles.slider_content_sm}>
+                    <Carousel direction="left" speed="slow" items={images.slice(0, 7)}
+                        className={styles.carousel_image}
+                    />
+                    <Carousel direction="right" speed="slow" items={images.slice(7)}
+                        className={styles.carousel_image}
+                    />
+                </div>
             </div>
             <Agenda />
             <Speakers />

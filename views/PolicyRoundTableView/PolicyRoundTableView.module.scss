@@ -3,14 +3,19 @@
 .slider_container {
     width: 100%;
     .h3 {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
         color: #FFF;
         text-align: center;
         font-family: $font;
-        font-weight: 700;
         margin: 0 auto;
         text-transform: uppercase;
+    }
+    .slider_content {
+        display: block;
+    }
+    .slider_content_sm {
+        display: none;
     }
     & > div {
         margin: -3.2rem 0 6rem!important;
@@ -64,6 +69,12 @@
     @include screenMax("mobile") {
         & > div {
             margin: 3.2rem 0!important;
+        }
+        .slider_content {
+            display: none;
+        }
+        .slider_content_sm  {
+            display: block;
         }
     }
 }
