@@ -48,90 +48,46 @@ const Register = () => {
   // ]
   // const [selectFieldValue,] = useState<string>("");
   // const onOptionChange = (option: string) => setSelectFieldValue(option);
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   const formData = new FormData(e.currentTarget);
-  //   const endpoint = `https://script.google.com/a/macros/govtechafrica.com/s/AKfycby8r8lauu4rjSwQgANTVhfMtCzGiz9U1JJtBtyfLzg-hqs_MsE33hgJ4LK49ZDEkJOsCA/exec`
-    
-  //   const payload = {
-  //     firstName: formData.get("firstName"),
-  //     otherNames: formData.get("otherNames"),
-  //     email: formData.get("email"),
-  //     phoneNumber: formData.get("phoneNumber"),
-  //     organisation: formData.get("organisation"),
-  //     designation: formData.get("designation"),
-  //     sector: '',
-  //     // sector: formData.get("sector"),
-  //     // panelSession: formData.get("panelSession"),
-  //     // panelSession: selectFieldValue,
-  //     additionalNotes: formData.get("additionalNotes"),
-  //   };
-
-  //   try {
-  //     const res = await fetch(endpoint, {
-  //       method: "POST",
-  //       body: JSON.stringify(payload),
-  //       headers: { 
-  //         // "Content-Type": "application/json"
-  //         "Content-Type": "text/plain;charset=utf-8"
-  //       },
-  //     });
-
-  //     if (res.ok) {
-  //       toast.success("Registration successful! Check your email for confirmation.");
-  //       // e.currentTarget.reset();
-  //     }
-  //     console.log('payload: ', payload);
-  //     // console.log('endpoint: ', endpoint);
-  //     // console.log('res: ', res);
-  //     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  //   } catch (err: any) {
-  //     console.log('err: ', err)
-  //     toast.error("Something went wrong. Please try again.");
-  //   }
-  // };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  const formData = new FormData(e.currentTarget);
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      firstName: formData.get("firstName"),
+      otherNames: formData.get("otherNames"),
+      email: formData.get("email"),
+      phoneNumber: formData.get("phoneNumber"),
+      organisation: formData.get("organisation"),
+      designation: formData.get("designation"),
+      sector: "",
+      additionalNotes: formData.get("additionalNotes") ?? "",
+    };
+    const endpoint = `https://script.google.com/macros/s/AKfycbxldJzdbOfxr8zmlk9M5u_5uqdRXP0KzkyoQYhLwptNWWM6dXDa4kxDN6L2BfMkreBBfg/exec`
 
-  const payload = {
-    firstName: formData.get("firstName"),
-    otherNames: formData.get("otherNames"),
-    email: formData.get("email"),
-    phoneNumber: formData.get("phoneNumber"),
-    organisation: formData.get("organisation"),
-    designation: formData.get("designation"),
-    sector: "",
-    additionalNotes: formData.get("additionalNotes") ?? "",
-  };
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify(payload),
+      });
 
-  const endpoint = `https://script.google.com/macros/s/AKfycby8r8lauu4rjSwQgANTVhfMtCzGiz9U1JJtBtyfLzg-hqs_MsE33hgJ4LK49ZDEkJOsCA/exec`;
-
-  try {
-    const res = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    if (res.ok) {
-      const result = await res.json();
-      if (result.status === "success") {
-        toast.success("Registration successful! Check your email for confirmation.");
-        // e.currentTarget.reset();
+      if (res.ok) {
+        const result = await res.json();
+        if (result.status === "success") {
+          toast.success("Registration successful! Check your email for confirmation.");
+          e.currentTarget.reset();
+        } else {
+          toast.error("Submission failed. Please try again.");
+        }
       } else {
-        toast.error("Submission failed. Please try again.");
+        toast.error("Something went wrong. Please try again.");
       }
-    } else {
-      toast.error("Something went wrong. Please try again.");
+    } catch (err) {
+      console.error("Submission error:", err);
+      toast.error("Network error. Please check your connection.");
     }
-  } catch (err) {
-    console.error("Submission error:", err);
-    toast.error("Network error. Please check your connection.");
-  }
 };
 
   return (
