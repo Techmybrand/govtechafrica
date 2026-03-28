@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         description: 'Register to attend the premier govtech policy event in Africa.',
         images: [
             {
-                url: 'https://govtechafrica.com/og-policy-roundtable.jpg',
+                url: 'https://govtechafrica.com/policy_opengraph.png',
                 width: 1200,
                 height: 630,
                 alt: 'Govtech Policy Roundtable 2026',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        images: ['https://govtechafrica.com/og-policy-roundtable.jpg'],
+        images: ['https://govtechafrica.com/policy_opengraph.png'],
     },
 };
 
