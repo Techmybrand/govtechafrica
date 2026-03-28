@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { InputField, TextArea } from "@/shared";
+import { BeatLoader } from "react-spinners";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import styles from "./Register.module.scss";
@@ -48,6 +49,14 @@ const Register = () => {
   // ]
   // const [selectFieldValue,] = useState<string>("");
   // const onOptionChange = (option: string) => setSelectFieldValue(option);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [additionalNotes, setAdditionalNotes] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [otherNames, setOtherNames] = useState<string>("");
+  const [emailAddress, setEmailAddress] = useState<string>("");
+  const [phoneNum, setPhoneNum] = useState<string>("");
+  const [organisation, setOrganisation] = useState<string>("");
+  const [designation, setDesignation] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -63,7 +72,7 @@ const Register = () => {
       additionalNotes: formData.get("additionalNotes") ?? "",
     };
     const endpoint = `https://script.google.com/macros/s/AKfycbxldJzdbOfxr8zmlk9M5u_5uqdRXP0KzkyoQYhLwptNWWM6dXDa4kxDN6L2BfMkreBBfg/exec`
-
+    setLoading(true);
     try {
       const res = await fetch(endpoint, {
         method: "POST",
@@ -77,7 +86,15 @@ const Register = () => {
         const result = await res.json();
         if (result.status === "success") {
           toast.success("Registration successful! Check your email for confirmation.");
-          // e.currentTarget.reset();
+          setAdditionalNotes("");
+          setFirstName("");
+          setOtherNames("");
+          setEmailAddress("");
+          setPhoneNum("");
+          setOrganisation("");
+          setDesignation("");
+        } else if (result.status === "duplicate") {
+          toast.error(result.message || "You have already registered with this email.");
         } else {
           toast.error("Submission failed. Please try again.");
         }
@@ -87,6 +104,8 @@ const Register = () => {
     } catch (err) {
       console.error("Submission error:", err);
       toast.error("Network error. Please check your connection.");
+    } finally {
+      setLoading(false);
     }
 };
 
@@ -129,24 +148,21 @@ const Register = () => {
           </div>
           <div className={styles.form_container}>
             <div className={styles.form_content}>
-              {/* <h3>Secure Your Place</h3>
-              <p className={styles.p}>
-                Complete the form below. A confirmation will be sent to your email upon 
-                successful registration.
-              </p> */}
               <form onSubmit={handleSubmit} className={styles.form_wrapper}>
                 <div className={styles.group}>
                   <div className={styles.name}>
                     <label htmlFor="firstName">First Name </label>
                     <InputField placeholder="Enter name" type="text"
                       className={styles.input_field} name="firstName" id="firstName"
-                      required
+                      required value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
                     />
                   </div>
                   <div className={styles.name}>
                     <label htmlFor="otherNames">Other Names</label>
                     <InputField placeholder="Enter other names" id="otherNames"
                       className={styles.input_field} name="otherNames" type="text"
+                      value={otherNames} onChange={(e) => setOtherNames(e.target.value)}
                     />
                   </div>
                 </div>
@@ -155,14 +171,16 @@ const Register = () => {
                     <label htmlFor="email">Email Address</label>
                     <InputField placeholder="Enter your email" type="email"
                       className={styles.input_field} name="email" id="email"
-                      required
+                      required value={emailAddress}
+                      onChange={(e) => setEmailAddress(e.target.value)}
                     />
                   </div>
                   <div className={styles.name}>
                     <label htmlFor="phoneNumber">phone number</label>
                     <InputField placeholder="Enter your phone number"
                       className={styles.input_field} name="phoneNumber" id="phoneNumber"
-                      required
+                      required value={phoneNum}
+                      onChange={(e) => setPhoneNum(e.target.value)}
                     />
                   </div>
                 </div>
@@ -171,14 +189,16 @@ const Register = () => {
                     <label htmlFor="organisation">organisation / institution</label>
                     <InputField placeholder="Ministry / Agency / Company"
                       className={styles.input_field} name="organisation" id="organisation"
-                      required
+                      required value={organisation}
+                      onChange={(e) => setOrganisation(e.target.value)}
                     />
                   </div>
                   <div className={styles.name}>
                     <label htmlFor="designation">Designation / title</label>
                     <InputField placeholder="Enter your designation"
                       className={styles.input_field} name="designation" id="designation"
-                      required
+                      required value={designation}
+                      onChange={(e) => setDesignation(e.target.value)}
                     />
                   </div>
                 </div>
@@ -198,11 +218,18 @@ const Register = () => {
                   <label htmlFor="additionalNotes">Additional notes or requirements</label>
                     <TextArea placeholder="Accessibility needs, dietary restrictions or any additional information..."
                       name="additionalNotes" id="additionalNotes"
-                      textClassName={styles.text_area_field}
+                      textClassName={styles.text_area_field} value={additionalNotes}
+                      onChange={(e) => setAdditionalNotes(e.target.value)}
                     />
                 </div>
-                <button type="submit" className={styles.submit_btn}>
-                  <h3>submit registration</h3>
+                <button type="submit" className={styles.submit_btn} disabled={loading}>
+                  <h3>
+                    {loading ?
+                      <BeatLoader color="white"></BeatLoader>
+                    : 
+                      "submit registration"
+                    }
+                  </h3>
                 </button>
               </form>
             </div>
