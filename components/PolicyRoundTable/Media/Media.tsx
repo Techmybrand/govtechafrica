@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { InputField } from "@/shared";
-// import toast from "react-hot-toast";
+import { BeatLoader } from "react-spinners";
 import styles from "./Media.module.scss";
 import Image from "next/image";
 import toast from "react-hot-toast";
@@ -15,6 +15,12 @@ const Media = () => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [fileName, setFileName] = useState<string>("");
+    const [firstName, setFirstName] = useState<string>("");
+    const [otherNames, setOtherNames] = useState<string>("");
+    const [emailAddress, setEmailAddress] = useState<string>("");
+    const [phoneNum, setPhoneNum] = useState<string>("");
+    const [organisation, setOrganisation] = useState<string>("");
+    const [designation, setDesignation] = useState<string>("");
     const fileToBase64 = (file: File): Promise<string> => {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -70,8 +76,15 @@ const Media = () => {
 
             if (res.ok && result.status === "success") {
                 toast.success("Media registration submitted successfully!");
-                // e.currentTarget.reset();
                 setFileName("");
+                setFirstName("");
+                setOtherNames("");
+                setEmailAddress("");
+                setPhoneNum("");
+                setOrganisation("");
+                setDesignation("");
+            } else if (result.status === "duplicate") {
+                toast.error(result.message || "You have already registered with this email.");
             } else {
                 toast.error("Submission failed. Please try again.");
             }
@@ -129,14 +142,16 @@ const Media = () => {
                                         <label htmlFor="firstName">First Name</label>
                                         <InputField placeholder="Enter your first names" type="text"
                                             className={styles.input_field} name="firstName" id="firstName"
-                                            required
+                                            required value={firstName}
+                                            onChange={(e) => setFirstName(e.target.value)}
                                         />
                                     </div>
                                     <div className={styles.name}>
                                         <label htmlFor="otherNames">Other Names</label>
                                         <InputField placeholder="Enter other names" type="text"
                                             className={styles.input_field} name="otherNames" id="otherNames"
-                                            required
+                                            required value={otherNames}
+                                            onChange={(e) => setOtherNames(e.target.value)}
                                         />
                                     </div>
                                 </div>
@@ -145,14 +160,16 @@ const Media = () => {
                                         <label htmlFor="email">Email Address</label>
                                         <InputField placeholder="Enter your email" type="email"
                                             className={styles.input_field} name="email" id="email"
-                                            required
+                                            required value={emailAddress}
+                                            onChange={(e) => setEmailAddress(e.target.value)}
                                         />
                                     </div>
                                     <div className={styles.name}>
                                         <label htmlFor="phoneNumber">phone number</label>
                                         <InputField placeholder="Enter your phone number"
                                             className={styles.input_field} name="phoneNumber" id="phoneNumber"
-                                            required
+                                            required value={phoneNum}
+                                            onChange={(e) => setPhoneNum(e.target.value)}
                                         />
                                     </div>
                                 </div>
@@ -161,14 +178,16 @@ const Media = () => {
                                         <label htmlFor="organisation">media organisation</label>
                                         <InputField placeholder="Organization name"
                                             className={styles.input_field} name="organisation" id="organisation"
-                                            required
+                                            required value={organisation}
+                                            onChange={(e) => setOrganisation(e.target.value)}
                                         />
                                     </div>
                                     <div className={styles.name}>
                                         <label htmlFor="designation">Designation</label>
                                         <InputField placeholder="Enter your designation"
                                             className={styles.input_field} name="designation" id="designation"
-                                            required
+                                            required value={designation}
+                                            onChange={(e) => setDesignation(e.target.value)}
                                         />
                                     </div>
                                     <div className={styles.name_upload}>
@@ -190,7 +209,13 @@ const Media = () => {
                                 <button type="submit" disabled={loading}
                                     className={styles.submit_btn}
                                 >
-                                    <h3>{loading ? "submitting..." : "submit registration"}</h3>
+                                    <h3>
+                                        {loading ?
+                                            <BeatLoader color="white"></BeatLoader>
+                                        : 
+                                            "submit registration"
+                                        }
+                                    </h3>
                                 </button>
                             </form>
                         </div>
