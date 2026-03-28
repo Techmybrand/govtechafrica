@@ -1,4 +1,5 @@
 import { cookiesPolicyDataProps, NavLink, PrivacyPolicyProps, TechnologyProps } from "@/interfaces";
+// import { FaTiktok } from "react-icons/fa";
 
 export const navLinks: NavLink[] = [
 	{

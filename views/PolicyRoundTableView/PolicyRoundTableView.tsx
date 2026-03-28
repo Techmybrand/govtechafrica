@@ -27,7 +27,7 @@ const PolicyRoundTableView = () => {
             <GreenSection />
             <About />
             <div className={styles.slider_container}>
-                <h3 className={styles.h3}>partipating organisations</h3>
+                <h3 className={styles.h3}>participating organisations</h3>
                 <Carousel direction="right" speed="slow" items={images}
                     className={styles.carousel_image}
                 />
