@@ -26,7 +26,7 @@ const PolicyRoundTableView = () => {
 
     return (
         <React.Fragment>
-            <Hero />
+            <Hero type="default" />
             <GreenSection />
             <About />
             <div className={styles.slider_container}>
