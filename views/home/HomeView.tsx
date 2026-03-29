@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Hero } from "@/shared";
 import { Growth, Drivers, CenterPiece, Mission, Research } from "@/components/home";
-// import { HomeHero } from "@/components/PolicyRoundTable";
+import { Hero as NGPRHero } from "@/components/PolicyRoundTable";
 import { CookiesModal } from "@/shared/Modals";
 import styles from "./HomeView.module.scss";
 
@@ -32,6 +32,7 @@ const HomeView = () => {
 				href="/what-we-do"
 				backgroundImage=""
 			/>
+			<NGPRHero type="home" />
 			{/* <HomeHero /> */}
 			<Research />
 			<Growth />

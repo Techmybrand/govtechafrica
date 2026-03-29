@@ -4,11 +4,19 @@ import { Button } from "@/shared";
 import styles from "./Hero.module.scss";
 import Image from "next/image";
 
-const Hero = () => {
+interface HeroProps {
+  type: 'default' | 'home'
+}
+
+const Hero = ({ type = "default" }: HeroProps) => {
   const details = [
     {
       name: 'Date',
       title: '30th March, 2026',
+    },
+    {
+      name: 'Venue',
+      title: 'National Assembly Library and Resource Centre, Three Arms Zone, FCT-Abuja',
     },
     {
       name: 'Time',
@@ -68,9 +76,15 @@ const Hero = () => {
               </div>
             )}
           {/* </div> */}
-          <Button className={styles.btn} href="#register">
-            Register to Attend Virtually
-          </Button>
+          {type === "default" ? (
+            <Button className={styles.btn} href="#register">
+              Register to Attend Virtually
+            </Button>
+          ) : (
+            <Button className={styles.btn} href="/policy-roundtable">
+              Learn More
+            </Button>)
+          }
         </div>
       </div>
     </section>

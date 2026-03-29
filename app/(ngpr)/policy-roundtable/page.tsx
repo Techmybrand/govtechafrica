@@ -1,18 +1,25 @@
-import type { Metadata } from 'next';
+import { PolicyRoundTableView } from "@/views";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://govtechafrica.com/policy-roundtable"),
     title: 'National Govtech Policy Roundtable 2026',
     description: `Digital First Governance: Rethinking How Nigerian Governments Serve, Engage and Deliver.`,
     keywords: [
         'Govtech Africa',
         'Policy Round-table',
         'Policy Round table',
-        'National Govtech Policy Round-table',
+        'National Govtech Policy Roundtable',
+        'National Govtech Policy Roundtable 2026',
         'National Govtech',
     ],
     openGraph: {
         title: 'National Govtech Policy Roundtable 2026',
-        description: 'Register to attend the premier govtech policy event in Africa.',
+        description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
+            Engage and Deliver.`,
+        url: "https://govtechafrica.com/policy-roundtable",
+		type: 'website',
+		siteName: 'Govtech Africa',
         images: [
             {
                 url: 'https://govtechafrica.com/policy_opengraph.png',
@@ -21,16 +28,17 @@ export const metadata: Metadata = {
                 alt: 'Govtech Policy Roundtable 2026',
             },
         ],
-        siteName: 'GovTech Africa',
-        type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        images: ['https://govtechafrica.com/policy_opengraph.png'],
+        title: 'National Govtech Policy Roundtable 2026',
+        description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
+            Engage and Deliver.`,
+        images: [
+            'https://govtechafrica.com/policy_opengraph.png'
+        ],
     },
 };
-
-import { PolicyRoundTableView } from "@/views";
 
 export default function PolicyRoundTablePage() {
     return <PolicyRoundTableView />

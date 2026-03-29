@@ -92,6 +92,7 @@
 			order: 3;
 		}
 	}
+
 	@include screenMax("mobile") {
 		.footer_content {
 			flex-direction: column;
@@ -99,8 +100,8 @@
 				width: 100%;
 				.logo_and_socials {
 					display: flex;
-					align-items: center;
-					justify-content: space-between;
+					align-items: flex-start;
+					flex-direction: column;
 					width: 100%;
 				}
 				.socials {
@@ -118,6 +119,10 @@
 						font-size: 1rem;
 					}
 				}
+			}
+			.footer_navSection {
+				width: 100%;
+				justify-content: space-between;
 			}
 		}
 	}
