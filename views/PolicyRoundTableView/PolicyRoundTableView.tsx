@@ -32,7 +32,7 @@ const PolicyRoundTableView = () => {
             <div className={styles.slider_container}>
                 <h3 className={styles.h3}>participating organisations</h3>
                 <div className={styles.slider_content}>
-                    <Carousel direction="right" speed="slow" items={images}
+                    <Carousel direction="right" speed="normal" items={images}
                         className={styles.carousel_image}
                     />
                 </div>

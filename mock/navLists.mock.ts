@@ -813,7 +813,7 @@ export const sections = [
 				org: 'Ministry of Communications, Innovation & Digital Economy',
 			},
 			{
-				initials: '/images/HN.png',
+				initials: '/images/HN.jpeg',
 				name: 'Hon. Henry Nwawuba',
 				role: 'Keynote / Formal Opening',
 				position: 'Executive Secretary',

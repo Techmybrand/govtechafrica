@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 		siteName: 'Govtech Africa',
         images: [
             {
-                url: 'https://govtechafrica.com/policy_opengraph.png',
+                url: 'https://govtechafrica.com/images/policy_opengraph.png',
                 width: 1200,
                 height: 630,
                 alt: 'Govtech Policy Roundtable 2026',
@@ -35,7 +35,14 @@ export const metadata: Metadata = {
         description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
             Engage and Deliver.`,
         images: [
-            'https://govtechafrica.com/policy_opengraph.png'
+            {
+				url: 'https://govtechafrica.com/images/policy_opengraph.png',
+				width: 1200,
+				height: 630,
+				// width: 800,
+				// height: 418,
+				alt: 'Govtech Africa',
+			}
         ],
     },
 };
