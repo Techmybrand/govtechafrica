@@ -4,7 +4,6 @@ import Image from "next/image";
 import { sections } from "@/mock/navLists.mock";
 
 const Speakers = () => {
-  
   return (
     <section id="speakers" className={styles.about_section}>
       <div className={styles.about_container}>

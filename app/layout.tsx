@@ -49,8 +49,7 @@ export const metadata: Metadata = {
 	publisher: "Govtech Africa",
 	openGraph: {
 		title: `Govtech Africa | Automating Government Processes`,
-		description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
-    		Engage and Deliver.`,
+		description: `African technology for Government Excellence`,
 		url: baseUrl,
 		type: 'website',
 		siteName: 'Govtech Africa',
@@ -67,8 +66,7 @@ export const metadata: Metadata = {
 	twitter: {
 		card: 'summary_large_image',
 		title: `Govtech Africa | Automating Government Processes`,
-		description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
-    		Engage and Deliver.`,
+		description: `African technology for Government Excellence`,
 		images: [
 			{
 				url: 'https://govtechafrica.com/images/opengraph_image.png',

@@ -19,11 +19,14 @@ const PolicyRoundTableView = () => {
         '/images/nibbs_logo.png',
         '/images/OHCSF.png',
         '/images/supreme_court.png',
+        "/images/UNDP.png",
+        "/images/Rwanda.png",
+        "/images/Finland.jpeg"
     ]
 
     return (
         <React.Fragment>
-            <Hero />
+            <Hero type="default" />
             <GreenSection />
             <About />
             <div className={styles.slider_container}>
@@ -34,10 +37,10 @@ const PolicyRoundTableView = () => {
                     />
                 </div>
                 <div className={styles.slider_content_sm}>
-                    <Carousel direction="left" speed="slow" items={images.slice(0, 7)}
+                    <Carousel direction="left" speed="slow" items={images.slice(0, 9)}
                         className={styles.carousel_image}
                     />
-                    <Carousel direction="right" speed="slow" items={images.slice(7)}
+                    <Carousel direction="right" speed="slow" items={images.slice(9)}
                         className={styles.carousel_image}
                     />
                 </div>

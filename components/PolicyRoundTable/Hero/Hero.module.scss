@@ -2,7 +2,7 @@
 
 .hero_section {
 	width: 100%;
-    min-height: 90vh;
+    min-height: 80vh;
     padding-top: 16rem!important;
     padding-inline: 4rem!important;
     .hero_container {
@@ -84,7 +84,7 @@
         }
         .hero_content_bottom {
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 13.5rem;
+            gap: 6.5rem;
             .detail {
                 width: 100%;
                 p {
@@ -103,10 +103,12 @@
                     font-weight: 500;
                     color: #FFF;
                     width: max-content;
+                    max-width: 45rem;
                 }
             }
             .btn {
                 height: 5.6rem;
+                width: fit-content!important;
                 & > p {
                     font-size: 1.6rem!important;
                     font-weight: 600!important;
@@ -119,6 +121,9 @@
         height: 0.1rem;
         margin: 4.8rem -4rem;
         background: rgba($col-white, 0.2);
+    }
+    &[data-type = "home"] {
+        min-height: 60vh;
     }
 
     @include screenMax("tablet") {
@@ -174,6 +179,12 @@
             .hero_content_bottom {
                 gap: 4rem;
                 max-width: 100%;
+                .detail {
+                    h4 {
+                        font-size: 1.8rem;
+                        line-height: 2.7rem;
+                    }
+                }
             }
         }
         .divider {
