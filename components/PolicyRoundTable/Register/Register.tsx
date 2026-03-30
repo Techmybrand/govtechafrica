@@ -71,7 +71,8 @@ const Register = () => {
       sector: "",
       additionalNotes: formData.get("additionalNotes") ?? "",
     };
-    const endpoint = `https://script.google.com/macros/s/AKfycbxldJzdbOfxr8zmlk9M5u_5uqdRXP0KzkyoQYhLwptNWWM6dXDa4kxDN6L2BfMkreBBfg/exec`
+    // const endpoint = `https://script.google.com/macros/s/AKfycbxldJzdbOfxr8zmlk9M5u_5uqdRXP0KzkyoQYhLwptNWWM6dXDa4kxDN6L2BfMkreBBfg/exec`
+    const endpoint = `https://script.google.com/macros/s/AKfycbyk3saLaGb3Ns0BW-JFxx_5FMh_YFZxzSKn1VLxXZzRoWiqDNRs8815bNdgM5t-DfGryw/exec`
     setLoading(true);
     try {
       const res = await fetch(endpoint, {
@@ -163,6 +164,7 @@ const Register = () => {
                     <InputField placeholder="Enter other names" id="otherNames"
                       className={styles.input_field} name="otherNames" type="text"
                       value={otherNames} onChange={(e) => setOtherNames(e.target.value)}
+                      required
                     />
                   </div>
                 </div>

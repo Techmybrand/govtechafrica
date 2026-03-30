@@ -42,7 +42,7 @@ const Hero = ({ type = "default" }: HeroProps) => {
   //   },
   // ]
   return (
-    <section id="hero" className={styles.hero_section}>
+    <section data-type={type} id="hero" className={styles.hero_section}>
       <div className={styles.hero_container}>
         <div className={styles.hero_content}>
           <div className={styles.logo_and_btn}>
