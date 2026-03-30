@@ -126,7 +126,7 @@ const Agenda = () => {
   ];
   const handleDownload = () => {
     const link = document.createElement("a")
-    link.href = "/pdfs/NGPR-Progamme-of-Events.pdf"
+    link.href = "/pdfs/Progamme_of_Events.pdf"
     link.download = "programme_of_events.pdf"
     link.target = "_blank"
     document.body.appendChild(link)
