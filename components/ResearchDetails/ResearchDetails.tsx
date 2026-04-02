@@ -39,7 +39,6 @@ const ResearchDetails = () => {
     // console.log('blog: ', blog);
     const relatedContent = blogs?.filter((relatedBlog) => relatedBlog?.type === blog?.type && 
         relatedBlog?.slug !== blog?.slug) ?? [];
-    // console.log('related: ', relatedContent);
     const contentToShow = relatedContent.length ? relatedContent.slice(0, 4) :
         blogs?.reverse().filter((relatedBlog) => relatedBlog?.slug !== blog?.slug).slice(0, 4);
     

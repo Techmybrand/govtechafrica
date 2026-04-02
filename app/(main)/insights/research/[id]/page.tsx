@@ -6,6 +6,6 @@ interface ResearchPageProps {
 }
 
 export default async function ResearchPage({ params }: ResearchPageProps) {
-    console.log(params.id)
+    console.log('id: ', params.id);
     return <ResearchDetails />
 }

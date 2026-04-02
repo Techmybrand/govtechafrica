@@ -2,7 +2,7 @@
 import React from "react";
 import { BLOCKS, INLINES, MARKS, Document, Block, Inline } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-// import Accordion from "../Accordion/Accordion";
+import Accordion from "../Accordion/Accordion";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./RichText.module.scss";
@@ -68,9 +68,22 @@ const options: any = {
     [BLOCKS.HEADING_6]: (node: Block, children: React.ReactNode) => (
       <h6 className={styles.heading6}>{children}</h6>
     ),
-    [BLOCKS.UL_LIST]: (node: Block, children: React.ReactNode) => (
-      <ul className={styles.unordered_list}>{children}</ul>
-    ),
+    [BLOCKS.UL_LIST]: (node: Block, children: React.ReactNode) => {
+      const items = React.Children.toArray(children);
+      return (
+        <ul className={styles.unordered_list}>
+          {/* {children} */}
+          {items.map((child, index) => (
+            <Accordion
+              key={index}
+              type="default"
+              title={`${String(index + 1).padStart(2, '0')} - ${extractListItemTitle(child as React.ReactElement)}`}
+            >
+              {extractListItemContent(child as React.ReactElement)}
+            </Accordion>
+          ))}
+        </ul>
+      )},
     [BLOCKS.OL_LIST]: (node: Block, children: React.ReactNode) => (
       <ol className={styles.ordered_list}>{children}</ol>
     ),
@@ -126,6 +139,34 @@ const options: any = {
       );
     },
   },
+};
+
+const extractListItemTitle = (listItem: any): string => {
+  const paragraph = listItem.props.children?.[0];
+  if (!paragraph || typeof paragraph === 'string') return "";
+  const textNode = paragraph.props.children?.find((child: any) => 
+    typeof child === 'string' || (child && child.props?.children)
+  );
+
+  if (typeof textNode === 'string') return textNode;
+  if (textNode?.props?.children) {
+    return Array.isArray(textNode.props.children) 
+      ? textNode.props.children.join('') 
+      : textNode.props.children;
+  }
+  return "";
+};
+
+const extractListItemContent = (listItem: any): React.ReactNode => {
+  const paragraph = listItem?.props.children?.[0];
+  if (!paragraph) return null;
+  const children = paragraph.props.children || [];
+
+  if (Array.isArray(children) && children.length > 1) {
+    return children.slice(1);
+  }
+
+  return paragraph.props.children;
 };
 
 const RichText: React.FC<RichTextProps> = ({ content }: RichTextProps) => {
