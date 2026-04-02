@@ -182,8 +182,17 @@
 .unordered_list {
   list-style-type: disc!important;
   padding-left: 2.4rem;
-  margin-bottom: 3.2rem;
+  margin-block: 3.2rem;
   @extend %underline;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  width: 100%!important;
+  & > div {
+    border: none!important;
+    border-top: 0.1rem solid #D8D8D8!important;
+    border-bottom: 0.1rem solid #D8D8D8!important;
+  }
 }
 
 .ordered_list {
