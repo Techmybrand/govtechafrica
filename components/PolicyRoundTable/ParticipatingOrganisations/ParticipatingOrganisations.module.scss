@@ -1,0 +1,222 @@
+@import "@/styles/imports";
+
+.slider_container {
+    width: 100%;
+    .h3 {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        color: #FFF;
+        text-align: center;
+        font-family: $font;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+    .slider_content {
+        display: block;
+        .carousel_image {
+            position: relative;
+            flex-shrink: 0;
+            margin-right: 3.6rem;
+            width: 10rem;
+            height: 5.5rem;
+            &[data-index = "0"] {
+                width: 10.5rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "1"] {
+                width: 15rem!important;
+                height: 6.5rem!important;
+            }
+            &[data-index = "2"] {
+                width: 8.3rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "3"] {
+                width: 22rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "4"] {
+                width: 21rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "5"] {
+                width: 17rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "6"] {
+                width: 11rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "7"] {
+                width: 20rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "8"] {
+                width: 20rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "9"] {
+                width: 16.5rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "10"] {
+                width: 20rem!important;
+                height: 5.25rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "11"] {
+                width: 14rem!important;
+                height: 5.5rem!important;
+            }
+            &[data-index = "12"] {
+                width: 6.5rem!important;
+                height: 5.5rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "13"] {
+                width: 6rem!important;
+                height: 5.5rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "14"] {
+                width: 9.5rem!important;
+                height: 5.5rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "15"] {
+                width: 6rem!important;
+                height: 5.5rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "16"] {
+                width: 6rem!important;
+                height: 5.5rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "19"], &[data-index = "20"], &[data-index = "21"],
+            &[data-index = "22"] {
+                width: 6rem!important;
+                height: 5.5rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            & > img {
+                object-fit: cover;
+            }
+        }
+    }
+    .slider_content_sm {
+        display: none;
+    }
+    & > div {
+        margin: -3.2rem 0 6rem!important;
+    }
+
+    @include screenMax("tablet") {
+        .slider_content {
+            .carousel_image {
+                margin-right: 2.4rem;
+            }
+        }
+    }
+
+    @include screenMax("mobile") {
+        & > div {
+            margin: 3.2rem 0!important;
+        }
+        .slider_content {
+            display: none;
+        }
+        .slider_content_sm  {
+            display: block;
+            .carousel_image {
+                margin-right: 1.6rem;
+                height: 5rem;
+                &[data-index = "0"] {
+                width: 8.5rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "1"] {
+                width: 9rem!important;
+                height: 4rem!important;
+                }
+                &[data-index = "2"] {
+                width: 8.3rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "3"] {
+                width: 10rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "4"] {
+                width: 8rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "5"] {
+                width: 8rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "6"] {
+                width: 9rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "7"] {
+                width: 10.5rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "8"] {
+                width: 20rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "9"] {
+                width: 16.5rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "10"] {
+                width: 21rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "11"] {
+                width: 14rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "12"] {
+                width: 6.5rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "13"] {
+                width: 6rem!important;
+                height: 5rem!important;
+                }
+                &[data-index = "14"] {
+                width: 7rem!important;
+                height: 4.5rem!important;
+                }
+                &[data-index = "15"] {
+                width: 5rem!important;
+                height: 4.5rem!important;
+                }
+                &[data-index = "16"] {
+                width: 5rem!important;
+                height: 4.5rem!important;
+                }
+                & > img {
+                object-fit: contain!important;
+                }
+            }
+        }
+    }
+}

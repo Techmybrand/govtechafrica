@@ -46,13 +46,13 @@
 	line-height: 2.5rem;
 	font-weight: 500;
 	font-family: $font;
-	color: rgba($col-white, 1);
+	// color: rgba($col-white, 1);
 	width: 100%;
 	min-height: 2.4rem;
 	&::placeholder {
 		font-size: 1.4rem;
 		line-height: 2rem;
-		color: rgba($col-white, 0.6);
+		// color: rgba($col-white, 0.6);
 	}
 	@include screenMax("mobile") {
 		min-height: 2rem;

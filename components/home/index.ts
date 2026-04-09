@@ -9,4 +9,6 @@ import Partners from "./Partners/Partners";
 import Research from "./Research/Research";
 
 
-export { Growth, Drivers, CenterPiece, Choose, Insights, Mission, Research, Partners, NewsLetter };
+export { Growth, Drivers, CenterPiece, Choose, Insights, Mission, Research, Partners,
+    NewsLetter,
+};
