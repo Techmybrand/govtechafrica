@@ -105,10 +105,62 @@
                     object-fit: contain!important;
                 }
             }
-            &[data-index = "19"], &[data-index = "20"], &[data-index = "21"],
-            &[data-index = "22"] {
+            &[data-index = "20"], &[data-index = "21"], &[data-index = "22"] {
                 width: 6rem!important;
                 height: 5.5rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "19"] {
+                width: 9rem;
+                height: 5.5rem;
+            }
+            &[data-index = "24"] {
+                width: 9rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "25"] {
+                width: 13rem!important;
+                // & > img {
+                //     object-fit: contain!important;
+                // }
+            }
+            &[data-index = "26"] {
+                width: 9rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "27"] {
+                width: 13rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "28"] {
+                width: 9rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "29"] {
+                width: 9rem;
+                height: 5.5rem;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "30"] {
+                width: 14rem;
+                height: 5.5rem;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "31"] {
                 & > img {
                     object-fit: contain!important;
                 }
@@ -146,75 +198,116 @@
                 margin-right: 1.6rem;
                 height: 5rem;
                 &[data-index = "0"] {
-                width: 8.5rem!important;
-                height: 5rem!important;
+                    width: 8.5rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "1"] {
-                width: 9rem!important;
-                height: 4rem!important;
+                    width: 9rem!important;
+                    height: 4rem!important;
                 }
                 &[data-index = "2"] {
-                width: 8.3rem!important;
-                height: 5rem!important;
+                    width: 8.3rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "3"] {
-                width: 10rem!important;
-                height: 5rem!important;
+                    width: 10rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "4"] {
-                width: 8rem!important;
-                height: 5rem!important;
+                    width: 8rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "5"] {
-                width: 8rem!important;
-                height: 5rem!important;
+                    width: 8rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "6"] {
-                width: 9rem!important;
-                height: 5rem!important;
+                    width: 9rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "7"] {
-                width: 10.5rem!important;
-                height: 5rem!important;
+                    width: 10.5rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "8"] {
-                width: 20rem!important;
-                height: 5rem!important;
+                    width: 20rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "9"] {
-                width: 16.5rem!important;
-                height: 5rem!important;
+                    width: 16.5rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "10"] {
-                width: 21rem!important;
-                height: 5rem!important;
+                    width: 21rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "11"] {
-                width: 14rem!important;
-                height: 5rem!important;
+                    width: 14rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "12"] {
-                width: 6.5rem!important;
-                height: 5rem!important;
+                    width: 6.5rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "13"] {
-                width: 6rem!important;
-                height: 5rem!important;
+                    width: 6rem!important;
+                    height: 5rem!important;
                 }
                 &[data-index = "14"] {
-                width: 7rem!important;
-                height: 4.5rem!important;
+                    width: 7rem!important;
+                    height: 4.5rem!important;
                 }
                 &[data-index = "15"] {
-                width: 5rem!important;
-                height: 4.5rem!important;
+                    width: 5rem!important;
+                    height: 4.5rem!important;
                 }
                 &[data-index = "16"] {
-                width: 5rem!important;
-                height: 4.5rem!important;
+                    width: 5rem!important;
+                    height: 4.5rem!important;
                 }
+                &[data-index = "20"], &[data-index = "21"], &[data-index = "22"] {
+                width: 6rem!important;
+                height: 5.5rem!important;
                 & > img {
-                object-fit: contain!important;
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "19"] {
+                width: 9rem;
+                height: 5.5rem;
+            }
+            &[data-index = "24"] {
+                width: 9rem!important;
+                & > img {
+                    object-fit: contain!important;
+                }
+            }
+            &[data-index = "25"] {
+                width: 9rem!important;
+                height: 4.5rem!important;
+            }
+            &[data-index = "26"] {
+                width: 7rem!important;
+                height: 4.5rem!important;
+            }
+            &[data-index = "27"] {
+                width: 9rem!important;
+                height: 4.5rem!important;
+            }
+            &[data-index = "28"] {
+                width: 6.5rem!important;
+                height: 4.5rem!important;
+            }
+            &[data-index = "29"] {
+                width: 6.5rem!important;
+                height: 4.5rem!important;
+            }
+            &[data-index = "30"] {
+                width: 9.5rem!important;
+                height: 4.5rem!important;
+            }
+                & > img {
+                    object-fit: contain!important;
                 }
             }
         }

@@ -20,7 +20,7 @@ const ParticipatingOrganisations = () => {
         '/images/nibbs_logo.png',
         '/images/OHCSF.png',
         '/images/supreme_court.png',
-        "/images/UNDP.png",
+        "/images/undp_logo.png",
         "/images/Rwanda.png",
         "/svgs/finland.svg",
         "/images/3mtt.png",
