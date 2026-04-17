@@ -59,6 +59,11 @@
 					& > img {
 						object-fit: cover;
 					}
+					&[data-type="new"] {
+						& > img {
+							object-fit: contain;
+						}
+					}
 				}
 			}
 			.hero_content {
@@ -74,6 +79,7 @@
 					h3 {
 						font-size: 4.4rem;
 						line-height: 5.6rem;
+						text-align: center;
 					}
 					p {
 						max-width: 82.9rem;
@@ -86,6 +92,20 @@
 				.button_text > p {
 					font-weight: 600!important;
 					font-size: 1.4rem;
+				}
+				&[data-type="new"] {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					top: -50%;
+					.text {
+						margin: 0 auto;
+						max-width: 85%;
+						p {
+							text-align: center;
+						}
+					}
 				}
 			}
 		}
@@ -234,6 +254,11 @@
 					.hero_image {
 						& > video {
 							height: 90vh;
+						}
+						&[data-type="new"] {
+							& > img {
+								object-fit: cover;
+							}
 						}
 					}
 				}

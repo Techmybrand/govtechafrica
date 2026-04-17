@@ -1,0 +1,248 @@
+"use client";
+import React, { useRef } from "react";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
+// import { GrowthCard, GrowthCardMobile } from "./Growth";
+import styles from "./GrowthV2.module.scss";
+import { GrowthCardMobileProps, GrowthCardProps } from "@/interfaces";
+
+// const growthListColumn1 = [
+// 	{
+// 		value: "45",
+// 		label: "%",
+// 		description: "Of government institutions adopting cloud transformation for public service delivery"
+// 	},
+// 	{
+// 		value: "76",
+// 		label: "%",
+// 		description: "Already adopting cloud-based platforms for public service delivery as of 2024."
+// 	},
+// 	{
+// 		value: "70",
+// 		label: "%",
+// 		description: "African governments providing mobile-based public services."
+// 	}
+// ];
+
+// const growthListColumn2 = [
+// 	{
+// 		value: "4.6",
+// 		label: "bn",
+// 		currency: "$",
+// 		description: "The size of the African public sector IT market in 2023, projected to reach USD 7.8 billion by 2026."
+// 	},
+// 	{
+// 		value: "4",
+// 		label: "bn",
+// 		currency: "$",
+// 		description: "Cybersecurity investments projection by African governments in 2026."
+// 	},
+// 	{
+// 		value: "400",
+// 		label: "m",
+// 		currency: "$",
+// 		description: "in AI investments for public services in Africa by 2030"
+// 	}
+// ];
+const growthList = [
+	{
+		value: 35,
+		label: '%',
+		description: "Of government institutions adopting cloud transformation for public service delivery"
+	},
+	{
+		value: 76,
+		label: '%',
+		description: "Already adopting cloud-based platforms for public service delivery as of 2024."
+	},
+	{
+		value: 70,
+		label: '%',
+		description: "African governments providing mobile-based public services."
+	},
+	{
+		value: 4.6,
+		label: 'bn',
+		currency: '$',
+		description: "The size of the African public sector IT market in 2023, projected to reach USD 7.8 billion by 2026."
+	},
+	{
+		value: 1.1,
+		label: 'bn',
+		currency: '$',
+		description: "Cybersecurity investments projection by African governments in 2026."
+	},
+	{
+		value: 16.5,
+		label: 'bn',
+		currency: '$',
+		description: " in AI investments for public services in Africa  by 2030"
+	}
+];
+
+const GrowthV2 = () => {
+	const sectionRef = useRef<HTMLDivElement>(null);
+	const { scrollYProgress } = useScroll({
+		target: sectionRef,
+		offset: ["start end", "end 105%"]
+	});
+
+	const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+	const y = useSpring(rawY, {
+		stiffness: 100,
+		damping: 20,
+		mass: 0.5
+	});
+	const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+	const opacity = useSpring(rawOpacity, {
+		stiffness: 100,
+		damping: 20,
+		mass: 0.5
+	});
+	return (
+		// <div className={styles.section}>
+		// 	<div className={styles.section_container}>
+		// 		<div className={styles.text_side}>
+		// 			<h2>
+		// 				There is growing demand for technology in Africa&apos;s public sector - 
+		// 			</h2>
+		// 			<div className={styles.read_more}>
+		// 				<span>To read more on this, download our</span>
+		// 				<br />
+		// 				<span style={{ color: '#00E676', textDecoration: 'underline', cursor: 'pointer' }}>Govtech Africa Report 2024</span>
+		// 			</div>
+		// 		</div>
+				
+		// 		<div className={styles.stats_side}>
+		// 			<div className={styles.column}>
+		// 				{growthListColumn1.map((item, idx) => (
+		// 					<div key={idx} className={styles.stat_item}>
+        //                         <h3>
+        //                             {item.currency}{item.value}{item.label}
+        //                         </h3>
+		// 						<div className={styles.line}></div>
+		// 						<p>{item.description}</p>
+		// 					</div>
+		// 				))}
+		// 			</div>
+		// 			<div className={styles.column}>
+		// 				{growthListColumn2.map((item, idx) => (
+		// 					<div key={idx} className={styles.stat_item}>
+		// 						<h3>
+        //                             {item.currency}{item.value}{item.label}
+        //                         </h3>
+		// 						<div className={styles.line}></div>
+		// 						<p>{item.description}</p>
+		// 					</div>
+		// 				))}
+		// 			</div>
+		// 		</div>
+		// 	</div>
+		// </div>
+		<motion.div ref={sectionRef} className={styles.section}>
+			<div className={styles.section_container}>
+				<motion.div className={styles.text} style={{ y, opacity }}>
+					<h3>
+						There is growing demand for technology in Africa’s public sector - {" "}
+					</h3>
+					<p>
+						Govtech Africa <span>exists to lend a helping hand</span>
+					</p>
+				</motion.div>
+				<motion.div className={styles.grid}>
+					{growthList.map((growth, index: number) => (
+						<GrowthCard key={index} scrollYProgress={scrollYProgress}
+							{...growth} index={index}
+						/>
+					))}
+				</motion.div>
+				<motion.div className={styles.grid_mob}>
+					{growthList.map((growth, index: number) => (
+						<GrowthCardMobile key={index} index={index} scrollYProgress={scrollYProgress}
+							{...growth}
+						/>
+					))}
+				</motion.div>
+			</div>
+			<div className={styles.divider}></div>
+		</motion.div>
+	);
+};
+
+export default GrowthV2;
+
+
+export const GrowthCard = ({ currency, value, description, label, scrollYProgress, index }: GrowthCardProps) => {
+	const start = 0 + index * 0.12;
+	const end = start + 0.25;
+	const rawY = useTransform(scrollYProgress, [start, end], [250, 0]);
+	const y = useSpring(rawY, {
+		stiffness: 100,
+		damping: 20,
+		mass: 0.5
+	});
+	const rawOpacity = useTransform(scrollYProgress, [start, end], [0.3, 1]);
+	const opacity = useSpring(rawOpacity, {
+		stiffness: 100,
+		damping: 20,
+		mass: 0.5
+	});
+	const countProgress = useTransform(scrollYProgress, [start, end], [0, 1]);
+	const easedCount = useTransform(countProgress, (p) => {
+		return 1 - (1 - p) ** 2;
+	});
+  	const animatedCount = useTransform(easedCount, [0, 1], [0, value]);
+  	const decimals = value.toString().includes('.') ? value.toString().split('.')[1].length : 0;
+	const display = useTransform(animatedCount, (v) => v.toFixed(decimals));
+
+	return (
+		<motion.div className={styles.card} style={{ y, opacity }}>
+			<div className={styles.green_line}></div>
+			<div className={styles.card_header}>
+				<h6>{currency}</h6>
+				<motion.h4>{display}</motion.h4>
+				<h6>{label}</h6>
+			</div>
+			<span></span>
+			<p>{description}</p>
+			{/* <div className={styles.green_line_bottom}></div> */}
+		</motion.div>
+	)
+}
+
+export const GrowthCardMobile = ({ currency, value, description, label, index, scrollYProgress }: GrowthCardMobileProps) => {
+	const start = 0 + index * 0.1;
+	const end = start + 0.2;
+	const rawY = useTransform(scrollYProgress, [start, end], [300, 0]);
+	const y = useSpring(rawY, {
+		stiffness: 100,
+		damping: 20,
+		mass: 0.5
+	});
+	const rawOpacity = useTransform(scrollYProgress, [start, end], [0.3, 1]);
+	const opacity = useSpring(rawOpacity, {
+		stiffness: 100,
+		damping: 20,
+		mass: 0.5
+	});
+	const countProgress = useTransform(scrollYProgress, [start, end], [0, 1]);
+	const easedCount = useTransform(countProgress, (p) => {
+		return 1 - (1 - p) ** 2;
+	});
+  	const animatedCount = useTransform(easedCount, [0, 1], [0, value]);
+  	const decimals = value.toString().includes('.') ? value.toString().split('.')[1].length : 0;
+	const display = useTransform(animatedCount, (v) => v.toFixed(decimals));
+
+	return (
+		<motion.div className={styles.card} style={{ y, opacity }}>
+			<div className={styles.green_line}></div>
+			<div className={styles.card_header}>
+				<h6>{currency}</h6>
+				<motion.h4>{display}</motion.h4>
+				{/* <h4>{value}</h4> */}
+				<h6>{label}</h6>
+			</div>
+			<span></span>
+			<p>{description}</p>
+		</motion.div>
+	)
+}

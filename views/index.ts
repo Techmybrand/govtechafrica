@@ -2,6 +2,7 @@ import BlogView from "./blogView/BlogView";
 import CareersView from "./CareersView/CareersView";
 import ContactView from "./contactView/ContactView";
 import HomeView from "./home/HomeView";
+import NewHomeView from "./NewHome/NewHomeView";
 import NotFoundView from "./NotFoundView/NotFoundView";
 import PolicyRoundTableView from "./PolicyRoundTableView/PolicyRoundTableView";
 import UploadView from "./uploadView/UploadView";
@@ -14,6 +15,7 @@ export {
     WhatWeDoView,
     WhoWeAreView,
     ContactView,
+    NewHomeView,
     PolicyRoundTableView,
     UploadView,
     BlogView,

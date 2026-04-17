@@ -19,6 +19,7 @@ const HomeView = () => {
 	return (
 		<React.Fragment>
 			<Hero
+				backgroundImage=""
 				backgroundVideo="/videos/Hero.mp4"
 				backgroundType="video"
 				className={styles.hero}
@@ -30,7 +31,6 @@ const HomeView = () => {
 				`}
 				button="Explore our solutions"
 				href="/what-we-do"
-				backgroundImage=""
 			/>
 			<NGPRHero type="home" />
 			{/* <HomeHero /> */}

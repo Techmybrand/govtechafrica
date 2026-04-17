@@ -1,11 +1,15 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatedSection, Button } from "@/shared";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import styles from "./Governance.module.scss";
 
-const Governance = () => {
+interface GovernanceProps {
+	type?: "new" | "default"
+}
+
+const Governance = ({ type = "default" }: GovernanceProps) => {
 	const [isHover, setIsHover] = useState<boolean>(false);
 	const onHover = () => setIsHover(true);
 	const offHover = () => setIsHover(false);
@@ -39,7 +43,7 @@ const Governance = () => {
 	}, []);
 	const { scrollYProgress: textYProgress } = useScroll({
 		target: textRef,
-		offset: ["start 95%", "end 125%"],
+		offset: type === "new" ? ["start 85%", "end end"] : ["start 95%", "end 125%"],
 	});
 	const fullText = `It's all about Inclusive Governance`;
 	const smText = `We believe we can build a future where governance is inclusive, accountable, and 
@@ -70,36 +74,45 @@ const Governance = () => {
 	return (
 		<div ref={textRef} className={styles.section} id="team">
 			<div className={styles.text_container}>
-				<div className={styles.text}>
-					{/* <motion.span>{displayedSmText}</motion.span> */}
-					{/* <motion.h2>{displayedMain}</motion.h2>
-					<motion.h3>
-						<motion.span>{displayedSmall}</motion.span>
-						{(displayedSmall.length < smText.length) && (
-							<motion.span
-								animate={{ opacity: [0, 1, 0] }}
-								transition={{ duration: 0.8, repeat: Infinity }}
-							>
-								|
-							</motion.span>
-						)}
-					</motion.h3> */}
-					<AnimatedSection className={styles.text_wrapper} index={0} scrollYProgress={textYProgress}>
-						<h2>{fullText}</h2>
-					</AnimatedSection>
-					<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
-						<span>{`We believe we can build a future where governance is inclusive, accountable`}</span>
-					</AnimatedSection>
-					<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
-						<span>{`and responsive. We also believe in the transformative power of `}</span>
-					</AnimatedSection>
-					<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
-						<span>{`African ingenuity and innovation.`}</span>
-					</AnimatedSection>
+				<div data-type={type} className={styles.text}>
+					{type === "new" ? (
+						<React.Fragment>
+							<AnimatedSection data-type={type} className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
+								<span className={styles.span}>
+									We enable African governments to better serve citizens and businesses by leveraging the 
+								</span>
+							</AnimatedSection>
+							<AnimatedSection data-type={type} className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
+								<span className={styles.span}>
+									enormous potential of technology and the digital economy.
+								</span>
+							</AnimatedSection>
+							<AnimatedSection data-type={type} className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
+								<Button href=''>
+									Learn more
+								</Button>
+							</AnimatedSection>
+						</React.Fragment>
+					) : (
+						<React.Fragment>
+							<AnimatedSection className={styles.text_wrapper} index={0} scrollYProgress={textYProgress}>
+								<h2>{fullText}</h2>
+							</AnimatedSection>
+							<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
+								<span>{`We believe we can build a future where governance is inclusive, accountable`}</span>
+							</AnimatedSection>
+							<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
+								<span>{`and responsive. We also believe in the transformative power of `}</span>
+							</AnimatedSection>
+							<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
+								<span>{`African ingenuity and innovation.`}</span>
+							</AnimatedSection>
+						</React.Fragment>	
+					)}
 				</div>
 			</div>
-			<div className={styles.divider}></div>
-			<div className={styles.section_container}>
+			<div data-type={type} className={styles.divider}></div>
+			<div data-type={type} className={styles.section_container}>
 				{mobile ? (
 					<div className={styles.card}>
 						<div className={styles.card_content}>
@@ -148,7 +161,7 @@ const Governance = () => {
 					</div>
 				)}
 			</div>
-			<div className={styles.divider}></div>
+			<div data-type={type} className={styles.divider}></div>
 		</div>
 	);
 };

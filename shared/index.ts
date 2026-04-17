@@ -7,9 +7,11 @@ import Catalogue from "./Catalogue/Catalogue";
 import Centerpiece from "./Centerpiece/Centerpiece";
 import Divider from "./Divider/Divider";
 import Footer from "./footer/Footer";
+import FooterV2 from "./footer/FooterV2";
 import GruveTicketButton from "./GruveTicketButton/GruveTicketButton";
 import Header from "./header/Header";
 import Hero from "./hero/Hero";
+import HeroV2 from "./hero/HeroV2";
 import InputField from "./inputField/InputField";
 import InsightsCard from "./InsightsCard/InsightsCard";
 import Logo from "./logo/Logo";
@@ -59,4 +61,6 @@ export {
     Carousel,
     InsightsCard,
     ResearchCard,
+    HeroV2,
+    FooterV2,
 };

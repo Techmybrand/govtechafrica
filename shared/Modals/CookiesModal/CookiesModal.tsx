@@ -40,7 +40,7 @@ const CookiesModal = ({ isOpen, onClose }: CookiesModalProps) => {
           <div className={styles.modal_content}>
             <div className={styles.text}>
               <h3>
-                Welcome to govetchafrica.com! In order to provide a more relevant experience for you, we 
+                Welcome to govtechafrica.com! In order to provide a more relevant experience for you, we 
                 use cookies to enable some website functionality. Cookies help us see which articles most 
                 interest you; allow you to easily share articles on social media; permit us to deliver 
                 content, jobs and ads tailored to your interests and locations; and provide many other site 

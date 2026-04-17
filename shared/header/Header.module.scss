@@ -10,20 +10,33 @@
 	.container {
 		padding: 3.6rem;
 		@include flex(space-between, center, nowrap);
-		// width: 100%;
 		max-width: $max-width;
 		margin-inline: auto;
 		@include screenMin("desktop") {
 			padding-inline: 3.6rem;
 		}
-	}
-	a {
-		.header_logoContainer {
-			transition: $all-transition;
+		a {
+			.header_logoContainer {
+				transition: $all-transition;
+			}
+		}
+		.contact_btn {
+			width: 15rem;
+			border-radius: 1rem;
+			background: #00BF4D;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 4.5rem;
+			p {
+				font-size: 1.2rem;
+				text-transform: uppercase;
+				color: #FFF;
+			}
 		}
 	}
 	.header_nav {
-		margin-left: auto;
+		margin-inline: auto;
 		.header_navList {
 			@include flex(space-between, center, nowrap);
 			gap: 0.5rem;
@@ -213,7 +226,7 @@
 
 	.header_wrapper,
 	.header_wrapper__collapsed {
-		margin-left: 4rem;
+		margin-left: 0;
 		flex-grow: 1;
 		transition: transform 0.3s ease-out;
 		@include flex(space-between, center);
@@ -276,20 +289,16 @@
 	.header_hamburger__open {
 		min-height: 1rem;
 		position: relative;
-
 		.header_hamburgerBar {
 			width: 2rem;
 		}
-
 		.header_hamburgerBar:first-child {
 			margin-bottom: -6px;
 			transform: rotate(45deg);
 		}
-
 		.header_hamburgerBar:nth-child(2) {
 			opacity: 0;
 		}
-
 		.header_hamburgerBar:last-child {
 			margin-top: -6px;
 			transform: rotate(-45deg);
@@ -348,6 +357,10 @@
 		.container {
 			overflow: hidden;
 			padding: 2rem 1.6rem;
+			.contact_btn {
+				display: none;
+			}
+
 		}
 		.header_nav {
 			width: 100%;

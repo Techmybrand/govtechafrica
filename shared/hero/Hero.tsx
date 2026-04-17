@@ -16,6 +16,7 @@ interface Props {
 	subLargeTitle?: string;
 	dataType?: "home" | "do" | "are";
 	backgroundType: 'video' | 'image';
+	type?: "new" | "default";
 }
 
 const Hero = (props: Props) => {
@@ -33,7 +34,7 @@ const Hero = (props: Props) => {
 				<div className={`${styles.hero_background} ${props.className}`}>
 					<div className={styles.hero_image__container}>
 						{props.backgroundType === 'image' ? (
-							<div className={styles.hero_image}>
+							<div data-type={props.type} className={styles.hero_image}>
 								<Image src={props.backgroundImage} fill alt={props.title}
 									sizes="100%" loading="lazy"
 								/>
@@ -46,7 +47,7 @@ const Hero = (props: Props) => {
 							</div>
 						)}
 					</div>
-					<div className={styles.hero_content}>
+					<div data-type={props.type} className={styles.hero_content}>
 						<div className={styles.text}>
 							<h3>{props.title}</h3>
 							<p>{props.description}</p>
