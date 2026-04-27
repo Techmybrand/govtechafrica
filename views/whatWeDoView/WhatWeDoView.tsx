@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Consulting, Technology } from "@/components/whatWeDo";
-import { NewsLetter } from "@/components/home";
+// import { NewsLetter } from "@/components/home";
 import styles from './WhatWeDoView.module.scss';
 
 const WhatWeDoView = () => {
@@ -10,7 +10,7 @@ const WhatWeDoView = () => {
 			<div className={styles.top_margin}></div>
 			<Technology />
 			<Consulting />
-			<NewsLetter />
+			{/* <NewsLetter /> */}
 		</React.Fragment>
 	);
 };

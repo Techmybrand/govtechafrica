@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Hero } from "@/shared";
-import { Growth, Drivers, CenterPiece, Mission, Research, NewsLetter } from "@/components/home";
+import { Growth, Drivers, CenterPiece, Mission, Research } from "@/components/home";
 import { Hero as NGPRHero } from "@/components/PolicyRoundTable";
 import { CookiesModal } from "@/shared/Modals";
 import styles from "./HomeView.module.scss";
@@ -33,13 +33,12 @@ const HomeView = () => {
 				href="/what-we-do"
 			/>
 			<NGPRHero type="home" />
-			{/* <HomeHero /> */}
 			<Research />
 			<Growth />
 			<Mission />
 			<Drivers />
 			<CenterPiece />
-			<NewsLetter />
+			{/* <NewsLetter /> */}
 			<div className={styles.divider}></div>
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>
