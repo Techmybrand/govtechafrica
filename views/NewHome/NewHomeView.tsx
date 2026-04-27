@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Hero } from "@/shared";
 import { CookiesModal } from "@/shared/Modals";
-import { GrowthV2, MissionV2, Research, NewsLetter, CenterPieceV2 } from "@/components/home";
+import { GrowthV2, MissionV2, Research, NewsLetter, CenterPieceV2, Experience } from "@/components/home";
 import { Governance } from "@/components/whoWeAre";
 
 const NewHomeView = () => {
@@ -28,7 +28,7 @@ const NewHomeView = () => {
 			<Research />
 			<GrowthV2 />
 			<MissionV2 />
-			{/* <Experience /> */}
+			<Experience />
 			<CenterPieceV2 />
 			<NewsLetter />
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
