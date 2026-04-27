@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--
+  GovTech Africa — Brevo Email Template
+  ======================================
+  Paste this into Brevo: Email > Templates > Create template > HTML editor.
+  Brevo variables use {{ params.FIRSTNAME }} syntax.
+
+  BEFORE SAVING:
+  1. Replace the logo src URL with your hosted logo (must be a public https:// URL)
+  2. Replace all social media hrefs with your actual handles
+  3. Replace icon src URLs if you prefer to host your own icon files
+  4. Update the sender address in Brevo's template settings (From name / From email)
+  5. Save & Activate, then note the Template ID from the URL
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Govtech Africa</title>
+  <style>
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .email-wrapper {
+      width: 100%;
+      background-color: #f4f4f4;
+      padding: 24px 0;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .header {
+      background-color: #1BB24B;
+      padding: 28px 40px;
+      text-align: center;
+    }
+    .header img {
+      max-height: 64px;
+      width: auto;
+    }
+
+    .email-body {
+      padding: 36px 40px;
+      color: #1a1a1a;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .email-body h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1BB24B;
+      margin: 0 0 16px;
+    }
+    .email-body p {
+      margin: 0 0 16px;
+      color: #444444;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: #eeeeee;
+      margin: 28px 0;
+    }
+
+    .cta-wrap {
+      text-align: center;
+      margin: 28px 0;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background-color: #1BB24B;
+      color: #ffffff !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #f8f8f8;
+      padding: 28px 40px;
+      text-align: center;
+      border-top: 1px solid #eeeeee;
+    }
+    .footer p {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: #888888;
+    }
+
+    /* Social icons row */
+    .social-row {
+      margin: 16px 0 20px;
+    }
+    .social-row a {
+      display: inline-block;
+      margin: 0 8px;
+    }
+    .social-row img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    /* Unsubscribe */
+    .unsub {
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+    .unsub a {
+      color: #aaaaaa;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media only screen and (max-width: 620px) {
+      .email-body, .footer, .header { padding-left: 24px !important; padding-right: 24px !important; }
+      .email-body h1 { font-size: 20px !important; }
+    }
+  </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-container">
+            <div class="header">
+                <img
+                    src="https://govtechafrica.com/images/logo.png"
+                    alt="GovTech Africa"
+                    width="180"
+                />
+            </div>
+
+            <div class="email-body">
+                <h1>Welcome to Govtech Africa, {{ params.FIRSTNAME }}! 🎉</h1>
+
+                <p>
+                    We're delighted to have you join our growing community of innovators,
+                    policymakers, and technologists driving digital transformation across Africa.
+                </p>
+
+                <p>
+                    Through our newsletter, you'll receive:
+                </p>
+
+                <ul style="color:#444444; padding-left:20px; margin:0 0 16px;">
+                    <li>The latest Govtech news and policy updates from across the continent</li>
+                    <li>In-depth analysis of digital government initiatives</li>
+                    <li>Spotlight stories on innovators making a difference</li>
+                    <li>Upcoming events, reports, and opportunities</li>
+                </ul>
+
+                <div class="divider"></div>
+
+                <p>In the meantime, explore what we're building:</p>
+
+                <div class="cta-wrap">
+                    <a href="https://govtechafrica.com" target="_blank" class="cta-btn">
+                        Visit Govtech Africa →
+                    </a>
+                </div>
+
+                <div class="divider"></div>
+
+                <p style="font-size:14px; color:#666666;">
+                    Warm regards,<br/>
+                    <strong>The Govtech Africa Team</strong>
+                </p>
+            </div>
+
+            <!-- FOOTER: Social + Unsubscribe -->
+            <div class="footer">
+                <p>Follow us and stay connected:</p>
+
+                <div class="social-row">
+                    <a href="https://x.com/govtech_africa" target="_blank">
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                            alt="Twitter"
+                            width="32"
+                            height="32"
+                        />
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/govtech-africa-inc/" target="_blank">
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                            alt="LinkedIn"
+                            width="32"
+                            height="32"
+                        />
+                    </a>
+
+                    <a href="https://www.facebook.com/share/1ZietUxCgj/?mibextid=wwXIfr" target="_blank">
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                            alt="Facebook"
+                            width="32"
+                            height="32"
+                        />
+                    </a>
+                
+                    <a href="https://www.linkedin.com/company/govtech-africa-inc/" target="_blank">
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                            alt="Instagram"
+                            width="32"
+                            height="32"
+                        />
+                    </a>
+                
+                    <a href="https://www.youtube.com/channel/UCI9pb5Zbgr-q4ozIELvwFFw" target="_blank">
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                            alt="YouTube"
+                            width="32"
+                            height="32"
+                        />
+                    </a>
+            </div>
+
+            <p>
+                You're receiving this email because you signed up at
+                <a href="https://govtechafrica.com" style="color:#888888;">govtechafrica.com</a>.
+            </p>
+                <!--
+                    UNSUBSCRIBE LINK
+                    {{ unsubscribe }} is Brevo's built-in variable — it automatically
+                    generates a personalised unsubscribe URL for each recipient.
+                    Do NOT remove this — it is legally required (CAN-SPAM / GDPR).
+                -->
+                <p class="unsub">
+                    Don't want to hear from us?
+                    <a href="{{ unsubscribe }}">Unsubscribe</a>
+                </p>
+
+                <p style="font-size:12px; color:#cccccc; margin-top:16px;">
+                    Govtech Africa · govtechafrica.com
+                </p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

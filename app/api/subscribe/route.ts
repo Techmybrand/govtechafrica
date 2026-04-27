@@ -1,0 +1,89 @@
+
+import { NextResponse, NextRequest } from 'next/server';
+
+const BREVO_API_KEY = process.env.BREVO_API_KEY!;
+const BREVO_LIST_ID = parseInt(process.env.BREVO_LIST_ID!);
+const BREVO_TEMPLATE_ID = parseInt(process.env.BREVO_TEMPLATE_ID!);
+
+export async function POST(request: NextRequest) {
+    try {
+        const { fullName, email } = await request.json();
+        if (!fullName || !email) {
+            return NextResponse.json(
+                { error: 'Full name and email are required.' }, { status: 400 }
+            );
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return NextResponse.json(
+            { error: 'Please enter a valid email address.' },
+            { status: 400 }
+            );
+        }
+        const nameParts = fullName.trim().split(' ');
+        const firstName = nameParts[0];
+        const lastName = nameParts.slice(1).join(' ') || '';
+
+        const contactRes = await fetch('https://api.brevo.com/v3/contacts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'api-key': BREVO_API_KEY,
+            },
+            body: JSON.stringify({
+                email,
+                attributes: {
+                    FIRSTNAME: firstName,
+                    LASTNAME: lastName,
+                },
+                listIds: [BREVO_LIST_ID],
+                updateEnabled: true,
+            }),
+        });
+
+        if (!contactRes.ok && contactRes.status !== 204) {
+            const errBody = await contactRes.json();
+            // Brevo returns code 'duplicate_parameter' when email is already on list
+            if (errBody?.code === 'duplicate_parameter') {
+            return NextResponse.json(
+                { error: 'This email is already subscribed.' },
+                { status: 409 }
+            );
+            }
+            console.error('Brevo contact error:', errBody);
+            return NextResponse.json(
+            { error: 'Could not add you to the list. Please try again.' },
+            { status: 500 }
+            );
+        }
+
+        const emailRes = await fetch('https://api.brevo.com/v3/smtp/email', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            'api-key': BREVO_API_KEY,
+            },
+            body: JSON.stringify({
+            to: [{ email, name: fullName }],
+            templateId: BREVO_TEMPLATE_ID,
+            params: {
+                FIRSTNAME: firstName,
+                FULLNAME: fullName,
+            },
+            }),
+        });
+
+        if (!emailRes.ok) {
+            const errBody = await emailRes.json();
+            console.error('Brevo email error:', errBody);
+        }
+
+        return NextResponse.json({ success: true });
+    } catch (err) {
+        console.error('Subscribe handler error:', err);
+        return NextResponse.json(
+            { error: 'Something went wrong. Please try again.' },
+            { status: 500 }
+        );
+    }
+}

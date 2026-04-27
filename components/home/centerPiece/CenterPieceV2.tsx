@@ -16,12 +16,12 @@ const CenterPieceV2 = () => {
 
                 <div className={styles.globe_container}>
                     <div className={styles.text_left}>
-                        <p><span>Through</span> collaboration, capacity building, and scalable 
-                            solutions, <span>we are committed to</span> reimagining what 
+                        <p><span>Through</span> collaboration, capacity building, and scalable
+                            solutions, <span>we are committed to</span> reimagining what
                             governance can achieve in today&apos;s digital era.
                         </p>
                     </div>
-                    
+
                     <div className={styles.globe_image}>
                         <div data-index={1} className={styles.ellipse_item}>
                             <div className={styles.icon}>
@@ -63,3 +63,33 @@ const CenterPieceV2 = () => {
 };
 
 export default CenterPieceV2;
+
+
+// @keyframes spinGlobe {
+// 	from {
+// 		transform: rotateY(0deg);
+// 	}
+
+// 	to {
+// 		transform: rotateY(360deg);
+// 	}
+// }
+
+// @keyframes spinDotted {
+// 	from {
+// 		transform: rotate(0deg);
+// 	}
+
+// 	to {
+// 		transform: rotate(360deg);
+// 	}
+// }
+// @keyframes spinDottedReverse {
+// 	from {
+// 		transform: rotate(360deg);
+// 	}
+
+// 	to {
+// 		transform: rotate(0deg);
+// 	}
+// }

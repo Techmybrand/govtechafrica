@@ -63,11 +63,11 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 				<div
 					className={
 						styles[
-							!collapsed ? "header_wrapper" : "header_wrapper__collapsed"
+						!collapsed ? "header_wrapper" : "header_wrapper__collapsed"
 						]
 					}
 				>
-					<nav className={styles.header_nav}>
+					<nav data-type={type} className={styles.header_nav}>
 						<ul className={styles.header_navList}>
 							{navLinks.map((link: NavLink, index: number) => {
 								return (
@@ -100,10 +100,7 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 						<p>contact us</p>
 					</div>
 				)}
-				<div
-					onClick={() => {
-						setCollapsed(!collapsed);
-					}}
+				<div onClick={() => setCollapsed(!collapsed)}
 					className={
 						styles[collapsed ? "header_hamburger" : "header_hamburger__open"]
 					}

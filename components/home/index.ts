@@ -9,10 +9,10 @@ import Insights from "./insights/Insights";
 import Mission from "./Mission/Mission";
 import MissionV2 from "./Mission/MissionV2";
 import NewsLetter from "./NewsLetter/NewsLetter";
-import NewsLetterV2 from "./NewsLetter/NewsLetterV2";
 import Partners from "./Partners/Partners";
 import Research from "./Research/Research";
+import Experience from "./experience/Experience";
 
 export { Growth, Drivers, CenterPiece, Choose, Insights, Mission, Research, Partners,
-    NewsLetter, GrowthV2, DriversV2, CenterPieceV2, NewsLetterV2, MissionV2
+    NewsLetter, GrowthV2, DriversV2, CenterPieceV2, MissionV2, Experience
 };

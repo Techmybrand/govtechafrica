@@ -21,7 +21,8 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
     const offHover = () => setHover(false);
     const cardRef = useRef<HTMLElement | null>(null);
     const [isMobile, setIsMobile] = useState<boolean>(false);
-	const mobile = isMobile;
+    const [isTab, setIsTab] = useState<boolean>(false);
+    const mobile = isMobile;
 
     useEffect(() => {
         if (!mobile || !hover) return;
@@ -42,6 +43,7 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 767);
+            setIsTab(window.innerWidth > 767 && window.innerWidth < 1024);
         };
 
         handleResize();
@@ -49,7 +51,7 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
 
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-    
+
     return (
         <React.Fragment>
             {mobile ? (
@@ -84,7 +86,7 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
                                 <p>{btnText}</p>
                             </div>
                             {hover && (
-                                <div className={styles.close_icon} 
+                                <div className={styles.close_icon}
                                     onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
                                         e.stopPropagation();
                                         setHover(false);
@@ -98,7 +100,7 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
                         <h4>{description}</h4>
                     </div>
                     <Link href={`/insights/research/${slug}`}
-                        onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => 
+                        onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>
                             e.stopPropagation()}
                     >
                         <Button className={styles.button}>
@@ -107,8 +109,8 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
                     </Link>
                 </article>
             ) : (
-                <article data-active={hover} className={styles.card_container} 
-                    onMouseOver={onHover} 
+                <article data-active={hover} className={styles.card_container}
+                    onMouseOver={onHover}
                     onMouseOut={offHover}
                 >
                     <div className={styles.card_content}>
@@ -144,7 +146,9 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
                             )}
                         </div>
                         <h2>{title}</h2>
-                        <h4>{description}</h4>
+                        <h4>{isTab ? `${description?.slice(0, 190)}...` : 
+                            `${description?.slice(0, 140)}...`}
+                        </h4>
                     </div>
                     <Link href={`/insights/research/${slug}`}>
                         <Button className={styles.button}>
