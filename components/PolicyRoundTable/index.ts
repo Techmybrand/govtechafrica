@@ -7,6 +7,7 @@ import HomeHero from "./HomeHero/HomeHero";
 import Media from "./Media/Media";
 import Register from "./Register/Register";
 import Speakers from "./Speakers/Speakers";
+import ParticipatingOrganisations from "./ParticipatingOrganisations/ParticipatingOrganisations";
 
 
 export {
@@ -19,5 +20,6 @@ export {
     Footer,
     About,
     Register,
+    ParticipatingOrganisations,
 
 }

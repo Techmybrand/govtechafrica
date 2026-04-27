@@ -14,7 +14,11 @@ enum Scroll {
 	InitialScroll = "initial"
 }
 
-const Header = () => {
+interface HeaderProps {
+	type?: "new" | "default"
+}
+
+const Header = ({ type = 'default' }: HeaderProps) => {
 	const [collapsed, setCollapsed] = useState<boolean>(true);
 	const [scroll, setScroll] = useState<Scroll>(Scroll.Idle);
 	const [activeLink, setActiveLink] = useState<string | null>(null);
@@ -50,7 +54,7 @@ const Header = () => {
 			data-collapsed={!collapsed || scroll === Scroll.InitialScroll}
 		>
 			<div className={styles.container}>
-				<div className={styles.background}></div>
+				{/* <div className={styles.background}></div> */}
 				<Link href="/">
 					<div className={styles.header_logoContainer}>
 						<Logo />
@@ -59,11 +63,11 @@ const Header = () => {
 				<div
 					className={
 						styles[
-							!collapsed ? "header_wrapper" : "header_wrapper__collapsed"
+						!collapsed ? "header_wrapper" : "header_wrapper__collapsed"
 						]
 					}
 				>
-					<nav className={styles.header_nav}>
+					<nav data-type={type} className={styles.header_nav}>
 						<ul className={styles.header_navList}>
 							{navLinks.map((link: NavLink, index: number) => {
 								return (
@@ -79,20 +83,24 @@ const Header = () => {
 									/>
 								);
 							})}
-							<Button
-								className={styles.button_link}
-								href="contact"
-								onClick={() => setCollapsed(true)}
-							>
-								CONTACT US
-							</Button>
+							{type === "default" && (
+								<Button
+									className={styles.button_link}
+									href="contact"
+									onClick={() => setCollapsed(true)}
+								>
+									CONTACT US
+								</Button>
+							)}
 						</ul>
 					</nav>
 				</div>
-				<div
-					onClick={() => {
-						setCollapsed(!collapsed);
-					}}
+				{type === "new" && (
+					<div className={styles.contact_btn}>
+						<p>contact us</p>
+					</div>
+				)}
+				<div onClick={() => setCollapsed(!collapsed)}
 					className={
 						styles[collapsed ? "header_hamburger" : "header_hamburger__open"]
 					}

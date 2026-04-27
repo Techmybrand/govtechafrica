@@ -20,51 +20,6 @@
     & > div {
         margin: -3.2rem 0 6rem!important;
     }
-    // .carousel_image {
-    //     height: 5.5rem!important;
-    //     max-width: 22rem!important;
-    //     min-width: 7.4rem!important;
-    //     &[data-index = "0"] {
-    //         width: 6.5rem!important;
-    //         height: 5.5rem!important;
-    //     }
-    //     &[data-index = "1"] {
-    //         width: 15rem!important;
-    //         height: 6.5rem!important;
-    //     }
-    //     &[data-index = "2"] {
-    //         width: 8.3rem!important;
-    //         height: 5.5rem!important;
-    //     }
-    //     &[data-index = "3"] {
-    //         width: 18rem!important;
-    //         height: 5.5rem!important;
-    //     }
-    //     &[data-index = "4"] {
-    //         width: 6.8rem!important;
-    //         height: 5.5rem!important;
-    //     }
-    //     &[data-index = "5"] {
-    //         width: 11rem!important;
-    //         height: 5.5rem!important;
-    //     }
-    //     &[data-index = "6"] {
-    //         width: 7.4rem!important;
-    //         height: 5.5rem!important;
-    //     }
-    //     &[data-index = "7"] {
-    //         width: 11rem!important;
-    //         height: 5.5rem!important;
-    //     }
-    //     &[data-index = "8"] {
-    //         width: 13rem!important;
-    //         height: 5.5rem!important;
-    //     }
-    //     &[data-index = "9"] {
-    //         width: 14rem!important;
-    //         height: 5.5rem!important;
-    //     }
-    // }
 
     @include screenMax("mobile") {
         & > div {

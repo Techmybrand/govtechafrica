@@ -1,0 +1,194 @@
+@import "@/styles/imports";
+
+.section {
+	width: 100%;
+	margin-bottom: 8rem;
+	.section_container {
+		padding: 3.6rem;
+		max-width: $max-width;
+		margin-inline: auto;
+		width: 100%;
+		@include flex();
+		flex-direction: column;
+		gap: 3.6rem;
+		.card_container {
+			position: sticky;
+			width: 100%;
+			height: 95rem;
+			max-width: $max-width;
+			margin-inline: auto;
+			background: #000;
+			.card {
+				border-radius: 1.5rem;
+				overflow: hidden;
+				width: 100%;
+                height: 100%;
+				position: relative;
+				.details {
+					padding: 3.6rem;
+					@include flex();
+					flex-direction: column;
+					justify-content: space-between;
+                    z-index: 2;
+                    background: rgba(20, 20, 20, 0.4);
+                    backdrop-filter: blur(20px);
+                    -webkit-backdrop-filter: blur(20px);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border-radius: 1.6rem;
+                    width: 45rem;
+                    position: relative;
+                    top: 10rem;
+                    left: 10rem;
+                    .text {
+                        h3, span {
+                            font-size: 2.4rem;
+                            line-height: 3.2rem;
+                            font-weight: 700;
+                            font-family: $font-gothic-bold;
+                        }
+                        p {
+                            margin-block: 2rem;
+                            font-size: 1.2rem;
+                            line-height: 1.6rem;
+                        }
+                        span {
+                            color: #fff;
+                        }
+                    }
+                    .button {
+                        width: fit-content;
+                        p {
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                            font-weight: 600;
+                        }
+                    }
+                    &[data-index = "1"] {
+                        left: 63%;
+                        top: 20rem;
+                    }
+				}
+                .image_container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    .image {
+                        position: relative;
+                        width: 100%;
+                        height: 85rem;
+                        & > img {
+                            object-fit: cover;
+                            object-position: top;
+                        }
+                        &[data-index = "1"] {
+                            height: 95rem;
+                        }
+                    }
+                }
+			}
+			&[data-index = "0"] {
+				width: 96.5%;
+			}
+		}
+	}
+	.divider, .divider_ {
+		width: 100%;
+		height: 0.2rem;
+		background-color: rgba(255, 255, 255, 0.1);
+		margin-top: 2.4rem;
+	}
+	.divider_ {
+		margin-bottom: 2.4rem;
+	}
+
+	@include screenMax("tablet") {
+		margin-bottom: 6rem;
+		.section_container, .text_container {
+			padding: 2.4rem;
+			gap: 1.8rem;
+			.card_container {
+                height: 70rem;
+				.card {
+                    width: 100%;
+					.details {
+						padding: 2.4rem;
+                        width: 30rem;
+                        .text {
+                            h3, span {
+                                font-size: 1.8rem;
+                                line-height: 2.7rem;
+                            }
+                            p {
+                                margin-block: 1.4rem;
+                            }
+                        }
+                        .button {
+                            width: fit-content;
+                            p {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                                font-weight: 600;
+                            }
+                        }
+                        &[data-index = "1"] {
+                            left: 45%;
+                            top: 40rem;
+                        }
+					}
+                    .image_container {
+                        .image {
+                            height: 70rem;
+                        }
+                    }
+				}
+			}
+		}
+	}
+
+	@include screenMax('mobile') {
+		margin-bottom: 4rem;
+		.section_container, .text_container {
+			padding: 1.6rem;
+			gap: 0.8rem;
+			.card_container {
+				height: 50rem;
+				.card {
+					margin-bottom: 3.2rem;
+					.details {
+						padding: 1.6rem;
+                        width: 20rem;
+                        top: 0;
+                        left: 0;
+                        .text {
+                            h3, span {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                            }
+                            p {
+                                margin-block: 1rem;
+                                font-size: 1rem;
+                                line-height: 1.4rem;
+                            }
+                        }
+                        &[data-index = "1"] {
+                            left: 0%;
+                            top: 30rem;
+                        }
+					}
+					.image {
+						height: 50rem;
+					}
+				}
+			}
+		}
+		.divider, .divider_ {
+			margin-top: 1.6rem;
+		}
+		.divider_ {
+			margin-bottom: 1.6rem;
+		}
+	}
+}

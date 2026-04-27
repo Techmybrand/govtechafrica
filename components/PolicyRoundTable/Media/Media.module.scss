@@ -138,6 +138,10 @@
                             }
                             .input_field {
                                 padding-block: 0.4rem!important;
+                                color: rgba($col-white, 1)!important;
+                                &::placeholder {
+                                    color: rgba($col-white, 0.6)!important;
+                                }
                             }
                             .text_area_field {
                                 padding: 1.6rem!important;

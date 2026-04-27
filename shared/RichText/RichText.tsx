@@ -2,7 +2,7 @@
 import React from "react";
 import { BLOCKS, INLINES, MARKS, Document, Block, Inline } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Accordion from "../Accordion/Accordion";
+// import Accordion from "../Accordion/Accordion";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./RichText.module.scss";
@@ -70,10 +70,11 @@ const options: any = {
     ),
     [BLOCKS.UL_LIST]: (node: Block, children: React.ReactNode) => {
       const items = React.Children.toArray(children);
+      if (items?.length > 0) return;
       return (
         <ul className={styles.unordered_list}>
-          {/* {children} */}
-          {items.map((child, index) => (
+          {children}
+          {/* {items.map((child, index) => (
             <Accordion
               key={index}
               type="default"
@@ -81,7 +82,7 @@ const options: any = {
             >
               {extractListItemContent(child as React.ReactElement)}
             </Accordion>
-          ))}
+          ))} */}
         </ul>
       )},
     [BLOCKS.OL_LIST]: (node: Block, children: React.ReactNode) => (
@@ -141,7 +142,7 @@ const options: any = {
   },
 };
 
-const extractListItemTitle = (listItem: any): string => {
+export const extractListItemTitle = (listItem: any): string => {
   const paragraph = listItem.props.children?.[0];
   if (!paragraph || typeof paragraph === 'string') return "";
   const textNode = paragraph.props.children?.find((child: any) => 
@@ -157,7 +158,7 @@ const extractListItemTitle = (listItem: any): string => {
   return "";
 };
 
-const extractListItemContent = (listItem: any): React.ReactNode => {
+export const extractListItemContent = (listItem: any): React.ReactNode => {
   const paragraph = listItem?.props.children?.[0];
   if (!paragraph) return null;
   const children = paragraph.props.children || [];
