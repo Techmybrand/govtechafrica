@@ -37,6 +37,9 @@ const Research = () => {
                             }
                         }
                     }
+                    const getType = blog?.type?.toLowerCase();
+                    const type = getType?.replace(' ', '-');
+                    console.log('type: ', type)
                     return (
                         <ResearchCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
@@ -44,6 +47,7 @@ const Research = () => {
                             description={blog?.description || paragraph}
                             btnText={blog?.type}
                             slug={blog?.slug}
+                            researchType={type}
                         />
                     )
                 }

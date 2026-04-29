@@ -41,7 +41,6 @@ const MissionV2 = () => {
     });
     return (
         <div className={styles.section} id="mision">
-			<div className={styles.divider_}></div>
             <div className={styles.section_container}>
                 {stackedCards.map((card, index) => {
                     const targetScale = 1 - (stackedCards.length - index) * 0.02;

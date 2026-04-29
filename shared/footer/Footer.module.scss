@@ -6,6 +6,13 @@
 	color: $col-grey-200;
 	position: relative;
 	width: 100%;
+	&[data-type = "new"] {
+		background-color: transparent;
+		background-blend-mode: overlay;
+		background-size: cover;
+		background-image: url('/images/footer_bg_new.png');
+		min-height: 35rem;
+	}
 	.grad {
 		height: 15.2rem;
 		width: 100%;

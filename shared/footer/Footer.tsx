@@ -11,11 +11,15 @@ import styles from "./Footer.module.scss";
 const date = new Date();
 const year = date.getFullYear();
 
-const Footer = () => {
+interface FooterProps {
+	type?: "new" | "default";
+}
+
+const Footer = ({ type = "default" }: FooterProps) => {
 	const [openModal, setOpenModal] = useState<boolean>(false);
 	return (
 		<React.Fragment>
-			<footer className={styles.footer}>
+			<footer data-type={type} className={styles.footer}>
 				<div className={styles.footer_body}>
 					<div className={styles.footer_content}>
 						<div className={styles.details}>
@@ -70,11 +74,15 @@ const Footer = () => {
 							))}
 						</div>
 					</div>
-					<div className={styles.image}>
-						<Image src="/images/govtechafri.png" sizes="100%" priority alt="govtech" fill />
-					</div>
+					{type === "default" && (
+						<div className={styles.image}>
+							<Image src="/images/govtechafri.png" sizes="100%" priority 
+								alt="govtech" fill
+							/>
+						</div>
+					)}
 				</div>
-				<div className={styles.grad}></div>
+				{type === "default" && (<div className={styles.grad}></div>)}
 			</footer>
 			<CookieSettingsModal isOpen={openModal} onClose={() => setOpenModal(false)} />
 		</React.Fragment>

@@ -32,11 +32,19 @@
 			align-items: center;
 			justify-content: center;
 			height: 4.5rem;
+			cursor: pointer;
+			transition: $all-transition;
+
+			&:hover {
+				background: #00BF4D;
+			}
 
 			p {
-				font-size: 1.2rem;
+				font-size: 1.4rem;
 				text-transform: uppercase;
 				color: #FFF;
+				font-family: $font;
+				font-weight: 600;
 			}
 		}
 	}

@@ -223,6 +223,7 @@ export interface BlogDetailsProps {
 	};
 	publishedAt: string;
 	researchContent: Document;
+	tableOfContent?: string[];
 }
 
 export interface PrivacyPolicyProps {

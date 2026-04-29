@@ -2,25 +2,29 @@
 
 .details_container {
     position: relative;
-    padding: 0rem!important;
+    padding: 0rem !important;
     margin: 16rem 0 8rem;
     width: 100%;
+
     .loader {
         width: 95vw;
         height: 90vh;
         position: relative;
-        top: 40vh;
-        left: 40vw;
+        top: 45vh;
+        left: 45vw;
     }
+
     .details_content {
         max-width: $max-width;
         margin-inline: auto;
-        padding: 0 3.6rem!important;
+        padding: 0 3.6rem !important;
+
         .details_header {
             width: 100%;
             padding: 3.2rem 3.2rem 3.2rem 0;
             border: 0.1rem solid #FFFFFF1F;
             border-radius: 1.6rem;
+
             h3 {
                 text-transform: uppercase;
                 font-family: $font;
@@ -28,6 +32,7 @@
                 font-weight: 500;
                 color: $col-white;
             }
+
             h1 {
                 font-family: $font;
                 font-weight: 700;
@@ -37,12 +42,14 @@
                 line-height: 1.2;
                 text-transform: uppercase;
             }
+
             .time_and_date {
                 width: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 margin-top: 3.2rem;
+
                 h4 {
                     font-family: $font;
                     font-size: 2rem;
@@ -51,49 +58,59 @@
                 }
             }
         }
+
         .image_and_authors {
             width: 100%;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
+
             .banner_image {
                 position: relative;
                 width: 75%;
                 height: 54rem;
-                & > img {
+
+                &>img {
                     object-fit: cover;
                 }
             }
+
             .written_by {
                 width: 23%;
                 margin-left: auto;
+
                 .h2 {
                     font-size: 2rem;
                     font-family: $font;
                     font-weight: 700;
                     color: #00BF4D;
                 }
+
                 .writer_details_container {
                     display: flex;
                     flex-direction: column;
                     gap: 1rem;
                     width: 100%;
                     margin-top: 0.8rem;
+
                     .writer_details {
                         h4 {
                             font-size: 1.6rem;
                             color: $col-white;
                             font-family: $font-gothic;
                         }
+
                         h6 {
                             font-size: 1.4rem;
                             font-family: $font;
                             color: #A2A2A0;
                         }
+
                         a {
                             width: 2.4rem;
                             height: 2.4rem;
                             margin-top: 1rem;
+
                             .details_linkedin {
                                 position: relative;
                                 width: 2.4rem;
@@ -104,13 +121,16 @@
                 }
             }
         }
+
         .details_body {
             width: 100%;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
+
             .research_details {
                 width: 75%;
+
                 h2 {
                     // font-size: 3.2rem;
                     font-family: $font;
@@ -118,10 +138,12 @@
                     color: $col-white;
                     // margin-bottom: 2.4rem;
                 }
+
                 ul {
                     width: 75%;
                     position: relative;
                     padding-left: 1.2rem;
+
                     li {
                         list-style-type: disc;
                         font-size: 1.4rem;
@@ -130,14 +152,17 @@
                         margin-bottom: 1.6rem;
                     }
                 }
+
                 a {
                     .download_btn {
                         margin-block: 6rem;
-                        & > p {
-                            font-size: 1.4rem!important;
+
+                        &>p {
+                            font-size: 1.4rem !important;
                         }
                     }
                 }
+
                 // h3 {
                 //     font-family: $font;
                 //     color: $col-white;
@@ -145,28 +170,34 @@
                 // }
             }
         }
+
         .details_body_ {
             width: 70%;
             margin-block: 4rem;
+
             h3 {
                 margin-block: 2.4rem;
             }
+
             a {
                 .download_btn {
-                    & > p {
-                        font-size: 1.4rem!important;
+                    &>p {
+                        font-size: 1.4rem !important;
                     }
                 }
             }
         }
+
         .key_findings_container {
             width: 100%;
             margin-block: 5rem;
+
             h2 {
                 font-size: 2.4rem;
                 color: $col-white;
                 font-family: $font-gothic-bold;
             }
+
             .findings_container {
                 overflow-x: auto;
                 width: 100%;
@@ -175,26 +206,31 @@
                 gap: 3.6rem;
                 @include noScrollBar();
                 margin-top: 4rem;
+
                 .findings {
                     width: 95%;
                     display: flex;
                     align-items: flex-end;
                     justify-content: space-between;
                     flex-shrink: 0;
+
                     .findings_image {
                         width: 50%;
                         height: 40rem;
                         position: relative;
                         flex-shrink: 0;
                     }
+
                     .findings_texts {
                         width: 48%;
                         flex-shrink: 0;
+
                         h3 {
                             font-size: 1.6rem;
                             color: $col-white;
                             font-family: $font-gothic-bold;
                         }
+
                         p {
                             font-size: 1.2rem;
                             margin-top: 1.6rem;
@@ -204,23 +240,28 @@
                 }
             }
         }
+
         .written_by_sm {
             width: 100%;
             display: none;
+
             h2 {
                 font-size: 2rem;
                 font-family: $font;
                 font-weight: 700;
                 color: #00BF4D;
             }
+
             .line {
                 margin-top: 2rem;
                 width: 100%;
                 height: 0.1rem;
                 background: #202020;
             }
+
             .writer_details_container {
                 width: 100%;
+
                 .writer_details {
                     display: flex;
                     align-items: flex-start;
@@ -228,22 +269,26 @@
                     padding-block: 1.6rem;
                     border-bottom: 0.1rem solid #202020;
                     width: 100%;
+
                     .name_and_role {
                         h4 {
                             font-size: 1.4rem;
                             color: $col-white;
                             font-family: $font-gothic;
                         }
+
                         h6 {
                             font-size: 1.2rem;
                             font-family: $font;
                             color: #A2A2A0;
                         }
                     }
+
                     a {
                         width: 2.4rem;
                         height: 2.4rem;
                         margin-top: 1rem;
+
                         .details_linkedin {
                             position: relative;
                             width: 2.4rem;
@@ -253,16 +298,19 @@
                 }
             }
         }
+
         .related_insights {
             width: 100%;
             margin-top: 3.6rem;
             margin-bottom: 7.2rem;
+
             .insights_header {
                 width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 margin-bottom: 3.6rem;
+
                 h2 {
                     font-size: 2.8rem;
                     line-height: 3.6rem;
@@ -270,11 +318,13 @@
                     color: #FFFFFF;
                 }
             }
+
             .explore_btn {
                 width: 16rem;
                 height: 4.5rem;
                 margin-top: 4.8rem;
             }
+
             .research_wrapper {
                 width: 100%;
                 @include grid(repeat(4, 1fr), 5.6rem);
@@ -282,68 +332,85 @@
             }
         }
     }
+
     .divider {
-		width: 100%;
-		height: 2rem;
-		background-color: rgba(255, 255, 255, 0.05);
+        width: 100%;
+        height: 2rem;
+        background-color: rgba(255, 255, 255, 0.05);
         margin-block: 1.6rem;
-	}
+    }
+
     .divider_green {
         width: 100%;
-		height: 2rem;
+        height: 2rem;
         background-color: #BEF2BE;
     }
 
     @include screenMax('tablet') {
         margin: 10rem 0 6rem;
+
         .details_content {
-            padding: 0 2.4rem!important;
+            padding: 0 2.4rem !important;
+
             .details_header {
                 padding: 2.4rem 2.4rem 2.4rem 0;
+
                 h3 {
                     font-size: 1.8rem;
                 }
+
                 h1 {
                     font-size: 3.6rem;
                 }
+
                 .time_and_date {
                     h4 {
                         font-size: 1.8rem;
                     }
                 }
             }
+
             .image_and_authors {
                 .banner_image {
                     height: 43rem;
                     width: 100%;
                 }
+
                 .written_by {
                     display: none;
                 }
             }
+
             .details_body {
                 h2 {
                     font-size: 2.8rem;
                 }
+
                 h3 {
                     font-size: 1.6rem;
                 }
+
                 .research_details {
                     width: 100%;
+
                     h2 {
                         font-size: 2.4rem;
                     }
+
                     h3 {
                         font-size: 1.8rem;
                     }
+
                     ul {
                         width: 100%;
                     }
+
                     .download_btn {
                         margin-block: 4rem;
                     }
                 }
             }
+
             .key_findings_container {
                 .findings_container {
                     .findings {
@@ -353,27 +420,34 @@
                     }
                 }
             }
+
             .details_body_ {
                 width: 85%;
             }
+
             .written_by_sm {
                 display: block;
             }
+
             .related_insights {
                 margin-bottom: 5.6rem;
                 margin-top: 3.2rem;
+
                 .insights_header {
                     margin-bottom: 2.8rem;
+
                     h2 {
                         font-size: 2.4rem;
                         line-height: 3.2rem;
                     }
                 }
+
                 .explore_btn {
                     width: 16rem;
                     height: 4.5rem;
                     margin-top: 3.6rem;
                 }
+
                 .research_wrapper {
                     @include grid(repeat(2, 1fr), 9.6rem);
                     width: 90%;
@@ -385,64 +459,83 @@
 
     @include screenMax('mobile') {
         margin: 8rem 0 4rem;
+
         .details_content {
-            padding: 0 1.6rem!important;
+            padding: 0 1.6rem !important;
+
             .details_header {
                 padding: 1.6rem 1.6rem 1.6rem 0;
+
                 h3 {
                     font-size: 1.4rem;
                 }
+
                 h1 {
                     margin-top: 1.2rem;
                     font-size: 2rem;
                 }
+
                 .time_and_date {
                     width: 100%;
                     margin-top: 2.4rem;
+
                     h4 {
                         font-size: 1.2rem;
                     }
                 }
             }
+
             .banner_image {
                 height: 32rem;
                 width: 100%;
             }
+
             .details_body {
                 width: 100%;
+
                 h2 {
                     font-size: 2.4rem;
                     // margin-bottom: 1.6rem;
                 }
+
                 h3 {
                     font-size: 1.6rem;
                 }
+
                 .research_details {
+
                     // h2 {
                     //     margin-bottom: 1.6rem;
                     // }
                     h3 {
                         font-size: 1.6rem;
                     }
+
                     ul {
                         padding-left: 0.8rem;
                     }
                 }
             }
+
             .key_findings_container {
                 margin-block: 3.6rem;
+
                 .findings_container {
                     gap: 2.4rem;
+
                     .findings {
                         flex-direction: column;
                         width: 90%;
+
                         .findings_image {
                             width: 100%;
                             height: 32rem;
                             margin-bottom: 2.4rem;
                         }
+
                         .findings_texts {
                             width: 100%;
+
                             p {
                                 margin-top: 0.8rem;
                             }
@@ -450,28 +543,35 @@
                     }
                 }
             }
+
             .details_body_ {
                 width: 100%;
                 margin-block: 0;
                 margin-top: 1.6rem;
                 margin-bottom: 4rem;
+
                 h3 {
                     font-size: 1.4rem;
                 }
             }
+
             .written_by_sm {
                 display: block;
             }
+
             .related_insights {
                 margin-bottom: 4rem;
                 margin-top: 2.4rem;
+
                 .insights_header {
                     margin-bottom: 2rem;
+
                     h2 {
                         font-size: 2rem;
                         line-height: 2.8rem;
                     }
                 }
+
                 .research_wrapper {
                     display: flex;
                     align-items: center;
@@ -480,13 +580,15 @@
                     width: 100%;
                     margin-inline: 0;
                 }
+
                 .explore_btn {
                     width: 14rem;
                     height: 4.5rem;
                     margin-top: 2.4rem;
-                    gap: 0.5rem!important;
-                    & > p {
-                        font-size: 1.4rem!important;
+                    gap: 0.5rem !important;
+
+                    &>p {
+                        font-size: 1.4rem !important;
                     }
                 }
             }

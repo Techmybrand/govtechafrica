@@ -13,9 +13,10 @@ interface ResearchCardProps {
     description?: string;
     alt?: string;
     index?: number;
+    researchType?: string;
 }
 
-const ResearchCard = ({ image, slug, alt, btnText, title, description }: ResearchCardProps) => {
+const ResearchCard = ({ image, slug, alt, btnText, title, description, researchType }: ResearchCardProps) => {
     const [hover, setHover] = useState<boolean>(false);
     const onHover = () => setHover(true);
     const offHover = () => setHover(false);
@@ -99,7 +100,7 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
                         <h2>{title}</h2>
                         <h4>{description}</h4>
                     </div>
-                    <Link href={`/insights/research/${slug}`}
+                    <Link href={`/insights/research/${slug}?type=${researchType}`}
                         onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>
                             e.stopPropagation()}
                     >
@@ -146,11 +147,11 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description }: Researc
                             )}
                         </div>
                         <h2>{title}</h2>
-                        <h4>{isTab ? `${description?.slice(0, 190)}...` : 
-                            `${description?.slice(0, 140)}...`}
+                        <h4>{isTab ? `${description?.slice(0, 120)}...` :
+                            `${description?.slice(0, 90)}...`}
                         </h4>
                     </div>
-                    <Link href={`/insights/research/${slug}`}>
+                    <Link href={`/insights/research/${slug}?type=${researchType}`}>
                         <Button className={styles.button}>
                             Learn More
                         </Button>
