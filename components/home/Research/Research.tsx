@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect } from "react";
-import { ResearchCard } from "@/shared";
+import { ResearchCard, BackgrounderCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./Research.module.scss";
 
 const Research = () => {
     const { fetchBlogs, sortedBlogs } = useGetContentful();
-	useEffect(() => {
+    useEffect(() => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -20,8 +20,8 @@ const Research = () => {
                     let wordCount = 0;
                     if (blog?.researchContent?.content) {
                         for (const content of blog?.researchContent?.content) {
-                            if (content?.nodeType === 'paragraph' && 
-                                Array.isArray(content?.content) && 
+                            if (content?.nodeType === 'paragraph' &&
+                                Array.isArray(content?.content) &&
                                 content?.content.length > 0 &&
                                 content?.content[0]?.nodeType === 'text' &&
                                 content?.content[0]?.value
@@ -40,7 +40,14 @@ const Research = () => {
                     const getType = blog?.type?.toLowerCase();
                     const type = getType?.replace(' ', '-');
                     console.log('type: ', type)
-                    return (
+                    return blog?.type === 'backgrounder' ? (
+                        <BackgrounderCard key={index} title={blog?.title}
+                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                            slug={blog?.slug}
+                            date={blog?.date}
+                            publishedAt={blog?.publishedAt}
+                        />
+                    ) : (
                         <ResearchCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
                             alt={`https:${blog?.thumbnail?.fields?.description}`}

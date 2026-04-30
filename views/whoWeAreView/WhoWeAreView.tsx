@@ -3,7 +3,7 @@ import React from "react";
 import { Hero } from "@/shared";
 import { Governance, Mission } from "@/components/whoWeAre";
 import { RelatedInsights } from "@/components";
-import { NewsLetter } from "@/components/home";
+// import { NewsLetter } from "@/components/home";
 
 const WhoWeAreView = () => {
 	return (
@@ -22,7 +22,7 @@ const WhoWeAreView = () => {
 			<Governance />
 			{/* <Partners /> */}
 			<RelatedInsights />
-			<NewsLetter />
+			{/* <NewsLetter /> */}
 		</React.Fragment>
 	);
 };

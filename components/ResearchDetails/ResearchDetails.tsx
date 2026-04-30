@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Button, ResearchCard, RichText } from "@/shared";
+import { Button, ResearchCard, BackgrounderCard, RichText } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
@@ -47,7 +47,7 @@ const ResearchDetails = () => {
     console.log("type: ", queryArticleType);
 
     return (
-        <main className={styles.details_container}>
+        <main data-type={queryArticleType} className={styles.details_container}>
             {blog === undefined ? (
                 <div className={styles.loader}>
                     <ChartLoader />
@@ -147,13 +147,22 @@ const ResearchDetails = () => {
                             </div>
                             <div className={styles.research_wrapper}>
                                 {contentToShow?.map((blog: BlogDetailsProps, index: number) =>
-                                    <ResearchCard key={index} title={blog?.title}
-                                        image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                                        alt={`https:${blog?.thumbnail?.fields?.description}`}
-                                        description={blog?.description}
-                                        btnText={blog?.type}
-                                        slug={blog?.slug}
-                                    />
+                                    blog?.type === 'backgrounder' ? (
+                                        <BackgrounderCard key={index} title={blog?.title}
+                                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                                            slug={blog?.slug}
+                                            date={blog?.date}
+                                            publishedAt={blog?.publishedAt}
+                                        />
+                                    ) : (
+                                        <ResearchCard key={index} title={blog?.title}
+                                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                                            alt={`https:${blog?.thumbnail?.fields?.description}`}
+                                            description={blog?.description}
+                                            btnText={blog?.type}
+                                            slug={blog?.slug}
+                                        />
+                                    )
                                 )}
                             </div>
                             <Button className={styles.explore_btn} href="/insights">
