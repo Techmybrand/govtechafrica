@@ -2,7 +2,7 @@
 // import fs from "fs";
 // import path from "path";
 import { useEffect } from "react";
-import { ResearchCard } from "@/shared";
+import { ResearchCard, BackgrounderCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./BlogView.module.scss";
@@ -23,9 +23,9 @@ export default function BlogView() {
 	// console.log(posts);
 	const { fetchBlogs, sortedBlogs: insightsList } = useGetContentful();
 	useEffect(() => {
-        fetchBlogs();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+		fetchBlogs();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 
 	return (
 		<div className={styles.section}>
@@ -46,7 +46,14 @@ export default function BlogView() {
 				) : (
 					<div className={styles.research_wrapper}>
 						{insightsList?.map((blog: BlogDetailsProps, index: number) => {
-							return (
+							return blog?.type === 'backgrounder' ? (
+								<BackgrounderCard key={index} title={blog?.title}
+									image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+									slug={blog?.slug}
+									date={blog?.date}
+									publishedAt={blog?.publishedAt}
+								/>
+							) : (
 								<ResearchCard key={index} title={blog?.title}
 									image={`https:${blog?.thumbnail?.fields?.file?.url}`}
 									alt={`https:${blog?.thumbnail?.fields?.description}`}

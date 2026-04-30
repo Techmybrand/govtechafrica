@@ -9,6 +9,7 @@ import styles from "./RichText.module.scss";
 
 interface RichTextProps {
   content: Document;
+  type?: string;
 }
 
 const options: any = {
@@ -84,7 +85,8 @@ const options: any = {
             </Accordion>
           ))} */}
         </ul>
-      )},
+      )
+    },
     [BLOCKS.OL_LIST]: (node: Block, children: React.ReactNode) => (
       <ol className={styles.ordered_list}>{children}</ol>
     ),
@@ -145,14 +147,14 @@ const options: any = {
 export const extractListItemTitle = (listItem: any): string => {
   const paragraph = listItem.props.children?.[0];
   if (!paragraph || typeof paragraph === 'string') return "";
-  const textNode = paragraph.props.children?.find((child: any) => 
+  const textNode = paragraph.props.children?.find((child: any) =>
     typeof child === 'string' || (child && child.props?.children)
   );
 
   if (typeof textNode === 'string') return textNode;
   if (textNode?.props?.children) {
-    return Array.isArray(textNode.props.children) 
-      ? textNode.props.children.join('') 
+    return Array.isArray(textNode.props.children)
+      ? textNode.props.children.join('')
       : textNode.props.children;
   }
   return "";
@@ -170,9 +172,9 @@ export const extractListItemContent = (listItem: any): React.ReactNode => {
   return paragraph.props.children;
 };
 
-const RichText: React.FC<RichTextProps> = ({ content }: RichTextProps) => {
+const RichText: React.FC<RichTextProps> = ({ content, type }: RichTextProps) => {
   return (
-    <div className={styles.rich_text_container}>
+    <div data-type={type} className={styles.rich_text_container}>
       {documentToReactComponents(content, options)}
     </div>
   );

@@ -3,30 +3,35 @@ import styles from "./Experience.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Lottie from "lottie-react";
+import { Button } from "@/shared";
 
 const cards = [
 	{
-		title: "Global Wallet",
-		description: "You have access to global wallets for smooth money movement",
-		image: "/images/app-1.png",
+		title: "Innovation",
+		description: "We champion",
+		subtext: 'for impact',
+		image: "/images/driver_1.jpg",
 		lottieUrl: "/animations/Globe.json",
 	},
 	{
-		title: "e-SIMs",
-		description: "Stay connected wherever you go with affordable international data.",
-		image: "/images/app-2.png",
+		title: "Partnerships",
+		description: "We leverage",
+		subtext: 'for progress',
+		image: "/images/driver_2.jpg",
 		lottieUrl: "/animations/Mobile-ui.json",
 	},
 	{
-		title: "Travel Card",
-		description: "Get the assurance to use this wherever Visa is accepted",
-		image: "/images/app-3.png",
+		title: "Local Solutions",
+		description: "We profer",
+		subtext: 'to local problems',
+		image: "/images/driver_3.jpg",
 		lottieUrl: "/animations/Credit-Card.json",
 	},
 	{
-		title: "Hotels & Flights",
-		description: "Plan, book, and manage your trips without stress.",
-		image: "/images/app-4.png",
+		title: "Resilient and Secure Systems",
+		description: "We build",
+		subtext: 'that enable government excellence',
+		image: "/images/driver_4.jpg",
 		lottieUrl: "/animations/Send-Message.json",
 	},
 ];
@@ -42,10 +47,8 @@ const Experience = () => {
 		const checkMobile = () => {
 			setIsMobile(window.innerWidth <= 768);
 		};
-
 		checkMobile();
 		window.addEventListener("resize", checkMobile);
-
 		return () => window.removeEventListener("resize", checkMobile);
 	}, []);
 
@@ -162,28 +165,36 @@ const Experience = () => {
 			<div className={styles.container}>
 				<div className={styles.title_container}>
 					<div className={styles.title}>
-						<h1>One app for your better travel and payment experience</h1>
+						<h2>We are Drivers of Change</h2>
+						<h3>
+							At Govtech Africa,{" "}
+							<span>
+								we are driven by the need to close the technology gap for
+								governments across the African continent.
+							</span>
+						</h3>
 					</div>
+					<Button className={styles.button}>
+						Learn more
+					</Button>
 				</div>
 				<div className={styles.cards_container}>
 					{cards.map((card, index) => (
-						<div
-							key={index}
-							className={styles.card}
+						<div key={index} className={styles.card}
 							onClick={() => handleCardToggle(index)}
 							data-active={isMobile ? true : activeCard === index}
+							// data-active={activeCard === index}
 							data-can-animate={
 								isMobile ? false : canAnimateOpen.has(index)
+								// canAnimateOpen.has(index)
 							}
 							data-closing={isMobile ? false : closingCard === index}
+							// data-closing={closingCard === index}
 							data-mobile={isMobile}
+							data-index={index}
 						>
-							{/* Image always fills the card — blue overlay sits on top and reveals it */}
 							<div className={styles.image_container}>
-								<Image
-									src={card.image}
-									alt={card.title}
-									fill
+								<Image src={card.image} alt={card.title} fill
 									sizes="100vw"
 								/>
 							</div>
@@ -198,11 +209,20 @@ const Experience = () => {
 									/>
 								)}
 							</div>
-							<div className={styles.title}>
-								<h3>{card.title}</h3>
+							<div className={styles.plus_icon}>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+									<line x1="12" y1="5" x2="12" y2="19"></line>
+									<line x1="5" y1="12" x2="19" y2="12"></line>
+								</svg>
 							</div>
 							<div className={styles.description}>
 								<p>{card.description}</p>
+							</div>
+							<div className={styles.title}>
+								<h3>{card.title}</h3>
+							</div>
+							<div className={styles.subtext}>
+								<p>{card.subtext}</p>
 							</div>
 						</div>
 					))}

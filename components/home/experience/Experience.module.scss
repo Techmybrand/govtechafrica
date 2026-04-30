@@ -1,55 +1,65 @@
 @import "@/styles/imports";
 
 .experience {
-	padding: 10.9rem 12rem;
 	@include flex(center, center, column);
-	border-top-left-radius: 6.4rem;
-	border-top-right-radius: 6.4rem;
 	width: 100%;
 	z-index: 2;
-	margin-top: -8rem;
+	margin-block: 12rem;
 	background-color: #000;
-
 	.container {
 		max-width: $max-width;
 		margin-inline: auto;
 		width: 100%;
-
 		.title_container {
 			margin-bottom: 7.8rem;
-			margin-inline: auto;
 			width: 100%;
-			@include flex(center, center, column);
-
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
 			.title {
-				@include flex(center, center, column);
-				text-align: center;
 				max-width: 95.4rem;
-
-				h1 {
+				h2 {
 					font-size: 5.6rem;
 					line-height: 6.4rem;
+					font-weight: 700;
+					font-family: $font-gothic-bold;
+					color: #fff;
+					margin-bottom: 2.4rem;
+				}
+
+				h3,
+				span {
+					font-size: 1.8rem;
+					line-height: 2.7rem;
 					font-weight: 500;
+					font-family: $font-gothic;
+					width: 75%;
+				}
+
+				span {
 					color: #fff;
 				}
 			}
+			.button {
+				min-width: 13rem;
+				& > p {
+					font-size: 1.4rem !important;
+					font-weight: 600 !important;
+				}
+			}
 		}
-
 		.cards_container {
 			width: 100%;
 			@include flex(center, center, nowrap);
-			gap: 2.4rem;
-
+			gap: 4rem;
 			.card {
-				width: 25.5rem;
-				border-radius: 3.2rem;
-				height: 64.8rem;
+				width: 12rem;
+				border-radius: 20rem;
+				height: 56rem;
 				position: relative;
 				overflow: hidden;
 				cursor: pointer;
 				@include flex(flex-start, flex-end);
-
-				// ── Always-on image background ──────────────────────────
 				.image_container {
 					position: absolute;
 					inset: 0;
@@ -66,28 +76,23 @@
 					.image_overlay {
 						position: absolute;
 						inset: 0;
-						background: linear-gradient(to top,
-								rgba(0, 0, 0, 0.7) 0%,
-								rgba(0, 0, 0, 0.15) 55%,
-								transparent 100%);
+						// background: linear-gradient(to top,
+						// 	rgba(0, 0, 0, 0.7) 0%,
+						// 	rgba(0, 0, 0, 0.15) 55%,
+						// 	transparent 100%
+						// );
 						border-radius: 3.2rem;
 					}
 				}
-
-				// ── Blue overlay — covers image, reveals from center ───
-				// inset box-shadow spread shrinks from full fill → 0.1rem border ring
-				// box-shadow respects border-radius, so inner edge is rounded too
 				.blue_overlay {
 					position: absolute;
 					inset: 0;
 					background: transparent;
-					box-shadow: inset 0 0 0 50rem #7394f4;
+					// box-shadow: inset 0 0 0 50rem #7394f4;
 					z-index: 2;
 					border-radius: 3.2rem;
 					pointer-events: none;
 				}
-
-				// ── Lottie badge ────────────────────────────────────────
 				.lottie_badge {
 					position: absolute;
 					top: 3.2rem;
@@ -97,69 +102,103 @@
 					@include flex(center, center);
 					z-index: 3;
 					overflow: hidden;
+					display: none;
 
 					.lottie {
 						width: 15.6rem;
 						height: 15.6rem;
 					}
 				}
-
-				// ── Title ───────────────────────────────────────────────
+				.plus_icon {
+					position: absolute;
+					bottom: 4rem;
+					left: 50%;
+					transform: translateX(-50%) translateY(0);
+					width: 5.6rem;
+					height: 5.6rem;
+					border-radius: 50%;
+					border: 1px solid #FFF;
+					@include flex(center, center);
+					color: #FFF;
+					z-index: 3;
+					opacity: 1;
+					svg {
+						width: 2.4rem;
+						height: 2.4rem;
+					}
+				}
+				.description {
+					position: absolute;
+					top: 4.8rem;
+					left: 4.8rem;
+					width: 40rem;
+					z-index: 3;
+					opacity: 0;
+					transform: translateY(1rem);
+					p {
+						font-size: 1.6rem;
+						line-height: 2.4rem;
+						color: rgba(255, 255, 255, 0.7);
+						font-family: $font-gothic-bold;
+					}
+				}
 				.title {
 					position: absolute;
-					bottom: 5.1rem;
-					left: calc(50% - 2.5rem);
-					rotate: -90deg;
-					height: 4rem;
-					width: 5rem;
+					top: 7.2rem;
+					left: 4.8rem;
 					z-index: 3;
-
+					opacity: 0;
+					transform: translateY(1rem);
 					h3 {
-						font-size: 4rem;
-						line-height: 5.6rem;
+						font-size: 3.2rem;
+						line-height: 1.2;
 						color: #fff;
-						white-space: nowrap;
+						font-family: $font-gothic-bold;
+						white-space: pre-wrap;
 					}
 				}
-
-				// ── Description ─────────────────────────────────────────
-				.description {
-					height: 0rem;
-					overflow: hidden;
-					padding-top: 2.4rem;
-					width: 36.8rem;
-					margin-top: 3.4rem;
-					position: relative;
+				.subtext {
+					position: absolute;
+					top: 12rem;
+					left: 4.8rem;
+					width: 40rem;
 					z-index: 3;
-					margin-left: 3.4rem;
-					bottom: 4.2rem;
-
+					opacity: 0;
+					transform: translateY(1rem);
 					p {
-						@extend %text-24;
-						color: rgba(255, 255, 255, 0.85);
-						font-weight: 400;
+						font-size: 1.6rem;
+						line-height: 2.4rem;
+						color: rgba(255, 255, 255, 0.7);
+						font-family: $font-gothic-bold;
 					}
 				}
-
 				// ── Opening sequence ─────────────────────────────────────
 				// Only animates when can-animate is true
 				&[data-active="true"][data-can-animate="true"] {
 
-					// Step 1 (0–0.3s): lottie badge fades out
+					// Step 1 (0–0.3s): lottie badge and plus icon fade out
 					.lottie_badge {
 						animation: badge-fade-out 0.3s ease-out forwards;
 					}
 
-					// Step 2 (0.3s–1.3s): card expands + title floats up
-					animation: card-expand 1s ease-out 0.3s forwards;
-
-					.title {
-						animation: title-float-up 1s ease-out 0.3s forwards;
+					.plus_icon {
+						animation: plus-fade-out 0.3s ease-out forwards;
 					}
 
-					// Step 3 (1.3s–2.3s): description shows
+					// Step 2 (0.3s–1.3s): card expands
+					animation: card-expand 1s ease-out 0.3s forwards;
+
+					// Step 3 (0.8s–1.8s): title and description show
 					.description {
-						animation: description-show 1s ease-out 1.3s forwards;
+						animation: content-slide-up 0.8s ease-out 0.8s forwards;
+					}
+
+					.title {
+						animation: content-slide-up 0.8s ease-out 1.0s forwards;
+					}
+
+					.subtext {
+						animation: content-slide-up 0.8s ease-out 1.2s forwards;
 					}
 
 					// Step 4 (2.3s–3.9s): inner hole expands from center → blue becomes border ring
@@ -170,29 +209,41 @@
 
 				// ── Closing sequence ─────────────────────────────────────
 				&[data-closing="true"] {
-					width: 45.9rem;
+					width: 75rem;
+					border-radius: 3.2rem;
 
 					// Step 1 (0–1.0s): border ring expands back to full fill
 					.blue_overlay {
-						box-shadow: inset 0 0 0 0.1rem #7394f4;
 						animation: overlay-cover 1s ease-in 0s forwards;
 					}
 
-					// Step 2 (1.0s–1.625s): description hides
-					.description {
-						height: 8rem;
+					// Step 2 (0.8s–1.5s): description and title hide
+					.subtext {
 						opacity: 1;
-						animation: description-hide 0.625s ease-in 1s forwards;
+						transform: translateY(0);
+						animation: content-slide-down 0.5s ease-in 0.6s forwards;
 					}
 
-					// Step 3 (1.625s–2.25s): card contracts + title rotates back
+					.title {
+						opacity: 1;
+						transform: translateY(0);
+						animation: content-slide-down 0.5s ease-in 0.8s forwards;
+					}
+
+					.description {
+						opacity: 1;
+						transform: translateY(0);
+						animation: content-slide-down 0.5s ease-in 1.0s forwards;
+					}
+
+					// Step 3 (1.625s–2.25s): card contracts
 					animation: card-contract 0.625s ease-in 1.625s forwards;
 
-					.title {
-						bottom: 11.6rem;
-						left: 3.4rem;
-						rotate: 0deg;
-						animation: title-float-down 0.625s ease-in 1.625s forwards;
+					// Plus icon fades in
+					.plus_icon {
+						opacity: 0;
+						transform: translateX(-50%) translateY(2rem);
+						animation: plus-fade-in 0.3s ease-out 2.0s forwards;
 					}
 
 					// Step 4 (2.25s–2.5s): lottie badge fades back in
@@ -205,102 +256,115 @@
 		}
 	}
 
-	// ── Mobile ───────────────────────────────────────────────────────────────
+	// ── tablet ───────────────────────────────────────────────────────────────
 	@include screenMax("tablet") {
 		padding: 10rem 1.6rem 5rem;
-		border-bottom-left-radius: 4rem;
-		border-bottom-right-radius: 4rem;
-
+		margin-block: 8rem;
 		.container {
 			.title_container {
 				margin-block: 3rem 4rem;
-
-				.title h1 {
-					font-size: 3.2rem;
-					line-height: 4rem;
-					max-width: 100%;
+				.title {
+					h2 {
+						margin-bottom: 1.6rem;
+						font-size: 4rem;
+						line-height: 5.2rem;
+					}
+					h3, span {
+						font-size: 1.6rem;
+						line-height: 2.4rem;
+					}
 				}
 			}
-
 			.cards_container {
 				flex-wrap: wrap;
 				gap: 2.4rem;
-
 				.card {
-					width: 12rem;
+					width: 10.5rem;
 					height: 40rem;
 					padding: 2.4rem;
 					border-radius: 1.6rem;
-
 					.lottie_badge {
 						top: 2.4rem;
 						width: 5.6rem;
 						height: 5.6rem;
 						border-radius: 1.6rem;
 					}
-
 					.title {
-						top: 28rem;
-
+						top: 6rem;
 						h3 {
-							font-size: 4.2rem;
-							line-height: 4.8rem;
+							font-size: 2.4rem;
+							line-height: 3.2rem;
 						}
 					}
-
 					.description {
-						width: 100%;
 						margin: 0;
 						padding-top: 1.6rem;
 						bottom: 2rem;
-
 						p {
-							font-size: 2rem;
+							font-size: 1.4rem;
 							line-height: 2rem;
 						}
 					}
-
+					.subtext {
+						p {
+							font-size: 1.4rem;
+							line-height: 2rem;
+						}
+					}
 					// All cards open on mobile — blue is just a border ring
 					&[data-mobile="true"][data-active="true"] {
 						width: 100%;
-						max-width: 40rem;
-
+						max-width: 44rem;
 						.blue_overlay {
-							box-shadow: inset 0 0 0 0.1rem #7394f4;
+							box-shadow: inset 0 0 0 0.1rem #00BF4D;
+							// box-shadow: inset 0 0 0 0.1rem transparent;
 						}
-
 						.lottie_badge {
 							opacity: 0;
 						}
-
-						.title {
+						.plus_icon {
+							display: none;
+						}
+						.description {
+							opacity: 1;
+							transform: none;
 							top: 2.4rem;
 							left: 2.4rem;
-							rotate: 0deg;
-						}
-
-						.description {
 							height: auto;
+						}
+						.title {
 							opacity: 1;
+							transform: none;
+							top: 6rem;
+							left: 2.4rem;
+						}
+						.subtext {
+							opacity: 1;
+							transform: none;
+							top: 9rem;
+							left: 2.4rem;
+							height: auto;
 						}
 					}
 
 					// Opening on tablet-sized non-mobile state (expanded width capped so row doesn’t wrap)
 					&[data-active="true"][data-can-animate="true"]:not([data-mobile="true"]) {
+						animation: card-expand-mobile 1s ease-out 0.3s forwards;
 						.lottie_badge {
 							animation: badge-fade-out 0.3s ease-out forwards;
 						}
-
-						animation: card-expand-mobile 1s ease-out 0.3s forwards;
-
-						.title {
-							animation: title-float-up-mob 1s ease-out 0.3s forwards;
+						.plus_icon {
+							animation: plus-fade-out 0.3s ease-out forwards;
 						}
-
 						.description {
-							animation: description-show 1s ease-out 1.3s forwards;
+							animation: content-slide-up 0.8s ease-out 0.8s forwards;
 						}
-
+						.title {
+							animation: content-slide-up 0.8s ease-out 1.0s forwards;
+						}
+						.subtext {
+							animation: content-slide-up 0.8s ease-out 1.2s forwards;
+						}
 						.blue_overlay {
 							animation: overlay-reveal 1.6s ease-out 2.3s forwards;
 						}
@@ -310,26 +374,37 @@
 					&[data-closing="true"]:not([data-mobile="true"]) {
 						width: 40rem;
 						max-width: 40rem;
+						border-radius: 3.2rem;
 
 						.blue_overlay {
 							box-shadow: inset 0 0 0 0.1rem #7394f4;
 							animation: overlay-cover 1s ease-in 0s forwards;
 						}
 
-						.description {
-							height: 8rem;
-							overflow: hidden;
+						.subtext {
 							opacity: 1;
-							animation: description-hide 0.625s ease-in 1s forwards;
+							transform: translateY(0);
+							animation: content-slide-down 0.5s ease-in 0.6s forwards;
+						}
+
+						.title {
+							opacity: 1;
+							transform: translateY(0);
+							animation: content-slide-down 0.5s ease-in 0.8s forwards;
+						}
+
+						.description {
+							opacity: 1;
+							transform: translateY(0);
+							animation: content-slide-down 0.5s ease-in 1.0s forwards;
 						}
 
 						animation: card-contract-mobile 0.625s ease-in 1.625s forwards;
 
-						.title {
-							top: 2.4rem;
-							left: 2.4rem;
-							rotate: 0deg;
-							animation: title-float-down-mob 0.625s ease-in 1.625s forwards;
+						.plus_icon {
+							opacity: 0;
+							transform: translateX(-50%) translateY(2rem);
+							animation: plus-fade-in 0.3s ease-out 2.0s forwards;
 						}
 
 						.lottie_badge {
@@ -340,54 +415,70 @@
 				}
 			}
 		}
-
-		@keyframes title-float-up-mob {
-			0% {
-				top: 28rem;
-				left: 0rem;
-				rotate: -90deg;
-			}
-
-			100% {
-				top: 2.4rem;
-				left: 2.4rem;
-				rotate: 0deg;
-			}
-		}
-
-		@keyframes title-float-down-mob {
-			0% {
-				top: 2.4rem;
-				left: 2.4rem;
-				rotate: 0deg;
-			}
-
-			100% {
-				top: 28rem;
-				left: 3.5rem;
-				rotate: -90deg;
-			}
-		}
-
 		@keyframes card-contract-mobile {
 			0% {
-				width: 40rem;
-				max-width: 40rem;
+				width: 44rem;
+				max-width: 44rem;
 			}
 
 			100% {
-				width: 12rem;
+				width: 10.5rem;
 			}
 		}
-
 		@keyframes card-expand-mobile {
 			0% {
-				width: 12rem;
+				width: 10.5rem;
 			}
 
 			100% {
-				width: 40rem;
-				max-width: 40rem;
+				width: 44rem;
+				max-width: 44rem;
+			}
+		}
+	}
+
+	@include screenMax("mobile") {
+		margin-block: 5.6rem;
+		.container {
+			.title_container {
+				margin-block: 2.4rem 3.2rem;
+				flex-direction: column;
+				gap: 2.4rem;
+				align-items: flex-start;
+				.title {
+					h2 {
+						font-size: 2.4rem;
+						line-height: 3.2rem;
+						margin-bottom: 1rem;
+					}
+					h3, span {
+						font-size: 1.2rem;
+						line-height: 1.6rem;
+						width: 90%;
+					}
+				}
+				.button {
+					min-width: 12.5rem;
+					& > p {
+						font-size: 1.2rem!important;
+					}
+				}
+			}
+			.cards_container {
+				gap: 1.6rem;
+				.card {
+					height: 35rem;
+					.title {
+						h3 {
+							font-size: 1.8rem;
+							line-height: 2.7rem;
+						}
+					}
+					.description, .subtext {
+						font-size: 1.2rem;
+						line-height: 1.6rem;
+					}
+				}
 			}
 		}
 	}
@@ -421,95 +512,98 @@
 
 @keyframes card-expand {
 	0% {
-		width: 25.5rem;
+		width: 12rem;
+		border-radius: 20rem;
 	}
 
 	100% {
-		width: 45.9rem;
+		width: 75rem;
+		border-radius: 3.2rem;
 	}
 }
 
 @keyframes card-contract {
 	0% {
-		width: 45.9rem;
+		width: 75rem;
+		border-radius: 3.2rem;
 	}
 
 	100% {
-		width: 25.5rem;
+		width: 12rem;
+		border-radius: 20rem;
 	}
 }
 
-@keyframes title-float-up {
+@keyframes content-slide-up {
 	0% {
-		bottom: 5.1rem;
-		left: calc(50% - 2.5rem);
-		rotate: -90deg;
-	}
-
-	100% {
-		bottom: 11.6rem;
-		left: 3.4rem;
-		rotate: 0deg;
-	}
-}
-
-@keyframes title-float-down {
-	0% {
-		bottom: 11.6rem;
-		left: 3.4rem;
-		rotate: 0deg;
-	}
-
-	100% {
-		bottom: 5.1rem;
-		left: calc(50% - 2.5rem);
-		rotate: -90deg;
-	}
-}
-
-@keyframes description-show {
-	0% {
-		height: 0rem;
 		opacity: 0;
+		transform: translateY(1rem);
 	}
 
 	100% {
-		height: 8rem;
 		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
-@keyframes description-hide {
+@keyframes content-slide-down {
 	0% {
-		height: 8rem;
 		opacity: 1;
+		transform: translateY(0);
 	}
 
 	100% {
-		height: 0rem;
 		opacity: 0;
-		visibility: hidden;
+		transform: translateY(1rem);
+	}
+}
+
+@keyframes plus-fade-out {
+	0% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(-50%) translateY(2rem);
+	}
+}
+
+@keyframes plus-fade-in {
+	0% {
+		opacity: 0;
+		transform: translateX(-50%) translateY(2rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
 	}
 }
 
 // box-shadow spread shrinks from full fill → 0.1rem border ring (rounded on both edges)
 @keyframes overlay-reveal {
 	from {
-		box-shadow: inset 0 0 0 50rem #7394f4;
+		// box-shadow: inset 0 0 0 50rem #7394f4;
+		box-shadow: inset 0 0 0 50rem transparent;
 	}
 
 	to {
-		box-shadow: inset 0 0 0 0.1rem #7394f4;
+		// box-shadow: inset 0 0 0 0.1rem #7394f4;
+		box-shadow: inset 0 0 0 0.1rem transparent;
 	}
 }
 
 // box-shadow spread grows from 0.1rem border ring → full fill
 @keyframes overlay-cover {
 	from {
-		box-shadow: inset 0 0 0 0.1rem #7394f4;
+		// box-shadow: inset 0 0 0 0.1rem #7394f4;
+		box-shadow: inset 0 0 0 0.1rem transparent;
 	}
 
 	to {
-		box-shadow: inset 0 0 0 50rem #7394f4;
+		// box-shadow: inset 0 0 0 50rem #7394f4;
+		box-shadow: inset 0 0 0 50rem transparent;
 	}
 }

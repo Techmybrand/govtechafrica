@@ -20,6 +20,7 @@ import NpgrHeader from "./NpgrHeader/NpgrHeader";
 import Partners from "./Partners/Partners";
 import PreLoader from "./PreLoader/PreLoader";
 import ResearchCard from "./ResearchCard/ResearchCard";
+import BackgrounderCard from "./ResearchCard/BackgrounderCard/BackgrounderCard";
 import RichText from "./RichText/RichText";
 import Searchbar from "./Searchbar/Searchbar";
 import Select from "./select/Select";
@@ -61,6 +62,7 @@ export {
     Carousel,
     InsightsCard,
     ResearchCard,
+    BackgrounderCard,
     HeroV2,
     FooterV2,
 };
