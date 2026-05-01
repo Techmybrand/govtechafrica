@@ -17,44 +17,6 @@
 .rich_text_container {
   width: 100%;
   margin: 0 auto;
-  &[data-type="backgrounder"] {
-    .paragraph,
-    .italic,
-    .underline {
-      color: #111021;
-
-      &>b {
-        color: #111021;
-      }
-    }
-    .blockquote {
-      p {
-        color: #111021;
-      }
-    }
-
-    .heading1,
-    .heading2,
-    .heading3,
-    .heading4,
-    .heading5,
-    .heading6 {
-      color: #111021;
-
-      &>b {
-        color: #111021;
-      }
-    }
-
-    .list_item {
-      color: #111021;
-
-      &::marker {
-        color: #111021;
-        font-family: $font-gothic-bold;
-      }
-    }
-  }
 }
 
 .paragraph,
@@ -108,6 +70,7 @@
 .blockquote {
   font-style: italic;
   margin-bottom: 2.4rem;
+
   p {
     color: #FFFFFF;
     font-size: 1.6rem;
