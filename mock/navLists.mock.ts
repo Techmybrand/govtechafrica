@@ -142,25 +142,30 @@ export const navLinks: NavLink[] = [
 		]
 	},
 	{
-		label: "resources",
+		label: "research",
 		external: false,
 		icon: "/svgs/link-main.svg",
 		subMenu: [
 			{
-				label: "insights",
+				label: "backgrounders",
 				icon: "/svgs/link-main.svg",
-				href: "/insights"
+				href: "/backgrounders"
 			},
 			{
-				label: "careers",
+				label: "articles",
 				icon: "/svgs/link-user.svg",
-				href: "/careers"
+				href: "/articles"
 			},
-			// {
-			// 	label: "GOVTECH AFRICA FOUNDATION (COMING SOON)",
-			// 	icon: "/svgs/link-ai.svg",
-			// 	href: "#"
-			// }
+			{
+				label: "expert takes",
+				icon: "/svgs/link-ai.svg",
+				href: "/expert-takes"
+			},
+			{
+				label: "policy briefs",
+				icon: "/svgs/link-ai.svg",
+				href: "/policy-briefs"
+			},
 		]
 	}
 ];
