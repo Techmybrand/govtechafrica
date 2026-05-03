@@ -18,7 +18,7 @@
                 gap: 0.8rem;
                 a {
                     p {
-                        text-transform: uppercase;
+                        text-transform: capitalize;
                         font-family: $font;
                         font-size: 2rem;
                         font-weight: 500;
@@ -31,46 +31,81 @@
                     height: 2.4rem;
                 }
                 h3 {
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     font-family: $font;
                     font-size: 2rem;
                     font-weight: 500;
                     color: #111021;
                 }
             }
-            h1 {
-                font-family: $font;
-                font-weight: 700;
-                font-size: 4.8rem;
-                color: #111021;
-                margin-top: 3.2rem;
-                line-height: 1.2;
-                text-transform: uppercase;
-            }
-            .time_and_date {
-                width: 50%;
+            .header_details {
+                width: 100%;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                margin-top: 3.2rem;
-                h4 {
-                    font-family: $font;
-                    font-size: 2rem;
-                    font-weight: 500;
-                    color: #111021;
+                gap: 20rem;
+                margin-top: 4.8rem;
+                border-top: 0.1rem solid #000;
+                border-bottom: 0.1rem solid #000;
+                .banner_image {
+                    position: relative;
+                    width: 35rem;
+                    height: 54rem;
+                    flex-shrink: 0;
+                    & > img {
+                        object-fit: cover;
+                    }
+                }
+                .name_type_and_date {
+                    max-width: 60rem;
+                    .tag_and_name {
+                        padding-block: 8rem;
+                        margin-bottom: 4rem;
+                        margin-inline: auto;
+                        .tag {
+                            font-family: $font;
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                            letter-spacing: 0.1rem;
+                            color: #1A1A1A;
+                            border: 0.1rem solid #1A1A1A;
+                            padding: 0.4rem 1.2rem;
+                            margin-bottom: 2.4rem;
+                            text-transform: uppercase;
+                            width: max-content;
+                            margin-inline: auto;
+                        }
+                        h1 {
+                            font-family: $font;
+                            font-weight: 700;
+                            font-size: 4.8rem;
+                            color: #111021;
+                            margin-top: 3.2rem;
+                            line-height: 1.2;
+                            text-align: center;
+                            text-transform: uppercase;
+                        }
+                    }
+                    .time_and_date {
+                        width: fit-content;
+                        margin-inline: auto;
+                        a h4, h4 {
+                            font-family: $font;
+                            font-size: 1.6rem;
+                            font-weight: 500;
+                            color: #111021;
+                            margin-bottom: 2.4rem;
+                            text-align: center;
+                            width: fit-content;
+                        }
+                        a h4 {
+                            text-decoration: underline;
+                            margin-inline: auto;
+                        }
+                    }
                 }
             }
         }
-        .banner_image {
-            position: relative;
-            width: 100%;
-            height: 54rem;
-            margin-top: 3.2rem;
-            & > img {
-                object-fit: cover;
-                border-radius: 1.6rem;
-            }
-        }
+        
         .main_layout {
             display: flex;
             align-items: flex-start;
@@ -83,14 +118,13 @@
                 position: sticky;
                 top: 13.5rem;
                 .table_of_contents_sticky {
-                    background: #111;
+                    background: transparent;
                     padding: 3.2rem;
                     border-radius: 1.6rem;
-                    border: 0.1rem solid #FFFFFF1F;
                     .h2 {
                         font-size: 2.4rem;
                         font-family: $font-gothic-bold;
-                        color: $col-white;
+                        color: #111021;
                         margin-bottom: 2.4rem;
                         padding-bottom: 1.6rem;
                         border-bottom: 0.1rem solid #333;
@@ -98,18 +132,20 @@
 
                     .toc_content {
                         font-family: $font;
-                        color: #ccc;
+                        color: #2D2B4A;
                         line-height: 1.6;
                         ul {
                             padding-left: 1.6rem;
                             li {
-                                list-style-type: decimal;
+                                list-style-type: disclosure-closed;
                                 margin-bottom: 1.2rem;
                                 font-size: 1.4rem;
-                                color: #ccc;
+                                color: #2D2B4A;
                                 a {
-                                    color: #A2A2A0;
+                                    color: #2D2B4A;
                                     transition: color 0.2s ease;
+                                    font-size: 1.4rem;
+                                    line-height: 2rem;
                                     &:hover {
                                         color: #00BF4D;
                                     }
@@ -259,18 +295,33 @@
                         line-height: 2.7rem;
                     }
                 }
-                h1 { 
-                    font-size: 3.6rem; 
-                }
-                .time_and_date {
-                    h4 {
-                        font-size: 1.8rem;
-                        line-height: 2.7rem;
+                .header_details {
+                    gap: 8rem;
+                    .banner_image {
+                        width: 30rem;
+                        height: 45rem;
+                    }
+                    .name_type_and_date {
+                        max-width: 45rem;
+                        .tag_and_name {
+                            padding-block: 3.6rem;
+                            margin-bottom: 3.2rem;
+                            .tag {
+                                margin-bottom: 0;
+                            }
+                            h1 {
+                                font-size: 3.6rem;
+                            }
+                        }
+                        .time_and_date {
+                            a h4, h4 {
+                                margin-bottom: 2rem;
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+                            }
+                        }
                     }
                 }
-            }
-            .banner_image {
-                height: 43rem;
             }
             .main_layout {
                 width: 100%;
@@ -324,12 +375,12 @@
         .details_content {
             padding: 0 1.6rem!important;
             .details_header {
-                padding: 1.6rem 1.6rem 1.6rem 0;
+                padding: 2.4rem 0 0 0;
                 .breadcrumbs {
                     a {
                         p {
-                            font-size: 1.4rem;
-                            line-height: 2rem;
+                            font-size: 1.2rem;
+                            line-height: 1.6rem;
                         }
                     }
                     .chevron {
@@ -337,29 +388,47 @@
                         height: 1.6rem;
                     }
                     h3 {
-                        font-size: 1.4rem;
-                        line-height: 2rem;
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
                     }
                 }
-                h1 { 
-                    font-size: 2.4rem;
-                    margin-top: 1.6rem; 
-                }
-                .time_and_date {
-                    width: 100%;
+                .header_details {
+                    gap: 2.4rem;
+                    flex-direction: column;
                     margin-top: 2.4rem;
-                    h4 {
-                        font-size: 1.6rem;
-                        line-height: 2.4rem;
+                    border: 0;
+                    .banner_image {
+                        width: 100%;
+                        height: 30rem;
+                    }
+                    .name_type_and_date {
+                        max-width: 100%;
+                        margin-inline: auto;
+                        .tag_and_name {
+                            padding-block: 1.6rem;
+                            margin-bottom: 0;
+                            .tag {
+                                font-size: 1rem;
+                            }
+                            h1 {
+                                font-size: 2.4rem;
+                                margin-top: 2rem;
+                            }
+                        }
+                        .time_and_date {
+                            margin-top: 0;
+                            a h4, h4 {
+                                margin-bottom: 1rem;
+                                font-size: 1.2rem;
+                                line-height: 1.6rem;
+                            }
+                        }
                     }
                 }
-            }
-            .banner_image {
-                height: 30rem;
             }
             .main_layout {
                 gap: 0;
-                margin-top: 5.6rem;
+                margin-top: 2.4rem;
                 flex-direction: column;
                 justify-content: unset;
                 .sidebar {
@@ -376,9 +445,11 @@
                         .toc_content {
                             ul {
                                 li {
-                                    font-size: 1.2rem;
-                                    line-height: 1.6rem;
                                     margin-bottom: 1rem;
+                                    a {
+                                        font-size: 1.2rem;
+                                        line-height: 1.6rem;
+                                    }
                                 }
                             }
                         }

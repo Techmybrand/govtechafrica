@@ -44,7 +44,6 @@ const ResearchDetails = () => {
         relatedBlog?.slug !== blog?.slug) ?? [];
     const contentToShow = relatedContent.length ? relatedContent.slice(0, 4) :
         blogs?.reverse().filter((relatedBlog) => relatedBlog?.slug !== blog?.slug).slice(0, 4);
-    console.log("type: ", queryArticleType);
 
     return (
         <main data-type={queryArticleType} className={styles.details_container}>
