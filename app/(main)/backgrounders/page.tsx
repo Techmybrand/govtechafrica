@@ -1,5 +1,5 @@
-
+import { BackgroundersView } from "@/views";
 
 export default function BackgroundersPage() {
-    return <h1>Backgrounders Page</h1>
+    return <BackgroundersView />
 }

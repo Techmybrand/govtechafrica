@@ -1,5 +1,5 @@
-
+import { PolicyBriefsView } from "@/views";
 
 export default function PolicyBriefsPage() {
-    return <h1>PolicyBriefs Page</h1>
+    return <PolicyBriefsView />
 }

@@ -6,10 +6,11 @@ import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
 import { ChartLoader } from "@/shared/loaders";
 import { useParams, useSearchParams } from "next/navigation";
-import Image from "next/image";
-import styles from "./ResearchDetails.module.scss";
-import Link from "next/link";
 import Backgrounders from "./Backgrounders/Backgrounders";
+import ExpertTakes from "./ExpertTakes/ExpertTakes";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./ResearchDetails.module.scss";
 
 const ResearchDetails = () => {
     const params = useParams();
@@ -53,6 +54,8 @@ const ResearchDetails = () => {
                 </div>
             ) : queryArticleType === "backgrounder" ? (
                 <Backgrounders blog={blog} contentToShow={contentToShow} />
+            ) : queryArticleType === "expert-take" ? (
+                <ExpertTakes blog={blog} contentToShow={contentToShow} />
             ) : (
                 <article>
                     <header className={styles.details_content}>
@@ -102,16 +105,22 @@ const ResearchDetails = () => {
                     <section className={styles.details_content}>
                         <div className={styles.details_body}>
                             <div className={styles.research_details}>
-                                {blog?.researchContent && <RichText content={blog?.researchContent} />}
+                                {blog?.researchContent && (
+                                    <RichText content={blog?.researchContent} />
+                                )}
                             </div>
                         </div>
-                        <div className={styles.details_body_}>
-                            {/* <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" rel="noopener noreferrer"> */}
-                            {/* <Button className={styles.download_btn}>
-                                Read the report
-                            </Button> */}
-                            {/* </Link> */}
-                        </div>
+                        {blog?.pdf?.fields?.file?.url && (
+                            <div className={styles.details_body_}>
+                                <Link href={`https:${blog?.pdf?.fields?.file?.url}`} 
+                                    target="_blank" rel="noopener noreferrer"
+                                >
+                                    <Button className={styles.download_btn}>
+                                        Download the report
+                                    </Button>
+                                </Link>
+                            </div>
+                        )}
                         {blog?.authors?.length ? (
                             <div className={styles.written_by_sm}>
                                 <h2>WRITTEN BY</h2>

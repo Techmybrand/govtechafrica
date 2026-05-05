@@ -1,5 +1,5 @@
-
+import { ArticlesView } from "@/views";
 
 export default function ArticlesPage() {
-    return <h1>Articles Page</h1>
+    return <ArticlesView />
 }

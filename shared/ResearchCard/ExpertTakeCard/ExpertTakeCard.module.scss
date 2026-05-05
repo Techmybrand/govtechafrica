@@ -1,0 +1,140 @@
+@import "@/styles/imports";
+
+.card_container {
+    width: 100%;
+    min-height: 50.5rem;
+    margin-block: 1.6rem;
+    background-color: #F1EDE4;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border: 0.1rem solid #000;
+    &:hover {
+        .middle_section {
+            a {
+                .title {
+                    color: #00BF4D;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .top_section {
+        height: 28rem;
+        width: 100%;
+        .image_wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .middle_section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 2.4rem 1.6rem;
+        text-align: left;
+        flex-grow: 1;
+        a {
+            text-decoration: none;
+        }
+        .title {
+            font-family: $font-gothic-bold, Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            font-style: italic;
+            color: #1A1A1A;
+            line-height: 1.2;
+            transition: color 0.2s ease;
+        }
+    }
+
+    .bottom_section {
+        padding: 1.6rem 1.6rem 0;
+        .date {
+            font-family: $font;
+            font-size: 1.6rem;
+            color: #555555;
+            margin-bottom: 1rem;
+        }
+        .author {
+            border-top: 0.1rem solid #000;
+            width: auto;
+            margin: 0 -1.6rem;
+            padding-block: 0.4rem;
+            p {
+                font-family: $font;
+                font-size: 1.6rem;
+                color: #555555;
+                padding-left: 1.6rem;
+            }
+        }
+    }
+}
+
+@include screenMax("tablet") {
+    .card_container {
+        min-height: 44rem;
+        .top_section {
+            height: 25rem;
+        }
+        .middle_section {
+            padding: 2rem 1.6rem;
+            .title {
+                font-size: 2rem;
+            }
+        }
+        .bottom_section {
+            padding: 1.6rem;
+            .date {
+                font-size: 1.4rem;
+            }
+            .author {
+                margin: 0 -1.6rem;
+                p {
+                    font-size: 1.4rem;
+                    padding-left: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+@include screenMax("mobile") {
+    .card_container {
+        min-height: 40rem;
+        flex-shrink: 0;
+        width: 80%;
+        margin-block: 0.8rem;
+        .top_section {
+            height: 23rem;
+        }
+        .middle_section {
+            padding: 1.6rem;
+            .title {
+                font-size: 1.8rem;
+            }
+        }
+        .bottom_section {
+            padding: 1.6rem;
+            .date {
+                font-size: 1.2rem;
+                margin-top: 1.6rem;
+            }
+            .author {
+                margin-left: 0 -1.6rem;
+                p {
+                    font-size: 1.2rem;
+                    line-height: 1.6rem;
+                }
+            }
+        }
+    }
+}

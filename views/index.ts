@@ -1,3 +1,4 @@
+import BackgroundersView from "./BackgroundersView/BackgroundersView";
 import BlogView from "./blogView/BlogView";
 import CareersView from "./CareersView/CareersView";
 import ContactView from "./contactView/ContactView";
@@ -8,14 +9,21 @@ import PolicyRoundTableView from "./PolicyRoundTableView/PolicyRoundTableView";
 import UploadView from "./uploadView/UploadView";
 import WhatWeDoView from "./whatWeDoView/WhatWeDoView";
 import WhoWeAreView from "./whoWeAreView/WhoWeAreView";
+import ArticlesView from "./ArticlesView/ArticlesView";
+import ExpertTakesView from "./ExpertTakesView/ExpertTakesView";
+import PolicyBriefsView from "./PolicyBriefsView/PolicyBriefsView";
 
 
 export {
     HomeView,
     WhatWeDoView,
+    ArticlesView,
     WhoWeAreView,
+    PolicyBriefsView,
+    ExpertTakesView,
     ContactView,
     NewHomeView,
+    BackgroundersView,
     PolicyRoundTableView,
     UploadView,
     BlogView,
