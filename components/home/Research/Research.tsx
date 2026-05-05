@@ -63,7 +63,7 @@ const Research = () => {
                     ) : isPolicyBrief ? (
                         <PolicyBriefCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                            slug={blog?.slug}
+                            slug={blog?.slug} description={blog?.description}
                             type={type}
                         />
                     ) : (

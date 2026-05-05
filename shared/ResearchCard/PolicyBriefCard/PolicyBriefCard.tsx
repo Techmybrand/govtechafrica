@@ -5,15 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logo } from "@/shared";
 import styles from "./PolicyBriefCard.module.scss";
-
 interface PolicyBriefCardProps {
     image: string;
     title: string;
     slug: string;
     type?: string;
+    description?: string;
 }
 
-const PolicyBriefCard = ({ image, title, slug, type }: PolicyBriefCardProps) => {
+const PolicyBriefCard = ({ image, title, slug, type, description }: PolicyBriefCardProps) => {
     const router = useRouter();
     const typeQuery = 'policy-brief';
     const displayTag = type?.replace('-', ' ')?.toUpperCase() || 'POLICY BRIEF';
@@ -39,6 +39,7 @@ const PolicyBriefCard = ({ image, title, slug, type }: PolicyBriefCardProps) => 
                             {title}
                         </h2>
                     </Link>
+                    <p>{description?.slice(0, 90)}...</p>
                 </div>
             </div>
         </article>
