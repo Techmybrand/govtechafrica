@@ -14,6 +14,7 @@ interface ResearchCardProps {
     alt?: string;
     index?: number;
     researchType?: string;
+    publishedAt?: string;
 }
 
 const ResearchCard = ({ image, slug, alt, btnText, title, description, researchType }: ResearchCardProps) => {

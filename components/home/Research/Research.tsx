@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { ResearchCard, BackgrounderCard } from "@/shared";
+import { ResearchCard, BackgrounderCard, ExpertTakeCard, PolicyBriefCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./Research.module.scss";
@@ -39,13 +39,32 @@ const Research = () => {
                     }
                     const getType = blog?.type?.toLowerCase();
                     const type = getType?.replace(' ', '-');
-                    console.log('type: ', type)
+                    const isExpertTake = getType === "perspective" ||
+                        getType === "opinion-piece" ||
+                        getType === "insight";
+                    const isPolicyBrief = getType === "policy brief" || getType === "case study";
+
                     return blog?.type === 'backgrounder' ? (
                         <BackgrounderCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
                             slug={blog?.slug}
                             date={blog?.date}
                             publishedAt={blog?.publishedAt}
+                        />
+                    ) : isExpertTake ? (
+                        <ExpertTakeCard key={index} title={blog?.title}
+                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                            slug={blog?.slug}
+                            date={blog?.date}
+                            publishedAt={blog?.publishedAt}
+                            author={blog?.authors?.[0]}
+                            type={type}
+                        />
+                    ) : isPolicyBrief ? (
+                        <PolicyBriefCard key={index} title={blog?.title}
+                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                            slug={blog?.slug}
+                            type={type}
                         />
                     ) : (
                         <ResearchCard key={index} title={blog?.title}

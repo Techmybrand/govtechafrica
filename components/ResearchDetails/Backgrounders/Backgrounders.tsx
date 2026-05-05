@@ -115,32 +115,30 @@ const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
         </div>
 
         <div className={styles.related_insights}>
-            <div className={styles.insights_header}>
-                <h2>Related Insights</h2>
-            </div>
-            <div className={styles.research_wrapper}>
-                {contentToShow?.map((relatedBlog: BlogDetailsProps, index: number) =>
-                    relatedBlog?.type === 'backgrounder' ? (
-                    <BackgrounderCard key={index} title={relatedBlog?.title}
-                        image={`https:${relatedBlog?.thumbnail?.fields?.file?.url}`}
-                        slug={relatedBlog?.slug}
-                        date={relatedBlog?.date}
-                        publishedAt={relatedBlog?.publishedAt}
-                    />
-                    ) : (
-                    <ResearchCard key={index} title={relatedBlog?.title}
-                        image={`https:${relatedBlog?.thumbnail?.fields?.file?.url}`}
-                        alt={`https:${relatedBlog?.thumbnail?.fields?.description}`}
-                        description={relatedBlog?.description}
-                        btnText={relatedBlog?.type}
-                        slug={relatedBlog?.slug}
-                    />
-                    )
-                )}
-            </div>
-            <Button className={styles.explore_btn} href="/insights">
-                See more
-            </Button>
+          <div className={styles.insights_header}>
+            <h2>Related Insights</h2>
+          </div>
+          <div className={styles.research_wrapper}>
+            {contentToShow?.map((relatedBlog: BlogDetailsProps, index: number) =>
+              relatedBlog?.type.toLowerCase() === 'backgrounder' ? (
+                <BackgrounderCard key={index} title={relatedBlog?.title}
+                  image={`https:${relatedBlog?.thumbnail?.fields?.file?.url}`}
+                  slug={relatedBlog?.slug} date={relatedBlog?.date}
+                  publishedAt={relatedBlog?.publishedAt}
+                />
+              ) : (
+                <ResearchCard key={index} title={relatedBlog?.title}
+                  image={`https:${relatedBlog?.thumbnail?.fields?.file?.url}`}
+                  alt={`https:${relatedBlog?.thumbnail?.fields?.description}`}
+                  description={relatedBlog?.description}
+                  btnText={relatedBlog?.type} slug={relatedBlog?.slug}
+                />
+              )
+            )}
+          </div>
+          <Button className={styles.explore_btn} href="/insights">
+            See more
+          </Button>
         </div>
       </section>
       <div className={styles.divider_green}></div>

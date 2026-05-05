@@ -21,6 +21,8 @@ import Partners from "./Partners/Partners";
 import PreLoader from "./PreLoader/PreLoader";
 import ResearchCard from "./ResearchCard/ResearchCard";
 import BackgrounderCard from "./ResearchCard/BackgrounderCard/BackgrounderCard";
+import ExpertTakeCard from "./ResearchCard/ExpertTakeCard/ExpertTakeCard";
+import PolicyBriefCard from "./ResearchCard/PolicyBriefCard/PolicyBriefCard";
 import RichText from "./RichText/RichText";
 import Searchbar from "./Searchbar/Searchbar";
 import Select from "./select/Select";
@@ -63,6 +65,8 @@ export {
     InsightsCard,
     ResearchCard,
     BackgrounderCard,
+    ExpertTakeCard,
+    PolicyBriefCard,
     HeroV2,
     FooterV2,
 };
