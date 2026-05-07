@@ -11,12 +11,13 @@ interface PolicyBriefCardProps {
     slug: string;
     type?: string;
     description?: string;
+    btnText?: string;
 }
 
-const PolicyBriefCard = ({ image, title, slug, type, description }: PolicyBriefCardProps) => {
+const PolicyBriefCard = ({ image, title, slug, description, btnText }: PolicyBriefCardProps) => {
     const router = useRouter();
     const typeQuery = 'policy-brief';
-    const displayTag = type?.replace('-', ' ')?.toUpperCase() || 'POLICY BRIEF';
+    const displayTag = btnText || 'POLICY BRIEF';
     return (
         <article className={styles.card_container}
             onClick={() => router.push(`/insights/research/${slug}?type=${typeQuery}`)}

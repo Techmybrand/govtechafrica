@@ -35,6 +35,7 @@ const ArticlesView = () => {
 								<ResearchCard key={index} title={blog?.title}
 									image={`https:${blog?.thumbnail?.fields?.file?.url}`}
 									slug={blog?.slug} publishedAt={blog?.publishedAt}
+									btnText={blog?.type} description={blog?.description}
 								/>
 							)
 						})}
