@@ -37,12 +37,10 @@ const Research = () => {
                             }
                         }
                     }
-                    const getType = blog?.type?.toLowerCase();
-                    const type = getType?.replace(' ', '-');
-                    const isExpertTake = getType === "perspective" ||
-                        getType === "opinion-piece" ||
-                        getType === "insight";
-                    const isPolicyBrief = getType === "policy brief" || getType === "case study";
+                    const type = blog?.type?.toLowerCase();
+                    const isExpertTake = type === "perspective" ||
+                        type === "opinion piece" || type === "insight";
+                    const isPolicyBrief = type === "policy brief" || type === "case study";
 
                     return blog?.type === 'backgrounder' ? (
                         <BackgrounderCard key={index} title={blog?.title}

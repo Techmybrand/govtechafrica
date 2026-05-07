@@ -47,7 +47,7 @@
         }
         .title {
             font-family: $font-gothic-bold, Georgia, serif;
-            font-size: 2.4rem;
+            font-size: 2rem;
             font-weight: 700;
             font-style: italic;
             color: #1A1A1A;
@@ -69,6 +69,7 @@
             width: auto;
             margin: 0 -1.6rem;
             padding-block: 0.4rem;
+            display: none;
             p {
                 font-family: $font;
                 font-size: 1.6rem;
@@ -88,7 +89,7 @@
         .middle_section {
             padding: 2rem 1.6rem;
             .title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
         }
         .bottom_section {
@@ -119,7 +120,7 @@
         .middle_section {
             padding: 1.6rem;
             .title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
         }
         .bottom_section {
@@ -129,7 +130,7 @@
                 margin-top: 1.6rem;
             }
             .author {
-                margin-left: 0 -1.6rem;
+                margin: 0 -1rem;
                 p {
                     font-size: 1.2rem;
                     line-height: 1.6rem;

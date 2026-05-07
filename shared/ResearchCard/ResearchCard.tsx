@@ -148,8 +148,7 @@ const ResearchCard = ({ image, slug, alt, btnText, title, description, researchT
                             )}
                         </div>
                         <h2>{title}</h2>
-                        <h4>{isTab ? `${description?.slice(0, 120)}...` :
-                            `${description?.slice(0, 90)}...`}
+                        <h4>{isTab ? description : description}
                         </h4>
                     </div>
                     <Link href={`/insights/research/${slug}?type=${researchType}`}>

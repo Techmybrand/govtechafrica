@@ -57,8 +57,9 @@
                 }
                 .name_type_and_date {
                     max-width: 60rem;
+                    max-height: 54rem;
                     .tag_and_name {
-                        padding-block: 8rem;
+                        padding-block: 4rem;
                         margin-bottom: 4rem;
                         margin-inline: auto;
                         .tag {
@@ -404,6 +405,7 @@
                     .name_type_and_date {
                         max-width: 100%;
                         margin-inline: auto;
+                        max-height: 100%;
                         .tag_and_name {
                             padding-block: 1.6rem;
                             margin-bottom: 0;
