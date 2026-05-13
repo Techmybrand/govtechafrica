@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     &:hover {
         .top_section {
             a {
@@ -27,6 +28,7 @@
             }
         }
     }
+
     .top_section {
         display: flex;
         flex-direction: column;
@@ -34,6 +36,7 @@
         justify-content: flex-start;
         padding: 3.2rem 2.4rem;
         text-align: center;
+
         .tag {
             font-family: $font;
             font-size: 1.2rem;
@@ -45,6 +48,7 @@
             margin-bottom: 2.4rem;
             text-transform: uppercase;
         }
+
         a {
             .title {
                 font-family: $font-gothic-bold, Georgia, serif;
@@ -56,6 +60,7 @@
                 transition: color 0.2s ease;
             }
         }
+
         .date {
             font-family: $font;
             font-size: 1.6rem;
@@ -63,13 +68,16 @@
             margin-top: 3.2rem;
         }
     }
+
     .bottom_section {
-        height: 28rem;
+        height: 25rem;
         width: 100%;
+
         .image_wrapper {
             position: relative;
             width: 100%;
             height: 100%;
+
             img {
                 object-fit: cover;
                 width: 100%;
@@ -82,14 +90,17 @@
 @include screenMax("tablet") {
     .card_container {
         min-height: 44rem;
+
         .top_section {
             padding: 2.4rem 1.6rem;
+
             a {
                 .title {
                     font-size: 1.8rem;
                 }
             }
         }
+
         .bottom_section {
             height: 23rem;
         }
@@ -104,18 +115,22 @@
         display: flex;
         flex-direction: column;
         margin-block: 0.8rem;
+
         .top_section {
             padding: 2rem 1.6rem;
+
             .tag {
                 font-size: 1rem;
                 padding: 0.4rem 0.8rem;
                 margin-bottom: 1.6rem;
             }
+
             a {
                 .title {
                     font-size: 1.6rem;
                 }
             }
+
             .date {
                 font-size: 1.4rem;
                 line-height: 2rem;

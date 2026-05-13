@@ -1,0 +1,242 @@
+@import "@/styles/imports";
+
+.section_wrapper {
+    width: 100%;
+    margin-bottom: 12rem;
+
+    .section_container {
+        padding: 3.6rem;
+        max-width: $max-width;
+        margin-inline: auto;
+        position: relative;
+        overflow: hidden;
+
+        .text_section {
+            margin: 6.4rem auto 12rem;
+            width: 80%;
+            text-align: center;
+
+            .text_wrapper {
+                width: 100%;
+
+                h2 {
+                    font-size: 4.8rem;
+                    line-height: 6.2rem;
+                    font-weight: 700;
+                    font-family: $font-gothic-bold;
+                    color: $col-white;
+                    margin-bottom: 1.4rem;
+                }
+
+                h3,
+                span {
+                    font-size: 2rem;
+                    line-height: 2.8rem;
+                    font-family: $font-gothic;
+                    font-weight: 400;
+                    color: $col-white;
+                    width: 61%;
+                    margin-inline: auto;
+                    text-align: center;
+
+                    span {
+                        color: rgba($col-white, 0.6);
+                    }
+                }
+            }
+        }
+
+        .team_section {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8rem;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+
+            .teams_container {
+                width: 50%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.6rem;
+
+                .team_card {
+                    position: relative;
+                    width: 100%;
+                    height: 40rem;
+
+                    img {
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .teams_text {
+                width: 40%;
+
+                h3,
+                span {
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                    font-weight: 700;
+                    font-family: $font-gothic-bold;
+                    color: rgba($col-white, 0.5);
+                    margin-bottom: 1rem;
+
+                    span {
+                        color: $col-white;
+                    }
+                }
+
+                p {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    font-family: $font-gothic;
+                    font-weight: 400;
+                    color: $col-white;
+                }
+
+                .button {
+                    margin-top: 14rem;
+
+                    p {
+                        font-size: 1.4rem;
+                        font-family: $font-gothic;
+                        font-weight: 400;
+                        color: $col-white;
+                    }
+                }
+            }
+        }
+    }
+
+    @include screenMax("tablet") {
+        margin-bottom: 8rem;
+
+        .section_container {
+            padding: 2.4rem;
+
+            .text_section {
+                width: 85%;
+                margin: 4.8rem auto 8rem;
+
+                .text_wrapper {
+                    h2 {
+                        font-size: 3.6rem;
+                        line-height: 4.8rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    h3,
+                    span {
+                        font-size: 1.8rem;
+                        line-height: 2.7rem;
+                        width: 75%;
+                    }
+                }
+            }
+
+            .team_section {
+                width: 85%;
+                gap: 5.6rem;
+
+                .teams_container {
+                    .team_card {
+                        height: 30rem;
+                    }
+                }
+
+                .teams_text {
+                    width: 50%;
+
+                    h3,
+                    span {
+                        font-size: 1.8rem;
+                        line-height: 2.7rem;
+                    }
+
+                    p {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                    }
+
+                    .button {
+                        margin-top: 10rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include screenMax('mobile') {
+        margin-bottom: 5.6rem;
+
+        .section_container {
+            padding: 1.6rem;
+
+            .text_section {
+                width: 100%;
+                margin: 0 auto 5.6rem;
+
+                .text_wrapper {
+                    h2 {
+                        font-size: 2.4rem;
+                        line-height: 3.2rem;
+                        margin-bottom: 0.8rem;
+                    }
+
+                    h3,
+                    span {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                        width: 95%;
+                    }
+                }
+            }
+
+            .team_section {
+                width: 100%;
+                gap: 2.4rem;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: unset;
+                gap: 2.4rem;
+
+                .teams_container {
+                    width: 100%;
+
+                    .team_card {
+                        height: 25rem;
+                    }
+                }
+
+                .teams_text {
+                    width: 100%;
+
+                    h3,
+                    span {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                    }
+
+                    p {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                    }
+
+                    .button {
+                        margin-top: 3.6rem;
+                        min-width: 9rem;
+
+                        p {
+                            font-size: 1.2rem !important;
+                            line-height: 1.6rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

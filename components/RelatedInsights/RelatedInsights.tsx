@@ -3,9 +3,12 @@ import React, { useEffect } from "react";
 import { ResearchCard, Button, BackgrounderCard, ExpertTakeCard, PolicyBriefCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
-import styles from "./RelatedInsights.module.scss"
+import styles from "./RelatedInsights.module.scss";
+interface RelatedInsightsProps {
+    type?: "new" | "default";
+}
 
-const RelatedInsights = () => {
+const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
     const { fetchBlogs, sortedBlogs } = useGetContentful();
     useEffect(() => {
         fetchBlogs();
@@ -15,7 +18,7 @@ const RelatedInsights = () => {
         <div className={styles.research_container}>
             <div className={styles.text_wrapper}>
                 <div className={styles.text}>
-                    <h1>Explore Insights</h1>
+                    <h1>{type === "new" ? 'Read Now!' : 'Explore Insights'}</h1>
                     <Button className={styles.explore_btn} href="/insights">
                         See more
                     </Button>
@@ -24,7 +27,6 @@ const RelatedInsights = () => {
             <div className={styles.research_wrapper}>
                 {sortedBlogs?.slice(0, 4)?.map((blog: BlogDetailsProps, index: number) => {
                     const getType = blog?.type?.toLowerCase();
-                    const type = getType?.replace(' ', '-');
                     const isExpertTake = getType === "perspective" ||
                         getType === "opinion-piece" ||
                         getType === "insight";
@@ -44,13 +46,13 @@ const RelatedInsights = () => {
                             date={blog?.date}
                             publishedAt={blog?.publishedAt}
                             author={blog?.authors?.[0]}
-                            type={type}
+                            type={blog?.type}
                         />
                     ) : isPolicyBrief ? (
                         <PolicyBriefCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
                             slug={blog?.slug} description={blog?.description}
-                            type={type}
+                            type={blog?.type}
                         />
                     ) : (
                         <ResearchCard key={index} title={blog?.title}

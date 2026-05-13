@@ -7,23 +7,23 @@ import styles from "./Mission.module.scss";
 
 const Mission = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
-        const { scrollYProgress } = useScroll({
-            target: sectionRef,
-            offset: ["start end", "end center"]
-        });
-    
-        const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
-        const y = useSpring(rawY, {
-            stiffness: 100,
-            damping: 20,
-            mass: 0.5
-        });
-        const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
-        const opacity = useSpring(rawOpacity, {
-            stiffness: 100,
-            damping: 20,
-            mass: 0.5
-        });
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start end", "end center"]
+    });
+
+    const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+    const y = useSpring(rawY, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
+    const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+    const opacity = useSpring(rawOpacity, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
     return (
         <div ref={sectionRef} className={styles.mission_section}>
             <div className={styles.container}>

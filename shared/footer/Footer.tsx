@@ -21,7 +21,7 @@ const Footer = ({ type = "default" }: FooterProps) => {
 		<React.Fragment>
 			<footer data-type={type} className={styles.footer}>
 				<div className={styles.footer_body}>
-					<div className={styles.footer_content}>
+					<div data-type={type} className={styles.footer_content}>
 						<div className={styles.details}>
 							<div className={styles.logo_and_socials}>
 								<Link href='/'>
@@ -35,7 +35,7 @@ const Footer = ({ type = "default" }: FooterProps) => {
 											rel="noreferrer"
 											className={styles.social}
 											key={index}
-											// data-index={index}
+										// data-index={index}
 										>
 											<Image
 												src={social.icon}
@@ -48,7 +48,7 @@ const Footer = ({ type = "default" }: FooterProps) => {
 								</div>
 							</div>
 							<div className={styles.copyWrite}>
-							{/* <div onClick={() => setOpen(true)} className={styles.copyWrite}> */}
+								{/* <div onClick={() => setOpen(true)} className={styles.copyWrite}> */}
 								<p>&copy; {year} Govtech Africa Inc.</p>
 							</div>
 						</div>
@@ -76,7 +76,7 @@ const Footer = ({ type = "default" }: FooterProps) => {
 					</div>
 					{type === "default" && (
 						<div className={styles.image}>
-							<Image src="/images/govtechafri.png" sizes="100%" priority 
+							<Image src="/images/govtechafri.png" sizes="100%" priority
 								alt="govtech" fill
 							/>
 						</div>

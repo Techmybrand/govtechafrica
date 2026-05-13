@@ -12,6 +12,7 @@ import WhoWeAreView from "./whoWeAreView/WhoWeAreView";
 import ArticlesView from "./ArticlesView/ArticlesView";
 import ExpertTakesView from "./ExpertTakesView/ExpertTakesView";
 import PolicyBriefsView from "./PolicyBriefsView/PolicyBriefsView";
+import NewWhoWeAreView from "./NewWhoWeAreView/NewWhoWeAreView";
 
 
 export {
@@ -29,4 +30,5 @@ export {
     BlogView,
     CareersView,
     NotFoundView,
+    NewWhoWeAreView,
 };

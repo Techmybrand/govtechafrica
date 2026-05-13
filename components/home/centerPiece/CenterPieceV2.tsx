@@ -1,9 +1,36 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 import styles from "./CenterPieceV2.module.scss";
 
 const CenterPieceV2 = () => {
+    // const centerpieceRef = useRef<HTMLDivElement>(null);
+    // const { scrollYProgress } = useScroll({
+    //     target: centerpieceRef,
+    //     offset: ["start end", "end center"]
+    // });
+
+    // const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+    // const y = useSpring(rawY, {
+    //     stiffness: 100,
+    //     damping: 20,
+    //     mass: 0.5
+    // });
+    // const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+    // const opacity = useSpring(rawOpacity, {
+    //     stiffness: 100,
+    //     damping: 20,
+    //     mass: 0.5
+    // });
+
+    // const rotateZ = useTransform(scrollYProgress, [0, 1], [0, 360]);
+    // const opacityGlobe = useSpring(rawOpacity, {
+    //     stiffness: 100,
+    //     damping: 20,
+    //     mass: 0.5
+    // });
+
     return (
         <div className={styles.section}>
             <div className={styles.section_container}>

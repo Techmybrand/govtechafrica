@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
-import styles from "./NewsLetter.module.scss";
+import React, { useRef, useState } from "react";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { InputField } from "@/shared";
 import { BeatLoader } from "react-spinners";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import styles from "./NewsLetter.module.scss";
 
 const NewsLetter = () => {
     const [formData, setFormData] = useState<{ fullName: string; email: string }>({ fullName: '', email: '' });
@@ -47,26 +48,44 @@ const NewsLetter = () => {
     };
     if (status === 'success') {
         return (
-        <div className="newsletter-success">
-            <div className="newsletter-success__icon">✓</div>
-            <h3>{`You're subscribed!`}</h3>
-            <p>
-                Welcome to the Govtech Africa community. Check your inbox for a
-                welcome email from us.
-            </p>
-            <button className="newsletter-btn newsletter-btn--ghost"
-                onClick={() => setStatus('idle')}
-            >
-                Close
-            </button>
-        </div>
+            <div className="newsletter-success">
+                <div className="newsletter-success__icon">✓</div>
+                <h3>{`You're subscribed!`}</h3>
+                <p>
+                    Welcome to the Govtech Africa community. Check your inbox for a
+                    welcome email from us.
+                </p>
+                <button className="newsletter-btn newsletter-btn--ghost"
+                    onClick={() => setStatus('idle')}
+                >
+                    Close
+                </button>
+            </div>
         );
     }
+    const newsletterRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: newsletterRef,
+        offset: ["start end", "end center"]
+    });
+
+    const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+    const y = useSpring(rawY, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
+    const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+    const opacity = useSpring(rawOpacity, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
 
     return (
-        <div className={styles.newsletter_section}>
+        <div ref={newsletterRef} className={styles.newsletter_section}>
             <div className={styles.newsletter_container}>
-                <div className={styles.newsletter_content}>
+                <motion.div style={{ y, opacity }} className={styles.newsletter_content}>
                     <div className={styles.image}>
                         <Image alt="" fill src="/images/newsletter.png" />
                     </div>
@@ -93,7 +112,7 @@ const NewsLetter = () => {
                             )}
                         </button>
                     </form>
-                </div>
+                </motion.div>
             </div>
         </div>
     )
