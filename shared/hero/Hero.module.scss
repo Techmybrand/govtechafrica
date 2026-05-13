@@ -6,7 +6,12 @@
 	min-height: 100vh;
 	position: relative;
 	width: 100%;
+	margin-bottom: 12rem;
 	@extend %center;
+
+	&[data-gettype="new"] {
+		min-height: 99vh;
+	}
 
 	.grad {
 		width: 15.2rem;
@@ -100,6 +105,31 @@
 						font-size: 1.8rem;
 						line-height: 2.7rem;
 						color: rgba(255, 255, 255, 1);
+					}
+				}
+
+				.sec_button {
+					width: 15rem;
+					border-radius: 1rem;
+					background: #00BF4D;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 4.5rem;
+					cursor: pointer;
+					transition: $all-transition;
+					margin: 0 auto;
+
+					&:hover {
+						background: #00BF4D;
+					}
+
+					p {
+						font-size: 1.4rem;
+						text-transform: uppercase;
+						color: #FFF;
+						font-family: $font;
+						font-weight: 600;
 					}
 				}
 
@@ -204,6 +234,8 @@
 	}
 
 	@include screenMax("tablet") {
+		margin-bottom: 8rem;
+
 		.hero_container {
 			padding: 5rem 0;
 
@@ -292,6 +324,8 @@
 	}
 
 	@include screenMax('mobile') {
+		margin-bottom: 5.6rem;
+
 		.hero_container {
 			padding: 7.5rem 0 0;
 
@@ -387,6 +421,10 @@
 					line-height: 2rem;
 				}
 			}
+		}
+
+		&[data-gettype="new"] {
+			min-height: 90vh;
 		}
 	}
 }

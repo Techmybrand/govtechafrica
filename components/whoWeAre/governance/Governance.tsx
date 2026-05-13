@@ -17,7 +17,7 @@ const Governance = ({ type = "default" }: GovernanceProps) => {
 	const textRef = useRef<HTMLDivElement>(null);
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const mobile = isMobile;
-	
+
 	useEffect(() => {
 		if (!mobile || !isHover) return;
 		const handleOutsideClick = (e: MouseEvent | TouchEvent) => {
@@ -33,7 +33,7 @@ const Governance = ({ type = "default" }: GovernanceProps) => {
 			document.removeEventListener("touchstart", handleOutsideClick);
 		};
 	}, [mobile, isHover]);
-	
+
 	useEffect(() => {
 		const handleResize = () => setIsMobile(window.innerWidth <= 767);
 		handleResize();
@@ -70,7 +70,7 @@ const Governance = ({ type = "default" }: GovernanceProps) => {
 		}
 	});
 	// console.log(displayedText, displayedSmText, displayedMain, displayedSmall);
-	
+
 	return (
 		<div ref={textRef} className={styles.section} id="team">
 			<div className={styles.text_container}>
@@ -79,7 +79,7 @@ const Governance = ({ type = "default" }: GovernanceProps) => {
 						<React.Fragment>
 							<AnimatedSection data-type={type} className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
 								<span className={styles.span}>
-									We enable African governments to better serve citizens and businesses by leveraging the 
+									We enable African governments to better serve citizens and businesses by leveraging the
 								</span>
 							</AnimatedSection>
 							<AnimatedSection data-type={type} className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
@@ -88,7 +88,7 @@ const Governance = ({ type = "default" }: GovernanceProps) => {
 								</span>
 							</AnimatedSection>
 							<AnimatedSection data-type={type} className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
-								<Button href=''>
+								<Button className={styles.button} href='/who-we-are'>
 									Learn more
 								</Button>
 							</AnimatedSection>
@@ -107,7 +107,7 @@ const Governance = ({ type = "default" }: GovernanceProps) => {
 							<AnimatedSection className={styles.text_wrapper} index={1} scrollYProgress={textYProgress}>
 								<span>{`African ingenuity and innovation.`}</span>
 							</AnimatedSection>
-						</React.Fragment>	
+						</React.Fragment>
 					)}
 				</div>
 			</div>
@@ -135,7 +135,7 @@ const Governance = ({ type = "default" }: GovernanceProps) => {
 							Visit
 						</Button>
 					</div>
-				) : (	
+				) : (
 					<div data-active={isHover} onMouseEnter={onHover} onMouseLeave={offHover}
 						className={styles.card}
 					>

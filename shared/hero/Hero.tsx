@@ -28,7 +28,7 @@ const Hero = (props: Props) => {
 		}
 	}, [speed]);
 	return (
-		<div className={styles.hero} data-type={props.dataType}>
+		<div className={styles.hero} data-gettype={props.type} data-type={props.dataType}>
 			{/* <div className={styles.grad}></div> */}
 			<div className={styles.hero_container}>
 				<div className={`${styles.hero_background} ${props.className}`}>
@@ -41,7 +41,7 @@ const Hero = (props: Props) => {
 							</div>
 						) : (
 							<div className={styles.hero_image}>
-								<video ref={videoRef} src={props.backgroundVideo} loop autoPlay 
+								<video ref={videoRef} src={props.backgroundVideo} loop autoPlay
 									muted playsInline preload="auto"
 								/>
 							</div>
@@ -53,7 +53,15 @@ const Hero = (props: Props) => {
 							<p>{props.description}</p>
 						</div>
 						{(props.button && props.href) && (
-							<Button href={props.href} className={styles.button_text}>{props.button}</Button>
+							props.type === 'new' ? (
+								<Button href={props.href} className={styles.sec_button}>
+									{props.button}
+								</Button>
+							) : (
+								<Button href={props.href} className={styles.button_text}>
+									{props.button}
+								</Button>
+							)
 						)}
 					</div>
 				</div>

@@ -1,10 +1,15 @@
 "use client";
-import React from "react";
-import styles from "./ParticipatingOrganisations.module.scss";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { Carousel } from "@/shared";
 import Image from "next/image";
+import styles from "./ParticipatingOrganisations.module.scss";
 
-const ParticipatingOrganisations = () => {
+interface Props {
+    type?: "new" | "default";
+}
+
+const ParticipatingOrganisations = ({ type = "default" }: Props) => {
     const images = [
         '/svgs/partner_1.svg',
         '/svgs/partner_2.svg',
@@ -39,46 +44,78 @@ const ParticipatingOrganisations = () => {
         "/svgs/budgit.svg",
         "/svgs/HOR.svg",
     ]
+    const [isMobile, setIsMobile] = useState<boolean>(false);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 650);
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    const partnersRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: partnersRef,
+        offset: ["start end", "end center"]
+    });
+
+    const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+    const y = useSpring(rawY, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
+    const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+    const opacity = useSpring(rawOpacity, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
     return (
-        <div className={styles.slider_container}>
-            <h3 className={styles.h3}>participating organisations</h3>
-            <div className={styles.slider_content}>
-                <Carousel direction="right" speed="normal"
-                    type="children"
-                >
-                    {images.map((image, index) =>
-                        <div data-index={index} key={index} className={styles.carousel_image}>
-                            <Image alt="" fill src={image} sizes="100%" />
-                        </div>
+        <div ref={type === "default" ? null : partnersRef} data-type={type} className={styles.slider_container}>
+            <motion.div style={{ y, opacity }} className={styles.slider_wrapper}>
+                <h3 className={styles.h3}>
+                    {type === "new" ? "our partners" : "participating organisations"}
+                </h3>
+                <div className={styles.slider_content}>
+                    {isMobile ? (
+                        <React.Fragment>
+                            <Carousel direction="right" speed="normal"
+                                type="children" className={styles.images_wrapper_sm}
+                            >
+                                {images.slice(0, 16).map((image, index) =>
+                                    <div key={index} className={styles.carousel_image}>
+                                        <Image alt="" fill src={image} sizes="100%" />
+                                    </div>
+                                )}
+                            </Carousel>
+                            <Carousel direction="left" speed="normal"
+                                type="children" className={styles.images_wrapper_sm}
+                            >
+                                {images.slice(16).map((image, index) =>
+                                    <div key={index} className={styles.carousel_image}>
+                                        <Image alt="" fill src={image} sizes="100%" />
+                                    </div>
+                                )}
+                            </Carousel>
+                        </React.Fragment>
+                    ) : (
+                        <React.Fragment>
+                            <Carousel direction="right" speed="normal"
+                                type="children"
+                            >
+                                {images.map((image, index) =>
+                                    <div data-index={index} key={index} className={styles.carousel_image}>
+                                        <Image alt="" fill src={image} sizes="100%" />
+                                    </div>
+                                )}
+                            </Carousel>
+                        </React.Fragment>
                     )}
-                </Carousel>
-            </div>
-            <div className={styles.slider_content_sm}>
-                <Carousel direction="right" speed="normal"
-                    type="children"
-                >
-                    {images.slice(0, 16).map((image, index) =>
-                        <div key={index} className={styles.carousel_image}>
-                            <Image alt="" fill src={image} sizes="100%" />
-                        </div>
-                    )}
-                </Carousel>
-                <Carousel direction="right" speed="normal"
-                    type="children"
-                >
-                    {images.slice(16).map((image, index) =>
-                        <div key={index} className={styles.carousel_image}>
-                            <Image alt="" fill src={image} sizes="100%" />
-                        </div>
-                    )}
-                </Carousel>
-                {/* <Carousel direction="left" speed="slow" items={images.slice(0, 9)}
-                    className={styles.carousel_image}
-                />
-                <Carousel direction="right" speed="slow" items={images.slice(9)}
-                    className={styles.carousel_image}
-                /> */}
-            </div>
+                </div>
+            </motion.div>
         </div>
     )
 }

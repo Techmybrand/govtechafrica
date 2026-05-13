@@ -1,5 +1,5 @@
-import { NewHomeView } from "@/views";
+import { NewWhoWeAreView } from "@/views";
 
 export default function NewWhoWeArePage() {
-    return <NewHomeView />;
+    return <NewWhoWeAreView />;
 }

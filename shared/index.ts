@@ -1,5 +1,6 @@
 import Accordion from "./Accordion/Accordion";
 import AnalyticsToggle from "./AnalyticsToggle/AnalyticsToggle";
+import AnimatedHero from "./AnimatedHero/AnimatedHero";
 import AnimatedSection from "./AnimatedSection/AnimatedSection";
 import Button from "./button/Button";
 import Carousel from "./Carousel/Carousel";
@@ -7,7 +8,6 @@ import Catalogue from "./Catalogue/Catalogue";
 import Centerpiece from "./Centerpiece/Centerpiece";
 import Divider from "./Divider/Divider";
 import Footer from "./footer/Footer";
-import FooterV2 from "./footer/FooterV2";
 import GruveTicketButton from "./GruveTicketButton/GruveTicketButton";
 import Header from "./header/Header";
 import Hero from "./hero/Hero";
@@ -37,6 +37,7 @@ import ThemeToggle from "./themeToggle/ThemeToggle";
 export {
     Accordion,
     GruveTicketButton,
+    AnimatedHero,
     AnimatedSection,
     Logo,
     AnalyticsToggle,
@@ -68,5 +69,4 @@ export {
     ExpertTakeCard,
     PolicyBriefCard,
     HeroV2,
-    FooterV2,
 };

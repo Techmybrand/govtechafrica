@@ -14,10 +14,10 @@ interface PolicyBriefCardProps {
     btnText?: string;
 }
 
-const PolicyBriefCard = ({ image, title, slug, description, btnText }: PolicyBriefCardProps) => {
+const PolicyBriefCard = ({ image, title, slug, btnText }: PolicyBriefCardProps) => {
     const router = useRouter();
     const typeQuery = 'policy-brief';
-    const displayTag = btnText || 'POLICY BRIEF';
+    const displayTag = btnText;
     return (
         <article className={styles.card_container}
             onClick={() => router.push(`/insights/research/${slug}?type=${typeQuery}`)}
@@ -40,7 +40,7 @@ const PolicyBriefCard = ({ image, title, slug, description, btnText }: PolicyBri
                             {title}
                         </h2>
                     </Link>
-                    <p>{description?.slice(0, 90)}...</p>
+                    {/* <p>{description}</p> */}
                 </div>
             </div>
         </article>

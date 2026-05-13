@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Lottie from "lottie-react";
 import { Button } from "@/shared";
+import { useScroll, useSpring, useTransform, motion } from "framer-motion";
 
 const cards = [
 	{
@@ -42,10 +43,12 @@ const CARD_DISPLAY_DURATION = 5000;
 
 const Experience = () => {
 	const [isMobile, setIsMobile] = useState<boolean>(false);
+	const [isSmMobile, setIsSmMobile] = useState<boolean>(false);
 
 	useEffect(() => {
 		const checkMobile = () => {
 			setIsMobile(window.innerWidth <= 768);
+			setIsSmMobile(window.innerWidth <= 650);
 		};
 		checkMobile();
 		window.addEventListener("resize", checkMobile);
@@ -66,20 +69,12 @@ const Experience = () => {
 	}, []);
 
 	useEffect(() => {
-		if (isMobile) {
-			setTimeout(() => {
-				setActiveCard(null);
-				setCanAnimateOpen(new Set(cards.map((_, i) => i)));
-				setIsAutoPlaying(false);
-			}, 0);
-		} else {
-			setTimeout(() => {
-				setActiveCard(0);
-				setCanAnimateOpen(new Set([0]));
-				setIsAutoPlaying(true);
-			}, 0);
-		}
-	}, [isMobile]);
+		setTimeout(() => {
+			setActiveCard(0);
+			setCanAnimateOpen(new Set([0]));
+			setIsAutoPlaying(true);
+		}, 0);
+	}, []);
 
 	const openCard = (id: number) => {
 		if (activeCard !== null && activeCard !== id) {
@@ -99,8 +94,6 @@ const Experience = () => {
 	};
 
 	const handleCardToggle = (id: string | number) => {
-		if (isMobile) return;
-
 		setIsAutoPlaying(false);
 		clearAutoPlayTimers();
 
@@ -123,8 +116,6 @@ const Experience = () => {
 	};
 
 	useEffect(() => {
-		if (isMobile) return;
-
 		if (isAutoPlaying && activeCard !== null) {
 			clearAutoPlayTimers();
 
@@ -151,7 +142,7 @@ const Experience = () => {
 		}
 
 		return () => clearAutoPlayTimers();
-	}, [isAutoPlaying, activeCard, isMobile]);
+	}, [isAutoPlaying, activeCard]);
 
 	useEffect(() => {
 		if (!isAutoPlaying) {
@@ -160,9 +151,28 @@ const Experience = () => {
 		}
 	}, [isAutoPlaying]);
 
+	const experienceContainer = useRef<any>(null);
+	const { scrollYProgress } = useScroll({
+		target: experienceContainer,
+		// offset: ["start start", "end end"],
+		offset: ["start end", "end center"]
+	});
+	const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+	const y = useSpring(rawY, {
+		stiffness: 100,
+		damping: 20,
+		mass: 0.5
+	});
+	const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+	const opacity = useSpring(rawOpacity, {
+		stiffness: 100,
+		damping: 20,
+		mass: 0.5
+	});
+
 	return (
-		<section id="global" className={styles.experience}>
-			<div className={styles.container}>
+		<section ref={experienceContainer} id="global" className={styles.experience}>
+			<motion.div style={{ y, opacity }} className={styles.container}>
 				<div className={styles.title_container}>
 					<div className={styles.title}>
 						<h2>We are Drivers of Change</h2>
@@ -182,16 +192,17 @@ const Experience = () => {
 					{cards.map((card, index) => (
 						<div key={index} className={styles.card}
 							onClick={() => handleCardToggle(index)}
-							data-active={isMobile ? true : activeCard === index}
-							// data-active={activeCard === index}
-							data-can-animate={
-								isMobile ? false : canAnimateOpen.has(index)
-								// canAnimateOpen.has(index)
-							}
-							data-closing={isMobile ? false : closingCard === index}
-							// data-closing={closingCard === index}
 							data-mobile={isMobile}
+							data-small={isSmMobile}
 							data-index={index}
+							data-active={activeCard === index}
+							data-can-animate={canAnimateOpen.has(index)}
+							data-closing={closingCard === index}
+						// data-active={isMobile ? true : activeCard === index}
+						// data-can-animate={
+						// 	isMobile ? false : canAnimateOpen.has(index)
+						// }
+						// data-closing={isMobile ? false : closingCard === index}
 						>
 							<div className={styles.image_container}>
 								<Image src={card.image} alt={card.title} fill
@@ -227,7 +238,7 @@ const Experience = () => {
 						</div>
 					))}
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 };

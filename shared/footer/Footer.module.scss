@@ -6,13 +6,15 @@
 	color: $col-grey-200;
 	position: relative;
 	width: 100%;
-	&[data-type = "new"] {
+
+	&[data-type="new"] {
 		background-color: transparent;
 		background-blend-mode: overlay;
 		background-size: cover;
 		background-image: url('/images/footer_bg_new.png');
 		min-height: 35rem;
 	}
+
 	.grad {
 		height: 15.2rem;
 		width: 100%;
@@ -32,24 +34,29 @@
 	padding: 6.5rem 3.6rem 0;
 	max-width: $max-width;
 	margin-inline: auto;
+
 	.footer_content {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
+
 		.details {
 			.logo_and_socials {
 				position: relative;
 			}
+
 			.socials {
 				@include grid(repeat(6, 2rem), 2rem);
 				margin-bottom: 2rem;
+
 				.social {
 					position: relative;
 					height: 2.4rem;
 					width: 2.4rem;
 				}
 			}
+
 			.copyWrite {
 				p {
 					color: #fff;
@@ -58,42 +65,51 @@
 				}
 			}
 		}
+
 		.footer_navSection {
 			display: flex;
 			gap: 3.2rem;
+
 			@include screenMax("tablet") {
 				gap: 2.4rem;
 				margin-bottom: 3.2rem;
 			}
 		}
 	}
+
 	.image {
 		position: relative;
 		height: 12rem;
 		width: 100%;
 		margin-top: 6rem;
 		margin-inline: auto;
+
 		@include screenMax("mobile") {
 			width: 100%;
-			& > img {
+
+			&>img {
 				object-fit: contain;
 			}
 		}
 	}
+
 	@include screenMax("tablet") {
 		flex-wrap: wrap;
 		gap: 0;
 		align-items: flex-start;
 		padding: 3rem 1.6rem 0;
+
 		.footer_content {
 			.details {
 				order: 2;
 			}
-			.footer_navSection  {
+
+			.footer_navSection {
 				order: 1;
 				width: 100%;
 			}
 		}
+
 		.image {
 			height: 4rem;
 			order: 3;
@@ -103,30 +119,45 @@
 	@include screenMax("mobile") {
 		.footer_content {
 			flex-direction: column;
+
+			&[data-type="new"] {
+				flex-direction: column-reverse;
+
+				.footer_navSection {
+					margin-top: 2.4rem;
+				}
+			}
+
 			.details {
 				width: 100%;
+
 				.logo_and_socials {
 					display: flex;
 					align-items: flex-start;
 					flex-direction: column;
 					width: 100%;
 				}
+
 				.socials {
-					column-gap: 1.6rem!important;
+					column-gap: 1.6rem !important;
+
 					.social {
 						width: 1.6rem;
 						height: 1.6rem;
-						&[data-index = "3"] {
+
+						&[data-index="3"] {
 							width: 2.4rem;
 						}
 					}
 				}
+
 				.copyWrite {
 					p {
 						font-size: 1rem;
 					}
 				}
 			}
+
 			.footer_navSection {
 				width: 100%;
 				justify-content: space-between;
@@ -139,68 +170,84 @@
 	margin-bottom: 2rem;
 	cursor: pointer;
 }
+
 .footer_nav {
 	@include screenMax("tablet") {
 		width: max-content;
 	}
+
 	.footer_navTitle {
 		padding-bottom: 1.2rem;
+
 		h3 {
 			color: $col-grey-300;
 			font-size: 1.4rem;
 			font-weight: 700;
 		}
 	}
+
 	.footer_navBody {
 		ul {
 			li {
 				padding: 0.6rem 0;
+
 				&[data-href="false"] {
 					pointer-events: none;
-					& > a {
+
+					&>a {
 						cursor: default;
 						pointer-events: none;
 					}
 				}
+
 				.list_p {
 					cursor: pointer;
 					width: fit-content;
+
 					p {
 						font-family: $font;
 						font-size: 1.6rem;
 						color: #EAECF0;
 						text-transform: capitalize;
 					}
+
 					@include screenMax("tablet") {
 						p {
 							font-size: 1.4rem;
 						}
 					}
+
 					@include screenMax("mobile") {
 						p {
 							font-size: 1.2rem;
 						}
 					}
+
 					&:hover {
 						p {
 							color: $col-white;
 						}
 					}
 				}
+
 				@include screenMax("tablet") {
 					padding: 0.4rem 0;
 				}
+
 				a {
 					font-family: $font;
 					font-size: 1.6rem;
 					color: #EAECF0;
 					text-transform: capitalize;
+
 					@include screenMax("tablet") {
 						font-size: 1.4rem;
 					}
+
 					@include screenMax("mobile") {
 						font-size: 1.2rem;
 					}
+
 					&:hover {
 						color: $col-white;
 					}
@@ -214,14 +261,18 @@
 	@include flex(space-between, center, wrap);
 	background-color: #323436;
 	padding: 4.8rem 8rem;
+
 	.small_row {
 		@include flex(flex-start, center);
 		gap: 2.4rem;
+
 		.copywrite_links {
 			@include flex();
+
 			.copywrite_link {
 				padding: 0.8rem 1.6rem;
 				border-left: 0.1rem solid rgba(128, 126, 126, 1);
+
 				a {
 					font-weight: 700;
 					font-size: 1.6rem;
@@ -231,36 +282,45 @@
 			}
 		}
 	}
+
 	.footer_copyWrite {
 		@include flex(flex-start, center);
+
 		p {
 			font-family: $font;
 			font-size: 1.6rem;
+
 			@include screenMax("mobile") {
 				font-size: 1.4rem;
 				text-align: center;
 			}
 		}
 	}
+
 	.footer_socials {
 		@include grid(repeat(6, 2.4rem), 2.4rem);
+
 		.footer_social {
 			position: relative;
 			width: 100%;
 			height: 2.4rem;
 		}
 	}
+
 	@include screenMax("tablet") {
 		padding: 4rem 6.4rem;
 	}
+
 	@include screenMax("mobile") {
 		padding: 4rem 1.6rem;
 		flex-direction: column;
+
 		.footer_socials {
 			margin-top: 3.2rem;
 		}
 	}
 }
+
 .text_container {
 	p {
 		@extend %text-16;
@@ -270,24 +330,29 @@
 .row {
 	@include flex(flex-start, center);
 	margin-top: 4rem;
+
 	.small_row {
 		@include flex(flex-start, center);
+
 		span {
 			@extend %text-16;
 			font-weight: 600;
 			color: $col-white;
 		}
+
 		.small_icon {
 			position: relative;
 			width: 2rem;
 			height: 2rem;
 			margin-left: 0.8rem;
 		}
+
 		// align-self: flex-end;
 		&:first-child {
 			margin-right: 3.2rem;
 		}
 	}
+
 	a {
 		display: flex;
 	}
@@ -298,10 +363,12 @@
 		@extend %text-16;
 		color: $col-white;
 		font-family: $font;
+
 		@include screenMax("tablet") {
 			font-size: 1.4rem;
 			line-height: 1.8rem;
 		}
+
 		@include screenMax("mobile") {
 			font-size: 1.2rem;
 			line-height: 1.8rem;
