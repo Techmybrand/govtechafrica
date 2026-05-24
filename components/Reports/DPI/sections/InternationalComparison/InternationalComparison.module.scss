@@ -1,0 +1,172 @@
+@import "@/styles/imports";
+
+.global_wrapper {
+    width: 100%;
+    padding: 8rem 0 0 !important;
+}
+
+.section_container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 3.2rem;
+    position: relative;
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #00BF4D;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.label::before {
+    content: '';
+    width: 2.4rem;
+    height: 0.2rem;
+    background: #00BF4D;
+}
+
+.section-title {
+    font-family: $font;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $col-white;
+    margin-bottom: 1.6rem;
+}
+
+.section-title em {
+    color: #00BF4D;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2.4rem;
+}
+
+.compare-table th {
+    font-family: $font;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $col-white;
+    text-align: left;
+    padding: 1.4rem 1.6rem;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.compare-table th:first-child {
+    border-radius: 0.8rem 0 0 0;
+}
+
+.compare-table th:last-child {
+    border-radius: 0 0.8rem 0 0;
+}
+
+.compare-table td {
+    padding: 1rem 0.4rem;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.06);
+    vertical-align: top;
+}
+
+.compare-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.compare-table td:first-child {
+    font-weight: 500;
+    color: $col-white;
+}
+
+.country-flag {
+    font-size: 1.6rem;
+    margin-right: 0.8rem;
+}
+
+.lesson-tag {
+    display: inline-block;
+    background: rgba(39, 181, 49, 0.12);
+    color: #00BF4D;
+    font-size: 1rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 0.8rem;
+    margin-top: 0.4rem;
+}
+
+@include screenMax("tablet") {
+    .global_wrapper {
+        padding: 6rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 2.4rem;
+    }
+
+    .label {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+    }
+
+    .compare-table th {
+        font-size: 1.4rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .compare-table td {
+        padding: 0.8rem 0.4rem;
+        font-size: 1.4rem;
+    }
+
+    .country-flag {
+        font-size: 1.2rem;
+        margin-right: 0.4rem;
+    }
+}
+
+@include screenMax("mobile") {
+    .global_wrapper {
+        padding: 4.4rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 1.6rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .compare-table th {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .compare-table td {
+        padding: 0.4rem;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+
+    .country-flag {
+        font-size: 1rem;
+        margin-right: 0.4rem;
+    }
+
+}

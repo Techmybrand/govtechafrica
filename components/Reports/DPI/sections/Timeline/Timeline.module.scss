@@ -1,0 +1,228 @@
+@import "@/styles/imports";
+
+.global_wrapper {
+    width: 100%;
+    padding: 8rem 0 0 !important;
+}
+
+.section_container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 3.2rem;
+    position: relative;
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #00BF4D;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.label::before {
+    content: '';
+    width: 2.4rem;
+    height: 0.2rem;
+    background: #00BF4D;
+}
+
+.section-title {
+    font-family: $font;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $col-white;
+    margin-bottom: 1.6rem;
+}
+
+.section-body {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    width: 75%;
+    margin-bottom: 2.4rem;
+    line-height: 2.4rem;
+}
+
+.section-title em {
+    color: #00BF4D;
+}
+
+.timeline_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.8rem;
+}
+
+.timeline {
+    position: relative;
+    padding: 1.6rem 0 1.6rem 3.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1.6rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 1.1rem;
+    top: 0.8rem;
+    bottom: 0.8rem;
+    width: 0.1rem;
+    background: linear-gradient(180deg, #00BF4D, #27B531);
+}
+
+.timeline_item {
+    position: relative;
+    padding-bottom: 3.6rem;
+}
+
+.timeline_item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline_dot {
+    position: absolute;
+    left: -2.8rem;
+    top: 0.4rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: #00BF4D;
+    border: 0.2rem solid #27B531;
+    border-radius: 50%;
+}
+
+.timeline_date {
+    font-family: $font;
+    font-size: 1.4rem;
+    color: #00BF4D;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+}
+
+.timeline_title {
+    font-family: $font;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $col-white;
+    margin-bottom: 0.6rem;
+}
+
+.timeline_body {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    font-family: $font;
+    font-weight: 400;
+}
+
+@include screenMax("tablet") {
+    .global_wrapper {
+        padding: 6rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 2.4rem;
+    }
+
+    .label {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+    }
+
+    .section-body {
+        font-size: 1.4rem;
+        width: 85%;
+        margin-bottom: 1.6rem;
+        line-height: 2rem;
+    }
+
+    .timeline_grid {
+        gap: 2.4rem;
+    }
+
+    .timeline_date {
+        font-size: 1.3rem;
+    }
+
+    .timeline_title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .timeline_body {
+        font-size: 1.3rem;
+    }
+
+}
+
+@include screenMax("mobile") {
+    .global_wrapper {
+        padding: 4.4rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 1.6rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .section-body {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        line-height: 1.6rem;
+    }
+
+    .timeline_grid {
+        gap: 1.6rem;
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding: 1.6rem 0 1.6rem 1.6rem;
+    }
+
+    .timeline::before {
+        left: 0.75rem;
+        top: 2rem;
+    }
+
+    .timeline_dot {
+        left: -1.4rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        top: 0.1rem;
+    }
+
+    .timeline_date {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .timeline_title {
+        font-size: 1.6rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .timeline_body {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+    }
+
+}

@@ -1,5 +1,6 @@
+"use client";
 import React, { useEffect, useState } from 'react';
-import styles from '../DPI.module.scss';
+import styles from './Navigation.module.scss';
 
 const Navigation = () => {
     const [activeSection, setActiveSection] = useState("");

@@ -1,0 +1,244 @@
+@import "@/styles/imports";
+
+.global_wrapper {
+    width: 100%;
+    padding: 8rem 0 0 !important;
+}
+
+.section_container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 3.2rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4.8rem;
+    align-items: center;
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #00BF4D;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.label::before {
+    content: '';
+    width: 2.4rem;
+    height: 0.2rem;
+    background: #00BF4D;
+}
+
+.section-title {
+    font-family: $font;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $col-white;
+    margin-bottom: 1.6rem;
+}
+
+.section-body {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    width: 75%;
+    margin-bottom: 4rem;
+    line-height: 2.4rem;
+}
+
+.section-title em {
+    color: #00BF4D;
+}
+
+.action_btns {
+    margin-top: 2.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.report_btn {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.4rem;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    padding: 1.6rem 2.4rem;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.download-report-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.1rem solid rgba(255, 255, 255, 0.2);
+    border-radius: 1.6rem;
+    padding: 2.4rem;
+    min-width: 26rem;
+    text-align: center;
+}
+
+.subtexts {
+    margin-top: 2.4rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.publish_text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.4rem;
+}
+
+.report-cover {
+    width: 14rem;
+    height: 16rem;
+    background: linear-gradient(135deg, #00BF4D, #052e08);
+    border: 0.1rem solid rgba(39, 181, 49, 0.3);
+    border-radius: 0.8rem;
+    margin: 0 auto 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem;
+}
+
+.report-cover-title {
+    font-family: $font;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFF;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+}
+
+.report-cover-year {
+    font-family: $font;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #00BF4D;
+}
+
+.download-card-label {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.2rem;
+}
+
+.btn-download {
+    background: #00BF4D;
+    color: $col-white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 1.6rem 2.4rem;
+    border-radius: 0.8rem;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+.btn-download:hover {
+    background: #27b531;
+}
+
+
+
+@include screenMax("tablet") {
+    .global_wrapper {
+        padding: 6rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 2.4rem;
+    }
+
+    .label {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+    }
+
+    .section-body {
+        font-size: 1.4rem;
+        width: 85%;
+        margin-bottom: 3.2rem;
+        line-height: 2rem;
+    }
+
+    .btn-download,
+    .report_btn {
+        font-size: 1.3rem;
+        padding: 1.2rem 2rem;
+    }
+
+}
+
+@include screenMax("mobile") {
+    .global_wrapper {
+        padding: 4.4rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 1.6rem;
+        grid-template-columns: 1fr;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .section-body {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 2.4rem;
+        line-height: 1.6rem;
+    }
+
+    .btn-download,
+    .report_btn {
+        font-size: 1.2rem;
+        padding: 1rem 1.6rem;
+    }
+
+    .download-card-label {
+        font-size: 1.2rem;
+    }
+
+    .download-report-card {
+        min-width: 30rem;
+        margin: 0 auto;
+    }
+
+    .report-cover {
+        width: 16rem;
+    }
+
+}

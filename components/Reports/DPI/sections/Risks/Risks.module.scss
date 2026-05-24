@@ -1,0 +1,312 @@
+@import "@/styles/imports";
+
+.global_wrapper {
+    width: 100%;
+    padding: 8rem 0 0 !important;
+}
+
+.section_container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 3.2rem;
+    position: relative;
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #00BF4D;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.label::before {
+    content: '';
+    width: 2.4rem;
+    height: 0.2rem;
+    background: #00BF4D;
+}
+
+.section-title {
+    font-family: $font;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $col-white;
+    margin-bottom: 1.6rem;
+}
+
+.section-body {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    width: 75%;
+    margin-bottom: 4.8rem;
+    line-height: 2.4rem;
+}
+
+.section-title em {
+    color: #00BF4D;
+}
+
+.challenge_grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.6rem;
+}
+
+.challenge_card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.1rem solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.2rem;
+    padding: 2.4rem 1.6rem;
+}
+
+.challenge_icon {
+    font-size: 2.4rem;
+    line-height: 1.4;
+    margin-bottom: 1.6rem;
+}
+
+.challenge_title {
+    font-family: $font;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $col-white;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+}
+
+.challenge_body {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.6rem;
+}
+
+.risks_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    margin-bottom: 6.4rem;
+}
+
+.risk_card {
+    background: #FFF;
+    border: 0.1rem solid rgba(10, 77, 14, 0.2);
+    border-radius: 1.2rem;
+    padding: 2.4rem;
+    transition: border-color 0.2s;
+}
+
+.risk_card:hover {
+    border-color: rgba(10, 77, 14, 0.5);
+}
+
+.risk_icon {
+    width: 4rem;
+    height: 4rem;
+    background: #D4F5D6;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 1.6rem;
+}
+
+.risk_title {
+    font-family: $font;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #0D1A0E;
+    margin-bottom: 0.8rem;
+}
+
+.risk_body {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: rgba(13, 26, 14, 0.7);
+    margin-bottom: 1.2rem;
+}
+
+.risk_tag {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    background: #FDE8E7;
+    color: #C8302A;
+}
+
+
+
+@include screenMax("tablet") {
+    .global_wrapper {
+        padding: 6rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 2.4rem;
+    }
+
+    .label {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+    }
+
+    .section-body {
+        font-size: 1.4rem;
+        width: 85%;
+        margin-bottom: 3.2rem;
+        line-height: 2rem;
+    }
+
+    .challenge_grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem;
+    }
+
+    .challenge_card {
+        padding: 2rem 1.6rem;
+    }
+
+    .challenge_icon {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .challenge_title {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .challenge_body {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .risks_grid {
+        margin-bottom: 4.8rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .risk_card {
+        padding: 2rem;
+    }
+
+    .risk_icon {
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1.6rem;
+        border-radius: 0.8rem;
+    }
+
+    .risk_body {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .risk_tag {
+        margin-top: 1rem;
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+}
+
+@include screenMax("mobile") {
+    .global_wrapper {
+        padding: 4.4rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 1.6rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .section-body {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 3.2rem;
+        line-height: 1.6rem;
+    }
+
+    .challenge_grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .challenge_card {
+        padding: 1.4rem 1.2rem;
+    }
+
+    .challenge_icon {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .challenge_title {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .challenge_body {
+        font-size: 1rem;
+        line-height: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .risks_grid {
+        margin-bottom: 3.2rem;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .risk_icon {
+        width: 2.8rem;
+        height: 2.8rem;
+        font-size: 1.2rem;
+        border-radius: 0.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .risk_card {
+        padding: 1.6rem;
+    }
+
+    .risk_body {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .risk_tag {
+        margin-top: 0.8rem;
+        font-size: 0.8rem;
+    }
+
+}

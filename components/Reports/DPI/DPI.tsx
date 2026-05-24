@@ -1,23 +1,22 @@
 import React from "react";
 import styles from "./DPI.module.scss";
-import Navigation from "./sections/Navigation";
-import Hero from "./sections/Hero";
-import ExecSummary from "./sections/ExecSummary";
-import GlobalShifts from "./sections/GlobalShifts";
-import InternationalComparison from "./sections/InternationalComparison";
-import Timeline from "./sections/Timeline";
-import Scenarios from "./sections/Scenarios";
-import Risks from "./sections/Risks";
-import StateReadiness from "./sections/StateReadiness";
-import Sectors from "./sections/Sectors";
-import Recommendations from "./sections/Recommendations";
-import DownloadSection from "./sections/DownloadSection";
-import Footer from "./sections/Footer";
+// import Navigation from "./sections/Navigation";
+import Hero from "./sections/Hero/Hero";
+import ExecSummary from "./sections/ExecSummary/ExecSummary";
+import GlobalShifts from "./sections/GlobalShifts/GlobalShifts";
+import InternationalComparison from "./sections/InternationalComparison/InternationalComparison";
+import Timeline from "./sections/Timeline/Timeline";
+import Scenarios from "./sections/Scenarios/Scenarios";
+import Risks from "./sections/Risks/Risks";
+import StateReadiness from "./sections/StateReadiness/StateReadiness";
+import Sectors from "./sections/Sectors/Sectors";
+import Recommendations from "./sections/Recommendations/Recommendations";
+import DownloadSection from "./sections/DownloadSection/DownloadSection";
+// import Footer from "./sections/Footer";
 
 const DPI = () => {
     return (
-        <div className={styles.dpiContainer}>
-            <Navigation />
+        <div className={styles.dpi_container}>
             <Hero />
             <ExecSummary />
             <GlobalShifts />
@@ -29,7 +28,6 @@ const DPI = () => {
             <Sectors />
             <Recommendations />
             <DownloadSection />
-            <Footer />
         </div>
     );
 };
