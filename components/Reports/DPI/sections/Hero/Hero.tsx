@@ -1,5 +1,7 @@
+"use client";
 import React, { useEffect, useRef } from 'react';
-import styles from '../DPI.module.scss';
+import styles from './Hero.module.scss';
+import Link from 'next/link';
 
 const Counter = ({ target, dec }: { target: number, dec?: string }) => {
     const counterRef = useRef<HTMLSpanElement>(null);
@@ -55,20 +57,14 @@ const Counter = ({ target, dec }: { target: number, dec?: string }) => {
 const Hero = () => {
     return (
         <section className={styles["hero"]} id="overview">
-            <div className={styles["hero-grid-bg"]}></div>
-            <div className={styles["hero-glow"]}></div>
-            <div className={styles["hero-glow-2"]}></div>
             <div className={styles["hero-inner"]}>
-                <div className={styles["launch-badge"]}>
-                    📅 Published 30 March 2026 {"\u00A0"}·{"\u00A0"} GOV TECH Africa
-                </div>
-                <div className={styles["hero-eyebrow"]}>GOV TECH Africa Intelligence Report</div>
+                <div className={styles["hero-eyebrow"]}>GOVTECH Africa Intelligence Report</div>
                 <h1 className={styles["hero-title"]}>Nigeria DPI Readiness<br /><em>Outlook 2026</em></h1>
                 <p className={styles["hero-subtitle"]}>A defining year for digital public infrastructure, state readiness, interoperability, and citizen inclusion. Nigeria enters 2026 with <strong>promise under pressure</strong> — the challenge is converting ambition into coordinated execution.</p>
                 <div className={styles["hero-actions"]}>
-                    <a href="#download" className={styles["btn-hero-primary"]}>↓ Download Full Report</a>
-                    <a href="#states" className={styles["btn-hero-secondary"]}>View State Readiness →</a>
-                    <a href="#recommendations" className={styles["btn-hero-secondary"]}>Policy Recommendations →</a>
+                    <Link href="#download" className={styles["btn-hero-primary"]}>↓ Download Full Report</Link>
+                    <Link href="#states" className={styles["btn-hero-secondary"]}>View State Readiness →</Link>
+                    <Link href="#recommendations" className={styles["btn-hero-secondary"]}>Policy Recommendations →</Link>
                 </div>
 
                 <div className={styles["hero-stats"]}>

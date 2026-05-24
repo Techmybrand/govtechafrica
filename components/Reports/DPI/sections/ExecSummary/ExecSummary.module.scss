@@ -1,0 +1,189 @@
+@import "@/styles/imports";
+
+.exec_summary_wrapper {
+    width: 100%;
+    padding: 8rem 0 0 !important;
+}
+
+.exec_container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 3.2rem;
+    position: relative;
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #00BF4D;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.label::before {
+    content: '';
+    width: 2.4rem;
+    height: 0.2rem;
+    background: #00BF4D;
+}
+
+.section-title {
+    font-family: $font;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $col-white;
+    margin-bottom: 1.6rem;
+}
+
+.section-body {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    width: 75%;
+    margin-bottom: 2.4rem;
+    line-height: 2.4rem;
+}
+
+.section-title em {
+    color: #00BF4D;
+}
+
+.exec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+}
+
+.exec-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.1rem solid rgba(10, 77, 14, 0.2);
+    border-radius: 1.6rem;
+    padding: 2.4rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.exec-card:hover {
+    border-color: rgba(10, 77, 14, 0.4);
+    transform: translateY(-2px);
+}
+
+
+.exec-card-tag {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+    color: #00BF4D;
+}
+
+.exec-card-title {
+    font-family: $font;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: 700;
+    color: $col-white;
+    margin-bottom: 1.6rem;
+}
+
+.exec-card-body {
+    width: 85%;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@include screenMax("tablet") {
+    .exec_summary_wrapper {
+        padding: 6rem 0 0 !important;
+    }
+
+    .exec_container {
+        padding: 2.4rem;
+    }
+
+    .label {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+    }
+
+    .section-body {
+        font-size: 1.4rem;
+        width: 85%;
+        margin-bottom: 1.6rem;
+        line-height: 2rem;
+    }
+
+    .exec-card-tag {
+        margin-bottom: 1rem;
+    }
+
+    .exec-card-title {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .exec-card-body {
+        width: 90%;
+    }
+}
+
+@include screenMax("mobile") {
+    .exec_summary_wrapper {
+        padding: 4.4rem 0 0 !important;
+    }
+
+    .exec-card {
+        padding: 1.6rem;
+    }
+
+    .exec-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+
+    .exec_container {
+        padding: 1.6rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .section-body {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 1.2rem;
+        line-height: 1.6rem;
+    }
+
+    .exec-card-tag {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .exec-card-title {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .exec-card-body {
+        width: 99%;
+        font-size: 1.2rem;
+    }
+}

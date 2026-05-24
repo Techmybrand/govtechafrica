@@ -1,0 +1,211 @@
+@import "@/styles/imports";
+
+.global_wrapper {
+    width: 100%;
+    padding: 8rem 0 0 !important;
+}
+
+.section_container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 3.2rem;
+    position: relative;
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #00BF4D;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.label::before {
+    content: '';
+    width: 2.4rem;
+    height: 0.2rem;
+    background: #00BF4D;
+}
+
+.section-title {
+    font-family: $font;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $col-white;
+    margin-bottom: 1.6rem;
+}
+
+.section-body {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    width: 75%;
+    margin-bottom: 4rem;
+    line-height: 2.4rem;
+}
+
+.section-title em {
+    color: #00BF4D;
+}
+
+.recs_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+}
+
+.rec_card {
+    background: $col-white;
+    border: 0.1rem solid rgba(10, 77, 14, 0.2);
+    border-radius: 1.6rem;
+    padding: 2.4rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rec_card:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.8rem 3rem rgba(0, 0, 0, 0.08);
+}
+
+.rec_num {
+    font-family: $font;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #00BF4D;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.rec_num::after {
+    content: '';
+    flex: 1;
+    height: 0.15rem;
+    background: rgba(10, 77, 14, 0.4);
+}
+
+.rec_title {
+    font-family: $font;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0D1A0E;
+    margin-bottom: 1.6rem;
+    line-height: 1.4;
+}
+
+.rec_body {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+@include screenMax("tablet") {
+    .global_wrapper {
+        padding: 6rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 2.4rem;
+    }
+
+    .label {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+    }
+
+    .section-body {
+        font-size: 1.4rem;
+        width: 85%;
+        margin-bottom: 3.2rem;
+        line-height: 2rem;
+    }
+
+    .recs_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+    }
+
+    .rec_card {
+        padding: 2rem;
+    }
+
+    .rec_num {
+        font-size: 1.4rem;
+    }
+
+    .rec_num::after {
+        height: 0.1rem;
+    }
+
+    .rec_title {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .rec_body {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+
+}
+
+@include screenMax("mobile") {
+    .global_wrapper {
+        padding: 4.4rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 1.6rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .section-body {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 2.4rem;
+        line-height: 1.6rem;
+    }
+
+    .recs_grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.6rem;
+    }
+
+    .rec_card {
+        padding: 1.6rem;
+    }
+
+    .rec_num {
+        font-size: 1.2rem;
+        gap: 0.4rem;
+    }
+
+    .rec_title {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .rec_body {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+}

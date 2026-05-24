@@ -1,56 +1,98 @@
+"use client";
 import React, { useState } from 'react';
-import styles from '../DPI.module.scss';
+import styles from './Sectors.module.scss';
 
 const Sectors = () => {
-    const [activeSector, setActiveSector] = useState('health');
-
+    const [activeSector, setActiveSector] = useState<string>('health');
     const handleTabClick = (sector: string) => {
         setActiveSector(sector);
     };
 
     return (
-        <section className={styles["bg-off"]}>
-            <div className={styles["section-inner"]}>
-                <div className={styles["section-label"]}>Sectoral DPI Divide</div>
-                <h2 className={styles["section-title"]}>Where DPI matters<br /><em>most — and reaches least</em></h2>
+        <section className={styles["global_wrapper"]}>
+            <div className={styles["section_container"]}>
+                <div className={styles["label"]}>
+                    Sectoral DPI Divide
+                </div>
+                <h2 className={styles["section-title"]}>
+                    Where DPI matters<br />
+                    <em>most — and reaches least</em>
+                </h2>
 
                 <div className={styles["sector-tabs"]}>
-                    <button 
-                        className={`${styles["sector-tab"]} ${activeSector === 'health' ? styles["active"] : ''}`} 
+                    <div
+                        className={`${styles["sector-tab"]} ${activeSector === 'health' ? styles["active"] : ''}`}
                         onClick={() => handleTabClick('health')}
-                    >Healthcare</button>
-                    <button 
-                        className={`${styles["sector-tab"]} ${activeSector === 'education' ? styles["active"] : ''}`} 
+                    >
+                        Healthcare
+                    </div>
+                    <div
+                        className={`${styles["sector-tab"]} ${activeSector === 'education' ? styles["active"] : ''}`}
                         onClick={() => handleTabClick('education')}
-                    >Education</button>
-                    <button 
-                        className={`${styles["sector-tab"]} ${activeSector === 'agriculture' ? styles["active"] : ''}`} 
+                    >
+                        Education
+                    </div>
+                    <div
+                        className={`${styles["sector-tab"]} ${activeSector === 'agriculture' ? styles["active"] : ''}`}
                         onClick={() => handleTabClick('agriculture')}
-                    >Agriculture</button>
-                    <button 
-                        className={`${styles["sector-tab"]} ${activeSector === 'revenue' ? styles["active"] : ''}`} 
+                    >
+                        Agriculture
+                    </div>
+                    <div
+                        className={`${styles["sector-tab"]} ${activeSector === 'revenue' ? styles["active"] : ''}`}
                         onClick={() => handleTabClick('revenue')}
-                    >Revenue & Tax</button>
-                    <button 
-                        className={`${styles["sector-tab"]} ${activeSector === 'social' ? styles["active"] : ''}`} 
+                    >
+                        Revenue & Tax
+                    </div>
+                    <div
+                        className={`${styles["sector-tab"]} ${activeSector === 'social' ? styles["active"] : ''}`}
                         onClick={() => handleTabClick('social')}
-                    >Social Protection</button>
-                    <button 
-                        className={`${styles["sector-tab"]} ${activeSector === 'business' ? styles["active"] : ''}`} 
+                    >
+                        Social Protection
+                    </div>
+                    <div
+                        className={`${styles["sector-tab"]} ${activeSector === 'business' ? styles["active"] : ''}`}
                         onClick={() => handleTabClick('business')}
-                    >Business & Investment</button>
+                    >
+                        Business & Investment
+                    </div>
                 </div>
 
                 <div className={`${styles["sector-content"]} ${activeSector === 'health' ? styles["active"] : ''}`}>
                     <div className={styles["sector-text"]}>
                         <h3>Healthcare</h3>
-                        <p>DPI can transform patient identity, insurance claims, drug tracking, and disease surveillance. The NHIA interoperability model is the benchmark — but it has not yet reached most states.</p>
-                        <p>Weak state-level integration, low NIN coverage in some states, and unreliable electricity risk excluding vulnerable populations from the exact services they most need.</p>
-                        <div className={styles["sector-insight"]}>The patient who needs care most is often the hardest to identify in a digital system. Identity-first health DPI must begin with those at the margins, not those already served.</div>
+                        <p>
+                            DPI can transform patient identity,
+                            insurance claims, drug tracking, and
+                            disease surveillance. The NHIA
+                            interoperability model is the
+                            benchmark — but it has not yet
+                            reached most states.
+                        </p>
+                        <p>
+                            Weak state-level integration, low NIN
+                            coverage in some states, and unreliable
+                            electricity risk excluding vulnerable
+                            populations from the exact services
+                            they most need.
+                        </p>
+                        <div className={styles["sector-insight"]}>
+                            The patient who needs care most is
+                            often the hardest to identify in a
+                            digital system. Identity-first health
+                            DPI must begin with those at the
+                            margins, not those already served.
+                        </div>
                     </div>
                     <div className={styles["sector-stats"]}>
-                        <div className={styles["sector-stat-card"]}><div className={styles["sector-stat-num"]}>NHIA</div><div className={styles["sector-stat-label"]}>National Health Insurance Authority — primary interoperability model</div></div>
-                        <div className={styles["sector-stat-card"]}><div className={styles["sector-stat-num"]}>Low</div><div className={styles["sector-stat-label"]}>NIN coverage in rural health facilities — primary barrier to patient identity</div></div>
+                        <div className={styles["sector-stat-card"]}>
+                            <div className={styles["sector-stat-num"]}>NHIA</div>
+                            <div className={styles["sector-stat-label"]}>National Health Insurance Authority — primary interoperability model</div>
+                        </div>
+
+                        <div className={styles["sector-stat-card"]}>
+                            <div className={styles["sector-stat-num"]}>Low</div>
+                            <div className={styles["sector-stat-label"]}>NIN coverage in rural health facilities — primary barrier to patient identity</div></div>
                         <div className={styles["sector-stat-card"]}><div className={styles["sector-stat-num"]}>61.2%</div><div className={styles["sector-stat-label"]}>National electricity access — determines whether health platforms stay online</div></div>
                     </div>
                 </div>

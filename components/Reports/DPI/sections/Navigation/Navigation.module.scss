@@ -1,0 +1,73 @@
+@import "@/styles/imports";
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5, 46, 8, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0 2rem;
+}
+
+.nav-inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6.4rem;
+}
+
+.nav-brand {
+    font-family: $font;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #27b531;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+}
+
+.nav-brand span {
+    color: #00BF4D;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    padding: 0 1.4rem;
+    height: 5.6rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.2rem solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-links a:hover {
+    color: $col-white;
+    border-bottom-color: #00BF4D;
+}
+
+.nav-cta {
+    background: #27b531;
+    color: #000 !important;
+    font-weight: 500 !important;
+    padding: 0.8rem 1.6rem !important;
+    height: auto !important;
+    border-radius: 0.8rem !important;
+    border: none !important;
+    font-size: 1.2rem !important;
+}
+
+.nav-cta:hover {
+    background: #00BF4D !important;
+    border: none !important;
+}

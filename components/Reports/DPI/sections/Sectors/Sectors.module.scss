@@ -1,0 +1,271 @@
+@import "@/styles/imports";
+
+.global_wrapper {
+    width: 100%;
+    padding: 8rem 0 0 !important;
+}
+
+.section_container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 3.2rem;
+    position: relative;
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #00BF4D;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.label::before {
+    content: '';
+    width: 2.4rem;
+    height: 0.2rem;
+    background: #00BF4D;
+}
+
+.section-title {
+    font-family: $font;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $col-white;
+    margin-bottom: 1.6rem;
+}
+
+.section-body {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.1);
+    width: 75%;
+    margin-bottom: 2.4rem;
+    line-height: 2.4rem;
+}
+
+.section-title em {
+    color: #00BF4D;
+}
+
+.sector-tabs {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.sector-tab {
+    padding: 0.8rem 1.6rem;
+    border-radius: 10rem;
+    border: 1px solid rgba(10, 77, 14, 0.15);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #3D5240;
+    background: $col-white;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.sector-tab.active,
+.sector-tab:hover {
+    background: #00BF4D;
+    color: $col-white;
+    border-color: #00BF4D;
+}
+
+.sector-content {
+    display: none;
+}
+
+.sector-content.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+}
+
+.sector-text h3 {
+    font-family: $font;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: 700;
+    color: $col-white;
+    margin-bottom: 1.2rem;
+}
+
+.sector-text p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.sector-insight {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 0.3rem solid #1A8E22;
+    padding: 1.4rem 1.6rem;
+    border-radius: 0 0.8rem 0.8rem 0;
+    font-size: 1.6rem;
+    color: #00BF4D;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.sector-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.sector-stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.6rem;
+}
+
+.sector-stat-num {
+    font-family: $font;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #00BF4D;
+}
+
+.sector-stat-label {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+
+@include screenMax("tablet") {
+    .global_wrapper {
+        padding: 6rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 2.4rem;
+    }
+
+    .label {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 3.2rem;
+    }
+
+    .section-body {
+        font-size: 1.4rem;
+        width: 85%;
+        margin-bottom: 1.6rem;
+        line-height: 2rem;
+    }
+
+    .sector-text h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .sector-insight {
+        padding: 1.2rem;
+        font-size: 1.4rem;
+    }
+
+    .sector-text p {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .sector-stat-num {
+        font-size: 2rem;
+    }
+
+    .sector-tab {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.4rem;
+    }
+
+    .sector-stat-label {
+        font-size: 1.1rem;
+    }
+
+}
+
+@include screenMax("mobile") {
+    .global_wrapper {
+        padding: 4.4rem 0 0 !important;
+    }
+
+    .section_container {
+        padding: 1.6rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .section-body {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        line-height: 1.6rem;
+    }
+
+    .sector-text h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .sector-insight {
+        padding: 0.8rem;
+        font-size: 1.2rem;
+    }
+
+    .sector-text p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .sector-stat-num {
+        font-size: 1.6rem;
+    }
+
+    .sector-tab {
+        padding: 0.4rem 0.8rem;
+        font-size: 1.2rem;
+    }
+
+    .sector-content.active {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+    }
+
+    .sector-stat-label {
+        font-size: 1rem;
+    }
+
+    .sector-text h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .sector-text p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+}
