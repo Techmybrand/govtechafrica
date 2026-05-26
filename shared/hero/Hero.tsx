@@ -20,7 +20,7 @@ interface Props {
 }
 
 const Hero = (props: Props) => {
-	const [speed] = useState<number>(0.5);
+	const [speed] = useState<number>(0.9);
 	const videoRef = useRef<HTMLVideoElement | null>(null)
 	useEffect(() => {
 		if (videoRef.current) {

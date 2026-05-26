@@ -3,19 +3,23 @@
 .backgrounders {
     width: 100%;
     position: relative;
+
     .details_content {
         max-width: $max-width;
         margin-inline: auto;
-        padding: 0 3.6rem!important;
+        padding: 0 3.6rem !important;
+
         .details_header {
             width: 100%;
             padding: 3.2rem 3.2rem 3.2rem 0;
             border: 0.1rem solid #FFFFFF1F;
             border-radius: 1.6rem;
+
             .breadcrumbs {
                 display: flex;
                 align-items: center;
                 gap: 0.8rem;
+
                 a {
                     p {
                         text-transform: capitalize;
@@ -25,11 +29,13 @@
                         color: #00BF4D;
                     }
                 }
+
                 .chevron {
                     position: relative;
                     width: 2.4rem;
                     height: 2.4rem;
                 }
+
                 h3 {
                     text-transform: capitalize;
                     font-family: $font;
@@ -38,6 +44,7 @@
                     color: #111021;
                 }
             }
+
             .header_details {
                 width: 100%;
                 display: flex;
@@ -46,22 +53,26 @@
                 margin-top: 4.8rem;
                 border-top: 0.1rem solid #000;
                 border-bottom: 0.1rem solid #000;
+
                 .banner_image {
                     position: relative;
                     width: 35rem;
                     height: 54rem;
                     flex-shrink: 0;
-                    & > img {
+
+                    &>img {
                         object-fit: cover;
                     }
                 }
+
                 .name_type_and_date {
                     max-width: 60rem;
                     max-height: 54rem;
+
                     .tag_and_name {
                         padding-block: 4rem;
                         margin-bottom: 4rem;
-                        margin-inline: auto;
+
                         .tag {
                             font-family: $font;
                             font-size: 1.2rem;
@@ -73,8 +84,8 @@
                             margin-bottom: 2.4rem;
                             text-transform: uppercase;
                             width: max-content;
-                            margin-inline: auto;
                         }
+
                         h1 {
                             font-family: $font;
                             font-weight: 700;
@@ -82,46 +93,49 @@
                             color: #111021;
                             margin-top: 3.2rem;
                             line-height: 1.2;
-                            text-align: center;
                             text-transform: uppercase;
                         }
                     }
+
                     .time_and_date {
                         width: fit-content;
-                        margin-inline: auto;
-                        a h4, h4 {
+
+                        a h4,
+                        h4 {
                             font-family: $font;
                             font-size: 1.6rem;
                             font-weight: 500;
                             color: #111021;
                             margin-bottom: 2.4rem;
-                            text-align: center;
                             width: fit-content;
                         }
+
                         a h4 {
                             text-decoration: underline;
-                            margin-inline: auto;
                         }
                     }
                 }
             }
         }
-        
+
         .main_layout {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
             gap: 6.4rem;
             margin-top: 4rem;
+
             .sidebar {
                 width: 30%;
                 flex-shrink: 0;
                 position: sticky;
                 top: 13.5rem;
+
                 .table_of_contents_sticky {
                     background: transparent;
-                    padding: 3.2rem;
+                    padding: 0 3.2rem;
                     border-radius: 1.6rem;
+
                     .h2 {
                         font-size: 2.4rem;
                         font-family: $font-gothic-bold;
@@ -135,18 +149,22 @@
                         font-family: $font;
                         color: #2D2B4A;
                         line-height: 1.6;
+
                         ul {
                             padding-left: 1.6rem;
+
                             li {
                                 list-style-type: disclosure-closed;
                                 margin-bottom: 1.2rem;
                                 font-size: 1.4rem;
                                 color: #2D2B4A;
+
                                 a {
                                     color: #2D2B4A;
                                     transition: color 0.2s ease;
                                     font-size: 1.4rem;
                                     line-height: 2rem;
+
                                     &:hover {
                                         color: #00BF4D;
                                     }
@@ -156,47 +174,71 @@
                     }
                 }
             }
+
             .content_body {
                 width: 65%;
+
                 .research_details {
-                    h3, h2, h1, h4, h5, h6, p {
-                        color: #111021!important;
-                        & > b, i {
-                            color: #111021!important;
-                            & > u {
-                                color: #111021!important;
+                    h2 {
+                        scroll-margin-top: 14rem;
+                    }
+
+                    h3,
+                    h2,
+                    h1,
+                    h4,
+                    h5,
+                    h6,
+                    p {
+                        color: #111021 !important;
+
+                        &>b,
+                        i {
+                            color: #111021 !important;
+
+                            &>u {
+                                color: #111021 !important;
                             }
                         }
                     }
-                    ul, ol {
+
+                    ul,
+                    ol {
                         li {
-                            color: #111021!important;
+                            color: #111021 !important;
+
                             &::marker {
-                                color: #111021!important;
+                                color: #111021 !important;
                                 font-family: $font-gothic-bold;
                             }
                         }
                     }
                 }
+
                 .written_by_bottom {
                     width: 100%;
                     margin-top: 6.4rem;
+                    scroll-margin-top: 14rem;
                     padding-top: 4.8rem;
                     border-top: 0.1rem solid #202020;
+
                     h2 {
                         font-size: 2rem;
                         font-family: $font;
                         font-weight: 700;
                         color: #00BF4D;
                     }
+
                     .line {
                         margin-top: 2rem;
                         width: 100%;
                         height: 0.1rem;
                         background: #202020;
                     }
+
                     .writer_details_container {
                         width: 100%;
+
                         .writer_details {
                             display: flex;
                             align-items: flex-start;
@@ -204,6 +246,7 @@
                             padding-block: 2.4rem;
                             border-bottom: 0.1rem solid #202020;
                             width: 100%;
+
                             .name_and_role {
                                 h4 {
                                     font-size: 1.8rem;
@@ -211,15 +254,18 @@
                                     font-family: $font-gothic;
                                     margin-bottom: 0.8rem;
                                 }
+
                                 h6 {
                                     font-size: 1.4rem;
                                     font-family: $font;
                                     color: #A2A2A0;
                                 }
                             }
+
                             a {
                                 width: 2.8rem;
                                 height: 2.8rem;
+
                                 .details_linkedin {
                                     position: relative;
                                     width: 2.8rem;
@@ -235,12 +281,14 @@
         .related_insights {
             width: 100%;
             margin-block: 12rem;
+
             .insights_header {
                 width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 margin-bottom: 3.6rem;
+
                 h2 {
                     font-size: 2.8rem;
                     line-height: 3.6rem;
@@ -248,14 +296,17 @@
                     color: #111021;
                 }
             }
+
             .explore_btn {
                 width: 16rem;
                 height: 4.5rem;
                 margin-top: 4.8rem;
+
                 p {
-                    color: #111021!important;
+                    color: #111021 !important;
                 }
             }
+
             .research_wrapper {
                 width: 100%;
                 @include grid(repeat(4, 1fr), 5.6rem);
@@ -265,21 +316,24 @@
     }
 
     .divider {
-		width: 100%;
-		height: 2rem;
-		background-color: rgba(255, 255, 255, 0.05);
+        width: 100%;
+        height: 2rem;
+        background-color: rgba(255, 255, 255, 0.05);
         margin-block: 3.2rem;
-	}
+    }
+
     .divider_green {
         width: 100%;
-		height: 4.8rem;
+        height: 4.8rem;
     }
 
     @include screenMax('tablet') {
         .details_content {
-            padding: 0 2.4rem!important;
+            padding: 0 2.4rem !important;
+
             .details_header {
                 padding: 2.4rem 2.4rem 2.4rem 0;
+
                 .breadcrumbs {
                     a {
                         p {
@@ -287,35 +341,46 @@
                             line-height: 2.7rem;
                         }
                     }
+
                     .chevron {
                         width: 1.8rem;
                         height: 1.8rem;
                     }
+
                     h3 {
                         font-size: 1.8rem;
                         line-height: 2.7rem;
                     }
                 }
+
                 .header_details {
                     gap: 8rem;
+
                     .banner_image {
                         width: 30rem;
                         height: 45rem;
                     }
+
                     .name_type_and_date {
                         max-width: 45rem;
+
                         .tag_and_name {
                             padding-block: 3.6rem;
                             margin-bottom: 3.2rem;
+
                             .tag {
                                 margin-bottom: 0;
                             }
+
                             h1 {
                                 font-size: 3.6rem;
                             }
                         }
+
                         .time_and_date {
-                            a h4, h4 {
+
+                            a h4,
+                            h4 {
                                 margin-bottom: 2rem;
                                 font-size: 1.4rem;
                                 line-height: 2rem;
@@ -324,35 +389,51 @@
                     }
                 }
             }
+
             .main_layout {
                 width: 100%;
                 gap: 4rem;
+
                 .sidebar {
                     width: 32%;
                     position: sticky;
                     top: 8rem;
                 }
+
                 .content_body {
                     width: 70%;
+
+                    .research_details {
+                        h2 {
+                            scroll-margin-top: 11rem;
+                        }
+                    }
+
                     .written_by_bottom {
                         padding-top: 3.2rem;
                         margin-top: 5.6rem;
+                        scroll-margin-top: 11rem;
+
                         .writer_details_container {
                             .writer_details {
                                 padding-block: 2rem;
+
                                 .name_and_role {
                                     h4 {
                                         font-size: 1.6rem;
                                         line-height: 2.4rem;
                                     }
+
                                     h6 {
                                         font-size: 1.4rem;
                                         line-height: 2rem;
                                     }
                                 }
+
                                 a {
                                     width: 2.4rem;
                                     height: 2.4rem;
+
                                     .details_linkedin {
                                         width: 2.4rem;
                                         height: 2.4rem;
@@ -363,8 +444,10 @@
                     }
                 }
             }
+
             .related_insights {
                 margin-block: 8rem;
+
                 .research_wrapper {
                     @include grid(repeat(2, 1fr), 9.6rem);
                 }
@@ -374,9 +457,11 @@
 
     @include screenMax('mobile') {
         .details_content {
-            padding: 0 1.6rem!important;
+            padding: 0 1.6rem !important;
+
             .details_header {
                 padding: 2.4rem 0 0 0;
+
                 .breadcrumbs {
                     a {
                         p {
@@ -384,42 +469,53 @@
                             line-height: 1.6rem;
                         }
                     }
+
                     .chevron {
                         width: 1.6rem;
                         height: 1.6rem;
                     }
+
                     h3 {
                         font-size: 1.2rem;
                         line-height: 1.6rem;
                     }
                 }
+
                 .header_details {
                     gap: 2.4rem;
                     flex-direction: column;
                     margin-top: 2.4rem;
                     border: 0;
+
                     .banner_image {
                         width: 100%;
                         height: 30rem;
                     }
+
                     .name_type_and_date {
                         max-width: 100%;
                         margin-inline: auto;
                         max-height: 100%;
+
                         .tag_and_name {
                             padding-block: 1.6rem;
                             margin-bottom: 0;
+
                             .tag {
                                 font-size: 1rem;
                             }
+
                             h1 {
                                 font-size: 2.4rem;
                                 margin-top: 2rem;
                             }
                         }
+
                         .time_and_date {
                             margin-top: 0;
-                            a h4, h4 {
+
+                            a h4,
+                            h4 {
                                 margin-bottom: 1rem;
                                 font-size: 1.2rem;
                                 line-height: 1.6rem;
@@ -428,26 +524,32 @@
                     }
                 }
             }
+
             .main_layout {
                 gap: 0;
                 margin-top: 2.4rem;
                 flex-direction: column;
                 justify-content: unset;
+
                 .sidebar {
                     width: 100%;
                     position: relative;
                     top: 0;
+
                     .table_of_contents_sticky {
                         padding: 1.6rem;
+
                         h2 {
-                            font-size: 1.6rem!important;
-                            padding-bottom: 1rem!important;
-                            margin-bottom: 1.6rem!important;
+                            font-size: 1.6rem !important;
+                            padding-bottom: 1rem !important;
+                            margin-bottom: 1.6rem !important;
                         }
+
                         .toc_content {
                             ul {
                                 li {
                                     margin-bottom: 1rem;
+
                                     a {
                                         font-size: 1.2rem;
                                         line-height: 1.6rem;
@@ -457,30 +559,45 @@
                         }
                     }
                 }
+
                 .content_body {
                     width: 100%;
+
                     .research_details {
                         width: 100%;
+
+                        .research_details {
+                            h2 {
+                                scroll-margin-top: 8rem;
+                            }
+                        }
                     }
+
                     .written_by_bottom {
                         padding-top: 2.4rem;
                         margin-top: 4rem;
+                        scroll-margin-top: 8rem;
+
                         .writer_details_container {
                             .writer_details {
                                 padding-block: 1.6rem;
+
                                 .name_and_role {
                                     h4 {
                                         font-size: 1.4rem;
                                         line-height: 2rem;
                                     }
+
                                     h6 {
                                         font-size: 1.2rem;
                                         line-height: 1.6rem;
                                     }
                                 }
+
                                 a {
                                     width: 1.6rem;
                                     height: 1.6rem;
+
                                     .details_linkedin {
                                         width: 1.6rem;
                                         height: 1.6rem;
@@ -491,8 +608,10 @@
                     }
                 }
             }
+
             .related_insights {
                 margin-block: 5.6rem;
+
                 .research_wrapper {
                     display: flex;
                     align-items: center;
@@ -502,6 +621,7 @@
                 }
             }
         }
+
         .divider {
             display: none;
         }

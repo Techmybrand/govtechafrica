@@ -13,6 +13,7 @@ interface BackgroundersProps {
 
 const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
   const currentUrl = new URL(window.location.href);
+  currentUrl.hash = "";
   return (
     <article className={styles.backgrounders}>
       <header className={styles.details_content}>
@@ -51,7 +52,7 @@ const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
             </div>
           </div>
         </div>
-        
+
       </header>
 
       <div className={styles.divider}></div>
@@ -66,7 +67,7 @@ const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
                   <ul>
                     {blog.tableOfContent.map((item, index) => (
                       <li key={index}>
-                        <Link href={`${currentUrl.href}#${item.toLowerCase()}`}>
+                        <Link href={`${currentUrl.href}#topic${index + 1}`}>
                           {item}
                         </Link>
                       </li>
@@ -79,39 +80,39 @@ const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
             </div>
           </aside>
 
-            <div className={styles.content_body}>
-              <div className={styles.research_details}>
-                {blog?.researchContent && <RichText content={blog?.researchContent} />}
-              </div>
-
-              {blog?.authors?.length ? (
-                <div id="credits" className={styles.written_by_bottom}>
-                  <h2>WRITTEN BY</h2>
-                  <div className={styles.line}></div>
-                  <div className={styles.writer_details_container}>
-                      {blog?.authors?.map((author: string, index: number) => {
-                          const getRole = blog?.role?.length ? blog?.role[index] : 'Govtech Research';
-                          const getUrl = blog?.links?.length ? blog?.links[index] : '/';
-                          return (
-                              <div key={author} className={styles.writer_details}>
-                                  <div className={styles.name_and_role}>
-                                      <h4>{author}</h4>
-                                      <h6>{getRole}</h6>
-                                  </div>
-                                  {blog?.links?.length && (
-                                      <Link href={getUrl ?? '/'} target="_blank">
-                                          <div className={styles.details_linkedin}>
-                                              <Image alt="linkedin" fill src="/svgs/linkedin.svg" />
-                                          </div>
-                                      </Link>
-                                  )}
-                              </div>
-                          )
-                      })}
-                  </div>
-                </div>
-              ) : null}
+          <div className={styles.content_body}>
+            <div className={styles.research_details}>
+              {blog?.researchContent && <RichText content={blog?.researchContent} type="backgrounder" />}
             </div>
+
+            {blog?.authors?.length ? (
+              <div id="credits" className={styles.written_by_bottom}>
+                <h2>WRITTEN BY</h2>
+                <div className={styles.line}></div>
+                <div className={styles.writer_details_container}>
+                  {blog?.authors?.map((author: string, index: number) => {
+                    const getRole = blog?.role?.length ? blog?.role[index] : 'Govtech Research';
+                    const getUrl = blog?.links?.length ? blog?.links[index] : '/';
+                    return (
+                      <div key={author} className={styles.writer_details}>
+                        <div className={styles.name_and_role}>
+                          <h4>{author}</h4>
+                          <h6>{getRole}</h6>
+                        </div>
+                        {blog?.links?.length && (
+                          <Link href={getUrl ?? '/'} target="_blank">
+                            <div className={styles.details_linkedin}>
+                              <Image alt="linkedin" fill src="/svgs/linkedin.svg" />
+                            </div>
+                          </Link>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            ) : null}
+          </div>
         </div>
 
         <div className={styles.related_insights}>

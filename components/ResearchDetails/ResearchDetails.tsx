@@ -112,12 +112,12 @@ const ResearchDetails = () => {
                         </div>
                         {blog?.pdf?.fields?.file?.url && (
                             <div className={styles.details_body_}>
-                                <Link href={`https:${blog?.pdf?.fields?.file?.url}`} 
-                                    target="_blank" rel="noopener noreferrer"
+                                <Link href={`https:${blog?.pdf?.fields?.file?.url}`}
+                                    target="_blank" download rel="noopener noreferrer"
                                 >
-                                    <Button className={styles.download_btn}>
-                                        Download the report
-                                    </Button>
+                                    <div className={styles.download_btn}>
+                                        Download Report
+                                    </div>
                                 </Link>
                             </div>
                         )}

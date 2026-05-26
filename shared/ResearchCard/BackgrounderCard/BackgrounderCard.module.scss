@@ -13,12 +13,15 @@
     margin-block: 1.6rem;
     border: 0.2rem solid #1A1A1A;
     background-color: #F1EDE4;
-    transition: transform 0.2s ease;
+    // transition: transform 0.2s ease;
+    transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     &:hover {
+        scale: 1.06;
+
         .top_section {
             a {
                 .title {
@@ -32,10 +35,9 @@
     .top_section {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
         padding: 3.2rem 2.4rem;
-        text-align: center;
 
         .tag {
             font-family: $font;
@@ -52,18 +54,20 @@
         a {
             .title {
                 font-family: $font-gothic-bold, Georgia, serif;
-                font-size: 2rem;
+                font-size: 1.6rem;
                 font-weight: 700;
                 font-style: italic;
                 color: #1A1A1A;
-                line-height: 1.2;
+                line-height: 1.4;
+                text-align: left;
                 transition: color 0.2s ease;
             }
         }
 
         .date {
             font-family: $font;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
             color: #555555;
             margin-top: 3.2rem;
         }
@@ -96,7 +100,7 @@
 
             a {
                 .title {
-                    font-size: 1.8rem;
+                    font-size: 1.5rem;
                 }
             }
         }
@@ -127,7 +131,7 @@
 
             a {
                 .title {
-                    font-size: 1.6rem;
+                    font-size: 1.4rem;
                 }
             }
 

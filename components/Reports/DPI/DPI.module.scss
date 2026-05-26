@@ -1,31 +1,14 @@
 @import "@/styles/imports";
 
 .dpi_container {
-
-  --g-900: #021a04;
-  --g-800: #052e08;
-  --g-700: #0a4d0e;
-  --g-600: #116b17;
-  --g-500: #1a8e22;
-  --g-400: #27b531;
-  --g-300: #4fd35a;
-  --g-200: #9ae8a0;
-  --g-100: #d4f5d6;
-  --g-50: #f0fbf1;
-  --black: #060a06;
-  --white: #ffffff;
-  --off-white: #f5f7f4;
-  --amber: #e8960a;
-  --amber-bg: #fdf3d8;
-  --red: #c8302a;
-  --red-bg: #fde8e7;
-  --text-primary: #0d1a0e;
-  --text-secondary: #3d5240;
-  --text-muted: #6b7d6d;
-  --border: rgba(10, 77, 14, 0.15);
-  --border-strong: rgba(10, 77, 14, 0.3);
   margin-bottom: 8rem;
   width: 100%;
+  // .label::before {
+  //   content: '';
+  //   width: 2.4rem;
+  //   height: 0.2rem;
+  //   background: #00BF4D;
+  // }
 
   @include screenMax("tablet") {
     margin-bottom: 6rem;
@@ -33,13 +16,6 @@
 
   @include screenMax("mobile") {
     margin-bottom: 4rem;
-  }
-
-  @media (max-width: 900px) {
-
-    .download-inner {
-      grid-template-columns: 1fr;
-    }
   }
 
 }

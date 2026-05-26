@@ -11,8 +11,10 @@
     transition: all 550ms ease-in-out;
     margin-block: 1.6rem;
     z-index: 1;
+
     &[data-active="true"] {
         scale: 1.06;
+
         .card_content {
             .background_wrapper {
                 .blur_bg {
@@ -37,8 +39,10 @@
                 // transition-property: opacity, translate;
             }
         }
+
         a {
             z-index: 2;
+
             .button {
                 opacity: 1;
                 translate: 0 0;
@@ -51,10 +55,12 @@
             }
         }
     }
+
     .card_content {
         width: 100%;
         height: 100%;
         transition: all 400ms ease-in-out;
+
         .image_wrapper,
         .background_wrapper {
             position: absolute;
@@ -72,21 +78,12 @@
                     object-fit: cover;
                 }
             }
-
-            // .blur_bg {
-            //     position: absolute;
-            //     top: 0;
-            //     left: 0;
-            //     width: 100%;
-            //     height: 100%;
-            //     backdrop-filter: blur(1px);
-            //     background: rgba($color: #000000, $alpha: 0.15);
-            //     z-index: 1;
-            // }
         }
+
         .background_wrapper {
             background: #FFFFFF1A;
         }
+
         .btn_text_container {
             z-index: 3;
             padding: 1rem;
@@ -103,6 +100,7 @@
                 line-height: 100%;
             }
         }
+
         .card_header {
             z-index: 3;
             display: none;
@@ -111,11 +109,13 @@
             width: 100%;
             margin-bottom: 1.6rem;
             position: relative;
+
             .btn_text_container_sm {
                 padding: 1.2rem;
                 background: #FFF;
                 width: fit-content;
                 position: relative;
+
                 p {
                     font-size: 1.2rem;
                     font-family: $font-gothic-bold;
@@ -124,12 +124,14 @@
                     line-height: 100%;
                 }
             }
+
             .close_icon {
                 width: 2.4rem;
                 height: 2.4rem;
                 position: relative;
             }
         }
+
         h2 {
             z-index: 3;
             font-size: 1.6rem;
@@ -141,6 +143,7 @@
             position: relative;
             text-transform: capitalize;
         }
+
         h4 {
             color: $col-white;
             font-family: $font;
@@ -153,8 +156,10 @@
             transition: opacity 550ms ease-in-out, translate 550ms ease-in-out;
         }
     }
+
     a {
         width: fit-content;
+
         .button {
             justify-self: flex-start;
             align-self: flex-end;
@@ -163,7 +168,8 @@
             opacity: 0;
             translate: 0 60%;
             transition: all 550ms ease-in-out;
-            & > p {
+
+            &>p {
                 font-size: 1.4rem !important;
                 font-weight: 600 !important;
             }
@@ -182,10 +188,12 @@
         flex-shrink: 0;
         margin-inline: auto;
         margin-block: 0.8rem;
+
         &[data-active="true"] {
             scale: unset;
             border: 0.4rem solid #276A35;
         }
+
         .card_content {
             h2 {
                 width: 100%;
@@ -193,17 +201,21 @@
                 font-size: 1.4rem;
                 line-height: 2rem;
             }
+
             .card_header {
                 display: flex;
             }
+
             .btn_text_container {
                 display: none;
             }
         }
+
         a {
             .button {
                 height: 4rem !important;
-                & > p {
+
+                &>p {
                     font-size: 1.4rem;
                 }
             }
