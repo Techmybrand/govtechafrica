@@ -13,6 +13,7 @@ interface BackgroundersProps {
 
 const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
   const currentUrl = new URL(window.location.href);
+  currentUrl.hash = "";
   return (
     <article className={styles.backgrounders}>
       <header className={styles.details_content}>

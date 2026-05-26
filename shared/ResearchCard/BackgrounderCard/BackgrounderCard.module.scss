@@ -13,12 +13,15 @@
     margin-block: 1.6rem;
     border: 0.2rem solid #1A1A1A;
     background-color: #F1EDE4;
-    transition: transform 0.2s ease;
+    // transition: transform 0.2s ease;
+    transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     &:hover {
+        scale: 1.06;
+
         .top_section {
             a {
                 .title {

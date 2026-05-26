@@ -179,6 +179,9 @@
                 width: 65%;
 
                 .research_details {
+                    h2 {
+                        scroll-margin-top: 14rem;
+                    }
 
                     h3,
                     h2,
@@ -215,6 +218,7 @@
                 .written_by_bottom {
                     width: 100%;
                     margin-top: 6.4rem;
+                    scroll-margin-top: 14rem;
                     padding-top: 4.8rem;
                     border-top: 0.1rem solid #202020;
 
@@ -399,9 +403,16 @@
                 .content_body {
                     width: 70%;
 
+                    .research_details {
+                        h2 {
+                            scroll-margin-top: 11rem;
+                        }
+                    }
+
                     .written_by_bottom {
                         padding-top: 3.2rem;
                         margin-top: 5.6rem;
+                        scroll-margin-top: 11rem;
 
                         .writer_details_container {
                             .writer_details {
@@ -554,11 +565,18 @@
 
                     .research_details {
                         width: 100%;
+
+                        .research_details {
+                            h2 {
+                                scroll-margin-top: 8rem;
+                            }
+                        }
                     }
 
                     .written_by_bottom {
                         padding-top: 2.4rem;
                         margin-top: 4rem;
+                        scroll-margin-top: 8rem;
 
                         .writer_details_container {
                             .writer_details {
