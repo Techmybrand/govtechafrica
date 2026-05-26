@@ -1,6 +1,4 @@
 import React from "react";
-import styles from "./DPI.module.scss";
-// import Navigation from "./sections/Navigation";
 import Hero from "./sections/Hero/Hero";
 import ExecSummary from "./sections/ExecSummary/ExecSummary";
 import GlobalShifts from "./sections/GlobalShifts/GlobalShifts";
@@ -12,7 +10,7 @@ import StateReadiness from "./sections/StateReadiness/StateReadiness";
 import Sectors from "./sections/Sectors/Sectors";
 import Recommendations from "./sections/Recommendations/Recommendations";
 import DownloadSection from "./sections/DownloadSection/DownloadSection";
-// import Footer from "./sections/Footer";
+import styles from "./DPI.module.scss";
 
 const DPI = () => {
     return (

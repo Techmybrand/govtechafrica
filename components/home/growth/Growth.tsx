@@ -61,7 +61,7 @@ const Growth = () => {
 	});
 
 	// const rawXRightToLeft = useTransform(scrollYProgress, [0.15, 0.65], [700, 0]);
-  	// const rawXLeftToRight = useTransform(scrollYProgress, [0.15, 0.65], [-700, 0]);
+	// const rawXLeftToRight = useTransform(scrollYProgress, [0.15, 0.65], [-700, 0]);
 	// const xFromLeft = useSpring(rawXLeftToRight, {
 	// 	stiffness: 100,
 	// 	damping: 20,
@@ -150,8 +150,8 @@ export const GrowthCard = ({ currency, value, description, label, scrollYProgres
 	const easedCount = useTransform(countProgress, (p) => {
 		return 1 - (1 - p) ** 2;
 	});
-  	const animatedCount = useTransform(easedCount, [0, 1], [0, value]);
-  	const decimals = value.toString().includes('.') ? value.toString().split('.')[1].length : 0;
+	const animatedCount = useTransform(easedCount, [0, 1], [0, value]);
+	const decimals = value.toString().includes('.') ? value.toString().split('.')[1].length : 0;
 	const display = useTransform(animatedCount, (v) => v.toFixed(decimals));
 
 	return (
@@ -186,8 +186,8 @@ export const GrowthCardMobile = ({ currency, value, description, label, index, s
 	const easedCount = useTransform(countProgress, (p) => {
 		return 1 - (1 - p) ** 2;
 	});
-  	const animatedCount = useTransform(easedCount, [0, 1], [0, value]);
-  	const decimals = value.toString().includes('.') ? value.toString().split('.')[1].length : 0;
+	const animatedCount = useTransform(easedCount, [0, 1], [0, value]);
+	const decimals = value.toString().includes('.') ? value.toString().split('.')[1].length : 0;
 	const display = useTransform(animatedCount, (v) => v.toFixed(decimals));
 
 	return (

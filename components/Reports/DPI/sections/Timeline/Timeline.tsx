@@ -116,7 +116,7 @@ const Timeline = () => {
                 2025
               </div>
               <div className={styles["timeline_title"]}>
-                NDPC Operationalises Data Protection
+                NDPC Operationalised Data Protection
               </div>
               <div className={styles["timeline_body"]}>
                 The Nigeria Data Protection Commission

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Hero, AnimatedHero } from "@/shared";
+import { Hero } from "@/shared";
 import { CookiesModal } from "@/shared/Modals";
 import {
 	GrowthV2, MissionV2, Research, NewsLetter, CenterPieceV2,

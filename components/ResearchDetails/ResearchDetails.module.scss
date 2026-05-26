@@ -26,7 +26,7 @@
         .details_header {
             width: 100%;
             padding: 3.2rem 3.2rem 3.2rem 0;
-            border: 0.1rem solid #FFFFFF1F;
+            // border: 0.1rem solid #FFFFFF1F;
             border-radius: 1.6rem;
 
             h3 {
@@ -136,11 +136,9 @@
                 width: 75%;
 
                 h2 {
-                    // font-size: 3.2rem;
                     font-family: $font;
                     font-weight: 700;
                     color: $col-white;
-                    // margin-bottom: 2.4rem;
                 }
 
                 ul {
@@ -160,10 +158,17 @@
                 a {
                     .download_btn {
                         margin-block: 6rem;
-
-                        &>p {
-                            font-size: 1.4rem !important;
-                        }
+                        width: 100%;
+                        height: 5.6rem;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.4rem !important;
+                        line-height: 2rem;
+                        background: #00BF4D;
+                        border-radius: 1.6rem;
+                        color: #FFFFFF;
                     }
                 }
 
@@ -185,9 +190,20 @@
 
             a {
                 .download_btn {
-                    &>p {
-                        font-size: 1.4rem !important;
-                    }
+                    margin-block: 6rem;
+                    width: 100%;
+                    height: 5.6rem;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    background: #00BF4D;
+                    border-radius: 1.6rem;
+                    color: #FFFFFF;
+                    font-family: $font;
+                    font-weight: 600;
                 }
             }
         }
@@ -427,6 +443,15 @@
 
             .details_body_ {
                 width: 85%;
+
+                a {
+                    .download_btn {
+                        margin-block: 4rem;
+                        height: 4.8rem;
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                    }
+                }
             }
 
             .written_by_sm {
@@ -499,7 +524,6 @@
 
                 h2 {
                     font-size: 2.4rem;
-                    // margin-bottom: 1.6rem;
                 }
 
                 h3 {
@@ -507,10 +531,6 @@
                 }
 
                 .research_details {
-
-                    // h2 {
-                    //     margin-bottom: 1.6rem;
-                    // }
                     h3 {
                         font-size: 1.6rem;
                     }
@@ -556,6 +576,15 @@
 
                 h3 {
                     font-size: 1.4rem;
+                }
+
+                a {
+                    .download_btn {
+                        margin-block: 3.2rem;
+                        height: 4.4rem;
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                    }
                 }
             }
 

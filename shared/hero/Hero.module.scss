@@ -72,12 +72,6 @@
 					&>img {
 						object-fit: cover;
 					}
-
-					&[data-type="new"] {
-						&>img {
-							object-fit: contain;
-						}
-					}
 				}
 			}
 
@@ -336,12 +330,6 @@
 					.hero_image {
 						&>video {
 							height: 90vh;
-						}
-
-						&[data-type="new"] {
-							&>img {
-								object-fit: cover;
-							}
 						}
 					}
 				}

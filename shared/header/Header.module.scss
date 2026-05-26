@@ -41,10 +41,11 @@
 
 			p {
 				font-size: 1.4rem;
+				line-height: 1.4;
 				text-transform: uppercase;
 				color: #FFF;
 				font-family: $font;
-				font-weight: 600;
+				font-weight: 700;
 			}
 		}
 	}
@@ -390,7 +391,6 @@
 	}
 
 	&[data-scroll="initial"] {
-		// background-color: #12351A;
 		background-color: #000;
 	}
 
@@ -401,7 +401,6 @@
 				background-color: transparent;
 
 				.header_navLink {
-					// margin: 0 1rem;
 					padding: 1rem;
 				}
 			}
@@ -447,7 +446,6 @@
 					overflow: hidden;
 					transition: all 0.5s ease-in-out;
 					border-radius: 1.6rem;
-					// background-color: #12351A;
 					background-color: rgba($col-white, 0.0);
 					width: 100%;
 
@@ -460,7 +458,6 @@
 						margin-bottom: 1rem;
 
 						p {
-							// color: #00FF8C;
 							color: $col-white;
 						}
 					}
