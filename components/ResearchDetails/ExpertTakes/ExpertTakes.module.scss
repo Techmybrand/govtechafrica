@@ -10,7 +10,8 @@
         padding: 0 3.6rem !important;
 
         .details_header {
-            width: 100%;
+            width: 88%;
+            margin-inline: auto;
             padding: 3.2rem 3.2rem 3.2rem 0;
             border-radius: 1.6rem;
 
@@ -38,20 +39,19 @@
                 h3 {
                     text-transform: capitalize;
                     font-family: $font;
-                    font-size: 2rem;
+                    font-size: 1.8rem;
+                    line-height: 1.5;
                     font-weight: 500;
                     color: #FFF;
                 }
             }
 
             .header_details {
-                width: 100%;
+                width: 100;
                 display: flex;
                 align-items: center;
-                gap: 20rem;
+                justify-content: space-between;
                 margin-top: 4.8rem;
-                border-top: 0.1rem solid #000;
-                border-bottom: 0.1rem solid #000;
 
                 .banner_image {
                     position: relative;
@@ -120,11 +120,11 @@
         }
 
         .content_body {
-            width: 100%;
+            width: 88%;
+            margin-inline: auto;
 
             .research_details {
-                width: 75%;
-                margin-inline: auto;
+                width: 100%;
 
                 h3,
                 h2,
@@ -159,8 +159,7 @@
             }
 
             .written_by_bottom {
-                width: 75%;
-                margin-inline: auto;
+                width: 100%;
                 margin-top: 6.4rem;
                 padding-top: 4.8rem;
                 border-top: 0.1rem solid #202020;
@@ -275,6 +274,7 @@
 
             .details_header {
                 padding: 2.4rem 2.4rem 2.4rem 0;
+                width: 90%;
 
                 .breadcrumbs {
                     a {
@@ -290,14 +290,11 @@
                     }
 
                     h3 {
-                        font-size: 1.8rem;
-                        line-height: 2.7rem;
+                        font-size: 1.6rem;
                     }
                 }
 
                 .header_details {
-                    gap: 8rem;
-
                     .banner_image {
                         width: 50%;
                         height: 45rem;
@@ -333,16 +330,10 @@
             }
 
             .content_body {
-                width: 100%;
-
-                .research_details {
-                    width: 85%;
-                }
-
+                width: 90%;
                 .written_by_bottom {
                     padding-top: 3.2rem;
                     margin-top: 5.6rem;
-                    width: 85%;
                     margin-inline: auto;
 
                     .writer_details_container {
@@ -391,7 +382,7 @@
 
             .details_header {
                 padding: 2.4rem 0 0 0;
-
+                width: 100%;
                 .breadcrumbs {
                     a {
                         p {
@@ -406,11 +397,10 @@
                     }
 
                     h3 {
-                        font-size: 1.2rem;
-                        line-height: 1.6rem;
+                        font-size: 1.4rem;
+                        line-height: 1.4;
                     }
                 }
-
                 .header_details {
                     gap: 2.4rem;
                     flex-direction: column;
@@ -456,15 +446,9 @@
 
             .content_body {
                 width: 100%;
-
-                .research_details {
-                    width: 100%;
-                }
-
                 .written_by_bottom {
                     padding-top: 2.4rem;
                     margin-top: 4rem;
-                    width: 100%;
 
                     .writer_details_container {
                         .writer_details {
