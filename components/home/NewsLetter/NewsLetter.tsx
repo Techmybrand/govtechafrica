@@ -6,12 +6,14 @@ import { BeatLoader } from "react-spinners";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import styles from "./NewsLetter.module.scss";
+import { NewsletterSuccessModal } from "@/shared/Modals";
 
 const NewsLetter = () => {
     const [formData, setFormData] = useState<{ fullName: string; email: string }>({ fullName: '', email: '' });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">('idle');
     const [message, setMessage] = useState<string>('');
     const isLoading = status === "loading";
+    const [openModal, setOpenModal] = useState<boolean>(false);
     // console.log('form data: ', formData);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +37,8 @@ const NewsLetter = () => {
                 return;
             }
             setStatus('success');
-            toast.success('Subsription successful!')
+            // toast.success('Subsription successful!');
+            setOpenModal(true);
             setFormData(
                 { fullName: '', email: '' });
             // eslint-disable-next-line
@@ -46,22 +49,27 @@ const NewsLetter = () => {
             console.log("API Error: ", error)
         }
     };
-    if (status === 'success') {
-        return (
-            <div className="newsletter-success">
-                <div className="newsletter-success__icon">✓</div>
-                <h3>{`You're subscribed!`}</h3>
-                <p>
-                    Welcome to the Govtech Africa community. Check your inbox for a
-                    welcome email from us.
-                </p>
-                <button className="newsletter-btn newsletter-btn--ghost"
-                    onClick={() => setStatus('idle')}
-                >
-                    Close
-                </button>
-            </div>
-        );
+    // if (status === 'success') {
+    //     return (
+    //         <div className="newsletter-success">
+    //             <div className="newsletter-success__icon">✓</div>
+    //             <h3>{`You're subscribed!`}</h3>
+    //             <p>
+    //                 Welcome to the Govtech Africa community. Check your inbox for a
+    //                 welcome email from us.
+    //             </p>
+    //             <button className="newsletter-btn newsletter-btn--ghost"
+    //                 onClick={() => setStatus('idle')}
+    //             >
+    //                 Close
+    //             </button>
+    //         </div>
+    //     );
+    // }
+    const handleCloseModal = () => {
+        setOpenModal(false);
+        setStatus("idle");
+        setFormData((prev) => ({ ...prev, fullName: '', email: '' }));
     }
     const newsletterRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -83,38 +91,43 @@ const NewsLetter = () => {
     });
 
     return (
-        <div ref={newsletterRef} className={styles.newsletter_section}>
-            <div className={styles.newsletter_container}>
-                <motion.div style={{ y, opacity }} className={styles.newsletter_content}>
-                    <div className={styles.image}>
-                        <Image alt="" fill src="/images/newsletter.png" />
-                    </div>
-                    <form onSubmit={(e) => handleSubmit(e)} className={styles.newsletter_text_and_ctas}>
-                        <h1>Subscribe to Our Newsletter</h1>
-                        <div className={styles.ctas}>
-                            <h3>Subscribe to our Newsletter for latest updates</h3>
-                            <InputField onChange={handleChange} required
-                                className={styles.input_field}
-                                placeholder="Enter your full name" name="fullName"
-                            />
-                            <InputField onChange={handleChange} required
-                                className={styles.input_field}
-                                placeholder="Enter your email" name="email"
-                            />
+        <React.Fragment>
+            <div ref={newsletterRef} className={styles.newsletter_section}>
+                <div className={styles.newsletter_container}>
+                    <motion.div style={{ y, opacity }} className={styles.newsletter_content}>
+                        <div className={styles.image}>
+                            <Image alt="" fill src="/images/newsletter.png" />
                         </div>
-                        <button disabled={isLoading} type="submit"
-                            className={styles.subscribe_btn}
-                        >
-                            {isLoading ? (
-                                <BeatLoader color="white"></BeatLoader>
-                            ) : (
-                                <p>Subscribe</p>
-                            )}
-                        </button>
-                    </form>
-                </motion.div>
+                        <form onSubmit={(e) => handleSubmit(e)} className={styles.newsletter_text_and_ctas}>
+                            <h1>Subscribe to Our Newsletter</h1>
+                            <div className={styles.ctas}>
+                                <h3>Subscribe to our Newsletter for latest updates</h3>
+                                <InputField onChange={handleChange} required
+                                    className={styles.input_field}
+                                    placeholder="Enter your full name" name="fullName"
+                                />
+                                <InputField onChange={handleChange} required
+                                    className={styles.input_field}
+                                    placeholder="Enter your email" name="email"
+                                />
+                            </div>
+                            <button disabled={isLoading} type="submit"
+                                className={styles.subscribe_btn}
+                            >
+                                {isLoading ? (
+                                    <BeatLoader color="white"></BeatLoader>
+                                ) : (
+                                    <p>Subscribe</p>
+                                )}
+                            </button>
+                        </form>
+                    </motion.div>
+                </div>
             </div>
-        </div>
+            <NewsletterSuccessModal open={openModal}
+                closeModal={handleCloseModal}
+            />
+        </React.Fragment>
     )
 }
 

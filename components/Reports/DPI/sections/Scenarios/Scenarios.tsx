@@ -9,7 +9,7 @@ const Scenarios = () => {
           2026 DPI Outlook Scenarios
         </div>
         <h2 className={styles["section-title"]}>
-          Three possible<br /><em>Nigerias by year-end</em>
+          Three possible<br /><em>Nigeria by year end</em>
         </h2>
         <p className={styles["section-body"]}>
           These are not predictions. They are decision-making
