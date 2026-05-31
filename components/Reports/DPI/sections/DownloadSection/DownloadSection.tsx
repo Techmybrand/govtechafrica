@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './DownloadSection.module.scss';
+import Link from 'next/link';
 
 const DownloadSection = () => {
   return (
@@ -21,9 +22,12 @@ const DownloadSection = () => {
             GOVTECH AFRICA.
           </p>
           <div className={styles["action_btns"]}>
-            <a className={styles["btn-download"]}>
+            <Link target="_blank" download
+              className={styles["btn-download"]}
+              href={`/pdfs/UNIFYING NIGERIA FRAGMENTED IDENTITY SYSTEMS.pdf`}
+            >
               ↓ Download Full Report (PDF)
-            </a>
+            </Link>
             <a className={styles["report_btn"]}>
               Share Report →
             </a>
@@ -42,9 +46,9 @@ const DownloadSection = () => {
           <div className={styles["publish_text"]}>
             Published 30 March 2026
           </div>
-          <a className={styles["btn-download"]}>
+          <Link href={`/pdfs/UNIFYING NIGERIA FRAGMENTED IDENTITY SYSTEMS.pdf`} target="_blank" download className={styles["btn-download"]}>
             ↓ Free Download
-          </a>
+          </Link>
         </div>
       </div>
     </section>
