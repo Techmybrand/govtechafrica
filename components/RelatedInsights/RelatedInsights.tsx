@@ -27,6 +27,7 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
             <div className={styles.research_wrapper}>
                 {sortedBlogs?.slice(0, 4)?.map((blog: BlogDetailsProps, index: number) => {
                     const getType = blog?.type?.toLowerCase();
+                    const getResearchType = getType?.replace(' ', '-');
                     const isExpertTake = getType === "perspective" ||
                         getType === "opinion-piece" ||
                         getType === "insight";
@@ -58,8 +59,9 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
                         <ResearchCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
                             alt={`https:${blog?.thumbnail?.fields?.description}`}
-                            description={blog?.description} slug={blog?.slug}
-                            btnText={blog?.type} researchType={getType}
+                            description={blog?.description}
+                            slug={blog?.slug} btnText={blog?.type}
+                            researchType={getResearchType}
                         />
                     )
                 }
