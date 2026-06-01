@@ -73,7 +73,7 @@ export default function BlogView() {
 								<PolicyBriefCard key={index} title={blog?.title}
 									image={`https:${blog?.thumbnail?.fields?.file?.url}`}
 									slug={blog?.slug} description={blog?.description}
-									type={type}
+									type={type} btnText={getType}
 								/>
 							) : (
 								<ResearchCard key={index} title={blog?.title}
