@@ -38,6 +38,7 @@ const Research = () => {
                         }
                     }
                     const type = blog?.type?.toLowerCase();
+                    const getResearchType = type?.replace(' ', '_');
                     const isExpertTake = type === "perspective" ||
                         type === "opinion piece" || type === "insight";
                     const isPolicyBrief = type === "policy brief" || type === "case study";
@@ -45,33 +46,29 @@ const Research = () => {
                     return blog?.type === 'backgrounder' ? (
                         <BackgrounderCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                            slug={blog?.slug}
-                            date={blog?.date}
+                            slug={blog?.slug} date={blog?.date}
                             publishedAt={blog?.publishedAt}
                         />
                     ) : isExpertTake ? (
                         <ExpertTakeCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                            slug={blog?.slug}
-                            date={blog?.date}
+                            slug={blog?.slug} date={blog?.date}
+                            type={type} author={blog?.authors?.[0]}
                             publishedAt={blog?.publishedAt}
-                            author={blog?.authors?.[0]}
-                            type={type}
                         />
                     ) : isPolicyBrief ? (
                         <PolicyBriefCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
                             slug={blog?.slug} description={blog?.description}
-                            type={type}
+                            type={type} btnText={blog?.type}
                         />
                     ) : (
                         <ResearchCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
                             alt={`https:${blog?.thumbnail?.fields?.description}`}
                             description={blog?.description || paragraph}
-                            btnText={blog?.type}
-                            slug={blog?.slug}
-                            researchType={type}
+                            btnText={blog?.type} slug={blog?.slug}
+                            researchType={getResearchType}
                         />
                     )
                 }

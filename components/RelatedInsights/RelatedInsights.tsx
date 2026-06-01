@@ -42,8 +42,7 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
                     ) : isExpertTake ? (
                         <ExpertTakeCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                            slug={blog?.slug}
-                            date={blog?.date}
+                            slug={blog?.slug} date={blog?.date}
                             publishedAt={blog?.publishedAt}
                             author={blog?.authors?.[0]}
                             type={blog?.type}
@@ -51,16 +50,15 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
                     ) : isPolicyBrief ? (
                         <PolicyBriefCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                            slug={blog?.slug} description={blog?.description}
-                            type={blog?.type}
+                            slug={blog?.slug} type={blog?.type}
+                            description={blog?.description}
                         />
                     ) : (
                         <ResearchCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
                             alt={`https:${blog?.thumbnail?.fields?.description}`}
-                            description={blog?.description}
-                            btnText={blog?.type}
-                            slug={blog?.slug}
+                            description={blog?.description} slug={blog?.slug}
+                            btnText={blog?.type} researchType={getType}
                         />
                     )
                 }

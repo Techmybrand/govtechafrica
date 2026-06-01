@@ -47,7 +47,7 @@ export default function BlogView() {
 					<div className={styles.research_wrapper}>
 						{insightsList?.map((blog: BlogDetailsProps, index: number) => {
 							const getType = blog?.type?.toLowerCase();
-							const type = getType?.replace(' ', '-');
+							const type = getType?.replace(' ', '_');
 							const isExpertTake = getType === "perspective" ||
 								getType === "opinion piece" ||
 								getType === "insight";
@@ -82,6 +82,7 @@ export default function BlogView() {
 									description={blog?.description}
 									btnText={blog?.type}
 									slug={blog?.slug}
+									researchType={type}
 								/>
 							)
 						})}
