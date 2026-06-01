@@ -47,7 +47,7 @@ export default function BlogView() {
 					<div className={styles.research_wrapper}>
 						{insightsList?.map((blog: BlogDetailsProps, index: number) => {
 							const getType = blog?.type?.toLowerCase();
-							const type = getType?.replace(' ', '_');
+							const getResearchType = getType?.replace(' ', '-');
 							const isExpertTake = getType === "perspective" ||
 								getType === "opinion piece" ||
 								getType === "insight";
@@ -67,13 +67,13 @@ export default function BlogView() {
 									date={blog?.date}
 									publishedAt={blog?.publishedAt}
 									author={blog?.authors?.[0]}
-									type={type}
+									type={blog?.type}
 								/>
 							) : isPolicyBrief ? (
 								<PolicyBriefCard key={index} title={blog?.title}
 									image={`https:${blog?.thumbnail?.fields?.file?.url}`}
 									slug={blog?.slug} description={blog?.description}
-									type={type} btnText={getType}
+									type={blog?.type} btnText={getType}
 								/>
 							) : (
 								<ResearchCard key={index} title={blog?.title}
@@ -82,7 +82,7 @@ export default function BlogView() {
 									description={blog?.description}
 									btnText={blog?.type}
 									slug={blog?.slug}
-									researchType={type}
+									researchType={getResearchType}
 								/>
 							)
 						})}

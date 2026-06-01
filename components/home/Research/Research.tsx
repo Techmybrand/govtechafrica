@@ -38,7 +38,7 @@ const Research = () => {
                         }
                     }
                     const type = blog?.type?.toLowerCase();
-                    const getResearchType = type?.replace(' ', '_');
+                    const getResearchType = type?.replace(' ', '-');
                     const isExpertTake = type === "perspective" ||
                         type === "opinion piece" || type === "insight";
                     const isPolicyBrief = type === "policy brief" || type === "case study";
