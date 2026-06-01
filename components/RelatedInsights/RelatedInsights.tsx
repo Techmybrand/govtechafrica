@@ -52,6 +52,7 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
                             slug={blog?.slug} type={blog?.type}
                             description={blog?.description}
+                            btnText={blog?.type}
                         />
                     ) : (
                         <ResearchCard key={index} title={blog?.title}
