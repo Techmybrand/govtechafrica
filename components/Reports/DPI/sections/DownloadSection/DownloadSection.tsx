@@ -24,7 +24,7 @@ const DownloadSection = () => {
           <div className={styles["action_btns"]}>
             <Link target="_blank" download
               className={styles["btn-download"]}
-              href={`/pdfs/UNIFYING NIGERIA FRAGMENTED IDENTITY SYSTEMS.pdf`}
+              href={`/pdfs/`}
             >
               ↓ Download Full Report (PDF)
             </Link>
@@ -46,7 +46,7 @@ const DownloadSection = () => {
           <div className={styles["publish_text"]}>
             Published 30 March 2026
           </div>
-          <Link href={`/pdfs/UNIFYING NIGERIA FRAGMENTED IDENTITY SYSTEMS.pdf`} target="_blank" download className={styles["btn-download"]}>
+          <Link href={`/pdfs/`} target="_blank" download className={styles["btn-download"]}>
             ↓ Free Download
           </Link>
         </div>
