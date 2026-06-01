@@ -10,11 +10,9 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    border: 0.1rem solid #000;
-
+    border: 0.2rem solid #1A1A1A;
     &:hover {
         scale: 1.06;
-
         .middle_section {
             a {
                 .title {
@@ -24,16 +22,13 @@
             }
         }
     }
-
     .top_section {
         height: 25rem;
         width: 100%;
-
         .image_wrapper {
             position: relative;
             width: 100%;
             height: 100%;
-
             img {
                 object-fit: cover;
                 width: 100%;
@@ -41,7 +36,6 @@
             }
         }
     }
-
     .middle_section {
         display: flex;
         flex-direction: column;
@@ -50,11 +44,9 @@
         padding: 2.4rem 1.6rem;
         text-align: left;
         flex-grow: 1;
-
         a {
             text-decoration: none;
         }
-
         .title {
             font-family: $font-gothic-bold, Georgia, serif;
             font-size: 1.6rem;
@@ -65,24 +57,20 @@
             transition: color 0.2s ease;
         }
     }
-
     .bottom_section {
         padding: 1.6rem 1.6rem 0;
-
         .date {
             font-family: $font;
             font-size: 1.6rem;
             color: #555555;
             margin-bottom: 1rem;
         }
-
         .author {
             border-top: 0.1rem solid #000;
             width: auto;
             margin: 0 -1.6rem;
             padding-block: 0.4rem;
             display: none;
-
             p {
                 font-family: $font;
                 font-size: 1.4rem;
@@ -97,29 +85,22 @@
 @include screenMax("tablet") {
     .card_container {
         min-height: 44rem;
-
         .top_section {
             height: 25rem;
         }
-
         .middle_section {
             padding: 2rem 1.6rem;
-
             .title {
                 font-size: 1.5rem;
             }
         }
-
         .bottom_section {
             padding: 1.6rem;
-
             .date {
                 font-size: 1.4rem;
             }
-
             .author {
                 margin: 0 -1.6rem;
-
                 p {
                     font-size: 1.2rem;
                     line-height: 1.6rem;
@@ -136,30 +117,23 @@
         flex-shrink: 0;
         width: 80%;
         margin-block: 0.8rem;
-
         .top_section {
             height: 23rem;
         }
-
         .middle_section {
             padding: 1.6rem;
-
             .title {
                 font-size: 1.4rem;
             }
         }
-
         .bottom_section {
             padding: 1.6rem;
-
             .date {
                 font-size: 1.2rem;
                 margin-top: 1.6rem;
             }
-
             .author {
                 margin: 0 -1rem;
-
                 p {
                     font-size: 1.1rem;
                     line-height: 1.5rem;
