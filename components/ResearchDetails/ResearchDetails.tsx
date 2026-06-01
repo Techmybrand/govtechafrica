@@ -63,7 +63,13 @@ const ResearchDetails = () => {
                             <h3>{blog?.type}</h3>
                             <h1>{blog?.title}</h1>
                             <div className={styles.time_and_date}>
-                                <h4>{blog?.readTime} mins read</h4>
+                                <h4>
+                                    {blog?.readTime === "1" ?
+                                        `${blog?.readTime} min read`
+                                    : 
+                                        `${blog?.readTime} mins read`
+                                    }
+                                </h4>
                                 <h4>{blog?.date ? formatDate(blog?.date) : blog?.publishedAt}</h4>
                             </div>
                         </div>
