@@ -122,7 +122,7 @@ const ResearchDetails = () => {
                                     target="_blank" download rel="noopener noreferrer"
                                 >
                                     <div className={styles.download_btn}>
-                                        Download Report
+                                        Download {blog?.type}
                                     </div>
                                 </Link>
                             </div>

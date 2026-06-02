@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 import styles from "./CenterPieceV2.module.scss";
+import Globe from "@/shared/Globe/Globe";
 
 const CenterPieceV2 = () => {
     // const centerpieceRef = useRef<HTMLDivElement>(null);
@@ -77,9 +78,7 @@ const CenterPieceV2 = () => {
                         </div>
                         <div className={styles.image_container}>
                             <div className={styles.image_wrapper}>
-                                <Image src="/svgs/earth.svg"
-                                    alt="Globe Map with connected people" fill sizes="100%"
-                                />
+                                <Globe />
                             </div>
                         </div>
                     </div>

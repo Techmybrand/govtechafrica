@@ -6,16 +6,17 @@ import { BlogDetailsProps } from "@/interfaces";
 import styles from "./ArticlesView.module.scss";
 
 const ArticlesView = () => {
-  const { fetchBlogs, sortedBlogs } = useGetContentful();
-  const articles = sortedBlogs.filter((blog: BlogDetailsProps) =>
-    blog.type.toLowerCase() === "article"
-  );
-  useEffect(() => {
-    fetchBlogs();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <div className={styles.section}>
+	const { fetchBlogs, sortedBlogs } = useGetContentful();
+	const articles = sortedBlogs.filter((blog: BlogDetailsProps) =>
+		blog.type.toLowerCase() === "article" ||
+		blog.type.toLowerCase() === "policy insight"
+	);
+	useEffect(() => {
+		fetchBlogs();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+	return (
+		<div className={styles.section}>
 			<div className={styles.section_container}>
 				<div className={styles.large_card}>
 					<div className={styles.details}>
@@ -44,7 +45,7 @@ const ArticlesView = () => {
 				)}
 			</div>
 		</div>
-  )
+	)
 }
 
 export default ArticlesView
