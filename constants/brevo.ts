@@ -1,4 +1,4 @@
-export const BREVO_API_KEY="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"
+export const BREVO="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"
 export const BREVO_LIST_ID="3"
 // export const TEMPLATE_SHARE_URL="https://my.brevo.com/template/vnszRkxffBE327PrrIcrj80gPa0pzF4LG9432klzEbNA8rFAFBstfdClgQ"
 export const BREVO_TEMPLATE_ID="2"
