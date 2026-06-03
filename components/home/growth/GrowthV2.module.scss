@@ -1,98 +1,3 @@
-// .section {
-//     width: 100%;
-//     background-color: #000000;
-//     color: #FFFFFF;
-//     padding: 6rem 5%;
-// }
-
-// .section_container {
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: flex-start;
-//     gap: 4rem;
-// }
-
-// .text_side {
-//     flex: 1;
-//     max-width: 400px;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 2rem;
-
-//     h2 {
-//         font-size: 2.5rem;
-//         line-height: 1.2;
-//         font-weight: 400;
-//     }
-
-//     .read_more {
-//         font-size: 0.9rem;
-//         color: #B0B0B0;
-//         margin-top: auto;
-//     }
-// }
-
-// .stats_side {
-//     flex: 2;
-//     display: flex;
-//     gap: 3rem;
-// }
-
-// .column {
-//     flex: 1;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 3rem;
-// }
-
-// .stat_item {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 0.8rem;
-
-//     h3 {
-//         font-size: 2.5rem;
-//         font-weight: 700;
-//         margin: 0;
-//     }
-
-//     .line {
-//         height: 2px;
-//         width: 100%;
-//         background-color: #00E676;
-//     }
-
-//     p {
-//         font-size: 0.875rem;
-//         color: #CCCCCC;
-//         margin: 0;
-//         line-height: 1.5;
-//     }
-// }
-
-// @media (max-width: 900px) {
-//     .section_container {
-//         flex-direction: column;
-//     }
-
-//     .text_side {
-//         max-width: 100%;
-        
-//         h2 {
-//             font-size: 2rem;
-//         }
-//     }
-
-//     .stats_side {
-//         width: 100%;
-//         flex-direction: column;
-//         gap: 2rem;
-//     }
-// }
-
-
 @import "@/styles/imports";
 
 .section {
@@ -113,7 +18,7 @@
 				line-height: 3.2rem;
 				font-weight: 700;
 				font-family: $font-gothic-bold;
-                color: rgba($col-white, 0.6);
+                color: rgba($col-white, 0.7);
                 max-width: 60%;
 			}
             p, span {
@@ -124,7 +29,7 @@
                 line-height: 2.4rem;
             }
 			span {
-				color: rgba($col-white, 0.8);
+				color: $col-white;
 			}
 		}
 		.grid, .grid_mob {

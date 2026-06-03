@@ -19,6 +19,7 @@ interface HeaderProps {
 }
 
 const Header = ({ type = 'default' }: HeaderProps) => {
+	const router = useRouter();
 	const [collapsed, setCollapsed] = useState<boolean>(true);
 	const [scroll, setScroll] = useState<Scroll>(Scroll.Idle);
 	const [activeLink, setActiveLink] = useState<string | null>(null);
@@ -96,7 +97,9 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 					</nav>
 				</div>
 				{type === "new" && (
-					<div className={styles.contact_btn}>
+					<div onClick={() => router.push('/contact')}
+						className={styles.contact_btn}
+					>
 						<p>contact us</p>
 					</div>
 				)}

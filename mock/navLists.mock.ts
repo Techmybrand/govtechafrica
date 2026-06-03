@@ -153,18 +153,27 @@ export const navLinks: NavLink[] = [
 			},
 			{
 				label: "articles",
-				icon: "/svgs/link-user.svg",
+				// icon: "/svgs/link-user.svg",
+				icon: "/svgs/link-main.svg",
 				href: "/articles"
 			},
 			{
 				label: "expert takes",
-				icon: "/svgs/link-ai.svg",
+				// icon: "/svgs/link-ai.svg",
+				icon: "/svgs/link-main.svg",
 				href: "/expert-takes"
 			},
 			{
 				label: "policy briefs",
-				icon: "/svgs/link-ai.svg",
+				// icon: "/svgs/link-ai.svg",
+				icon: "/svgs/link-main.svg",
 				href: "/policy-briefs"
+			},
+			{
+				label: "reports",
+				// icon: "/svgs/link-ai.svg",
+				icon: "/svgs/link-main.svg",
+				href: "/reports/nigeria-dpi"
 			},
 		]
 	}
