@@ -1,14 +1,14 @@
-import { BREVO, BREVO_LIST_ID as listID, BREVO_TEMPLATE_ID as templateId } from "@/constants";
+import { BREVO_API_KEY, BREVO_LIST_ID as listID, BREVO_TEMPLATE_ID as templateId } from "@/constants";
 import { NextResponse, NextRequest } from "next/server";
 
-// const BREVO = process.env.BREVO!;
+// const BREVO_API_KEY = process.env.BREVO_API_KEY!;
 const BREVO_LIST_ID = parseInt(listID);
 const BREVO_TEMPLATE_ID = parseInt(templateId);
 console.log('id: ', BREVO_LIST_ID);
 export async function POST(request: NextRequest) {
     try {
-        if (!BREVO) {
-            console.error('Subscribe API error: BREVO environment variable is missing.');
+        if (!BREVO_API_KEY) {
+            console.error('Subscribe API error: BREVO_API_KEY environment variable is missing.');
             return NextResponse.json(
                 { error: 'Subscription service misconfigured. API Key is missing.' },
                 { status: 500 }
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'api-key': BREVO,
+                'api-key': BREVO_API_KEY,
             },
             body: JSON.stringify({
                 email,
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
-            'api-key': BREVO,
+            'api-key': BREVO_API_KEY,
             },
             body: JSON.stringify({
             to: [{ email, name: fullName }],
