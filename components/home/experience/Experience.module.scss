@@ -93,7 +93,6 @@
 					z-index: 3;
 					overflow: hidden;
 					display: none;
-
 					.lottie {
 						width: 15.6rem;
 						height: 15.6rem;
@@ -162,8 +161,6 @@
 						font-family: $font-gothic-bold;
 					}
 				}
-				// ── Opening sequence ─────────────────────────────────────
-				// Only animates when can-animate is true
 				&[data-active="true"][data-can-animate="true"] {
 					// Step 1 (0–0.3s): lottie badge and plus icon fade out
 					.lottie_badge {
@@ -189,8 +186,6 @@
 						animation: overlay-reveal 1.6s ease-out 2.3s forwards;
 					}
 				}
-
-				// ── Closing sequence ─────────────────────────────────────
 				&[data-closing="true"] {
 					width: 80%;
 					border-radius: 3.2rem;
@@ -234,37 +229,30 @@
 	@include screenMax("tablet") {
 		padding: 10rem 1.6rem 5rem;
 		margin-block: 8rem;
-
 		.container {
 			.title_container {
 				margin-block: 3rem 4rem;
-
 				.title {
 					h2 {
 						margin-bottom: 1.6rem;
 						font-size: 4rem;
 						line-height: 5.2rem;
 					}
-
-					h3,
-					span {
+					h3, span {
 						font-size: 1.6rem;
 						line-height: 2.4rem;
 					}
 				}
 			}
-
 			.cards_container {
 				flex-wrap: wrap;
 				gap: 2.4rem;
-
 				.card {
 					width: 100%;
 					height: 10.5rem;
 					padding: 2.4rem;
 					border-radius: 20rem;
 					max-width: 100%;
-
 					.lottie_badge {
 						top: 50%;
 						left: 2.4rem;
@@ -274,7 +262,6 @@
 						border-radius: 1.6rem;
 						opacity: 1;
 					}
-
 					.plus_icon {
 						bottom: auto;
 						top: 50%;
@@ -286,182 +273,144 @@
 						width: 4.8rem;
 						height: 4.8rem;
 					}
-
 					.title {
 						top: 6rem;
 						left: 2.4rem;
-
 						h3 {
 							font-size: 2.4rem;
 							line-height: 3.2rem;
 						}
 					}
-
 					.description {
 						margin: 0;
 						top: 2.4rem;
 						left: 2.4rem;
-
 						p {
 							font-size: 1.4rem;
 							line-height: 2rem;
 						}
 					}
-
 					.subtext {
 						top: 10rem;
 						left: 2.4rem;
-
 						p {
 							font-size: 1.4rem;
 							line-height: 2rem;
 						}
 					}
-
 					&[data-active="true"][data-can-animate="true"]:not([data-small="true"]) {
 						animation: card-expand-tablet-height 1s ease-out 0.3s forwards;
-
 						.lottie_badge {
 							animation: badge-fade-out-mobile 0.3s ease-out forwards;
 						}
-
 						.plus_icon {
 							animation: plus-fade-out-mobile 0.3s ease-out forwards;
 						}
-
 						.description {
 							animation: content-slide-up 0.8s ease-out 0.8s forwards;
 						}
-
 						.title {
 							animation: content-slide-up 0.8s ease-out 1.0s forwards;
 						}
-
 						.subtext {
 							animation: content-slide-up 0.8s ease-out 1.2s forwards;
 						}
-
 						.blue_overlay {
 							animation: overlay-reveal 1.6s ease-out 2.3s forwards;
 						}
 					}
-
 					&[data-closing="true"]:not([data-small="true"]) {
 						height: 40rem;
 						border-radius: 3.2rem;
 						width: 100%;
 						max-width: 100%;
-
 						.blue_overlay {
 							box-shadow: inset 0 0 0 0.1rem #7394f4;
 							animation: overlay-cover 1s ease-in 0s forwards;
 						}
-
 						.subtext {
 							opacity: 1;
 							transform: translateY(0);
 							animation: content-slide-down 0.5s ease-in 0.6s forwards;
 						}
-
 						.title {
 							opacity: 1;
 							transform: translateY(0);
 							animation: content-slide-down 0.5s ease-in 0.8s forwards;
 						}
-
 						.description {
 							opacity: 1;
 							transform: translateY(0);
 							animation: content-slide-down 0.5s ease-in 1.0s forwards;
 						}
-
 						animation: card-contract-tablet-height 0.625s ease-in 1.625s forwards;
-
 						.plus_icon {
 							opacity: 0;
 							transform: translateY(-50%);
 							animation: plus-fade-in-mobile 0.3s ease-out 2.0s forwards;
 						}
-
 						.lottie_badge {
 							opacity: 0;
 							animation: badge-fade-in-mobile 0.25s ease-out 2.25s forwards;
 						}
 					}
-
 					&[data-small="true"] {
 						height: 5.5rem;
-
 						.plus_icon {
 							width: 3.6rem;
 							height: 3.6rem;
 						}
-
 						&[data-active="true"][data-can-animate="true"] {
 							animation: card-expand-mobile-height 1s ease-out 0.3s forwards;
-
 							.lottie_badge {
 								animation: badge-fade-out-mobile 0.3s ease-out forwards;
 							}
-
 							.plus_icon {
 								animation: plus-fade-out-mobile 0.3s ease-out forwards;
 							}
-
 							.description {
 								animation: content-slide-up 0.8s ease-out 0.8s forwards;
 							}
-
 							.title {
 								animation: content-slide-up 0.8s ease-out 1.0s forwards;
 							}
-
 							.subtext {
 								animation: content-slide-up 0.8s ease-out 1.2s forwards;
 							}
-
 							.blue_overlay {
 								animation: overlay-reveal 1.6s ease-out 2.3s forwards;
 							}
 						}
-
 						&[data-closing="true"] {
 							height: 35rem;
 							border-radius: 3.2rem;
 							width: 100%;
 							max-width: 100%;
-
 							.blue_overlay {
 								box-shadow: inset 0 0 0 0.1rem #7394f4;
 								animation: overlay-cover 1s ease-in 0s forwards;
 							}
-
 							.subtext {
 								opacity: 1;
 								transform: translateY(0);
 								animation: content-slide-down 0.5s ease-in 0.6s forwards;
 							}
-
 							.title {
 								opacity: 1;
 								transform: translateY(0);
 								animation: content-slide-down 0.5s ease-in 0.8s forwards;
 							}
-
 							.description {
 								opacity: 1;
 								transform: translateY(0);
 								animation: content-slide-down 0.5s ease-in 1.0s forwards;
 							}
-
 							animation: card-contract-mobile-height 0.625s ease-in 1.625s forwards;
-
 							.plus_icon {
 								opacity: 0;
 								transform: translateY(-50%);
 								animation: plus-fade-in-mobile 0.3s ease-out 2.0s forwards;
 							}
-
 							.lottie_badge {
 								opacity: 0;
 								animation: badge-fade-in-mobile 0.25s ease-out 2.25s forwards;
@@ -471,97 +420,81 @@
 				}
 			}
 		}
-
 		@keyframes card-contract-tablet-height {
 			0% {
 				height: 40rem;
 				border-radius: 3.2rem;
 			}
-
 			100% {
 				height: 10.5rem;
 				border-radius: 20rem;
 			}
 		}
-
 		@keyframes card-expand-tablet-height {
 			0% {
 				height: 10.5rem;
 				border-radius: 20rem;
 			}
-
 			100% {
 				height: 40rem;
 				border-radius: 3.2rem;
 			}
 		}
-
 		@keyframes card-contract-mobile-height {
 			0% {
 				height: 35rem;
 				border-radius: 3.2rem;
 			}
-
 			100% {
 				height: 5.5rem;
 				border-radius: 20rem;
 			}
 		}
-
 		@keyframes card-expand-mobile-height {
 			0% {
 				height: 5.5rem;
 				border-radius: 20rem;
 			}
-
 			100% {
 				height: 35rem;
 				border-radius: 3.2rem;
 			}
 		}
-
 		@keyframes badge-fade-out-mobile {
 			0% {
 				opacity: 1;
 				transform: translateY(-50%) scale(1);
 			}
-
 			100% {
 				opacity: 0;
 				transform: translateY(-50%) scale(0.75);
 			}
 		}
-
 		@keyframes badge-fade-in-mobile {
 			0% {
 				opacity: 0;
 				transform: translateY(-50%) scale(0.75);
 			}
-
 			100% {
 				opacity: 1;
 				transform: translateY(-50%) scale(1);
 			}
 		}
-
 		@keyframes plus-fade-out-mobile {
 			0% {
 				opacity: 1;
 				transform: translateY(-50%);
 			}
-
 			100% {
 				opacity: 0;
 				transform: translateY(0);
 			}
 		}
-
 		@keyframes plus-fade-in-mobile {
 			0% {
 				opacity: 0;
 				transform: translateY(0);
 			}
-
 			100% {
 				opacity: 1;
 				transform: translateY(-50%);
@@ -571,73 +504,57 @@
 
 	@include screenMax("mobile") {
 		margin-block: 5.6rem;
-
 		.container {
 			.title_container {
 				margin-block: 2.4rem 3.2rem;
 				flex-direction: column;
 				gap: 2.4rem;
 				align-items: flex-start;
-
 				.title {
 					h2 {
 						font-size: 2.4rem;
 						line-height: 3.2rem;
 						margin-bottom: 1rem;
 					}
-
-					h3,
-					span {
+					h3, span {
 						font-size: 1.2rem;
 						line-height: 1.6rem;
 						width: 90%;
 					}
 				}
-
 				.button {
 					min-width: 12.5rem;
-
-					&>p {
+					& > p {
 						font-size: 1.2rem !important;
 					}
 				}
 			}
-
 			.cards_container {
 				gap: 1.6rem;
-
 				.card {
 					.title {
 						top: 3.6rem;
-
 						h3 {
 							font-size: 1.6rem;
 							line-height: 2.4rem;
 						}
 					}
-
-					.description,
-					.subtext {
+					.description, .subtext {
 						p {
 							font-size: 1.2rem;
 							line-height: 1.6rem;
 							font-weight: 400;
 						}
 					}
-
 					.description {
 						top: 1.6rem;
 					}
-
 					.subtext {
 						top: 6.4rem;
 					}
-
-
 					.plus_icon {
 						width: 3.6rem;
 						height: 3.6rem;
-
 						svg {
 							width: 1.6rem;
 							height: 1.6rem;
@@ -649,124 +566,99 @@
 	}
 }
 
-// ── Shared keyframes ─────────────────────────────────────────────────────────
-
 @keyframes badge-fade-out {
 	0% {
 		opacity: 1;
 		transform: translateX(-50%) scale(1);
 	}
-
 	100% {
 		opacity: 0;
 		transform: translateX(-50%) scale(0.75);
 	}
 }
-
 @keyframes badge-fade-in {
 	0% {
 		opacity: 0;
 		transform: translateX(-50%) scale(0.75);
 	}
-
 	100% {
 		opacity: 1;
 		transform: translateX(-50%) scale(1);
 	}
 }
-
 @keyframes card-expand {
 	0% {
 		width: 12rem;
 		border-radius: 20rem;
 	}
-
 	100% {
 		width: 80%;
 		border-radius: 3.2rem;
 	}
 }
-
 @keyframes card-contract {
 	0% {
 		width: 80%;
 		border-radius: 3.2rem;
 	}
-
 	100% {
 		width: 12rem;
 		border-radius: 20rem;
 	}
 }
-
 @keyframes content-slide-up {
 	0% {
 		opacity: 0;
 		transform: translateY(1rem);
 	}
-
 	100% {
 		opacity: 1;
 		transform: translateY(0);
 	}
 }
-
 @keyframes content-slide-down {
 	0% {
 		opacity: 1;
 		transform: translateY(0);
 	}
-
 	100% {
 		opacity: 0;
 		transform: translateY(1rem);
 	}
 }
-
 @keyframes plus-fade-out {
 	0% {
 		opacity: 1;
 		transform: translateX(-50%) translateY(0);
 	}
-
 	100% {
 		opacity: 0;
 		transform: translateX(-50%) translateY(2rem);
 	}
 }
-
 @keyframes plus-fade-in {
 	0% {
 		opacity: 0;
 		transform: translateX(-50%) translateY(2rem);
 	}
-
 	100% {
 		opacity: 1;
 		transform: translateX(-50%) translateY(0);
 	}
 }
-
-// box-shadow spread shrinks from full fill → 0.1rem border ring (rounded on both edges)
 @keyframes overlay-reveal {
 	from {
-		// box-shadow: inset 0 0 0 50rem #7394f4;
 		box-shadow: inset 0 0 0 50rem transparent;
 	}
-
 	to {
-		// box-shadow: inset 0 0 0 0.1rem #7394f4;
 		box-shadow: inset 0 0 0 0.1rem transparent;
 	}
 }
-
-// box-shadow spread grows from 0.1rem border ring → full fill
 @keyframes overlay-cover {
 	from {
 		// box-shadow: inset 0 0 0 0.1rem #7394f4;
 		box-shadow: inset 0 0 0 0.1rem transparent;
 	}
-
 	to {
 		// box-shadow: inset 0 0 0 50rem #7394f4;
 		box-shadow: inset 0 0 0 50rem transparent;
