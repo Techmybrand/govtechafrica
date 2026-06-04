@@ -11,7 +11,6 @@ import Footer from "./footer/Footer";
 import GruveTicketButton from "./GruveTicketButton/GruveTicketButton";
 import Header from "./header/Header";
 import Hero from "./hero/Hero";
-import HeroV2 from "./hero/HeroV2";
 import InputField from "./inputField/InputField";
 import InsightsCard from "./InsightsCard/InsightsCard";
 import Logo from "./logo/Logo";
@@ -68,5 +67,4 @@ export {
     BackgrounderCard,
     ExpertTakeCard,
     PolicyBriefCard,
-    HeroV2,
 };

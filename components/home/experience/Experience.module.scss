@@ -6,22 +6,18 @@
 	z-index: 2;
 	margin-block: 12rem;
 	background-color: #000;
-
 	.container {
 		max-width: $max-width;
 		margin-inline: auto;
 		width: 100%;
-
 		.title_container {
 			margin-bottom: 7.8rem;
 			width: 100%;
 			display: flex;
 			align-items: flex-end;
 			justify-content: space-between;
-
 			.title {
 				max-width: 95.4rem;
-
 				h2 {
 					font-size: 5.6rem;
 					line-height: 6.4rem;
@@ -30,7 +26,6 @@
 					color: #fff;
 					margin-bottom: 2.4rem;
 				}
-
 				h3,
 				span {
 					font-size: 1.8rem;
@@ -39,27 +34,22 @@
 					font-family: $font-gothic;
 					width: 75%;
 				}
-
 				span {
 					color: #fff;
 				}
 			}
-
 			.button {
 				min-width: 13rem;
-
-				&>p {
+				& > p {
 					font-size: 1.4rem !important;
 					font-weight: 600 !important;
 				}
 			}
 		}
-
 		.cards_container {
 			width: 100%;
 			@include flex(center, center, nowrap);
 			gap: 4rem;
-
 			.card {
 				width: 12rem;
 				border-radius: 20rem;
@@ -68,42 +58,31 @@
 				overflow: hidden;
 				cursor: pointer;
 				@include flex(flex-start, flex-end);
-
 				.image_container {
 					position: absolute;
 					inset: 0;
 					z-index: 1;
 					border-radius: 3.2rem;
 					overflow: hidden;
-
 					img {
 						object-fit: cover;
 						border-radius: 3.2rem;
 						overflow: hidden;
 					}
-
 					.image_overlay {
 						position: absolute;
 						inset: 0;
-						// background: linear-gradient(to top,
-						// 	rgba(0, 0, 0, 0.7) 0%,
-						// 	rgba(0, 0, 0, 0.15) 55%,
-						// 	transparent 100%
-						// );
 						border-radius: 3.2rem;
 					}
 				}
-
 				.blue_overlay {
 					position: absolute;
 					inset: 0;
 					background: transparent;
-					// box-shadow: inset 0 0 0 50rem #7394f4;
 					z-index: 2;
 					border-radius: 3.2rem;
 					pointer-events: none;
 				}
-
 				.lottie_badge {
 					position: absolute;
 					top: 3.2rem;
@@ -120,7 +99,6 @@
 						height: 15.6rem;
 					}
 				}
-
 				.plus_icon {
 					position: absolute;
 					bottom: 4rem;
@@ -134,13 +112,11 @@
 					color: #FFF;
 					z-index: 3;
 					opacity: 1;
-
 					svg {
 						width: 2.4rem;
 						height: 2.4rem;
 					}
 				}
-
 				.description {
 					position: absolute;
 					top: 4.8rem;
@@ -149,7 +125,6 @@
 					z-index: 3;
 					opacity: 0;
 					transform: translateY(1rem);
-
 					p {
 						font-size: 1.6rem;
 						line-height: 2.4rem;
@@ -157,7 +132,6 @@
 						font-family: $font-gothic-bold;
 					}
 				}
-
 				.title {
 					position: absolute;
 					top: 7.2rem;
@@ -165,7 +139,6 @@
 					z-index: 3;
 					opacity: 0;
 					transform: translateY(1rem);
-
 					h3 {
 						font-size: 3.2rem;
 						line-height: 1.2;
@@ -174,7 +147,6 @@
 						white-space: pre-wrap;
 					}
 				}
-
 				.subtext {
 					position: absolute;
 					top: 12rem;
@@ -183,7 +155,6 @@
 					z-index: 3;
 					opacity: 0;
 					transform: translateY(1rem);
-
 					p {
 						font-size: 1.6rem;
 						line-height: 2.4rem;
@@ -191,36 +162,28 @@
 						font-family: $font-gothic-bold;
 					}
 				}
-
 				// ── Opening sequence ─────────────────────────────────────
 				// Only animates when can-animate is true
 				&[data-active="true"][data-can-animate="true"] {
-
 					// Step 1 (0–0.3s): lottie badge and plus icon fade out
 					.lottie_badge {
 						animation: badge-fade-out 0.3s ease-out forwards;
 					}
-
 					.plus_icon {
 						animation: plus-fade-out 0.3s ease-out forwards;
 					}
-
 					// Step 2 (0.3s–1.3s): card expands
 					animation: card-expand 1s ease-out 0.3s forwards;
-
 					// Step 3 (0.8s–1.8s): title and description show
 					.description {
 						animation: content-slide-up 0.8s ease-out 0.8s forwards;
 					}
-
 					.title {
 						animation: content-slide-up 0.8s ease-out 1.0s forwards;
 					}
-
 					.subtext {
 						animation: content-slide-up 0.8s ease-out 1.2s forwards;
 					}
-
 					// Step 4 (2.3s–3.9s): inner hole expands from center → blue becomes border ring
 					.blue_overlay {
 						animation: overlay-reveal 1.6s ease-out 2.3s forwards;
@@ -229,43 +192,35 @@
 
 				// ── Closing sequence ─────────────────────────────────────
 				&[data-closing="true"] {
-					width: 75rem;
+					width: 80%;
 					border-radius: 3.2rem;
-
 					// Step 1 (0–1.0s): border ring expands back to full fill
 					.blue_overlay {
 						animation: overlay-cover 1s ease-in 0s forwards;
 					}
-
 					// Step 2 (0.8s–1.5s): description and title hide
 					.subtext {
 						opacity: 1;
 						transform: translateY(0);
 						animation: content-slide-down 0.5s ease-in 0.6s forwards;
 					}
-
 					.title {
 						opacity: 1;
 						transform: translateY(0);
 						animation: content-slide-down 0.5s ease-in 0.8s forwards;
 					}
-
 					.description {
 						opacity: 1;
 						transform: translateY(0);
 						animation: content-slide-down 0.5s ease-in 1.0s forwards;
 					}
-
 					// Step 3 (1.625s–2.25s): card contracts
 					animation: card-contract 0.625s ease-in 1.625s forwards;
-
-					// Plus icon fades in
 					.plus_icon {
 						opacity: 0;
 						transform: translateX(-50%) translateY(2rem);
 						animation: plus-fade-in 0.3s ease-out 2.0s forwards;
 					}
-
 					// Step 4 (2.25s–2.5s): lottie badge fades back in
 					.lottie_badge {
 						opacity: 0;
@@ -727,14 +682,14 @@
 	}
 
 	100% {
-		width: 75rem;
+		width: 80%;
 		border-radius: 3.2rem;
 	}
 }
 
 @keyframes card-contract {
 	0% {
-		width: 75rem;
+		width: 80%;
 		border-radius: 3.2rem;
 	}
 

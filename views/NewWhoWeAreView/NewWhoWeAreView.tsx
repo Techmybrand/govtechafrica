@@ -15,6 +15,7 @@ const NewWhoWeAreView = () => {
                     to close the technology gap for governments across the
                     African continent.'
                 type="new"
+                dataType="new-are"
             />
             <Coalition />
             <MissionV2 />

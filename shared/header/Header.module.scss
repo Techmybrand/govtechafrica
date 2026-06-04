@@ -216,7 +216,6 @@
 					@include flex(flex-start, center, nowrap);
 				}
 			}
-
 			.button_link {
 				p {
 					font-size: 1.4rem;
@@ -226,6 +225,11 @@
 		}
 		&[data-type="new"] {
 			margin-inline: auto;
+			.header_navList {
+				.header_navLink {
+					background: transparent;
+				}
+			}
 		}
 	}
 	.header_wrapper,

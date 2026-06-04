@@ -33,7 +33,7 @@ const NewHomeView = () => {
 				backgroundType="video"
 				backgroundImage=""
 				title=""
-				description=''
+				description=""
 			/>
 			{/* <AnimatedHero /> */}
 			<ParticipatingOrganisations type="new" />

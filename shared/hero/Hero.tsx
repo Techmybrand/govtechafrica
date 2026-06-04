@@ -14,8 +14,8 @@ interface Props {
 	subTitle?: string;
 	subDescription?: string;
 	subLargeTitle?: string;
-	dataType?: "home" | "do" | "are";
-	backgroundType: 'video' | 'image';
+	dataType?: "home" | "do" | "are" | "new-are";
+	backgroundType: "video" | "image";
 	type?: "new" | "default";
 }
 
@@ -28,8 +28,9 @@ const Hero = (props: Props) => {
 		}
 	}, [speed]);
 	return (
-		<div className={styles.hero} data-gettype={props.type} data-type={props.dataType}>
-			{/* <div className={styles.grad}></div> */}
+		<div className={styles.hero} data-gettype={props.type}
+			data-type={props.dataType}
+		>
 			<div className={styles.hero_container}>
 				<div className={`${styles.hero_background} ${props.className}`}>
 					<div className={styles.hero_image__container}>
