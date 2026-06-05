@@ -7,9 +7,10 @@ export interface ModalProps {
   onClose: () => void;
   children?: React.ReactNode;
   className?: string;
+  sec_className?: string;
 }
 
-const Modal = ({ isOpen, onClose, children, className }: ModalProps) => {
+const Modal = ({ isOpen, onClose, children, className, sec_className }: ModalProps) => {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
@@ -21,7 +22,7 @@ const Modal = ({ isOpen, onClose, children, className }: ModalProps) => {
   return (
     <React.Fragment>
       {isOpen && (
-        <div className={`${styles.overlay} backdrop-blur-sm`} onClick={onClose}>
+        <div className={`${styles.overlay} ${sec_className} backdrop-blur-sm`} onClick={onClose}>
           <div className={`${styles.modal_container} ${className}`} onClick={(e) => e.stopPropagation()}>
             {children}
           </div>

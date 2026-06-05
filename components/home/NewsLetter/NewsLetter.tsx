@@ -6,14 +6,18 @@ import { BeatLoader } from "react-spinners";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import styles from "./NewsLetter.module.scss";
-import { NewsletterSuccessModal } from "@/shared/Modals";
+import { NewsletterSuccessModal, NewsLetterFailureModal } from "@/shared/Modals";
 
 const NewsLetter = () => {
     const [formData, setFormData] = useState<{ fullName: string; email: string }>({ fullName: '', email: '' });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">('idle');
     const [message, setMessage] = useState<string>('');
+    const [inputValue, setInputValue] = useState<{isName: string; isEmail: string}>({
+        isName: '', isEmail: ''
+    })
     const isLoading = status === "loading";
     const [openModal, setOpenModal] = useState<boolean>(false);
+    const [openErrorModal, setOpenErrorModal] = useState<boolean>(false);
     // console.log('form data: ', formData);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +37,10 @@ const NewsLetter = () => {
             const data = await res.json();
             if (!res.ok) {
                 setStatus('error');
-                setMessage(data.error || 'Something went wrong. Please try again.');
+                const errMsg = data.error || 'Something went wrong. Please try again.';
+                setMessage(errMsg);
+                setOpenErrorModal(true);
+                toast.error(errMsg);
                 return;
             }
             setStatus('success');
@@ -44,30 +51,16 @@ const NewsLetter = () => {
             // eslint-disable-next-line
         } catch (error: any) {
             setStatus('error');
-            setMessage('Network error. Please check your connection and try again.');
-            toast.error(message);
-            console.log("API Error: ", error)
+            setOpenErrorModal(true);
+            const errMsg = 'Network error. Please check your connection and try again.';
+            setMessage(errMsg);
+            toast.error(errMsg);
+            console.error("API Error: ", error);
         }
     };
-    // if (status === 'success') {
-    //     return (
-    //         <div className="newsletter-success">
-    //             <div className="newsletter-success__icon">✓</div>
-    //             <h3>{`You're subscribed!`}</h3>
-    //             <p>
-    //                 Welcome to the Govtech Africa community. Check your inbox for a
-    //                 welcome email from us.
-    //             </p>
-    //             <button className="newsletter-btn newsletter-btn--ghost"
-    //                 onClick={() => setStatus('idle')}
-    //             >
-    //                 Close
-    //             </button>
-    //         </div>
-    //     );
-    // }
     const handleCloseModal = () => {
         setOpenModal(false);
+        setOpenErrorModal(false);
         setStatus("idle");
         setFormData((prev) => ({ ...prev, fullName: '', email: '' }));
     }
@@ -105,10 +98,12 @@ const NewsLetter = () => {
                                 <InputField onChange={handleChange} required
                                     className={styles.input_field}
                                     placeholder="Enter your full name" name="fullName"
+                                    value={formData.fullName}
                                 />
                                 <InputField onChange={handleChange} required
                                     className={styles.input_field}
                                     placeholder="Enter your email" name="email"
+                                    value={formData.email}
                                 />
                             </div>
                             <button disabled={isLoading} type="submit"
@@ -126,6 +121,9 @@ const NewsLetter = () => {
             </div>
             <NewsletterSuccessModal open={openModal}
                 closeModal={handleCloseModal}
+            />
+            <NewsLetterFailureModal open={openErrorModal}
+                closeModal={handleCloseModal} message={message}
             />
         </React.Fragment>
     )

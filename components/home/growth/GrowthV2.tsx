@@ -44,7 +44,7 @@ const GrowthV2 = () => {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
-		offset: ["start 90%", "end 95%"]
+		offset: ["start 95%", "end 95%"]
 	});
 
 	const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);

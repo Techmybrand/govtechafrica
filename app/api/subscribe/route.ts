@@ -1,11 +1,29 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse, NextRequest } from "next/server";
 
-const BREVO_API_KEY = process.env.BREVO_API_KEY!;
-const BREVO_LIST_ID = parseInt(process.env.BREVO_LIST_ID!);
-const BREVO_TEMPLATE_ID = parseInt(process.env.BREVO_TEMPLATE_ID!);
+const BREVO_API_KEY = process.env.BREVO_API_KEY!
+const LIST_ID = process.env.BREVO_LIST_ID!
+const TEMPLATE_ID = process.env.BREVO_TEMPLATE_ID!
+
+const BREVO_LIST_ID = parseInt(LIST_ID);
+const BREVO_TEMPLATE_ID = parseInt(TEMPLATE_ID);
 
 export async function POST(request: NextRequest) {
     try {
+        if (!BREVO_API_KEY) {
+            console.error('Subscribe API error: BREVO_API_KEY environment variable is missing.');
+            return NextResponse.json(
+                { error: 'Subscription service misconfigured. API Key is missing.' },
+                { status: 500 }
+            );
+        }
+        if (isNaN(BREVO_LIST_ID)) {
+            console.error('Subscribe API error: BREVO_LIST_ID environment variable is missing or invalid.');
+            return NextResponse.json(
+                { error: 'Subscription service misconfigured. List ID is invalid.' },
+                { status: 500 }
+            );
+        }
+
         const { fullName, email } = await request.json();
         if (!fullName || !email) {
             return NextResponse.json(
@@ -42,7 +60,6 @@ export async function POST(request: NextRequest) {
 
         if (!contactRes.ok && contactRes.status !== 204) {
             const errBody = await contactRes.json();
-            // Brevo returns code 'duplicate_parameter' when email is already on list
             if (errBody?.code === 'duplicate_parameter') {
             return NextResponse.json(
                 { error: 'This email is already subscribed.' },
@@ -51,7 +68,10 @@ export async function POST(request: NextRequest) {
             }
             console.error('Brevo contact error:', errBody);
             return NextResponse.json(
-            { error: 'Could not add you to the list. Please try again.' },
+            { 
+                error: 'Could not add you to the list. Please try again.',
+                details: errBody
+            },
             { status: 500 }
             );
         }

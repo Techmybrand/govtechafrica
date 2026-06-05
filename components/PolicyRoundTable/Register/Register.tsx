@@ -71,7 +71,6 @@ const Register = () => {
       sector: "",
       additionalNotes: formData.get("additionalNotes") ?? "",
     };
-    // const endpoint = `https://script.google.com/macros/s/AKfycbxldJzdbOfxr8zmlk9M5u_5uqdRXP0KzkyoQYhLwptNWWM6dXDa4kxDN6L2BfMkreBBfg/exec`
     const endpoint = `https://script.google.com/macros/s/AKfycbyk3saLaGb3Ns0BW-JFxx_5FMh_YFZxzSKn1VLxXZzRoWiqDNRs8815bNdgM5t-DfGryw/exec`
     setLoading(true);
     try {
@@ -114,7 +113,6 @@ const Register = () => {
     <section id="register" className={styles.about_section}>
       <div className={styles.about_container}>
         <div className={styles.about_label}>
-          {/* <div className={styles.label_line}></div> */}
           <p>Participation</p>
         </div>
         <div className={styles.about_text}>

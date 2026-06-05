@@ -5,7 +5,7 @@ export default function MainLayout({ children }: {children: React.ReactNode}) {
     return (
         <React.Fragment>
             <Header />
-            {children}
+                {children}
             <Footer />
         </React.Fragment>
     )
