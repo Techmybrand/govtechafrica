@@ -1,8 +1,12 @@
-import { BREVO_API_KEY, LIST_ID, TEMPLATE_ID } from "@/constants";
 import { NextResponse, NextRequest } from "next/server";
+
+const BREVO_API_KEY = process.env.BREVO_API_KEY!
+const LIST_ID = process.env.BREVO_LIST_ID!
+const TEMPLATE_ID = process.env.BREVO_TEMPLATE_ID!
 
 const BREVO_LIST_ID = parseInt(LIST_ID);
 const BREVO_TEMPLATE_ID = parseInt(TEMPLATE_ID);
+
 export async function POST(request: NextRequest) {
     try {
         if (!BREVO_API_KEY) {
