@@ -1,10 +1,8 @@
-import { BREVO_API_KEY, BREVO_LIST_ID as listID, BREVO_TEMPLATE_ID as templateId } from "@/constants";
+import { BREVO_API_KEY, LIST_ID, TEMPLATE_ID } from "@/constants";
 import { NextResponse, NextRequest } from "next/server";
 
-// const BREVO_API_KEY = process.env.BREVO_API_KEY!;
-const BREVO_LIST_ID = parseInt(listID);
-const BREVO_TEMPLATE_ID = parseInt(templateId);
-console.log('id: ', BREVO_LIST_ID);
+const BREVO_LIST_ID = parseInt(LIST_ID);
+const BREVO_TEMPLATE_ID = parseInt(TEMPLATE_ID);
 export async function POST(request: NextRequest) {
     try {
         if (!BREVO_API_KEY) {
