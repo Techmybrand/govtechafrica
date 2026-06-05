@@ -1,1 +1,0 @@
-export const TEMPLATE_SHARE_URL = process.env.TEMPLATE_SHARE_URL!
