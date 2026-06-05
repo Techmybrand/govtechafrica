@@ -11,10 +11,10 @@
 		min-height: 99vh;
 	}
 	&[data-type="new-are"] {
-		min-height: 75vh!important;
+		min-height: 80vh!important;
 		.hero_container {
 			.hero_background {
-				height: 70vh!important;
+				height: 75vh!important;
 			}
 		}
 	}
@@ -121,7 +121,7 @@
 					align-items: center;
 					justify-content: center;
 					position: relative;
-					top: -42.5%;
+					top: -40%;
 					.text {
 						margin: 0 auto;
 						max-width: 85%;
