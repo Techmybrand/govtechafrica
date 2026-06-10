@@ -1,30 +1,12 @@
 @import "@/styles/imports";
 
 .section {
-	margin-top: 7rem;
+	margin-top: 8rem;
 	.section_container {
 		padding: 3.6rem;
 		max-width: $max-width;
 		margin-inline: auto;
-		.text {
-			margin-top: 3.2rem;
-			h3,
-			span {
-				font-size: 2.4rem;
-				line-height: 3.2rem;
-				font-weight: 700;
-				font-family: $font-gothic-bold;
-			}
-			span {
-				color: #FFF;
-			}
-			p {
-				margin-top: 1.2rem;
-				font-weight: 500;
-			}
-		}
-		.card,
-		.large_card {
+		.card, .large_card {
 			width: 100%;
 			background-color: rgba($col-white, 0.05);
 			border-radius: 1.5rem;
@@ -35,27 +17,32 @@
 			border: 0.1rem solid rgba($col-white, 0.1);
 			.details {
 				max-width: 68rem;
-				h3,
-				h2 {
+				h3, h2 {
 					@extend %title-50;
 					font-weight: 700;
 					font-family: $font-gothic-bold;
-					color: #fff;
+					color: #00FF8C;
 					margin-bottom: 2rem;
 				}
 				p {
-					font-size: 2rem;
-					line-height: 2.8rem;
+					font-size: 1.8rem;
+					line-height: 2.7rem;
 					font-weight: 500;
+					font-family: $font;
+					color: #FFF;
 				}
 				h3 {
-					font-size: 3rem;
-					line-height: 3.3rem;
+					font-size: 2.4rem;
+					line-height: 3.2rem;
+					margin-bottom: 1.6rem;
+					color: #FFF;
 				}
 			}
 			.button {
 				margin-top: 3.2rem;
 				justify-self: flex-start;
+				width: fit-content;
+				min-width: 16rem;
 				& > p {
 					font-size: 1.6rem!important;
 					font-weight: 600!important;
@@ -66,61 +53,177 @@
 			padding-top: 3.2rem;
 			height: auto;
 			form {
-				width: 100%;
+				width: 72.5%;
 				margin-top: 3.2rem;
-				@include grid(repeat(2, 1fr), 0.8rem, 0.8rem);
+				flex-direction: column;
+				display: flex;
+				gap: 1rem;
 			}
 			.textarea {
-				grid-column: span 2;
 				height: 26.6rem;
 			}
 		}
+		.general_inquiries {
+			margin-block: 8rem;
+			.inquiry_details {
+				margin-bottom: 6.4rem;
+				h3 {
+					font-size: 2.4rem;
+					line-height: 1.5;
+					color: #FFF;
+					font-family: $font-gothic-bold;
+					margin-bottom: 1.6rem;
+				}
+				p {
+					font-size: 1.8rem;
+					line-height: 1.5;
+					color: #FFF;
+					font-family: $font;
+					font-weight: 400;
+				}
+			}
+			.inquiry_channels {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2.4rem;
+				width: 100%;
+				.phone_channel, .email_channel, .socials_channel {
+					.icon, .msg_icon {
+						width: 5.6rem;
+						height: 5.6rem;
+						position: relative;
+						margin-bottom: 2rem;
+					}
+					.msg_icon {
+						width: 4.8rem;
+						height: 4.8rem;
+					}
+					p {
+						color: #00BF4D;
+						font-weight: 500;
+						font-size: 1.6rem;
+						line-height: 1.5;
+						font-family: $font;
+						margin-bottom: 0.8rem;
+					}
+					a {
+						text-decoration: none;
+						h6 {
+							color: #FFF;
+							font-weight: 500;
+							font-size: 1.8rem;
+							line-height: 1.5;
+							font-family: $font;
+							margin-bottom: 2.4rem;
+						}
+					}
+					h6 {
+						color: #FFF;
+						font-weight: 500;
+						font-size: 1.8rem;
+						line-height: 1.5;
+						font-family: $font;
+						margin-bottom: 2.4rem;
+					}
+				}
+				.socials_channel {
+					.socials {
+						display: flex;
+						align-items: center;
+						gap: 0.8rem;
+						margin-bottom: 4.8rem;
+						.social {
+							width: 2rem;
+							height: 2rem;
+							position: relative;
+						}
+					}
+					h6 {
+						cursor: default;
+					}
+				}
+			}
+		}
 	}
-	.divider,
-	.divider1 {
-		width: 100%;
-		height: 2rem;
-		background-color: #bef2be;
-	}
-	.divider1 {
-		background-color: rgba(255, 255, 255, 0.05);
-	}
+	
 	@include screenMax("tablet") {
 		margin-top: 4rem;
 		.section_container {
 			padding: 2.4rem;
-			.text {
-				margin-top: 2.4rem;
-				h3, span {
-					font-size: 2rem;
-					line-height: 2.8rem;
-				}
-			}
-			.card,
-			.large_card {
+			.card, .large_card {
 				padding: 2.4rem;
 				width: 100%;
 				.details {
 					max-width: 60rem;
-					h3, h2 {
-						font-size: 2.4rem;
-						line-height: 3.2rem;
+					h2 {
+						font-size: 3.6rem;
+						line-height: 4.8rem;
+					}
+					h3 {
+						font-size: 2rem;
+						line-height: 2.8rem;
 						margin-bottom: 1.6rem;
 					}
 					p {
-						font-size: 1.8rem;
+						font-size: 1.6rem;
 						line-height: 2.4rem;
 					}
 				}
 				form {
-					width: 100%;
+					width: 85%;
 				}
 				.button {
-					grid-column: span 2;
 					margin-top: 2.4rem;
 				}
-				.grad {
-					display: none;
+			}
+			.general_inquiries {
+				margin-block: 6.4rem;
+				.inquiry_details {
+					margin-bottom: 4.8rem;
+					h3 {
+						font-size: 2rem;
+						margin-bottom: 1rem;
+					}
+					p {
+						font-size: 1.6rem;
+					}
+				}
+				.inquiry_channels {
+					gap: 1.2rem;
+					.phone_channel, .email_channel, .socials_channel {
+						.icon, .msg_icon {
+							width: 4rem;
+							height: 4rem;
+							margin-bottom: 1.6rem;
+						}
+						.msg_icon {
+							width: 3.6rem;
+							height: 3.6rem;
+						}
+						p {
+							font-size: 1.4rem;
+							margin-bottom: 0.4rem;
+						}
+						a {
+							h6 {
+								font-size: 1.6rem;
+								margin-bottom: 1.6rem;
+							}
+						}
+						h6 {
+							font-size: 1.6rem;
+							margin-bottom: 1.6rem;
+						}
+					}
+					.socials_channel {
+						.socials {
+							margin-bottom: 3.2rem;
+							.social {
+								width: 1.8rem;
+								height: 1.8rem;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -130,31 +233,81 @@
 		margin-top: 3.2rem;
 		.section_container {
 			padding: 1.6rem;
-			.text {
-				margin-top: 1.6rem;
-				h3, span {
-					font-size: 1.8rem;
-					line-height: 2.4rem;
-				}
-			}
 			.card, .large_card {
 				padding: 1.6rem;
 				.details {
 					width: 100%;
-					h3, h2 {
+					h2 {
+						font-size: 2.4rem;
+						line-height: 3.2rem;
+						margin-bottom: 1.2rem;
+					}
+					h3 {
 						font-size: 1.8rem;
 						line-height: 2.4rem;
+						margin-bottom: 0.8rem;
 					}
 					p {
-						font-size: 1.6rem;
+						font-size: 1.4rem;
+						line-height: 2rem;
 					}
 				}
 				form {
-					display: flex;
-                    flex-direction: column;
+					width: 100%;
                     gap: 0.8rem;
 					.textarea {
 						height: 16rem;
+					}
+				}
+			}
+			.general_inquiries {
+				margin-block: 3.6rem;
+				.inquiry_details {
+					margin-bottom: 2.4rem;
+					h3 {
+						font-size: 1.6rem;
+						margin-bottom: 0.8rem;
+					}
+					p {
+						font-size: 1.4rem;
+					}
+				}
+				.inquiry_channels {
+					gap: 1.6rem;
+					grid-template-columns: repeat(1, 1fr);
+					.phone_channel, .email_channel, .socials_channel {
+						.icon, .msg_icon {
+							width: 3.2rem;
+							height: 3.2rem;
+							margin-bottom: 0.8rem;
+						}
+						.msg_icon {
+							width: 2.8rem;
+							height: 2.8rem;
+						}
+						p {
+							font-size: 1.2rem;
+							margin-bottom: 0.4rem;
+						}
+						a {
+							h6 {
+								font-size: 1.4rem;
+								margin-bottom: 1rem;
+							}
+						}
+						h6 {
+							font-size: 1.4rem;
+							margin-bottom: 1rem;
+						}
+					}
+					.socials_channel {
+						.socials {
+							margin-bottom: 2rem;
+							.social {
+								width: 1.6rem;
+								height: 1.6rem;
+							}
+						}
 					}
 				}
 			}

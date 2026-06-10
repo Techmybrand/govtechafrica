@@ -3,18 +3,15 @@ import React, { useRef, useState } from "react";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { InputField } from "@/shared";
 import { BeatLoader } from "react-spinners";
+import { NewsletterSuccessModal, NewsLetterFailureModal } from "@/shared/Modals";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import styles from "./NewsLetter.module.scss";
-import { NewsletterSuccessModal, NewsLetterFailureModal } from "@/shared/Modals";
 
 const NewsLetter = () => {
     const [formData, setFormData] = useState<{ fullName: string; email: string }>({ fullName: '', email: '' });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">('idle');
     const [message, setMessage] = useState<string>('');
-    const [inputValue, setInputValue] = useState<{isName: string; isEmail: string}>({
-        isName: '', isEmail: ''
-    })
     const isLoading = status === "loading";
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [openErrorModal, setOpenErrorModal] = useState<boolean>(false);

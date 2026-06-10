@@ -114,6 +114,9 @@
                     font-weight: 600!important;
                 }
             }
+            &[data-type = "home"] {
+                display: none!important;
+            }
         }
     }
     .divider {
@@ -124,6 +127,7 @@
     }
     &[data-type = "home"] {
         min-height: 60vh;
+        padding-top: 3.2rem!important;
     }
 
     @include screenMax("tablet") {

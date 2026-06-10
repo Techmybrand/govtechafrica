@@ -8,7 +8,7 @@ const NewWhoWeAreView = () => {
     return (
         <React.Fragment>
             <Hero
-                backgroundImage="/images/who_we_are.jpg"
+                backgroundImage="/images/who_we_are_dark.jpg"
                 backgroundType="image"
                 title="We are Drivers of Change"
                 description='At Govtech Africa, we are driven by the need

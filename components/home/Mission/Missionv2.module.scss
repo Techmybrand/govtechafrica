@@ -3,7 +3,6 @@
 .section {
     width: 100%;
     margin-bottom: 8rem;
-
     .section_container {
         padding: 3.6rem;
         max-width: $max-width;
@@ -12,7 +11,6 @@
         @include flex();
         flex-direction: column;
         gap: 3.6rem;
-
         .card_container {
             position: sticky;
             width: 100%;
@@ -20,14 +18,12 @@
             max-width: $max-width;
             margin-inline: auto;
             background: #000;
-
             .card {
                 border-radius: 1.5rem;
                 overflow: hidden;
                 width: 100%;
                 height: 100%;
                 position: relative;
-
                 .details {
                     padding: 3.6rem;
                     @include flex();
@@ -37,44 +33,36 @@
                     background: rgba(20, 20, 20, 0.4);
                     backdrop-filter: blur(20px);
                     -webkit-backdrop-filter: blur(20px);
-                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border: 0.1rem solid rgba(255, 255, 255, 0.1);
                     border-radius: 1.6rem;
                     width: 45rem;
                     position: relative;
-                    top: 40rem;
+                    top: 36.5rem;
                     left: 55%;
-
                     .text {
-
-                        h3,
-                        span {
+                        h3, span {
                             font-size: 2.4rem;
                             line-height: 3.2rem;
                             font-weight: 700;
                             font-family: $font-gothic-bold;
                         }
-
                         p {
                             margin-block: 2rem;
                             font-size: 1.2rem;
                             line-height: 1.6rem;
                         }
-
                         span {
                             color: #fff;
                         }
                     }
-
                     .button {
                         width: fit-content;
-
                         p {
                             font-size: 1.4rem;
                             line-height: 2rem;
                             font-weight: 600;
                         }
                     }
-
                     &[data-index="1"] {
                         left: 15rem;
                         top: 15rem;

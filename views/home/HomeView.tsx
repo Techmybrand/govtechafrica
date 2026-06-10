@@ -32,11 +32,11 @@ const HomeView = () => {
 				button="Explore our solutions"
 				href="/what-we-do"
 			/>
-			<NGPRHero type="home" />
 			<Research />
 			<Growth />
 			<Mission />
 			<Drivers />
+			<NGPRHero type="home" />
 			<CenterPiece />
 			{/* <NewsLetter /> */}
 			<div className={styles.divider}></div>

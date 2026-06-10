@@ -6,35 +6,28 @@ import styles from "./CenterPieceV2.module.scss";
 import Globe from "@/shared/Globe/Globe";
 
 const CenterPieceV2 = () => {
-    // const centerpieceRef = useRef<HTMLDivElement>(null);
-    // const { scrollYProgress } = useScroll({
-    //     target: centerpieceRef,
-    //     offset: ["start end", "end center"]
-    // });
+    const centerpieceRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: centerpieceRef,
+        offset: ["start end", "end center"]
+    });
 
-    // const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
-    // const y = useSpring(rawY, {
-    //     stiffness: 100,
-    //     damping: 20,
-    //     mass: 0.5
-    // });
-    // const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
-    // const opacity = useSpring(rawOpacity, {
-    //     stiffness: 100,
-    //     damping: 20,
-    //     mass: 0.5
-    // });
-
-    // const rotateZ = useTransform(scrollYProgress, [0, 1], [0, 360]);
-    // const opacityGlobe = useSpring(rawOpacity, {
-    //     stiffness: 100,
-    //     damping: 20,
-    //     mass: 0.5
-    // });
+    const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+    const y = useSpring(rawY, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
+    const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+    const opacity = useSpring(rawOpacity, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
 
     return (
-        <div className={styles.section}>
-            <div className={styles.section_container}>
+        <div ref={centerpieceRef} className={styles.section}>
+            <motion.div style={{ y, opacity }} className={styles.section_container}>
                 <div className={styles.header}>
                     <h2>All over the world, <span>technology </span>
                         remains at the centerpiece of rapidly
@@ -83,7 +76,7 @@ const CenterPieceV2 = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

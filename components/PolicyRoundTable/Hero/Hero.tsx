@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
 import { Button } from "@/shared";
-import styles from "./Hero.module.scss";
 import Image from "next/image";
-
+import styles from "./Hero.module.scss";
 interface HeroProps {
-  type: 'default' | 'home'
+  type: "default" | "home"
 }
 
 const Hero = ({ type = "default" }: HeroProps) => {
@@ -67,15 +66,13 @@ const Hero = ({ type = "default" }: HeroProps) => {
       </div>
       <div className={styles.divider}></div>
       <div className={styles.hero_container}>
-        <div className={styles.hero_content_bottom}>
-          {/* <div className={styles.details}> */}
-            {details.map((detail, index) =>
-              <div className={styles.detail} key={index}>
-                <p>{detail.name}</p>
-                <h4>{detail.title}</h4>
-              </div>
-            )}
-          {/* </div> */}
+        <div data-type={type} className={styles.hero_content_bottom}>
+          {details.map((detail, index) =>
+            <div className={styles.detail} key={index}>
+              <p>{detail.name}</p>
+              <h4>{detail.title}</h4>
+            </div>
+          )}
           {type === "default" ? (
             <Button className={styles.btn} href="#register">
               Register to Attend Virtually

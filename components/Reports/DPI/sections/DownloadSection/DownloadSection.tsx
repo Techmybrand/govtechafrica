@@ -33,7 +33,7 @@ const DownloadSection = () => {
             </a>
           </div>
           <div className={styles["subtexts"]}>
-            GOVTECH AFRICA · govtechafrica · Drivers of Change · It's all about inclusive governance
+            {`GOVTECH AFRICA · govtechafrica · Drivers of Change · It's all about inclusive governance`}
           </div>
         </div>
 

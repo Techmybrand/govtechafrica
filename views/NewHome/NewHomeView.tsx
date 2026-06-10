@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Hero } from "@/shared";
 import { CookiesModal } from "@/shared/Modals";
-import {
-	GrowthV2, MissionV2, Research, NewsLetter, CenterPieceV2,
+import { GrowthV2, MissionV2, Research, NewsLetter, CenterPieceV2,
 	Experience, NPGR
 } from "@/components/home";
 import { Governance } from "@/components/whoWeAre";
@@ -36,7 +35,6 @@ const NewHomeView = () => {
 				description=""
 			/>
 			{/* <AnimatedHero /> */}
-			<ParticipatingOrganisations type="new" />
 			<Governance type="new" />
 			<Research />
 			<GrowthV2 />
@@ -44,6 +42,7 @@ const NewHomeView = () => {
 			<Experience />
 			<CenterPieceV2 />
 			<NPGR />
+			<ParticipatingOrganisations type="new" />
 			<NewsLetter />
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>
