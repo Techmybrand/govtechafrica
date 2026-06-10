@@ -51,7 +51,7 @@
 			@include flex(center, center, nowrap);
 			gap: 4rem;
 			.card {
-				width: 12rem;
+				width: 16rem;
 				border-radius: 20rem;
 				height: 56rem;
 				position: relative;
@@ -162,16 +162,13 @@
 					}
 				}
 				&[data-active="true"][data-can-animate="true"] {
-					// Step 1 (0–0.3s): lottie badge and plus icon fade out
+					animation: card-expand 1s ease-out 0.3s forwards;
 					.lottie_badge {
 						animation: badge-fade-out 0.3s ease-out forwards;
 					}
 					.plus_icon {
 						animation: plus-fade-out 0.3s ease-out forwards;
 					}
-					// Step 2 (0.3s–1.3s): card expands
-					animation: card-expand 1s ease-out 0.3s forwards;
-					// Step 3 (0.8s–1.8s): title and description show
 					.description {
 						animation: content-slide-up 0.8s ease-out 0.8s forwards;
 					}
@@ -181,13 +178,12 @@
 					.subtext {
 						animation: content-slide-up 0.8s ease-out 1.2s forwards;
 					}
-					// Step 4 (2.3s–3.9s): inner hole expands from center → blue becomes border ring
 					.blue_overlay {
 						animation: overlay-reveal 1.6s ease-out 2.3s forwards;
 					}
 				}
 				&[data-closing="true"] {
-					width: 80%;
+					width: 78%;
 					border-radius: 3.2rem;
 					// Step 1 (0–1.0s): border ring expands back to full fill
 					.blue_overlay {
@@ -588,21 +584,21 @@
 }
 @keyframes card-expand {
 	0% {
-		width: 12rem;
+		width: 16rem;
 		border-radius: 20rem;
 	}
 	100% {
-		width: 80%;
+		width: 78%;
 		border-radius: 3.2rem;
 	}
 }
 @keyframes card-contract {
 	0% {
-		width: 80%;
+		width: 78%;
 		border-radius: 3.2rem;
 	}
 	100% {
-		width: 12rem;
+		width: 16rem;
 		border-radius: 20rem;
 	}
 }

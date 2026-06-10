@@ -1,9 +1,9 @@
 "use client";
-import React, { useRef } from 'react'
-import { AnimatedSection, Button } from '@/shared'
-import { useScroll, useTransform, useSpring } from 'framer-motion'
-import styles from "./MeetTheTeam.module.scss"
-import Image from 'next/image';
+import React, { useRef } from "react";
+import { AnimatedSection } from "@/shared";
+import { useScroll } from "framer-motion";
+import Image from "next/image";
+import styles from "./MeetTheTeam.module.scss";
 
 const MeetTheTeam = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -30,7 +30,7 @@ const MeetTheTeam = () => {
             <div className={styles.section_container}>
                 <div className={styles.text_section}>
                     <AnimatedSection className={styles.text_wrapper} scrollYProgress={scrollYProgress}>
-                        <h2>It's all about inclusive governance</h2>
+                        <h2>{`It's all about inclusive governance`}</h2>
                         <h3>
                             <span>We believe we can build a future where </span>
                             governance is inclusive, accountable, and
@@ -55,16 +55,16 @@ const MeetTheTeam = () => {
                             Meet The <span>Team</span>
                         </h3>
                         <p>
-                            We are an organisation powered by
+                            {`We are an organisation powered by
                             people. Meet the dynamic team of
                             experienced professionals driving
                             Govtech Africa's mission to build
                             thriving  and resilient societies
-                            through technology
+                            through technology`}
                         </p>
-                        <Button className={styles.button}>
+                        {/* <Button className={styles.button}>
                             Visit
-                        </Button>
+                        </Button> */}
                     </div>
                 </div>
             </div>

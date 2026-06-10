@@ -4,6 +4,7 @@ import { useTransform, motion, MotionValue, useScroll, useSpring } from "framer-
 import { Button } from "@/shared";
 import Image from "next/image";
 import styles from "./Missionv2.module.scss";
+import { usePathname } from "next/navigation";
 
 const stackedCards = [
 	{
@@ -91,6 +92,8 @@ const Card = ({ card, progress, range, targetScale, index }: CardProps) => {
 	const cardRef = useRef<HTMLDivElement>(null);
 	const scale = useTransform(progress, range, [1, targetScale]);
 	const [isMobile, setIsMobile] = useState<boolean>(false);
+	const route = usePathname();
+	const isHome = route === "/" || route === "/new-home";
 	useEffect(() => {
 		const checkMobile = () => {
 			setIsMobile(window.innerWidth <= 650);
@@ -101,15 +104,16 @@ const Card = ({ card, progress, range, targetScale, index }: CardProps) => {
 	}, []);
 
 	return (
-		<motion.div
+		<motion.div data-index={index}
 			className={styles.card_container} ref={cardRef}
 			style={{ top: `calc(54% - 30rem + ${index * 0.2}rem)`, scale: scale ?? 1 }}
-			data-index={index}
 		>
 			<motion.div className={styles.card}>
 				<div className={styles.image_container}>
 					<div data-index={index} className={styles.image}>
-						<Image src={isMobile ? card.image_mob : card.image} priority fill alt="mission" sizes="100%" />
+						<Image src={isMobile ? card.image_mob : card.image}
+							priority fill alt="mission" sizes="100%"
+						/>
 					</div>
 				</div>
 				<div data-index={index} className={styles.details}>
@@ -119,9 +123,11 @@ const Card = ({ card, progress, range, targetScale, index }: CardProps) => {
 						</h3>
 						<p>{card.text}</p>
 					</div>
-					<Button className={styles.button} href="">
-						Learn more
-					</Button>
+					{isHome && (
+						<Button className={styles.button} href="/new-who-we-are">
+							Learn more
+						</Button>
+					)}
 				</div>
 			</motion.div>
 		</motion.div>

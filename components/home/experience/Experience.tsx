@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 import styles from "./Experience.module.scss";
 import { useEffect, useRef, useState } from "react";
@@ -39,7 +40,7 @@ const cards = [
 
 const CLOSING_ANIMATION_DURATION = 2500;
 const OPENING_ANIMATION_DURATION = 3900;
-const CARD_DISPLAY_DURATION = 5000;
+const CARD_DISPLAY_DURATION = 3500;
 
 const Experience = () => {
 	const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -184,7 +185,9 @@ const Experience = () => {
 							</span>
 						</h3>
 					</div>
-					<Button className={styles.button}>
+					<Button href="/new-who-we-are"
+						className={styles.button}
+					>
 						Learn more
 					</Button>
 				</div>
