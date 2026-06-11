@@ -2,10 +2,10 @@
 import React from "react";
 import { NewsLetter } from "@/components/home";
 import { Button, InputField, TextArea } from "@/shared";
-import styles from "./ContactView.module.scss";
-import Image from "next/image";
 import { socialMediaLinks } from "@/mock/navLists.mock";
 import Link from "next/link";
+import Image from "next/image";
+import styles from "./ContactView.module.scss";
 
 const ContactView = () => {
 	return (
@@ -45,7 +45,7 @@ const ContactView = () => {
 				</div>
 				<div className={styles.general_inquiries}>
 					<div className={styles.inquiry_details}>
-						<h3>General Inquiries</h3>
+						<h3>General Inquiries and Partnership Requests</h3>
 						<p>
 							Reach out to us directly
 						</p>
@@ -76,34 +76,28 @@ const ContactView = () => {
 									src="/svgs/message.svg"
 								/>
 							</div>
-							<p>Benjamin Uche</p>
+							<p>Customer Support</p>
 							<Link target="_blank" rel="noreferrer"
-								href='mailto:benjaminuche@govtechafrica.com'
+								href='mailto:info@govtechafrica.com?subject=Customer Support'
 							>
-								<h6>benjaminuche@govtechafrica.com</h6>
+								<h6>info@govtechafrica.com</h6>
 							</Link>
-							<p>Admin</p>
+							<p>Partnerships</p>
 							<Link target="_blank" rel="noreferrer"
-								href='mailto:admin@govtechafrica.com'
+								href='mailto:partnerships@govtechafrica.com?subject=Partnership Request'
 							>
-								<h6>admin@govtechafrica.com</h6>
+								<h6>partnerships@govtechafrica.com</h6>
 							</Link>
 						</div>
 						<div className={styles.socials_channel}>
 							<div className={styles.socials}>
-								{socialMediaLinks.slice(0, 3).map((social, index: number) => (
-									<Link
-										href={social.href}
-										target="_blank"
-										rel="noreferrer"
+								{socialMediaLinks.map((social, index: number) => (
+									<Link href={social.href} key={index}
+										target="_blank" rel="noreferrer"
 										className={styles.social}
-										key={index}
 									>
-										<Image
-											src={social.icon}
-											alt={social.label}
-											fill
-											sizes="100%"
+										<Image src={social.icon} fill
+											alt={social.label} sizes="100%"
 										/>
 									</Link>
 								))}
