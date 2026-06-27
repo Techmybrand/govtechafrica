@@ -24,7 +24,7 @@ const DownloadSection = () => {
           <div className={styles["action_btns"]}>
             <Link target="_blank" download
               className={styles["btn-download"]}
-              href={`/pdfs/`}
+              href={`https://drive.google.com/file/d/1M19ZAYn1IxID4jztRaXrccxgylTpaIe_/view?usp=sharing`}
             >
               ↓ Download Full Report (PDF)
             </Link>
@@ -46,7 +46,7 @@ const DownloadSection = () => {
           <div className={styles["publish_text"]}>
             Published 30 March 2026
           </div>
-          <Link href={`/pdfs/`} target="_blank" download className={styles["btn-download"]}>
+          <Link href={`https://drive.google.com/file/d/1M19ZAYn1IxID4jztRaXrccxgylTpaIe_/view?usp=sharing`} target="_blank" download className={styles["btn-download"]}>
             ↓ Free Download
           </Link>
         </div>
