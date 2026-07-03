@@ -31,6 +31,7 @@ import Statistics from "./Statistics/Statistics";
 import TechnologyCard from "./TechnologyCard/TechnologyCard";
 import TextArea from "./textArea/TextArea";
 import ThemeToggle from "./themeToggle/ThemeToggle";
+import NewsLetterSection from "./NewsLetterSection/NewsLetterSection";
 
 
 export {
@@ -55,6 +56,7 @@ export {
     TechnologyCard,
     Divider,
     Searchbar,
+    NewsLetterSection,
     ServiceIntroSection,
     Statistics,
     Centerpiece,
