@@ -27,12 +27,9 @@ const Coalition = () => {
             <div className={styles.coalition_container}>
                 <motion.div style={{ y, opacity }} className={styles.coalition_text}>
                     <h3 className={styles.h3}>
-                        <span>We are a coalition of </span>
-                        homegrown leading
-                        technology giants delivering tier  one
-                        technology systems development and
-                        deployment to governments across the
-                        African continent.
+                        We build and deploy the digital foundations that empower governments, 
+                        strengthen Public institutions, and accelerate 
+                        progress across Africa.
                     </h3>
                 </motion.div>
             </div>

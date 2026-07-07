@@ -1,4 +1,4 @@
-import { Header, Footer } from "@/shared";
+import { Header, NewFooter } from "@/shared";
 import React from "react";
 
 export default function NewLayout({ children }: {children: React.ReactNode}) {
@@ -6,7 +6,8 @@ export default function NewLayout({ children }: {children: React.ReactNode}) {
         <React.Fragment>
             <Header type="new" />
                 {children}
-            <Footer type="new" />
+            {/* <Footer type="new" /> */}
+            <NewFooter />
         </React.Fragment>
     )
 }

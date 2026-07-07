@@ -1,0 +1,213 @@
+@import "@/styles/imports";
+
+.section {
+    width: 100%;
+    margin-bottom: 12rem;
+    position: relative;
+    .section_container {
+        padding: 3.6rem;
+        max-width: $max-width;
+        margin-inline: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3.6rem;
+    }
+}
+
+.card_container {
+    position: sticky;
+    width: 100%;
+    height: 70rem;
+    max-width: $max-width;
+    margin-inline: auto;
+    background: #000;
+    z-index: 2;
+    &[data-index="0"] {
+        width: 97%;
+    }
+    &[data-index="1"] {
+        width: 100%;
+    }
+
+    .card {
+        border-radius: 2.4rem;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        // border: 0.1rem solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6rem;
+        gap: 8rem;
+        &.row_reversee {
+            flex-direction: row-reverse;
+            .text_column {
+                border-left: none;
+                border-right: 0.2rem solid #00BF4D;
+                padding-left: 0;
+                padding-right: 6rem;
+                align-items: flex-end;
+                text-align: right;
+            }
+        }
+        .image_column {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .image_wrapper {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                max-height: 48rem;
+                border-radius: 1.6rem;
+                overflow: hidden;
+                img {
+                    object-fit: cover;
+                }
+            }
+        }
+        .text_column {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            border-left: 0.2rem solid #00BF4D;
+            padding-left: 6rem;
+            height: fit-content;
+            .tag_pill {
+                border: 0.1rem solid rgba(255, 255, 255, 0.3);
+                border-radius: 0.6rem;
+                padding: 0.8rem 1.6rem;
+                font-family: $font-gothic;
+                font-size: 1.4rem;
+                font-weight: 500;
+                color: #ffffff;
+                margin-bottom: 2.8rem;
+                width: fit-content;
+            }
+            .title, span {
+                font-family: $font-gothic-bold;
+                font-size: 4rem;
+                line-height: 1.4;
+                font-weight: 700;
+                color: #ffffff;
+                margin-bottom: 2.8rem;
+            }
+            .description {
+                font-family: $font;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                font-weight: 400;
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    }
+}
+
+.divider {
+    width: 100%;
+    height: 0.1rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-top: 6rem;
+}
+
+@include screenMax("tablet") {
+    .section {
+        margin-bottom: 8rem;
+        .section_container {
+            padding: 2.4rem;
+            gap: 2.4rem;
+        }
+    }
+    .card_container {
+        height: 60rem;
+        .card {
+            padding: 2.4rem;
+            gap: 4rem;
+            &.row_reversee {
+                .text_column {
+                    padding-right: 4rem;
+                }
+            }
+            .image_column {
+                width: 48%;
+            }
+            .text_column {
+                width: 48%;
+                padding-left: 4rem;
+                .title, span {
+                    font-size: 3.2rem;
+                    margin-bottom: 2rem;
+                }
+                .tag_pill {
+                    margin-bottom: 2rem;
+                }
+                .description {
+                    font-size: 1.4rem;
+                    line-height: 2.1rem;
+                }
+            }
+        }
+    }
+}
+
+@include screenMax("mobile") {
+    .section {
+        margin-bottom: 5.6rem;
+        .section_container {
+            padding: 1.6rem;
+            gap: 1.6rem;
+        }
+    }
+    .card_container {
+        margin-bottom: 3.2rem;
+        height: auto;
+        &[data-index="0"], &[data-index="1"] {
+            width: 100%;
+        }
+        .card {
+            flex-direction: column !important;
+            padding: 3.2rem 2rem;
+            gap: 3.2rem;
+            height: auto;
+            .image_column {
+                width: 100%;
+                .image_wrapper {
+                    max-height: 30rem;
+                }
+            }
+            .text_column {
+                width: 100% !important;
+                border-left: 0.2rem solid #00BF4D !important;
+                border-right: none !important;
+                padding-left: 2rem !important;
+                padding-right: 0 !important;
+                align-items: flex-start !important;
+                text-align: left !important;
+                .tag_pill {
+                    font-size: 1.2rem;
+                    padding: 0.6rem 1.2rem;
+                    margin-bottom: 1.6rem;
+                }
+                .title, span {
+                    font-size: 2.4rem;
+                    line-height: 1.5;
+                    margin-bottom: 1.6rem;
+                }
+                .description {
+                    font-size: 1.2rem;
+                    line-height: 1.6rem;
+                }
+            }
+        }
+    }
+
+    .divider {
+        margin-top: 3.2rem;
+    }
+}

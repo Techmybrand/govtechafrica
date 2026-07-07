@@ -1,19 +1,23 @@
 import Governance from "./governance/Governance";
 import MeetTheTeam from "./MeetTheTeam/MeetTheTeam";
 import Mission from "./mission/Mission";
-import MissionV2 from "./mission/MissionV2";
+import NewMission from "./mission/NewMission";
 import OurValues from "./OurValues/OurValues";
 import Partners from "./partners/Partners";
 import Values from "./Values/Values";
+import NewValues from "./Values/NewValues";
 import Coalition from "./Coalition/Coalition";
+import OurValuesSection from "./OurValues/OurValuesSection";
 
 export {
     Mission,
-    MissionV2,
     Governance,
+    NewMission,
     Partners,
     Values,
+    NewValues,
     MeetTheTeam,
     OurValues,
-    Coalition
+    Coalition,
+    OurValuesSection
 };

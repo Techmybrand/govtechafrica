@@ -32,6 +32,7 @@ import TechnologyCard from "./TechnologyCard/TechnologyCard";
 import TextArea from "./textArea/TextArea";
 import ThemeToggle from "./themeToggle/ThemeToggle";
 import NewsLetterSection from "./NewsLetterSection/NewsLetterSection";
+import NewFooter from "./footer/NewFooter";
 
 
 export {
@@ -45,6 +46,7 @@ export {
     NpgrHeader,
     RichText,
     Footer,
+    NewFooter,
     Select,
     ThemeToggle,
     PreLoader,

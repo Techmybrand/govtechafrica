@@ -2,9 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Hero } from "@/shared";
 import { CookiesModal } from "@/shared/Modals";
-import { GrowthV2, MissionV2, Research, NewsLetter, CenterPieceV2,
-	Experience, NPGR
-} from "@/components/home";
+import { GrowthV2, MissionV2, Research, CenterPieceV2, Experience, NPGR, IntroToFulcrum } from "@/components/home";
 import { Governance } from "@/components/whoWeAre";
 import { ParticipatingOrganisations } from "@/components/PolicyRoundTable";
 
@@ -16,7 +14,7 @@ const NewHomeView = () => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth <= 650);
 		};
-		const storedConsent = localStorage.getItem('cookieConsent');
+		const storedConsent = localStorage.getItem("cookieConsent");
 		setConsent(storedConsent);
 		if (!storedConsent) {
 			setShowModal(true);
@@ -42,8 +40,8 @@ const NewHomeView = () => {
 			<Experience />
 			<CenterPieceV2 />
 			<NPGR />
+			<IntroToFulcrum />
 			<ParticipatingOrganisations type="new" />
-			<NewsLetter />
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>
 	)

@@ -3,22 +3,43 @@
 .section_wrapper {
     width: 100%;
     margin-bottom: 12rem;
-
     .section_container {
         padding: 3.6rem;
         max-width: $max-width;
         margin-inline: auto;
         position: relative;
         overflow: hidden;
-
         .text_section {
-            margin: 6.4rem auto 12rem;
-            width: 80%;
+            margin: 6.4rem auto 20rem;
+            width: 90%;
             text-align: center;
-
+            position: relative;
+            .inclusive_gov_1_wrapper {
+                position: absolute;
+                top: 0;
+                left: -13rem;
+                width: 30rem;
+                height: 25rem;
+                .inclusive_gov_1 {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                }
+            }
+            .inclusive_gov_2_wrapper {
+                position: absolute;
+                bottom: 0;
+                right: -6rem;
+                width: 25rem;
+                height: 25rem;
+                .inclusive_gov_2 {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                }
+            }
             .text_wrapper {
                 width: 100%;
-
                 h2 {
                     font-size: 4.8rem;
                     line-height: 6.2rem;
@@ -27,85 +48,96 @@
                     color: $col-white;
                     margin-bottom: 1.4rem;
                 }
-
                 h3,
                 span {
-                    font-size: 2rem;
-                    line-height: 2.8rem;
+                    font-size: 1.8rem;
+                    line-height: 2.7rem;
                     font-family: $font-gothic;
                     font-weight: 400;
                     color: $col-white;
                     width: 61%;
                     margin-inline: auto;
                     text-align: center;
-
                     span {
                         color: rgba($col-white, 0.6);
                     }
                 }
             }
         }
-
         .team_section {
-            width: 80%;
+            width: 95%;
+            background-color: #ffffff;
+            color: #000000;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 8rem;
+            gap: 6rem;
             position: relative;
             overflow: hidden;
             margin: 0 auto;
-
-            .teams_container {
+            padding: 6.4rem;
+            border-radius: 2.4rem;
+            .teams_text_column {
                 width: 50%;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1.6rem;
-
-                .team_card {
-                    position: relative;
-                    width: 100%;
-                    height: 40rem;
-
-                    img {
-                        object-fit: cover;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                .title_text, span {
+                    font-size: 5.6rem;
+                    line-height: 1.4;
+                    font-weight: 700;
+                    font-family: $font-gothic-bold;
+                    color: #000000;
+                    margin-bottom: 2rem;
+                    span {
+                        color: #cacaca;
+                    }
+                }
+                .divider {
+                    width: 14rem;
+                    height: 0.15rem;
+                    background-color: #000000;
+                    margin-bottom: 4rem;
+                }
+                .description {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    font-family: $font;
+                    font-weight: 400;
+                    color: #444444;
+                    margin-bottom: 4.8rem;
+                    width: 80%;
+                }
+                .visit_btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 1.6rem;
+                    background-color: #000000!important;
+                    padding: 0.8rem 0.8rem 0.8rem 2.8rem;
+                    border-radius: 5rem;
+                    text-decoration: none;
+                    transition: transform 0.2s ease, opacity 0.2s ease;
+                    &:hover {
+                        transform: translateY(-0.2rem);
+                        .arrow_circle {
+                            transform: rotate(45deg);
+                        }
                     }
                 }
             }
-
-            .teams_text {
-                width: 40%;
-
-                h3,
-                span {
-                    font-size: 2.4rem;
-                    line-height: 3.2rem;
-                    font-weight: 700;
-                    font-family: $font-gothic-bold;
-                    color: rgba($col-white, 0.5);
-                    margin-bottom: 1rem;
-
-                    span {
-                        color: $col-white;
-                    }
-                }
-
-                p {
-                    font-size: 1.6rem;
-                    line-height: 2.4rem;
-                    font-family: $font-gothic;
-                    font-weight: 400;
-                    color: $col-white;
-                }
-
-                .button {
-                    margin-top: 14rem;
-
-                    p {
-                        font-size: 1.4rem;
-                        font-family: $font-gothic;
-                        font-weight: 400;
-                        color: $col-white;
+            .image_column {
+                width: 45%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .illustration_wrapper {
+                    position: relative;
+                    width: 100%;
+                    height: 36rem;
+                    flex-shrink: 0;
+                    img {
+                        object-fit: cover;
                     }
                 }
             }
@@ -114,79 +146,90 @@
 
     @include screenMax("tablet") {
         margin-bottom: 8rem;
-
         .section_container {
             padding: 2.4rem;
-
             .text_section {
-                width: 85%;
-                margin: 4.8rem auto 8rem;
-
+                width: 90%;
+                margin: 4.8rem auto 12rem;
+                .inclusive_gov_1_wrapper {
+                    left: -10rem;
+                    width: 25rem;
+                    height: 20rem;
+                }
+                .inclusive_gov_2_wrapper {
+                    right: -4rem;
+                    bottom: 2rem;
+                    width: 20rem;
+                    height: 20rem;
+                }
                 .text_wrapper {
                     h2 {
                         font-size: 3.6rem;
                         line-height: 4.8rem;
                         margin-bottom: 1rem;
                     }
-
                     h3,
                     span {
-                        font-size: 1.8rem;
-                        line-height: 2.7rem;
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
                         width: 75%;
                     }
                 }
             }
 
             .team_section {
-                width: 85%;
-                gap: 5.6rem;
-
-                .teams_container {
-                    .team_card {
-                        height: 30rem;
+                width: 100%;
+                padding: 6rem 4rem;
+                gap: 4rem;
+                .teams_text_column {
+                    width: 55%;
+                    .title_text, span {
+                        font-size: 4rem;
                     }
-                }
-
-                .teams_text {
-                    width: 50%;
-
-                    h3,
-                    span {
-                        font-size: 1.8rem;
-                        line-height: 2.7rem;
+                    .divider {
+                        margin-bottom: 2.4rem;
                     }
-
-                    p {
+                    .description {
                         font-size: 1.4rem;
                         line-height: 2rem;
+                        margin-bottom: 3.6rem;
+                        width: 90%;
                     }
-
-                    .button {
-                        margin-top: 10rem;
+                }
+                .image_column {
+                    width: 45%;
+                    .illustration_wrapper {
+                        height: 28rem;
                     }
                 }
             }
         }
     }
 
-    @include screenMax('mobile') {
+    @include screenMax("mobile") {
         margin-bottom: 5.6rem;
-
         .section_container {
             padding: 1.6rem;
-
             .text_section {
                 width: 100%;
-                margin: 0 auto 5.6rem;
-
+                margin: 0 auto 8rem;
+                .inclusive_gov_1_wrapper {
+                    top: 5rem;
+                    width: 20rem;
+                    height: 15rem;
+                }
+                .inclusive_gov_2_wrapper {
+                    right: -5rem;
+                    bottom: 3.5rem;
+                    width: 15rem;
+                    height: 15rem;
+                }
                 .text_wrapper {
                     h2 {
                         font-size: 2.4rem;
                         line-height: 3.2rem;
                         margin-bottom: 0.8rem;
                     }
-
                     h3,
                     span {
                         font-size: 1.4rem;
@@ -195,45 +238,33 @@
                     }
                 }
             }
-
             .team_section {
                 width: 100%;
-                gap: 2.4rem;
+                padding: 4.8rem 2rem;
                 flex-direction: column;
-                align-items: flex-start;
-                justify-content: unset;
-                gap: 2.4rem;
-
-                .teams_container {
+                gap: 4rem;
+                .teams_text_column {
                     width: 100%;
-
-                    .team_card {
-                        height: 25rem;
+                    align-items: center;
+                    text-align: center;
+                    .title_text, span {
+                        font-size: 3.2rem;
                     }
-                }
-
-                .teams_text {
-                    width: 100%;
-
-                    h3,
-                    span {
-                        font-size: 1.6rem;
-                        line-height: 2.4rem;
+                    .divider {
+                        margin-inline: auto;
+                        margin-bottom: 2rem;
                     }
-
-                    p {
+                    .description {
                         font-size: 1.2rem;
                         line-height: 1.6rem;
+                        margin-bottom: 2.4rem;
+                        width: 95%;
                     }
-
-                    .button {
-                        margin-top: 3.6rem;
-                        min-width: 9rem;
-
-                        p {
-                            font-size: 1.2rem !important;
-                            line-height: 1.6rem !important;
-                        }
+                }
+                .image_column {
+                    width: 100%;
+                    .illustration_wrapper {
+                        height: 24rem;
                     }
                 }
             }
