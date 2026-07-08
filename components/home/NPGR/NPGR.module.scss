@@ -2,7 +2,7 @@
 
 .npgr_container {
     width: 100%;
-    margin-bottom: 20rem;
+    margin-bottom: 28rem;
     .section_container {
         padding: 3.6rem;
         max-width: $max-width;
@@ -68,7 +68,7 @@
     }
 
     @include screenMax("tablet") {
-        margin-bottom: 14rem;
+        margin-bottom: 20rem;
         .section_container {
             padding: 2.4rem;
             h2 {
@@ -105,7 +105,7 @@
     }
 
     @include screenMax("mobile") {
-        margin-bottom: 8rem;
+        margin-bottom: 12rem;
         .section_container {
             padding: 1.6rem;
             h2 {
