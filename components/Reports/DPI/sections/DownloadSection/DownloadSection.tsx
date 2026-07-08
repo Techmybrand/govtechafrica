@@ -1,8 +1,13 @@
-import React from 'react';
-import styles from './DownloadSection.module.scss';
-import Link from 'next/link';
+"use client";
+import { useState } from "react";
+import { ShareModal } from "@/shared/Modals";
+import Link from "next/link";
+import styles from "./DownloadSection.module.scss";
 
 const DownloadSection = () => {
+  const [isShareModalOpen, setIsShareModalOpen] = useState<boolean>(false);
+  const reportUrl = "https://drive.google.com/file/d/1M19ZAYn1IxID4jztRaXrccxgylTpaIe_/view?usp=sharing";
+
   return (
     <section className={styles["global_wrapper"]} id="download">
       <div className={styles["section_container"]}>
@@ -24,13 +29,16 @@ const DownloadSection = () => {
           <div className={styles["action_btns"]}>
             <Link target="_blank" download
               className={styles["btn-download"]}
-              href={`https://drive.google.com/file/d/1M19ZAYn1IxID4jztRaXrccxgylTpaIe_/view?usp=sharing`}
+              href={reportUrl}
             >
               ↓ Download Full Report (PDF)
             </Link>
-            <a className={styles["report_btn"]}>
+            <div 
+              className={styles["report_btn"]}
+              onClick={() => setIsShareModalOpen(true)}
+            >
               Share Report →
-            </a>
+            </div>
           </div>
           <div className={styles["subtexts"]}>
             {`GOVTECH AFRICA · govtechafrica · Drivers of Change · It's all about inclusive governance`}
@@ -46,11 +54,18 @@ const DownloadSection = () => {
           <div className={styles["publish_text"]}>
             Published 30 March 2026
           </div>
-          <Link href={`https://drive.google.com/file/d/1M19ZAYn1IxID4jztRaXrccxgylTpaIe_/view?usp=sharing`} target="_blank" download className={styles["btn-download"]}>
+          <Link href={reportUrl} target="_blank" download className={styles["btn-download"]}>
             ↓ Free Download
           </Link>
         </div>
       </div>
+
+      <ShareModal 
+        isOpen={isShareModalOpen} 
+        onClose={() => setIsShareModalOpen(false)} 
+        shareUrl={reportUrl}
+        title="Share Intelligence Report"
+      />
     </section>
   );
 };

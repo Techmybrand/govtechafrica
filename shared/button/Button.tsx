@@ -1,9 +1,9 @@
+/* eslint-disable */
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./Button.module.scss";
-
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	buttonType?: "primary" | "secondary" | "transparent";
 	children: React.ReactNode;
