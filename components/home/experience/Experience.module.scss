@@ -1,10 +1,8 @@
 @import "@/styles/imports";
 
 .experience {
-	@include flex(center, center, column);
 	width: 100%;
-	z-index: 2;
-	margin-block: 12rem;
+	margin-block: 18rem;
 	background-color: #000;
 	.container {
 		max-width: $max-width;
@@ -224,7 +222,7 @@
 
 	@include screenMax("tablet") {
 		padding: 10rem 1.6rem 5rem;
-		margin-block: 8rem;
+		margin-block: 12rem;
 		.container {
 			.title_container {
 				margin-block: 3rem 4rem;
@@ -499,7 +497,7 @@
 	}
 
 	@include screenMax("mobile") {
-		margin-block: 5.6rem;
+		margin-block: 8rem;
 		.container {
 			.title_container {
 				margin-block: 2.4rem 3.2rem;

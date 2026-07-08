@@ -2,16 +2,15 @@
 
 .section {
     width: 100%;
-    margin-bottom: 12rem;
+    margin-bottom: 18rem;
     position: relative;
     background-color: #000000;
     background-image: url("/images/cards_bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 12rem 0;
+    padding: 8rem 0;
     overflow: hidden;
-
     .section_container {
         padding: 3.6rem;
         max-width: $max-width;
@@ -180,8 +179,8 @@
 
 @include screenMax("tablet") {
     .section {
-        padding: 8rem 0;
-        margin-bottom: 8rem;
+        padding: 6rem 0;
+        margin-bottom: 14rem;
         .section_container {
             padding: 2.4rem;
         }
@@ -207,9 +206,8 @@
 
 @include screenMax("mobile") {
     .section {
-        padding: 6rem 0;
-        margin-bottom: 5.6rem;
-
+        padding: 4rem 0;
+        margin-bottom: 8rem;
         .section_container {
             padding: 1.6rem;
         }
