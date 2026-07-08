@@ -26,13 +26,13 @@ const valuesData = [
 		id: "04",
 		title: "Empowerment",
 		description: "We are committed to empowering governments and citizens with the tools and knowledge they need to thrive in today’s digital age.",
-		image: "/images/our_values_1.png"
+		image: "/images/empowerment.png"
 	},
 	{
 		id: "05",
 		title: "Impact",
 		description: "We measure our success by the impact we create, both in terms of tangible outcomes and positive societal change.",
-		image: "/images/our_values_1.png"
+		image: "/images/impact.jpeg"
 	}
 ];
 
