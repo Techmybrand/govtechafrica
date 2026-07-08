@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/shared";
 import styles from "./IntroToFulcrum.module.scss";
+import Link from "next/link";
 
 const IntroToFulcrum = () => {
 	return (
@@ -16,7 +17,6 @@ const IntroToFulcrum = () => {
 					sizes="100vw"
 				/>
 			</div>
-
 			<div className={styles.container}>
 				<div className={styles.layout_grid}>
 					<div className={styles.left_column}>
@@ -50,12 +50,15 @@ const IntroToFulcrum = () => {
 							Into Project Delivery, Budget Performance, Milestones, And SDG
 							Alignment Across Ministries, Departments, And Agencies.
 						</p>
-
-						<Button href="https://fulcrum.govtechafrica.com" className={styles.visit_btn}>
-							Visit Page
-						</Button>
+						<Link href="https://fulcrum.govtechafrica.com" target="_blank">
+							<Button className={styles.visit_btn}>
+								Visit Page
+							</Button>
+						</Link>
 					</div>
 				</div>
+			</div>
+			<div className={styles.bg_wrapper}>
 			</div>
 		</div>
 	);
