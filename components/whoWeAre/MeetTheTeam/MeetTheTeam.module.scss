@@ -2,7 +2,7 @@
 
 .section_wrapper {
     width: 100%;
-    margin-bottom: 12rem;
+    margin-bottom: 20rem;
     .section_container {
         padding: 3.6rem;
         max-width: $max-width;
@@ -145,7 +145,7 @@
     }
 
     @include screenMax("tablet") {
-        margin-bottom: 8rem;
+        margin-bottom: 14rem;
         .section_container {
             padding: 2.4rem;
             .text_section {
@@ -207,7 +207,7 @@
     }
 
     @include screenMax("mobile") {
-        margin-bottom: 5.6rem;
+        margin-bottom: 8rem;
         .section_container {
             padding: 1.6rem;
             .text_section {
