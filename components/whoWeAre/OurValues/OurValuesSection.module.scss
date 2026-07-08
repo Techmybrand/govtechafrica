@@ -2,7 +2,7 @@
 
 .our_values_section {
     width: 100%;
-    margin-bottom: 12rem;
+    margin-bottom: 20rem;
     background-color: #000000;
     .container {
         max-width: $max-width;
@@ -25,7 +25,6 @@
     }
 }
 
-// Desktop Layout Grid
 .layout_grid {
     display: flex;
     justify-content: space-between;
@@ -47,7 +46,6 @@
             }
         }
     }
-
     .accordion_column {
         width: 45%;
         display: flex;
@@ -132,7 +130,7 @@
 
 @include screenMax("tablet") {
     .our_values_section {
-        margin-bottom: 8rem;
+        margin-bottom: 14rem;
         .container {
             padding: 2.4rem;
             .header {
@@ -144,7 +142,6 @@
             }
         }
     }
-
     .layout_grid {
         gap: 4rem;
         .image_column {
@@ -171,7 +168,6 @@
                         }
                     }
                 }
-
                 .item_content {
                     margin-top: 1.4rem;
                     padding-left: 3.2rem;
@@ -185,10 +181,9 @@
     }
 }
 
-// Mobile Viewport
 @include screenMax("mobile") {
     .our_values_section {
-        margin-bottom: 5.6rem;
+        margin-bottom: 8rem;
         .container {
             padding: 1.6rem;
             .header {
@@ -200,11 +195,9 @@
             }
         }
     }
-
     .layout_grid {
         display: none;
     }
-
     .cards_container_sm {
         display: block;
         width: 100%;
@@ -226,7 +219,6 @@
                     transition: opacity 0.5s ease-in-out;
                 }
             }
-
             .mobile_content {
                 position: relative;
                 margin-top: 3.2rem;
