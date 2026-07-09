@@ -59,7 +59,7 @@ const CookieSettingsModal = ({ isOpen, onClose }: CookiesModalProps) => {
           <div className={styles.modal_content}>
             <h2>Privacy Preference Center</h2>
             <h3>
-              GovTechAfrica is the data controller for information processed through cookies on this website. 
+              Govtech Africa is the data controller for information processed through cookies on this website. 
               Some cookies used on this site are set by trusted third-party service providers such as Meta, 
               Google, X (formerly Twitter), Instagram, LinkedIn, including analytics and platform partners, 
               to help us understand site usage, improve performance, and deliver relevant content. You can 
