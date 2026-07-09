@@ -72,7 +72,7 @@ const MeetTheTeam = () => {
                             Govtech Africa's mission to build thriving and resilient
                             societies through technology`}
                         </p>
-                        <Button className={styles.visit_btn} href="/">
+                        <Button className={styles.visit_btn}>
                             Visit
                         </Button>
                     </div>

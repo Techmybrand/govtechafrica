@@ -7,7 +7,6 @@
     padding: 3.6rem;
     position: relative;
     z-index: 2;
-
     @include screenMax("tablet") {
         padding: 2.4rem;
         width: 90%;
@@ -30,17 +29,14 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     @include screenMax("tablet") {
         padding: 6rem 3.2rem;
         border-radius: 2rem;
     }
-
     @include screenMax("mobile") {
         padding: 4rem 1.6rem;
         border-radius: 1.6rem;
     }
-
     .bg_pattern {
         position: absolute;
         top: -20rem;
@@ -52,7 +48,6 @@
         background-position: right center;
         background-size: contain;
         pointer-events: none;
-
         @include screenMax("tablet") {
             width: 50%;
             top: -18rem;
@@ -72,7 +67,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     h1, span {
         font-family: $font;
         font-size: 5.6rem;
@@ -81,9 +75,8 @@
         color: #fff;
         margin-bottom: 2.4rem;
         span {
-            color: #00BF4D;
+            color: #D6FCB0;
         }
-
         @include screenMax("tablet") {
             font-size: 4.4rem;
         }
@@ -96,14 +89,12 @@
             }
         }
     }
-
     .description {
         font-family: $font;
         font-size: 1.6rem;
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.7);
         margin-bottom: 4.8rem;
-
         @include screenMax("tablet") {
             font-size: 1.4rem;
             margin-bottom: 3.6rem;
@@ -157,7 +148,6 @@
             font-size: 1.4rem;
         }
     }
-
     .submit_btn {
         height: 6.4rem;
         background-color: #00BF4D;
@@ -208,7 +198,6 @@
     color: rgba(255, 255, 255, 0.9);
     text-align: left;
     width: 100%;
-
     @include screenMax("mobile") {
         text-align: center;
         margin-top: 0.4rem;

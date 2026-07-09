@@ -27,7 +27,7 @@ const NPGR = () => {
     return (
         <div ref={sectionRef} className={styles.npgr_container}>
             <motion.div style={{ y, opacity }} className={styles.section_container}>
-                <h2>Where it all goes down</h2>
+                <h2>Our Flagship Event</h2>
                 <div className={styles.npgr_content}>
                     <div className={styles.npgr_image}>
                         <Image alt="" fill src="/images/npgr_section.png" />
