@@ -19,7 +19,7 @@ const Agenda = () => {
   //         title: 'welcome address',
   //         content: {
   //           name: 'Welcome Address',
-  //           subtext: 'Chief Executive Officer, GovTech Africa',
+  //           subtext: 'Chief Executive Officer, Govtech Africa',
   //           role: 'Opening',
   //         }
   //       },
@@ -50,21 +50,21 @@ const Agenda = () => {
   //     ]
   //   },
   //   {
-  //     header: 'GovTech Africa Presentations',
+  //     header: 'Govtech Africa Presentations',
   //     items: [
   //       {
   //         title: 'Outlook Presentation',
   //         content: {
-  //           name: 'Presentation of GovTech Africa Outlook 2026',
-  //           subtext: 'GovTech Africa Research Team',
+  //           name: 'Presentation of Govtech Africa Outlook 2026',
+  //           subtext: 'Govtech Africa Research Team',
   //           role: 'Report Launch',
   //         }
   //       },
   //       {
   //         title: 'platform demo',
   //         content: {
-  //           name: 'Africa GovTech Week 2027 — Fulcrum Platform Demo',
-  //           subtext: 'GovTech Africa',
+  //           name: 'Africa Govtech Week 2027 — Fulcrum Platform Demo',
+  //           subtext: 'Govtech Africa',
   //           role: 'live demo',
   //         }
   //       },

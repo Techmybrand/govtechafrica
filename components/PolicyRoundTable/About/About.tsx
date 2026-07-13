@@ -19,7 +19,7 @@ const About = () => {
     },
     {
       icon: '2027',
-      text: 'Africa GovTech Week — Fulcrum Platform launch preview',
+      text: 'Africa Govtech Week — Fulcrum Platform launch preview',
     },
     {
       // icon: '🇳🇬',

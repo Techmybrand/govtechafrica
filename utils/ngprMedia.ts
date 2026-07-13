@@ -75,7 +75,7 @@
 //       <h2>Thank you, ${fullName}!</h2>
 //       <p>Your media accreditation request for the <strong>National Govtech Policy Roundtable 2026</strong> has been received.</p>
 //       <p>We will review your submission and get back to you shortly with accreditation status.</p>
-//       <img src="cid:logo" alt="GovTech Africa" style="width: 300px; height: 300px; margin-bottom: 20px;" />
+//       <img src="cid:logo" alt="Govtech Africa" style="width: 300px; height: 300px; margin-bottom: 20px;" />
 
 //       <p>Best regards,<br><strong>Govtech Africa Team</strong></p>
 //     </div>
@@ -122,8 +122,8 @@
 //       <p>Your media accreditation for the <strong>National Govtech Policy Roundtable 2026</strong> has been <strong>APPROVED</strong>.</p>
 //       <p>You are now officially accredited to cover the event.</p>
 //       <p>We look forward to your coverage.</p>
-//       <img src="cid:logo" alt="GovTech Africa" style="width: 300px; height: 300px; margin-bottom: 25px;" />
-//       <p>Best regards,<br><strong>GovTech Africa Team</strong></p>
+//       <img src="cid:logo" alt="Govtech Africa" style="width: 300px; height: 300px; margin-bottom: 25px;" />
+//       <p>Best regards,<br><strong>Govtech Africa Team</strong></p>
 //     </div>
 //   `;
 
@@ -144,8 +144,8 @@
 //       <p>Dear ${fullName},</p>
 //       <p>After careful review, we regret to inform you that your media accreditation request for the National Govtech Policy Roundtable 2026 has been <strong>NOT APPROVED</strong> at this time.</p>
 //       <p>Thank you for your interest. We hope to collaborate with you on future opportunities.</p>
-//       <img src="cid:logo" alt="GovTech Africa" style="width: 300px; height: 300px margin-bottom: 25px;" />
-//       <p>Best regards,<br><strong>GovTech Africa Team</strong></p>
+//       <img src="cid:logo" alt="Govtech Africa" style="width: 300px; height: 300px margin-bottom: 25px;" />
+//       <p>Best regards,<br><strong>Govtech Africa Team</strong></p>
 //     </div>
 //   `;
 

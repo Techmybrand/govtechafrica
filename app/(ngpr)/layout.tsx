@@ -51,7 +51,6 @@ export default function NGPRLayout({ children }: {children: React.ReactNode}) {
         <React.Fragment>
             <NpgrHeader />
             {children}
-            {/* <Footer /> */}
         </React.Fragment>
     )
 }
