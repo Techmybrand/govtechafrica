@@ -722,8 +722,7 @@ export const consulting: TechnologyProps[] = [
 	{
 		title: "Tech Events Design and Delivery",
 		image: '/svgs/tech.svg',
-		description:
-			"We connect Industry stakeholders for brainstorming & knowledge sharing",
+		description: "We connect Industry stakeholders for brainstorming & knowledge sharing",
 		href: "/tech-events",
 		id: "tech",
 	},
@@ -737,8 +736,7 @@ export const consulting: TechnologyProps[] = [
 	{
 		title: "IT Compliance & Regulatory Consulting",
 		image: '/svgs/compliance.svg',
-		description:
-			"Compliance is key. We ensure government IT systems stay secure, compliant, and future-ready",
+		description: "Compliance is key. We ensure government IT systems stay secure, compliant, and future-ready",
 		href: "/compliance-and-regulatory-consulting",
 		id: "compliance"
 	}
@@ -754,8 +752,7 @@ export const technologies: TechnologyProps[] = [
 	},
 	{
 		title: "Cloud Services",
-		description:
-			"We equip government stakeholders with the skills and tools they need to drive meaningful change and innovation.",
+		description: "Governments require the speed and agility that cloud computing offers. Unleash the potential of the cloud.",
 		href: "/cloud-services",
 		image: '/svgs/cloud_services.svg',
 		id: "cloud",
@@ -769,32 +766,28 @@ export const technologies: TechnologyProps[] = [
 	},
 	{
 		title: "Cybersecurity",
-		description:
-			"Emerging threats demand revolutionary cyber protection. De-risk tomorrow by boosting cybersecurity today",
+		description: "Emerging threats demand revolutionary cyber protection. De-risk tomorrow by boosting cybersecurity today",
 		href: "/cybersecurity",
 		image: '/svgs/cybersecurity.svg',
 		id: "cybersecurity",
 	},
 	{
 		title: "Data and AI",
-		description:
-			"Elevating decision-making with secure and intelligent data processing, analytics and operational AI",
+		description: "Elevating decision-making with secure and intelligent data processing, analytics and operational AI",
 		href: "/data-and-ai",
 		image: '/svgs/ai.svg',
 		id: "data",
 	},
 	{
 		title: "Network Infrastructure Design & Implementation",
-		description:
-			"Compliance is key. We ensure government IT systems stay secure, compliant, and future-ready",
+		description: "Reliable and scalable networks that support government innovation and connectivity",
 		href: "/network-infrastructure",
 		image: '/svgs/network.svg',
 		id: "network",
 	},
 	{
 		title: "IT Support Services (Remote support & Maintenance)",
-		description:
-			"Seamless IT operations with proactive remote support and maintenance",
+		description: "Seamless IT operations with proactive remote support and maintenance",
 		href: "/support-services",
 		image: '/svgs/it.svg',
 		id: "it",

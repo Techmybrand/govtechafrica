@@ -12,7 +12,7 @@ const Footer = () => {
         <div className={styles.footer_body}>
             <div className={styles.footer_container}>
                 <div className={styles.footer_content}>
-                    <h1>National GovTech Policy Roundtable 2026 - 
+                    <h1>National Govtech Policy Roundtable 2026 - 
                         <span> 30th March 2026, Abuja</span>
                     </h1>
                 </div>

@@ -23,8 +23,24 @@ const Hero = (props: Props) => {
 	const [speed] = useState<number>(0.9);
 	const videoRef = useRef<HTMLVideoElement | null>(null)
 	useEffect(() => {
-		if (videoRef.current) {
-			videoRef.current.playbackRate = speed
+		const video = videoRef.current;
+		if (video) {
+			video.playbackRate = speed;
+			video.defaultMuted = true;
+			video.muted = true;
+			const attemptPlay = () => {
+				video.play().catch((err) => {
+					console.warn("Autoplay was prevented. Registering interaction listeners.", err);
+					const playOnInteraction = () => {
+						video.play().catch(() => {});
+						window.removeEventListener("touchstart", playOnInteraction);
+						window.removeEventListener("click", playOnInteraction);
+					};
+					window.addEventListener("touchstart", playOnInteraction);
+					window.addEventListener("click", playOnInteraction);
+				});
+			};
+			attemptPlay();
 		}
 	}, [speed]);
 	return (
@@ -41,9 +57,9 @@ const Hero = (props: Props) => {
 								/>
 							</div>
 						) : (
-							<div className={styles.hero_image}>
-								<video ref={videoRef} src={props.backgroundVideo} loop autoPlay
-									muted playsInline preload="auto"
+							<div className={styles.hero_image}>``
+								<video ref={videoRef} src={props.backgroundVideo} loop autoPlay muted playsInline 
+									preload="auto" onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
 								/>
 							</div>
 						)}
