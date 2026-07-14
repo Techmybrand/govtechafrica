@@ -19,21 +19,21 @@ const cards = [
 		title: "Partnerships",
 		description: "We leverage",
 		subtext: 'for progress',
-		image: "/images/driver_2.jpg",
+		image: "/images/partnerships.png",
 		lottieUrl: "/animations/Mobile-ui.json",
 	},
 	{
 		title: "Local Solutions",
 		description: "We profer",
 		subtext: 'to local problems',
-		image: "/images/driver_3.jpg",
+		image: "/images/local_solutions.png",
 		lottieUrl: "/animations/Credit-Card.json",
 	},
 	{
 		title: "Resilient and Secure Systems",
 		description: "We build",
 		subtext: 'that enable government excellence',
-		image: "/images/driver_4.jpg",
+		image: "/images/secure_systems.png",
 		lottieUrl: "/animations/Send-Message.json",
 	},
 ];
@@ -48,7 +48,7 @@ const Experience = () => {
 
 	useEffect(() => {
 		const checkMobile = () => {
-			setIsMobile(window.innerWidth <= 768);
+			setIsMobile(window.innerWidth <= 950);
 			setIsSmMobile(window.innerWidth <= 650);
 		};
 		checkMobile();
@@ -82,7 +82,6 @@ const Experience = () => {
 			setClosingCard(activeCard as number);
 			setCanAnimateOpen(new Set());
 			setActiveCard(null);
-
 			setTimeout(() => {
 				setClosingCard(null);
 				setActiveCard(id);
@@ -97,7 +96,6 @@ const Experience = () => {
 	const handleCardToggle = (id: string | number) => {
 		setIsAutoPlaying(false);
 		clearAutoPlayTimers();
-
 		if (activeCard === id) {
 			setClosingCard(id as number);
 			setActiveCard(null);
@@ -119,7 +117,6 @@ const Experience = () => {
 	useEffect(() => {
 		if (isAutoPlaying && activeCard !== null) {
 			clearAutoPlayTimers();
-
 			const scheduleNextCard = () => {
 				autoPlayTimeoutRef.current = setTimeout(() => {
 					if (activeCard !== null) {
@@ -155,8 +152,8 @@ const Experience = () => {
 	const experienceContainer = useRef<any>(null);
 	const { scrollYProgress } = useScroll({
 		target: experienceContainer,
+		offset: ["start end", "end center"],
 		// offset: ["start start", "end end"],
-		offset: ["start end", "end center"]
 	});
 	const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
 	const y = useSpring(rawY, {
@@ -191,58 +188,119 @@ const Experience = () => {
 						Learn more
 					</Button>
 				</div>
-				<div className={styles.cards_container}>
-					{cards.map((card, index) => (
-						<div key={index} className={styles.card}
-							onClick={() => handleCardToggle(index)}
-							data-mobile={isMobile}
-							data-small={isSmMobile}
-							data-index={index}
-							data-active={activeCard === index}
-							data-can-animate={canAnimateOpen.has(index)}
-							data-closing={closingCard === index}
-						// data-active={isMobile ? true : activeCard === index}
-						// data-can-animate={
-						// 	isMobile ? false : canAnimateOpen.has(index)
-						// }
-						// data-closing={isMobile ? false : closingCard === index}
-						>
-							<div className={styles.image_container}>
-								<Image src={card.image} alt={card.title} fill
-									sizes="100vw"
-								/>
-							</div>
-							<div className={styles.blue_overlay} />
-							<div className={styles.lottie_badge}>
-								{animData[index] && (
-									<Lottie
-										animationData={animData[index]}
-										loop
-										autoplay
-										className={styles.lottie}
+				{isMobile ? (
+					<div className={styles.cards_container_mobile}>
+						{cards.map((card, index) => (
+							<CardMobile 
+								key={index} 
+								card={card} 
+								index={index} 
+								animData={animData[index]} 
+							/>
+						))}
+					</div>
+				) : (
+					<div className={styles.cards_container}>
+						{cards.map((card, index) => (
+							<div key={index} className={styles.card}
+								onClick={() => handleCardToggle(index)}
+								data-mobile={false}
+								data-small={isSmMobile}
+								data-index={index}
+								data-active={activeCard === index}
+								data-can-animate={canAnimateOpen.has(index)}
+								data-closing={closingCard === index}
+								// data-active={isMobile ? true : activeCard === index}
+								// data-can-animate={
+								// 	isMobile ? false : canAnimateOpen.has(index)
+								// }
+								// data-closing={isMobile ? false : closingCard === index}
+							>
+								<div className={styles.image_container}>
+									<Image src={card.image} alt={card.title} fill
+										sizes="100vw"
 									/>
-								)}
+								</div>
+								<div className={styles.blue_overlay} />
+								<div className={styles.lottie_badge}>
+									{animData[index] && (
+										<Lottie
+											animationData={animData[index]}
+											loop
+											autoplay
+											className={styles.lottie}
+										/>
+									)}
+								</div>
+								<div className={styles.plus_icon}>
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+										<line x1="12" y1="5" x2="12" y2="19"></line>
+										<line x1="5" y1="12" x2="19" y2="12"></line>
+									</svg>
+								</div>
+								<div className={styles.description}>
+									<p>{card.description}</p>
+								</div>
+								<div className={styles.title}>
+									<h3>{card.title}</h3>
+								</div>
+								<div className={styles.subtext}>
+									<p>{card.subtext}</p>
+								</div>
 							</div>
-							<div className={styles.plus_icon}>
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-									<line x1="12" y1="5" x2="12" y2="19"></line>
-									<line x1="5" y1="12" x2="19" y2="12"></line>
-								</svg>
-							</div>
-							<div className={styles.description}>
-								<p>{card.description}</p>
-							</div>
-							<div className={styles.title}>
-								<h3>{card.title}</h3>
-							</div>
-							<div className={styles.subtext}>
-								<p>{card.subtext}</p>
-							</div>
-						</div>
-					))}
-				</div>
+						))}
+					</div>
+				)}
 			</motion.div>
 		</section>
+	);
+};
+
+interface CardMobileProps {
+	card: typeof cards[0];
+	index: number;
+	animData: object | null;
+}
+
+const CardMobile = ({ card, index, animData }: CardMobileProps) => {
+	return (
+		<div 
+			className={styles.card_mobile} 
+			data-index={index}
+			style={{ 
+				position: "sticky", 
+				top: `calc(10rem + ${index * 2}rem)` 
+			}}
+		>
+			<div className={styles.image_container_mob}>
+				<Image 
+					src={card.image} 
+					alt={card.title} 
+					fill 
+					sizes="(max-width: 950px) 100vw, 50vw" 
+				/>
+				<div className={styles.overlay_mob} />
+			</div>
+			
+			<div className={styles.content_mob}>
+				{/* <div className={styles.lottie_badge_mob}>
+					{animData && (
+						<Lottie
+							animationData={animData}
+							loop
+							autoplay
+							className={styles.lottie_mob}
+						/>
+					)}
+				</div> */}
+				
+				<div className={styles.text_container_mob}>
+					<span className={styles.description_mob}>{card.description}</span>
+					<h3 className={styles.title_mob}>{card.title}</h3>
+					<p className={styles.subtext_mob}>{card.subtext}</p>
+				</div>
+			</div>
+		</div>
 	);
 };
 

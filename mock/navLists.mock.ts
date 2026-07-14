@@ -310,7 +310,7 @@ export const posts = [
         	Infrastructure (DPI) successfully created a unified digital identity and 
         	financial system that serves one of the world's largest populations — 
             offering valuable insights for African governments.`,
-		image: '/images/research_1.png',
+		image: '/images/local_solutions.png',
 		tag: 'insight',
 	},
 	{
@@ -319,7 +319,7 @@ export const posts = [
         	Infrastructure (DPI) successfully created a unified digital identity and 
         	financial system that serves one of the world's largest populations — 
             offering valuable insights for African governments.`,
-		image: '/images/research_2.png',
+		image: '/images/local_solutions.png',
 		tag: 'insight',
 	},
 	{
@@ -328,7 +328,7 @@ export const posts = [
         	Infrastructure (DPI) successfully created a unified digital identity and 
         	financial system that serves one of the world's largest populations — 
             offering valuable insights for African governments.`,
-		image: '/images/research_1.png',
+		image: '/images/local_solutions.png',
 		tag: 'insight',
 	},
 	{
@@ -337,7 +337,7 @@ export const posts = [
         	Infrastructure (DPI) successfully created a unified digital identity and 
         	financial system that serves one of the world's largest populations — 
             offering valuable insights for African governments.`,
-		image: '/images/research_2.png',
+		image: '/images/local_solutions.png',
 		tag: 'insight',
 	},
 	{
@@ -346,7 +346,7 @@ export const posts = [
         	Infrastructure (DPI) successfully created a unified digital identity and 
         	financial system that serves one of the world's largest populations — 
             offering valuable insights for African governments.`,
-		image: '/images/research_1.png',
+		image: '/images/local_solutions.png',
 		tag: 'insight',
 	},
 	{
@@ -355,7 +355,7 @@ export const posts = [
         	Infrastructure (DPI) successfully created a unified digital identity and 
         	financial system that serves one of the world's largest populations — 
             offering valuable insights for African governments.`,
-		image: '/images/research_2.png',
+		image: '/images/local_solutions.png',
 		tag: 'insight',
 	},
 	{
@@ -364,7 +364,7 @@ export const posts = [
         	Infrastructure (DPI) successfully created a unified digital identity and 
         	financial system that serves one of the world's largest populations — 
             offering valuable insights for African governments.`,
-		image: '/images/research_1.png',
+		image: '/images/local_solutions.png',
 		tag: 'insight',
 	},
 	{
@@ -373,7 +373,7 @@ export const posts = [
         	Infrastructure (DPI) successfully created a unified digital identity and 
         	financial system that serves one of the world's largest populations — 
             offering valuable insights for African governments.`,
-		image: '/images/research_2.png',
+		image: '/images/local_solutions.png',
 		tag: 'insight',
 	},
 	{
@@ -382,7 +382,7 @@ export const posts = [
         	Infrastructure (DPI) successfully created a unified digital identity and 
         	financial system that serves one of the world's largest populations — 
             offering valuable insights for African governments.`,
-		image: '/images/research_1.png',
+		image: '/images/local_solutions.png',
 		tag: 'insight',
 	},
 ]

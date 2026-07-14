@@ -85,6 +85,11 @@ const GrowthV2 = () => {
 						/>
 					))}
 				</motion.div>
+				<motion.div className={styles.text_sm} style={{ y, opacity }}>
+					<p>
+						Govtech Africa <span>exists to lend a helping hand</span>
+					</p>
+				</motion.div>
 			</div>
 			<div className={styles.divider}></div>
 		</motion.div>
