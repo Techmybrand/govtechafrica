@@ -246,8 +246,8 @@
                 gap: 4rem;
                 .teams_text_column {
                     width: 100%;
-                    align-items: center;
-                    text-align: center;
+                    align-items: flex-start;
+                    text-align: left;
                     .title_text, span {
                         font-size: 3.2rem;
                         text-align: left;

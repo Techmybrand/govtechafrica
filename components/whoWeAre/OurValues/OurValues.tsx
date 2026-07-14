@@ -7,37 +7,32 @@ const cards = [
 	{
 		title: `Innovation`,
 		description: `We embrace innovation and creativity as 
-			catalysts for positive change and  continuous 
-			improvement.`,
-		image: "/images/our_values_1.png",
+			catalysts for positive change and  continuous improvement.`,
+		image: "/images/innovate.png",
 	},
 	{
 		title: `Integrity`,
 		description: `We uphold the highest standards of integrity, 
-			transparency, and ethical  conduct in all our 
-			interactions.`,
-		image: "/images/our_values_1.png",
+			transparency, and ethical  conduct in all our interactions.`,
+		image: "/images/integrity.png",
 	},
 	{
 		title: `Collaboration`,
 		description: `We believe in the power of collaboration and 
-			partnerships to achieve shared  goals and drive 
-			collective impact.`,
-		image: "/images/our_values_1.png",
+			partnerships to achieve shared  goals and drive collective impact.`,
+		image: "/images/collab.png",
 	},
 	{
 		title: `Empowerment`,
 		description: `We are committed to empowering governments 
-			and citizens with the tools  and knowledge they need 
-			to thrive in today’s digital age.`,
-		image: "/images/our_values_1.png",
+			and citizens with the tools  and knowledge they need to thrive in today’s digital age.`,
+		image: "/images/empowerment.png"
 	},
 	{
 		title: `Impact`,
 		description: `We measure our success by the impact we 
-			create, both in terms of tangible  outcomes and 
-			positive societal change.`,
-		image: "/images/our_values_1.png",
+			create, both in terms of tangible  outcomes and positive societal change.`,
+		image: "/images/impact.jpeg",
 	}
 ];
 

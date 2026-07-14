@@ -18,7 +18,7 @@ const InsightDetails = () => {
       <div className={styles.divider}></div>
       <div className={styles.details_content}>
         <div className={styles.details_image}>
-          <Image alt="" fill src='/images/preview.png' />
+          <Image alt="" fill src='/images/local_solutions.png' />
         </div>
         <div className={styles.details_body}>
           <h2>
@@ -57,7 +57,7 @@ const InsightDetails = () => {
           <br />
         </div>
         <div className={styles.details_image_2}>
-          <Image alt="" fill src='/images/preview_2.png' />
+          <Image alt="" fill src='/images/local_solutions.png' />
         </div>
         <div className={styles.details_body}>
           <h2>

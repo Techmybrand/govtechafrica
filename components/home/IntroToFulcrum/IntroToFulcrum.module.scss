@@ -164,6 +164,9 @@
 
 
 @include screenMax("tablet") {
+    .fulcrum_section {
+        margin-bottom: 14rem;
+    }
     .container {
         padding: 2.4rem;
     }
@@ -216,6 +219,7 @@
 @include screenMax("mobile") {
     .fulcrum_section {
         padding: 2.4rem 0;
+        margin-bottom: 8rem;
     }
     .bg_pattern_wrapper {
         width: 100%;
