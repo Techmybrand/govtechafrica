@@ -497,7 +497,7 @@
 	}
 
 	@include screenMax("mobile") {
-		margin-block: 8rem;
+		margin-block: 2.4rem;
 		.container {
 			.title_container {
 				margin-block: 2.4rem 3.2rem;
@@ -657,4 +657,135 @@
 		// box-shadow: inset 0 0 0 50rem #7394f4;
 		box-shadow: inset 0 0 0 50rem transparent;
 	}
+}
+
+.cards_container_mobile {
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .cards_container {
+        display: none !important;
+    }
+    .cards_container_mobile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        gap: 3.2rem;        
+        .card_mobile {
+            width: 100%;
+            height: 46rem;
+            border-radius: 2.4rem;
+            overflow: hidden;
+            background: #111111;
+            border: 0.1rem solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+            margin-bottom: 2.4rem;
+            .image_container_mob {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                img {
+                    object-fit: cover;
+                }
+                .overlay_mob {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.85) 100%);
+                    z-index: 2;
+                }
+            }
+            .content_mob {
+                position: relative;
+                z-index: 3;
+                width: 100%;
+                height: 100%;
+                padding: 4rem 3.2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                .lottie_badge_mob {
+                    width: 7.2rem;
+                    height: 7.2rem;
+                    border-radius: 1.6rem;
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    .lottie_mob {
+                        width: 6.4rem;
+                        height: 6.4rem;
+                    }
+                }
+                
+                .text_container_mob {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    width: 100%;
+                    .description_mob {
+                        font-family: $font-gothic;
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+                    .title_mob {
+                        font-family: $font-gothic-bold;
+                        font-size: 3.2rem;
+                        font-weight: 700;
+                        color: #ffffff;
+                        line-height: 1.3;
+                    }
+                    .subtext_mob {
+                        font-family: $font-gothic;
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .cards_container_mobile {
+		gap: 0.8rem;
+        .card_mobile {
+            height: 38rem;
+            border-radius: 1.6rem;
+            .content_mob {
+                padding: 2.4rem 1.6rem;
+                .lottie_badge_mob {
+                    width: 6rem;
+                    height: 6rem;
+                    .lottie_mob {
+                        width: 5rem;
+                        height: 5rem;
+                    }
+                }
+                .text_container_mob {
+                    gap: 0.6rem;
+                    .description_mob {
+                        font-size: 1.2rem;
+                    }
+                    .title_mob {
+                        font-size: 2.2rem;
+                    }
+                    .subtext_mob {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
 }

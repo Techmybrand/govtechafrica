@@ -168,19 +168,25 @@
                 text-decoration: none;
                 cursor: pointer;
                 transition: color 0.2s ease;
-
                 &:hover {
                     color: #fff;
                 }
-
-                @include screenMax("tablet") {
+            }
+        }
+        @include screenMax("tablet") {
+            li {
+                a, .cookie_trigger {
                     font-size: 1.4rem;
                 }
             }
         }
-
         @include screenMax("mobile") {
-            gap: 1rem;
+            gap: 0.8rem;
+            li {
+                a, .cookie_trigger {
+                    font-size: 1.2rem;
+                }
+            }
         }
     }
 }
@@ -199,10 +205,10 @@
     }
 
     @include screenMax("mobile") {
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 2.4rem;
         padding: 3.2rem 1.6rem;
-        text-align: center;
+        text-align: left;
     }
 }
 
@@ -232,10 +238,20 @@
     p {
         font-family: $font;
         font-size: 1.4rem;
+        line-height: 1.8rem;
         color: #FFF;
-
-        @include screenMax("tablet") {
-            font-size: 1.3rem;
+    }
+    @include screenMax("tablet") {
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+        }
+    }
+    @include screenMax("mobile") {
+        order: 3;
+        p {
+            font-size: 1rem;
+            line-height: 1.4rem;
         }
     }
 }
@@ -255,13 +271,15 @@
 
     @include screenMax("mobile") {
         justify-content: center;
+        gap: 1rem;
+        .social_link {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
     }
 }
 
 .watermark_image_wrapper {
-    // bottom: 0;
-    // left: 50%;
-    // transform: translateX(-50%);
     width: 100%;
     height: 15rem;
     opacity: 0.45;

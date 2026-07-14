@@ -4,7 +4,7 @@ import { Hero } from "@/shared";
 import { CookiesModal } from "@/shared/Modals";
 import { GrowthV2, MissionV2, Research, CenterPieceV2, Experience, NPGR, IntroToFulcrum } from "@/components/home";
 import { Governance } from "@/components/whoWeAre";
-import { ParticipatingOrganisations } from "@/components/PolicyRoundTable";
+// import { ParticipatingOrganisations } from "@/components/PolicyRoundTable";
 
 const NewHomeView = () => {
 	const [showModal, setShowModal] = useState<boolean>(false);
@@ -29,8 +29,9 @@ const NewHomeView = () => {
 				backgroundVideo={isMobile ? "/videos/hero_video_portrait.mp4" : "/videos/hero_video_landcape.mp4"}
 				backgroundType="video"
 				backgroundImage=""
-				title=""
-				description=""
+				title={null}
+				description={null}
+				dataType="home"
 			/>
 			<Governance type="new" />
 			<Research />
@@ -40,7 +41,7 @@ const NewHomeView = () => {
 			<CenterPieceV2 />
 			<NPGR />
 			<IntroToFulcrum />
-			<ParticipatingOrganisations type="new" />
+			{/* <ParticipatingOrganisations type="new" /> */}
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>
 	)

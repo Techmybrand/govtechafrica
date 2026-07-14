@@ -44,7 +44,7 @@
 			}
 		}
 		.hero_background {
-			height: 85vh;
+			height: 95vh;
 			@include flex();
 			position: relative;
 			overflow: hidden;
@@ -168,7 +168,11 @@
 		height: 2rem;
 		background-color: rgba(255, 255, 255, 0.05);
 	}
-
+	&[data-type="home"] {
+		.hero_container {
+			padding: 0;
+		}
+	}
 	&[data-type="do"] {
 		.hero_container {
 			padding: 14rem 0 0;
@@ -187,7 +191,6 @@
 			}
 		}
 	}
-
 	&[data-type="are"] {
 		.hero_container {
 			padding: 14rem 0 0;
@@ -247,7 +250,6 @@
 				line-height: 2.4rem;
 			}
 		}
-
 		&[data-type="do"] {
 			.hero_container {
 				padding: 10rem 0 0;
@@ -266,7 +268,6 @@
 				}
 			}
 		}
-
 		&[data-type="are"] {
 			.hero_container {
 				padding: 10rem 0 0;
@@ -343,6 +344,11 @@
 					line-height: 2rem;
 					width: 100%;
 				}
+			}
+		}
+		&[data-type="home"] {
+			.hero_container {
+				padding: 0;
 			}
 		}
 		&[data-type="are"] {
