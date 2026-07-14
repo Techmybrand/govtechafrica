@@ -12,8 +12,8 @@
         align-items: flex-start;
         justify-content: space-between;
         gap: 8rem;
-		.text {
-			h3, p {
+		.text, .text_sm {
+			h3 {
 				font-size: 2.4rem;
 				line-height: 3.2rem;
 				font-weight: 700;
