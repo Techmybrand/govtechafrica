@@ -41,7 +41,6 @@
 			@include noScrollBar();
 		}
 	}
-
 	.divider {
 		background-color: rgba(255, 255, 255, 0.2);
 		margin-block: 3.6rem;
@@ -74,7 +73,6 @@
 				padding: 2.4rem 6.4rem;
 			}
 		}
-
 		.divider {
 			margin-block: 2.4rem;
 		}
@@ -82,7 +80,7 @@
 
 	@include screenMax("mobile") {
 		.section_container {
-			padding: 1.6rem;
+            padding: 1.6rem;
 			.large_card {
 				margin-top: 1.6rem;
 				margin-bottom: 1.6rem;
