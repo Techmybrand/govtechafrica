@@ -51,24 +51,11 @@ const Reports = ({ blog, contentToShow }: ReportsProps) => {
                     <div className={styles.overview_authors_cta}>
                         <div className={styles.overview}>
                             <p>Overview</p>
-                            <h5>
-                                This publication is intended for informational and analytical purposes only. It does not constitute 
-                                investment, legal, or financial advice, and should not be relied upon as a basis for investment 
-                                decisions. While every effort has been made to ensure accuracy at the time of publication, figures 
-                                relating to disbursements, market size, and regulatory timelines are subject to change. Readers should 
-                                verify current terms directly with the relevant institutions before acting on any information 
-                                contained herein.
-                            </h5>
+                            <h5>{blog?.description}</h5>
                         </div>
                         <div className={styles.cta}>
                             <p>Download Report</p>
-                            <h4>
-                                {`This report is part of Govtech Africa’s "Following the Capital" series, tracking public and private 
-                                    investment flows across Africa’s Digital Public Infrastructure ecosystem. It draws on primary 
-                                    financing documents, official government publications, and market data, in accordance with Govtech 
-                                    Africa’s internal standards.
-                                `}
-                            </h4>
+                            <h4>{blog?.downloadText}</h4>
                             <button className={styles.download_btn}>
                                 <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" download rel="noopener noreferrer">
                                     <h5>Download PDF</h5>

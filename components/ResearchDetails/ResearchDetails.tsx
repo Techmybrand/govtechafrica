@@ -41,7 +41,7 @@ const ResearchDetails = () => {
         };
         fetchBlogDetails();
     }, [id, blogs]);
-    console.log('blog: ', blog);
+    // console.log('blog: ', blog);
     const relatedContent = blogs?.filter((relatedBlog) => relatedBlog?.type === blog?.type &&
         relatedBlog?.slug !== blog?.slug) ?? [];
     const contentToShow = relatedContent.length ? relatedContent.slice(0, 4) :

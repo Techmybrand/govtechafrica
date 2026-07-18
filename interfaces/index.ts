@@ -225,6 +225,7 @@ export interface BlogDetailsProps {
 	researchContent: Document;
 	tableOfContent?: string[];
 	externalUrl?: string;
+	downloadText?: string;
 }
 
 export interface PrivacyPolicyProps {
