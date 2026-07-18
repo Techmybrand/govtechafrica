@@ -6,7 +6,7 @@ import styles from "./DownloadSection.module.scss";
 
 const DownloadSection = () => {
   const [isShareModalOpen, setIsShareModalOpen] = useState<boolean>(false);
-  const reportUrl = "https://drive.google.com/file/d/1M19ZAYn1IxID4jztRaXrccxgylTpaIe_/view?usp=sharing";
+  const reportUrl = "https://f005.backblazeb2.com/file/GovtechAfrica/Nigeria+DPI+Readiness+Outlook+2026%2C+Govtech+Africa.pdf";
 
   return (
     <section className={styles["global_wrapper"]} id="download">

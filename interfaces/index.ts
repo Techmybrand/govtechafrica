@@ -1,5 +1,5 @@
-import { Document } from '@contentful/rich-text-types';
-import { MotionValue } from 'framer-motion';
+import { Document } from "@contentful/rich-text-types";
+import { MotionValue } from "framer-motion";
 export interface NavLinkMenu {
 	label: string;
 	id?: string;
@@ -224,6 +224,7 @@ export interface BlogDetailsProps {
 	publishedAt: string;
 	researchContent: Document;
 	tableOfContent?: string[];
+	externalUrl?: string;
 }
 
 export interface PrivacyPolicyProps {

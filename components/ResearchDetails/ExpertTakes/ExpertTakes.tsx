@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { RichText, ResearchCard, BackgrounderCard, ExpertTakeCard, Button } from "@/shared";
+import { RichText, ResearchCard, BackgrounderCard, ExpertTakeCard, Button, ReportCard } from "@/shared";
 // import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./ExpertTakes.module.scss";
@@ -103,11 +103,18 @@ const ExpertTakes = ({ blog, contentToShow }: ExpertTakesProps) => {
                                     slug={relatedBlog?.slug}
                                     date={relatedBlog?.date} publishedAt={relatedBlog?.publishedAt}
                                 />
-                            ) : relatedBlog?.type === "backgrounder" ? (
+                            ) : relatedBlog?.type.toLowerCase() === "backgrounder" ? (
                                 <BackgrounderCard key={index} title={relatedBlog?.title}
                                     image={`https:${relatedBlog?.thumbnail?.fields?.file?.url}`}
                                     slug={relatedBlog?.slug}
                                     date={relatedBlog?.date} publishedAt={relatedBlog?.publishedAt}
+                                />
+                            ) : relatedBlog?.type.toLowerCase() === "report" ? (
+                                <ReportCard key={index} title={relatedBlog?.title}
+                                    image={`https:${relatedBlog?.thumbnail?.fields?.file?.url}`}
+                                    slug={relatedBlog?.slug} date={relatedBlog?.date}
+                                    publishedAt={relatedBlog?.publishedAt}
+                                    externalUrl={relatedBlog?.externalUrl}
                                 />
                             ) : (
                                 <ResearchCard key={index} title={relatedBlog?.title}

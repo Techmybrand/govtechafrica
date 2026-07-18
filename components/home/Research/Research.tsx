@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { ResearchCard, BackgrounderCard, ExpertTakeCard, PolicyBriefCard } from "@/shared";
+import { ResearchCard, BackgrounderCard, ExpertTakeCard, PolicyBriefCard, ReportCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./Research.module.scss";
@@ -39,6 +39,7 @@ const Research = () => {
                     }
                     const type = blog?.type?.toLowerCase();
                     const getResearchType = type?.replace(' ', '-');
+                    const isReport = type === "report";
                     const isExpertTake = type === "perspective" ||
                         type === "opinion piece" || type === "insight";
                     const isPolicyBrief = type === "policy brief" || type === "case study";
@@ -59,8 +60,14 @@ const Research = () => {
                     ) : isPolicyBrief ? (
                         <PolicyBriefCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                            slug={blog?.slug} description={blog?.description}
-                            type={type} btnText={blog?.type}
+                            slug={blog?.slug} type={blog?.type}
+                            description={blog?.description}
+                            btnText={blog?.type}
+                        />
+                    ) : isReport ? (
+                        <ReportCard key={index} title={blog?.title} slug={blog?.slug} externalUrl={blog?.externalUrl}
+                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                            date={blog?.date} publishedAt={blog?.publishedAt}
                         />
                     ) : (
                         <ResearchCard key={index} title={blog?.title}

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { ResearchCard, Button, BackgrounderCard, ExpertTakeCard, PolicyBriefCard } from "@/shared";
+import { ResearchCard, Button, BackgrounderCard, ExpertTakeCard, PolicyBriefCard, ReportCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./RelatedInsights.module.scss";
@@ -31,14 +31,13 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
                     const isExpertTake = getType === "perspective" ||
                         getType === "opinion-piece" ||
                         getType === "insight";
+                    const isReport = getType === "report";
                     const isPolicyBrief = getType === "policy brief" || getType === "case study";
 
                     return blog?.type === 'backgrounder' ? (
                         <BackgrounderCard key={index} title={blog?.title}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                            slug={blog?.slug}
-                            date={blog?.date}
-                            publishedAt={blog?.publishedAt}
+                            slug={blog?.slug} date={blog?.date} publishedAt={blog?.publishedAt}
                         />
                     ) : isExpertTake ? (
                         <ExpertTakeCard key={index} title={blog?.title}
@@ -54,6 +53,11 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
                             slug={blog?.slug} type={blog?.type}
                             description={blog?.description}
                             btnText={blog?.type}
+                        />
+                    ) : isReport ? (
+                        <ReportCard key={index} title={blog?.title} slug={blog?.slug} externalUrl={blog?.externalUrl}
+                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                            date={blog?.date} publishedAt={blog?.publishedAt}
                         />
                     ) : (
                         <ResearchCard key={index} title={blog?.title}

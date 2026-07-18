@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Button, ResearchCard, BackgrounderCard, RichText } from "@/shared";
+import { Button, ResearchCard, BackgrounderCard, RichText, ExpertTakeCard, ReportCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
@@ -8,6 +8,7 @@ import { ChartLoader } from "@/shared/loaders";
 import { useParams, useSearchParams } from "next/navigation";
 import Backgrounders from "./Backgrounders/Backgrounders";
 import ExpertTakes from "./ExpertTakes/ExpertTakes";
+import Reports from "./Reports/Reports";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ResearchDetails.module.scss";
@@ -40,7 +41,7 @@ const ResearchDetails = () => {
         };
         fetchBlogDetails();
     }, [id, blogs]);
-    // console.log('blog: ', blog);
+    console.log('blog: ', blog);
     const relatedContent = blogs?.filter((relatedBlog) => relatedBlog?.type === blog?.type &&
         relatedBlog?.slug !== blog?.slug) ?? [];
     const contentToShow = relatedContent.length ? relatedContent.slice(0, 4) :
@@ -56,6 +57,8 @@ const ResearchDetails = () => {
                 <Backgrounders blog={blog} contentToShow={contentToShow} />
             ) : queryArticleType === "expert-take" ? (
                 <ExpertTakes blog={blog} contentToShow={contentToShow} />
+            ) : queryArticleType === "report" ? (
+                <Reports blog={blog} contentToShow={contentToShow} />
             ) : (
                 <article>
                     <header className={styles.details_content}>
@@ -160,24 +163,37 @@ const ResearchDetails = () => {
                                 <h2>Related Insights</h2>
                             </div>
                             <div className={styles.research_wrapper}>
-                                {contentToShow?.map((blog: BlogDetailsProps, index: number) =>
-                                    blog?.type === 'backgrounder' ? (
-                                        <BackgrounderCard key={index} title={blog?.title}
-                                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                                            slug={blog?.slug}
-                                            date={blog?.date}
-                                            publishedAt={blog?.publishedAt}
-                                        />
-                                    ) : (
-                                        <ResearchCard key={index} title={blog?.title}
-                                            image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                                            alt={`https:${blog?.thumbnail?.fields?.description}`}
-                                            description={blog?.description}
-                                            btnText={blog?.type}
-                                            slug={blog?.slug}
-                                        />
-                                    )
-                                )}
+                                {contentToShow?.map((blog: BlogDetailsProps, index: number) =>(
+                                    blog?.type.toLowerCase() === 'perspective' || blog?.type.toLowerCase() === "opinion piece" || 
+                                    blog?.type.toLowerCase() === "insight"
+                                ) ? (
+                                    <ExpertTakeCard key={index} title={blog?.title}
+                                        image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                                        slug={blog?.slug}
+                                        date={blog?.date} publishedAt={blog?.publishedAt}
+                                    />
+                                ) : blog?.type.toLowerCase() === "backgrounder" ? (
+                                    <BackgrounderCard key={index} title={blog?.title}
+                                        image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                                        slug={blog?.slug}
+                                        date={blog?.date} publishedAt={blog?.publishedAt}
+                                    />
+                                ) : blog?.type.toLowerCase() === "report" ? (
+                                    <ReportCard key={index} title={blog?.title}
+                                        image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                                        slug={blog?.slug} date={blog?.date}
+                                        publishedAt={blog?.publishedAt}
+                                        externalUrl={blog?.externalUrl}
+                                    />
+                                ) : (
+                                    <ResearchCard key={index} title={blog?.title}
+                                        image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+                                        alt={`https:${blog?.thumbnail?.fields?.description}`}
+                                        description={blog?.description}
+                                        btnText={blog?.type}
+                                        slug={blog?.slug}
+                                    />
+                                ))}
                             </div>
                             <Button className={styles.explore_btn} href="/insights">
                                 See more
