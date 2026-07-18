@@ -1,0 +1,129 @@
+@import "@/styles/imports";
+
+.card_link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.card_container {
+    width: 100%;
+    min-height: 50.5rem;
+    margin-block: 1.6rem;
+    border: 0.2rem solid #1A1A1A;
+    background-color: #F1EDE4;
+    // transition: transform 0.2s ease;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    &:hover {
+        scale: 1.06;
+        .top_section {
+            a {
+                .title {
+                    color: #00BF4D;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .top_section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 3.2rem 2.4rem;
+        .tag {
+            font-family: $font;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.1rem;
+            color: #1A1A1A;
+            border: 0.1rem solid #1A1A1A;
+            padding: 0.4rem 1.2rem;
+            margin-bottom: 2.4rem;
+            text-transform: uppercase;
+        }
+        a {
+            .title {
+                font-family: $font-gothic-bold, Georgia, serif;
+                font-size: 1.6rem;
+                font-weight: 700;
+                font-style: italic;
+                color: #1A1A1A;
+                line-height: 1.4;
+                text-align: left;
+                transition: color 0.2s ease;
+            }
+        }
+        .date {
+            font-family: $font;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: #555555;
+            margin-top: 3.2rem;
+        }
+    }
+    .bottom_section {
+        height: 25rem;
+        width: 100%;
+        .image_wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@include screenMax("tablet") {
+    .card_container {
+        min-height: 44rem;
+        .top_section {
+            padding: 2.4rem 1.6rem;
+            a {
+                .title {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .bottom_section {
+            height: 23rem;
+        }
+    }
+}
+
+@include screenMax("mobile") {
+    .card_container {
+        min-height: 40rem;
+        flex-shrink: 0;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin-block: 0.8rem;
+        .top_section {
+            padding: 2rem 1.6rem;
+            .tag {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+                margin-bottom: 1.6rem;
+            }
+            a {
+                .title {
+                    font-size: 1.4rem;
+                }
+            }
+            .date {
+                font-size: 1.4rem;
+                line-height: 2rem;
+                margin-top: 1.6rem;
+            }
+        }
+    }
+}

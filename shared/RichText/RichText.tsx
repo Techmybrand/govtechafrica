@@ -71,6 +71,28 @@ const RichText: React.FC<RichTextProps> = ({ content, type }: RichTextProps) => 
       [BLOCKS.HEADING_4]: (node: Block, children: React.ReactNode) => (
         <h4 className={styles.heading4}>{children}</h4>
       ),
+      [BLOCKS.TABLE]: (node: Block, children: React.ReactNode) => (
+        <div className={styles.table_container}>
+          <table className={styles.table}>
+            {children}
+          </table>
+        </div>
+      ),
+      [BLOCKS.TABLE_HEADER_CELL]: (node: Block, children: React.ReactNode) => (
+        <th className={styles.table_header_cell}>
+          {children}
+        </th>
+      ),
+      [BLOCKS.TABLE_ROW]: (node: Block, children: React.ReactNode) => (
+        <tr className={styles.tr}>
+          {children}
+        </tr>
+      ),
+      [BLOCKS.TABLE_CELL]: (node: Block, children: React.ReactNode) => (
+        <td className={styles.td}>
+          {children}
+        </td>
+      ),
       [BLOCKS.HEADING_5]: (node: Block, children: React.ReactNode) => (
         <h5 className={styles.heading5}>{children}</h5>
       ),

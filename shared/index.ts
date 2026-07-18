@@ -22,6 +22,7 @@ import ResearchCard from "./ResearchCard/ResearchCard";
 import BackgrounderCard from "./ResearchCard/BackgrounderCard/BackgrounderCard";
 import ExpertTakeCard from "./ResearchCard/ExpertTakeCard/ExpertTakeCard";
 import PolicyBriefCard from "./ResearchCard/PolicyBriefCard/PolicyBriefCard";
+import ReportCard from "./ResearchCard/ReportCard/ReportCard";
 import RichText from "./RichText/RichText";
 import Searchbar from "./Searchbar/Searchbar";
 import Select from "./select/Select";
@@ -71,4 +72,5 @@ export {
     BackgrounderCard,
     ExpertTakeCard,
     PolicyBriefCard,
+    ReportCard,
 };
