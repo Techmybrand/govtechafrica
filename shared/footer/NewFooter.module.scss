@@ -20,6 +20,7 @@
 .newsletter_positioner {
     position: relative;
     margin-bottom: -25rem;
+    display: none;
     z-index: 6;
     @include screenMax("mobile") {
         margin-bottom: -20rem;
@@ -160,6 +161,11 @@
         gap: 1.6rem;
         li {
             list-style: none;
+            &[data-active='false'] {
+                opacity: 0.2;
+                pointer-events: none;
+                cursor: not-allowed;
+            }
             a, .cookie_trigger {
                 font-family: $font;
                 font-size: 1.6rem;

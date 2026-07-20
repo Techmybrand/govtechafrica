@@ -36,6 +36,9 @@
                         object-fit: cover;
                     }
                 }
+                & > img {
+                    object-fit: cover;
+                }
             }
             .content_body {
                 width: 40%;

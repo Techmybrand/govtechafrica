@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { NewsLetter } from "@/components/home";
 import { Button, InputField, TextArea } from "@/shared";
 import { socialMediaLinks } from "@/mock/navLists.mock";
 import Link from "next/link";
@@ -38,7 +37,7 @@ const ContactView = () => {
 						<InputField placeholder="ROLE/FUNCTION" />
 						<InputField placeholder="COUNTRY/REGION" />
 						<TextArea placeholder="MESSAGE" className={styles.textarea} />
-						<Button className={styles.button}>
+						<Button type="button" className={styles.button}>
 							Send us a message
 						</Button>
 					</form>
@@ -57,18 +56,18 @@ const ContactView = () => {
 									src="/svgs/telephone_icon.svg"
 								/>
 							</div>
-							<p>Benjamin Uche</p>
+							<p>Benjamin Odigie</p>
+							<Link href='tel:+234 704 330 1832'
+								target="_blank" rel="noreferrer"
+							>
+								<h6>+234 704 330 1832</h6>
+							</Link>
+							{/* <p>Benjamin Uche</p>
 							<Link href='tel:+234 900 000 0000'
 								target="_blank" rel="noreferrer"
 							>
 								<h6>+234 900 000 0000</h6>
-							</Link>
-							<p>Benjamin Uche</p>
-							<Link href='tel:+234 900 000 0000'
-								target="_blank" rel="noreferrer"
-							>
-								<h6>+234 900 000 0000</h6>
-							</Link>
+							</Link> */}
 						</div>
 						<div className={styles.email_channel}>
 							<div className={styles.msg_icon}>
@@ -108,7 +107,6 @@ const ContactView = () => {
 					</div>
 				</div>
 			</div>
-			<NewsLetter />
 		</div>
 	);
 };

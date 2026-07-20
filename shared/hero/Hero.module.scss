@@ -285,6 +285,7 @@
 
 	@include screenMax('mobile') {
 		margin-bottom: 5.6rem;
+		min-height: auto;
 		.hero_container {
 			padding: 7.5rem 0 0;
 			.hero_background {
@@ -349,6 +350,17 @@
 		&[data-type="home"] {
 			.hero_container {
 				padding: 0;
+				.hero_background {
+					height: 70vh;
+					.hero_image__container {
+						.hero_image {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							flex-direction: column;
+						}
+					}
+				}
 			}
 		}
 		&[data-type="are"] {

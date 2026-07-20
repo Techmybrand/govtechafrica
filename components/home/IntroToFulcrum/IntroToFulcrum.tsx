@@ -22,7 +22,9 @@ const IntroToFulcrum = () => {
 					<div className={styles.left_column}>
 						<div className={styles.section_title_wrapper}>
 							<div className={styles.vertical_accent_line}></div>
-							<h3 className={styles.title_label}>Fulcrum</h3>
+							<div className={styles.fulcrum_section_icon}>
+								<Image alt="fulcrum_section_logo" fill src="/svgs/fulcrum_section_icon.svg" />
+							</div>
 						</div>
 
 						<div className={styles.illustration_wrapper}>

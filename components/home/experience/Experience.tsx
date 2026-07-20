@@ -220,6 +220,7 @@ const Experience = () => {
 									<Image src={card.image} alt={card.title} fill
 										sizes="100vw"
 									/>
+									<div className={styles.overlay_mob} />
 								</div>
 								<div className={styles.blue_overlay} />
 								<div className={styles.lottie_badge}>
