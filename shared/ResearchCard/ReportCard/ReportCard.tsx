@@ -34,14 +34,16 @@ const ReportCard = ({ image, title, slug, date, publishedAt, externalUrl }: Repo
                 </div>
             </div>
             <div className={styles.top_section}>
-                <Link href={`${externalUrl ? externalUrl : `/insights/research/${slug}?type=report`}`}>
-                    <h2 className={styles.title}>
-                        {title}
-                    </h2>
-                </Link>
-                <p className={styles.date}>
-                    {date ? formatDate(date) : publishedAt || ''}
-                </p>
+                <div className={styles.title_and_date}>
+                    <Link href={`${externalUrl ? externalUrl : `/insights/research/${slug}?type=report`}`}>
+                        <h2 className={styles.title}>
+                            {title}
+                        </h2>
+                    </Link>
+                    <p className={styles.date}>
+                        {date ? formatDate(date) : publishedAt || ''}
+                    </p>
+                </div>
                 <div className={styles.tag}>
                     REPORT
                 </div>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import { Button } from "@/shared";
-import { motion, useTransform, useScroll, useSpring, AnimatePresence } from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 import styles from "./NPGR.module.scss";
 
@@ -13,8 +13,21 @@ const images = [
     "/images/quantum_technologies.png",
 ];
 
+// const flagShipEvents = [
+//     {
+//         title: "National Govtech Policy Rountable 2026",
+//         image: "/images/npgr_section.png",
+//         url: "/policy-roundtable",
+//     },
+//     {
+//         title: "Africa Govtech Week 2027",
+//         image: "/images/afri",
+//         url: "https://africagovtechweek.com"
+//     },
+// ]
+
 const NPGR = () => {
-    const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [, setCurrentIndex] = useState<number>(0);
     const sectionRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -43,10 +56,10 @@ const NPGR = () => {
     return (
         <div ref={sectionRef} className={styles.npgr_container}>
             <motion.div style={{ y, opacity }} className={styles.section_container}>
-                <h2>Our Flagship Event</h2>
+                <h2>Our Flagship Events</h2>
                 <div className={styles.npgr_content}>
                     <div className={styles.npgr_image}>
-                        <AnimatePresence mode="wait">
+                        {/* <AnimatePresence mode="wait">
                             <motion.div
                                 key={currentIndex}
                                 initial={{ opacity: 0, x: 15 }}
@@ -57,7 +70,8 @@ const NPGR = () => {
                             >
                                 <Image alt="" fill src={images[currentIndex]} />
                             </motion.div>
-                        </AnimatePresence>
+                        </AnimatePresence> */}
+                        <Image alt="" fill src="/images/npgr_section.png" />
                     </div>
                     <div className={styles.content_body}>
                         <div className={styles.btn_and_text}>

@@ -3,12 +3,13 @@
 .backgrounders {
     width: 100%;
     position: relative;
+    border-color: #000000!important;
     .details_content {
         max-width: $max-width;
         margin-inline: auto;
         padding: 0 3.6rem !important;
         .details_header {
-            width: 92%;
+            width: 85%;
             margin-inline: auto;
             padding: 3.2rem 0;
             border: 0.1rem solid #FFFFFF1F;
@@ -43,7 +44,7 @@
             .header_details {
                 width: 100%;
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: space-between;
                 margin-top: 4.8rem;
                 .banner_image {
@@ -53,13 +54,14 @@
                     flex-shrink: 0;
                     &>img {
                         object-fit: cover;
+                        object-position: 0 0;
                     }
                 }
                 .name_type_and_date {
                     max-width: 60rem;
                     max-height: 54rem;
                     .tag_and_name {
-                        padding-block: 4rem;
+                        // padding-block: 4rem;
                         margin-bottom: 4rem;
                         .tag {
                             font-family: $font;
@@ -176,148 +178,150 @@
             }
         }
         .main_layout {
-            display: flex;
-            align-items: flex-start;
-            gap: 8rem;
-            margin-top: 4rem;
-            width: 92%;
-            margin-inline: auto;
+            width: 85%;
+            margin: 4rem auto 0;
             .sidebar {
-                width: 30%;
-                flex-shrink: 0;
-                position: sticky;
-                top: 13.5rem;
-                .table_of_contents_sticky {
-                    background: transparent;
-                    padding: 0;
-                    border-radius: 1.6rem;
-                    .h2 {
-                        font-size: 2.4rem;
-                        font-family: $font-gothic-bold;
-                        color: #111021;
-                        margin-bottom: 2.4rem;
-                        padding-bottom: 1.6rem;
-                        border-bottom: 0.1rem solid #333;
-                    }
-                    .toc_content {
-                        font-family: $font;
-                        color: #2D2B4A;
-                        line-height: 1.6;
-                        ul {
-                            padding-left: 1.6rem;
+                display: none;
+            }
+            .content_body {
+                width: 100%;
+                .research_details {
+                        h2 {
+                            scroll-margin-top: 14rem;
+                        }
+                        h3,
+                        h2,
+                        h1,
+                        h4,
+                        h5,
+                        h6,
+                        p {
+                            color: #111021 !important;
+                            &>b,
+                            i {
+                                color: #111021 !important;
+                                &>u {
+                                    color: #111021 !important;
+                                }
+                            }
+                        }
+                        ul,
+                        ol {
                             li {
-                                list-style-type: disclosure-closed;
-                                margin-bottom: 1.2rem;
-                                font-size: 1.4rem;
-                                color: #2D2B4A;
+                                color: #111021 !important;
+                                &::marker {
+                                    color: #111021 !important;
+                                    font-family: $font-gothic-bold;
+                                }
+                            }
+                        }
+                    }
+                    .written_by_bottom {
+                        width: 100%;
+                        margin-top: 6.4rem;
+                        scroll-margin-top: 14rem;
+                        padding-top: 4.8rem;
+                        border-top: 0.1rem solid #202020;
+                        h2 {
+                            font-size: 2rem;
+                            font-family: $font;
+                            font-weight: 700;
+                            color: #00BF4D;
+                        }
+                        .line {
+                            margin-top: 2rem;
+                            width: 100%;
+                            height: 0.1rem;
+                            background: #202020;
+                        }
+                        .writer_details_container {
+                            width: 100%;
+                            .writer_details {
+                                display: flex;
+                                align-items: flex-start;
+                                justify-content: space-between;
+                                padding-block: 2.4rem;
+                                border-bottom: 0.1rem solid #202020;
+                                width: 100%;
+                                .name_and_role {
+                                    h4 {
+                                        font-size: 1.8rem;
+                                        color: #111021;
+                                        font-family: $font-gothic;
+                                        margin-bottom: 0.8rem;
+                                    }
+                                    h6 {
+                                        font-size: 1.4rem;
+                                        font-family: $font;
+                                        color: #A2A2A0;
+                                    }
+                                }
                                 a {
-                                    color: #2D2B4A;
-                                    transition: color 0.2s ease;
+                                    width: 2.8rem;
+                                    height: 2.8rem;
+                                    .details_linkedin {
+                                        position: relative;
+                                        width: 2.8rem;
+                                        height: 2.8rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+            }
+            &[data-aside="true"] {
+                display: flex;
+                align-items: flex-start;
+                gap: 8rem;
+                margin-top: 4rem;
+                width: 85%;
+                margin-inline: auto;
+                .sidebar {
+                    width: 30%;
+                    flex-shrink: 0;
+                    position: sticky;
+                    top: 13.5rem;
+                    .table_of_contents_sticky {
+                        background: transparent;
+                        padding: 0;
+                        border-radius: 1.6rem;
+                        .h2 {
+                            font-size: 2.4rem;
+                            font-family: $font-gothic-bold;
+                            color: #111021;
+                            margin-bottom: 2.4rem;
+                            padding-bottom: 1.6rem;
+                            border-bottom: 0.1rem solid #333;
+                        }
+                        .toc_content {
+                            font-family: $font;
+                            color: #2D2B4A;
+                            line-height: 1.6;
+                            ul {
+                                padding-left: 1.6rem;
+                                li {
+                                    list-style-type: disclosure-closed;
+                                    margin-bottom: 1.2rem;
                                     font-size: 1.4rem;
-                                    line-height: 2rem;
-                                    &:hover {
-                                        color: #00BF4D;
+                                    color: #2D2B4A;
+                                    a {
+                                        color: #2D2B4A;
+                                        transition: color 0.2s ease;
+                                        font-size: 1.4rem;
+                                        line-height: 2rem;
+                                        &:hover {
+                                            color: #00BF4D;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
-            }
-            .content_body {
-                width: 65%;
-                .research_details {
-                    h2 {
-                        scroll-margin-top: 14rem;
-                    }
-                    h3,
-                    h2,
-                    h1,
-                    h4,
-                    h5,
-                    h6,
-                    p {
-                        color: #111021 !important;
-                        &>b,
-                        i {
-                            color: #111021 !important;
-                            &>u {
-                                color: #111021 !important;
-                            }
-                        }
-                    }
-                    ul,
-                    ol {
-                        li {
-                            color: #111021 !important;
-                            &::marker {
-                                color: #111021 !important;
-                                font-family: $font-gothic-bold;
-                            }
-                        }
-                    }
-                }
-                .written_by_bottom {
-                    width: 100%;
-                    margin-top: 6.4rem;
-                    scroll-margin-top: 14rem;
-                    padding-top: 4.8rem;
-                    border-top: 0.1rem solid #202020;
-                    h2 {
-                        font-size: 2rem;
-                        font-family: $font;
-                        font-weight: 700;
-                        color: #00BF4D;
-                    }
-                    .line {
-                        margin-top: 2rem;
-                        width: 100%;
-                        height: 0.1rem;
-                        background: #202020;
-                    }
-                    .writer_details_container {
-                        width: 100%;
-                        .writer_details {
-                            display: flex;
-                            align-items: flex-start;
-                            justify-content: space-between;
-                            padding-block: 2.4rem;
-                            border-bottom: 0.1rem solid #202020;
-                            width: 100%;
-                            .name_and_role {
-                                h4 {
-                                    font-size: 1.8rem;
-                                    color: #111021;
-                                    font-family: $font-gothic;
-                                    margin-bottom: 0.8rem;
-                                }
-                                h6 {
-                                    font-size: 1.4rem;
-                                    font-family: $font;
-                                    color: #A2A2A0;
-                                }
-                            }
-                            a {
-                                width: 2.8rem;
-                                height: 2.8rem;
-                                .details_linkedin {
-                                    position: relative;
-                                    width: 2.8rem;
-                                    height: 2.8rem;
-                                }
-                            }
-                        }
-                    }
-                }
-            } 
-            &[data-aside="false"] {
-                width: 80%;
-                .sidebar {
-                    display: none;
-                }
                 .content_body {
-                    width: 100%;
-                }
+                    width: 65%;
+                    
+                } 
             }
         }
         .related_insights {
@@ -338,7 +342,7 @@
             }
             .explore_btn {
                 width: 16rem;
-                height: 4.5rem;
+                height: 5.6rem;
                 margin-top: 4.8rem;
                 background-color: #000000!important;
                 p {
@@ -367,7 +371,7 @@
         .details_content {
             padding: 0 2.4rem !important;
             .details_header {
-                width: 95%;
+                width: 90%;
                 padding: 2.4rem 2.4rem 2.4rem 0;
                 .breadcrumbs {
                     a {
@@ -394,7 +398,7 @@
                     .name_type_and_date {
                         max-width: 45rem;
                         .tag_and_name {
-                            padding-block: 3.6rem;
+                            // padding-block: 3.6rem;
                             margin-bottom: 3.2rem;
                             .tag {
                                 margin-bottom: 0;
@@ -430,7 +434,7 @@
                 }
             }
             .main_layout {
-                width: 95%;
+                width: 90%;
                 gap: 6rem;
                 .sidebar {
                     width: 32%;
@@ -479,13 +483,17 @@
                     }
                 }
                 &[data-aside="false"] {
-                    width: 85%;
+                    width: 90%;
                 }
             }
             .related_insights {
                 margin-block: 8rem;
                 .research_wrapper {
                     @include grid(repeat(2, 1fr), 9.6rem);
+                }
+                .explore_btn {
+                    height: 4.8rem;
+                    margin-top: 4rem;
                 }
             }
         }
@@ -661,10 +669,18 @@
                     overflow-x: scroll;
                     width: 100%;
                 }
+                .explore_btn {
+                    height: 4.4rem;
+                    margin-top: 3.2rem;
+                }
             }
         }
         .divider {
             display: none;
         }
     }
+}
+
+.research_details table, .research_details table td, .research_details table tr {
+    border-color: #000000!important;
 }
