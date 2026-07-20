@@ -7,8 +7,13 @@ import Globe from "@/shared/Globe/Globe";
 
 const CenterPieceV2 = () => {
     const centerpieceRef = useRef<HTMLDivElement>(null);
+    const textRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: centerpieceRef,
+        offset: ["start end", "end center"]
+    });
+    const { scrollYProgress: textScrollYProgress } = useScroll({
+        target: textRef,
         offset: ["start end", "end center"]
     });
 
@@ -25,6 +30,19 @@ const CenterPieceV2 = () => {
         mass: 0.5
     });
 
+    const rawTextX = useTransform(textScrollYProgress, [0.1, 0.45], [450, 0]);
+    const textX = useSpring(rawTextX, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
+    const rawTextOpacity = useTransform(textScrollYProgress, [0.1, 0.4], [0, 1]);
+    const textOpacity = useSpring(rawTextOpacity, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
+
     return (
         <div ref={centerpieceRef} className={styles.section}>
             <motion.div style={{ y, opacity }} className={styles.section_container}>
@@ -35,13 +53,13 @@ const CenterPieceV2 = () => {
                     </h2>
                 </div>
 
-                <div className={styles.globe_container}>
-                    <div className={styles.text_left}>
+                <div ref={textRef} className={styles.globe_container}>
+                    <motion.div style={{ y: textX, opacity: textOpacity }} className={styles.text_left}>
                         <p><span>Through</span> collaboration, capacity building, and scalable
                             solutions, <span>we are committed to</span> reimagining what
                             governance can achieve in today&apos;s digital era.
                         </p>
-                    </div>
+                    </motion.div>
 
                     <div className={styles.globe_image}>
                         <div data-index={1} className={styles.ellipse_item}>
@@ -82,33 +100,3 @@ const CenterPieceV2 = () => {
 };
 
 export default CenterPieceV2;
-
-
-// @keyframes spinGlobe {
-// 	from {
-// 		transform: rotateY(0deg);
-// 	}
-
-// 	to {
-// 		transform: rotateY(360deg);
-// 	}
-// }
-
-// @keyframes spinDotted {
-// 	from {
-// 		transform: rotate(0deg);
-// 	}
-
-// 	to {
-// 		transform: rotate(360deg);
-// 	}
-// }
-// @keyframes spinDottedReverse {
-// 	from {
-// 		transform: rotate(360deg);
-// 	}
-
-// 	to {
-// 		transform: rotate(0deg);
-// 	}
-// }

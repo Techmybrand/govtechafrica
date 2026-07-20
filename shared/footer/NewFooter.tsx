@@ -39,7 +39,7 @@ const NewFooter = () => {
                                     <div className={styles.link_column} key={index}>
                                         <ul>
                                             {link.subMenu?.map((menu, subIndex: number) => (
-                                                <li key={subIndex}>
+                                                <li data-active={menu?.isHref} key={subIndex}>
                                                     {menu.isCookie ? (
                                                         <div onClick={() => setOpenModal(true)} className={styles.cookie_trigger}>
                                                             {menu.label}

@@ -173,7 +173,7 @@ export const navLinks: NavLink[] = [
 				label: "reports",
 				// icon: "/svgs/link-ai.svg",
 				icon: "/svgs/link-main.svg",
-				href: "/reports/nigeria-dpi"
+				href: "/reports"
 			},
 		]
 	}
