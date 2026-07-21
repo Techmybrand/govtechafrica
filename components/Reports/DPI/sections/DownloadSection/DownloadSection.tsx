@@ -6,8 +6,7 @@ import styles from "./DownloadSection.module.scss";
 
 const DownloadSection = () => {
   const [isShareModalOpen, setIsShareModalOpen] = useState<boolean>(false);
-  const currentUrl = new URL(window.location.href);
-  const shareUrl = `${currentUrl?.origin}/reports/nigeria-dpi`
+  const shareUrl = `https://govtechafrica.com/reports/nigeria-dpi`
   const reportUrl = "https://f005.backblazeb2.com/file/GovtechAfrica/Nigeria+DPI+Readiness+Outlook+2026%2C+Govtech+Africa.pdf";
 
   return (
