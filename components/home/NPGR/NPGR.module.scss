@@ -60,18 +60,31 @@
                         }
                     }
                 }
-                .btn {
-                    width: 6.4rem;
-                    height: 6.4rem;
-                    border: 0.1rem solid #FFF;
-                    border-radius: 50%;
+                .btns {
                     display: flex;
                     align-items: center;
-                    justify-content: center;
-                    .btn_icon {
-                        width: 2.4rem;
-                        height: 2.4rem;
-                        position: relative;
+                    gap: 1.6rem;
+                    .btn {
+                        width: 6.4rem;
+                        height: 6.4rem;
+                        border: 0.1rem solid #FFF;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        &.disabled {
+                            opacity: 0.5;
+                            cursor: not-allowed;
+                            pointer-events: none;
+                        }
+
+                        .btn_icon {
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            position: relative;
+                        }
                     }
                 }
             }
@@ -102,12 +115,17 @@
                             margin-top: 8rem;
                         }
                     }
-                    .btn {
-                        width: 5.6rem;
-                        height: 5.6rem;
-                        .btn_icon {
-                            width: 2rem;
-                            height: 2rem;
+                    .btns {
+                        display: flex;
+                        align-items: center;
+                        gap: 1.2rem;
+                        .btn {
+                            width: 5.6rem;
+                            height: 5.6rem;
+                            .btn_icon {
+                                width: 2rem;
+                                height: 2rem;
+                            }
                         }
                     }
                 }
@@ -156,12 +174,17 @@
                             }
                         }
                     }
-                    .btn {
-                        width: 3.6rem;
-                        height: 3.6rem;
-                        .btn_icon {
-                            width: 1.6rem;
-                            height: 1.6rem;
+                    .btns {
+                        display: flex;
+                        align-items: center;
+                        gap: 1.2rem;
+                        .btn {
+                            width: 3.6rem;
+                            height: 3.6rem;
+                            .btn_icon {
+                                width: 1.6rem;
+                                height: 1.6rem;
+                            }
                         }
                     }
                 }

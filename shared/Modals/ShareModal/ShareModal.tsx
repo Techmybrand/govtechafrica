@@ -33,6 +33,7 @@ const ShareModal = ({ isOpen, onClose, shareUrl, title = "Share" }: ShareModalPr
     const handleCopyLink = () => {
         navigator.clipboard.writeText(shareUrl).then(() => {
             setCopied(true);
+            toast.success("Link copied!");
             setTimeout(() => setCopied(false), 2000);
         }).catch((err: any) => {
             console.error("Failed to copy text: ", err);

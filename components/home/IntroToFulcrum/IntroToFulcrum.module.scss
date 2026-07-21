@@ -244,9 +244,12 @@
             .vertical_accent_line {
                 height: 2.4rem;
             }
-            .title_label {
-                font-size: 2.4rem;
-                line-height: 1.5;
+            .fulcrum_section_icon {
+                width: 14rem;
+                height: 2.4rem;
+                img {
+                    object-fit: contain;
+                }
             }
         }
         .illustration_wrapper {

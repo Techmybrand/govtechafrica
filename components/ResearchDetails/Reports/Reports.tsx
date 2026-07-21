@@ -12,7 +12,7 @@ interface ReportsProps {
 }
 
 const Reports = ({ blog, contentToShow }: ReportsProps) => {
-    const currentUrl = new URL(window.location.href);
+    const currentUrl = new URL(window?.location?.href);
     currentUrl.hash = "";
     const isAsideVisible = blog?.tableOfContent && blog?.tableOfContent?.length > 0;
     return (
@@ -43,7 +43,7 @@ const Reports = ({ blog, contentToShow }: ReportsProps) => {
                         {blog?.bannerImage?.fields?.file?.url && (
                             <div className={styles.banner_image}>
                                 <Image alt="" fill src={`https:${blog?.bannerImage?.fields?.file?.url}`}
-                                    sizes="100%" loading="lazy"
+                                    sizes="100%" priority
                                 />
                             </div>
                         )}

@@ -1,26 +1,12 @@
 "use client";
 // import fs from "fs";
-// import path from "path";
 import { useEffect } from "react";
-import { ResearchCard, BackgrounderCard, ExpertTakeCard, PolicyBriefCard } from "@/shared";
+import { ResearchCard, BackgrounderCard, ExpertTakeCard, PolicyBriefCard, ReportCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./BlogView.module.scss";
 
-// type Post = {
-// 	id: number;
-// 	title: string;
-// 	content: string;
-// 	category: string;
-// 	description: string;
-// 	banner: string;
-// };
-
 export default function BlogView() {
-	// const filePath = path.join(process.cwd(), "data", "posts.json");
-	// const posts: Post[] = fs.existsSync(filePath)
-	// 	? (JSON.parse(fs.readFileSync(filePath, "utf8")) as Post[]) : [];
-	// console.log(posts);
 	const { fetchBlogs, sortedBlogs: insightsList } = useGetContentful();
 	useEffect(() => {
 		fetchBlogs();
@@ -33,12 +19,7 @@ export default function BlogView() {
 				<div className={styles.large_card}>
 					<div className={styles.details}>
 						<h2>Insights</h2>
-						{/* <p>
-							Elevating decision-making with secure and intelligent data
-							processing, analytics and operational AI
-						</p> */}
 					</div>
-					<div className={styles.grad}></div>
 				</div>
 				<div className={styles.divider1}></div>
 				{!insightsList?.length ? (
@@ -52,6 +33,7 @@ export default function BlogView() {
 								getType === "opinion piece" ||
 								getType === "insight";
 							const isPolicyBrief = getType === "policy brief" || getType === "case study";
+							const isReport = getType === "report";
 
 							return blog?.type === 'backgrounder' ? (
 								<BackgrounderCard key={index} title={blog?.title}
@@ -69,7 +51,13 @@ export default function BlogView() {
 									author={blog?.authors?.[0]}
 									type={blog?.type}
 								/>
-							) : isPolicyBrief ? (
+							) : isReport ? (
+								<ReportCard key={index} title={blog?.title} slug={blog?.slug} date={blog?.date}
+									publishedAt={blog?.publishedAt} externalUrl={blog?.externalUrl}
+									image={`https:${blog?.thumbnail?.fields?.file?.url}`}
+								/>
+							) :
+							 isPolicyBrief ? (
 								<PolicyBriefCard key={index} title={blog?.title}
 									image={`https:${blog?.thumbnail?.fields?.file?.url}`}
 									slug={blog?.slug} description={blog?.description}
