@@ -1,51 +1,21 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button, ResearchCard, BackgrounderCard, RichText, ExpertTakeCard, ReportCard } from "@/shared";
-import { useGetContentful } from "@/hooks";
 import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
 import { ChartLoader } from "@/shared/loaders";
-import { useParams, useSearchParams } from "next/navigation";
 import Backgrounders from "./Backgrounders/Backgrounders";
 import ExpertTakes from "./ExpertTakes/ExpertTakes";
 import Reports from "./Reports/Reports";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ResearchDetails.module.scss";
+interface ResearchDetailsProps {
+    blog?: BlogDetailsProps;
+    contentToShow: BlogDetailsProps[];
+    queryArticleType: string | null;
+}
 
-const ResearchDetails = () => {
-    const params = useParams();
-    const query = useSearchParams();
-    const queryArticleType = query?.get('type');
-    const { id } = params as { id: string };
-    const { blogs, fetchBlogs } = useGetContentful();
-    const [blog, setBlog] = useState<BlogDetailsProps>();
-
-    useEffect(() => {
-        fetchBlogs();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    useEffect(() => {
-        const fetchBlogDetails = () => {
-            if (id && (blogs && blogs?.length)) {
-                const foundBlog = blogs?.find((blog: BlogDetailsProps) =>
-                    // blog?.title?.toLowerCase().replace(":", '').replace(/\s+/g, '-')?.slice(0, 20)
-                    blog?.slug?.toLowerCase()
-                    ===
-                    id.toLowerCase()
-                    // id.slice(0, 20)
-                );
-                setBlog(foundBlog);
-            }
-        };
-        fetchBlogDetails();
-    }, [id, blogs]);
-    // console.log('blog: ', blog);
-    const relatedContent = blogs?.filter((relatedBlog) => relatedBlog?.type === blog?.type &&
-        relatedBlog?.slug !== blog?.slug) ?? [];
-    const contentToShow = relatedContent.length ? relatedContent.slice(0, 4) :
-        blogs?.reverse().filter((relatedBlog) => relatedBlog?.slug !== blog?.slug).slice(0, 4);
+const ResearchDetails = ({ blog, contentToShow, queryArticleType }: ResearchDetailsProps) => {
 
     return (
         <main data-type={queryArticleType} className={styles.details_container}>
@@ -67,11 +37,7 @@ const ResearchDetails = () => {
                             <h1>{blog?.title}</h1>
                             <div className={styles.time_and_date}>
                                 <h4>
-                                    {blog?.readTime === "1" ?
-                                        `${blog?.readTime} min read`
-                                    : 
-                                        `${blog?.readTime} mins read`
-                                    }
+                                    {blog?.readTime === "1" ? `${blog?.readTime} min read` : `${blog?.readTime} mins read`}
                                 </h4>
                                 <h4>{blog?.date ? formatDate(blog?.date) : blog?.publishedAt}</h4>
                             </div>
@@ -80,7 +46,7 @@ const ResearchDetails = () => {
                             {blog?.bannerImage?.fields?.file?.url && (
                                 <div className={styles.banner_image}>
                                     <Image alt="" fill src={`https:${blog?.bannerImage?.fields?.file?.url}`}
-                                        sizes="100%" loading="lazy"
+                                        sizes="100%" priority
                                     />
                                 </div>
                             )}

@@ -39,6 +39,7 @@ export async function getResearchPostByTitle(titleSlug: string) {
     'fields.blogTitle[match]': titleSlug?.replace(/-/g, ' '),
   });
   const blog = entries?.items[0]?.fields || null;
+  console.log("blog: ", blog);
   if (blog && formatURL(blog.blogTitle as string) === titleSlug) {
     return blog;
   }
