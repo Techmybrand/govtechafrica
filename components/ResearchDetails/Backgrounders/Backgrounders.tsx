@@ -12,7 +12,7 @@ interface BackgroundersProps {
 }
 
 const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
-  const currentUrl = new URL(window.location.href);
+  const currentUrl = new URL(window?.location?.href);
   currentUrl.hash = "";
   return (
     <article className={styles.backgrounders}>
@@ -31,7 +31,7 @@ const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
             {blog?.bannerImage?.fields?.file?.url && (
               <div className={styles.banner_image}>
                 <Image alt="" fill src={`https:${blog?.bannerImage?.fields?.file?.url}`}
-                  sizes="100%" loading="lazy"
+                  sizes="100%" priority
                 />
               </div>
             )}

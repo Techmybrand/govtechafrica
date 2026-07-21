@@ -42,9 +42,7 @@ const ExpertTakes = ({ blog, contentToShow }: ExpertTakesProps) => {
                         </div>
                         {blog?.bannerImage?.fields?.file?.url && (
                             <div className={styles.banner_image}>
-                                <Image alt="" fill sizes="100%" loading="lazy"
-                                    src={`https:${blog?.bannerImage?.fields?.file?.url}`}
-                                />
+                                <Image alt="" fill sizes="100%" priority src={`https:${blog?.bannerImage?.fields?.file?.url}`} />
                             </div>
                         )}
                     </div>

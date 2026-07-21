@@ -6,6 +6,8 @@ import styles from "./DownloadSection.module.scss";
 
 const DownloadSection = () => {
   const [isShareModalOpen, setIsShareModalOpen] = useState<boolean>(false);
+  const currentUrl = new URL(window.location.href);
+  const shareUrl = `${currentUrl?.origin}/reports/nigeria-dpi`
   const reportUrl = "https://f005.backblazeb2.com/file/GovtechAfrica/Nigeria+DPI+Readiness+Outlook+2026%2C+Govtech+Africa.pdf";
 
   return (
@@ -27,16 +29,10 @@ const DownloadSection = () => {
             GOVTECH AFRICA.
           </p>
           <div className={styles["action_btns"]}>
-            <Link target="_blank" download
-              className={styles["btn-download"]}
-              href={reportUrl}
-            >
+            <Link target="_blank" download className={styles["btn-download"]} href={reportUrl}>
               ↓ Download Full Report (PDF)
             </Link>
-            <div 
-              className={styles["report_btn"]}
-              onClick={() => setIsShareModalOpen(true)}
-            >
+            <div className={styles["report_btn"]} onClick={() => setIsShareModalOpen(true)}>
               Share Report →
             </div>
           </div>
@@ -60,10 +56,7 @@ const DownloadSection = () => {
         </div>
       </div>
 
-      <ShareModal 
-        isOpen={isShareModalOpen} 
-        onClose={() => setIsShareModalOpen(false)} 
-        shareUrl={reportUrl}
+      <ShareModal isOpen={isShareModalOpen} onClose={() => setIsShareModalOpen(false)} shareUrl={shareUrl}
         title="Share Intelligence Report"
       />
     </section>
