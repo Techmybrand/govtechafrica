@@ -1,28 +1,23 @@
-"use client";
 import React from "react";
 import { Hero } from "@/shared";
-import { Governance, Mission } from "@/components/whoWeAre";
 import { RelatedInsights } from "@/components";
-// import { NewsLetter } from "@/components/home";
+import { MeetTheTeam, Coalition, NewMission, NewValues, OurValuesSection } from "@/components/whoWeAre";
 
 const WhoWeAreView = () => {
 	return (
 		<React.Fragment>
-			<Hero
-				backgroundType="image"
-				backgroundImage="/images/gradient_bg.jpg"
+			<Hero backgroundImage="/images/new_who_we_are.png" backgroundType="image" type="new" dataType="new-are"
 				title="We are Drivers of Change"
-				button="Explore our solutions"
-				description={`We are driven by the need to close the technology gap 
-					for governments across the African continent.`}
-				href="/what-we-do"
-				dataType="are"
+				description='At Govtech Africa, we are driven by the need
+					to close the technology gap for governments across the
+					African continent.'
 			/>
-			<Mission />
-			<Governance />
-			{/* <Partners /> */}
-			<RelatedInsights />
-			{/* <NewsLetter /> */}
+			<Coalition />
+			<NewMission />
+			<OurValuesSection />
+			<NewValues />
+			<MeetTheTeam />
+			<RelatedInsights type="new" />
 		</React.Fragment>
 	);
 };

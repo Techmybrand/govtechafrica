@@ -1,12 +1,12 @@
-import { Header, Footer } from "@/shared";
+import { Header, NewFooter } from "@/shared";
 import React from "react";
 
 export default function MainLayout({ children }: {children: React.ReactNode}) {
     return (
         <React.Fragment>
-            <Header />
+            <Header type="new" />
                 {children}
-            <Footer />
+            <NewFooter />
         </React.Fragment>
     )
 }
