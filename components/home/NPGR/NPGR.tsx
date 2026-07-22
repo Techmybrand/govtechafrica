@@ -69,9 +69,9 @@ const NPGR = () => {
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={currentIndex}
-                                initial={{ opacity: 0, x: 15 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -15 }}
+                                initial={{ opacity: 0, x: 10 }}
+                                animate={{ opacity: 1, x: 0.3 }}
+                                exit={{ opacity: 0, x: -10 }}
                                 transition={{ duration: 0.3 }}
                                 className={styles.carousel_image_wrapper}
                             >
