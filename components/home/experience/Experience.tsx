@@ -182,9 +182,7 @@ const Experience = () => {
 							</span>
 						</h3>
 					</div>
-					<Button href="/new-who-we-are"
-						className={styles.button}
-					>
+					<Button href="/who-we-are" className={styles.button}>
 						Learn more
 					</Button>
 				</div>

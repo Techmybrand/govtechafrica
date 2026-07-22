@@ -136,7 +136,6 @@ const LinkItem = ({
 	handleScroll,
 	index,
 	setCollapsed,
-	type
 }: LinkProps) => {
 	const router = useRouter();
 	useEffect(() => {
@@ -154,9 +153,6 @@ const LinkItem = ({
 			if (index === 1) {
 				setCollapsed(true);
 				router.push(`/who-we-are`);
-			} else if (index === 1 && type === "new") {
-				setCollapsed(true);
-				router.push(`/new-who-we-are`);
 			}
 		}} className={styles.header_navLink} data-active={isActive}>
 			<div className={styles.link_row} onClick={() => handleActiveLink(link?.label)}>

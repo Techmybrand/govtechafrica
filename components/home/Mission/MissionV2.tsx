@@ -93,7 +93,7 @@ const Card = ({ card, progress, range, targetScale, index }: CardProps) => {
 	const scale = useTransform(progress, range, [1, targetScale]);
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const route = usePathname();
-	const isHome = route === "/" || route === "/new-home";
+	const isHome = route === "/";
 	useEffect(() => {
 		const checkMobile = () => {
 			setIsMobile(window.innerWidth <= 650);
@@ -124,7 +124,7 @@ const Card = ({ card, progress, range, targetScale, index }: CardProps) => {
 						<p>{card.text}</p>
 					</div>
 					{isHome && (
-						<Button className={styles.button} href="/new-who-we-are">
+						<Button className={styles.button} href="/who-we-are">
 							Learn more
 						</Button>
 					)}

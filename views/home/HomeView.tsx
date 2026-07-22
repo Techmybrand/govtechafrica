@@ -1,45 +1,46 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Hero } from "@/shared";
-import { Growth, Drivers, CenterPiece, Mission, Research } from "@/components/home";
-import { Hero as NGPRHero } from "@/components/PolicyRoundTable";
 import { CookiesModal } from "@/shared/Modals";
-import styles from "./HomeView.module.scss";
+import { GrowthV2, MissionV2, Research, CenterPieceV2, Experience, NPGR, IntroToFulcrum } from "@/components/home";
+import { Governance } from "@/components/whoWeAre";
+// import styles from "./HomeView.module.scss";
 
 const HomeView = () => {
 	const [showModal, setShowModal] = useState<boolean>(false);
 	const [, setConsent] = useState<string | null>(null);
+	const [isMobile, setIsMobile] = useState<boolean>(false);
 	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 650);
+		};
 		const storedConsent = localStorage.getItem('cookieConsent');
 		setConsent(storedConsent);
 		if (!storedConsent) {
 			setShowModal(true);
 		}
+		handleResize();
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 	return (
 		<React.Fragment>
 			<Hero
-				backgroundImage=""
-				backgroundVideo="/videos/Hero.mp4"
+				backgroundVideo={isMobile ? "/videos/hero_video_portrait.mp4" : "/videos/hero_video_landcape.mp4"}
 				backgroundType="video"
-				className={styles.hero}
-				title="African technology for Government Excellence"
-				description={`At Govtech Africa, we empower African governments to better serve their 
-					constituents by harnessing the power of technology for societal advancement, and 
-					driving positive change through transparent, efficient, and inclusive governance 
-					practices.
-				`}
-				button="Explore our solutions"
-				href="/what-we-do"
+				backgroundImage=""
+				title={null}
+				description={null}
+				dataType="home"
 			/>
+			<Governance type="new" />
 			<Research />
-			<Growth />
-			<Mission />
-			<Drivers />
-			<NGPRHero type="home" />
-			<CenterPiece />
-			{/* <NewsLetter /> */}
-			<div className={styles.divider}></div>
+			<GrowthV2 />
+			<MissionV2 />
+			<Experience />
+			<CenterPieceV2 />
+			<NPGR />
+			<IntroToFulcrum />
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>
 	);
