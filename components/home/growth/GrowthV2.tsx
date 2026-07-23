@@ -132,7 +132,6 @@ export const GrowthCard = ({ currency, value, description, label, scrollYProgres
 			</div>
 			<span></span>
 			<p>{description}</p>
-			{/* <div className={styles.green_line_bottom}></div> */}
 		</motion.div>
 	)
 }
