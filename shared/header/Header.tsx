@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, NavLinkMenu, NavLinkSub } from "@/interfaces";
 import { navLinks } from "@/mock/navLists.mock";
-import { Logo, Button } from "..";
+import { Logo } from "..";
 import { scrollTo } from "@/utils/scrollTo";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -84,25 +84,22 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 									/>
 								);
 							})}
-							{type === "default" && (
-								<Button
-									className={styles.button_link}
-									href="contact"
-									onClick={() => setCollapsed(true)}
-								>
-									CONTACT US
-								</Button>
-							)}
+							<div onClick={() => {
+								router.push('/contact');
+								setCollapsed(true);
+							}}
+								className={styles.contact_btn_sm}
+							>
+								<p>contact us</p>
+							</div>
 						</ul>
 					</nav>
 				</div>
-				{type === "new" && (
-					<div onClick={() => router.push('/contact')}
-						className={styles.contact_btn}
-					>
-						<p>contact us</p>
-					</div>
-				)}
+				<div onClick={() => router.push('/contact')}
+					className={styles.contact_btn}
+				>
+					<p>contact us</p>
+				</div>
 				<div onClick={() => setCollapsed(!collapsed)}
 					className={
 						styles[collapsed ? "header_hamburger" : "header_hamburger__open"]
