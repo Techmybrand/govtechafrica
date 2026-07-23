@@ -22,7 +22,7 @@ const flagShipEvents = [
     },
     {
         title: "Africa Govtech Week 2027",
-        image: "/images/AGW27_section.png",
+        image: "/images/AGW27.png",
         url: "https://africagovtechweek.com"
     },
 ];
