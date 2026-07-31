@@ -2,6 +2,18 @@ import { cookiesPolicyDataProps, NavLink, PrivacyPolicyProps, TechnologyProps } 
 
 export const navLinks: NavLink[] = [
 	{
+		label: "Solutions",
+		external: false,
+		icon: "/svgs/link-main.svg",
+		subMenu: [
+			{
+				label: "Fulcrum",
+				href: "https://fulcrum.govtechafrica.com",
+				icon: "/svgs/link-main.svg",
+			}
+		]
+	},
+	{
 		label: "what we do",
 		href: "what-we-do",
 		external: false,
@@ -990,4 +1002,4 @@ export const sections = [
     //     },
     //   ]
     // },
-  ]
+]

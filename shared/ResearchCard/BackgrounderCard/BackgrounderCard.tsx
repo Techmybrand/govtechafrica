@@ -17,13 +17,13 @@ const BackgrounderCard = ({ image, title, slug, date, publishedAt }: Backgrounde
     const router = useRouter();
     return (
         <article className={styles.card_container}
-            onClick={() => router.push(`/insights/research/${slug}?type=backgrounder`)}
+            onClick={() => router.push(`/insights/research/${slug}`)}
         >
             <div className={styles.top_section}>
                 <div className={styles.tag}>
                     BACKGROUNDER
                 </div>
-                <Link href={`/insights/research/${slug}?type=backgrounder`}>
+                <Link href={`/insights/research/${slug}`}>
                     <h2 className={styles.title}>
                         {title}
                     </h2>
@@ -34,9 +34,7 @@ const BackgrounderCard = ({ image, title, slug, date, publishedAt }: Backgrounde
             </div>
             <div className={styles.bottom_section}>
                 <div className={styles.image_wrapper}>
-                    <Image alt={title} fill src={image} loading="lazy"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                    />
+                    <Image alt={title} fill src={image} loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
             </div>
         </article>
