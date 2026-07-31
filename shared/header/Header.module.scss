@@ -89,18 +89,17 @@
 					left: 0;
 					position: absolute;
 					display: none;
-					transition: opacity 0.3s ease, transform 0.3s ease,
-						visibility 0.3s ease;
+					transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 					max-height: 50rem;
-					min-width: 47rem;
-					background-color: #262626;
+					min-width: 20rem;
+					background-color: #565656;
 					border: 0.2rem solid rgba($col-white, 0.2);
 					border-radius: 1.6rem;
 					overflow-y: scroll;
 					@include noScrollBar;
 					.subMenu {
 						width: 100%;
-						padding: 1.6rem;
+						padding: 0.8rem;
 						z-index: 1;
 						position: relative;
 						transition: $all-transition;
@@ -149,6 +148,7 @@
 									width: 1.6rem;
 									height: 1.6rem;
 									flex-shrink: 0;
+									display: none;
 								}
 								p {
 									color: #FFF;

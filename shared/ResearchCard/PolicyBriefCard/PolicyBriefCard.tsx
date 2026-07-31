@@ -16,11 +16,11 @@ interface PolicyBriefCardProps {
 
 const PolicyBriefCard = ({ image, title, slug, btnText }: PolicyBriefCardProps) => {
     const router = useRouter();
-    const typeQuery = 'policy-brief';
+    // const typeQuery = 'policy-brief';
     const displayTag = btnText;
     return (
         <article className={styles.card_container}
-            onClick={() => router.push(`/insights/research/${slug}?type=${typeQuery}`)}
+            onClick={() => router.push(`/insights/research/${slug}`)}
         >
             <div className={styles.top_section}>
                 <div className={styles.logo_wrapper}>
@@ -35,7 +35,7 @@ const PolicyBriefCard = ({ image, title, slug, btnText }: PolicyBriefCardProps) 
                     <Image alt={title} fill src={image} sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" />
                 </div>
                 <div className={styles.title_wrapper}>
-                    <Link href={`/insights/research/${slug}?type=${typeQuery}`}>
+                    <Link href={`/insights/research/${slug}`}>
                         <h2 className={styles.title}>
                             {title}
                         </h2>

@@ -12,22 +12,22 @@ import styles from "./ResearchDetails.module.scss";
 interface ResearchDetailsProps {
     blog?: BlogDetailsProps;
     contentToShow: BlogDetailsProps[];
-    queryArticleType: string | null;
+    queryArticleType?: string | null;
+    articleType: string | null;
 }
 
-const ResearchDetails = ({ blog, contentToShow, queryArticleType }: ResearchDetailsProps) => {
-
+const ResearchDetails = ({ blog, contentToShow, articleType }: ResearchDetailsProps) => {
     return (
-        <main data-type={queryArticleType} className={styles.details_container}>
+        <main data-type={articleType} className={styles.details_container}>
             {blog === undefined ? (
                 <div className={styles.loader}>
                     <ChartLoader />
                 </div>
-            ) : queryArticleType === "backgrounder" ? (
+            ) : articleType === "backgrounder" ? (
                 <Backgrounders blog={blog} contentToShow={contentToShow} />
-            ) : queryArticleType === "expert-take" ? (
+            ) : articleType === "expert-take" ? (
                 <ExpertTakes blog={blog} contentToShow={contentToShow} />
-            ) : queryArticleType === "report" ? (
+            ) : articleType === "report" ? (
                 <Reports blog={blog} contentToShow={contentToShow} />
             ) : (
                 <article>

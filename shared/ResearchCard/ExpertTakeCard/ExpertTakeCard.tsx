@@ -18,10 +18,10 @@ interface ExpertTakeCardProps {
 
 const ExpertTakeCard = ({ image, title, slug, author, date, publishedAt }: ExpertTakeCardProps) => {
     const router = useRouter();
-    const typeQuery = 'expert-take';
+    // const typeQuery = 'expert-take';
     return (
         <article className={styles.card_container}
-            onClick={() => router.push(`/insights/research/${slug}?type=${typeQuery}`)}
+            onClick={() => router.push(`/insights/research/${slug}`)}
         >
             <div className={styles.top_section}>
                 <div className={styles.image_wrapper}>
@@ -29,7 +29,7 @@ const ExpertTakeCard = ({ image, title, slug, author, date, publishedAt }: Exper
                 </div>
             </div>
             <div className={styles.middle_section}>
-                <Link href={`/insights/research/${slug}?type=${typeQuery}`}>
+                <Link href={`/insights/research/${slug}`}>
                     <h2 className={styles.title}>
                         {title}
                     </h2>
