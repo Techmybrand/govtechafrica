@@ -21,7 +21,7 @@ const ReportCard = ({ image, title, slug, date, publishedAt, externalUrl }: Repo
         if (externalUrl) {
             router.push(externalUrl);
         } else {
-            router.push(`/insights/research/${slug}?type=report`);
+            router.push(`/insights/research/${slug}`);
         }
     }
     return (
@@ -35,7 +35,7 @@ const ReportCard = ({ image, title, slug, date, publishedAt, externalUrl }: Repo
             </div>
             <div className={styles.top_section}>
                 <div className={styles.title_and_date}>
-                    <Link href={`${externalUrl ? externalUrl : `/insights/research/${slug}?type=report`}`}>
+                    <Link href={`${externalUrl ? externalUrl : `/insights/research/${slug}`}`}>
                         <h2 className={styles.title}>
                             {title}
                         </h2>
