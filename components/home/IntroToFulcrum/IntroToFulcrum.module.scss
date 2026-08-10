@@ -49,7 +49,7 @@
     gap: 8rem;
     width: 100%;
 }
-.left_column {
+.left_column, .left_column_mobile {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -102,6 +102,9 @@
             }
         }
     }
+}
+.left_column_mobile {
+    display: none;
 }
 .right_column {
     width: 45%;
@@ -175,16 +178,18 @@
         padding: 2.4rem;
     }
     .bg_pattern_wrapper {
-        width: 60%;
+        width: 20%;
+        top: 5%;
     }
     .layout_grid {
         gap: 4rem;
         flex-direction: column;
     }
-    .left_column {
+    .left_column, .left_column_mobile {
         width: 100%;
+        display: flex;
         .section_title_wrapper {
-            margin-bottom: 4rem;
+            margin-bottom: 0;
             .vertical_accent_line {
                 height: 3.2rem;
             }
@@ -196,10 +201,21 @@
         .illustration_wrapper {
             height: 55rem;
             .offset_box {
-                width: 6rem;
-                height: 6rem;
+                width: 9.5rem;
+                height: 9.5rem;
             }
         }
+    }
+    .left_column {
+        .illustration_wrapper, .section_title_wrapper {
+            display: none;
+        }
+    }
+    .left_column_mobile {
+        .section_title_wrapper {
+            display: none;
+        }
+            
     }
     .right_column {
         width: 100%;
@@ -215,7 +231,8 @@
         }
     }
     .bg_wrapper {
-        height: 50rem;
+        height: 30rem;
+        top: 5%;
     }
 }
 
@@ -226,21 +243,21 @@
         margin-bottom: 8rem;
     }
     .bg_pattern_wrapper {
-        width: 100%;
-        height: 50%;
-        top: 2.5%;
-        right: -30%;
+        width: 30%;
+        height: 15%;
+        top: 6%;
+        right: 0%;
     }
     .container {
         padding: 1.6rem;
     }
     .layout_grid {
-        gap: 3.2rem;
+        gap: 0;
     }
-    .left_column {
+    .left_column_mobile, .left_column {
         width: 100%;
         .section_title_wrapper {
-            margin-bottom: 3.2rem;
+            margin-bottom: 0;
             .vertical_accent_line {
                 height: 2.4rem;
             }
@@ -266,14 +283,16 @@
         width: 100%;
         align-items: flex-start;
         text-align: left;
+        margin-top: 1.6rem;
+        margin-bottom: 3.2rem;
         .intro_heading, span {
             font-size: 2.8rem;
             margin-bottom: 0.8rem;
             text-align: left;
         }
-        br {
-            display: none;
-        }
+        // br {
+        //     display: none;
+        // }
         .intro_description {
             font-size: 1.2rem;
             line-height: 1.6rem;
@@ -295,6 +314,7 @@
         }
     }
     .bg_wrapper {
-        height: 40rem;
+        height: 30rem;
+        top: 6%;
     }
 }

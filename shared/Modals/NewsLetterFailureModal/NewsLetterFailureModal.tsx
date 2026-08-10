@@ -12,8 +12,7 @@ interface Props {
 
 const NewsLetterFailureModal = ({ open, closeModal, message }: Props) => {
     return (
-        <Modal isOpen={open} onClose={closeModal}
-            className={styles.newsletter_modal_container}
+        <Modal isOpen={open} onClose={closeModal} className={styles.newsletter_modal_container}
             sec_className={styles.newsletter_overlay}
         >
             <div className={styles.modal_content}>
@@ -26,10 +25,9 @@ const NewsLetterFailureModal = ({ open, closeModal, message }: Props) => {
                     </div>
                 </div>
                 <div className={styles.modal_text}>
-                    <h1>{`An error occured: ${message}`}</h1>
+                    <h1>{message}</h1>
                     <p>
-                        We are so sorry we couldn't complete the 
-                        sign up process. Please, try again shortly!
+                        We are so sorry we couldn&apos;t complete the sign up process. Please, try again shortly!
                     </p>
                 </div>
             </div>

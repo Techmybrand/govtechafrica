@@ -189,12 +189,7 @@ const Experience = () => {
 				{isMobile ? (
 					<div className={styles.cards_container_mobile}>
 						{cards.map((card, index) => (
-							<CardMobile 
-								key={index} 
-								card={card} 
-								index={index} 
-								animData={animData[index]} 
-							/>
+							<CardMobile key={index} card={card} index={index} animData={animData[index]} />
 						))}
 					</div>
 				) : (
@@ -261,23 +256,11 @@ interface CardMobileProps {
 	animData: object | null;
 }
 
-const CardMobile = ({ card, index, animData }: CardMobileProps) => {
+const CardMobile = ({ card, index }: CardMobileProps) => {
 	return (
-		<div 
-			className={styles.card_mobile} 
-			data-index={index}
-			style={{ 
-				position: "sticky", 
-				top: `calc(10rem + ${index * 2}rem)` 
-			}}
-		>
+		<div className={styles.card_mobile} data-index={index} style={{ position: "sticky", top: `calc(10rem + ${index * 2}rem)`}}>
 			<div className={styles.image_container_mob}>
-				<Image 
-					src={card.image} 
-					alt={card.title} 
-					fill 
-					sizes="(max-width: 950px) 100vw, 50vw" 
-				/>
+				<Image src={card.image} alt={card.title} fill sizes="(max-width: 950px) 100vw, 50vw" />
 				<div className={styles.overlay_mob} />
 			</div>
 			
