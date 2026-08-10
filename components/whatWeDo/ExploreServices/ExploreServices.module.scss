@@ -1,0 +1,113 @@
+@import "@/styles/imports";
+
+.explore_services_section {
+    width: 100%;
+    background-color: #000000;
+    position: relative;
+    margin-bottom: 20rem;
+    padding: 3.6rem;
+    overflow: hidden;
+    .explore_services_container {
+        max-width: $max-width;
+        margin-inline: auto;
+        width: 100%;
+        background-color: #244D3B;
+        border: 0.1rem solid #BEF2BE;
+        border-radius: 2rem;
+        padding: 7.2rem 8.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3.2rem;
+        .text {
+            width: 35%;
+            h1 {
+                color: $col-white;
+                font-size: 4.4rem;
+                line-height: 1.4;
+                font-family: $font-gothic-bold;
+            }
+        }
+        .button {
+            height: 5.6rem;
+            background-color: #2E8C61;
+            display: flex;
+            align-items: center;
+            gap: 2.4rem;
+            padding: 1.6rem 2.4rem;
+            border-radius: 6.4rem;
+            cursor: pointer;
+            transition: $all-transition;
+            &:hover {
+                background-color: #53C688;
+            }
+            h3 {
+                font-size: 1.6rem;
+                line-height: 1.5;
+                color: #000000;
+                font-family: $font;
+                font-weight: 700;
+            }
+            .long_arrow {
+                position: relative;
+                width: 5rem;
+                height: 1.6rem;
+            }
+        }
+    }
+
+    @include screenMax("tablet") {
+        padding: 2.4rem;
+        margin-bottom: 12rem;
+        .explore_services_container {
+            padding: 5.6rem 6.4rem;
+            gap: 2.4rem;
+            .text {
+                width: 50%;
+                h1 {
+                    font-size: 3.6rem;
+                    line-height: 4.8rem;
+                }
+            }
+            .button {
+                padding: 1.4rem 2rem;
+                height: 4.8rem;
+                h3 {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+    
+    @include screenMax("mobile") {
+        padding: 1.6rem;
+        margin-bottom: 5.6rem;
+        .explore_services_container {
+            padding: 3.6rem 2.4rem;
+            gap: 1.6rem;
+            flex-direction: column;
+            align-items: flex-start;
+            .text {
+                width: 100%;
+                h1 {
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                }
+            }
+            .button {
+                width: 100%;
+                justify-content: center;
+                gap: 1.6rem;
+                h3 {
+                    font-size: 1.2rem;
+                    line-height: 1.6rem;
+                }
+                .long_arrow {
+                    width: 3.6rem;
+                    height: 1.2rem;
+                }
+            }
+        }
+    }
+}

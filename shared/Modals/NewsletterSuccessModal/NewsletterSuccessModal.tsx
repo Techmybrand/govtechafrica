@@ -11,8 +11,7 @@ interface NewsletterSuccessModalProps {
 
 const NewsletterSuccessModal = ({ open, closeModal }: NewsletterSuccessModalProps) => {
     return (
-        <Modal isOpen={open} onClose={closeModal}
-            className={styles.newsletter_modal_container}
+        <Modal isOpen={open} onClose={closeModal} className={styles.newsletter_modal_container}
             sec_className={styles.newsletter_overlay}
         >
             <div className={styles.modal_content}>
@@ -27,8 +26,7 @@ const NewsletterSuccessModal = ({ open, closeModal }: NewsletterSuccessModalProp
                 <div className={styles.modal_text}>
                     <h1>Thank you for subscribing!</h1>
                     <p>
-                        You will receive an email shortly to 
-                        confirm your subscription.
+                        You will receive an email shortly to confirm your subscription.
                     </p>
                 </div>
             </div>

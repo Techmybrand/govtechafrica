@@ -14,6 +14,7 @@ import ExpertTakesView from "./ExpertTakesView/ExpertTakesView";
 import PolicyBriefsView from "./PolicyBriefsView/PolicyBriefsView";
 import NewWhoWeAreView from "./NewWhoWeAreView/NewWhoWeAreView";
 import ReportsView from "./ReportsView/ReportsView";
+import NewWhatWeDo from "./NewWhatWeDo/NewWhatWeDo";
 
 
 export {
@@ -27,6 +28,7 @@ export {
     ReportsView,
     NewHomeView,
     BackgroundersView,
+    NewWhatWeDo,
     PolicyRoundTableView,
     UploadView,
     BlogView,

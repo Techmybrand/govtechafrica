@@ -1,108 +1,50 @@
-import { NextResponse, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
-const BREVO_API_KEY = process.env.BREVO_API_KEY!
-const LIST_ID = process.env.BREVO_LIST_ID!
-const TEMPLATE_ID = process.env.BREVO_TEMPLATE_ID!
-
-const BREVO_LIST_ID = parseInt(LIST_ID);
-const BREVO_TEMPLATE_ID = parseInt(TEMPLATE_ID);
-
-export async function POST(request: NextRequest) {
+export async function POST(req: Request) {
     try {
-        if (!BREVO_API_KEY) {
-            console.error('Subscribe API error: BREVO_API_KEY environment variable is missing.');
-            return NextResponse.json(
-                { error: 'Subscription service misconfigured. API Key is missing.' },
-                { status: 500 }
-            );
+        const { fullName, email } = await req.json();
+        if (!email || !fullName) {
+            return NextResponse.json({ error: "Name and email are required." },{ status: 400 });
         }
-        if (isNaN(BREVO_LIST_ID)) {
-            console.error('Subscribe API error: BREVO_LIST_ID environment variable is missing or invalid.');
-            return NextResponse.json(
-                { error: 'Subscription service misconfigured. List ID is invalid.' },
-                { status: 500 }
-            );
-        }
+        const zohoPayload = new URLSearchParams({
+            FIRSTNAME: fullName,
+            CONTACT_EMAIL: email,
+            submitType: "optinCustomView",
+            emailReportId: "",
+            formType: "QuickForm",
+            zx: "1371db337",
+            zcvers: "3.0",
+            oldListIds: "",
+            mode: "OptinCreateView",
+            zcld: "116e7f964d9c49101",
+            zctd: "116e7f964d9c2db89",
+            zc_trackCode: "ZCFORMVIEW",
+            zc_formIx: "3zb2e5d1ce437642a7046048bcefc78a2a259a55758a0507323f27eb5860f4e62f",
+            scriptless: "yes",
+        });
 
-        const { fullName, email } = await request.json();
-        if (!fullName || !email) {
-            return NextResponse.json(
-                { error: 'Full name and email are required.' }, { status: 400 }
-            );
-        }
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return NextResponse.json(
-            { error: 'Please enter a valid email address.' },
-            { status: 400 }
-            );
-        }
-        const nameParts = fullName.trim().split(' ');
-        const firstName = nameParts[0];
-        const lastName = nameParts.slice(1).join(' ') || '';
-
-        const contactRes = await fetch('https://api.brevo.com/v3/contacts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'api-key': BREVO_API_KEY,
-            },
-            body: JSON.stringify({
-                email,
-                attributes: {
-                    FIRSTNAME: firstName,
-                    LASTNAME: lastName,
+        const zohoRes = await fetch("https://dcqorm-cmpzourl.maillist-manage.com/weboptin.zc",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
                 },
-                listIds: [BREVO_LIST_ID],
-                updateEnabled: true,
-            }),
-        });
-
-        if (!contactRes.ok && contactRes.status !== 204) {
-            const errBody = await contactRes.json();
-            if (errBody?.code === 'duplicate_parameter') {
-            return NextResponse.json(
-                { error: 'This email is already subscribed.' },
-                { status: 409 }
-            );
+                body: zohoPayload.toString(),
             }
-            console.error('Brevo contact error:', errBody);
-            return NextResponse.json(
-            { 
-                error: 'Could not add you to the list. Please try again.',
-                details: errBody
-            },
-            { status: 500 }
-            );
-        }
-
-        const emailRes = await fetch('https://api.brevo.com/v3/smtp/email', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            'api-key': BREVO_API_KEY,
-            },
-            body: JSON.stringify({
-            to: [{ email, name: fullName }],
-            templateId: BREVO_TEMPLATE_ID,
-            params: {
-                FIRSTNAME: firstName,
-                FULLNAME: fullName,
-            },
-            }),
-        });
-
-        if (!emailRes.ok) {
-            const errBody = await emailRes.json();
-            console.error('Brevo email error:', errBody);
-        }
-
-        return NextResponse.json({ success: true });
-    } catch (err) {
-        console.error('Subscribe handler error:', err);
-        return NextResponse.json(
-            { error: 'Something went wrong. Please try again.' },
-            { status: 500 }
         );
+
+        if (!zohoRes.ok) {
+            return NextResponse.json({ error: "Failed to subscribe to newsletter." }, { status: 502 });
+        }
+
+        const responseText = await zohoRes.text();
+        if (responseText.includes("already a part of our organization") || responseText.includes("already signed up")) {
+            return NextResponse.json({ error: "This email address has already been subscribed." }, { status: 409 });
+        }
+
+        return NextResponse.json({ message: "Successfully subscribed!" },{ status: 200 });
+    } catch (error) {
+        console.error("Zoho Subscription Error:", error);
+        return NextResponse.json({ error: "Internal server error. Please try again later." }, { status: 500 });
     }
 }
