@@ -15,7 +15,7 @@ enum Scroll {
 }
 
 interface HeaderProps {
-	type?: "new" | "default"
+	type?: "new" | "default";
 }
 
 const Header = ({ type = 'default' }: HeaderProps) => {
@@ -29,7 +29,6 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 		const headerHeight: number = headerRef.current?.offsetHeight as number;
 		const scrollCheck = () => {
 			const currentScrollY = window.scrollY;
-
 			if (currentScrollY > headerHeight) {
 				setScroll(Scroll.InitialScroll);
 			}
@@ -55,19 +54,12 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 			data-collapsed={!collapsed || scroll === Scroll.InitialScroll}
 		>
 			<div className={styles.container}>
-				{/* <div className={styles.background}></div> */}
 				<Link href="/">
 					<div className={styles.header_logoContainer}>
 						<Logo />
 					</div>
 				</Link>
-				<div
-					className={
-						styles[
-						!collapsed ? "header_wrapper" : "header_wrapper__collapsed"
-						]
-					}
-				>
+				<div className={styles[!collapsed ? "header_wrapper" : "header_wrapper__collapsed"]}>
 					<nav data-type={type} className={styles.header_nav}>
 						<ul className={styles.header_navList}>
 							{navLinks.map((link: NavLink, index: number) => {
@@ -84,26 +76,21 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 									/>
 								);
 							})}
-							<div onClick={() => {
-								router.push('/contact');
-								setCollapsed(true);
-							}}
-								className={styles.contact_btn_sm}
+							<div className={styles.contact_btn_sm} onClick={() => {
+									router.push('/contact');
+									setCollapsed(true);
+								}}
 							>
 								<p>contact us</p>
 							</div>
 						</ul>
 					</nav>
 				</div>
-				<div onClick={() => router.push('/contact')}
-					className={styles.contact_btn}
-				>
+				<div onClick={() => router.push('/contact')} className={styles.contact_btn}>
 					<p>contact us</p>
 				</div>
 				<div onClick={() => setCollapsed(!collapsed)}
-					className={
-						styles[collapsed ? "header_hamburger" : "header_hamburger__open"]
-					}
+					className={styles[collapsed ? "header_hamburger" : "header_hamburger__open"]}
 				>
 					<span className={styles.header_hamburgerBar}></span>
 					<span className={styles.header_hamburgerBar}></span>
@@ -151,8 +138,12 @@ const LinkItem = ({
 				setCollapsed(true);
 				router.push(`/who-we-are`);
 			}
+			if (index === 3) {
+				setCollapsed(true);
+				router.push(`/insights`);
+			}
 		}} className={styles.header_navLink} data-active={isActive}>
-			<div className={styles.link_row} onClick={() => handleActiveLink(link?.label)}>
+			<div className={styles.link_row}>
 				<p>{link?.label}</p>
 				{link.subMenu?.length ? (
 					<div className={styles.link_icon}>
@@ -160,9 +151,11 @@ const LinkItem = ({
 					</div>
 				) : null}
 				{link.subMenu?.length ? (
-					<div className={styles.link_icon_sm}>
+					<div onClick={(e) => {
+						e.stopPropagation();
+						handleActiveLink(link?.label)
+					}} className={styles.link_icon_sm}>
 						<Image src="/svgs/arrow.svg" fill alt="" sizes="100%" />
-						{/* <Image src="/svgs/green_arrow.svg" fill alt="" sizes="100vw" /> */}
 					</div>
 				) : null}
 			</div>

@@ -62,13 +62,8 @@ const MissionV2 = () => {
 				{stackedCards.map((card, index) => {
 					const targetScale = 1 - (stackedCards.length - index) * 0.02;
 					return (
-						<Card
-							key={index}
-							card={card}
-							progress={scrollYProgress}
-							range={[0, 0.5]}
+						<Card key={index} card={card} progress={scrollYProgress} range={[0, 0.5]} index={index}
 							targetScale={targetScale}
-							index={index}
 						/>
 					);
 				})}
@@ -104,8 +99,7 @@ const Card = ({ card, progress, range, targetScale, index }: CardProps) => {
 	}, []);
 
 	return (
-		<motion.div data-index={index}
-			className={styles.card_container} ref={cardRef}
+		<motion.div data-index={index} className={styles.card_container} ref={cardRef}
 			style={{ top: `calc(54% - 30rem + ${index * 0.2}rem)`, scale: scale ?? 1 }}
 		>
 			<motion.div className={styles.card}>

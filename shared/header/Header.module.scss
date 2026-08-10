@@ -9,9 +9,13 @@
 	background-color: #000;
 	.container {
 		padding: 3.6rem;
-		@include flex(space-between, center, nowrap);
+		// @include flex(center, nowrap);
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
 		max-width: $max-width;
 		margin-inline: auto;
+		justify-content: space-between;
 		@include screenMin("desktop") {
 			padding-inline: 3.6rem;
 		}
@@ -47,7 +51,7 @@
 		}
 	}
 	.header_nav {
-		margin-left: auto;
+		margin-left: 0;
 		.header_navList {
 			@include flex(space-between, center, nowrap);
 			gap: 0.5rem;
@@ -238,9 +242,10 @@
 	.header_wrapper,
 	.header_wrapper__collapsed {
 		margin-left: 0;
-		flex-grow: 1;
 		transition: transform 0.3s ease-out;
-		@include flex(space-between, center);
+		// @include flex(space-between, center);
+		display: flex;
+		align-items: center;
 		@include screenMax("tablet") {
 			order: 3;
 			width: 100%;

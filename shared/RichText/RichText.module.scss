@@ -107,6 +107,7 @@
   -webkit-overflow-scrolling: touch;
   width: 100%;
   margin-block: 6.4rem;
+  @include noScrollBar();
 }
 .table {
   width: 100%;
@@ -298,8 +299,8 @@
   .unordered_list, .ordered_list {
     padding-left: 2.4rem;
   }
-  .table {
-    margin-block: 5.2rem;
+  .table_container {
+    margin-block: 4.8rem;
     width: 100%;
   }
   .heading1 {
@@ -344,8 +345,8 @@
   .unordered_list, .ordered_list {
     padding-left: 1.6rem;
   }
-  .table {
-    margin-block: 4rem;
+  .table_container {
+    margin-block: 3.6rem;
     width: 100%;
   }
   .list_item {
@@ -390,6 +391,9 @@
       line-height: 0;
       vertical-align: sub;
     }
+  }
+  .paragraph {
+    text-align: justify;
   }
   .entry_link, .hyperlink {
     font-size: 1.2rem;

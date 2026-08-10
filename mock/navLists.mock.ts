@@ -156,6 +156,7 @@ export const navLinks: NavLink[] = [
 	{
 		label: "research",
 		external: false,
+		href: "insights",
 		icon: "/svgs/link-main.svg",
 		subMenu: [
 			{

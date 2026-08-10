@@ -183,9 +183,9 @@
             }
             .text_column {
                 width: 100% !important;
-                border-left: 0.2rem solid #00BF4D !important;
+                border-left: none!important;
                 border-right: none !important;
-                padding-left: 2rem !important;
+                padding-left: 0!important;
                 padding-right: 0 !important;
                 align-items: flex-start !important;
                 text-align: left !important;
@@ -206,7 +206,6 @@
             }
         }
     }
-
     .divider {
         margin-top: 3.2rem;
     }

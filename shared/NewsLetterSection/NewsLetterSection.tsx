@@ -94,31 +94,15 @@ const NewsLetterSection = () => {
 
                         <form onSubmit={handleSubmit} className={styles.subscription_form}>
                             <div className={styles.inputs_group}>
-                                <input
-                                    type="text"
-                                    name="fullName"
-                                    required
-                                    placeholder="Enter your Name..."
-                                    value={formData.fullName}
-                                    onChange={handleChange}
-                                    className={styles.input_field}
+                                <input type="text" name="fullName" required placeholder="Enter your full name..." value={formData.fullName}
+                                    onChange={handleChange} className={styles.input_field}
                                 />
-                                <input
-                                    type="email"
-                                    name="email"
-                                    required
-                                    placeholder="Enter your email..."
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    className={styles.input_field}
+                                <input type="email" name="email" required placeholder="Enter your email..." value={formData.email}
+                                    onChange={handleChange} className={styles.input_field}
                                 />
                             </div>
                             
-                            <button
-                                disabled={isLoading}
-                                type="submit"
-                                className={styles.submit_btn}
-                            >
+                            <button disabled={isLoading} type="submit" className={styles.submit_btn}>
                                 {isLoading ? (
                                     <BeatLoader size={8} color="white" />
                                 ) : (
@@ -135,11 +119,7 @@ const NewsLetterSection = () => {
             </div>
 
             <NewsletterSuccessModal open={openModal} closeModal={handleCloseModal} />
-            <NewsLetterFailureModal
-                open={openErrorModal}
-                closeModal={handleCloseModal}
-                message={message}
-            />
+            <NewsLetterFailureModal open={openErrorModal} closeModal={handleCloseModal} message={message} />
         </React.Fragment>
     );
 };
