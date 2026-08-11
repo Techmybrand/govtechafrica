@@ -39,21 +39,20 @@ const Approach = () => {
         offset: ["start center", "end end"]
     });
     const scrollYSpring = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 20,
-        mass: 0.5
+        stiffness: 40,
+        damping: 15,
+        mass: 0.8
     });
     const y = useTransform(scrollYSpring, [0, 0.2], [300, 0]);
     const opacity = useTransform(scrollYSpring, [0, 0.3], [0, 1]);
 
     const cardsScrollYSpring = useSpring(cardsScrollYProgress, {
-        stiffness: 100,
-        damping: 20,
-        mass: 0.5
+        stiffness: 40,
+        damping: 15,
+        mass: 0.8
     });
     const curve1Y = useTransform(cardsScrollYSpring, [0.05, 0.25], [400, 0]);
     const curve1Opacity = useTransform(cardsScrollYSpring, [0.05, 0.25], [0, 1]);
-
     const curve2Y = useTransform(cardsScrollYSpring, [0.15, 0.35], [400, 0]);
     const curve2Opacity = useTransform(cardsScrollYSpring, [0.15, 0.35], [0, 1]);
 
@@ -108,9 +107,9 @@ const Approach = () => {
 const DesktopCard = ({ card, index, scrollYProgress }: { card: CardData; index: number, scrollYProgress: MotionValue<number> }) => {
     const rotation = index === 0 ? -17 : index === 1 ? 20 : -18;
     const scrollYSpring = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 20,
-        mass: 0.5
+        stiffness: 40,
+        damping: 15,
+        mass: 0.8
     });
     const start = index * 0.1;
     const end = start + 0.2;
