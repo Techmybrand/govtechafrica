@@ -26,12 +26,11 @@ const NewsLetterSection = () => {
         damping: 20,
         mass: 0.5
     });
-    const [formData, setFormData] = useState({ fullName: "", email: "" });
+    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "" });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [message, setMessage] = useState<string>("");
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [openErrorModal, setOpenErrorModal] = useState<boolean>(false);
-
     const isLoading = status === "loading";
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,7 +58,7 @@ const NewsLetterSection = () => {
             }
             setStatus("success");
             setOpenModal(true);
-            setFormData({ fullName: "", email: "" });
+            setFormData({ firstName: "", lastName: "", email: "" });
         } catch (error: any) {
             setStatus("error");
             setOpenErrorModal(true);
@@ -94,10 +93,13 @@ const NewsLetterSection = () => {
 
                         <form onSubmit={handleSubmit} className={styles.subscription_form}>
                             <div className={styles.inputs_group}>
-                                <input type="text" name="fullName" required placeholder="Enter your full name..." value={formData.fullName}
+                                <input type="text" name="firstName" required placeholder="Enter your first name" value={formData.firstName}
                                     onChange={handleChange} className={styles.input_field}
                                 />
-                                <input type="email" name="email" required placeholder="Enter your email..." value={formData.email}
+                                <input type="text" name="lastName" required placeholder="Enter your last name" value={formData.lastName}
+                                    onChange={handleChange} className={styles.input_field}
+                                />
+                                <input type="email" name="email" required placeholder="Enter your email" value={formData.email}
                                     onChange={handleChange} className={styles.input_field}
                                 />
                             </div>

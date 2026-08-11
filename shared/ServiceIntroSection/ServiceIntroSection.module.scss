@@ -35,6 +35,7 @@
             position: relative;
             width: 65rem;
             height: 47rem;
+            flex-shrink: 0;
             & > img {
                 object-fit: cover;
             }
@@ -43,6 +44,7 @@
             position: relative;
             width: 62rem;
             height: 43rem;
+            flex-shrink: 0;
             & > img {
                 object-fit: cover;
             }

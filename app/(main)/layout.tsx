@@ -6,7 +6,7 @@ export default function MainLayout({ children }: {children: React.ReactNode}) {
         <React.Fragment>
             <Header />
                 {children}
-            <NewFooter />
+            <NewFooter type="default" />
         </React.Fragment>
     )
 }

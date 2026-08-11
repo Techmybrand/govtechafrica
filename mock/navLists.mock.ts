@@ -1,123 +1,123 @@
 import { cookiesPolicyDataProps, NavLink, PrivacyPolicyProps, TechnologyProps } from "@/interfaces";
 
 export const navLinks: NavLink[] = [
-	{
-		label: "Solutions",
-		external: false,
-		icon: "/svgs/link-main.svg",
-		subMenu: [
-			{
-				label: "Fulcrum",
-				href: "https://fulcrum.govtechafrica.com",
-				icon: "/svgs/link-main.svg",
-			}
-		]
-	},
+	// {
+	// 	label: "Solutions",
+	// 	external: false,
+	// 	icon: "/svgs/link-main.svg",
+	// 	subMenu: [
+	// 		{
+	// 			label: "Fulcrum",
+	// 			href: "https://fulcrum.govtechafrica.com",
+	// 			icon: "/svgs/link-main.svg",
+	// 		}
+	// 	]
+	// },
 	{
 		label: "what we do",
 		href: "what-we-do",
 		external: false,
 		icon: "/svgs/link-main.svg",
 		subMenu: [
+			{
+				label: "solutions",
+				icon: "/svgs/link-main.svg",
+				// href: "https://fulcrum.govtechafrica.com",
+				id: "solutions",
+				menu: [
+					{
+						label: "Fulcrum",
+						href: "https://fulcrum.govtechafrica.com",
+						id: "fulcrum",
+						icon: "/svgs/link-user.svg",
+						external: true
+					},
+					// {
+					// 	label: "Cybersecurity",
+					// 	href: "/cybersecurity",
+					// 	id: "cybersecurity",
+					// 	icon: "/svgs/link-user.svg",
+					// 	external: false
+					// },
+					// {
+					// 	label: "Cloud Services",
+					// 	href: "/cloud-services",
+					// 	id: "cloud",
+					// 	icon: "/svgs/link-user.svg",
+					// 	external: false
+					// },
+					// {
+					// 	label: "Data and AI",
+					// 	href: "/data-and-ai",
+					// 	id: "data",
+					// 	icon: "/svgs/link-ai.svg",
+					// 	external: false
+					// },
+					// {
+					// 	label: "Network Infrastructure Design & Implementation",
+					// 	href: "/network-infrastructure",
+					// 	id: "network",
+					// 	icon: "/svgs/link-user.svg",
+					// 	external: false
+					// },
+					// {
+					// 	label: "Web3 & Blockchain Technology",
+					// 	href: "/web3-and-blockchain",
+					// 	id: "web3",
+					// 	icon: "/svgs/link-user.svg",
+					// 	external: false
+					// },
+					// {
+					// 	label: "IT Support Services (Remote support & Maintenance)",
+					// 	href: "/support-services",
+					// 	id: "it",
+					// 	icon: "/svgs/link-user.svg",
+					// 	external: false
+					// }
+				]
+			},
 			// {
-			// 	label: "technology",
+			// 	label: "services",
 			// 	icon: "/svgs/link-main.svg",
-			// 	href: "/what-we-do#technology",
-			// 	id: "technology",
-			// 	// menu: [
-			// 	// 	{
-			// 	// 		label: "Customised Software Solutions",
-			// 	// 		href: "/customised-software-solutions",
-			// 	// 		id: "customised",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "Cybersecurity",
-			// 	// 		href: "/cybersecurity",
-			// 	// 		id: "cybersecurity",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "Cloud Services",
-			// 	// 		href: "/cloud-services",
-			// 	// 		id: "cloud",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "Data and AI",
-			// 	// 		href: "/data-and-ai",
-			// 	// 		id: "data",
-			// 	// 		icon: "/svgs/link-ai.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "Network Infrastructure Design & Implementation",
-			// 	// 		href: "/network-infrastructure",
-			// 	// 		id: "network",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "Web3 & Blockchain Technology",
-			// 	// 		href: "/web3-and-blockchain",
-			// 	// 		id: "web3",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "IT Support Services (Remote support & Maintenance)",
-			// 	// 		href: "/support-services",
-			// 	// 		id: "it",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	}
-			// 	// ]
-			// },
-			// {
-			// 	label: "consulting",
-			// 	icon: "/svgs/link-main.svg",
-			// 	href: "/what-we-do#consulting",
-			// 	id: "consulting",
-			// 	// menu: [
-			// 	// 	{
-			// 	// 		label: "IT strategy consulting & advisory",
-			// 	// 		href: "/strategy-consulting-and-advisory",
-			// 	// 		id: "strategy",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "IT infrastructure procument & supply",
-			// 	// 		href: "/infrastructure-procurement-and-supply",
-			// 	// 		id: "infrastructure",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "IT compliance & regulatory consulting",
-			// 	// 		href: "/compliance-and-regulatory-consulting",
-			// 	// 		id: "compliance",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "capacity building & Trainings",
-			// 	// 		href: "/capacity-building-and-trainings",
-			// 	// 		id: "capacity",
-			// 	// 		icon: "/svgs/link-ai.svg",
-			// 	// 		external: false
-			// 	// 	},
-			// 	// 	{
-			// 	// 		label: "tech events design & delivery",
-			// 	// 		href: "/tech-events",
-			// 	// 		id: "tech",
-			// 	// 		icon: "/svgs/link-user.svg",
-			// 	// 		external: false
-			// 	// 	}
-			// 	// ]
+			// 	href: "/what-we-do",
+			// 	id: "services",
+			// 	menu: [
+			// 		{
+			// 			label: "Strategy Consulting & Advisory",
+			// 			href: "/strategy-consulting-and-advisory",
+			// 			id: "strategy",
+			// 			icon: "/svgs/link-user.svg",
+			// 			external: false
+			// 		},
+			// 		{
+			// 			label: "IT infrastructure procument & supply",
+			// 			href: "/infrastructure-procurement-and-supply",
+			// 			id: "infrastructure",
+			// 			icon: "/svgs/link-user.svg",
+			// 			external: false
+			// 		},
+			// 		{
+			// 			label: "IT compliance & regulatory consulting",
+			// 			href: "/compliance-and-regulatory-consulting",
+			// 			id: "compliance",
+			// 			icon: "/svgs/link-user.svg",
+			// 			external: false
+			// 		},
+			// 		{
+			// 			label: "capacity building & Trainings",
+			// 			href: "/capacity-building-and-trainings",
+			// 			id: "capacity",
+			// 			icon: "/svgs/link-ai.svg",
+			// 			external: false
+			// 		},
+			// 		{
+			// 			label: "tech events design & delivery",
+			// 			href: "/tech-events",
+			// 			id: "tech",
+			// 			icon: "/svgs/link-user.svg",
+			// 			external: false
+			// 		}
+			// 	]
 			// }
 		]
 	},

@@ -167,6 +167,9 @@
         &:hover {
             background-color: #27b531;
         }
+        & > span {
+            margin-bottom: 0!important;
+        }
         &:active {
             transform: scale(0.98);
         }

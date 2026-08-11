@@ -12,15 +12,21 @@ import styles from "./NewFooter.module.scss";
 const date = new Date();
 const year = date.getFullYear();
 
-const NewFooter = () => {
+interface NewFooterProps {
+    type: "newsletter" | "default";
+}
+
+const NewFooter = ({ type = "newsletter" }: NewFooterProps) => {
     const [openModal, setOpenModal] = useState<boolean>(false);
 
     return (
         <React.Fragment>
-            <footer className={styles.new_footer_container}>
-                <div className={styles.newsletter_positioner}>
-                    <NewsLetterSection />
-                </div>
+            <footer data-type={type} className={styles.new_footer_container}>
+                {type === "newsletter" && (
+                    <div className={styles.newsletter_positioner}>
+                        <NewsLetterSection />
+                    </div>
+                )}
                 <div className={styles.footer_body}>
                     <div className={styles.main_content}>
                         <div className={styles.main_content_left}>
