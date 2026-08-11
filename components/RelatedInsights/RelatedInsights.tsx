@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { useScroll, useSpring, useTransform, motion } from "framer-motion";
 import { ResearchCard, Button, BackgrounderCard, ExpertTakeCard, PolicyBriefCard, ReportCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
@@ -14,8 +15,26 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+    const relatedInsightsRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: relatedInsightsRef,
+        offset: ["start end", "end center"]
+    });
+
+    const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+    const y = useSpring(rawY, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
+    const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+    const opacity = useSpring(rawOpacity, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
     return (
-        <div className={styles.research_container}>
+        <motion.div style={{ opacity, y }} ref={relatedInsightsRef} className={styles.research_container}>
             <div className={styles.text_wrapper}>
                 <div className={styles.text}>
                     <h1>{type === "new" ? 'Read Now!' : 'Explore Insights'}</h1>
@@ -72,7 +91,7 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
                 )}
             </div>
             <div className={styles.divider}></div>
-        </div>
+        </motion.div>
     )
 }
 
