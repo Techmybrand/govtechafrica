@@ -1,1 +1,163 @@
 @import "@/styles/imports";
+
+.revolutionizing_sector {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    .revolutionizing_container {
+        max-width: $max-width;
+        width: 100%;
+        margin-inline: auto;
+        position: relative;
+        padding: 3.6rem;
+        .revolutionizing_text {
+            width: 100%;
+            margin-bottom: 6.4rem;
+            h1 {
+                font-size: 4.8rem;
+                line-height: 6.4rem;
+                color: #FFF;
+                font-family: $font-gothic-bold;
+                margin-bottom: 1.6rem;
+            }
+            p {
+                font-size: 1.8rem;
+                line-height: 2.7rem;
+                color: rgba($col-white, 0.7);
+                font-family: $font-gothic;
+                font-weight: 400;
+            }
+        }
+        .mission_and_vision {
+            background: #276A35;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 4rem 3.2rem;
+            border: 0.1rem solid #BEF2BE;
+            border-radius: 1.25rem;
+            gap: 12rem;
+            .mission,
+            .vision {
+                width: 49%;
+                h3 {
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                    color: #FFF;
+                    font-family: $font;
+                    font-weight: 700;
+                    margin-bottom: 1.6rem;
+                }
+                p {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    color: #FFF;
+                    font-family: $font-gothic;
+                    font-weight: 400;
+                    width: 75%;
+                }
+            }
+            .line {
+                width: 0.1rem;
+                height: 23rem;
+                background-color: #BEF2BE;
+            }
+        }
+        .revolutionizing_image {
+            width: 100%;
+            position: relative;
+            height: 70rem;
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+
+    @include screenMax("tablet") {
+        .revolutionizing_container {
+            padding: 2.4rem;
+            .revolutionizing_text {
+                margin-bottom: 4.8rem;
+                h1 {
+                    font-size: 4rem;
+                    line-height: 5.2rem;
+                    margin-bottom: 1.2rem;
+                }
+                p {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                }
+            }
+            .mission_and_vision {
+                padding: 3.2rem 2.4rem;
+                gap: 8rem;
+                .mission,
+                .vision {
+                    h3 {
+                        font-size: 2rem;
+                        line-height: 2.8rem;
+                        margin-bottom: 1.2rem;
+                    }
+                    p {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                        width: 85%;
+                    }
+                }
+                .line {
+                    height: 21rem;
+                }
+            }
+            .revolutionizing_image {
+                height: 60rem;
+            }
+        }
+    }
+
+    @include screenMax("mobile") {
+        .revolutionizing_container {
+            padding: 1.6rem;
+            .revolutionizing_text {
+                margin-bottom: 3.2rem;
+                h1 {
+                    font-size: 3.2rem;
+                    line-height: 4rem;
+                    margin-bottom: 0.8rem;
+                }
+                p {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+            }
+            .mission_and_vision {
+                padding: 2.4rem 1.6rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2.4rem;
+                .mission,
+                .vision {
+                    width: 100%;
+                    h3 {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                        margin-bottom: 0.8rem;
+                    }
+                    p {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                        width: 100%;
+                    }
+                }
+                .line {
+                    max-height: 0.1rem;
+                    height: 0.1rem;
+                    width: 100%;
+                }
+            }
+            .revolutionizing_image {
+                height: 50rem;
+            }
+        }
+    }
+}

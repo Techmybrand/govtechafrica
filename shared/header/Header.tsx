@@ -130,39 +130,58 @@ const LinkItem = ({
 	}, [collapsed]);
 	return (
 		<li onClick={() => {
-			if (index === 1) {
-				setCollapsed(true);
-				router.push(`/what-we-do`);
-			}
-			if (index === 2) {
-				setCollapsed(true);
-				router.push(`/who-we-are`);
-			}
-			if (index === 3) {
-				setCollapsed(true);
-				router.push(`/insights`);
-			}
+			// if (index === 0) {
+			// 	setCollapsed(true);
+			// 	router.push(`/what-we-do`);
+			// }
+			// if (index === 1) {
+			// 	setCollapsed(true);
+			// 	router.push(`/who-we-are`);
+			// }
+			// if (index === 2) {
+			// 	setCollapsed(true);
+			// 	router.push(`/insights`);
+			// }
 		}} className={styles.header_navLink} data-active={isActive}>
 			<div className={styles.link_row}>
-				<p>{link?.label}</p>
+				<p onClick={() => {
+						if (index === 0) {
+							setCollapsed(true);
+							router.push(`/what-we-do`);
+						}
+						if (index === 1) {
+							setCollapsed(true);
+							router.push(`/who-we-are`);
+						}
+						if (index === 2) {
+							setCollapsed(true);
+							router.push(`/insights`);
+						}
+					}}
+				>
+					{link?.label}
+				</p>
 				{link.subMenu?.length ? (
-					<div className={styles.link_icon}>
+					<div className={styles.link_icon} onClick={(e) => {
+							e.stopPropagation();
+							handleActiveLink(link?.label)
+						}}
+					>
 						<Image src="/svgs/arrow.svg" fill alt="" sizes="100%" />
 					</div>
 				) : null}
 				{link.subMenu?.length ? (
-					<div onClick={(e) => {
-						e.stopPropagation();
-						handleActiveLink(link?.label)
-					}} className={styles.link_icon_sm}>
+					<div className={styles.link_icon_sm} onClick={(e) => {
+							e.stopPropagation();
+							handleActiveLink(link?.label)
+						}}
+					>
 						<Image src="/svgs/arrow.svg" fill alt="" sizes="100%" />
 					</div>
 				) : null}
 			</div>
 			{link.subMenu?.length ? (
-				<div className={styles.subMenu_container}
-					data-active={link.label === "sell gears" || link.label === "rent out"}
-				>
+				<div className={styles.subMenu_container} data-active={link.label === "sell gears" || link.label === "rent out"}>
 					<div className={styles.subMenu}>
 						{link.subMenu.map((subMenu: NavLinkSub, index: number) => (
 							<div className={styles.subMenu_navlist} key={index}>
@@ -177,10 +196,7 @@ const LinkItem = ({
 								<ul className={styles.sub_list}>
 									{subMenu.menu?.map(
 										(menu: NavLinkMenu, index: number) => (
-											<Link
-												href={menu.href ?? ''}
-												key={index}
-												className={styles.subMenu_link}
+											<Link target={menu?.external ? "_blank" : "_self"} href={menu.href ?? ''} key={index} className={styles.subMenu_link}
 												onClick={() => {
 													handleScroll(menu.id);
 													handleActiveLink("");
