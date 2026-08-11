@@ -16,7 +16,7 @@
 }
 
 .header_container {
-    margin-bottom: 8rem;
+    margin-bottom: 0;
     max-width: 80rem;
     .tag {
         display: inline-block;
@@ -60,6 +60,10 @@
         linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 10rem 10rem;
+    // background-image: url("../../../public/images/appraoch_bg.png");
+    // background-size: cover;
+    // background-position: top center;
+    // background-repeat: no-repeat;
     z-index: 0;
 }
 
@@ -76,7 +80,7 @@
     }
     &.card_2 {
         top: 80rem;
-        right: 23%;
+        right: 18%;
     }
 }
 
@@ -183,7 +187,7 @@
     }
     .header_container {
         max-width: 85%;
-        margin-bottom: 6rem;
+        margin-bottom: 0;
         .tag {
             margin-bottom: 1rem;
         }

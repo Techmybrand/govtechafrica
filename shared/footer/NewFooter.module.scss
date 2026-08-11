@@ -1,26 +1,25 @@
 @import "@/styles/imports";
 
 .new_footer_container {
-    // background-color: #060706;
     background-color: transparent;
     color: #fff;
     width: 100%;
     position: relative;
-    padding-top: 10rem;
     overflow: hidden;
-
-    @include screenMax("tablet") {
-        padding-top: 8rem;
-    }
-    @include screenMax("mobile") {
-        padding-top: 6rem;
+    &[data-type="newsletter"] {
+        padding-top: 6.4rem;
+        @include screenMax("tablet") {
+            padding-top: 4.8rem;
+        }
+        @include screenMax("mobile") {
+            padding-top: 3.2rem;
+        }
     }
 }
 
 .newsletter_positioner {
     position: relative;
     margin-bottom: -25rem;
-    // display: none;
     z-index: 6;
     @include screenMax("mobile") {
         margin-bottom: -20rem;

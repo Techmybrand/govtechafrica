@@ -21,7 +21,6 @@ const approachData = [
 		text: `The ultimate measure of digital government is the experience of the people it serves. Every solution we design is focused on making public services faster, simpler, more transparent and more accessible.`,
 	},
 ];
-
 interface CardData {
 	num: string;
 	title: string;
@@ -39,11 +38,6 @@ const Approach = () => {
         target: container,
         offset: ["start center", "end end"]
     });
-    // const { scrollYProgress: mobileProgress } = useScroll({
-    //     target: container,
-    //     offset: ["start end", "end center"]
-    // });
-
     const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
     const y = useSpring(rawY, {
         stiffness: 100,
@@ -52,6 +46,19 @@ const Approach = () => {
     });
     const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
     const opacity = useSpring(rawOpacity, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
+
+    const rawCardsY = useTransform(cardsScrollYProgress, [0, 0.2], [300, 0]);
+    const cardsY = useSpring(rawCardsY, {
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5
+    });
+    const rawCardsOpacity = useTransform(cardsScrollYProgress, [0, 0.3], [0, 1]);
+    const cardsOpacity = useSpring(rawCardsOpacity, {
         stiffness: 100,
         damping: 20,
         mass: 0.5
@@ -89,16 +96,16 @@ const Approach = () => {
                 ) : (
                     <div className={styles.desktop_cards_container}>
                         <div className={styles.grid_background}></div>
-                        <div className={styles.curve_1}>
+                        <motion.div className={styles.curve_1} style={{ opacity: cardsOpacity, y: cardsY }}>
                             <div className={styles.dotted_line}>
                                 <Image alt="line" fill src="/svgs/approach_line_1.svg" />
                             </div>
-                        </div>
-                        <div className={styles.curve_2}>
+                        </motion.div>
+                        <motion.div className={styles.curve_2} style={{ opacity: cardsOpacity, y: cardsY }}>
                             <div className={styles.dotted_line}>
                                 <Image alt="line" fill src="/svgs/approach_line_2.svg" />
                             </div>
-                        </div>
+                        </motion.div>
                         {approachData.map((card, index) => (
                             <DesktopCard key={index} index={index} card={card} scrollYProgress={cardsScrollYProgress} />
                         ))}

@@ -95,7 +95,8 @@
 					display: none;
 					transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 					max-height: 50rem;
-					min-width: 20rem;
+					// min-width: 25rem;
+					min-width: max-content;
 					background-color: #565656;
 					border: 0.2rem solid rgba($col-white, 0.2);
 					border-radius: 1.6rem;
