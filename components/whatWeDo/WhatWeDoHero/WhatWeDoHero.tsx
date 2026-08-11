@@ -47,9 +47,9 @@ const WhatWeDoHero = () => {
                 <div className={styles.right_content}>
                     <div className={styles.diagram_container}>
                         <svg viewBox="0 0 420 340" className={styles.hero_diagram}>
-                            <path d="M 20 70 H 180" stroke="#264A38" strokeWidth="1.5" fill="none"/>
+                            <path d="M 20 70 H 180" stroke="#FFFFFFB3" strokeWidth="1.5" fill="none"/>
                             <path d="M 180 70 C 220 70, 220 170, 260 170" stroke="#6EE7A8" strokeWidth="1.5" fill="none"/>
-                            <path d="M 20 270 H 180" stroke="#264A38" strokeWidth="1.5" fill="none"/>
+                            <path d="M 20 270 H 180" stroke="#FFFFFFB3" strokeWidth="1.5" fill="none"/>
                             <path d="M 180 270 C 220 270, 220 170, 260 170" stroke="#E8A33D" strokeWidth="1.5" fill="none"/>
                             
                             <circle cx="20" cy="70" r="4" fill="#6EE7A8"/>
