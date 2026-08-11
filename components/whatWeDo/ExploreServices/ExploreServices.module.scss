@@ -39,7 +39,9 @@
             cursor: pointer;
             transition: $all-transition;
             &:hover {
-                background-color: #53C688;
+                background: #53C688;
+                transform: translateY(-2px);
+                transition: $all-transition;
             }
             h3 {
                 font-size: 1.6rem;
