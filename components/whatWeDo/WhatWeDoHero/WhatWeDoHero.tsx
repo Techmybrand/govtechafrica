@@ -54,8 +54,8 @@ const WhatWeDoHero = () => {
                             
                             <circle cx="20" cy="70" r="4" fill="#6EE7A8"/>
                             <circle cx="20" cy="270" r="4" fill="#E8A33D"/>
-                            <circle cx="260" cy="170" r="7" fill="#F3F1E7"/>
-                            <circle cx="260" cy="170" r="14" fill="none" stroke="#F3F1E7" strokeOpacity="0.25"/>
+                            <circle cx="260" cy="170" r="7" fill="#FFFFFF"/>
+                            <circle cx="260" cy="170" r="14" fill="none" stroke="#FFFFFF" strokeOpacity="0.95"/>
                             
                             <circle className={styles.pulse} cx="20" cy="70" r="3.5" fill="#6EE7A8">
                                 <animateMotion dur="4s" repeatCount="indefinite" path="M 0 0 H 160 C 200 0, 200 100, 240 100"/>
