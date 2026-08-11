@@ -137,8 +137,6 @@ interface MobileCardProps {
 }
 
 const MobileCard = ({ card, index }: MobileCardProps) => {
-    // const rotation = index === 0 ? 0 : index === 1 ? -3 : -6;
-
 	return (
 		<motion.div data-index={index} className={styles.mobile_card_wrapper}
 			style={{ position: "sticky", top: `calc(10rem + ${index * 2}rem)` }}
