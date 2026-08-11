@@ -123,8 +123,9 @@
         cursor: pointer;
         text-decoration: none;
         &:hover {
-            background: #2e835a;
+            background: #53C688;
             transform: translateY(-2px);
+            transition: $all-transition;
         }
         svg {
             width: 4rem;

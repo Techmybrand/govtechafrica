@@ -38,31 +38,24 @@ const Approach = () => {
         target: container,
         offset: ["start center", "end end"]
     });
-    const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
-    const y = useSpring(rawY, {
+    const scrollYSpring = useSpring(scrollYProgress, {
         stiffness: 100,
         damping: 20,
         mass: 0.5
     });
-    const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
-    const opacity = useSpring(rawOpacity, {
-        stiffness: 100,
-        damping: 20,
-        mass: 0.5
-    });
+    const y = useTransform(scrollYSpring, [0, 0.2], [300, 0]);
+    const opacity = useTransform(scrollYSpring, [0, 0.3], [0, 1]);
 
-    const rawCardsY = useTransform(cardsScrollYProgress, [0, 0.2], [300, 0]);
-    const cardsY = useSpring(rawCardsY, {
+    const cardsScrollYSpring = useSpring(cardsScrollYProgress, {
         stiffness: 100,
         damping: 20,
         mass: 0.5
     });
-    const rawCardsOpacity = useTransform(cardsScrollYProgress, [0, 0.3], [0, 1]);
-    const cardsOpacity = useSpring(rawCardsOpacity, {
-        stiffness: 100,
-        damping: 20,
-        mass: 0.5
-    });
+    const curve1Y = useTransform(cardsScrollYSpring, [0.05, 0.25], [400, 0]);
+    const curve1Opacity = useTransform(cardsScrollYSpring, [0.05, 0.25], [0, 1]);
+
+    const curve2Y = useTransform(cardsScrollYSpring, [0.15, 0.35], [400, 0]);
+    const curve2Opacity = useTransform(cardsScrollYSpring, [0.15, 0.35], [0, 1]);
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth <= 650);
@@ -87,21 +80,17 @@ const Approach = () => {
 
                 {isMobile ? (
                     <div className={styles.mobile_cards_container}>
-                        {approachData.map((card, index) => {
-                            return (
-                                <MobileCard key={index} card={card} index={index} />
-                            );
-                        })}
+                        {approachData.map((card, index) => <MobileCard key={index} card={card} index={index} />)}
                     </div>
                 ) : (
                     <div className={styles.desktop_cards_container}>
                         <div className={styles.grid_background}></div>
-                        <motion.div className={styles.curve_1} style={{ opacity: cardsOpacity, y: cardsY }}>
+                        <motion.div className={styles.curve_1} style={{ opacity: curve1Opacity, y: curve1Y }}>
                             <div className={styles.dotted_line}>
                                 <Image alt="line" fill src="/svgs/approach_line_1.svg" />
                             </div>
                         </motion.div>
-                        <motion.div className={styles.curve_2} style={{ opacity: cardsOpacity, y: cardsY }}>
+                        <motion.div className={styles.curve_2} style={{ opacity: curve2Opacity, y: curve2Y }}>
                             <div className={styles.dotted_line}>
                                 <Image alt="line" fill src="/svgs/approach_line_2.svg" />
                             </div>
@@ -118,18 +107,15 @@ const Approach = () => {
 
 const DesktopCard = ({ card, index, scrollYProgress }: { card: CardData; index: number, scrollYProgress: MotionValue<number> }) => {
     const rotation = index === 0 ? -17 : index === 1 ? 20 : -18;
-    const rawY = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
-    const y = useSpring(rawY, {
+    const scrollYSpring = useSpring(scrollYProgress, {
         stiffness: 100,
         damping: 20,
         mass: 0.5
     });
-    const rawOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
-    const opacity = useSpring(rawOpacity, {
-        stiffness: 100,
-        damping: 20,
-        mass: 0.5
-    });
+    const start = index * 0.1;
+    const end = start + 0.2;
+    const y = useTransform(scrollYSpring, [start, end], [400, 0]);
+    const opacity = useTransform(scrollYSpring, [start, end], [0, 1]);
     return (
         <motion.div className={`${styles.card_wrapper} ${styles[`card_${index}`]}`}
             style={{ opacity: opacity, y: y, rotate: rotation }}
