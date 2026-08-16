@@ -5,7 +5,8 @@ import { globePoints } from "./points";
 interface GlobeProps {
     className?: string;
 }
-const filteredPoints = globePoints.filter((_, idx) => idx % 2 === 0);
+const filteredPoints = globePoints.filter((_, idx) => idx % 4 === 0);
+// const mobileFilteredPoints = globePoints.filter((_, idx) => idx % 4 === 0);
 
 const Globe = ({ className = "" }: GlobeProps) => {
     const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -26,25 +27,22 @@ const Globe = ({ className = "" }: GlobeProps) => {
     const handleMouseLeave = () => {
         setTilt({ x: 0, y: 0 });
     };
+    // const [mobile, setMobile] = useState<boolean>(false);
+    // useEffect(() => {
+    //     const handleResize = () => setMobile(window.innerWidth <= 380);
+    //     handleResize();
+    //     window.addEventListener('resize', handleResize);
+    //     return () => window.removeEventListener('resize', handleResize);
+    // }, []);
+    // const getFilteredPoints = mobile ? mobileFilteredPoints : filteredPoints;
 
     return (
-        <div className={`${styles.globe_container} ${className}`}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-        >
+        <div className={`${styles.globe_container} ${className}`} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
             <div className={styles.orbit_ring} />
-            <div className={styles.globe_wrapper}
-                style={{
-                    transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`
-                }}
-            >
+            <div className={styles.globe_wrapper} style={{transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`}}>
                 <div className={styles.sphere_bg} />
                 <div className={styles.globe_texture}>
-                    <svg
-                        viewBox="0 0 500 500"
-                        className={styles.globe_svg}
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
+                    <svg viewBox="0 0 500 500" className={styles.globe_svg} xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <clipPath id="globe-clip">
                                 <circle cx="250" cy="250" r="245" />

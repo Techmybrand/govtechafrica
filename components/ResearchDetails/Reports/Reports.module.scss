@@ -54,7 +54,7 @@
                     flex-shrink: 0;
                     &>img {
                         object-fit: cover;
-                        object-position: 0 0;
+                        object-position: top center;
                     }
                 }
                 .name_type_and_date {

@@ -93,13 +93,15 @@ const NewsLetterSection = () => {
 
                         <form onSubmit={handleSubmit} className={styles.subscription_form}>
                             <div className={styles.inputs_group}>
-                                <input type="text" name="firstName" required placeholder="Enter your first name" value={formData.firstName}
-                                    onChange={handleChange} className={styles.input_field}
-                                />
-                                <input type="text" name="lastName" required placeholder="Enter your last name" value={formData.lastName}
-                                    onChange={handleChange} className={styles.input_field}
-                                />
-                                <input type="email" name="email" required placeholder="Enter your email" value={formData.email}
+                                <div className={styles.name_fields}>
+                                    <input type="text" name="firstName" required placeholder="First Name" value={formData.firstName}
+                                        onChange={handleChange} className={styles.input_field}
+                                    />
+                                    <input type="text" name="lastName" required placeholder="Last Name" value={formData.lastName}
+                                        onChange={handleChange} className={styles.input_field}
+                                    />
+                                </div>
+                                <input type="email" name="email" required placeholder="Email address" value={formData.email}
                                     onChange={handleChange} className={styles.input_field}
                                 />
                             </div>

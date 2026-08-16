@@ -9,7 +9,7 @@ export interface NavLinkMenu {
 }
 export interface NavLinkSub {
 	label: string;
-	icon: string;
+	icon?: string;
 	href?: string;
 	id?: string;
 	isHref?: boolean;

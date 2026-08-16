@@ -122,6 +122,15 @@
             color: #ffffff;
         }
     }
+    h4 {
+        font-family: $font;
+        font-size: 3.2rem;
+        line-height: 1.4;
+        font-weight: 500;
+        color: #ffffff;
+        margin-bottom: 2.4rem;
+        margin-top: -1.2rem;
+    }
     .intro_description {
         font-family: $font;
         font-size: 1.6rem;
@@ -224,6 +233,11 @@
             line-height: 1.4;
             margin-bottom: 2.4rem;
         }
+        h4 {
+            font-size: 2.4rem;
+            line-height: 3.2rem;
+            margin-bottom: 1.6rem;
+        }
         .intro_description {
             font-size: 1.4rem;
             line-height: 2rem;
@@ -290,9 +304,11 @@
             margin-bottom: 0.8rem;
             text-align: left;
         }
-        // br {
-        //     display: none;
-        // }
+        h4 {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            margin-bottom: 1rem;
+        }
         .intro_description {
             font-size: 1.2rem;
             line-height: 1.6rem;

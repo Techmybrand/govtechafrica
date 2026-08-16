@@ -40,7 +40,7 @@ const HomeView = () => {
 			<Experience />
 			<CenterPieceV2 />
 			<NPGR />
-			<IntroToFulcrum />
+			<IntroToFulcrum type="home" />
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>
 	);
