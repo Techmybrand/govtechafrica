@@ -21,7 +21,7 @@ export const navLinks: NavLink[] = [
 		subMenu: [
 			{
 				label: "solutions",
-				icon: "/svgs/link-main.svg",
+				icon: "/svgs/arrow.svg",
 				// href: "https://fulcrum.govtechafrica.com",
 				id: "solutions",
 				menu: [
@@ -29,7 +29,7 @@ export const navLinks: NavLink[] = [
 						label: "Fulcrum",
 						href: "https://fulcrum.govtechafrica.com",
 						id: "fulcrum",
-						icon: "/svgs/link-user.svg",
+						icon: "",
 						external: true
 					},
 					// {
@@ -76,49 +76,49 @@ export const navLinks: NavLink[] = [
 					// }
 				]
 			},
-			// {
-			// 	label: "services",
-			// 	icon: "/svgs/link-main.svg",
-			// 	href: "/what-we-do",
-			// 	id: "services",
-			// 	menu: [
-			// 		{
-			// 			label: "Strategy Consulting & Advisory",
-			// 			href: "/strategy-consulting-and-advisory",
-			// 			id: "strategy",
-			// 			icon: "/svgs/link-user.svg",
-			// 			external: false
-			// 		},
-			// 		{
-			// 			label: "IT infrastructure procument & supply",
-			// 			href: "/infrastructure-procurement-and-supply",
-			// 			id: "infrastructure",
-			// 			icon: "/svgs/link-user.svg",
-			// 			external: false
-			// 		},
-			// 		{
-			// 			label: "IT compliance & regulatory consulting",
-			// 			href: "/compliance-and-regulatory-consulting",
-			// 			id: "compliance",
-			// 			icon: "/svgs/link-user.svg",
-			// 			external: false
-			// 		},
-			// 		{
-			// 			label: "capacity building & Trainings",
-			// 			href: "/capacity-building-and-trainings",
-			// 			id: "capacity",
-			// 			icon: "/svgs/link-ai.svg",
-			// 			external: false
-			// 		},
-			// 		{
-			// 			label: "tech events design & delivery",
-			// 			href: "/tech-events",
-			// 			id: "tech",
-			// 			icon: "/svgs/link-user.svg",
-			// 			external: false
-			// 		}
-			// 	]
-			// }
+			{
+				label: "services",
+				icon: "/svgs/arrow.svg",
+				href: "/what-we-do",
+				id: "services",
+				// menu: [
+				// 	{
+				// 		label: "Strategy Consulting & Advisory",
+				// 		href: "/strategy-consulting-and-advisory",
+				// 		id: "strategy",
+				// 		icon: "/svgs/link-user.svg",
+				// 		external: false
+				// 	},
+				// 	{
+				// 		label: "IT infrastructure procument & supply",
+				// 		href: "/infrastructure-procurement-and-supply",
+				// 		id: "infrastructure",
+				// 		icon: "/svgs/link-user.svg",
+				// 		external: false
+				// 	},
+				// 	{
+				// 		label: "IT compliance & regulatory consulting",
+				// 		href: "/compliance-and-regulatory-consulting",
+				// 		id: "compliance",
+				// 		icon: "/svgs/link-user.svg",
+				// 		external: false
+				// 	},
+				// 	{
+				// 		label: "capacity building & Trainings",
+				// 		href: "/capacity-building-and-trainings",
+				// 		id: "capacity",
+				// 		icon: "/svgs/link-ai.svg",
+				// 		external: false
+				// 	},
+				// 	{
+				// 		label: "tech events design & delivery",
+				// 		href: "/tech-events",
+				// 		id: "tech",
+				// 		icon: "/svgs/link-user.svg",
+				// 		external: false
+				// 	}
+				// ]
+			}
 		]
 	},
 	{
@@ -156,37 +156,43 @@ export const navLinks: NavLink[] = [
 	{
 		label: "research",
 		external: false,
-		href: "insights",
+		// href: "insights",
 		icon: "/svgs/link-main.svg",
 		subMenu: [
 			{
-				label: "backgrounders",
-				icon: "/svgs/link-main.svg",
-				href: "/backgrounders"
-			},
-			{
-				label: "articles",
-				// icon: "/svgs/link-user.svg",
-				icon: "/svgs/link-main.svg",
-				href: "/articles"
-			},
-			{
-				label: "expert takes",
-				// icon: "/svgs/link-ai.svg",
-				icon: "/svgs/link-main.svg",
-				href: "/expert-takes"
-			},
-			{
-				label: "policy briefs",
-				// icon: "/svgs/link-ai.svg",
-				icon: "/svgs/link-main.svg",
-				href: "/policy-briefs"
-			},
-			{
-				label: "reports",
-				// icon: "/svgs/link-ai.svg",
-				icon: "/svgs/link-main.svg",
-				href: "/reports"
+				label: "insights",
+				href: "/insights",
+				icon: "/svgs/arrow.svg",
+				menu: [
+					{
+						label: "Backgrounders",
+						href: "/backgrounders",
+						id: "backgrounders",
+						icon: "",
+						external: false
+					},
+					{
+						label: "policy insights",
+						href: "/policy-insights",
+						id: "policy-insights",
+						icon: "",
+						external: false
+					},
+					{
+						label: "articles",
+						href: "/articles",
+						id: "articles",
+						icon: "",
+						external: false
+					},
+					{
+						label: "reports",
+						href: "/reports",
+						id: "reports",
+						icon: "",
+						external: false
+					},
+				]
 			},
 		]
 	}

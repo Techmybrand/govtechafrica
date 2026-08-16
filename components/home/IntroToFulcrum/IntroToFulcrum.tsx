@@ -7,7 +7,11 @@ import Link from "next/link";
 import { useScroll, useSpring, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 
-const IntroToFulcrum = () => {
+interface IntroToFulcrumProps {
+	type: "home" | "what_we_do"
+}
+
+const IntroToFulcrum = ({ type = "home" }: IntroToFulcrumProps) => {
 	const fulcrumRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: fulcrumRef,
@@ -52,14 +56,16 @@ const IntroToFulcrum = () => {
 
 					<div className={styles.right_column}>
 						<h2 className={styles.intro_heading}>
-							Introducing <br />
-							<span>Fulcrum...</span>
+							{type === "what_we_do" ? "Our Flagship" : "Introducing"} <br />
+							<span>{type === "what_we_do" ? "Product" : "Fulcrum..."}</span>
 						</h2>
 
+						{type === "what_we_do" && <h4>Fulcrum</h4>}
+
 						<p className={styles.intro_description}>
-							A Unified Execution Platform That Gives Leadership Real-Time Visibility
-							Into Project Delivery, Budget Performance, Milestones, And SDG
-							Alignment Across Ministries, Departments, And Agencies.
+							A Project Management Tool that gives leadership real-time visibility
+							into project delivery, budget performance, milestones, and SDG
+							alignment across ministries, departments and agencies.
 						</p>
 						<Link href="https://fulcrum.govtechafrica.com" target="_blank">
 							<Button className={styles.visit_btn}>
