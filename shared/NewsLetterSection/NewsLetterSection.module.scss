@@ -119,6 +119,14 @@
         gap: 1.6rem;
         flex: 1;
         width: 100%;
+        .name_fields {
+            display: flex;
+            gap: 1.6rem;
+            width: 100%;
+            @include screenMax("mobile") {
+                flex-direction: column;
+            }
+        }
     }
     .input_field {
         width: 100%;

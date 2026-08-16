@@ -40,7 +40,7 @@ const NewHomeView = () => {
 			<Experience />
 			<CenterPieceV2 />
 			<NPGR />
-			<IntroToFulcrum />
+			<IntroToFulcrum type="home" />
 			{/* <ParticipatingOrganisations type="new" /> */}
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>

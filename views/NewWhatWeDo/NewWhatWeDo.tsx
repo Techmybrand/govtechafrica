@@ -9,7 +9,7 @@ const NewWhatWeDo = () => {
             <WhatWeDoHero />
             <Revolutionizing />
             <Approach />
-            <IntroToFulcrum />
+            <IntroToFulcrum type="what_we_do" />
             <RelatedInsights type="new" />
             <ExploreServices />
         </React.Fragment>

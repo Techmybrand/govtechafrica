@@ -11,7 +11,7 @@ import WhatWeDoView from "./whatWeDoView/WhatWeDoView";
 import WhoWeAreView from "./whoWeAreView/WhoWeAreView";
 import ArticlesView from "./ArticlesView/ArticlesView";
 import ExpertTakesView from "./ExpertTakesView/ExpertTakesView";
-import PolicyBriefsView from "./PolicyBriefsView/PolicyBriefsView";
+import PolicyInsightsView from "./PolicyBriefsView/PolicyBriefsView";
 import NewWhoWeAreView from "./NewWhoWeAreView/NewWhoWeAreView";
 import ReportsView from "./ReportsView/ReportsView";
 import NewWhatWeDo from "./NewWhatWeDo/NewWhatWeDo";
@@ -22,7 +22,7 @@ export {
     WhatWeDoView,
     ArticlesView,
     WhoWeAreView,
-    PolicyBriefsView,
+    PolicyInsightsView,
     ExpertTakesView,
     ContactView,
     ReportsView,

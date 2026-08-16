@@ -129,20 +129,7 @@ const LinkItem = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [collapsed]);
 	return (
-		<li onClick={() => {
-			// if (index === 0) {
-			// 	setCollapsed(true);
-			// 	router.push(`/what-we-do`);
-			// }
-			// if (index === 1) {
-			// 	setCollapsed(true);
-			// 	router.push(`/who-we-are`);
-			// }
-			// if (index === 2) {
-			// 	setCollapsed(true);
-			// 	router.push(`/insights`);
-			// }
-		}} className={styles.header_navLink} data-active={isActive}>
+		<li className={styles.header_navLink} data-active={isActive}>
 			<div className={styles.link_row}>
 				<p onClick={() => {
 						if (index === 0) {
@@ -184,15 +171,18 @@ const LinkItem = ({
 				<div className={styles.subMenu_container} data-active={link.label === "sell gears" || link.label === "rent out"}>
 					<div className={styles.subMenu}>
 						{link.subMenu.map((subMenu: NavLinkSub, index: number) => (
-							<div className={styles.subMenu_navlist} key={index}>
+							<div data-type={subMenu?.id} className={styles.subMenu_navlist} key={index}>
 								<Link href={subMenu.href ?? ''} className={styles.subMenu_link}
 									onClick={() => handleScroll(subMenu.id)}
 								>
 									<h2 data-label={subMenu.label}>{subMenu.label}</h2>
-									<div className={styles.subMenu_icon}>
-										<Image fill alt="" sizes="100vw" src={subMenu.icon} />
-									</div>
+									{subMenu.icon && (
+										<div className={styles.subMenu_icon}>
+											<Image fill alt="" sizes="100vw" src={subMenu.icon} />
+										</div>
+									)}
 								</Link>
+								<div className={styles.line} />
 								<ul className={styles.sub_list}>
 									{subMenu.menu?.map(
 										(menu: NavLinkMenu, index: number) => (
@@ -205,12 +195,7 @@ const LinkItem = ({
 												<p>{menu.label}</p>
 												{menu.icon && (
 													<div className={styles.subMenu_icon}>
-														<Image
-															src={menu.icon}
-															fill
-															alt=""
-															sizes="100vw"
-														/>
+														<Image src={menu.icon} fill alt="" sizes="100vw" />
 													</div>
 												)}
 											</Link>

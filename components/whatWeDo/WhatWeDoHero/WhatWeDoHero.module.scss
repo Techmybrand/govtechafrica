@@ -17,7 +17,7 @@
         left: -10%;
         width: 120%;
         height: 13rem;
-        rotate: -14deg;
+        rotate: -10deg;
         background: #276A35;
         pointer-events: none;
         z-index: 1;
@@ -165,7 +165,12 @@
 @include screenMax("tablet") {
     .what_we_do_hero {
         min-height: auto;
-        padding: 16rem 0 10rem;
+        padding: 12rem 0 10rem;
+        &::before {
+            bottom: 45%;
+            height: 9rem;
+            filter: blur(40px);
+        }
     }
     .container {
         gap: 8rem;
@@ -203,7 +208,7 @@
 
 @include screenMax("mobile") {
     .what_we_do_hero {
-        padding: 12rem 0 8rem;
+        padding: 8rem 0;
     }
     .container {
         padding: 0 1.6rem;
@@ -239,11 +244,12 @@
         .title {
             font-size: 3.6rem;
             line-height: 4.8rem;
+            margin-bottom: 2.4rem;
         }
         .description {
             font-size: 1.2rem;
             line-height: 1.6rem;
-            margin-bottom: 2.4rem;
+            margin-bottom: 1.6rem;
             max-width: 100%;
         }
     }

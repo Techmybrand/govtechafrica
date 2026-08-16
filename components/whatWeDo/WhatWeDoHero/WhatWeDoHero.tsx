@@ -64,8 +64,8 @@ const WhatWeDoHero = () => {
                                 <animateMotion dur="4s" begin="0.4s" repeatCount="indefinite" path="M 0 0 H 160 C 200 -0, 200 -100, 240 -100"/>
                             </circle>
                             
-                            <text x="45" y="60" className={styles.trace_label}>Build - Technology</text>
-                            <text x="45" y="295" className={styles.trace_label_blue}>Enable - Consulting</text>
+                            <text x="45" y="60" className={styles.trace_label}>We Build - Technology</text>
+                            <text x="45" y="295" className={styles.trace_label_blue}>We Enable - Consulting</text>
                             <text x="230" y="205" className={styles.trace_label}>Governments</text>
                         </svg>
                     </div>
