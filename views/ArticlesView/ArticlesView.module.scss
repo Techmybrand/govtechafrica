@@ -95,10 +95,12 @@
 			}
 			.research_wrapper {
 				display: flex;
-				align-items: center;
+				flex-direction: column;
 				gap: 1.6rem;
-				overflow-x: scroll;
 				padding: 1.6rem;
+				& > article {
+					width: 100%!important;
+				}
 			}
 		}
 		.divider {
