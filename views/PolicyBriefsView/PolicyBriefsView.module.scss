@@ -93,15 +93,17 @@
 			.large_card {
 				margin-top: 1.6rem;
                 margin-bottom: 1.6rem;
+				padding: 1.6rem;
 				.details {
 					h2 {
 						font-size: 2.4rem;
 						line-height: 3.2rem;
+						margin-bottom: 2rem;
 					}
 					p {
-						font-size: 1.4rem;
-						line-height: 2rem;
-                        max-width: 99%;
+						font-size: 1.2rem;
+						line-height: 1.6rem;
+                        max-width: 100%;
 					}
 				}
 			}
@@ -111,10 +113,12 @@
             }
 			.research_wrapper {
 				display: flex;
-				align-items: center;
+				flex-direction: column;
 				gap: 1.6rem;
-				overflow-x: scroll;
 				padding: 1.6rem;
+				& > article {
+					width: 100%!important;
+				}
 			}
             .divider {
                 margin-block: 1.6rem;

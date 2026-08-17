@@ -13,14 +13,15 @@ enum Scroll {
 	Idle = "idle",
 	InitialScroll = "initial"
 }
-
 interface HeaderProps {
 	type?: "new" | "default";
 }
 
-const Header = ({ type = 'default' }: HeaderProps) => {
+const Header = ({ type = "default" }: HeaderProps) => {
 	const router = useRouter();
 	const [collapsed, setCollapsed] = useState<boolean>(true);
+	const [mobile, setMobile] = useState<boolean>(false);
+	const [showList, setShowList] = useState<string | null | undefined>(null);
 	const [scroll, setScroll] = useState<Scroll>(Scroll.Idle);
 	const [activeLink, setActiveLink] = useState<string | null>(null);
 	const headerRef = useRef<HTMLElement>(null);
@@ -39,14 +40,26 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 		return () => window.removeEventListener("scroll", scrollCheck);
 	}, []);
 
+    useEffect(() => {
+        const handleResize = () => setMobile(window.innerWidth <= 950);
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
 	const handleActiveLink = (label: string) => {
 		setActiveLink(prev => (prev === label ? null : label));
 	};
 
 	const handleScroll = (id?: string) => {
+		if (mobile && (id === "services" || id === "solutions")) {
+			setCollapsed(false);
+			return;
+		}
 		setCollapsed(true);
 		if (!id) return;
 		scrollTo({ id });
+		setShowList(null);
 	};
 
 	return (
@@ -64,15 +77,9 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 						<ul className={styles.header_navList}>
 							{navLinks.map((link: NavLink, index: number) => {
 								return (
-									<LinkItem
-										setCollapsed={setCollapsed}
-										collapsed={collapsed}
-										link={link}
-										key={index}
-										index={index}
-										isActive={activeLink === link.label}
-										handleActiveLink={handleActiveLink}
-										handleScroll={handleScroll}
+									<LinkItem link={link} key={index} index={index} collapsed={collapsed} showList={showList}
+										setCollapsed={setCollapsed} setShowList={setShowList} isActive={activeLink === link.label}
+										handleActiveLink={handleActiveLink} handleScroll={handleScroll}
 									/>
 								);
 							})}
@@ -89,9 +96,7 @@ const Header = ({ type = 'default' }: HeaderProps) => {
 				<div onClick={() => router.push('/contact')} className={styles.contact_btn}>
 					<p>contact us</p>
 				</div>
-				<div onClick={() => setCollapsed(!collapsed)}
-					className={styles[collapsed ? "header_hamburger" : "header_hamburger__open"]}
-				>
+				<div onClick={() => setCollapsed(!collapsed)} className={styles[collapsed ? "header_hamburger" : "header_hamburger__open"]}>
 					<span className={styles.header_hamburgerBar}></span>
 					<span className={styles.header_hamburgerBar}></span>
 					<span className={styles.header_hamburgerBar}></span>
@@ -105,6 +110,8 @@ export default Header;
 interface LinkProps {
 	link: NavLink;
 	setCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
+	setShowList: React.Dispatch<React.SetStateAction<string | null | undefined>>;
+	showList: string | null | undefined;
 	collapsed: boolean;
 	isActive: boolean;
 	handleActiveLink: (label: string) => void;
@@ -120,6 +127,8 @@ const LinkItem = ({
 	handleScroll,
 	index,
 	setCollapsed,
+	showList,
+	setShowList
 }: LinkProps) => {
 	const router = useRouter();
 	useEffect(() => {
@@ -172,18 +181,31 @@ const LinkItem = ({
 					<div className={styles.subMenu}>
 						{link.subMenu.map((subMenu: NavLinkSub, index: number) => (
 							<div data-type={subMenu?.id} className={styles.subMenu_navlist} key={index}>
-								<Link href={subMenu.href ?? ''} className={styles.subMenu_link}
-									onClick={() => handleScroll(subMenu.id)}
-								>
-									<h2 data-label={subMenu.label}>{subMenu.label}</h2>
-									{subMenu.icon && (
-										<div className={styles.subMenu_icon}>
-											<Image fill alt="" sizes="100vw" src={subMenu.icon} />
-										</div>
-									)}
-								</Link>
+								{subMenu.href ? (
+									<Link href={subMenu.href} className={styles.subMenu_link} onClick={() => handleScroll(subMenu.id)}>
+										<h2 data-label={subMenu.label}>{subMenu.label}</h2>
+										{subMenu.icon && (
+											<div className={styles.subMenu_icon}>
+												<Image fill alt="" sizes="100vw" src={subMenu.icon} />
+											</div>
+										)}
+									</Link>
+								) : (
+									<div className={styles.subMenu_link} onClick={() => {
+											handleScroll(subMenu.id);
+											setShowList(prev => prev === subMenu?.id ? null : subMenu?.id);
+										}}
+									>
+										<h2 data-label={subMenu.label}>{subMenu.label}</h2>
+										{subMenu.icon && (
+											<div className={styles.subMenu_icon}>
+												<Image fill alt="" sizes="100vw" src={subMenu.icon} />
+											</div>
+										)}
+									</div>
+								)}
 								<div className={styles.line} />
-								<ul className={styles.sub_list}>
+								<ul style={{ display: showList === subMenu.id ? "flex" : "none" }} data-type={showList === subMenu.id ? "true" : "false"} className={styles.sub_list}>
 									{subMenu.menu?.map(
 										(menu: NavLinkMenu, index: number) => (
 											<Link target={menu?.external ? "_blank" : "_self"} href={menu.href ?? ''} key={index} className={styles.subMenu_link}

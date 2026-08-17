@@ -111,6 +111,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
     .intro_heading, span {
         font-family: $font;
         font-size: 5.6rem;
@@ -120,6 +121,18 @@
         margin-bottom: 3.6rem;
         span {
             color: #ffffff;
+        }
+    }
+    .curved_arrow {
+        width: 3rem;
+        height: 4rem;
+        position: absolute;
+        right: 43rem;
+        top: 14.5rem;
+        .curved_arrow_icon {
+            position: relative;
+            width: 100%;
+            height: 100%;
         }
     }
     h4 {
@@ -233,6 +246,13 @@
             line-height: 1.4;
             margin-bottom: 2.4rem;
         }
+        .curved_arrow {
+            right: 0;
+            left: 12%;
+            top: 11rem;
+            width: 2.5rem;
+            height: 3.5rem;
+        }
         h4 {
             font-size: 2.4rem;
             line-height: 3.2rem;
@@ -301,8 +321,15 @@
         margin-bottom: 3.2rem;
         .intro_heading, span {
             font-size: 2.8rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.6rem;
             text-align: left;
+        }
+        .curved_arrow {
+            right: 0;
+            left: 30%;
+            top: 7.5rem;
+            width: 1.6rem;
+            height: 2.4rem;
         }
         h4 {
             font-size: 1.6rem;

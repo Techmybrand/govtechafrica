@@ -59,6 +59,13 @@ const IntroToFulcrum = ({ type = "home" }: IntroToFulcrumProps) => {
 							{type === "what_we_do" ? "Our Flagship" : "Introducing"} <br />
 							<span>{type === "what_we_do" ? "Product" : "Fulcrum..."}</span>
 						</h2>
+						{type === "what_we_do" && (
+							<div className={styles.curved_arrow}>
+								<div className={styles.curved_arrow_icon}>
+									<Image src="/svgs/curved_arrow.svg" alt="Curved Arrow" fill />
+								</div>
+							</div>
+						)}
 
 						{type === "what_we_do" && <h4>Fulcrum</h4>}
 

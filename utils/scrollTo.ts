@@ -78,12 +78,10 @@ export const scrollTo = ({ id, ref = null, duration = 500 }: any) => {
   const initialPosition = window.scrollY;
   console.log(ref);
 
-  // if the reference is id
   if (id) {
     const element = document.getElementById(id);
 
     if (!element) {
-      // log error if the reference passed is invalid
       logError();
       return;
     }

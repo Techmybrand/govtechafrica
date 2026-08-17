@@ -25,7 +25,7 @@ const ExploreServices = () => {
         mass: 0.5
     });
     return (
-        <motion.div id="services" style={{ y, opacity }} ref={servicesRef} className={styles.explore_services_section}>
+        <motion.div style={{ y, opacity }} ref={servicesRef} className={styles.explore_services_section}>
             <div className={styles.explore_services_container}>
                 <div className={styles.text}>
                     <h1>See exactly how we build and enable, service by service.</h1>

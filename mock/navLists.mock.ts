@@ -79,45 +79,59 @@ export const navLinks: NavLink[] = [
 			{
 				label: "services",
 				icon: "/svgs/arrow.svg",
-				href: "/what-we-do",
+				// href: "/what-we-do",
 				id: "services",
-				// menu: [
-				// 	{
-				// 		label: "Strategy Consulting & Advisory",
-				// 		href: "/strategy-consulting-and-advisory",
-				// 		id: "strategy",
-				// 		icon: "/svgs/link-user.svg",
-				// 		external: false
-				// 	},
-				// 	{
-				// 		label: "IT infrastructure procument & supply",
-				// 		href: "/infrastructure-procurement-and-supply",
-				// 		id: "infrastructure",
-				// 		icon: "/svgs/link-user.svg",
-				// 		external: false
-				// 	},
-				// 	{
-				// 		label: "IT compliance & regulatory consulting",
-				// 		href: "/compliance-and-regulatory-consulting",
-				// 		id: "compliance",
-				// 		icon: "/svgs/link-user.svg",
-				// 		external: false
-				// 	},
-				// 	{
-				// 		label: "capacity building & Trainings",
-				// 		href: "/capacity-building-and-trainings",
-				// 		id: "capacity",
-				// 		icon: "/svgs/link-ai.svg",
-				// 		external: false
-				// 	},
-				// 	{
-				// 		label: "tech events design & delivery",
-				// 		href: "/tech-events",
-				// 		id: "tech",
-				// 		icon: "/svgs/link-user.svg",
-				// 		external: false
-				// 	}
-				// ]
+				menu: [
+					{
+						label: "Technology ",
+						href: "/what-we-do#technology",
+						id: "technology",
+						// icon: "/svgs/link-user.svg",
+						external: false
+					},
+					{
+						label: "Consulting ",
+						href: "/what-we-do#consulting",
+						id: "consulting",
+						// icon: "/svgs/link-user.svg",
+						external: false
+					},
+					// {
+					// 	label: "Strategy Consulting & Advisory",
+					// 	href: "/strategy-consulting-and-advisory",
+					// 	id: "strategy",
+					// 	icon: "/svgs/link-user.svg",
+					// 	external: false
+					// },
+					// {
+					// 	label: "IT infrastructure procument & supply",
+					// 	href: "/infrastructure-procurement-and-supply",
+					// 	id: "infrastructure",
+					// 	icon: "/svgs/link-user.svg",
+					// 	external: false
+					// },
+					// {
+					// 	label: "IT compliance & regulatory consulting",
+					// 	href: "/compliance-and-regulatory-consulting",
+					// 	id: "compliance",
+					// 	icon: "/svgs/link-user.svg",
+					// 	external: false
+					// },
+					// {
+					// 	label: "capacity building & Trainings",
+					// 	href: "/capacity-building-and-trainings",
+					// 	id: "capacity",
+					// 	icon: "/svgs/link-ai.svg",
+					// 	external: false
+					// },
+					// {
+					// 	label: "tech events design & delivery",
+					// 	href: "/tech-events",
+					// 	id: "tech",
+					// 	icon: "/svgs/link-user.svg",
+					// 	external: false
+					// },
+				]
 			}
 		]
 	},
@@ -156,43 +170,63 @@ export const navLinks: NavLink[] = [
 	{
 		label: "research",
 		external: false,
-		// href: "insights",
+		href: "insights",
 		icon: "/svgs/link-main.svg",
 		subMenu: [
+			// {
+			// 	label: "insights",
+			// 	href: "/insights",
+			// 	icon: "/svgs/arrow.svg",
+			// 	menu: [
+			// 		{
+			// 			label: "Backgrounders",
+			// 			href: "/backgrounders",
+			// 			id: "backgrounders",
+			// 			icon: "",
+			// 			external: false
+			// 		},
+			// 		{
+			// 			label: "policy insights",
+			// 			href: "/policy-insights",
+			// 			id: "policy-insights",
+			// 			icon: "",
+			// 			external: false
+			// 		},
+			// 		{
+			// 			label: "articles",
+			// 			href: "/articles",
+			// 			id: "articles",
+			// 			icon: "",
+			// 			external: false
+			// 		},
+			// 		{
+			// 			label: "reports",
+			// 			href: "/reports",
+			// 			id: "reports",
+			// 			icon: "",
+			// 			external: false
+			// 		},
+			// 	]
+			// },
 			{
-				label: "insights",
-				href: "/insights",
-				icon: "/svgs/arrow.svg",
-				menu: [
-					{
-						label: "Backgrounders",
-						href: "/backgrounders",
-						id: "backgrounders",
-						icon: "",
-						external: false
-					},
-					{
-						label: "policy insights",
-						href: "/policy-insights",
-						id: "policy-insights",
-						icon: "",
-						external: false
-					},
-					{
-						label: "articles",
-						href: "/articles",
-						id: "articles",
-						icon: "",
-						external: false
-					},
-					{
-						label: "reports",
-						href: "/reports",
-						id: "reports",
-						icon: "",
-						external: false
-					},
-				]
+				label: "Backgrounders",
+				href: "/backgrounders",
+				id: "backgrounders",
+			},
+			{
+				label: "policy insights",
+				href: "/policy-insights",
+				id: "policy-insights",
+			},
+			{
+				label: "articles",
+				href: "/articles",
+				id: "articles",
+			},
+			{
+				label: "reports",
+				href: "/reports",
+				id: "reports",
 			},
 		]
 	}
