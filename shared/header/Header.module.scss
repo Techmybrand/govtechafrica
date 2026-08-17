@@ -82,7 +82,8 @@
 				}
 				p {
 					font-family: $font;
-					font-size: 1.4rem;
+					font-size: 1.6rem;
+					line-height: 2.4rem;
 					font-weight: 500;
 					transition: $all-transition;
 					text-transform: uppercase;
@@ -96,13 +97,11 @@
 					display: none;
 					transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 					max-height: 50rem;
-					min-width: 22rem;
+					min-width: 20rem;
 					// min-width: max-content;
 					background-color: #000;
-					border: 0.1rem solid rgba($col-white, 0.2);
-					// border-radius: 1.6rem;
-					overflow-y: scroll;
-					@include noScrollBar;
+					// border: 0.1rem solid rgba($col-white, 0.1);
+					overflow-y: visible;
 					.subMenu {
 						width: 100%;
 						padding: 0.8rem;
@@ -133,18 +132,21 @@
 							@include flex();
 							flex-direction: column;
 							gap: 0.5rem;
-							width: 90%;
-							margin-bottom: 0.8rem;
+							width: 95%;
+							position: relative;
+							&[data-label="services"], &[data-label="solutions"] {
+								text-transform: uppercase;
+								margin-bottom: 0.8rem;
+							}
 							h2 {
 								font-weight: 500;
 								color: #FFF;
 								font-size: 1.8rem;
-								text-transform: uppercase;
-								// &[data-label="services"],
-								// &[data-label="solutions"] {
-								// 	text-align: center;
-								// 	margin: 0 auto;
-								// }
+								text-transform: capitalize;
+								&[data-label="services"],
+								&[data-label="solutions"] {
+									text-transform: uppercase;
+								}
 								@include screenMax('mobile') {
 									font-size: 1.6rem;
 									&[data-label="technology"],
@@ -179,11 +181,30 @@
 								background-color: rgba($col-white, 0.3);
 							}
 							.sub_list {
+								display: none;
+								position: absolute;
+								left: 111%;
+								top: -1rem;
+								background-color: #000;
+								// border: 0.1rem solid rgba($col-white, 0.1);
+								padding: 1rem;
+								width: max-content;
+								min-width: 18rem;
+								z-index: 10;
 								@include flex();
 								flex-direction: column;
 								gap: 0.5rem;
-								padding-left: 0;
-								width: 100%;
+								@include screenMax("tablet") {
+									display: flex;
+									position: relative;
+									left: unset;
+									top: unset;
+									padding: 0;
+									background-color: transparent;
+									border: none;
+									width: 100%;
+									min-width: unset;
+								}
 								.subMenu_link {
 									p {
 										text-transform: capitalize;
@@ -199,6 +220,9 @@
 										background-color: rgba($col-white, 0.1);
 										display: none;
 									}
+								}
+								&[data-type="true"] {
+									display: flex;
 								}
 							}
 							&:not(:first-child) {
@@ -263,7 +287,6 @@
 	.header_wrapper__collapsed {
 		margin-left: 0;
 		transition: transform 0.3s ease-out;
-		// @include flex(space-between, center);
 		display: flex;
 		align-items: center;
 		@include screenMax("tablet") {
