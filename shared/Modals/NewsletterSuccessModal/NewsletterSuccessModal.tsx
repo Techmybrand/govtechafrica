@@ -27,6 +27,7 @@ const NewsletterSuccessModal = ({ open, closeModal }: NewsletterSuccessModalProp
                     <h1>Thank you for subscribing!</h1>
                     <p>
                         You will receive an email shortly to confirm your subscription.
+                        If you don&apos;t see it in your inbox, please check your spam or promotions folder.
                     </p>
                 </div>
             </div>

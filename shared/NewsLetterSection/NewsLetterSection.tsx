@@ -77,7 +77,7 @@ const NewsLetterSection = () => {
 
     return (
         <React.Fragment>
-            <div ref={newsLetterRef} className={styles.newsletter_wrapper}>
+            <div id="newsletter" ref={newsLetterRef} className={styles.newsletter_wrapper}>
                 <motion.div style={{ y, opacity }} className={styles.newsletter_card}>
                     <div className={styles.bg_pattern}></div>
                     <div className={styles.content_container}>
