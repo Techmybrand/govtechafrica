@@ -18,10 +18,16 @@ const ArticlesView = () => {
 				<div className={styles.large_card}>
 					<div className={styles.details}>
 						<h2>Articles</h2>
-						<p>{articles?.length} results</p>
+						<p>
+							{`Govtech Africa's Articles explore compelling narratives, thought leadership, and expert 
+							perspectives on the intersection of technology, governance, and society across the continent.`} <br />
+              				<br />
+							Each article brings diverse voices and timely analysis to the forefront—sparking conversation, 
+							challenging assumptions, and highlighting the innovative solutions driving Africa&apos;s digital evolution 
+							forward.
+						</p>
 					</div>
 				</div>
-				<div className={styles.divider}></div>
 				{!articles?.length ? (
 					<p>No posts available.</p>
 				) : (

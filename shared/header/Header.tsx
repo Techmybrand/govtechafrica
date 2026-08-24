@@ -191,7 +191,7 @@ const LinkItem = ({
 										)}
 									</Link>
 								) : (
-									<div className={styles.subMenu_link} onClick={() => {
+									<div className={styles.subMenu_link} onMouseEnter={() => {
 											handleScroll(subMenu.id);
 											setShowList(prev => prev === subMenu?.id ? null : subMenu?.id);
 										}}
@@ -208,19 +208,22 @@ const LinkItem = ({
 								<ul style={{ display: showList === subMenu.id ? "flex" : "none" }} data-type={showList === subMenu.id ? "true" : "false"} className={styles.sub_list}>
 									{subMenu.menu?.map(
 										(menu: NavLinkMenu, index: number) => (
-											<Link target={menu?.external ? "_blank" : "_self"} href={menu.href ?? ''} key={index} className={styles.subMenu_link}
-												onClick={() => {
-													handleScroll(menu.id);
-													handleActiveLink("");
-												}}
-											>
-												<p>{menu.label}</p>
-												{menu.icon && (
-													<div className={styles.subMenu_icon}>
-														<Image src={menu.icon} fill alt="" sizes="100vw" />
-													</div>
-												)}
-											</Link>
+											<React.Fragment key={index}>
+												<Link target={menu?.external ? "_blank" : "_self"} href={menu.href ?? ''} className={styles.subMenu_link}
+													onClick={() => {
+														handleScroll(menu.id);
+														handleActiveLink("");
+													}}
+												>
+													<p>{menu.label}</p>
+													{menu.icon && (
+														<div className={styles.subMenu_icon}>
+															<Image src={menu.icon} fill alt="" sizes="100vw" />
+														</div>
+													)}
+												</Link>
+												<div className={styles.line} />
+											</React.Fragment>
 										)
 									)}
 								</ul>
