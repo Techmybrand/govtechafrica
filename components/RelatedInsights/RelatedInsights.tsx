@@ -76,7 +76,7 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
                     ) : isReport ? (
                         <ReportCard key={index} title={blog?.title} slug={blog?.slug} externalUrl={blog?.externalUrl}
                             image={`https:${blog?.thumbnail?.fields?.file?.url}`}
-                            date={blog?.date} publishedAt={blog?.publishedAt}
+                            date={blog?.date}
                         />
                     ) : (
                         <ResearchCard key={index} title={blog?.title}

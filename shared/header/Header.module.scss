@@ -72,6 +72,7 @@
 					position: relative;
 					width: 1.6rem;
 					height: 1.6rem;
+					cursor: pointer;
 				}
 				.link_icon_sm {
 					display: none;
@@ -82,8 +83,8 @@
 				}
 				p {
 					font-family: $font;
-					font-size: 1.6rem;
-					line-height: 2.4rem;
+					font-size: 1.4rem;
+					line-height: 2rem;
 					font-weight: 500;
 					transition: $all-transition;
 					text-transform: uppercase;
@@ -141,12 +142,8 @@
 							h2 {
 								font-weight: 500;
 								color: #FFF;
-								font-size: 1.8rem;
-								text-transform: capitalize;
-								&[data-label="services"],
-								&[data-label="solutions"] {
-									text-transform: uppercase;
-								}
+								font-size: 1.4rem;
+								text-transform: uppercase;
 								@include screenMax('mobile') {
 									font-size: 1.6rem;
 									&[data-label="technology"],
@@ -173,6 +170,9 @@
 								}
 								p {
 									color: #FFF;
+									transition: $all-transition;
+									font-size: 1.4rem;
+									text-transform: uppercase;
 								}
 							}
 							.line {
@@ -183,10 +183,9 @@
 							.sub_list {
 								display: none;
 								position: absolute;
-								left: 111%;
-								top: -1rem;
+								left: 105%;
+								top: -0.8rem;
 								background-color: #000;
-								// border: 0.1rem solid rgba($col-white, 0.1);
 								padding: 1rem;
 								width: max-content;
 								min-width: 18rem;
@@ -206,8 +205,10 @@
 									min-width: unset;
 								}
 								.subMenu_link {
+									width: 90%;
 									p {
-										text-transform: capitalize;
+										text-transform: uppercase;
+										font-size: 1.4rem;
 									}
 									&::before {
 										position: absolute;
@@ -219,6 +220,11 @@
 										left: -3rem;
 										background-color: rgba($col-white, 0.1);
 										display: none;
+									}
+									.line {
+										height: 0.1rem;
+										width: 100%;
+										background-color: rgba($col-white, 0.3);
 									}
 								}
 								&[data-type="true"] {
@@ -464,6 +470,7 @@
 					}
 					.link_icon {
 						display: none;
+						cursor: pointer;
 					}
 					.link_icon_sm {
 						position: relative;
@@ -471,6 +478,7 @@
 						height: 2.4rem;
 						display: block;
 						transition: $all-transition;
+						cursor: pointer;
 					}
 					.mob_chevron {
 						position: relative;

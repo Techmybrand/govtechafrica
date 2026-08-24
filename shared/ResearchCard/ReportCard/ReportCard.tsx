@@ -15,7 +15,7 @@ interface ReportCardProps {
     externalUrl?: string;
 }
 
-const ReportCard = ({ image, title, slug, date, publishedAt, externalUrl }: ReportCardProps) => {
+const ReportCard = ({ image, title, slug, date, externalUrl }: ReportCardProps) => {
     const router = useRouter();
     const handleNavigate = () => {
         if (externalUrl) {
@@ -41,7 +41,7 @@ const ReportCard = ({ image, title, slug, date, publishedAt, externalUrl }: Repo
                         </h2>
                     </Link>
                     <p className={styles.date}>
-                        {date ? formatDate(date) : publishedAt || ''}
+                        {date ? formatDate(date) : ''}
                     </p>
                 </div>
                 <div className={styles.tag}>

@@ -8,7 +8,6 @@ import styles from "./PolicyBriefsView.module.scss";
 const PolicyBriefsView = () => {
 	const { fetchBlogs, sortedBlogs } = useGetContentful();
 	const policyInsights = sortedBlogs.filter((blog: BlogDetailsProps) => blog.type.toLowerCase() === "policy insight");
-	
 	useEffect(() => {
 		fetchBlogs();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -29,9 +28,6 @@ const PolicyBriefsView = () => {
 						</p>
 					</div>
 				</div>
-				{/* <div className={styles.divider}></div>
-        		<h1>Our Latest Policy Briefs</h1>
-				<div className={styles.divider}></div> */}
 				{!policyInsights?.length ? (
 					<p>No posts available.</p>
 				) : (

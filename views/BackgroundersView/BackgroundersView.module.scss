@@ -15,7 +15,7 @@
 			margin-top: 4.8rem;
 			padding: 5.6rem 3.2rem 3.2rem;
 			.details {
-				max-width: 68rem;
+				max-width: 100%;
 				h2 {
 					@extend %title-50;
 					font-weight: 700;
@@ -26,9 +26,9 @@
                     text-transform: uppercase;
 				}
 				p {
-					font-size: 2.4rem;
-					line-height: 3.2rem;
-                    width: fit-content;
+					font-size: 1.8rem;
+					line-height: 2.7rem;
+                    width: 85%;
 				}
 			}
 		}
@@ -57,13 +57,15 @@
 			.card, .large_card {
 				margin-top: 2.4rem;
 				.details {
+					width: 95%;
 					h2 {
 						font-size: 2.8rem;
 						line-height: 3.2rem;
 					}
 					p {
-						font-size: 1.8rem;
-						line-height: 2.7rem;
+						font-size: 1.6rem;
+						line-height: 2.4rem;
+						width: 95%;
 					}
 				}
 			}
@@ -88,8 +90,9 @@
 						line-height: 3.2rem;
 					}
 					p {
-						font-size: 1.6rem;
-						line-height: 2.4rem;
+						font-size: 1.4rem;
+						line-height: 2rem;
+						width: 100%;
 					}
 				}
 			}
