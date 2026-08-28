@@ -233,6 +233,7 @@ export interface PrivacyPolicyProps {
 	headerText: string;
 	subText?: string;
 	content: string[];
+	postContent?: string;
 }
 export interface ContentProps {
 	title?: string;
@@ -241,7 +242,9 @@ export interface ContentProps {
 export interface cookiesPolicyDataProps {
 	title: string;
 	headerText: string;
+	subtext?: string;
 	content: ContentProps[];
+	postContent?: string;
 }
 
 export interface valueCardProps {
