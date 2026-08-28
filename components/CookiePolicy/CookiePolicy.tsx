@@ -21,6 +21,10 @@ const CookiePolicy = () => {
               <div key={index} className={styles.policies}>
                 <h2>{`${index + 1}. ${item?.title}`}</h2>
                 <h4>{item?.headerText}</h4>
+                <br />
+                {item?.subtext && (
+                  <h4>{item?.subtext}</h4>
+                )}
                 {item?.content?.length > 0 && (
                   item?.content?.map((content: ContentProps, index: number) =>
                     <div key={index} className={styles.policies_content}>
@@ -34,6 +38,10 @@ const CookiePolicy = () => {
                       </div>
                     </div>
                 ))}
+                <br />
+                {item?.postContent && (
+                  <h4>{item?.postContent}</h4>
+                )}
               </div>
             )}
           </div>

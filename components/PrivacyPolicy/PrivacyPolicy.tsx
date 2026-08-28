@@ -19,13 +19,26 @@ const PrivacyPolicy = () => {
             {privacyPolicyData?.map((item: PrivacyPolicyProps, index: number) =>
               <div key={index} className={styles.policies}>
                 <h2>{`${index + 1}. ${item?.title}`}</h2>
-                <h4>{item?.headerText}</h4>
-                {item?.content?.length > 0 && (
-                  item?.content?.map((content: string, index: number) =>
-                    <div key={index} className={styles.policies_content}>
-                      <h3>- {content}</h3>
-                    </div>
-                ))}
+                {item?.headerText && (
+                  <h4>{item?.headerText}</h4>
+                )}
+                {item?.subText && (
+                  <React.Fragment>
+                    <br />
+                    <h4>{item?.subText}</h4>
+                  </React.Fragment>
+                )}
+                {item?.content?.length ? (item?.content?.map((content: string, index: number) =>
+                  <div key={index} className={styles.policies_content}>
+                    <h3>- {content}</h3>
+                  </div>
+                )) : null}
+                {item?.postContent && (
+                  <React.Fragment>
+                    <br />
+                    <h4>{item?.postContent}</h4>
+                  </React.Fragment>
+                )}
               </div>
             )}
           </div>
