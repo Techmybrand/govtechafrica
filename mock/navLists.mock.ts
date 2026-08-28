@@ -442,318 +442,447 @@ export const posts = [
 
 export const privacyPolicyData: PrivacyPolicyProps[] = [
 	{
-		title: ' Information We Collect',
-		headerText: `We collect personal information directly from you, through automated means, or from 
-			third parties. This may include: `,
+		title: 'Introduction',
+		headerText: `Govtech Africa Limited (“Govtech Africa”, “we”, “us” or “our”) is committed to protecting the privacy and
+			personal data of individuals who interact with our website, services and business activities. This Privacy
+			& Data Protection Policy explains how we collect, use, disclose, retain, transfer and protect personal
+			data, and how you may exercise your data protection rights.`,
+		subText: `We process personal data in accordance with the Nigeria Data Protection Act 2023 (“NDP Act”), the
+            Nigeria Data Protection Act - General Application and Implementation Directive 2025 (“GAID 2025”),
+            applicable guidance of the Nigeria Data Protection Commission (“NDPC”), and other applicable laws.`,
+		content: []
+	},
+	{
+		title: 'Who We Are',
+		headerText: `Govtech Africa Limited is a technology solutions and systems integration company supporting
+			governments and public institutions with digital transformation, customised software, cloud services,
+			cybersecurity, data and AI, infrastructure, consulting, training and related technology services`,
+		subText: `Depending on the service or relationship, Govtech Africa may act as a data controller, where we
+			determine why and how personal data is processed, or as a data processor, where we process personal
+			data on the documented instructions of a client or other controller.`,
+		content: []
+	},
+	{
+		title: 'Who This Policy Applies To',
+		headerText: "",
 		content: [
-			'Personal Identifiers: Name, email address, phone number, and postal address.',
-			'Professional Information: Job title, employer, and division.',
-			'Login Credentials: Username, password, and login timestamps.',
-			'Device Information: IP address, browser type, and operating system.',
-			'User Submissions: Feedback, inquiries, or any content provided via forms or communications'
+			'Visitors to our website',
+			'Persons who contact us or submit an enquiry',
+			'Prospective and existing clients and their representatives',
+			'Government and public-sector stakeholders',
+			'Vendors, contractors, advisers and business partners',
+			'Job applicants and',
+			'Users of Govtech Africa services where Govtech Africa acts as the data controller'
 		]
 	},
 	{
-		title: 'How We Use Your Information',
-		headerText: 'We use the information we collect to:',
+		title: 'Personal Data We May Collect',
+		headerText: ``,
 		content: [
-			'Provide and improve our products and services.',
-			'Personalize user experiences on our website.',
-			'Respond to your inquiries or requests.',
-			'Send updates, newsletters, and promotional materials (when consent is provided).',
-			'Process applications, including employment or partnership opportunities.',
-			'Monitor and analyze site performance and usage trends.',
-			'Protect against fraudulent activity, cybersecurity threats, and illegal actions.',
-			'Comply with legal and regulatory requirements. '
-		]
-	},
-	{
-		title: 'How We Share Your Information',
-		headerText: `We do not sell your personal information. However, we may share your data in the 
-			following circumstances:`,
-		content: [
-			'Service Providers: With trusted vendors who perform functions on our behalf, such as hosting, analytics, or marketing.',
-			'Legal Obligations: To comply with applicable laws, court orders, or regulatory requests.',
-			'Business Transactions: In the event of a merger, acquisition, or sale of assets, your information may be transferred.',
-			'Protection of Rights: To enforce our policies, protect our rights, and address security concerns'
-		]
-	},
-	{
-		title: 'Your Rights',
-		headerText: `Depending on your jurisdiction, you may have the following rights over your personal
-			information:`,
-		content: [
-			'Access, correct, or update your personal data.',
-			'Request deletion or restriction of your information.',
-			'Object to data processing for marketing purposes.',
-			'Withdraw consent where processing is based on consent.',
-			'Request data portability.'
+			'Identity and contact data: name, title, organisation, email address, telephone number and other business contact details',
+			'Professional data: employer, role, department, professional interests and information relating to your organisation',
+			'Communications: enquiries, correspondence, requests, feedback, complaints and support communications',
+			'Recruitment data: CV, qualifications, work history and information you submit in connection with an application.',
+			'User Submissions: Feedback, inquiries, or any content provided via forms or communications',
+			`Technical and usage data: IP address, browser and device information, timestamps, logs, referral information and website interaction data`,
+			`Business relationship data: information reasonably necessary for proposals, procurement, due diligence, contracts, service administration and business relationships.`,
+			`Event and subscription data: registration details, attendance information and communication preferences`,
 		],
-		subText: 'To exercise your rights, please contact us using the details provided below',
+		postContent: `We do not intentionally request sensitive personal data through the general corporate website unless it
+			is necessary and lawful for a specific purpose.`
 	},
 	{
-		title: 'Cookies and Tracking Technologies',
-		headerText: `We use cookies and similar technologies to enhance your experience on our website. 
-			These technologies help us analyze usage patterns, remember preferences, and deliver targeted
-			advertisements. `,
+		title: 'How We Collect Personal Data',
+		headerText: '',
+		content: [
+			'Directly from you through our website forms, email, telephone, meetings or other communications',
+			'From the organisation you represent',
+			'Through website and system logs',
+			'From clients, partners or service providers where we are authorised to receive it; and',
+			'From public sources where lawful and relevant.',
+		]
+	},
+	{
+		title: 'Why We Process Personal Data',
+		headerText: ``,
+		content: [
+			'To respond to enquiries, requests and proposals',
+			'To provide, administer, support and improve our services',
+			'To establish and manage client, partner and vendor relationships',
+			'To communicate with stakeholders and administer events or training',
+			'To manage recruitment',
+			'To secure our website, systems and services and prevent misuse or fraud',
+			'To establish, exercise or defend legal claims, and',
+			'Where permitted, to provide requested updates, insights or marketing communications'
+		]
+	},
+	{
+		title: 'Lawful Bases for Processing',
+		headerText: `Depending on the circumstances, we may rely on consent, performance of or steps connected with a
+			contract, compliance with a legal obligation, legitimate interests, public interest, vital interests, or
+			another lawful basis recognised by applicable law. Where we rely on consent, you may withdraw it at any time`,
 		content: [],
-		subText: `You can manage your cookie preferences through our Cookie Consent Manager or adjust your
-			browser settings. For more details, see our Cookies Policy`
 	},
 	{
-		title: 'Data Security',
-		headerText: `We employ administrative, technical, and physical measures to protect your data 
-			against unauthorized access, disclosure, alteration, or destruction. However, no system can 
-			guarantee absolute security.`,
+		title: 'Cookies and Similar Technologies',
+		headerText: `Our website may use cookies and similar technologies for core operation, security, preferences and,
+			where enabled with the required choice, analytics or other optional purposes. Necessary technologies may operate where
+			permitted without optional consent. Other tracking technologies are subject to the choices presented through our cookie
+			controls. Please see our Cookie Policy and use the Manage Cookies control to change your preferences.`,
+		content: [],
+		subText: ``
+	},
+	{
+		title: 'Sharing Personal Data',
+		headerText: `We may share personal data with authorised employees, professional advisers, hosting and technology
+			providers, security providers, contractors, auditors, regulators, courts, law-enforcement authorities,
+			business partners and other recipients where the disclosure is necessary and lawful. We do not sell
+			personal data`,
+		subText: `Where a service provider processes personal data on our behalf, we require appropriate confidentiality,
+			security and data protection safeguards.`,
+		content: []
+	},
+	{
+		title: 'Processing on Behalf of Clients',
+		headerText: `Govtech Africa may process personal data for government institutions, public bodies and enterprise
+			clients. Where we act solely as a processor, the relevant client determines the purposes of processing
+			and its privacy notice may primarily govern the data. A request relating to client-controlled personal data
+			may therefore be referred to the relevant client.`,
+		content: []
+	},
+	{
+		title: 'International Data Transfers',
+		headerText: `Where personal data is transferred or made accessible outside Nigeria, Govtech Africa will use a lawful
+			transfer basis and appropriate safeguards required by applicable data protection law.`,
 		content: []
 	},
 	{
 		title: 'Data Retention',
-		headerText: `We retain personal information for as long as necessary to fulfill the purposes 
-			outlined in this Privacy Policy or as required by law.`,
-		content: []
-	},
-	{
-		title: 'Links to Other Websites',
-		headerText: `Our website may include links to third-party sites. We are not responsible for their content or
-			privacy practices, and we encourage you to review their policies.`,
-		content: []
-	},
-	{
-		title: 'Updates to This Privacy Policy',
-		headerText: `We may update this Privacy Policy periodically to reflect changes in our practices or legal
-			requirements. The updated policy will be posted on our website with the effective date.`,
+		headerText: `We retain personal data only for as long as reasonably necessary for the purpose for which it was collected and for
+			applicable legal, contractual, audit, security and dispute-resolution requirements. When data is no longer required, it will
+			be securely deleted, destroyed or anonymised, subject to lawful retention obligations`,
 		content: [],
 	},
 	{
-		title: 'How to Contact Us',
-		headerText: `You may choose to contact us through our website. If you email us or submit comments 
-			or questions using the Contact Us form on this website, we will use the information you 
-			provide to respond to your inquiries.`,
+		title: 'Data Security',
+		headerText: `We use appropriate technical and organisational measures designed to protect personal data against
+			unauthorised access, unlawful processing, accidental loss, alteration, disclosure or destruction. Measures may include access
+			controls, authentication, encryption where appropriate, secure configuration, logging, backups, vulnerability management,
+			confidentiality controls and incident response. No internet-based system can be guaranteed to be completely secure`,
+		content: [],
+	},
+	{
+		title: 'Your Data Protection Rights',
+		headerText: ``,
+		content: [
+			"The right to be informed about processing of your personal data",
+			"The right to request access to your personal data",
+			"The right to request correction of inaccurate or incomplete data",
+			"The right to request erasure where applicable",
+			"The right to request restriction of processing where applicable",
+			"The right to object to certain processing",
+			"The right to withdraw consent where processing is based on consent",
+			"The right to data portability where applicable",
+			"Rights relating to qualifying automated decision-making and",
+			"The right to lodge a complaint with the Nigeria Data Protection Commission",
+		],
+		postContent: `These rights may be subject to lawful conditions, exemptions and limitations.`
+	},
+	{
+		title: 'Automated Processing and Artificial Intelligence',
+		headerText: `Where Govtech Africa uses automated processing or artificial intelligence in a context that may
+			significantly affect individuals, we will assess applicable transparency, privacy, fairness, security and
+			human-oversight requirements. A service-specific notice may provide additional information where appropriate.`,
+		content: [],
+	},
+	{
+		title: 'Children',
+		headerText: `Our corporate website is not directed to children. Where a specific Govtech Africa service lawfully processes
+			children’s personal data, appropriate legal bases, age-appropriate information and enhanced safeguards will be applied`,
+		content: [],
+	},
+	{
+		title: 'Personal Data Breaches',
+		headerText: `Govtech Africa maintains measures for identifying, investigating and responding to personal data
+			breaches. Where applicable law requires notification to the NDPC or communication to affected
+			individuals, we will make the required notification or communication`,
+		content: [],
+	},
+	{
+		title: 'Privacy by Design',
+		headerText: `We seek to integrate privacy and data protection considerations into relevant systems, services and
+			projects from the design stage. Where processing is likely to create high risk to individuals, we will
+			conduct an appropriate Data Protection Impact Assessment or other required assessment.`,
+		content: [],
+	},
+	{
+		title: 'Third-Party Links',
+		headerText: `Our website may contain links to independent third-party websites or services. Govtech Africa does not
+			control the privacy practices of those third parties. We encourage you to review their privacy notices
+			before providing personal data.`,
+		content: [],
+	},
+	{
+		title: 'Data Protection Officer',
+		headerText: `Fortune Ikenna Awuzie`,
+		content: [
+			'Data Protection Officer, Govtech Africa Limited',
+			'Telephone: 09139167076',
+			'Email: awuzief@gmail.com'
+		],
+		postContent: `You may contact the Data Protection Officer about privacy enquiries, complaints, withdrawal of consent or requests
+			to exercise your data protection rights`
+	},
+	{
+		title: 'Complaints',
+		headerText: `If you believe your personal data has been processed contrary to applicable data protection law, you
+			may contact our Data Protection Officer. You also have the right, where applicable, to lodge a complaint
+			with the Nigeria Data Protection Commission.e`,
+		content: [],
+	},
+	{
+		title: 'Changes to This Policy',
+		headerText: `We may update this Policy to reflect changes in our services, technology or legal obligations. The
+			current version will display the date on which it was last updated.`,
 		content: [],
 	},
 ]
 
 export const termsOfUseData: PrivacyPolicyProps[] = [
     {
-        title: 'Acceptance of Terms',
-        headerText: `By using this site, you acknowledge that you have read, understood, and agree to 
-			these Terms of Use and our Privacy Policy. These terms apply to all visitors, users, and 
-			others who access the site.`,
+        title: 'Acceptance of These Terms',
+        headerText: `These Terms of Use govern your access to and use of the Govtech Africa website. By using the
+			website, you agree to comply with these Terms and applicable laws.`,
         content: []
     },
     {
-        title: 'Use of the Site',
-        headerText: `You agree to use the Site only for lawful purposes and in compliance with all 
-			applicable laws and regulations. You must not:`,
+        title: 'About Govtech Africa',
+        headerText: `Govtech Africa Limited provides technology solutions and related services for governments and public
+			institutions, including customised software, cloud services, cybersecurity, data and AI, infrastructure,
+			technology consulting, capacity building and related services.`,
         content: [
-            'Use the Site in a manner that could harm, disable, overburden, or impair its functionality.',
-            'Upload, transmit, or distribute any malicious or harmful content.',
-            'Attempt to gain unauthorized access to the Site, its servers, or related systems',
-            'Violate any intellectual property rights or proprietary rights of Govtech Africa or third parties.',
+            // 'Use the Site in a manner that could harm, disable, overburden, or impair its functionality.',
+            // 'Upload, transmit, or distribute any malicious or harmful content.',
+            // 'Attempt to gain unauthorized access to the Site, its servers, or related systems',
+            // 'Violate any intellectual property rights or proprietary rights of Govtech Africa or third parties.',
         ]
+    },
+	{
+        title: 'Permitted Use',
+        headerText: `You may use this website for lawful informational and business purposes. You must not use the website
+			to violate any law or third-party right, interfere with the website or its security, introduce malicious code,
+			gain unauthorised access, impersonate another person, or perform unauthorised security testing or
+			disruptive automated activity.`,
+        content: []
     },
     {
         title: 'Intellectual Property',
-        headerText: `All content on the Site, including text, graphics, logos, images, and software, is 
-			the property of Govtech Africa or its licensors and is protected by copyright, trademark, and 
-			other intellectual property laws.`,
+        headerText: `Unless otherwise stated, the website, its branding, text, graphics, designs, software interfaces and other
+			content are owned by or licensed to Govtech Africa and are protected by applicable intellectual-property
+			laws. Access to the website does not transfer ownership or grant a licence beyond the limited right to
+			use the website for its intended purpose`,
         content: [
-			`You may not reproduce, distribute, modify, or create derivative works of any content without prior written permission.`,
-			`You may use the content for personal, non-commercial purposes only.`
+			// `You may not reproduce, distribute, modify, or create derivative works of any content without prior written permission.`,
+			// `You may use the content for personal, non-commercial purposes only.`
 		]
     },
     {
-        title: 'User Content',
-        headerText: `If you submit content (e.g., comments, feedback, or suggestions) to the site, you 
-			grant Govtech Africa a non-exclusive, royalty-free, perpetual, and irrevocable license to use, 
-			modify, reproduce, and distribute such content in connection with its operations.`,
+        title: 'Information You Submit',
+        headerText: `Information submitted through the website must be lawful and accurate to the best of your knowledge.
+			Do not submit classified, restricted, security-critical or unnecessary sensitive information through a general website
+			form unless Govtech Africa expressly provides a secure channel for that purpose`,
         content: [
-			`You are solely responsible for the content you submit and must ensure it does not infringe on
-				the rights of any third party or violate any laws.`
+			// `You are solely responsible for the content you submit and must ensure it does not infringe on the rights of any third party or violate any laws.`
 		]
+    },
+    {
+        title: 'Website Information',
+        headerText: `Website content is provided for general information and may be updated from time to time. It does not,
+			by itself, constitute legal, financial, procurement or other professional advice, and does not create a
+			procurement award, partnership, agency or binding service commitment.`,
+        content: []
     },
     {
         title: 'Third-Party Links',
-        headerText: `The site may contain links to third-party websites or resources. These links are 
-			provided for convenience and do not signify endorsement by Govtech Africa. We are not responsible 
-			for the content, policies, or practices of any third-party websites.`,
-        content: []
-    },
-    {
-        title: 'Disclaimer of Warranties',
-        headerText: `The site and its content are provided "as is" and "as available" without any 
-			warranties, express or implied. Govtech Africa disclaims all warranties, including but not 
-			limited to: `,
+        headerText: `The website may link to independent third-party websites or services. Govtech Africa is not responsible for
+			third-party content, availability, security or privacy practices, and a link does not necessarily constitute endorsement.`,
         content: [
-            `The accuracy, completeness, or reliability of the Site's content.`,
-			'The site being free from errors, viruses, or harmful components'
+            // `The accuracy, completeness, or reliability of the Site's content.`,
+			// 'The site being free from errors, viruses, or harmful components'
         ]
     },
     {
-        title: ' Limitation of Liability ',
-        headerText: 'To the fullest extent permitted by law, Govtech Africa shall not be liable for any: ',
+        title: ' Availability and Security',
+        headerText: `We may modify, suspend or restrict parts of the website for maintenance, security or operational
+			reasons. While we take reasonable measures to maintain the website, uninterrupted or error-free
+			availability cannot be guaranteed`,
         content: [
-			` Direct, indirect, incidental, or consequential damages arising from your use or inability 
-				to use the site`,
-			`Loss of data, profits, or business opportunities resulting from access to the site.`
+			// ` Direct, indirect, incidental, or consequential damages arising from your use or inability to use the site`,
+			// `Loss of data, profits, or business opportunities resulting from access to the site.`
 		]
     },
     {
-        title: ' Indemnification',
-        headerText: `You agree to indemnify and hold harmless Govtech Africa, its affiliates, employees, and 
-			agents from any claims, damages, losses, or expenses (including attorney fees) arising out of 
-			your use of the site, your violation of these Terms of Use, or your infringement of any rights 
-			of a third party.`,
+        title: '  Limitation of Liability',
+        headerText: `To the maximum extent permitted by applicable law, Govtech Africa will not be liable for indirect or consequential
+			loss arising solely from reliance on general website content or from circumstances outside our reasonable control. Nothing 
+			in these Terms excludes liability that cannot lawfully be excluded.`,
         content: []
     },
     {
-        title: 'Termination',
-        headerText: `Govtech Africa reserves the right to suspend or terminate your access to the Site at 
-			its sole discretion, without prior notice, for any reason, including a breach of these Terms 
-			of Use.`,
+        title: 'Privacy',
+        headerText: `Personal data collected through the website is handled in accordance with our Privacy & Data Protection Policy and 
+			Cookie Policy`,
         content: []
     },
     {
         title: 'Governing Law',
-        headerText: `These Terms of Use shall be governed by and construed in accordance with the laws of 
-			the Federal Republic of Nigeria. Any disputes arising out of or related to these terms shall 
-			be subject to the exclusive jurisdiction of the courts in Nigeria`,
+        headerText: `These Terms are governed by the laws of the Federal Republic of Nigeria. Any dispute will be dealt with in accordance
+            with applicable law and any binding agreement between the relevant parties`,
         content: []
     },
+	// {
+	// 	title: 'Changes to Terms of Use',
+	// 	headerText: `Govtech Africa reserves the right to update or modify these Terms of Use at any time 
+	// 		without prior notice. The updated version will be posted on this page with the effective date. 
+	// 		Your continued use of the Site constitutes acceptance of any changes.`,
+	// 	content: []
+	// },
 	{
-		title: 'Changes to Terms of Use',
-		headerText: `Govtech Africa reserves the right to update or modify these Terms of Use at any time 
-			without prior notice. The updated version will be posted on this page with the effective date. 
-			Your continued use of the Site constitutes acceptance of any changes.`,
-		content: []
-	},
-	{
-		title: 'Contact Us',
-		headerText: `You may choose to contact us through our website. If you email us or submit comments 
-			or questions using the Contact Us form on this website, we will use the information you 
-			provide to respond to your inquiries.`,
-		content: []
+		title: 'Contact',
+		headerText: `Privacy-related matters should be directed to:`,
+		content: [
+			`Fortune Ikenna Awuzie, Data Protection Officer`,
+			`Telephone: 09139167076`,
+			`Email: awuzief@gmail.com`
+		]
 	},
 ];
 
 export const cookiesPolicyData: cookiesPolicyDataProps[] = [
     {
-        title: 'What Are Cookies?',
-        headerText: `Cookies are small text files stored in your browser or device by websites you visit 
-			to track, personalize, and enhance your user experience.`,
+        title: 'About This Policy',
+        headerText: `This Cookie Policy explains how Govtech Africa Limited uses cookies and similar technologies on its
+			website and how you can manage your choices`,
         content: []
     },
     {
-        title: 'Types of Cookies We Use',
-        headerText: 'We use the following types of cookies on our site: ',
+        title: 'What Are Cookies?',
+        headerText: `Cookies are small data files or similar technologies placed on or accessed through your browser or
+			device. They can support website operation, security, preferences and measurement of website use.`,
+        content: []
+    },
+    {
+        title: 'Types of Cookies and Technologies We May Use',
+        headerText: '',
         content: [
             {
-                title: 'Essential Cookies',
+                title: 'Strictly Necessary',
                 body: [
-                    'These are necessary for the website to function correctly.',
-                    'They enable core functionalities, such as page navigation and access to secure areas.',
-                    'Disabling these cookies may impact your ability to use certain parts of the site.',
+                    `Technologies required for core website functions, security, network stability, accessibility or storage of your privacy choices`,
+                    // 'They enable core functionalities, such as page navigation and access to secure areas.',
+                    // 'Disabling these cookies may impact your ability to use certain parts of the site.',
                 ]
             },
             {
-                title: 'Performance Cookies',
+                title: 'Preference',
                 body: [
-                    `These cookies collect information about how visitors use the site, such as which pages are
-						visited most often.`,
-                    'They help us improve the website’s performance and user experience.',
-                    'All data collected by these cookies is aggregated and anonymous.',
+                    `Technologies that remember optional settings or choices`,
+                    // 'They help us improve the website’s performance and user experience.',
+                    // 'All data collected by these cookies is aggregated and anonymous.',
                 ]
             },
             {
-                title: 'Functional Cookies',
+                title: 'Analytics',
                 body: [
-                    ' Functional cookies enable the Site to remember your preferences, such as language or region.',
-                    'They enhance personalization and make the Site more user-friendly.'
+                    'Technologies that help us understand how visitors use the website so that we can improve',
+                    // 'They enhance personalization and make the Site more user-friendly.'
                 ]
             },
             {
-                title: 'Advertising Cookies',
+                title: 'Marketing or Advertising',
                 body: [
-                    'These cookies are used to deliver ads relevant to your interests.',
-                    `They track your online activity across the Site and other websites to build a 
-						profile of your preferences.`,
-					'They may also limit how often you see an ad',
+                    `Technologies used to measure campaigns or personalise advertising, if Govtech Africa enables such functionality`,
+                    // `They track your online activity across the Site and other websites to build a profile of your preferences.`,
+					// 'They may also limit how often you see an ad',
                 ]
             },
-            {
-                title: 'Social Media Cookies',
-                body: [
-                    'These cookies enable you to share content from our site on social media platforms.',
-                    'Social media platforms may use this information, as outlined in their privacy policies.'
-                ]
-            },
+            // {
+            //     title: 'Social Media Cookies',
+            //     body: [
+            //         'These cookies enable you to share content from our site on social media platforms.',
+            //         'Social media platforms may use this information, as outlined in their privacy policies.'
+            //     ]
+            // },
         ]
     },
     {
-        title: 'How We Use Cookies',
-        headerText: 'We use cookies to: ',
+        title: 'Your Cookie Choices',
+        headerText: `Where consent is required, optional cookies or similar tracking technologies will be subject to your
+			choice. You can select Accept All, Reject Non-Essential, or Manage Preferences. Strictly necessary
+			technologies may remain active where they are required for the website to function or remain secure.`,
         content: [
             {
                 title: '',
                 body: [
-                    `Analyze visitor behavior and improve our website’s functionality.`,
-					`Provide a personalized browsing experience.`,
-					`Enhance security and prevent fraudulent activity.`,
-					`Deliver tailored advertising and content.`,
-					`Monitor and measure the effectiveness of our campaigns. `
+					// `Provide a personalized browsing experience.`,
+					// `Enhance security and prevent fraudulent activity.`,
+					// `Deliver tailored advertising and content.`,
+					// `Monitor and measure the effectiveness of our campaigns. `
                 ]
             },
-        ]
+        ],
+		postContent: `You can change or withdraw your choices later through the Manage Cookies control on the website.`
     },
     {
-        title: 'Managing Your Cookie Preferences',
-        headerText: 'You can manage or disable cookies in the following ways: ',
+        title: 'Third-Party Technologies',
+        headerText: `Some website features may be provided by third parties, such as embedded media, maps, analytics,
+			security or communications services. Where those technologies are optional and require consent, they
+			should operate in accordance with the preference you select. Third-party providers may also process
+			information under their own privacy notices`,
         content: [
-			{
-				title: 'Cookie Consent Manager',
-				body: [
-					'When you visit our site, you can manage your cookie preferences using our Cookie Consent Manager',
-					' You can choose which types of cookies you want to enable or disable. '
-				]
-			},
-			{
-				title: 'Browser Settings',
-				body: [
-					'Most web browsers allow you to control cookies through their settings.',
-					'You can delete or block cookies by adjusting your browser preferences.',
-					'Note that disabling certain cookies may affect the functionality of the Site'
-				]
-			},
-			{
-				title: 'Opt-Out Tools',
-				body: [
-					'For advertising cookies, you can opt out of targeted advertising.',
-				]
-			},
+			// {
+			// 	title: 'Cookie Consent Manager',
+			// 	body: [
+			// 		'When you visit our site, you can manage your cookie preferences using our Cookie Consent Manager',
+			// 		' You can choose which types of cookies you want to enable or disable. '
+			// 	]
+			// },
+			// {
+			// 	title: 'Browser Settings',
+			// 	body: [
+			// 		'Most web browsers allow you to control cookies through their settings.',
+			// 		'You can delete or block cookies by adjusting your browser preferences.',
+			// 		'Note that disabling certain cookies may affect the functionality of the Site'
+			// 	]
+			// },
+			// {
+			// 	title: 'Opt-Out Tools',
+			// 	body: [
+			// 		'For advertising cookies, you can opt out of targeted advertising.',
+			// 	]
+			// },
 		]
     },
     {
-        title: 'Third-Party Cookies',
-        headerText: `We may work with third-party service providers who use cookies to provide analytics,
-			advertising, or social media integration. The privacy policies of the respective third parties
-			govern these cookies.`,
+        title: 'Changes to This Cookie Policy',
+        headerText: `We may update this Cookie Policy when our website technologies, purposes or legal obligations
+			change. The current version will show the date of the latest update.`,
         content: [],
     },
     {
-        title: 'Changes to This Cookies Policy',
-        headerText: `We may update this Cookies Policy from time to time to reflect changes in our 
-			practices or legal requirements. The revised version will be posted on this page with the 
-			effective date. `,
-        content: []
+        title: 'Contact',
+        headerText: `For questions about cookies or your privacy choices, contact:`,
+        content: [
+			{
+				title: "Fortune Ikenna Awuzie",
+				body: [
+					"Data Protection Officer, Govtech Africa Limited",
+					"Telephone: 09139167076",
+					"Email: awuzief@gmail.com"
+				]
+			}
+		]
     },
-    {
-        title: 'Contact Us',
-        headerText: `You may choose to contact us through our website. If you email us or submit comments 
-			or questions using the Contact Us form on this website, we will use the information you 
-			provide to respond to your inquiries.`,
-        content: []
-    }
 ];
 
 export const consulting: TechnologyProps[] = [
