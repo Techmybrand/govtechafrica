@@ -5,6 +5,14 @@
     position: relative;
     overflow: hidden;
     background-color: #000;
+    .wave_lines_container {
+        position: relative;
+        width: 100%;
+        height: 32rem;
+        img {
+            object-fit: cover;
+        }
+    }
     .revolutionizing_container {
         max-width: $max-width;
         width: 100%;
@@ -30,17 +38,22 @@
             }
         }
         .mission_and_vision {
-            background: #276A35;
+            // background: #276A35;
             width: 100%;
             display: flex;
             align-items: center;
-            padding: 4rem 3.2rem;
-            border: 0.1rem solid #BEF2BE;
-            border-radius: 1.25rem;
-            gap: 12rem;
-            .mission,
-            .vision {
+            // padding: 4rem 3.2rem;
+            // border: 0.1rem solid #BEF2BE;
+            // border-radius: 1.25rem;
+            gap: 8rem;
+            max-width: 106rem;
+            margin: 0 auto 6.4rem;
+            .mission, .vision {
                 width: 49%;
+                background: #276A35;
+                padding: 6.4rem 3.2rem;
+                border-radius: 1.25rem;
+                box-shadow: 0 3.2rem 3.2rem rgba(#81F88940, 0.25);
                 h3 {
                     font-size: 2.4rem;
                     line-height: 3.2rem;
@@ -55,7 +68,7 @@
                     color: #FFF;
                     font-family: $font-gothic;
                     font-weight: 400;
-                    width: 75%;
+                    width: 95%;
                 }
             }
             .line {
@@ -75,6 +88,9 @@
     }
 
     @include screenMax("tablet") {
+        .wave_lines_container {
+            height: 27rem;
+        }
         .revolutionizing_container {
             padding: 2.4rem;
             .revolutionizing_text {
@@ -90,10 +106,9 @@
                 }
             }
             .mission_and_vision {
-                padding: 3.2rem 2.4rem;
                 gap: 8rem;
-                .mission,
-                .vision {
+                .mission, .vision {
+                    padding: 4.8rem 2.4rem;
                     h3 {
                         font-size: 2rem;
                         line-height: 2.8rem;
@@ -102,7 +117,6 @@
                     p {
                         font-size: 1.4rem;
                         line-height: 2rem;
-                        width: 85%;
                     }
                 }
                 .line {
@@ -116,6 +130,9 @@
     }
 
     @include screenMax("mobile") {
+        .wave_lines_container {
+            height: 22rem;
+        }
         .revolutionizing_container {
             padding: 1.6rem;
             .revolutionizing_text {
@@ -131,12 +148,11 @@
                 }
             }
             .mission_and_vision {
-                padding: 2.4rem 1.6rem;
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 2.4rem;
-                .mission,
-                .vision {
+                .mission, .vision {
+                    padding: 4rem 1.6rem;
                     width: 100%;
                     h3 {
                         font-size: 1.6rem;

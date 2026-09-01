@@ -27,6 +27,9 @@ const Revolutionizing = () => {
     
     return (
         <div ref={revolutionRef} className={styles.revolutionizing_sector}>
+            <div className={styles.wave_lines_container}>
+                <Image src="/svgs/wave_lines.svg" alt="wave_lines" fill />
+            </div>
             <motion.div style={{ opacity, y }} className={styles.revolutionizing_container}>
                 <div className={styles.revolutionizing_text}>
                     <h1>Revolutionizing Governance Through Technology</h1>
@@ -34,19 +37,16 @@ const Revolutionizing = () => {
                 </div>
                 <div className={styles.mission_and_vision}>
                     <div className={styles.mission}>
-                        <h3>Our Mission</h3>
+                        <h3>We Build</h3>
                         <p>
-                            We&apos;re building thriving, resilient societies by putting state-of-the-art technology in the hands of 
-                            African governments and public institutions — improving transparency, driving efficiency, and enabling
-                            government excellence.
+                            Technology & Digital Infrastructure that power the public sector
                         </p>
                     </div>
-                    <div className={styles.line}></div>
+                    {/* <div className={styles.line}></div> */}
                     <div className={styles.vision}>
-                        <h3>Our Vision</h3>
+                        <h3>We Enable</h3>
                         <p>
-                            To be the leading technology partner and systems integrator helping African governments scale efficiency
-                            and governance through solutions built for their reality, not imported from someone else&apos;s.
+                            IT Advisory, Compliance and Strategy for government institutions
                         </p>
                     </div>
                 </div>
