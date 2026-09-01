@@ -21,7 +21,7 @@ const Header = ({ type = "default" }: HeaderProps) => {
 	const router = useRouter();
 	const [collapsed, setCollapsed] = useState<boolean>(true);
 	const [mobile, setMobile] = useState<boolean>(false);
-	const [showList, setShowList] = useState<string | null | undefined>(null);
+	const [showList, setShowList] = useState<string | null | undefined>(undefined);
 	const [scroll, setScroll] = useState<Scroll>(Scroll.Idle);
 	const [activeLink, setActiveLink] = useState<string | null>(null);
 	const headerRef = useRef<HTMLElement>(null);
@@ -59,7 +59,7 @@ const Header = ({ type = "default" }: HeaderProps) => {
 		setCollapsed(true);
 		if (!id) return;
 		scrollTo({ id });
-		setShowList(null);
+		setShowList(undefined);
 	};
 
 	return (
@@ -138,7 +138,7 @@ const LinkItem = ({
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [collapsed]);
 	return (
-		<li className={styles.header_navLink} data-active={isActive}>
+		<li className={styles.header_navLink} data-active={isActive} onMouseLeave={() => setShowList(undefined)}>
 			<div className={styles.link_row}>
 				<p onClick={() => {
 						if (index === 0) {
@@ -182,7 +182,7 @@ const LinkItem = ({
 						{link.subMenu.map((subMenu: NavLinkSub, index: number) => (
 							<div data-type={subMenu?.id} className={styles.subMenu_navlist} key={index}>
 								{subMenu.href ? (
-									<Link href={subMenu.href} className={styles.subMenu_link} onClick={() => handleScroll(subMenu.id)}>
+									<Link href={subMenu.href} className={styles.subMenu_link} onClick={() => handleScroll(subMenu.id)} onMouseEnter={() => setShowList(undefined)}>
 										<h2 data-label={subMenu.label}>{subMenu.label}</h2>
 										{subMenu.icon && (
 											<div className={styles.subMenu_icon}>
@@ -193,7 +193,7 @@ const LinkItem = ({
 								) : (
 									<div className={styles.subMenu_link} onMouseEnter={() => {
 											handleScroll(subMenu.id);
-											setShowList(prev => prev === subMenu?.id ? null : subMenu?.id);
+											setShowList(subMenu?.id);
 										}}
 									>
 										<h2 data-label={subMenu.label}>{subMenu.label}</h2>

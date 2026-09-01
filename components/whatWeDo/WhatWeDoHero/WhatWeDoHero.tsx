@@ -31,12 +31,18 @@ const WhatWeDoHero = () => {
                         We enable the <br /> shift.
                     </h1>
                     <p className={styles.description}>
-                        Two disciplines, one mission: giving African governments the technology and the know-how to serve citizens
-                        better — from the infrastructure up.
+                        Two broad ambitions, one mission: giving African governments the technology and the know-how to serve citizens
+                        better
                     </p>
                     <div className={styles.button_container}>
                         <button className={styles.explore_btn}>
                             Explore our Services
+                            <svg width="40" height="12" viewBox="0 0 60 12" fill="none">
+                                <path d="M0 6H58M58 6L52 1M58 6L52 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </button>
+                        <button className={styles.solutions_btn}>
+                            Explore our Solutions
                             <svg width="40" height="12" viewBox="0 0 60 12" fill="none">
                                 <path d="M0 6H58M58 6L52 1M58 6L52 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>

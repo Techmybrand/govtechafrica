@@ -627,8 +627,8 @@ export const privacyPolicyData: PrivacyPolicyProps[] = [
 		headerText: `Fortune Ikenna Awuzie`,
 		content: [
 			'Data Protection Officer, Govtech Africa Limited',
-			'Telephone: 09139167076',
-			'Email: awuzief@gmail.com'
+			'Telephone: +2349139167076',
+			'Email: fortune@govtechafrica.com'
 		],
 		postContent: `You may contact the Data Protection Officer about privacy enquiries, complaints, withdrawal of consent or requests
 			to exercise your data protection rights`
@@ -752,8 +752,8 @@ export const termsOfUseData: PrivacyPolicyProps[] = [
 		headerText: `Privacy-related matters should be directed to:`,
 		content: [
 			`Fortune Ikenna Awuzie, Data Protection Officer`,
-			`Telephone: 09139167076`,
-			`Email: awuzief@gmail.com`
+			`Telephone: +2349139167076`,
+			`Email: fortune@govtechafrica.com`
 		]
 	},
 ];
@@ -877,8 +877,8 @@ export const cookiesPolicyData: cookiesPolicyDataProps[] = [
 				title: "Fortune Ikenna Awuzie",
 				body: [
 					"Data Protection Officer, Govtech Africa Limited",
-					"Telephone: 09139167076",
-					"Email: awuzief@gmail.com"
+					"Telephone: +2349139167076",
+					"Email: fortune@govtechafrica.com"
 				]
 			}
 		]
