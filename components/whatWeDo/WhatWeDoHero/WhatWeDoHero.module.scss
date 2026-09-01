@@ -107,13 +107,16 @@
 }
 
 .button_container {
-    .explore_btn {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    .explore_btn, .solutions_btn {
         display: inline-flex;
         align-items: center;
         gap: 3.2rem;
         background: #3BA170;
         color: #000;
-        padding: 1.6rem 3.2rem;
+        padding: 2rem 3.2rem;
         border-radius: 4rem;
         font-family: $font;
         font-size: 1.6rem;
@@ -122,6 +125,7 @@
         border: none;
         cursor: pointer;
         text-decoration: none;
+        min-width: max-content;
         &:hover {
             background: #53C688;
             transform: translateY(-2px);
@@ -130,6 +134,17 @@
         svg {
             width: 4rem;
             height: 1.2rem;
+        }
+    }
+    .solutions_btn {
+        font-size: 1.4rem;
+        background: #000;
+        border: 0.1rem solid #2E8C61;
+        color: #2E8C61;
+        &:hover {
+            background: transparent;
+            transform: translateY(-2px);
+            transition: $all-transition;
         }
     }
 }
@@ -197,7 +212,8 @@
         }
     }
     .button_container {
-        .explore_btn {
+        .explore_btn,
+        .solutions_btn {
             font-size: 1.4rem;
             line-height: 2rem;
             padding: 1.4rem 2.4rem;
@@ -259,7 +275,11 @@
         }
     }
     .button_container {
-        .explore_btn {
+        gap: 1.6rem;
+        flex-direction: column;
+        align-items: flex-start;
+        .explore_btn,
+        .solutions_btn {
             font-size: 1.2rem;
             line-height: 1.6rem;
             padding: 1.2rem 2rem;

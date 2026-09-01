@@ -120,9 +120,7 @@ export default function RootLayout({
 				<Providers>
 					<Toaster position="top-right" />
 					<React.Fragment>
-						{/* <Header /> */}
 						{children}
-						{/* <Footer /> */}
 					</React.Fragment>
 				</Providers>
 			</body>
