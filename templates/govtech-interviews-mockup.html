@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GovTech Africa — Interviews Mockup</title>
+<style>
+  @font-face {
+    font-family: 'Century Gothic';
+    src: local('Century Gothic'), local('CenturyGothic');
+  }
+
+  :root{
+    --black: #0A0D0B;
+    --black-soft: #12160F;
+    --black-card: #171C14;
+    --green: #1FA75B;
+    --green-bright: #3ECB74;
+    --green-deep: #0F5C34;
+    --green-line: rgba(63,203,116,0.25);
+    --offwhite: #EDF3EC;
+    --muted: #8AA095;
+    --radius: 14px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+    margin:0; padding:0;
+    background: var(--black);
+    color: var(--offwhite);
+    font-family: 'Century Gothic', 'Futura', 'Trebuchet MS', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .dev-label{
+    text-align:center;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--green-bright);
+    padding: 6px 0;
+    font-weight: bold;
+  }
+
+  a{ color: inherit; }
+
+  /* ===================== SHARED ===================== */
+  .container{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green-bright);
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow::before{
+    content:"";
+    width: 22px;
+    height: 2px;
+    background: var(--green-bright);
+    display:inline-block;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    background: var(--green);
+    color: var(--black);
+    font-family: inherit;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+    padding: 16px 28px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .btn:hover{ background: var(--green-bright); transform: translateY(-2px); }
+  .btn:focus-visible{ outline: 3px solid var(--offwhite); outline-offset: 3px; }
+
+  .btn-arrow{ transition: transform 0.2s ease; }
+  .btn:hover .btn-arrow{ transform: translateX(3px); }
+
+  /* ===================== WAVEFORM SIGNATURE ===================== */
+  .waveform{
+    display:flex;
+    align-items:center;
+    gap: 5px;
+    height: 40px;
+  }
+  .waveform span{
+    display:block;
+    width: 4px;
+    border-radius: 2px;
+    background: var(--green-bright);
+    opacity: 0.85;
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  .waveform span:nth-child(1){ height: 14px; animation-delay: 0s; }
+  .waveform span:nth-child(2){ height: 28px; animation-delay: 0.15s; }
+  .waveform span:nth-child(3){ height: 40px; animation-delay: 0.3s; }
+  .waveform span:nth-child(4){ height: 22px; animation-delay: 0.45s; }
+  .waveform span:nth-child(5){ height: 33px; animation-delay: 0.6s; }
+  .waveform span:nth-child(6){ height: 16px; animation-delay: 0.75s; }
+  .waveform span:nth-child(7){ height: 26px; animation-delay: 0.9s; }
+
+  @keyframes pulse{
+    0%, 100% { transform: scaleY(0.5); opacity: 0.6; }
+    50% { transform: scaleY(1); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .waveform span{ animation: none; transform: scaleY(0.85); }
+  }
+
+  /* ===================== HOMEPAGE TEASER ===================== */
+  .teaser{
+    position: relative;
+    padding: 110px 0 120px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 82% 20%, rgba(31,167,91,0.16), transparent 45%),
+      var(--black);
+    border-bottom: 1px solid var(--green-line);
+  }
+
+  .teaser-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items:center;
+  }
+
+  .teaser h2{
+    font-size: 44px;
+    line-height: 1.15;
+    margin: 0 0 22px;
+    max-width: 560px;
+    letter-spacing: -0.5px;
+  }
+
+  .teaser h2 .accent{ color: var(--green-bright); }
+
+  .teaser p.lede{
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 0 36px;
+  }
+
+  .teaser-foot{
+    display:flex;
+    align-items:center;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .teaser-foot .waveform{ opacity: 0.7; }
+  .teaser-foot .count{
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+  .teaser-foot .count strong{ color: var(--offwhite); }
+
+  /* Collage of voices */
+  .voices-cluster{
+    position: relative;
+    height: 420px;
+  }
+
+  .voice-orb{
+    position:absolute;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    color: var(--black);
+    box-shadow: 0 0 0 1px var(--green-line), 0 20px 40px rgba(0,0,0,0.45);
+  }
+  .voice-orb .tag{
+    position:absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    font-weight: normal;
+  }
+
+  .o1{ width: 150px; height:150px; background: var(--green-bright); top: 10px; left: 60px; font-size: 34px; }
+  .o2{ width: 108px; height:108px; background: var(--green); top: 190px; left: 0px; font-size: 26px; }
+  .o3{ width: 190px; height:190px; background: var(--black-card); border: 2px solid var(--green-bright); color: var(--green-bright); top: 60px; left: 240px; font-size: 40px; }
+  .o4{ width: 96px; height:96px; background: var(--green-deep); color: var(--offwhite); top: 300px; left: 190px; font-size: 22px; }
+
+  /* ===================== FEED PAGE ===================== */
+  .feed-page{
+    padding: 70px 0 100px;
+  }
+
+  .feed-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-bottom: 34px;
+    margin-bottom: 34px;
+    border-bottom: 1px solid var(--green-line);
+  }
+
+  .feed-header h1{
+    font-size: 38px;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+
+  .feed-header p{
+    color: var(--muted);
+    margin: 10px 0 0;
+    max-width: 480px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .feed-controls{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+  }
+
+  select.sort{
+    background: var(--black-card);
+    color: var(--offwhite);
+    border: 1px solid var(--green-line);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 13px;
+  }
+
+  .filters{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .chip{
+    background: transparent;
+    border: 1px solid var(--green-line);
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 13px;
+    padding: 9px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .chip.active{
+    background: var(--green);
+    color: var(--black);
+    border-color: var(--green);
+    font-weight: bold;
+  }
+  .chip:hover:not(.active){ border-color: var(--green-bright); color: var(--offwhite); }
+
+  .feed{
+    display:flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .feed-card{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+    gap: 28px;
+    background: var(--black-card);
+    border: 1px solid var(--green-line);
+    border-radius: var(--radius);
+    padding: 22px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+  .feed-card:hover{
+    border-color: var(--green-bright);
+    transform: translateY(-2px);
+  }
+
+  .thumb{
+    position: relative;
+    border-radius: 10px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--green-deep), var(--black-soft));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 30px;
+    font-weight:bold;
+    color: var(--green-bright);
+    overflow:hidden;
+  }
+
+  .play-icon{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .play-icon::before{
+    content:"";
+    width:0; height:0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 14px solid var(--offwhite);
+    opacity: 0.9;
+    margin-left: 3px;
+  }
+  .play-icon-bg{
+    position:absolute;
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: rgba(10,13,11,0.55);
+    border: 1px solid rgba(237,243,238,0.5);
+  }
+
+  .card-body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-top{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .card-top h3{
+    font-size: 20px;
+    margin: 0 0 4px;
+  }
+
+  .card-role{
+    font-size: 13px;
+    color: var(--green-bright);
+    font-weight: bold;
+  }
+
+  .card-date{
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 3px;
+  }
+
+  .card-quote{
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--offwhite);
+    margin: 6px 0 12px;
+    max-width: 620px;
+  }
+
+  .card-quote::before{ content: "\201C"; color: var(--green-bright); }
+  .card-quote::after{ content: "\201D"; color: var(--green-bright); }
+
+  .card-foot{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+  }
+
+  .mini-wave{ display:flex; align-items:center; gap: 3px; height: 16px; }
+  .mini-wave span{
+    width: 3px;
+    background: var(--green);
+    border-radius: 2px;
+    display:block;
+  }
+  .mini-wave span:nth-child(1){ height: 6px; }
+  .mini-wave span:nth-child(2){ height: 12px; }
+  .mini-wave span:nth-child(3){ height: 16px; }
+  .mini-wave span:nth-child(4){ height: 9px; }
+
+  .card-tag{
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .load-more{
+    display:flex;
+    justify-content:center;
+    margin-top: 44px;
+  }
+
+  .load-more button{
+    background: transparent;
+    border: 1px solid var(--green-line);
+    color: var(--offwhite);
+    font-family: inherit;
+    padding: 14px 30px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .load-more button:hover{ border-color: var(--green-bright); color: var(--green-bright); }
+
+  @media (max-width: 720px){
+    .teaser-grid{ grid-template-columns: 1fr; }
+    .voices-cluster{ height: 260px; margin-top: 20px; }
+    .feed-card{ grid-template-columns: 1fr; }
+    .thumb{ height: 170px; }
+    .teaser h2{ font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="dev-label">Mockup — Section 1: Homepage Teaser</div>
+
+<!-- ===================== HOMEPAGE TEASER ===================== -->
+<section class="teaser">
+  <div class="container teaser-grid">
+    <div>
+      <div class="eyebrow">Now Live</div>
+      <h2>Hear from the people <span class="accent">building</span> Africa's digital future.</h2>
+      <p class="lede">Policymakers, engineers, and civic advocates talk candidly about the work behind the headlines — what's changing, what's hard, and what's next for governance and technology across the continent.</p>
+      <a href="#" class="btn">Explore the Interviews <span class="btn-arrow">→</span></a>
+      <div class="teaser-foot">
+        <div class="waveform">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="count"><strong>18</strong> voices and counting</div>
+      </div>
+    </div>
+    <div class="voices-cluster">
+      <div class="voice-orb o1">AN<span class="tag">Policy</span></div>
+      <div class="voice-orb o2">TO<span class="tag">Product</span></div>
+      <div class="voice-orb o3">+18</div>
+      <div class="voice-orb o4">CM<span class="tag">Civic Tech</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="dev-label">Mockup — Section 2: Interviews Feed Page</div>
+
+<!-- ===================== FEED PAGE ===================== -->
+<section class="feed-page">
+  <div class="container">
+    <div class="feed-header">
+      <div>
+        <h1>Interviews</h1>
+        <p>Conversations with the people shaping GovTech across Africa — new voices added regularly.</p>
+      </div>
+      <div class="feed-controls">
+        <select class="sort">
+          <option>Newest first</option>
+          <option>Oldest first</option>
+          <option>Most watched</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filters">
+      <button class="chip active">All</button>
+      <button class="chip">Government</button>
+      <button class="chip">Technology</button>
+      <button class="chip">Civil Society</button>
+      <button class="chip">Roundtable 2026</button>
+    </div>
+
+    <div class="feed">
+
+      <article class="feed-card">
+        <div class="thumb">AN
+          <div class="play-icon-bg"></div>
+          <div class="play-icon"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <div>
+              <h3>Amara Nwosu</h3>
+              <div class="card-role">Policy Analyst, Ministry of Digital Economy</div>
+            </div>
+            <div class="card-date">Aug 24, 2026</div>
+          </div>
+          <p class="card-quote">Digital ID only works if the people it's meant to serve trust the system behind it.</p>
+          <div class="card-foot">
+            <div class="mini-wave"><span></span><span></span><span></span><span></span></div>
+            <div class="card-tag">Government · 6 min watch</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card">
+        <div class="thumb">TO
+          <div class="play-icon-bg"></div>
+          <div class="play-icon"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <div>
+              <h3>Tunde Okafor</h3>
+              <div class="card-role">Product Lead, civic-tech startup</div>
+            </div>
+            <div class="card-date">Aug 18, 2026</div>
+          </div>
+          <p class="card-quote">We stopped designing for ministries and started designing for the person standing in line.</p>
+          <div class="card-foot">
+            <div class="mini-wave"><span></span><span></span><span></span><span></span></div>
+            <div class="card-tag">Technology · 9 min watch</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card">
+        <div class="thumb">CM
+          <div class="play-icon-bg"></div>
+          <div class="play-icon"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <div>
+              <h3>Chiamaka Mensah</h3>
+              <div class="card-role">Civil Society Advocate, open-governance coalition</div>
+            </div>
+            <div class="card-date">Aug 9, 2026</div>
+          </div>
+          <p class="card-quote">Transparency isn't a feature you launch once — it's a habit institutions have to keep.</p>
+          <div class="card-foot">
+            <div class="mini-wave"><span></span><span></span><span></span><span></span></div>
+            <div class="card-tag">Civil Society · 7 min watch</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feed-card">
+        <div class="thumb">RB
+          <div class="play-icon-bg"></div>
+          <div class="play-icon"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <div>
+              <h3>Rasheed Bello</h3>
+              <div class="card-role">Delegate, National GovTech Policy Roundtable 2026</div>
+            </div>
+            <div class="card-date">Jul 30, 2026</div>
+          </div>
+          <p class="card-quote">The policy passed because the room in Abuja finally agreed on what "interoperable" actually means.</p>
+          <div class="card-foot">
+            <div class="mini-wave"><span></span><span></span><span></span><span></span></div>
+            <div class="card-tag">Roundtable 2026 · 11 min watch</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="load-more">
+      <button>Load more interviews</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

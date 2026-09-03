@@ -1,0 +1,292 @@
+@import "@/styles/imports";
+
+.announcements_section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000;
+    // background: radial-gradient(circle at 50% 0%, rgba(31, 167, 91, 0.16) 0%, rgba(31, 167, 91, 0) 70%), linear-gradient(180deg, rgba(31, 167, 91, 0.12) 0%, rgba(6, 8, 6, 1) 100%), #060806;
+    padding: 16rem 3.2rem 8rem;
+    @include screenMax("tablet") {
+        padding: 12rem 2.4rem 6rem;
+    }
+    @include screenMax("mobile") {
+        padding: 10rem 1.6rem 4rem;
+    }
+
+    .container {
+        max-width: $max-width;
+        width: 100%;
+        margin-inline: auto;
+        .header {
+            max-width: 60rem;
+            margin-bottom: 2.4rem;
+            .title {
+                font-size: 5.6rem;
+                font-family: $font-gothic-bold;
+                color: #FFFFFF;
+                line-height: 1.4;
+                margin-bottom: 1.6rem;
+
+                @include screenMax("tablet") {
+                    font-size: 4rem;
+                }
+
+                @include screenMax("mobile") {
+                    font-size: 3.2rem;
+                }
+            }
+            .subtitle {
+                font-size: 1.6rem;
+                font-family: $font;
+                color: #9CA3AF;
+                line-height: 2.4rem;
+                @include screenMax("tablet") {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+                @include screenMax("mobile") {
+                    font-size: 1.2rem;
+                    line-height: 1.6rem;
+                }
+            }
+        }
+        .divider {
+            height: 0.1rem;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 3.2rem;
+        }
+        .filter_row {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+            .filter_btn {
+                background-color: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                color: #A0A0A0;
+                padding: 0.8rem 2.2rem;
+                border-radius: 999rem;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                font-family: $font;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &:hover {
+                    border-color: rgba(27, 217, 106, 0.5);
+                    color: #FFFFFF;
+                }
+                &.active {
+                    background-color: #1BD96A;
+                    border-color: #1BD96A;
+                    color: #061A0E;
+                    font-weight: 600;
+                }
+
+                @include screenMax("mobile") {
+                    padding: 0.6rem 1.6rem;
+                    font-size: 1.2rem;
+                    line-height: 1.6rem;
+                }
+            }
+        }
+        .pinned_card {
+            background-color: #0F1411;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+            transition: border-color 0.3s ease;
+            &:hover {
+                border-color: rgba(27, 217, 106, 0.3);
+            }
+            @include screenMax("tablet") {
+                grid-template-columns: 1fr;
+                padding: 3rem;
+                gap: 3rem;
+            }
+            @include screenMax("mobile") {
+                padding: 2.4rem;
+                gap: 2rem;
+            }
+            .pinned_content {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .pinned_badge {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.6rem;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 1.6rem;
+                    .pinned_text {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                        font-weight: 700;
+                        color: #F59E0B;
+                        font-family: $font;
+                    }
+                    .pinned_dot {
+                        width: 0.8rem;
+                        height: 0.8rem;
+                        border-radius: 50%;
+                        background-color: #1BD96A;
+                        box-shadow: 0 0 8px #1BD96A;
+                    }
+                }
+
+                .pinned_title {
+                    color: #FFFFFF;
+                    font-size: 3.2rem;
+                    font-family: $font-gothic-bold;
+                    line-height: 1.4;
+                    margin-bottom: 1.6rem;
+                    @include screenMax("tablet") {
+                        font-size: 2.8rem;
+                    }
+                    @include screenMax("mobile") {
+                        font-size: 2.4rem;
+                    }
+                }
+
+                .pinned_description {
+                    color: #9CA3AF;
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                    margin-bottom: 2.4rem;
+                    @include screenMax("tablet") {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                        margin-bottom: 2rem;
+                    }
+                    @include screenMax("mobile") {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                        margin-bottom: 1.6rem;
+                    }
+                }
+
+                .pinned_btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.8rem;
+                    background-color: #1BD96A;
+                    padding: 1.2rem 2.6rem;
+                    border-radius: 999rem;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    span {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                        color: #061A0E;
+                        font-weight: 500;
+                        font-family: $font;
+                    }
+                    .arrow {
+                        transition: transform 0.3s ease;
+                    }
+                    &:hover {
+                        background-color: #23e876;
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 2rem rgba(27, 217, 106, 0.25);
+                        .arrow {
+                            transform: translateX(4px);
+                        }
+                    }
+
+                    @include screenMax("mobile") {
+                        padding: 1rem 2rem;
+                        span {
+                            font-size: 1.2rem;
+                            line-height: 1.6rem;
+                        }
+                    }
+                }
+            }
+            .pinned_graphic {
+                width: 100%;
+                height: 24rem;
+                background: linear-gradient(135deg, rgba(31, 167, 91, 0.25) 0%, rgba(13, 20, 15, 0.9) 100%);
+                border: 1px solid rgba(27, 217, 106, 0.2);
+                border-radius: 1.4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+
+                @include screenMax("tablet") {
+                    height: 18rem;
+                }
+                .graphic_inner {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-image: repeating-linear-gradient(45deg, rgba(27, 217, 106, 0.05) 0, rgba(27, 217, 106, 0.05) 10px, transparent 10px, transparent 20px);
+                    .center_pulse {
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 50%;
+                        background-color: #1BD96A;
+                        box-shadow: 0 0 24px 8px rgba(27, 217, 106, 0.6);
+                    }
+                }
+            }
+        }
+        .timeline_wrapper {
+            position: relative;
+            padding-left: 0.6rem;
+            margin-bottom: 4rem;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0.5rem;
+                top: 3rem;
+                bottom: 2.8rem;
+                width: 0.1rem;
+                // background: linear-gradient(180deg, #1BD96A 0%, rgba(27, 217, 106, 0.2) 100%);
+                background-color: #3FCB7440;
+            }
+        }
+
+        .load_more_wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            .load_more_btn {
+                background-color: transparent;
+                border: 0.1rem solid rgba(27, 217, 106, 0.4);
+                color: #1BD96A;
+                padding: 1.4rem 4rem;
+                border-radius: 999rem;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                font-weight: 500;
+                font-family: $font;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &:hover {
+                    background-color: rgba(27, 217, 106, 0.1);
+                    border-color: #1BD96A;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 2rem rgba(27, 217, 106, 0.2);
+                }
+
+                @include screenMax("mobile") {
+                    padding: 1.2rem 3rem;
+                    font-size: 1.2rem;
+                    line-height: 1.6rem;
+                }
+            }
+        }
+    }
+}

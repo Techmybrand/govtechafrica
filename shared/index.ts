@@ -34,12 +34,16 @@ import TextArea from "./textArea/TextArea";
 import ThemeToggle from "./themeToggle/ThemeToggle";
 import NewsLetterSection from "./NewsLetterSection/NewsLetterSection";
 import NewFooter from "./footer/NewFooter";
+import InterviewsCard from "./ResearchCard/InterviewsCard/InterviewsCard";
+import DealsAndAnnouncementCard from "./ResearchCard/DealsAndAnnouncementCard/DealsAndAnnouncementCard";
 
 
 export {
     Accordion,
     GruveTicketButton,
     AnimatedHero,
+    InterviewsCard,
+    DealsAndAnnouncementCard,
     AnimatedSection,
     Logo,
     AnalyticsToggle,

@@ -8,6 +8,7 @@ import CookiePolicy from "./CookiePolicy/CookiePolicy";
 import CustomisedSoftware from "./CustomisedSoftware/CustomisedSoftware";
 import Cybersecurity from "./Cybersecurity/Cybersecurity";
 import DataAndAI from "./DataAndAI/DataAndAI";
+import DealsAndAnnouncements from "./DealsAndAnnouncements/DealsAndAnnouncements";
 import InfrastructureProcurement from "./InfrastructureProcurement/InfrastructureProcurement";
 import InsightDetails from "./InsightDetails/InsightDetails";
 import NetworkInfrastructure from "./NetworkInfrastructure/NetworkInfrastructure";
@@ -30,6 +31,7 @@ export {
     CapacityBuilding,
     ResearchDetails,
     RelatedInsights,
+    DealsAndAnnouncements,
     InsightDetails,
     TechEvents,
     InfrastructureProcurement,

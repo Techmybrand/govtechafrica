@@ -253,3 +253,12 @@ export interface valueCardProps {
 	index: number;
 	scrollYProgress: MotionValue<number>;
 }
+
+export interface DealsAndAnnouncementCardProps {
+    date: string;
+    tag: string;
+    tagType?: "update" | "deadline" | "event" | string;
+    title: string;
+    description: string;
+    slug?: string;
+}

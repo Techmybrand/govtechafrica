@@ -1,0 +1,169 @@
+@import "@/styles/imports";
+
+.interviews_view {
+    width: 100%;
+    background-color: #000000;
+    // background: radial-gradient(circle at 50% 0%, rgba(31, 167, 91, 0.16) 0%, rgba(31, 167, 91, 0) 70%), linear-gradient(180deg, rgba(31, 167, 91, 0.12) 0%, rgba(6, 8, 6, 1) 100%), #060806;
+    padding: 16rem 3.2rem 8rem;
+    @include screenMax("tablet") {
+        padding: 12rem 2.4rem 6rem;
+    }
+    @include screenMax("mobile") {
+        padding: 10rem 1.6rem 4rem;
+    }
+
+    .container {
+        max-width: $max-width;
+        width: 100%;
+        margin-inline: auto;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2.4rem;
+            margin-bottom: 2.4rem;
+            @include screenMax("mobile") {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header_text {
+                max-width: 60rem;
+                .title {
+                    font-size: 5.6rem;
+                    font-weight: 900;
+                    font-family: $font-gothic-bold;
+                    color: #FFFFFF;
+                    line-height: 1.3;
+                    margin-bottom: 1.6rem;
+                    letter-spacing: -0.02em;
+                    @include screenMax("tablet") {
+                        font-size: 4rem;
+                        line-height: 5.6rem;
+                    }
+                    @include screenMax("mobile") {
+                        font-size: 3.2rem;
+                        line-height: 4rem;
+                    }
+                }
+                .subtitle {
+                    font-size: 1.6rem;
+                    color: #9CA3AF;
+                    font-family: $font;
+                    line-height: 2.4rem;
+                    @include screenMax("tablet") {
+                        font-size: 1.4rem;
+                        line-height: 2rem;
+                    }
+                    @include screenMax("mobile") {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                    }
+                }
+            }
+
+            .sort_container {
+                .sort_btn {
+                    background-color: #0F1411;
+                    border: 0.1rem solid rgba(255, 255, 255, 0.12);
+                    padding: 1rem 2.4rem;
+                    border-radius: 999rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    &:hover {
+                        border-color: #1BD96A;
+                    }
+                    span {
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                        font-family: $font;
+                        color: #FFFFFF;
+                    }
+                    @include screenMax("mobile") {
+                        padding: 0.8rem 1.6rem;
+                        span {
+                            font-size: 1.2rem;
+                            line-height: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .divider {
+            height: 0.1rem;
+            width: 100%;
+            background-color: #3FCB7440;
+            margin-bottom: 3.2rem;
+        }
+
+        .filter_row {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+            .filter_btn {
+                background-color: transparent;
+                border: 0.1rem solid rgba(255, 255, 255, 0.15);
+                color: #A0A0A0;
+                padding: 0.8rem 2.2rem;
+                border-radius: 999rem;
+                font-size: 1.4rem;
+                font-family: $font;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &:hover {
+                    border-color: rgba(27, 217, 106, 0.5);
+                    color: #FFFFFF;
+                }
+                &.active {
+                    background-color: #1BD96A;
+                    border-color: #1BD96A;
+                    color: #061A0E;
+                    font-weight: 600;
+                }
+
+                @include screenMax("mobile") {
+                    padding: 0.6rem 1.6rem;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .list_container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 4.8rem;
+        }
+        .load_more_wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            .load_more_btn {
+                background-color: transparent;
+                border: 0.1rem solid rgba(27, 217, 106, 0.4);
+                color: #1BD96A;
+                padding: 1.4rem 3.6rem;
+                border-radius: 999rem;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                font-family: $font;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &:hover {
+                    background-color: rgba(27, 217, 106, 0.1);
+                    border-color: #1BD96A;
+                    transform: translateY(-2px);
+                    box-shadow: 0 0.4rem 2rem rgba(27, 217, 106, 0.2);
+                }
+                @include screenMax("mobile") {
+                    padding: 1.2rem 2.4rem;
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+}

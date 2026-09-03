@@ -6,6 +6,7 @@ import { ChartLoader } from "@/shared/loaders";
 import Backgrounders from "./Backgrounders/Backgrounders";
 import ExpertTakes from "./ExpertTakes/ExpertTakes";
 import Reports from "./Reports/Reports";
+import Interviews from "./Interviews/Interviews";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ResearchDetails.module.scss";
@@ -29,6 +30,8 @@ const ResearchDetails = ({ blog, contentToShow, articleType }: ResearchDetailsPr
                 <ExpertTakes blog={blog} contentToShow={contentToShow} />
             ) : articleType === "report" ? (
                 <Reports blog={blog} contentToShow={contentToShow} />
+            ) : articleType === "interview" ? (
+                <Interviews blog={blog} contentToShow={contentToShow} />
             ) : (
                 <article>
                     <header className={styles.details_content}>
