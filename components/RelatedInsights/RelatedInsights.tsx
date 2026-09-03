@@ -10,7 +10,8 @@ interface RelatedInsightsProps {
 }
 
 const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
-    const { fetchBlogs, sortedBlogs } = useGetContentful();
+    const { fetchBlogs, sortedBlogs: getSortedBlogs } = useGetContentful();
+    const sortedBlogs = getSortedBlogs?.filter((blog: BlogDetailsProps) => blog?.type?.toLowerCase() !== "interview");
     useEffect(() => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -6,7 +6,8 @@ import { BlogDetailsProps } from "@/interfaces";
 import styles from "./Research.module.scss";
 
 const Research = () => {
-    const { fetchBlogs, sortedBlogs } = useGetContentful();
+    const { fetchBlogs, sortedBlogs: getSortedBlogs } = useGetContentful();
+    const sortedBlogs = getSortedBlogs?.filter((blog: BlogDetailsProps) => blog?.type?.toLowerCase() !== "interview");
     useEffect(() => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
