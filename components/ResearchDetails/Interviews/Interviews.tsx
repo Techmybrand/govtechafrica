@@ -5,6 +5,7 @@ import Link from "next/link";
 import { RichText, ResearchCard, BackgrounderCard, ExpertTakeCard, Button, ReportCard } from "@/shared";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./Interviews.module.scss";
+import { formatDate } from "@/utils/formatUrl";
 
 interface InterviewsProps {
     blog: BlogDetailsProps;
@@ -17,6 +18,8 @@ const Interviews = ({ blog, contentToShow }: InterviewsProps) => {
         : blog?.bannerImage?.fields?.file?.url
         ? `https:${blog?.bannerImage?.fields?.file?.url}`
         : null;
+    const getFormattedDate = formatDate(blog?.date ?? "")
+    const dateFormat = getFormattedDate?.slice(0, 3) + " " + getFormattedDate?.slice(-4);
 
     return (
         <article className={styles.interviews_article}>
@@ -31,7 +34,7 @@ const Interviews = ({ blog, contentToShow }: InterviewsProps) => {
                 </div>
             </div>
 
-            <header className={styles.details_content}>
+            <header className={styles.details_content_header}>
                 <div className={styles.breadcrumbs}>
                     <Link href="/interviews" className={styles.parent_link}>
                         <span>Interviews</span>
@@ -49,10 +52,9 @@ const Interviews = ({ blog, contentToShow }: InterviewsProps) => {
                         </div>
                     )}
                     <div className={styles.profile_info}>
-                        <h1 className={styles.interviewee_title}>{blog?.title}</h1>
+                        <h1 className={styles.interviewee_title}>{blog?.authors?.[0]}</h1>
                         <p className={styles.subtitle}>
-                            {blog?.description}
-                            {blog?.date || blog?.publishedAt ? ` · ${blog?.date || blog?.publishedAt}` : ""}
+                            {blog?.title} - {dateFormat}
                         </p>
                     </div>
                 </div>
@@ -108,7 +110,6 @@ const Interviews = ({ blog, contentToShow }: InterviewsProps) => {
                     </Button>
                 </div>
             </div>
-            <div className={styles.divider_green}></div>
         </article>
     );
 };

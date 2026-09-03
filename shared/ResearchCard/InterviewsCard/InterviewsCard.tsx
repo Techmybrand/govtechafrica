@@ -24,7 +24,6 @@ const InterviewsCard = ({ title, subtitle, quote, description, date, publishedAt
     const displayDate = date || publishedAt || "";
     const getFormattedDate = formatDate(displayDate)
     const dateFormat = getFormattedDate?.slice(0, 3) + " " + getFormattedDate?.slice(-4);
-    console.log("dateFormat", dateFormat);
 
     return (
         <Link href={`/insights/research/${slug}`}>
