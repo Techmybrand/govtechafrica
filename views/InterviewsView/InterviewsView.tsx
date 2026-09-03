@@ -4,7 +4,8 @@ import styles from "./InterviewsView.module.scss";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
 import { InterviewsCard } from "@/shared";
-const categories = ["All", "Q&A", "Video", "Audio", "Govtech Originals"];
+// const categories = ["All", "Q&A", "Video", "Audio", "Govtech Originals"];
+const categories = ["All"];
 
 const InterviewsView = () => {
     const { fetchBlogs, sortedBlogs } = useGetContentful();
