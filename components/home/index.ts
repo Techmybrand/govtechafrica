@@ -12,9 +12,11 @@ import Partners from "./Partners/Partners";
 import Research from "./Research/Research";
 import Experience from "./experience/Experience";
 import NPGR from "./NPGR/NPGR";
-import IntroToFulcrum from "./IntroToFulcrum/IntroToFulcrum"
+import IntroToFulcrum from "./IntroToFulcrum/IntroToFulcrum";
+import InterviewSection from "./InterviewSection/InterviewSection";
+import Annoucements from "./Annoucements/Annoucements";
 
 export { Growth, Drivers, CenterPiece, Choose, Insights, Mission, Research, Partners,
     NewsLetter, GrowthV2, CenterPieceV2, MissionV2, Experience,
-    NPGR, IntroToFulcrum
+    NPGR, IntroToFulcrum, InterviewSection, Annoucements
 };

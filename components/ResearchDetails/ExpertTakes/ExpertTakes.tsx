@@ -6,7 +6,6 @@ import { RichText, ResearchCard, BackgrounderCard, ExpertTakeCard, Button, Repor
 // import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
 import styles from "./ExpertTakes.module.scss";
-
 interface ExpertTakesProps {
   blog: BlogDetailsProps;
   contentToShow?: BlogDetailsProps[];

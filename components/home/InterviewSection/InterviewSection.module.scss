@@ -1,0 +1,226 @@
+@import "@/styles/imports";
+
+.interview_section {
+    background-color: #060806;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 3.2rem;
+
+    @include screenMax("tablet") {
+        padding: 6rem 2.4rem;
+    }
+
+    @include screenMax("mobile") {
+        padding: 4rem 1.6rem;
+    }
+
+    .container {
+        max-width: $max-width;
+        width: 100%;
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 0rem;
+        @include screenMax("tablet") {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .left_content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 60rem;
+            @include screenMax("tablet") {
+                max-width: 100%;
+            }
+            .tag {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                margin-bottom: 2rem;
+                .dash {
+                    color: #1BD96A;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                }
+                .tag_text {
+                    color: #1BD96A;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    font-family: $font;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                }
+            }
+
+            .title, .highlight {
+                color: #ffffff;
+                font-size: 4.8rem;
+                font-weight: 600;
+                line-height: 1.4;
+                margin-bottom: 2.4rem;
+                letter-spacing: -0.02em;
+                .highlight {
+                    color: #1BD96A;
+                }
+
+                @include screenMax("desktop-sm") {
+                    font-size: 4.2rem;
+                }
+
+                @include screenMax("tablet") {
+                    font-size: 3.6rem;
+                }
+
+                @include screenMax("mobile") {
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                }
+            }
+            .description {
+                color: #A0A0A0;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                margin-bottom: 3.6rem;
+                max-width: 52rem;
+                @include screenMax("tablet") {
+                    font-size: 1.4rem;
+                    line-height: 2.2rem;
+                    margin-bottom: 2.4rem;
+                }
+                @include screenMax("mobile") {
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+                    margin-bottom: 1.6rem;
+                }
+            }
+            .action_wrapper {
+                margin-bottom: 4rem;
+                .explore_btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 1rem;
+                    background-color: #1BD96A;
+                    color: #061A0E;
+                    padding: 1.4rem 2.8rem;
+                    border-radius: 9999px;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    span {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                        font-weight: 600;
+                    }
+                    .arrow {
+                        transition: transform 0.3s ease;
+                    }
+                    &:hover {
+                        background-color: #23e876;
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 24px rgba(27, 217, 106, 0.25);
+                        .arrow {
+                            transform: translateX(4px);
+                        }
+                    }
+                    @include screenMax("tablet") {
+                        padding: 1.4rem 2.4rem;
+                        span {
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                        }
+                    }
+                    @include screenMax("mobile") {
+                        padding: 1.2rem 2.2rem;
+                        span {
+                            font-size: 1.2rem;
+                            line-height: 1.6rem;
+                        }
+                    }
+                }
+            }
+            .voice_container {
+                display: flex;
+                align-items: center;
+                gap: 1.2rem;
+                .wave_icon {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4rem;
+                    height: 2.4rem;
+                    span {
+                        display: block;
+                        width: 0.3rem;
+                        border-radius: 0.2rem;
+                        background-color: #1BD96A;
+                        opacity: 0.85;
+                        animation: wavePulse 1.6s ease-in-out infinite;
+
+                        &:nth-child(1) { height: 1rem; animation-delay: 0s; }
+                        &:nth-child(2) { height: 1.8rem; animation-delay: 0.15s; }
+                        &:nth-child(3) { height: 2.4rem; animation-delay: 0.3s; }
+                        &:nth-child(4) { height: 1.4rem; animation-delay: 0.45s; }
+                        &:nth-child(5) { height: 2rem; animation-delay: 0.6s; }
+                        &:nth-child(6) { height: 1.2rem; animation-delay: 0.75s; }
+                        &:nth-child(7) { height: 1.6rem; animation-delay: 0.9s; }
+                    }
+                }
+                .voice_text {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    color: #808080;
+                    .count {
+                        color: #FFFFFF;
+                        font-weight: 700;
+                        margin-right: 0.4rem;
+                    }
+                }
+                @include screenMax("mobile") {
+                    gap: 0.8rem;
+                    .count {
+                        margin-top: 0;
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                    }
+                }
+            }
+        }
+
+        .right_graphic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            .graphic_wrapper {
+                position: relative;
+                width: 100%;
+                height: 80rem;
+                .graphic_img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            @include screenMax("tablet") {
+                .graphic_wrapper {
+                    height: 60rem;
+                    .graphic_img {
+                        object-fit: contain;
+                    }
+                }
+            }
+            @include screenMax("mobile") {
+                .graphic_wrapper {
+                    height: 40rem;
+                }
+            }
+        }
+    }
+}
+
+@keyframes wavePulse {
+    0%, 100% { transform: scaleY(0.5); opacity: 0.6; }
+    50% { transform: scaleY(1); opacity: 1; }
+}

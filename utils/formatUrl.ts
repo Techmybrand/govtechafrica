@@ -7,7 +7,12 @@
 
 export function formatURL(url: string) {
   if (!url) return "";
-  return url.toLowerCase().trim().replace(':', "").replace('-', "").replace(/\s+/g, "-").replace(/-+/g, "-");
+  return url
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
 }
 
 export const formatDate = (isoDate: string): string => {

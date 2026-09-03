@@ -7,7 +7,8 @@ import { BlogDetailsProps } from "@/interfaces";
 import styles from "./BlogView.module.scss";
 
 export default function BlogView() {
-	const { fetchBlogs, sortedBlogs: insightsList } = useGetContentful();
+	const { fetchBlogs, sortedBlogs } = useGetContentful();
+	const insightsList = sortedBlogs?.filter((blog: BlogDetailsProps) => blog?.type?.toLowerCase() !== "interview");
 	useEffect(() => {
 		fetchBlogs();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
