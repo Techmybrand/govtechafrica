@@ -173,41 +173,41 @@ export const navLinks: NavLink[] = [
 		href: "insights",
 		icon: "/svgs/link-main.svg",
 		subMenu: [
-			// {
-			// 	label: "Backgrounders",
-			// 	href: "/backgrounders",
-			// 	id: "backgrounders",
-			// },
-			// {
-			// 	label: "policy insights",
-			// 	href: "/policy-insights",
-			// 	id: "policy-insights",
-			// },
-			// {
-			// 	label: "articles",
-			// 	href: "/articles",
-			// 	id: "articles",
-			// },
-			// {
-			// 	label: "reports",
-			// 	href: "/reports",
-			// 	id: "reports",
-			// },
 			{
-				label: "research",
-				href: "/insights/research",
-				id: "research",
+				label: "Backgrounders",
+				href: "/backgrounders",
+				id: "backgrounders",
 			},
 			{
-				label: "deals and announcements",
-				href: "/deals-and-announcements",
-				id: "deals-and-announcements",
+				label: "policy insights",
+				href: "/policy-insights",
+				id: "policy-insights",
 			},
 			{
-				label: "interviews",
-				href: "/interviews",
-				id: "interviews",
+				label: "articles",
+				href: "/articles",
+				id: "articles",
 			},
+			{
+				label: "reports",
+				href: "/reports",
+				id: "reports",
+			},
+			// {
+			// 	label: "research",
+			// 	href: "/insights/research",
+			// 	id: "research",
+			// },
+			// {
+			// 	label: "deals and announcements",
+			// 	href: "/deals-and-announcements",
+			// 	id: "deals-and-announcements",
+			// },
+			// {
+			// 	label: "interviews",
+			// 	href: "/interviews",
+			// 	id: "interviews",
+			// },
 		]
 	}
 ];
