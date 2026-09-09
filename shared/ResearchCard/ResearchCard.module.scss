@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     transition: all 550ms ease-in-out;
+    border: 0.02rem solid rgba($col-white, 0.2);
     margin-block: 1.6rem;
     z-index: 1;
     &[data-active="true"] {
