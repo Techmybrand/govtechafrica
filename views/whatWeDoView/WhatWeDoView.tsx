@@ -1,17 +1,19 @@
 "use client";
 import React from "react";
-import { Consulting, Technology } from "@/components/whatWeDo";
-// import { NewsLetter } from "@/components/home";
-import styles from './WhatWeDoView.module.scss';
+import { RelatedInsights } from "@/components";
+import { IntroToFulcrum } from "@/components/home";
+import { Revolutionizing, Approach, ExploreServices, WhatWeDoHero } from "@/components/whatWeDo";
 
 const WhatWeDoView = () => {
 	return (
 		<React.Fragment>
-			<div className={styles.top_margin}></div>
-			<Technology />
-			<Consulting />
-			{/* <NewsLetter /> */}
-		</React.Fragment>
+            <WhatWeDoHero />
+            <Revolutionizing />
+            <Approach />
+            <IntroToFulcrum type="what_we_do" />
+            <RelatedInsights type="new" />
+            <ExploreServices />
+        </React.Fragment>
 	);
 };
 
