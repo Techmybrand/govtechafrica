@@ -1,5 +1,6 @@
-import { NewWhatWeDo } from "@/views";
+import { WhatWeDoView } from "@/views";
+// import { NewWhatWeDo } from "@/views";
 
 export default function WhatWeDo() {
-	return <NewWhatWeDo />;
+	return <WhatWeDoView />;
 }
