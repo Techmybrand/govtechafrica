@@ -83,7 +83,8 @@
 	}
 
 	@include screenMax('tablet') {
-		padding: 1.2rem 2rem 0;
+		padding: 1.6rem 1.6rem 0;
+		min-height: 6rem;
 		.accordion_header_container {
 			.accordion_header {
 				gap: 0.8rem;

@@ -47,7 +47,7 @@ const CookieSettingsModal = ({ isOpen, onClose }: CookiesModalProps) => {
     onClose();
   };
   return (
-    <Modal isOpen={isOpen} onClose={onClose} className={styles.modal_body}>
+    <Modal isOpen={isOpen} onClose={onClose} sec_className={styles.ccokies_overlay} className={styles.modal_body}>
       <div className={styles.modal_content_body}>
         <div className={styles.modal_header}>
           <h1>Govtech Africa</h1>
@@ -78,9 +78,7 @@ const CookieSettingsModal = ({ isOpen, onClose }: CookiesModalProps) => {
           <div className={styles.preferences}>
             <h2>Manage Consent Preferences</h2>
             <div className={styles.preferences_body}>
-              <Accordion title="Strictly Necessary Cookies"
-                title_icon={<h6>Always Active</h6>}
-              >
+              <Accordion title="Strictly Necessary Cookies" title_icon={<h6>Always Active</h6>}>
                 <p>
                   These cookies are essential in order to enable you to move around the site and use its 
                   features, such as accessing secure areas of the site. Without these cookies, services you 
