@@ -51,7 +51,7 @@ const Accordion = ({ title, children, title_icon, isBorder, type = 'cookies' }: 
                 </div>
             )}
             <div className={styles.review_body}>
-                <p>{children}</p>
+                {children}
             </div>
         </div>
     );
