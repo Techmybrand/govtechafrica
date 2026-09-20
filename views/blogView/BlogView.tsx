@@ -1,5 +1,4 @@
 "use client";
-// import fs from "fs";
 import { useEffect } from "react";
 import { ResearchCard, BackgrounderCard, ExpertTakeCard, PolicyBriefCard, ReportCard } from "@/shared";
 import { useGetContentful } from "@/hooks";
@@ -22,7 +21,6 @@ export default function BlogView() {
 						<h2>Insights</h2>
 					</div>
 				</div>
-				<div className={styles.divider1}></div>
 				{!insightsList?.length ? (
 					<p>No posts available.</p>
 				) : (
@@ -78,7 +76,6 @@ export default function BlogView() {
 					</div>
 				)}
 			</div>
-			<div className={styles.divider}></div>
 		</div>
 	);
 }

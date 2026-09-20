@@ -3,7 +3,7 @@
 .interviews_view {
     width: 100%;
     background-color: #000000;
-    padding: 12rem 3.2rem 0;
+    padding: 12rem 3.6rem 0;
     @include screenMax("tablet") {
         padding: 10rem 2.4rem 0;
     }
@@ -131,23 +131,20 @@
         }
 
         .research_wrapper {
-			padding: 3.6rem;
 			max-width: $max-width;
 			margin-inline: auto;
 			overflow-x: hidden;
-			@include grid(repeat(4, 1fr), 5.6rem);
+			@include grid(repeat(4, 1fr), 2.4rem);
 			@include noScrollBar();
-
             @include screenMax("tablet") {
                 @include grid(repeat(2, 1fr), 9.6rem);
-				padding: 2.4rem 6.4rem;
-
+				padding: 2.4rem 0;
             }
             @include screenMax("mobile") {
                 display: flex;
 				flex-direction: column;
 				gap: 1.6rem;
-				padding: 1.6rem;
+                padding: 1.6rem 0.8rem;
 				& > article {
 					width: 100%!important;
 				}
