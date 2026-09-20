@@ -12,8 +12,7 @@ interface ReportsProps {
 }
 
 const Reports = ({ blog, contentToShow }: ReportsProps) => {
-    const currentUrl = new URL(window?.location?.href);
-    currentUrl.hash = "";
+
     const isAsideVisible = blog?.tableOfContent && blog?.tableOfContent?.length > 0;
     return (
         <article className={styles.backgrounders}>
@@ -80,7 +79,7 @@ const Reports = ({ blog, contentToShow }: ReportsProps) => {
                                     <ul>
                                         {blog.tableOfContent.map((item, index) => (
                                             <li key={index}>
-                                                <Link href={`${currentUrl.href}#topic${index + 1}`}>
+                                                <Link href={`#topic${index + 1}`}>
                                                     {item}
                                                 </Link>
                                             </li>

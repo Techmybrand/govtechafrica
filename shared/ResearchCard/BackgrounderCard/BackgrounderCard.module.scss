@@ -82,7 +82,7 @@
 
 @include screenMax("tablet") {
     .card_container {
-        min-height: 44rem;
+        min-height: 50rem;
         .top_section {
             padding: 2.4rem 1.6rem;
             a {
@@ -92,14 +92,14 @@
             }
         }
         .bottom_section {
-            height: 23rem;
+            height: 27rem;
         }
     }
 }
 
 @include screenMax("mobile") {
     .card_container {
-        min-height: 40rem;
+        min-height: 42rem;
         flex-shrink: 0;
         width: 80%;
         display: flex;
@@ -122,6 +122,9 @@
                 line-height: 2rem;
                 margin-top: 1.6rem;
             }
+        }
+        .bottom_section {
+            height: 23rem;
         }
     }
 }

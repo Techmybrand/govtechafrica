@@ -14,7 +14,6 @@
 		.card,
 		.large_card {
 			width: 100%;
-			// background-color: rgba($col-white, 0.05);
 			background-color: #FFFFFF1A;
 			border-radius: 1.5rem;
 			overflow: hidden;
@@ -62,7 +61,6 @@
 				}
 			}
 			.grad {
-				// background-color: #13361B;
 				background-color: #000;
 				width: 100%;
 				height: 100%;
@@ -88,7 +86,7 @@
 			max-width: $max-width;
 			margin-inline: auto;
 			overflow-x: hidden;
-			@include grid(repeat(4, 1fr), 5.6rem);
+			@include grid(repeat(4, 1fr), 2.4rem);
 			@include noScrollBar();
 		}
 	}
@@ -191,7 +189,7 @@
 				display: flex;
 				flex-direction: column;
 				gap: 1.6rem;
-				padding: 1.6rem;
+				padding: 1.6rem 0.8rem;
 				// align-items: center;
 				// overflow-x: scroll;
 				// flex-wrap: wrap;
