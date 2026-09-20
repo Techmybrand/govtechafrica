@@ -26,13 +26,8 @@ const HomeView = () => {
 	}, []);
 	return (
 		<React.Fragment>
-			<Hero
+			<Hero backgroundType="video" backgroundImage="" title={null} description={null} dataType="home"
 				backgroundVideo={isMobile ? "/videos/hero_video_portrait.mp4" : "/videos/hero_video_landcape.mp4"}
-				backgroundType="video"
-				backgroundImage=""
-				title={null}
-				description={null}
-				dataType="home"
 			/>
 			<Governance type="new" />
 			<Research />

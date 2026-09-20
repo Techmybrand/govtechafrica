@@ -14,6 +14,7 @@ interface BackgroundersProps {
 const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
   const currentUrl = new URL(window?.location?.href);
   currentUrl.hash = "";
+  console.log('currentUrl', currentUrl?.href);
   return (
     <article className={styles.backgrounders}>
       <header className={styles.details_content}>
@@ -45,7 +46,7 @@ const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
               <div className={styles.time_and_date}>
                 {/* <h4>{blog?.readTime} mins read</h4> */}
                 <h4>Date: {blog?.date ? formatDate(blog?.date) : blog?.publishedAt}</h4>
-                <Link href={`${currentUrl.href}#credits`}>
+                <Link href="#credits">
                   <h4>Credits</h4>
                 </Link>
               </div>
@@ -67,7 +68,7 @@ const Backgrounders = ({ blog, contentToShow }: BackgroundersProps) => {
                   <ul>
                     {blog.tableOfContent.map((item, index) => (
                       <li key={index}>
-                        <Link href={`${currentUrl.href}#topic${index + 1}`}>
+                        <Link href={`#topic${index + 1}`}>
                           {item}
                         </Link>
                       </li>
