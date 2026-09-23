@@ -96,10 +96,22 @@
   }
 }
 
-.heading1, .heading2, .heading3, .heading4, .heading5, .heading6 {
-  & > b {
+.heading1, .heading2, .heading3, .heading4, .heading5, .heading6, .paragraph, .italic, .underline {
+  b {
     font-family: $font;
     font-weight: 700;
+  }
+  i {
+    font-style: italic !important;
+  }
+  u {
+    text-decoration: underline;
+    i {
+      font-style: italic !important;
+    }
+  }
+  &[data-type="interview"] {
+    text-align: justify!important;
   }
 }
 .table_container {
