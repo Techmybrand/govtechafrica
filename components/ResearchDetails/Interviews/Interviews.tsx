@@ -63,7 +63,7 @@ const Interviews = ({ blog, contentToShow }: InterviewsProps) => {
             <div className={styles.details_content}>
                 <div className={styles.content_body}>
                     <div className={styles.research_details}>
-                        {blog?.researchContent && <RichText content={blog?.researchContent} />}
+                        {blog?.researchContent && <RichText type="interview" content={blog?.researchContent} />}
                     </div>
                 </div>
 

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable */
 import React from "react";
 import { BLOCKS, INLINES, MARKS, Document, Block, Inline } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -6,7 +6,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./RichText.module.scss";
-
 interface RichTextProps {
   content: Document;
   type?: string;
@@ -35,12 +34,12 @@ const RichText: React.FC<RichTextProps> = ({ content, type }: RichTextProps) => 
         //   return <p className={styles.bold}>{children}</p>;
         // }
         if (node.content.some(item => item?.nodeType === 'text' && item.marks?.some((mark: any) => mark.type === 'italic'))) {
-          return <p className={styles.italic}>{children}</p>;
+          return <p data-type={type} className={styles.italic}>{children}</p>;
         }
         if (node.content.some(item => item?.nodeType === 'text' && item.marks?.some((mark: any) => mark.type === 'underline'))) {
           return <u className={styles.underline}>{children}</u>;
         }
-        return <p className={styles.paragraph}>{children}</p>;
+        return <p data-type={type} className={styles.paragraph}>{children}</p>;
       },
       [BLOCKS.QUOTE]: (node: Block, children: React.ReactNode) => (
         <blockquote className={styles.blockquote}>
@@ -54,22 +53,22 @@ const RichText: React.FC<RichTextProps> = ({ content, type }: RichTextProps) => 
         </blockquote>
       ),
       [BLOCKS.HEADING_1]: (node: Block, children: React.ReactNode) => (
-        <h1 className={styles.heading1}>{children}</h1>
+        <h1 data-type={type} className={styles.heading1}>{children}</h1>
       ),
       [BLOCKS.HEADING_2]: (node: Block, children: React.ReactNode) => {
         h2Count++;
         const id = type === "backgrounder" ? `topic${h2Count}` : undefined;
         return (
-          <h2 id={id} className={styles.heading2}>
+          <h2 id={id} data-type={type} className={styles.heading2}>
             {children}
           </h2>
         );
       },
       [BLOCKS.HEADING_3]: (node: Block, children: React.ReactNode) => (
-        <h3 className={styles.heading3}>{children}</h3>
+        <h3 data-type={type} className={styles.heading3}>{children}</h3>
       ),
       [BLOCKS.HEADING_4]: (node: Block, children: React.ReactNode) => (
-        <h4 className={styles.heading4}>{children}</h4>
+        <h4 data-type={type} className={styles.heading4}>{children}</h4>
       ),
       [BLOCKS.TABLE]: (node: Block, children: React.ReactNode) => (
         <div className={styles.table_container}>
