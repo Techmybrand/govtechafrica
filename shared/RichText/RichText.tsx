@@ -99,8 +99,8 @@ const RichText: React.FC<RichTextProps> = ({ content, type }: RichTextProps) => 
         <h6 className={styles.heading6}>{children}</h6>
       ),
       [BLOCKS.UL_LIST]: (node: Block, children: React.ReactNode) => {
-        const items = React.Children.toArray(children);
-        if (items?.length > 0) return;
+        // const items = React.Children.toArray(children);
+        // if (items?.length > 0) return;
         return (
           <ul className={styles.unordered_list}>
             {children}

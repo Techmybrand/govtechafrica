@@ -57,9 +57,9 @@ const Header = ({ type = "default" }: HeaderProps) => {
 			return;
 		}
 		setCollapsed(true);
+		setShowList(undefined);
 		if (!id) return;
 		scrollTo({ id });
-		setShowList(undefined);
 	};
 
 	return (
@@ -79,7 +79,7 @@ const Header = ({ type = "default" }: HeaderProps) => {
 								return (
 									<LinkItem link={link} key={index} index={index} collapsed={collapsed} showList={showList}
 										setCollapsed={setCollapsed} setShowList={setShowList} isActive={activeLink === link.label}
-										handleActiveLink={handleActiveLink} handleScroll={handleScroll}
+										handleActiveLink={handleActiveLink} handleScroll={handleScroll} mobile={mobile}
 									/>
 								);
 							})}
@@ -118,6 +118,7 @@ interface LinkProps {
 	handleScroll: (id?: string) => void;
 	index: number;
 	type?: "new" | "default";
+	mobile: boolean;
 }
 const LinkItem = ({
 	link,
@@ -128,17 +129,36 @@ const LinkItem = ({
 	index,
 	setCollapsed,
 	showList,
-	setShowList
+	setShowList,
+	mobile
 }: LinkProps) => {
 	const router = useRouter();
+	const [isHovered, setIsHovered] = useState<boolean>(false);
+
 	useEffect(() => {
 		if (!collapsed) {
 			handleActiveLink("");
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [collapsed]);
+
+	const closeDropdown = () => {
+		setIsHovered(false);
+		setShowList(undefined);
+		handleActiveLink("");
+		setCollapsed(true);
+	};
+
 	return (
-		<li className={styles.header_navLink} data-active={isActive} onMouseLeave={() => setShowList(undefined)}>
+		<li
+			className={styles.header_navLink}
+			data-active={isActive}
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => {
+				setIsHovered(false);
+				setShowList(undefined);
+			}}
+		>
 			<div className={styles.link_row}>
 				<p onClick={() => {
 						if (index === 0) {
@@ -149,10 +169,10 @@ const LinkItem = ({
 							setCollapsed(true);
 							router.push(`/who-we-are`);
 						}
-						if (index === 2) {
-							setCollapsed(true);
-							router.push(`/insights`);
-						}
+						// if (index === 2) {
+						// 	setCollapsed(true);
+						// 	router.push(`/insights`);
+						// }
 					}}
 				>
 					{link?.label}
@@ -177,7 +197,11 @@ const LinkItem = ({
 				) : null}
 			</div>
 			{link.subMenu?.length ? (
-				<div className={styles.subMenu_container} data-active={link.label === "sell gears" || link.label === "rent out"}>
+				<div
+					className={styles.subMenu_container}
+					data-active={link.label === "sell gears" || link.label === "rent out"}
+					style={!mobile ? { display: isHovered ? "block" : "none" } : undefined}
+				>
 					<div className={styles.subMenu}>
 						{link.subMenu.map((subMenu: NavLinkSub, index: number) => (
 							<div data-type={subMenu?.id} className={styles.subMenu_navlist} key={index}>
@@ -185,9 +209,11 @@ const LinkItem = ({
 									<Link href={subMenu.href} className={styles.subMenu_link}
 										onClick={() => {
 											handleScroll(subMenu.id);
-											setCollapsed(true);
+											closeDropdown();
 										}}
-										onMouseEnter={() => setShowList(undefined)}
+										onMouseEnter={() => {
+											if (!mobile) setShowList(undefined);
+										}}
 									>
 										<h2 data-label={subMenu.label}>{subMenu.label}</h2>
 										{subMenu.icon && (
@@ -197,9 +223,19 @@ const LinkItem = ({
 										)}
 									</Link>
 								) : (
-									<div className={styles.subMenu_link} onMouseEnter={() => {
-											handleScroll(subMenu.id);
-											setShowList(subMenu?.id);
+									<div
+										className={styles.subMenu_link}
+										onClick={() => {
+											if (mobile) {
+												setShowList(prev => (prev === subMenu?.id ? undefined : subMenu?.id));
+											} else {
+												setShowList(subMenu?.id);
+											}
+										}}
+										onMouseEnter={() => {
+											if (!mobile) {
+												setShowList(subMenu?.id);
+											}
 										}}
 									>
 										<h2 data-label={subMenu.label}>{subMenu.label}</h2>
@@ -218,7 +254,7 @@ const LinkItem = ({
 												<Link target={menu?.external ? "_blank" : "_self"} href={menu.href ?? ''} className={styles.subMenu_link}
 													onClick={() => {
 														handleScroll(menu.id);
-														handleActiveLink("");
+														closeDropdown();
 													}}
 												>
 													<p>{menu.label}</p>

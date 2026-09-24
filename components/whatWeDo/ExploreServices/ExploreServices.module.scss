@@ -28,32 +28,65 @@
                 font-family: $font-gothic-bold;
             }
         }
-        .button {
-            height: 5.6rem;
-            background-color: #2E8C61;
+        .ctas {
             display: flex;
-            align-items: center;
-            gap: 2.4rem;
-            padding: 1.6rem 2.4rem;
-            border-radius: 6.4rem;
-            cursor: pointer;
-            transition: $all-transition;
-            &:hover {
-                background: #53C688;
-                transform: translateY(-2px);
+            flex-direction: column;
+            gap: 1.6rem;
+            .button {
+                background-color: #2E8C61;
+                display: flex;
+                align-items: center;
+                gap: 2.4rem;
+                padding: 1.6rem 2.4rem;
+                border-radius: 6.4rem;
+                cursor: pointer;
+                height: 6.4rem;
                 transition: $all-transition;
+                border: 0.1rem solid transparent;
+                &:hover {
+                    background: #53C688;
+                    transform: translateY(-2px);
+                    transition: $all-transition;
+                }
+                h3 {
+                    font-size: 1.6rem;
+                    line-height: 1.5;
+                    color: #000000;
+                    font-family: $font;
+                    font-weight: 700;
+                }
+                .long_arrow {
+                    position: relative;
+                    width: 5rem;
+                    height: 1.6rem;
+                }
             }
-            h3 {
-                font-size: 1.6rem;
-                line-height: 1.5;
-                color: #000000;
+            .solutions_btn {
+                display: flex;
+                align-items: center;
+                gap: 2.4rem;
+                padding: 1.6rem 2.4rem;
+                border-radius: 6.4rem;
                 font-family: $font;
-                font-weight: 700;
-            }
-            .long_arrow {
-                position: relative;
-                width: 5rem;
-                height: 1.6rem;
+                font-weight: 600;
+                transition: $all-transition;
+                cursor: pointer;
+                text-decoration: none;
+                min-width: max-content;
+                font-size: 1.4rem;
+                background: #050505;
+                height: 6.4rem;
+                border: 0.1rem solid transparent;
+                color: #2E8C61;
+                &:hover {
+                    background: #53C688;
+                    transform: translateY(-2px);
+                    transition: $all-transition;
+                }
+                svg {
+                    width: 4rem;
+                    height: 1.2rem;
+                }
             }
         }
     }
@@ -87,7 +120,7 @@
         margin-bottom: 4.8rem;
         .explore_services_container {
             padding: 3.6rem 2.4rem;
-            gap: 1.6rem;
+            gap: 3.2rem;
             flex-direction: column;
             align-items: flex-start;
             .text {
@@ -97,17 +130,26 @@
                     line-height: 3.2rem;
                 }
             }
-            .button {
+            .ctas {
+                gap: 0.8rem;
                 width: 100%;
-                justify-content: center;
-                gap: 1.6rem;
-                h3 {
-                    font-size: 1.2rem;
-                    line-height: 1.6rem;
+                .button {
+                    width: 100%;
+                    justify-content: center;
+                    gap: 1.6rem;
+                    height: 4.8rem;
+                    h3 {
+                        font-size: 1.2rem;
+                        line-height: 1.6rem;
+                    }
+                    .long_arrow {
+                        width: 3.6rem;
+                        height: 1.2rem;
+                    }
                 }
-                .long_arrow {
-                    width: 3.6rem;
-                    height: 1.2rem;
+                .solutions_btn {
+                    height: 4.8rem;
+                    width: 100%;
                 }
             }
         }
