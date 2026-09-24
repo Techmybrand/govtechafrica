@@ -14,11 +14,12 @@ const ResearchView = () => {
         fetchBlogs();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    const interviews = sortedBlogs?.filter((blog: BlogDetailsProps) => blog.type?.toLowerCase() !== "interview")
-    const filteredInterviews = interviews.filter((item) => {
+    const research = sortedBlogs?.filter((blog) => blog.type?.toLowerCase() !== "interview")
+    const filteredResearch = research.filter((item) => {
         if (activeCategory === "All") return true;
         return item.type.toLowerCase() === activeCategory.toLowerCase();
     });
+    // console.log("filteredResearch", filteredResearch);
 
     return (
         <div className={styles.interviews_view}>
@@ -49,11 +50,11 @@ const ResearchView = () => {
                     ))}
                 </div>
 
-                {!filteredInterviews?.length ? (
+                {!filteredResearch?.length ? (
 					<p>No posts available.</p>
 				) : (
 					<div className={styles.research_wrapper}>
-						{filteredInterviews?.map((blog: BlogDetailsProps, index: number) => {
+						{filteredResearch?.map((blog: BlogDetailsProps, index: number) => {
 							const getType = blog?.type?.toLowerCase();
 							const getResearchType = getType?.replace(' ', '-');
 							const isReport = getType === "report";

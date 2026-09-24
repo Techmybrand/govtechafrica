@@ -17,6 +17,7 @@
 
     .container {
         max-width: $max-width;
+        background-color: #060806;
         width: 100%;
         margin-inline: auto;
         display: grid;
@@ -27,13 +28,16 @@
             grid-template-columns: 1fr;
             gap: 4rem;
         }
-
         .left_content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             max-width: 60rem;
             @include screenMax("tablet") {
+                max-width: 70%;
+                margin: 0 auto;
+            }
+            @include screenMax("mobile") {
                 max-width: 100%;
             }
             .tag {

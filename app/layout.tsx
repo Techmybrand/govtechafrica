@@ -20,8 +20,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
 	metadataBase: new URL(baseUrl),
-	title: `Govtech Africa | Automating Government Processes`,
+	title: {
+		default: `Govtech Africa | Automating Government Processes`,
+		template: `%s | Govtech Africa`,
+	},
 	description: `African technology for Government Excellence`,
+	icons: {
+		icon: [{ url: 'https://govtechafrica.com/svgs/favicon.svg', type: 'image/svg+xml' }],
+		shortcut: [{ url: 'https://govtechafrica.com/svgs/favicon.svg', type: 'image/svg+xml' }],
+		apple: [{ url: 'https://govtechafrica.com/svgs/favicon.svg', type: 'image/svg+xml' }],
+	},
 	keywords: [
 		'Govtech Africa',
 		'Policy Round-table',
@@ -47,6 +55,7 @@ export const metadata: Metadata = {
 	authors: [{ name: "Govtech Africa" }],
 	creator: "Govtech Africa",
 	publisher: "Govtech Africa",
+  	applicationName: 'Govtech Africa',
 	openGraph: {
 		title: `Govtech Africa | Automating Government Processes`,
 		description: `African technology for Government Excellence`,
@@ -76,18 +85,15 @@ export const metadata: Metadata = {
 				// height: 418,
 				alt: 'Govtech Africa',
 			}
-		]
+		],
+		site: 'https://x.com/govtech_africa',
 	},
 	alternates: {
 		canonical: baseUrl,
 	},
 };
 
-export default function RootLayout({
-	children
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export default function RootLayout({ children}: Readonly<{ children: React.ReactNode; }>) {
 	return (
 		<html lang="en">
 			<head>

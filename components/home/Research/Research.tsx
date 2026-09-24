@@ -16,7 +16,7 @@ const Research = () => {
     return (
         <div className={styles.research_container}>
             <div className={styles.research_wrapper}>
-                {sortedBlogs?.slice(0, 8)?.map((blog: BlogDetailsProps, index: number) => {
+                {sortedBlogs?.slice(0, 8)?.map((blog, index: number) => {
                     let paragraph = '';
                     let wordCount = 0;
                     if (blog?.researchContent?.content) {
