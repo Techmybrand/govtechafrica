@@ -233,12 +233,18 @@
     border-top: 0.1rem solid #D8D8D8 !important;
     border-bottom: 0.1rem solid #D8D8D8 !important;
   }
+  .list_item {
+    list-style-type: disc !important;
+  }
 }
 .ordered_list {
   list-style-type: decimal;
   padding-left: 2.4rem;
   margin-bottom: 3.2rem;
   @extend %underline;
+  .list_item {
+    list-style-type: decimal !important;
+  }
 }
 .list_item {
   font-size: 1.6rem;
@@ -247,7 +253,6 @@
   font-family: $font;
   margin-bottom: 0.8rem;
   @extend %underline;
-  list-style-type: disc !important;
   &::marker {
     color: #FFFFFF;
     font-family: $font-gothic-bold;

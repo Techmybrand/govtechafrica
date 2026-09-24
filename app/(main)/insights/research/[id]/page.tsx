@@ -57,6 +57,7 @@ export async function generateMetadata({ params }: ResearchPageProps, parent: Re
             title: `${blog.title} | Govtech Africa`,
             description: blog.description || "African technology for Government Excellence",
             images: imageUrl ? [imageUrl] : [],
+            site: "https://x.com/govtech_africa",
         },
     };
 }
