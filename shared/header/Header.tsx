@@ -48,7 +48,7 @@ const Header = ({ type = "default" }: HeaderProps) => {
     }, []);
 
 	const handleActiveLink = (label: string) => {
-		setActiveLink(prev => (prev === label || !label ? null : label));
+		setActiveLink(prev => (prev === label ? null : label));
 	};
 
 	const handleScroll = (id?: string) => {
@@ -211,7 +211,9 @@ const LinkItem = ({
 											handleScroll(subMenu.id);
 											closeDropdown();
 										}}
-										onMouseEnter={() => setShowList(undefined)}
+										onMouseEnter={() => {
+											if (!mobile) setShowList(undefined);
+										}}
 									>
 										<h2 data-label={subMenu.label}>{subMenu.label}</h2>
 										{subMenu.icon && (
@@ -221,9 +223,19 @@ const LinkItem = ({
 										)}
 									</Link>
 								) : (
-									<div className={styles.subMenu_link} onMouseEnter={() => {
-											handleScroll(subMenu.id);
-											setShowList(subMenu?.id);
+									<div
+										className={styles.subMenu_link}
+										onClick={() => {
+											if (mobile) {
+												setShowList(prev => (prev === subMenu?.id ? undefined : subMenu?.id));
+											} else {
+												setShowList(subMenu?.id);
+											}
+										}}
+										onMouseEnter={() => {
+											if (!mobile) {
+												setShowList(subMenu?.id);
+											}
 										}}
 									>
 										<h2 data-label={subMenu.label}>{subMenu.label}</h2>

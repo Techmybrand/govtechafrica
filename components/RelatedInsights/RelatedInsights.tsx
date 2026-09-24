@@ -39,7 +39,7 @@ const RelatedInsights = ({ type = "default" }: RelatedInsightsProps) => {
             <div className={styles.text_wrapper}>
                 <div className={styles.text}>
                     <h1>{type === "new" ? 'Read Now!' : 'Explore Insights'}</h1>
-                    <Button className={styles.explore_btn} href="/insights">
+                    <Button className={styles.explore_btn} href="/insights/research">
                         See more
                     </Button>
                 </div>

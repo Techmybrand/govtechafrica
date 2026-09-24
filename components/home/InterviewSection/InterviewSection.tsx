@@ -69,7 +69,7 @@ const InterviewSection = () => {
                         </div>
                         <p className={styles.voice_text}>
                             <span className={styles.count}>
-                                {interviews?.length === 1 ? "1 voice" : `${interviews?.length} voices`}
+                                {interviews?.length === 1 ? "1 exclusive interview" : `${interviews?.length} exclusive interviews`}
                             </span> and counting
                         </p>
                     </div>

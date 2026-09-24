@@ -30,11 +30,19 @@ const ExploreServices = () => {
                 <div className={styles.text}>
                     <h1>See exactly how we build and enable, service by service.</h1>
                 </div>
-                <div className={styles.button}>
-                    <h3>Explore  our  Services</h3>
-                    <div className={styles.long_arrow}>
-                        <Image src="/svgs/long_arrow.svg" alt="Arrow" fill />
-                    </div>
+                <div className={styles.ctas}>
+                    <button className={styles.button}>
+                        <h3>Explore  our  Services</h3>
+                        <div className={styles.long_arrow}>
+                            <Image src="/svgs/long_arrow.svg" alt="Arrow" fill />
+                        </div>
+                    </button>
+                    <button className={styles.solutions_btn}>
+                        Explore our Solutions
+                        <svg width="40" height="12" viewBox="0 0 60 12" fill="none">
+                            <path d="M0 6H58M58 6L52 1M58 6L52 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </motion.div>
