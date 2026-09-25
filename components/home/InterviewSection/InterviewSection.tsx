@@ -3,16 +3,16 @@ import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import styles from "./InterviewSection.module.scss";
 import { useGetContentful } from "@/hooks";
 import { BlogDetailsProps } from "@/interfaces";
+import styles from "./InterviewSection.module.scss";
 
 const InterviewSection = () => {
     const { fetchBlogs, sortedBlogs } = useGetContentful();
 	const interviews = sortedBlogs.filter((blog: BlogDetailsProps) => blog.type.toLowerCase() === "interview");
 	useEffect(() => {
 		fetchBlogs();
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+	    // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
     const interviewRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
