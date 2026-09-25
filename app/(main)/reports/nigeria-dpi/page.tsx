@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Nigeria DPI Report",
-	description: `Comprehensive analysis on Nigeria's Digital Public Infrastructure (DPI) — key insights, implementation progress, and strategic lessons for Africa.`,
+	description: `Comprehensive analysis on Nigeria's Digital Public Infrastructure (DPI) — key insights, implementation
+		progress, and strategic lessons for Africa.`,
 	alternates: {
 		canonical: "https://govtechafrica.com/reports/nigeria-dpi",
 	},
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 				url: `https://images.ctfassets.net/l8vs8and02j3/6eAXoiTzPaEuE6aHX1e5EK/13d7aa28a7c20fe7f1598a5ee7bba553/dpi_readiness.png`,
 				width: 1200,
 				height: 630,
-				alt: "Govtech Africa - Nigeria DPI Report",
+				alt: "Nigeria DPI Report | Govtech Africa",
 			},
 		],
 	},
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 				url: "https://images.ctfassets.net/l8vs8and02j3/6eAXoiTzPaEuE6aHX1e5EK/13d7aa28a7c20fe7f1598a5ee7bba553/dpi_readiness.png",
 				width: 1200,
 				height: 630,
-				alt: "Govtech Africa",
+				alt: "Nigeria DPI Report | Govtech Africa",
 			},
 		],
 		site: "https://x.com/govtech_africa",

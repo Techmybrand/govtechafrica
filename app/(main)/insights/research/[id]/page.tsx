@@ -39,12 +39,23 @@ export async function generateMetadata({ params }: ResearchPageProps, parent: Re
     return {
         title: `${blog.title} | Govtech Africa`,
         description: blog.description || "African technology for Government Excellence",
+        alternates: {
+            canonical: `https://govtechafrica.com/insights/research/${id}`,
+        },
         openGraph: {
             title: `${blog.title} | Govtech Africa`,
             description: blog.description || "African technology for Government Excellence",
             url: `https://govtechafrica.com/insights/research/${id}`,
             type: "article",
-            images: imageUrl ? [{ url: imageUrl, alt: blog.title }] : previousImages,
+            // images: imageUrl ? [{ url: imageUrl, alt: blog.title }] : previousImages,
+            images: [
+                {
+                    url: imageUrl || previousImages[0] as string,
+                    width: 1200,
+                    height: 630,
+                    alt: blog.title,
+                },
+            ],
         },
         authors: [
             {
@@ -56,7 +67,15 @@ export async function generateMetadata({ params }: ResearchPageProps, parent: Re
             card: "summary_large_image",
             title: `${blog.title} | Govtech Africa`,
             description: blog.description || "African technology for Government Excellence",
-            images: imageUrl ? [imageUrl] : [],
+            // images: imageUrl ? [imageUrl] : [],
+            images: [
+                {
+                    url: imageUrl || "",
+                    width: 1200,
+                    height: 630,
+                    alt: blog.title,
+                },
+            ],
             site: "https://x.com/govtech_africa",
         },
     };

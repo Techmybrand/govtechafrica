@@ -186,11 +186,11 @@ export const navLinks: NavLink[] = [
 				href: "/insights/research",
 				id: "research",
 			},
-			{
-				label: "deals and announcements",
-				// href: "/deals-and-announcements",
-				id: "deals-and-announcements",
-			},
+			// {
+			// 	label: "deals and announcements",
+			// 	href: "/deals-and-announcements",
+			// 	id: "deals-and-announcements",
+			// },
 			{
 				label: "interviews",
 				href: "/interviews",
