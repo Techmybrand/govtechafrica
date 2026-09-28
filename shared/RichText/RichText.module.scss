@@ -21,6 +21,7 @@
   line-height: 2.4rem;
   font-family: $font;
   margin-bottom: 0.8rem;
+  text-align: justify;
   & > b {
     font-family: $font;
     font-weight: 700;
@@ -273,6 +274,9 @@
   height: 54rem;
   margin: 6.4rem 0;
   position: relative;
+  &[data-type="report"] {
+    width: 50%;
+  }
   & > img {
     object-fit: cover;
   }
@@ -315,6 +319,11 @@
 @include screenMax('tablet') {
   .unordered_list, .ordered_list {
     padding-left: 2.4rem;
+  }
+  .image_container {
+    &[data-type="report"] {
+      width: 75%;
+    }
   }
   .table_container {
     margin-block: 4.8rem;
@@ -373,6 +382,11 @@
   .image_container, .video_embed {
     height: 24rem;
     margin: 2.4rem 0 4rem;
+  }
+  .image_container {
+    &[data-type="report"] {
+      width: 100%;
+    }
   }
   .heading1 {
     font-size: 2.8rem;

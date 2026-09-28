@@ -69,7 +69,7 @@ const Reports = ({ blog, contentToShow }: ReportsProps) => {
 
             </header>
 
-            <div className={styles.divider}></div>
+            {/* <div className={styles.divider}></div> */}
 
             <section className={styles.details_content}>
                 <div data-aside={isAsideVisible} className={styles.main_layout}>
@@ -170,7 +170,7 @@ const Reports = ({ blog, contentToShow }: ReportsProps) => {
                     </Button>
                 </div>
             </section>
-            <div className={styles.divider_green}></div>
+            {/* <div className={styles.divider_green}></div> */}
         </article>
     )
 }

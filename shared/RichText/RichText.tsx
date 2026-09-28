@@ -141,7 +141,7 @@ const RichText: React.FC<RichTextProps> = ({ content, type }: RichTextProps) => 
         if (!url) return null;
         const imageUrl = url.startsWith('//') ? `https:${url}` : url;
         return (
-          <div className={styles.image_container}>
+          <div data-type={type} className={styles.image_container}>
             <Image fill sizes='100%' loading='lazy'
               src={imageUrl}
               alt={title || description || 'Blog image'}
