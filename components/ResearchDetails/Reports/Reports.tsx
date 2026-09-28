@@ -52,15 +52,17 @@ const Reports = ({ blog, contentToShow }: ReportsProps) => {
                             <p>Overview</p>
                             <h5>{blog?.description}</h5>
                         </div>
-                        <div className={styles.cta}>
-                            <p>Download Report</p>
-                            <h4>{blog?.downloadText}</h4>
-                            <button className={styles.download_btn}>
-                                <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" download rel="noopener noreferrer">
-                                    <h5>Download PDF</h5>
-                                </Link>
-                            </button>
-                        </div>
+                        {blog?.pdf?.fields?.file?.url && (
+                            <div className={styles.cta}>
+                                <p>Download Report</p>
+                                <h4>{blog?.downloadText}</h4>
+                                <button className={styles.download_btn}>
+                                    <Link href={`https:${blog?.pdf?.fields?.file?.url}`} target="_blank" download rel="noopener noreferrer">
+                                        <h5>Download PDF</h5>
+                                    </Link>
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
 

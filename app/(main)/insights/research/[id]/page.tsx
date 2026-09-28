@@ -5,7 +5,6 @@ import { getResearchPosts } from "@/utils/contentful";
 import { formatDate } from "@/utils/formatUrl";
 import { BlogDetailsProps } from "@/interfaces";
 import { notFound } from "next/navigation";
-
 interface ResearchPageProps {
 	params: {
 		id: string;
@@ -33,8 +32,7 @@ export async function generateMetadata({ params }: ResearchPageProps, parent: Re
     }
 
     const previousImages = (await parent).openGraph?.images || [];
-    const imageUrl = blog?.thumbnail?.fields?.file?.url ? (blog.thumbnail.fields.file.url.startsWith("//")
-        ? `https:${blog.thumbnail.fields.file.url}` : blog.thumbnail.fields.file.url) : undefined;
+    const imageUrl = blog?.thumbnail?.fields?.file?.url ? `https:${blog.thumbnail.fields.file.url}` : `https:${blog.bannerImage.fields.file.url}`;
 
     return {
         title: `${blog.title} | Govtech Africa`,
@@ -50,7 +48,7 @@ export async function generateMetadata({ params }: ResearchPageProps, parent: Re
             // images: imageUrl ? [{ url: imageUrl, alt: blog.title }] : previousImages,
             images: [
                 {
-                    url: imageUrl || previousImages[0] as string,
+                    url: imageUrl || 'https://govtechafrica.com/images/opengraph_image.png',
                     width: 1200,
                     height: 630,
                     alt: blog.title,
@@ -70,7 +68,7 @@ export async function generateMetadata({ params }: ResearchPageProps, parent: Re
             // images: imageUrl ? [imageUrl] : [],
             images: [
                 {
-                    url: imageUrl || "",
+                    url: imageUrl || 'https://govtechafrica.com/images/opengraph_image.png',
                     width: 1200,
                     height: 630,
                     alt: blog.title,
