@@ -164,7 +164,7 @@ const ResearchDetails = ({ blog, contentToShow, articleType }: ResearchDetailsPr
                                     />
                                 ))}
                             </div>
-                            <Button className={styles.explore_btn} href="/insights">
+                            <Button className={styles.explore_btn} href="/insights/research">
                                 See more
                             </Button>
                         </div>

@@ -164,10 +164,10 @@
                     h6,
                     p {
                         color: #111021 !important;
-                        &>b,
+                        & > b,
                         i {
                             color: #111021 !important;
-                            &>u {
+                            & > u {
                                 color: #111021 !important;
                             }
                         }
@@ -254,7 +254,7 @@
                 }
             }
             .explore_btn {
-                width: 16rem;
+                width: 18rem;
                 height: 4.5rem;
                 margin-top: 4.8rem;
                 background-color: #000000!important;
