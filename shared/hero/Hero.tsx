@@ -51,7 +51,7 @@ const Hero = (props: Props) => {
 						{props.backgroundType === "image" ? (
 							<div data-type={props.type} className={styles.hero_image}>
 								<Image src={props.backgroundImage} fill alt={props.title ?? ""}
-									sizes="100%" loading="lazy"
+									sizes="100%" priority
 								/>
 							</div>
 						) : (

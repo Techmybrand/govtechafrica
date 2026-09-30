@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { Hero } from "@/shared";
 import { CookiesModal } from "@/shared/Modals";
-// import { GrowthV2, MissionV2, Research, CenterPieceV2, Experience, NPGR, IntroToFulcrum, InterviewSection, Annoucements } from "@/components/home";
-import { GrowthV2, MissionV2, Research, CenterPieceV2, Experience, NPGR, IntroToFulcrum, InterviewSection } from "@/components/home";
+import { GrowthV2, MissionV2, Research, CenterPieceV2, Experience, NPGR, IntroToFulcrum, InterviewSection, Annoucements } from "@/components/home";
+// import { GrowthV2, MissionV2, Research, CenterPieceV2, Experience, NPGR, IntroToFulcrum, InterviewSection } from "@/components/home";
 import { Governance } from "@/components/whoWeAre";
 // import styles from "./HomeView.module.scss";
 
@@ -38,7 +38,7 @@ const HomeView = () => {
 			<NPGR />
 			<IntroToFulcrum type="home" />
 			<InterviewSection />
-			{/* <Annoucements /> */}
+			<Annoucements />
 			<CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</React.Fragment>
 	);

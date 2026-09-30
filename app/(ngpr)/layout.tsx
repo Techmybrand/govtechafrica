@@ -13,11 +13,11 @@ export const metadata: Metadata = {
         'National Govtech Policy Roundtable',
         'National Govtech Policy Roundtable 2026',
         'National Govtech',
+        'National Roundtable',
     ],
     openGraph: {
         title: 'National Govtech Policy Roundtable 2026',
-        description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
-            Engage and Deliver.`,
+        description: `Digital First Governance: Rethinking How Nigerian Governments Serve, Engage and Deliver.`,
         url: "https://govtechafrica.com/policy-roundtable",
         type: 'website',
         siteName: 'Govtech Africa',
@@ -33,8 +33,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'National Govtech Policy Roundtable 2026',
-        description: `Digital First Governance: Rethinking How Nigerian Governments Serve, 
-            Engage and Deliver.`,
+        description: `Digital First Governance: Rethinking How Nigerian Governments Serve, Engage and Deliver.`,
         images: [
             {
 				url: 'https://govtechafrica.com/images/policy_opengraph.png',
