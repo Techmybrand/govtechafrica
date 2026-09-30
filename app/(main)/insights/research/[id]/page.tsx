@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: ResearchPageProps, parent: Re
         publishedAt: formatDate(blog?.sys?.createdAt),
     })) as BlogDetailsProps[];
 
-    const blog = arrayOfBlogs?.find((b: BlogDetailsProps) =>  b?.slug?.toLowerCase() === id.toLowerCase());
+    const blog = arrayOfBlogs?.find((b) =>  b?.slug?.toLowerCase() === id.toLowerCase());
 
     if (!blog) {
         return {
@@ -65,7 +65,6 @@ export async function generateMetadata({ params }: ResearchPageProps, parent: Re
             card: "summary_large_image",
             title: `${blog.title} | Govtech Africa`,
             description: blog.description || "African technology for Government Excellence",
-            // images: imageUrl ? [imageUrl] : [],
             images: [
                 {
                     url: imageUrl || 'https://govtechafrica.com/images/opengraph_image.png',

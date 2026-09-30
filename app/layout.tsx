@@ -62,6 +62,7 @@ export const metadata: Metadata = {
 		url: baseUrl,
 		type: 'website',
 		siteName: 'Govtech Africa',
+		locale: "en_US",
 		images: [
 			{
 				url: 'https://govtechafrica.com/images/opengraph_image.png',
