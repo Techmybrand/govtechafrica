@@ -14,7 +14,7 @@ import ExpertTakesView from "./ExpertTakesView/ExpertTakesView";
 import PolicyInsightsView from "./PolicyBriefsView/PolicyBriefsView";
 import NewWhoWeAreView from "./NewWhoWeAreView/NewWhoWeAreView";
 import ReportsView from "./ReportsView/ReportsView";
-import NewWhatWeDo from "./NewWhatWeDo/NewWhatWeDo";
+import ServicesView from "./ServicesView/ServicesView";
 import InterviewsView from "./InterviewsView/InterviewsView";
 import ResearchView from "./ResearchView/ResearchView";
 
@@ -32,7 +32,7 @@ export {
     BackgroundersView,
     ResearchView,
     InterviewsView,
-    NewWhatWeDo,
+    ServicesView,
     PolicyRoundTableView,
     UploadView,
     BlogView,

@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { RelatedInsights } from "@/components";
 import { IntroToFulcrum } from "@/components/home";
@@ -11,8 +10,8 @@ const WhatWeDoView = () => {
             <Revolutionizing />
             <Approach />
             <IntroToFulcrum type="what_we_do" />
-            <RelatedInsights type="new" />
             <ExploreServices />
+            <RelatedInsights type="new" />
         </React.Fragment>
 	);
 };

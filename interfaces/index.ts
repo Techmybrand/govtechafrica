@@ -255,12 +255,15 @@ export interface valueCardProps {
 }
 
 export interface DealsAndAnnouncementCardProps {
+    id?: string;
     date: string;
     tag: string;
-    tagType?: "update" | "deadline" | "event" | string;
+    tagType?: "update" | "deadline" | "event" | "roundtable" | string;
     title: string;
     description: string;
     slug?: string;
+    readTime?: string;
+    image?: string;
 }
 
 export interface dealsAndAnnouncementsProps {
@@ -273,4 +276,6 @@ export interface dealsAndAnnouncementsProps {
     category: string;
     pinned?: boolean;
     url?: string;
+    readTime?: string;
+    image?: string;
 }

@@ -2,10 +2,12 @@
 import React from "react";
 import { useScroll, useSpring, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
-import styles from "./ExploreServices.module.scss";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
+import styles from "./ExploreServices.module.scss";
 
 const ExploreServices = () => {
+    const router = useRouter();
     const servicesRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: servicesRef,
@@ -31,7 +33,7 @@ const ExploreServices = () => {
                     <h1>See exactly how we build and enable, service by service.</h1>
                 </div>
                 <div className={styles.ctas}>
-                    <button className={styles.button}>
+                    <button onClick={() => router.push("/what-we-do/services")} className={styles.button}>
                         <h3>Explore  our  Services</h3>
                         <div className={styles.long_arrow}>
                             <Image src="/svgs/long_arrow.svg" alt="Arrow" fill />

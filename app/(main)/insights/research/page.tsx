@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 				url: "https://govtechafrica.com/images/opengraph_image.png",
 				width: 1200,
 				height: 630,
-				alt: "Govtech Africa - Research & Insights",
+				alt: "Research & Insights | Govtech Africa",
 			},
 		],
 	},
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 				url: 'https://govtechafrica.com/images/opengraph_image.png',
 				width: 1200,
 				height: 630,
-				alt: 'Govtech Africa',
+				alt: 'Research & Insights | Govtech Africa',
 			}
 		],
 		site: 'https://x.com/govtech_africa',

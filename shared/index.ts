@@ -36,6 +36,7 @@ import NewsLetterSection from "./NewsLetterSection/NewsLetterSection";
 import NewFooter from "./footer/NewFooter";
 import InterviewsCard from "./ResearchCard/InterviewsCard/InterviewsCard";
 import DealsAndAnnouncementCard from "./ResearchCard/DealsAndAnnouncementCard/DealsAndAnnouncementCard";
+import OpenCookiesModal from "./OpenCookiesModal/OpenCookiesModal";
 
 
 export {
@@ -44,6 +45,7 @@ export {
     AnimatedHero,
     InterviewsCard,
     DealsAndAnnouncementCard,
+    OpenCookiesModal,
     AnimatedSection,
     Logo,
     AnalyticsToggle,

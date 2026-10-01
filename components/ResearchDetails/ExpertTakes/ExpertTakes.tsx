@@ -124,7 +124,7 @@ const ExpertTakes = ({ blog, contentToShow }: ExpertTakesProps) => {
                             )
                         )}
                     </div>
-                    <Button className={styles.explore_btn} href="/insights">
+                    <Button className={styles.explore_btn} href="/insights/research">
                         See more
                     </Button>
                 </div>
