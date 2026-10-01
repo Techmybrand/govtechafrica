@@ -45,9 +45,9 @@ const IntroToFulcrum = ({ type = "home" }: IntroToFulcrumProps) => {
 							</div>
 						</div>
 						<div className={styles.illustration_wrapper}>
-							<div className={styles.offset_box}></div>
+							{/* <div className={styles.offset_box}></div> */}
 							<div className={styles.image_container}>
-								<Image src="/images/fulcrum_hero.jpg" alt="Fulcrum Illustration" fill priority
+								<Image src="/images/fulcrum_hero.png" alt="Fulcrum Illustration" fill priority
 									sizes="(max-width: 1024px) 100vw, 50vw"
 								/>
 							</div>
@@ -83,9 +83,9 @@ const IntroToFulcrum = ({ type = "home" }: IntroToFulcrumProps) => {
 
 					<div className={styles.left_column_mobile}>
 						<div className={styles.illustration_wrapper}>
-							<div className={styles.offset_box}></div>
+							{/* <div className={styles.offset_box}></div> */}
 							<div className={styles.image_container}>
-								<Image src="/images/fulcrum_hero.jpg" alt="Fulcrum Illustration" fill priority
+								<Image src="/images/fulcrum_hero.png" alt="Fulcrum Illustration" fill priority
 									sizes="(max-width: 1024px) 100vw, 50vw"
 								/>
 							</div>

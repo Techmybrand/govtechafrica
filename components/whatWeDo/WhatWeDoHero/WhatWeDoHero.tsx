@@ -1,14 +1,9 @@
-/* eslint-disable */
-"use client";
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import styles from "./WhatWeDoHero.module.scss";
+import Link from "next/link";
 
 const WhatWeDoHero = () => {
-    const router = useRouter();
-    const handleExploreServices = () => router.push("#services");
-
     return (
         <div className={styles.what_we_do_hero}>
             <div className={styles.stars_background}>
@@ -35,18 +30,22 @@ const WhatWeDoHero = () => {
                         better
                     </p>
                     <div className={styles.button_container}>
-                        <button className={styles.explore_btn}>
-                            Explore our Services
-                            <svg width="40" height="12" viewBox="0 0 60 12" fill="none">
-                                <path d="M0 6H58M58 6L52 1M58 6L52 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </button>
-                        <button className={styles.solutions_btn}>
-                            Explore our Solutions
-                            <svg width="40" height="12" viewBox="0 0 60 12" fill="none">
-                                <path d="M0 6H58M58 6L52 1M58 6L52 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                        </button>
+                        <Link href="/what-we-do/services">
+                            <button className={styles.explore_btn}>
+                                Explore our Services
+                                <svg width="40" height="12" viewBox="0 0 60 12" fill="none">
+                                    <path d="M0 6H58M58 6L52 1M58 6L52 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </button>
+                        </Link>
+                        <Link href="#">
+                            <button className={styles.solutions_btn}>
+                                Explore our Solutions
+                                <svg width="40" height="12" viewBox="0 0 60 12" fill="none">
+                                    <path d="M0 6H58M58 6L52 1M58 6L52 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
