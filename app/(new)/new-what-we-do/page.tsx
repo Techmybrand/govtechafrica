@@ -1,4 +1,4 @@
-import { NewWhatWeDo } from "@/views";
+import { WhatWeDoView } from "@/views";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -39,5 +39,5 @@ export const metadata: Metadata = {
 };
 
 export default function NewWhatWeDoPage() {
-	return <NewWhatWeDo />;
+	return <WhatWeDoView />;
 }
