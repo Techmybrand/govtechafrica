@@ -50,7 +50,7 @@
     width: 100%;
 }
 .left_column, .left_column_mobile {
-    width: 50%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -79,18 +79,18 @@
     .illustration_wrapper {
         position: relative;
         width: 100%;
-        height: 55rem;
-        padding-left: 2.4rem;
-        padding-bottom: 2.4rem;
-        .offset_box {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 8rem;
-            height: 8rem;
-            background-color: #e9e9e9;
-            z-index: 1;
-        }
+        height: 36rem;
+        // padding-left: 2.4rem;
+        // padding-bottom: 2.4rem;
+        // .offset_box {
+        //     position: absolute;
+        //     left: 0;
+        //     bottom: 0;
+        //     width: 8rem;
+        //     height: 8rem;
+        //     background-color: #e9e9e9;
+        //     z-index: 1;
+        // }
         .image_container {
             position: relative;
             width: 100%;
@@ -98,7 +98,7 @@
             z-index: 2;
             overflow: hidden;
             img {
-                object-fit: cover;
+                object-fit: contain;
             }
         }
     }
@@ -114,11 +114,11 @@
     position: relative;
     .intro_heading, span {
         font-family: $font;
-        font-size: 5.6rem;
+        font-size: 4.4rem;
         line-height: 1.3;
         font-weight: 500;
         color: rgba(255, 255, 255, 0.45);
-        margin-bottom: 3.6rem;
+        margin-bottom: 4.8rem;
         span {
             color: #ffffff;
         }
@@ -128,7 +128,7 @@
         height: 4rem;
         position: absolute;
         right: 43rem;
-        top: 14.5rem;
+        top: 10.5rem;
         .curved_arrow_icon {
             position: relative;
             width: 100%;
@@ -137,7 +137,7 @@
     }
     h4 {
         font-family: $font;
-        font-size: 3.2rem;
+        font-size: 2.8rem;
         line-height: 1.4;
         font-weight: 500;
         color: #ffffff;
@@ -147,7 +147,7 @@
     .intro_description {
         font-family: $font;
         font-size: 1.6rem;
-        line-height: 2.6rem;
+        line-height: 2.4rem;
         color: rgba(255, 255, 255, 0.7);
         margin-bottom: 4.8rem;
         max-width: 90%;
@@ -304,13 +304,13 @@
             }
         }
         .illustration_wrapper {
-            height: 30rem;
-            padding-left: 0.8rem;
-            padding-bottom: 0.8rem;
-            .offset_box {
-                width: 5rem;
-                height: 5rem;
-            }
+            height: 18rem;
+            // padding-left: 0.8rem;
+            // padding-bottom: 0.8rem;
+            // .offset_box {
+            //     width: 5rem;
+            //     height: 5rem;
+            // }
         }
     }
     .right_column {

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 // import Script from 'next/script';
-// import { CookiesModal } from '@/shared/Modals';
 import { AppProvider } from "./context/AppContext";
 
 const Providers: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -37,7 +36,6 @@ const Providers: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
           `}
         </Script> */}
-        {/* <CookiesModal isOpen={showModal} onClose={() => setShowModal(false)} /> */}
         <AppProvider>
             {children}
         </AppProvider>

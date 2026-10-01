@@ -42,7 +42,9 @@ const Revolutionizing = () => {
                             Technology & Digital Infrastructure that power the public sector
                         </p>
                     </div>
-                    {/* <div className={styles.line}></div> */}
+                    <div className={styles.line}>
+                        <Image alt="line" fill src="/svgs/line.svg" />
+                    </div>
                     <div className={styles.vision}>
                         <h3>We Enable</h3>
                         <p>

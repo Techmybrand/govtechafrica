@@ -38,22 +38,22 @@
             }
         }
         .mission_and_vision {
-            // background: #276A35;
+            background: #276A35;
             width: 100%;
             display: flex;
             align-items: center;
-            // padding: 4rem 3.2rem;
-            // border: 0.1rem solid #BEF2BE;
-            // border-radius: 1.25rem;
+            padding: 7.2rem 6.4rem;
+            border: 0.1rem solid #BEF2BE;
+            box-shadow: 0 3.2rem 3.2rem rgba(#81F88940, 0.25);
+            border-radius: 1.25rem;
             gap: 8rem;
-            max-width: 106rem;
             margin: 0 auto 6.4rem;
             .mission, .vision {
-                width: 49%;
-                background: #276A35;
-                padding: 6.4rem 3.2rem;
-                border-radius: 1.25rem;
-                box-shadow: 0 3.2rem 3.2rem rgba(#81F88940, 0.25);
+                width: 45%;
+                // background: #276A35;
+                // padding: 6.4rem 3.2rem;
+                // border-radius: 1.25rem;
+                // box-shadow: 0 3.2rem 3.2rem rgba(#81F88940, 0.25);
                 h3 {
                     font-size: 2.4rem;
                     line-height: 3.2rem;
@@ -68,13 +68,17 @@
                     color: #FFF;
                     font-family: $font-gothic;
                     font-weight: 400;
-                    width: 95%;
+                    width: 55%;
                 }
             }
             .line {
                 width: 0.1rem;
-                height: 23rem;
+                height: 7rem;
+                position: relative;
                 background-color: #BEF2BE;
+                img {
+                    object-fit: cover;
+                }
             }
         }
         .revolutionizing_image {
@@ -106,9 +110,10 @@
                 }
             }
             .mission_and_vision {
-                gap: 8rem;
+                gap: 6rem;
+                padding: 4.8rem 2.4rem;
                 .mission, .vision {
-                    padding: 4.8rem 2.4rem;
+                    // padding: 4.8rem 2.4rem;
                     h3 {
                         font-size: 2rem;
                         line-height: 2.8rem;
@@ -117,10 +122,11 @@
                     p {
                         font-size: 1.4rem;
                         line-height: 2rem;
+                        width: 75%;
                     }
                 }
                 .line {
-                    height: 21rem;
+                    height: 6.4rem;
                 }
             }
             .revolutionizing_image {
@@ -151,8 +157,9 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 2.4rem;
+                padding: 4rem 1.6rem;
                 .mission, .vision {
-                    padding: 4rem 1.6rem;
+                    // padding: 4rem 1.6rem;
                     width: 100%;
                     h3 {
                         font-size: 1.6rem;

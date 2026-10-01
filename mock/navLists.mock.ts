@@ -20,13 +20,13 @@ export const navLinks: NavLink[] = [
 						icon: "",
 						external: true
 					},
-					// {
-					// 	label: "Cybersecurity",
-					// 	href: "/cybersecurity",
-					// 	id: "cybersecurity",
-					// 	icon: "/svgs/link-user.svg",
-					// 	external: false
-					// },
+					{
+						label: "Atlas",
+						href: "https://atlas.govtechafrica.com",
+						id: "atlas",
+						icon: "",
+						external: true
+					},
 					// {
 					// 	label: "Cloud Services",
 					// 	href: "/cloud-services",
@@ -72,14 +72,14 @@ export const navLinks: NavLink[] = [
 				menu: [
 					{
 						label: "Technology ",
-						href: "/what-we-do#technology",
+						href: "/what-we-do/services#technology",
 						id: "technology",
 						// icon: "/svgs/link-user.svg",
 						external: false
 					},
 					{
 						label: "Consulting ",
-						href: "/what-we-do#consulting",
+						href: "/what-we-do/services#consulting",
 						id: "consulting",
 						// icon: "/svgs/link-user.svg",
 						external: false

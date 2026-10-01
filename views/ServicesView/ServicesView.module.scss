@@ -1,0 +1,29 @@
+@import "@/styles/imports";
+
+.services_view {
+    width: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+    // scroll-snap-type: y mandatory;
+    scroll-margin-top: 14rem;
+}
+.spacing {
+    margin-top: 10rem;
+}
+
+@include screenMax("tablet") {
+    .services_view {
+        scroll-margin-top: 11rem;
+    }
+    .spacing {
+        margin-top: 8rem;
+    }
+}
+@include screenMax("mobile") {
+    .services_view {
+        scroll-margin-top: 8rem;
+    }
+    .spacing {
+        margin-top: 6rem;
+    }
+}
