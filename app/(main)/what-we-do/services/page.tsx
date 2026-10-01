@@ -2,7 +2,7 @@ import { ServicesView } from "@/views";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Technology & Consulting Services",
+    title: "Our Services",
     description: `Explore Govtech Africa's technology and consulting services — empowering African governments with custom
         software, cloud solutions, cybersecurity, data & AI, infrastructure, IT strategy, regulatory compliance, and
         capacity building.`,
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
         canonical: "https://govtechafrica.com/what-we-do/services",
     },
     openGraph: {
-        title: "Technology & Consulting Services",
+        title: "Our Services",
         description: `Explore Govtech Africa's technology and consulting services — empowering African governments with
             custom software, cloud solutions, cybersecurity, data & AI, infrastructure, IT strategy, regulatory compliance,
             and capacity building.`,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Technology & Consulting Services",
+        title: "Our Services",
         description: `Explore Govtech Africa's technology and consulting services — empowering African governments with
             custom software, cloud solutions, cybersecurity, data & AI, infrastructure, IT strategy, regulatory compliance,
             and capacity building.`,
